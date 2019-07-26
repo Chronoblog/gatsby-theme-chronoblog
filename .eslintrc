@@ -1,0 +1,76 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "jest": true,
+    "node": true
+  },
+  "extends": [
+    "airbnb",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:unicorn/recommended",
+    "plugin:sonarjs/recommended",
+    "plugin:jsx-a11y/recommended",
+    "prettier/@typescript-eslint",
+    "plugin:prettier/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "impliedStrict": true,
+      "jsx": true
+    },
+    "ecmaVersion": 2019,
+    "sourceType": "module",
+    "useJSXTextNode": true
+  },
+  "plugins": [
+    "html",
+    "prettier",
+    "unicorn",
+    "simple-import-sort",
+    "import",
+    "sonarjs",
+    "react-hooks",
+    "jsx-a11y"
+  ],
+  "rules": {
+    "@typescript-eslint/no-var-requires": "off",
+    "import/first": "warn",
+    "import/newline-after-import": "warn",
+    "import/no-duplicates": "warn",
+    "import/order": "warn",
+    "no-console": "off",
+    "no-nested-ternary": "warn",
+    "prettier/prettier": "warn",
+    "react-hooks/exhaustive-deps": "warn",
+    "react-hooks/rules-of-hooks": "error",
+    "react/destructuring-assignment": "off",
+    "react/display-name": "off",
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [".js", ".jsx", ".tsx"]
+      }
+    ],
+    "react/prop-types": "warn",
+    "simple-import-sort/sort": "warn",
+    "sonarjs/cognitive-complexity": "warn",
+    "sonarjs/no-duplicate-string": "warn",
+    "sonarjs/no-identical-functions": "warn",
+    "sonarjs/prefer-immediate-return": "off",
+    "sort-imports": "off",
+    "unicorn/prevent-abbreviations": "off"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    },
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  }
+}

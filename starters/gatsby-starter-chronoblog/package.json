@@ -1,0 +1,20 @@
+{
+  "name": "gatsby-starter-chronoblog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "clean": "gatsby clean",
+    "start": "gatsby develop",
+    "build": "gatsby build"
+  },
+  "keywords": [],
+  "author": "Ivan Ganev <ganevio92@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "gatsby-theme-chronoblog": "*",
+    "gatsby": "^2.13.41",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  }
+}

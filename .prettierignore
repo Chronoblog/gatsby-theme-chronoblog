@@ -1,0 +1,7 @@
+.cache
+public
+.idea
+.vscode
+.DS_Store
+node_modules
+CHANGELOG.md
