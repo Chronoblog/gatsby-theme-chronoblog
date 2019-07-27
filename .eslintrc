@@ -26,7 +26,6 @@
     "useJSXTextNode": true
   },
   "plugins": [
-    "html",
     "prettier",
     "unicorn",
     "simple-import-sort",
@@ -64,13 +63,13 @@
     "unicorn/prevent-abbreviations": "off"
   },
   "settings": {
-    "react": {
-      "version": "detect"
-    },
     "import/resolver": {
       "node": {
         "extensions": [".js", ".jsx", ".ts", ".tsx"]
       }
+    },
+    "react": {
+      "version": "detect"
     }
   }
 }

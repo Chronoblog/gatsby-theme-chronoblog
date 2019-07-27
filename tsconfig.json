@@ -1,15 +1,16 @@
 {
   "compilerOptions": {
-    "target": "esnext",
-    "module": "commonjs",
+    "esModuleInterop": true,
     "jsx": "react",
     "lib": ["dom", "es2017"],
-    "rootDir": "src",
+    "module": "commonjs",
     "moduleResolution": "node",
-    "strict": true,
     "noEmit": true,
+    "resolveJsonModule": true,
+    "rootDir": "src",
     "skipLibCheck": true,
-    "esModuleInterop": true
+    "strict": true,
+    "target": "esnext"
   },
   "include": ["./gatsby-theme-chronoblog/src/**/*", "./starters/**/src/**/*"]
 }
