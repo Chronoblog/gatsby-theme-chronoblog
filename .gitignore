@@ -1,6 +1,3 @@
-packages/*/yarn.lock
-packages/*/package-lock.json
-
 # Logs
 logs
 *.log
@@ -50,12 +47,16 @@ public
 
 .serverless/
 
+gatsby-theme-chronoblog/*/yarn.lock
+gatsby-theme-chronoblog/*/package-lock.json
+
 # Yarn
 yarn-error.log
 .pnp/
 .pnp.js
 .yarn-integrity
 
+yarn.lock
 package-lock.json
 
 # personal
