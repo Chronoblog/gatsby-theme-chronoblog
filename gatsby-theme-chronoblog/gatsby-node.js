@@ -36,6 +36,36 @@ exports.onCreateNode = ({ node, actions, getNode }, opts = {}) => {
   });
 };
 
+/**
+ * @param {number} indexForFun
+ * @param {number} previousIndex
+ * @param {string} name
+ * @returns {string}
+ */
+function previousFun(indexForFun, previousIndex, name) {
+  if (indexForFun > 0) {
+    if (previousIndex === 1) {
+      return path.join('/', name);
+    }
+    return path.join('/', name, `${previousIndex}`);
+  }
+  return '';
+}
+
+/**
+ * @param {*} some
+ * @returns {string | number}
+ */
+function testJsdoc(some) {
+  if (some) {
+    return 1;
+  }
+  return 'some';
+}
+
+const someTest = testJsdoc(1);
+console.log(someTest);
+
 exports.createPages = async ({ graphql, actions }, opts = {}) => {
   const { name = '', pageSize = 12 } = opts;
 
@@ -73,7 +103,7 @@ exports.createPages = async ({ graphql, actions }, opts = {}) => {
   posts.forEach((post) => {
     actions.createPage({
       path: post.fields.slug,
-      component: require.resolve('./src/templates/post.tsx'),
+      component: require.resolve('./src/templates/post.js'),
       context: {
         id: post.id
       }
@@ -122,22 +152,13 @@ exports.createPages = async ({ graphql, actions }, opts = {}) => {
     const previousIndex = i;
     const nextIndex = i + 2;
 
-    const previousFun = (indexForFun) => {
-      if (indexForFun > 0) {
-        if (previousIndex === 1) {
-          path.join('/', name);
-        }
-        path.join('/', name, `${previousIndex}`);
-      }
-      return '';
-    };
-    const previous = previousFun(i);
+    const previous = previousFun(i, previousIndex, name);
     const next =
       nextIndex <= length ? path.join('/', name, `${nextIndex}`) : '';
 
     actions.createPage({
       path: i === 0 ? `/${name}` : path.join('/', name, `${i + 1}`),
-      component: require.resolve('./src/templates/index.tsx'),
+      component: require.resolve('./src/templates/index.js'),
       context: {
         previous,
         next,

@@ -6,14 +6,18 @@ import Head from './head';
 import Header from './header';
 import Root from './root';
 
-interface Props {
-  children: React.ReactNode;
-  title: string;
-  excerpt: string;
-  date: string | Date;
-}
+/** @typedef { import('react') } React */
 
-export default (props: Props): JSX.Element => {
+/**
+ *
+ * @param {object} props
+ * @param {string} props.title
+ * @param {string} props.excerpt
+ * @param {string | Date} props.date
+ * @param {boolean} props.draft
+ * @param {any} props.children
+ */
+const Post = (props) => {
   return (
     <Root>
       <Head title={props.title} description={props.excerpt} />
@@ -35,6 +39,7 @@ export default (props: Props): JSX.Element => {
           >
             {props.date}
           </Styled.p>
+          {props.draft}
           {props.children}
         </div>
       </Main>
@@ -42,3 +47,5 @@ export default (props: Props): JSX.Element => {
     </Root>
   );
 };
+
+export default Post;

@@ -26,3 +26,5 @@ post `redirects`
 post `draft`
 link `draft`
 in home.mdx - the ability to create feeds-blocks with filters by hashtags, like this: ricostacruz.com/til
+simple shadow for site footer
+simple shadow for post footer

@@ -16,7 +16,8 @@
   },
   "license": "MIT",
   "author": "Ivan Ganev <ganevio92@gmail.com>",
-  "main": "index.js",
+  "main": "index",
+  "typings": "index",
   "scripts": {
     "build": "gatsby build",
     "clean": "gatsby clean",
@@ -34,7 +35,6 @@
     "gatsby-plugin-mdx": "^1.0.17",
     "gatsby-plugin-react-helmet": "^3.1.2",
     "gatsby-plugin-theme-ui": "^0.2.18",
-    "gatsby-plugin-typescript": "^2.1.0",
     "gatsby-source-filesystem": "^2.1.6",
     "mkdirp": "^0.5.1",
     "react-helmet": "^5.2.1",

@@ -1,16 +1,25 @@
 {
   "compilerOptions": {
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "alwaysStrict": true,
+    "checkJs": true,
     "esModuleInterop": true,
     "jsx": "react",
-    "lib": ["dom", "es2017"],
-    "module": "commonjs",
+    "lib": ["dom", "es2017", "dom.iterable", "es2018"],
+    "module": "esnext",
     "moduleResolution": "node",
     "noEmit": true,
     "resolveJsonModule": true,
-    "rootDir": "src",
     "skipLibCheck": true,
-    "strict": true,
-    "target": "esnext"
+    "target": "esnext",
+    "types": ["@emotion/core"]
+    // "noImplicitAny": true
   },
-  "include": ["./gatsby-theme-chronoblog/src/**/*", "./starters/**/src/**/*"]
+  "include": ["./src/**/*", "*/**/src/**/*"],
+  "exclude": [
+    "node_modules/**/*",
+    "*/node_modules/**/*",
+    "*/**/node_modules/**/*"
+  ]
 }

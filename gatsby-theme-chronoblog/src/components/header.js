@@ -1,16 +1,15 @@
 /** @jsx jsx */
 import { Link } from 'gatsby';
-import React from 'react';
 import { jsx, Styled, useColorMode } from 'theme-ui';
 
 import Button from './button';
 
 const modes = ['light', 'dark'];
 
-export default (): JSX.Element => {
+export default () => {
   const [mode, setMode] = useColorMode();
 
-  const cycle = (): void => {
+  const cycle = () => {
     const i = (modes.indexOf(mode) + 1) % modes.length;
     setMode(modes[i]);
   };

@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 
-export default (): JSX.Element => (
+export default () => (
   <footer>
     <div
       sx={{

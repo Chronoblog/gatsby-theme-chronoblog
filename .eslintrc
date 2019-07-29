@@ -7,13 +7,14 @@
   },
   "extends": [
     "airbnb",
-    "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
     "plugin:unicorn/recommended",
     "plugin:sonarjs/recommended",
     "plugin:jsx-a11y/recommended",
-    "prettier/@typescript-eslint",
-    "plugin:prettier/recommended"
+    "plugin:jsdoc/recommended",
+    "plugin:prettier/recommended",
+    "prettier/@typescript-eslint"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -26,6 +27,8 @@
     "useJSXTextNode": true
   },
   "plugins": [
+    "@typescript-eslint",
+    "jsdoc",
     "prettier",
     "unicorn",
     "simple-import-sort",
@@ -40,6 +43,17 @@
     "import/newline-after-import": "warn",
     "import/no-duplicates": "warn",
     "import/order": "warn",
+    "jsdoc/check-tag-names": [
+      "warn",
+      {
+        "definedTags": ["jsx"]
+      }
+    ],
+    "jsdoc/require-jsdoc": "off",
+    "jsdoc/require-returns": "off",
+    "jsdoc/require-param-description": "off",
+    "jsdoc/require-returns-description": "off",
+    "jsdoc/valid-types": "off",
     "no-console": "off",
     "no-nested-ternary": "warn",
     "prettier/prettier": "warn",
@@ -48,12 +62,12 @@
     "react/destructuring-assignment": "off",
     "react/display-name": "off",
     "react/jsx-filename-extension": [
-      1,
+      "warn",
       {
         "extensions": [".js", ".jsx", ".tsx"]
       }
     ],
-    "react/prop-types": "warn",
+    "react/prop-types": "off",
     "simple-import-sort/sort": "warn",
     "sonarjs/cognitive-complexity": "warn",
     "sonarjs/no-duplicate-string": "warn",

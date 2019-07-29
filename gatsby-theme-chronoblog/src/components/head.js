@@ -14,23 +14,21 @@ const query = graphql`
   }
 `;
 
-interface SiteMetadata {
-  title: string;
-  description: string;
-  author: string;
-}
-
-interface Props {
-  title: string;
-  description: string;
-}
-
-const useMetadata = (): SiteMetadata => {
+const useMetadata = () => {
   const data = useStaticQuery(query);
   return data.site.siteMetadata;
 };
 
-export default (props: Props): JSX.Element => {
+/**
+ * @typedef {object} Props
+ * @property {string=} title
+ * @property {string=} description
+ */
+
+/**
+ * @param {Props} props
+ */
+export default (props) => {
   const meta = useMetadata();
   const title = props.title || meta.title;
   const description = props.description || meta.description;

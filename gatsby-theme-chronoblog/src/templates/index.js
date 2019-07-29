@@ -3,25 +3,10 @@ import React from 'react';
 
 import Layouts from '../components/layouts';
 
-interface Props {
-  [elemName: string]: unknown;
-  data: {
-    allMdx: { edges: any };
-  };
-}
-
-export default (props: Props): JSX.Element => {
+export default (props) => {
   const posts = props.data.allMdx.edges
-    .filter(
-      (edge: any): boolean => edge.node.parent.sourceInstanceName === 'posts'
-    )
-    .map(({ node }: any): {
-      id: string;
-      slug: string;
-      title: string;
-      date: string | Date;
-      excerpt: string;
-    } => ({
+    .filter((edge) => edge.node.parent.sourceInstanceName === 'posts')
+    .map(({ node }) => ({
       id: node.id,
       slug: node.fields.slug,
       title: node.frontmatter.title,

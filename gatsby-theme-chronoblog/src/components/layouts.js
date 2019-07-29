@@ -7,14 +7,18 @@ import Head from './head';
 import Header from './header';
 import Root from './root';
 
-interface Props {
-  pageContext: {
-    previous?: string;
-    next?: string;
-  };
-}
+/**
+ * @typedef {object} Props
+ * @property {*} posts
+ * @property {object} pageContext
+ * @property {string=} pageContext.previous
+ * @property {string=} pageContext.next
+ */
 
-export default (props: Props): JSX.Element => {
+/**
+ * @param {Props} props
+ */
+export default (props) => {
   const { pageContext, posts } = props;
   const { previous, next } = pageContext;
 
@@ -37,38 +41,36 @@ export default (props: Props): JSX.Element => {
               margin: 0
             }}
           >
-            {posts.map(
-              (post): JSX.Element => (
-                <li key={post.id}>
-                  <Link
-                    to={post.slug}
+            {posts.map((post) => (
+              <li key={post.id}>
+                <Link
+                  to={post.slug}
+                  sx={{
+                    display: 'block',
+                    textDecoration: 'none',
+                    color: 'inherit'
+                  }}
+                >
+                  <Styled.h2
                     sx={{
-                      display: 'block',
-                      textDecoration: 'none',
-                      color: 'inherit'
+                      fontSize: [5, 6]
                     }}
                   >
-                    <Styled.h2
-                      sx={{
-                        fontSize: [5, 6]
-                      }}
-                    >
-                      {post.title}
-                    </Styled.h2>
-                    <Styled.p
-                      sx={{
-                        mb: 4,
-                        fontSize: [0, 0],
-                        fontWeight: 'bold'
-                      }}
-                    >
-                      {post.date}
-                    </Styled.p>
-                    <Styled.p>{post.excerpt}</Styled.p>
-                  </Link>
-                </li>
-              )
-            )}
+                    {post.title}
+                  </Styled.h2>
+                  <Styled.p
+                    sx={{
+                      mb: 4,
+                      fontSize: [0, 0],
+                      fontWeight: 'bold'
+                    }}
+                  >
+                    {post.date}
+                  </Styled.p>
+                  <Styled.p>{post.excerpt}</Styled.p>
+                </Link>
+              </li>
+            ))}
           </ul>
           <div
             sx={{

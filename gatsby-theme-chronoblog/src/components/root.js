@@ -1,11 +1,11 @@
 /** @jsx jsx */
 import { jsx, Layout } from 'theme-ui';
 
-import { PropsSpread } from '../types';
-
-export const Root: (props: PropsSpread) => JSX.Element = (
-  props: PropsSpread
-): JSX.Element => (
+/**
+ *
+ * @param {any} props spread props
+ */
+const Root = (props) => (
   <Layout
     {...props}
     sx={{

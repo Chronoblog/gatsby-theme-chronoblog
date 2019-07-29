@@ -1,9 +1,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 
-import { PropsSpread } from '../types';
-
-export default (props: PropsSpread): JSX.Element => (
+export default (props) => (
   <button
     type="button"
     {...props}
