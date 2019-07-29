@@ -50,8 +50,12 @@ public
 
 .serverless/
 
-yarn.lock
+# Yarn
 yarn-error.log
+.pnp/
+.pnp.js
+.yarn-integrity
+
 package-lock.json
 
 # personal
