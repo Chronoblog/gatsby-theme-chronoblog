@@ -11,7 +11,7 @@ export default () => (
         py: 3
       }}
     >
-      © 2019 Jxnblk
+      © 2019
     </div>
   </footer>
 );

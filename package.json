@@ -3,16 +3,15 @@
   "private": true,
   "license": "MIT",
   "author": "Ivan Ganev <ganevio92@gmail.com>",
-  "workspaces": [
-    "gatsby-theme-chronoblog",
-    "starters/*"
-  ],
+  "workspaces": ["packages/*", "examples/*"],
   "scripts": {
-    "build:chronoblog": "yarn clean && yarn workspace gatsby-starter-chronoblog build",
+    "build:base": "yarn clean && yarn workspace base build",
     "clean": "yarn workspaces run clean",
-    "start:chronoblog": "yarn clean && yarn workspace gatsby-starter-chronoblog start"
+    "start:base": "yarn clean && yarn workspace base start",
+    "test": "jest"
   },
   "devDependencies": {
+    "@types/jest": "^24.0.16",
     "@types/node": "^12.0.12",
     "@types/react": "^16.8.23",
     "@types/react-dom": "^16.8.4",
@@ -33,6 +32,7 @@
     "eslint-plugin-sonarjs": "^0.4.0",
     "eslint-plugin-unicorn": "^9.1.1",
     "husky": "^3.0.1",
+    "jest": "^24.8.0",
     "lint-staged": "^9.2.1",
     "prettier": "^1.18.2",
     "typescript": "^3.5.2",
@@ -40,13 +40,10 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged && yarn build:chronoblog"
+      "pre-commit": "yarn test && yarn build:base && lint-staged"
     }
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
-      "eslint --fix",
-      "git add"
-    ]
+    "*.{js,jsx,ts,tsx}": ["eslint --fix", "git add"]
   }
 }

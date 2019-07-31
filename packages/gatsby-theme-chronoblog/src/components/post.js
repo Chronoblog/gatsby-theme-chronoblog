@@ -2,9 +2,9 @@
 import { jsx, Main, Styled } from 'theme-ui';
 
 import Footer from './footer';
-import Head from './head';
 import Header from './header';
 import Root from './root';
+import SEO from './seo';
 
 /** @typedef { import('react') } React */
 
@@ -20,7 +20,7 @@ import Root from './root';
 const Post = (props) => {
   return (
     <Root>
-      <Head title={props.title} description={props.excerpt} />
+      <SEO title={props.title} description={props.excerpt} />
       <Header />
       <Main>
         <div

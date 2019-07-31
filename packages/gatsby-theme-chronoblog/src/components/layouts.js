@@ -3,9 +3,9 @@ import { Link } from 'gatsby';
 import { jsx, Main, Styled } from 'theme-ui';
 
 import Footer from './footer';
-import Head from './head';
 import Header from './header';
 import Root from './root';
+import SEO from './seo';
 
 /**
  * @typedef {object} Props
@@ -24,7 +24,7 @@ export default (props) => {
 
   return (
     <Root>
-      <Head />
+      <SEO />
       <Header />
       <Main>
         <div

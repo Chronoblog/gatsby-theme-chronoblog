@@ -13,10 +13,10 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "target": "esnext",
-    "types": ["@emotion/core"]
+    "types": ["@emotion/core", "jest"]
     // "noImplicitAny": true
   },
-  "include": ["./src/**/*", "*/**/src/**/*"],
+  "include": ["./packages/**/src/**/*", "./examples/**/src/**/*"],
   "exclude": [
     "node_modules",
     "node_modules/**/*",

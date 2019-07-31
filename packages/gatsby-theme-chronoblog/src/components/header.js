@@ -44,7 +44,7 @@ export default () => {
               }
             }}
           >
-            MDX Blog Theme
+            Chronoblog Theme
           </Styled.a>
         </Styled.h3>
         <div sx={{ mx: 'auto' }} />
