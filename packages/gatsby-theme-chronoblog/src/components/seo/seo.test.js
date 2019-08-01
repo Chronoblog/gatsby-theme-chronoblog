@@ -1,4 +1,9 @@
-import { genTitle, genUrl } from './utils';
+import seo, { genTitle, genUrl } from './seo';
+
+test('seo', () => {
+  const test = seo({});
+  expect(test).toBeDefined();
+});
 
 describe('genTitle', () => {
   test('genTitle only meta title', () => {

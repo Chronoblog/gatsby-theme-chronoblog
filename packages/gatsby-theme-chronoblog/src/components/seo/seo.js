@@ -1,42 +1,46 @@
-import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 import { Helmet } from 'react-helmet';
 
-import { genTitle, genUrl } from './utils';
+import useSiteMetadata from '../../hooks/use-site-metadata';
+// import { genTitle, genUrl } from './utils';
 
-const query = graphql`
-  query SEOQuery {
-    site {
-      siteMetadata {
-        title
-        description
-        siteUrl
-        pathPrefix
-        language
-        author
-        twitter
-      }
-    }
+/**
+ *
+ * @param {object} meta
+ * @param {string=} meta.title
+ * @param {object=} props
+ * @returns {string}
+ */
+export const genTitle = (meta, props) => {
+  const metaTitle = meta.title || '';
+  if (props && props.title) {
+    if (metaTitle === '') return `${props.title}`;
+    return `${props.title} | ${metaTitle}`;
   }
-`;
+  return metaTitle;
+};
 
 /**
- * @typedef {object} SiteMetadata
- * @property {string=} title
- * @property {string=} description
- * @property {string=} siteUrl
- * @property {string=} pathPrefix
- * @property {string=} language
- * @property {string=} author
- * @property {string=} twitter
+ *
+ * @param {object} meta
+ * @param {string=} meta.url
+ * @param {string=} meta.pathPrefix
+ * @param {object=} props
+ * @returns {string}
  */
-
-/**
- * @returns {SiteMetadata}
- */
-const useMetadata = () => {
-  const data = useStaticQuery(query);
-  return data.site.siteMetadata;
+export const genUrl = (meta, props) => {
+  const metaUrl = meta.url || '';
+  // TODO delete '/' from end url if exist
+  // pathPrefix - /gatsby-theme-chronoblog
+  const pathPrefix = meta.pathPrefix || '/';
+  // TODO create '/' at the begining if don't exist
+  // TODO delete '/' from end url if exist
+  if (props && props.pathName) {
+    const { pathName } = props;
+    const finalUrl = `${metaUrl}${pathPrefix}/${pathName}`;
+    return finalUrl;
+  }
+  return `${metaUrl}${pathPrefix}`;
 };
 
 /**
@@ -51,7 +55,7 @@ const useMetadata = () => {
  * @param {Props} props
  */
 export default (props) => {
-  const meta = useMetadata();
+  const meta = useSiteMetadata();
 
   const title = genTitle(meta, props);
   const description = props.description || meta.description || '';
