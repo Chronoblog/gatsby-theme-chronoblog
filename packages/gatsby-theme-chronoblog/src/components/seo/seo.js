@@ -1,8 +1,8 @@
 import { graphql, useStaticQuery } from 'gatsby';
-import normalizeUrl from 'normalize-url';
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import urlJoin from 'url-join';
+
+import { genTitle, genUrl } from './utils';
 
 const query = graphql`
   query SEOQuery {
@@ -40,46 +40,11 @@ const useMetadata = () => {
 };
 
 /**
- *
- * @param {object} meta
- * @param {object=} props
- * @returns {string}
- */
-function genTitle(meta, props) {
-  const metaTitle = meta.title || '';
-  if (props && props.title) {
-    return `${props.title} | ${metaTitle}`;
-  }
-  return metaTitle;
-}
-
-/**
- *
- * @param {object} meta
- * @param {object=} props
- * @returns {string}
- */
-function genUrl(meta, props) {
-  const metaUrl = meta.url || '';
-  // TODO delete '/' from end url if exist
-  // pathPrefix - /gatsby-theme-chronoblog
-  const pathPrefix = meta.pathPrefix || '/';
-  // TODO create '/' at the begining if don't exist
-  // TODO delete '/' from end url if exist
-  if (props && props.pathName) {
-    const { pathName } = props;
-    const finalUrl = `${metaUrl}${pathPrefix}/${pathName}`;
-    return finalUrl;
-  }
-  return `${metaUrl}${pathPrefix}`;
-}
-
-/**
  * @typedef {object} Props
  * @property {string=} title
  * @property {string=} description
  * @property {string=} pathName
- * @property {*} children
+ * @property {*=} children
  */
 
 /**

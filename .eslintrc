@@ -38,6 +38,7 @@
     "jsx-a11y"
   ],
   "rules": {
+    "unicorn/no-abusive-eslint-disable": "off",
     "@typescript-eslint/no-var-requires": "off",
     "import/first": "warn",
     "import/newline-after-import": "warn",
@@ -85,5 +86,15 @@
     "react": {
       "version": "detect"
     }
-  }
+  },
+  "overrides": [
+    {
+      "files": ["*.test.js"],
+      "rules": {
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "sonarjs/prefer-single-boolean-return": "off",
+        "sonarjs/no-duplicate-string": "off"
+      }
+    }
+  ]
 }

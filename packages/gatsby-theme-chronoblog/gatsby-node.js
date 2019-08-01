@@ -11,10 +11,9 @@ exports.onPreBootstrap = ({ store }) => {
   const { program } = store.getState();
 
   const dirs = [
-    path.join(program.directory, `content/feed/posts`),
-    path.join(program.directory, `content/feed/links`),
-    path.join(program.directory, `content/pages`),
-    path.join(program.directory, `content/assets`)
+    path.join(program.directory, `feed/posts`),
+    path.join(program.directory, `feed/links`),
+    path.join(program.directory, `pages`)
   ];
 
   dirs.forEach((dir) => {
@@ -37,6 +36,7 @@ exports.onCreateNode = ({ node, actions, getNode }, opts = {}) => {
   });
 };
 
+// TODO delete previous and next
 /**
  * @param {number} indexForFun
  * @param {number} previousIndex
@@ -52,20 +52,6 @@ function previousFun(indexForFun, previousIndex, name) {
   }
   return '';
 }
-
-/**
- * @param {*} some
- * @returns {string | number}
- */
-function testJsdoc(some) {
-  if (some) {
-    return 1;
-  }
-  return 'some';
-}
-
-const someTest = testJsdoc(1);
-console.log(someTest);
 
 exports.createPages = async ({ graphql, actions }, opts = {}) => {
   const { name = '', pageSize = 12 } = opts;

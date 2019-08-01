@@ -29,21 +29,21 @@ module.exports = () => {
         resolve: 'gatsby-source-filesystem',
         options: {
           name: 'posts',
-          path: path.resolve('content/feed/posts')
+          path: path.resolve('feed/posts')
         }
       },
       {
         resolve: 'gatsby-source-filesystem',
         options: {
           name: 'links',
-          path: path.resolve('content/feed/links')
+          path: path.resolve('feed/links')
         }
       },
       {
         resolve: 'gatsby-source-filesystem',
         options: {
           name: 'pages',
-          path: path.resolve('content/pages')
+          path: path.resolve('pages')
         }
       }
     ]
