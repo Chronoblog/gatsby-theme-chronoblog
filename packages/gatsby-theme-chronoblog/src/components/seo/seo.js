@@ -70,7 +70,7 @@ export { genTitle, genUrl };
 /**
  * @param {Props=} props
  */
-export default (props) => {
+export default ({ children, ...props }) => {
   const meta = useSiteMetadata();
 
   const title = genTitle(meta, props);
@@ -125,7 +125,7 @@ export default (props) => {
       />
 
       {/* children */}
-      {props && props.children ? props.children : undefined}
+      {children}
     </Helmet>
   );
 };

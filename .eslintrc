@@ -69,7 +69,7 @@
     "prettier/prettier": "warn",
     "react-hooks/exhaustive-deps": "warn",
     "react-hooks/rules-of-hooks": "error",
-    "react/destructuring-assignment": "off",
+    "react/destructuring-assignment": "warn",
     "react/display-name": "off",
     "react/jsx-filename-extension": [
       "warn",

@@ -1,10 +1,6 @@
 import seo, { genTitle, genUrl } from './seo';
 
 describe('seo', () => {
-  test('seo()', () => {
-    const test = seo();
-    expect(test).toBeDefined();
-  });
   test('seo({})', () => {
     const test = seo({});
     expect(test).toBeDefined();
