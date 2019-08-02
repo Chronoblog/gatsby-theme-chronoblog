@@ -1,8 +1,9 @@
+import normalizeUrl from 'normalize-url';
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import urlJoin from 'url-join';
 
 import useSiteMetadata from '../../hooks/use-site-metadata';
-// import { genTitle, genUrl } from './utils';
 
 /**
  *
@@ -11,7 +12,7 @@ import useSiteMetadata from '../../hooks/use-site-metadata';
  * @param {object=} props
  * @returns {string}
  */
-export const genTitle = (meta, props) => {
+const genTitle = (meta, props) => {
   const metaTitle = meta.title || '';
   if (props && props.title) {
     if (metaTitle === '') return `${props.title}`;
@@ -23,25 +24,40 @@ export const genTitle = (meta, props) => {
 /**
  *
  * @param {object} meta
- * @param {string=} meta.url
+ * @param {string} meta.siteUrl
  * @param {string=} meta.pathPrefix
  * @param {object=} props
  * @returns {string}
  */
-export const genUrl = (meta, props) => {
-  const metaUrl = meta.url || '';
-  // TODO delete '/' from end url if exist
-  // pathPrefix - /gatsby-theme-chronoblog
+const genUrl = (meta, props) => {
+  const metaUrl = meta.siteUrl || '';
+  // pathPrefix - like this /gatsby-theme-chronoblog
   const pathPrefix = meta.pathPrefix || '/';
-  // TODO create '/' at the begining if don't exist
-  // TODO delete '/' from end url if exist
-  if (props && props.pathName) {
-    const { pathName } = props;
-    const finalUrl = `${metaUrl}${pathPrefix}/${pathName}`;
-    return finalUrl;
-  }
-  return `${metaUrl}${pathPrefix}`;
+  let pathName = props && props.pathName ? `${props.pathName}` : '';
+  pathName = pathName.replace(/\s/g, '-');
+  /** @constant
+    @type {string}
+   */
+  let finalUrl = urlJoin(metaUrl, pathPrefix, pathName);
+  finalUrl = normalizeUrl(finalUrl);
+  finalUrl = finalUrl.toLowerCase();
+  return finalUrl;
 };
+
+/**
+ *
+ * @param {object} meta
+ * @param {string=} meta.description
+ * @param {object=} props
+ * @returns {string}
+ */
+const genDescription = (meta, props) => {
+  if (props && props.description) return props.description;
+  if (meta && meta.description) return meta.description;
+  return '';
+};
+
+export { genTitle, genUrl };
 
 /**
  * @typedef {object} Props
@@ -52,13 +68,13 @@ export const genUrl = (meta, props) => {
  */
 
 /**
- * @param {Props} props
+ * @param {Props=} props
  */
 export default (props) => {
   const meta = useSiteMetadata();
 
   const title = genTitle(meta, props);
-  const description = props.description || meta.description || '';
+  const description = genDescription(meta, props);
   const url = genUrl(meta, props);
   const language = meta.description || '';
   const author = meta.author || '';
@@ -109,7 +125,7 @@ export default (props) => {
       />
 
       {/* children */}
-      {props.children}
+      {props && props.children ? props.children : undefined}
     </Helmet>
   );
 };

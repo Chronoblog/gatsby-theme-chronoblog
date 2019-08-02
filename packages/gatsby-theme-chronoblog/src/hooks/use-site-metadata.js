@@ -3,8 +3,9 @@ import { graphql, useStaticQuery } from 'gatsby';
 /**
  * @typedef {object} SiteMetadata
  * @property {string=} title
+ * @property {string=} navTitle
  * @property {string=} description
- * @property {string=} siteUrl
+ * @property {string} siteUrl
  * @property {string=} pathPrefix
  * @property {string=} language
  * @property {string=} author

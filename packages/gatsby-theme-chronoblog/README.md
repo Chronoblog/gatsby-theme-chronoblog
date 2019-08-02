@@ -33,3 +33,4 @@ npm i gatsby-theme-chronoblog
 - image `cover` option for posts and links
 - `coverType` option for posts and different defaults for links and posts
 - limit of symbols in post before cut (`readMore`) - options
+- `<LinkCard>` component for MDX - work as link, but looks as card and have title, cover-image and description. This is for some important and special links (books, big projects etc.)
