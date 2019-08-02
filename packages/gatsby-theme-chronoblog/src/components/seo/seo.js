@@ -7,34 +7,33 @@ import useSiteMetadata from '../../hooks/use-site-metadata';
 
 /**
  *
- * @param {object} meta
- * @param {string=} meta.title
- * @param {object=} props
+ * @param {object} siteMeta
+ * @param {string=} siteMeta.title
+ * @param {string} propsTitle
  * @returns {string}
  */
-const genTitle = (meta, props) => {
-  const metaTitle = meta.title || '';
-  if (props && props.title) {
-    if (metaTitle === '') return `${props.title}`;
-    return `${props.title} | ${metaTitle}`;
+const genTitle = (siteMeta, propsTitle = '') => {
+  const siteMetaTitle = siteMeta.title || '';
+  if (propsTitle !== '') {
+    if (siteMetaTitle === '') return propsTitle;
+    return `${propsTitle} | ${siteMetaTitle}`;
   }
-  return metaTitle;
+  return siteMetaTitle;
 };
 
 /**
  *
- * @param {object} meta
- * @param {string} meta.siteUrl
- * @param {string=} meta.pathPrefix
- * @param {object=} props
+ * @param {object} siteMeta
+ * @param {string=} siteMeta.siteUrl
+ * @param {string=} siteMeta.pathPrefix
+ * @param {string} propsPathName
  * @returns {string}
  */
-const genUrl = (meta, props) => {
-  const metaUrl = meta.siteUrl || '';
+const genUrl = (siteMeta, propsPathName = '') => {
+  const metaUrl = siteMeta.siteUrl ? siteMeta.siteUrl : '';
   // pathPrefix - like this /gatsby-theme-chronoblog
-  const pathPrefix = meta.pathPrefix || '/';
-  let pathName = props && props.pathName ? `${props.pathName}` : '';
-  pathName = pathName.replace(/\s/g, '-');
+  const pathPrefix = siteMeta.pathPrefix || '/';
+  const pathName = propsPathName.replace(/\s/g, '-');
   /** @constant
     @type {string}
    */
@@ -46,17 +45,18 @@ const genUrl = (meta, props) => {
 
 /**
  *
- * @param {object} meta
- * @param {string=} meta.description
- * @param {object=} props
+ * @param {object} siteMeta
+ * @param {string=} siteMeta.description
+ * @param {string} propsDescription
  * @returns {string}
  */
-const genDescription = (meta, props) => {
-  if (props && props.description) return props.description;
-  if (meta && meta.description) return meta.description;
+const genDescription = (siteMeta, propsDescription = '') => {
+  if (propsDescription !== '') return propsDescription;
+  if (siteMeta && siteMeta.description) return siteMeta.description;
   return '';
 };
 
+// export for tests
 export { genTitle, genUrl };
 
 /**
@@ -64,46 +64,49 @@ export { genTitle, genUrl };
  * @property {string=} title
  * @property {string=} description
  * @property {string=} pathName
- * @property {*=} children
+ * @property {React.ReactNode=} children
  */
 
 /**
  * @param {Props=} props
  */
-export default ({ children, ...props }) => {
-  const meta = useSiteMetadata();
+const SEO = ({ title = '', description = '', pathName = '', children }) => {
+  const siteMeta = useSiteMetadata();
 
-  const title = genTitle(meta, props);
-  const description = genDescription(meta, props);
-  const url = genUrl(meta, props);
-  const language = meta.description || '';
-  const author = meta.author || '';
-  const twitter = meta.twitter || author;
+  const metaTitle = genTitle(siteMeta, title);
+  const metaDescription = genDescription(siteMeta, description);
+  const metaUrl = genUrl(siteMeta, pathName);
+  const language = siteMeta.language || '';
+  // const metaImage
+  const twitter = siteMeta.twitter || '';
+  // const author = siteMeta.author || twitter;
 
   return (
     <Helmet>
       {/* Main tags */}
       <html lang={language} />
-      <title>{title}</title>
-      <meta name="description" content={description} />
-      {/* <meta name="image" content={image} /> */}
+      <title>{metaTitle}</title>
+      <meta name="description" content={metaDescription} />
+      {/* <meta name="image" content={metaImage} /> */}
 
       {/* Schema.org */}
 
       {/* OpenGraph */}
-      <meta property="og:title" content={title} />
-      <meta property="og:url" content={url} />
-      <meta property="og:description" content={description} />
-      {/* <meta property="og:image" content={image} /> */}
-      {/* <meta property="og:image:alt" content={description} /> */}
+      <meta property="og:title" content={metaTitle} />
+      <meta property="og:url" content={metaUrl} />
+      <meta property="og:description" content={metaDescription} />
+      {/* <meta property="og:image" content={metaImage} /> */}
+      {/* <meta property="og:image:alt" content={metaDescription} /> */}
       <meta property="og:type" content="website" />
 
       {/* Twitter */}
       <meta name="twitter:card" content="summary" />
-      <meta name="twitter:title" content={title} />
-      <meta name="twitter:description" content={description} />
+      <meta name="twitter:title" content={metaTitle} />
+      <meta name="twitter:description" content={metaDescription} />
       <meta name="twitter:creator" content={twitter} />
-      <meta name="twitter:url" content={url} />
+      <meta name="twitter:url" content={metaUrl} />
+      {/* <meta name="twitter:image" content={metaImage} /> */}
+      <meta name="twitter:image:alt" content={metaTitle} />
 
       {/* icons */}
       <link
@@ -129,3 +132,5 @@ export default ({ children, ...props }) => {
     </Helmet>
   );
 };
+
+export default SEO;

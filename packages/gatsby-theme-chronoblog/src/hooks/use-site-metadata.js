@@ -5,7 +5,7 @@ import { graphql, useStaticQuery } from 'gatsby';
  * @property {string=} title
  * @property {string=} navTitle
  * @property {string=} description
- * @property {string} siteUrl
+ * @property {string=} siteUrl
  * @property {string=} pathPrefix
  * @property {string=} language
  * @property {string=} author

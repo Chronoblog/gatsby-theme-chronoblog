@@ -1,9 +1,8 @@
-import seo, { genTitle, genUrl } from './seo';
+import SEO, { genTitle, genUrl } from './seo';
 
-describe('seo', () => {
-  test('seo({})', () => {
-    const test = seo({});
-    expect(test).toBeDefined();
+describe('SEO', () => {
+  test('SEO({})', () => {
+    expect(SEO({})).toBeDefined();
   });
 });
 
@@ -13,11 +12,11 @@ describe('genTitle()', () => {
     expect(test).toEqual('Meta Title');
   });
   test('genTitle meta title and props title', () => {
-    const test = genTitle({ title: 'Meta Title' }, { title: 'Props Title' });
+    const test = genTitle({ title: 'Meta Title' }, 'Props Title');
     expect(test).toEqual('Props Title | Meta Title');
   });
   test('genTitle only props title', () => {
-    const test = genTitle({ title: undefined }, { title: 'Props Title' });
+    const test = genTitle({ title: undefined }, 'Props Title');
     expect(test).toEqual('Props Title');
   });
 });
@@ -33,7 +32,7 @@ describe('genUrl()', () => {
       expect(test).toEqual('http://someurl');
     });
     test('genUrl - https://', () => {
-      const test = genUrl({ siteUrl: 'https://someUrl' });
+      const test = genUrl({ siteUrl: 'https://someUrl' }, '');
       expect(test).toEqual('https://someurl');
     });
   });
@@ -71,7 +70,7 @@ describe('genUrl()', () => {
     test('genUrl', () => {
       const test = genUrl(
         { siteUrl: 'someUrl', pathPrefix: 'somePath-Prefix' },
-        { pathName: 'some-Path-Name' }
+        'some-Path-Name'
       );
       expect(test).toEqual('http://someurl/somepath-prefix/some-path-name');
     });
@@ -81,7 +80,7 @@ describe('genUrl()', () => {
           siteUrl: 'http://someUrl',
           pathPrefix: '/somePath-Prefix'
         },
-        { pathName: '/some-Path-Name' }
+        '/some-Path-Name'
       );
       expect(test).toEqual('http://someurl/somepath-prefix/some-path-name');
     });
@@ -91,7 +90,7 @@ describe('genUrl()', () => {
           siteUrl: 'https://someUrl',
           pathPrefix: '/some/Path-Prefix'
         },
-        { pathName: '/some-Path-Name/' }
+        '/some-Path-Name/'
       );
       expect(test).toEqual('https://someurl/some/path-prefix/some-path-name');
     });
@@ -101,7 +100,7 @@ describe('genUrl()', () => {
           siteUrl: 'https://someUrl',
           pathPrefix: 'some/Path-Prefix/'
         },
-        { pathName: '/some/Path-Name' }
+        '/some/Path-Name'
       );
       expect(test).toEqual('https://someurl/some/path-prefix/some/path-name');
     });
@@ -111,7 +110,7 @@ describe('genUrl()', () => {
           siteUrl: 'https://someUrl',
           pathPrefix: 'some/Path-Prefix/'
         },
-        { pathName: 'some Path Name' }
+        'some Path Name'
       );
       expect(test).toEqual('https://someurl/some/path-prefix/some-path-name');
     });
