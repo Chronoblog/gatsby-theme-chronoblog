@@ -36,14 +36,13 @@ exports.onCreateNode = ({ node, actions, getNode }, opts = {}) => {
   });
 };
 
-// TODO delete previous and next
 /**
  * @param {number} indexForFun
  * @param {number} previousIndex
  * @param {string} name
  * @returns {string}
  */
-function previousFun(indexForFun, previousIndex, name) {
+const previousFun = (indexForFun, previousIndex, name) => {
   if (indexForFun > 0) {
     if (previousIndex === 1) {
       return path.join('/', name);
@@ -51,7 +50,16 @@ function previousFun(indexForFun, previousIndex, name) {
     return path.join('/', name, `${previousIndex}`);
   }
   return '';
-}
+};
+
+/**
+ * @param {number} indexForFun
+ * @param {number} nextIndex
+ * @param {string} name
+ * @returns {string}
+ */
+const nextFun = (indexForFun, nextIndex, name) =>
+  nextIndex <= indexForFun ? path.join('/', name, `${nextIndex}`) : '';
 
 exports.createPages = async ({ graphql, actions }, opts = {}) => {
   const { name = '', pageSize = 12 } = opts;
@@ -97,7 +105,7 @@ exports.createPages = async ({ graphql, actions }, opts = {}) => {
     });
   });
 
-  // pagination
+  // Pagination
   const filtered = await graphql(`
     {
       allMdx(
@@ -140,8 +148,7 @@ exports.createPages = async ({ graphql, actions }, opts = {}) => {
     const nextIndex = i + 2;
 
     const previous = previousFun(i, previousIndex, name);
-    const next =
-      nextIndex <= length ? path.join('/', name, `${nextIndex}`) : '';
+    const next = nextFun(length, nextIndex, name);
 
     actions.createPage({
       path: i === 0 ? `/${name}` : path.join('/', name, `${i + 1}`),

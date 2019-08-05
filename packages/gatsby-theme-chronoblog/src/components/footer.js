@@ -1,5 +1,9 @@
 /** @jsx jsx */
+import { MDXProvider } from '@mdx-js/react';
 import { jsx } from 'theme-ui';
+
+// @ts-ignore
+import Content from '../siteFooter.mdx';
 
 export default () => (
   <footer>
@@ -11,7 +15,9 @@ export default () => (
         py: 3
       }}
     >
-      © 2019
+      <MDXProvider>
+        <Content />
+      </MDXProvider>
     </div>
   </footer>
 );

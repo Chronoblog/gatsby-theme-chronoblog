@@ -30,7 +30,10 @@ npm i gatsby-theme-chronoblog
 - simple shadow for site footer
 - simple shadow for post footer
 - component `contentMap` for MDX, with all Posts and Links and Pages of the site (in url links form) - by tags or/and dates. Examples: https://ricostacruz.com/til/ (by tags), https://tomcritchlow.com/writing/ (by years).
-- image `cover` option for posts and links
-- `coverType` option for posts and different defaults for links and posts
+- image `image` option for posts and links
+- `imageType` option for posts and different defaults for links and posts
 - limit of symbols in post before cut (`readMore`) - options
-- `<LinkCard>` component for MDX - work as link, but looks as card and have title, cover-image and description. This is for some important and special links (books, big projects etc.)
+- `<LinkCard>` component for MDX - work as link, but looks as card and have title, image and description. This is for some important and special links (books, big projects etc.)
+- every `card/preview` need to have `tags`, and feed should be to have `tags` list with hove many `card/preview` have this tags (list must to be automatic)
+- auto `canonnical` main link in link `<link rel=canonnical" href"">`
+- years and dates like http://sidebar.io ?

@@ -3,13 +3,19 @@ import { graphql, useStaticQuery } from 'gatsby';
 /**
  * @typedef {object} SiteMetadata
  * @property {string=} title
- * @property {string=} navTitle
  * @property {string=} description
+ * @property {string=} image
  * @property {string=} siteUrl
  * @property {string=} pathPrefix
  * @property {string=} language
  * @property {string=} author
  * @property {string=} twitter
+ */
+
+/**
+ * @typedef {object} SiteData
+ * @property {object} site
+ * @property {SiteMetadata} site.siteMetadata
  */
 
 /**
@@ -22,6 +28,7 @@ const useSiteMetadata = () => {
         siteMetadata {
           title
           description
+          image
           siteUrl
           pathPrefix
           language
@@ -31,6 +38,9 @@ const useSiteMetadata = () => {
       }
     }
   `;
+  /** @constant
+    @type {SiteData}
+   */
   const data = useStaticQuery(seoQuery);
   return data.site.siteMetadata;
 };

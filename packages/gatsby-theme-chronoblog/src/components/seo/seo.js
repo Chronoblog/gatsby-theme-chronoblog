@@ -56,6 +56,19 @@ const genDescription = (siteMeta, propsDescription = '') => {
   return '';
 };
 
+/**
+ *
+ * @param {object} siteMeta
+ * @param {string=} siteMeta.image
+ * @param {string} propsImage
+ * @returns {string}
+ */
+const genImage = (siteMeta, propsImage = '') => {
+  if (propsImage !== '') return propsImage;
+  if (siteMeta && siteMeta.image) return siteMeta.image;
+  return '';
+};
+
 // export for tests
 export { genTitle, genUrl };
 
@@ -64,20 +77,27 @@ export { genTitle, genUrl };
  * @property {string=} title
  * @property {string=} description
  * @property {string=} pathName
+ * @property {string=} image
  * @property {React.ReactNode=} children
  */
 
 /**
  * @param {Props=} props
  */
-const SEO = ({ title = '', description = '', pathName = '', children }) => {
+const SEO = ({
+  title = '',
+  description = '',
+  pathName = '',
+  image = '',
+  children
+}) => {
   const siteMeta = useSiteMetadata();
 
   const metaTitle = genTitle(siteMeta, title);
   const metaDescription = genDescription(siteMeta, description);
   const metaUrl = genUrl(siteMeta, pathName);
   const language = siteMeta.language || '';
-  // const metaImage
+  const metaImage = genImage(siteMeta, image);
   const twitter = siteMeta.twitter || '';
   // const author = siteMeta.author || twitter;
 
@@ -87,7 +107,7 @@ const SEO = ({ title = '', description = '', pathName = '', children }) => {
       <html lang={language} />
       <title>{metaTitle}</title>
       <meta name="description" content={metaDescription} />
-      {/* <meta name="image" content={metaImage} /> */}
+      <meta name="image" content={metaImage} />
 
       {/* Schema.org */}
 
@@ -95,8 +115,8 @@ const SEO = ({ title = '', description = '', pathName = '', children }) => {
       <meta property="og:title" content={metaTitle} />
       <meta property="og:url" content={metaUrl} />
       <meta property="og:description" content={metaDescription} />
-      {/* <meta property="og:image" content={metaImage} /> */}
-      {/* <meta property="og:image:alt" content={metaDescription} /> */}
+      <meta property="og:image" content={metaImage} />
+      <meta property="og:image:alt" content={metaTitle} />
       <meta property="og:type" content="website" />
 
       {/* Twitter */}
@@ -105,7 +125,7 @@ const SEO = ({ title = '', description = '', pathName = '', children }) => {
       <meta name="twitter:description" content={metaDescription} />
       <meta name="twitter:creator" content={twitter} />
       <meta name="twitter:url" content={metaUrl} />
-      {/* <meta name="twitter:image" content={metaImage} /> */}
+      <meta name="twitter:image" content={metaImage} />
       <meta name="twitter:image:alt" content={metaTitle} />
 
       {/* icons */}

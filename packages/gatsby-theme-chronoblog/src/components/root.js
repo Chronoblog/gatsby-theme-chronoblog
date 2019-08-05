@@ -3,7 +3,7 @@ import { jsx, Layout } from 'theme-ui';
 
 /**
  *
- * @param {any} props spread props
+ * @param {*} props spread props
  */
 const Root = (props) => (
   <Layout

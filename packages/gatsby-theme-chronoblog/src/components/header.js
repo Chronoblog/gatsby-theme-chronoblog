@@ -1,19 +1,15 @@
 /** @jsx jsx */
-import { Link } from 'gatsby';
-import { jsx, Styled, useColorMode } from 'theme-ui';
+import { MDXProvider } from '@mdx-js/react';
+import { jsx } from 'theme-ui';
 
-import Button from './button';
-
-const modes = ['light', 'dark'];
+// import { graphql } from 'gatsby';
+// import { MDXRenderer } from "gatsby-plugin-mdx"
+import useSiteMetadata from '../hooks/use-site-metadata';
+// @ts-ignore
+import Content from '../siteHeader.mdx';
 
 export default () => {
-  const [mode, setMode] = useColorMode();
-
-  const cycle = () => {
-    const i = (modes.indexOf(mode) + 1) % modes.length;
-    setMode(modes[i]);
-  };
-
+  const siteMeta = useSiteMetadata();
   return (
     <header sx={{ variant: 'layout.header' }}>
       <div
@@ -26,29 +22,9 @@ export default () => {
           py: 2
         }}
       >
-        <Styled.h3
-          sx={{
-            fontSize: 2,
-            m: 0
-          }}
-        >
-          <Styled.a
-            as={Link}
-            to="/"
-            sx={{
-              color: 'inherit',
-              textDecoration: 'none',
-              fontWeight: 'bold',
-              '&:hover': {
-                color: 'primary'
-              }
-            }}
-          >
-            Chronoblog Theme
-          </Styled.a>
-        </Styled.h3>
-        <div sx={{ mx: 'auto' }} />
-        <Button onClick={cycle}>{mode}</Button>
+        <MDXProvider>
+          <Content site={siteMeta} />
+        </MDXProvider>
       </div>
     </header>
   );

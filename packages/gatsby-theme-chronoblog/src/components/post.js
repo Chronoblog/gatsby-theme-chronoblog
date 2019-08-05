@@ -17,10 +17,10 @@ import SEO from './seo';
  * @param {boolean} props.draft
  * @param {any} props.children
  */
-const Post = (props) => {
+const Post = ({ title, excerpt, date, draft, children }) => {
   return (
     <Root>
-      <SEO title={props.title} description={props.excerpt} />
+      <SEO title={title} description={excerpt} />
       <Header />
       <Main>
         <div
@@ -30,17 +30,17 @@ const Post = (props) => {
             px: 3
           }}
         >
-          <Styled.h1>{props.title}</Styled.h1>
+          <Styled.h1>{title}</Styled.h1>
           <Styled.p
             sx={{
               fontSize: [0, 0],
               fontWeight: 'bold'
             }}
           >
-            {props.date}
+            {date}
           </Styled.p>
-          {props.draft}
-          {props.children}
+          {draft}
+          {children}
         </div>
       </Main>
       <Footer />
