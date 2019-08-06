@@ -26,18 +26,18 @@ const genTitle = (siteMeta, propsTitle = '') => {
  * @param {object} siteMeta
  * @param {string=} siteMeta.siteUrl
  * @param {string=} siteMeta.pathPrefix
- * @param {string} propsPathName
+ * @param {string} propsSlug
  * @returns {string}
  */
-const genUrl = (siteMeta, propsPathName = '') => {
+const genUrl = (siteMeta, propsSlug = '') => {
   const metaUrl = siteMeta.siteUrl ? siteMeta.siteUrl : '';
   // pathPrefix - like this /gatsby-theme-chronoblog
   const pathPrefix = siteMeta.pathPrefix || '/';
-  const pathName = propsPathName.replace(/\s/g, '-');
+  const slug = propsSlug.replace(/\s/g, '-');
   /** @constant
     @type {string}
    */
-  let finalUrl = urlJoin(metaUrl, pathPrefix, pathName);
+  let finalUrl = urlJoin(metaUrl, pathPrefix, slug);
   finalUrl = normalizeUrl(finalUrl);
   finalUrl = finalUrl.toLowerCase();
   return finalUrl;
@@ -76,7 +76,7 @@ export { genTitle, genUrl };
  * @typedef {object} Props
  * @property {string=} title
  * @property {string=} description
- * @property {string=} pathName
+ * @property {string=} slug
  * @property {string=} image
  * @property {React.ReactNode=} children
  */
@@ -87,7 +87,7 @@ export { genTitle, genUrl };
 const SEO = ({
   title = '',
   description = '',
-  pathName = '',
+  slug = '',
   image = '',
   children
 }) => {
@@ -95,7 +95,7 @@ const SEO = ({
 
   const metaTitle = genTitle(siteMeta, title);
   const metaDescription = genDescription(siteMeta, description);
-  const metaUrl = genUrl(siteMeta, pathName);
+  const metaUrl = genUrl(siteMeta, slug);
   const language = siteMeta.language || '';
   const metaImage = genImage(siteMeta, image);
   const twitter = siteMeta.twitter || '';

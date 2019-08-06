@@ -2,14 +2,13 @@
 import { MDXProvider } from '@mdx-js/react';
 import { jsx } from 'theme-ui';
 
-// import { graphql } from 'gatsby';
-// import { MDXRenderer } from "gatsby-plugin-mdx"
 import useSiteMetadata from '../hooks/use-site-metadata';
 // @ts-ignore
 import Content from '../siteHeader.mdx';
+import SwitchButton from './switch-button';
 
 export default () => {
-  const siteMeta = useSiteMetadata();
+  const siteMetadata = useSiteMetadata();
   return (
     <header sx={{ variant: 'layout.header' }}>
       <div
@@ -23,8 +22,10 @@ export default () => {
         }}
       >
         <MDXProvider>
-          <Content site={siteMeta} />
+          <Content siteMetadata={siteMetadata} />
         </MDXProvider>
+        <div sx={{ mx: 'auto' }} />
+        <SwitchButton />
       </div>
     </header>
   );

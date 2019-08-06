@@ -1,9 +1,11 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 
+import useFeed from '../../hooks/use-feed';
 import Card from './card';
 
-export default ({ posts }) => {
+export default () => {
+  const feedItems = useFeed();
   return (
     <ul
       sx={{
@@ -12,9 +14,9 @@ export default ({ posts }) => {
         margin: 0
       }}
     >
-      {posts.map((post) => (
-        <li key={post.id}>
-          <Card post={post} />
+      {feedItems.map((item) => (
+        <li key={item.id}>
+          <Card item={item} />
         </li>
       ))}
     </ul>

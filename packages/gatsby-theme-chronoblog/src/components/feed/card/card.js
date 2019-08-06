@@ -2,10 +2,11 @@
 import { Link } from 'gatsby';
 import { jsx, Styled } from 'theme-ui';
 
-export default ({ post }) => {
+export default ({ item }) => {
   return (
     <Link
-      to={post.slug}
+      // to={item.frontmatter.slug}
+      to="some"
       sx={{
         display: 'block',
         textDecoration: 'none',
@@ -17,7 +18,7 @@ export default ({ post }) => {
           fontSize: [5, 6]
         }}
       >
-        {post.title}
+        {item.frontmatter.title}
       </Styled.h2>
       <Styled.p
         sx={{
@@ -26,9 +27,9 @@ export default ({ post }) => {
           fontWeight: 'bold'
         }}
       >
-        {post.date}
+        {item.frontmatter.date}
       </Styled.p>
-      <Styled.p>{post.excerpt}</Styled.p>
+      {/* <Styled.p>{item.excerpt}</Styled.p> */}
     </Link>
   );
 };

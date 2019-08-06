@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 
-const heading = (Tag) => ({ id, ...props }) =>
+const heading = (Tag) => ({ id, children, ...props }) =>
   !id ? (
     <Tag {...props} />
   ) : (
@@ -13,7 +13,7 @@ const heading = (Tag) => ({ id, ...props }) =>
           textDecoration: 'none'
         }}
       >
-        {props.children}
+        {children}
       </a>
     </Tag>
   );

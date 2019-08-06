@@ -29,6 +29,7 @@
     "gatsby-plugin-react-helmet": "^3.1.2",
     "gatsby-plugin-theme-ui": "^0.2.18",
     "gatsby-source-filesystem": "^2.1.6",
+    "gatsby-plugin-page-creator": "^2.1.5",
     "mkdirp": "^0.5.1",
     "normalize-url": "^4.3.0",
     "react-helmet": "^5.2.1",

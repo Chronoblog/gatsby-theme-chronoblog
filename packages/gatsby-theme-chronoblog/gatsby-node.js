@@ -13,7 +13,7 @@ exports.onPreBootstrap = ({ store }) => {
   const dirs = [
     path.join(program.directory, `feed/posts`),
     path.join(program.directory, `feed/links`),
-    path.join(program.directory, `pages`)
+    path.join(program.directory, `src/pages`)
   ];
 
   dirs.forEach((dir) => {
@@ -24,11 +24,10 @@ exports.onPreBootstrap = ({ store }) => {
   });
 };
 
-exports.onCreateNode = ({ node, actions, getNode }, opts = {}) => {
-  const { name = '' } = opts;
+exports.onCreateNode = ({ node, actions, getNode }) => {
   if (node.internal.type !== 'Mdx') return;
 
-  const value = path.join('/', name, createFilePath({ node, getNode }));
+  const value = path.join('/', createFilePath({ node, getNode }));
   actions.createNodeField({
     name: 'slug',
     node,
@@ -36,34 +35,7 @@ exports.onCreateNode = ({ node, actions, getNode }, opts = {}) => {
   });
 };
 
-/**
- * @param {number} indexForFun
- * @param {number} previousIndex
- * @param {string} name
- * @returns {string}
- */
-const previousFun = (indexForFun, previousIndex, name) => {
-  if (indexForFun > 0) {
-    if (previousIndex === 1) {
-      return path.join('/', name);
-    }
-    return path.join('/', name, `${previousIndex}`);
-  }
-  return '';
-};
-
-/**
- * @param {number} indexForFun
- * @param {number} nextIndex
- * @param {string} name
- * @returns {string}
- */
-const nextFun = (indexForFun, nextIndex, name) =>
-  nextIndex <= indexForFun ? path.join('/', name, `${nextIndex}`) : '';
-
-exports.createPages = async ({ graphql, actions }, opts = {}) => {
-  const { name = '', pageSize = 12 } = opts;
-
+exports.createPages = async ({ graphql, actions }) => {
   const result = await graphql(`
     {
       allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
@@ -101,63 +73,6 @@ exports.createPages = async ({ graphql, actions }, opts = {}) => {
       component: require.resolve('./src/templates/post.js'),
       context: {
         id: post.id
-      }
-    });
-  });
-
-  // Pagination
-  const filtered = await graphql(`
-    {
-      allMdx(
-        sort: { fields: [frontmatter___date], order: DESC }
-        limit: 1000
-        filter: { frontmatter: { draft: { ne: true } } }
-      ) {
-        edges {
-          node {
-            id
-            fields {
-              slug
-            }
-            frontmatter {
-              date
-              draft
-            }
-            parent {
-              ... on File {
-                sourceInstanceName
-              }
-            }
-          }
-        }
-      }
-    }
-  `);
-  if (filtered.errors) {
-    console.log(filtered.errors);
-    return;
-  }
-  const index = filtered.data.allMdx.edges
-    .map((edge) => edge.node)
-    .filter((node) => node.parent.sourceInstanceName === 'posts');
-  const limit = pageSize;
-  const length = Math.ceil(index.length / limit);
-
-  Array.from({ length }).forEach((_, i) => {
-    const previousIndex = i;
-    const nextIndex = i + 2;
-
-    const previous = previousFun(i, previousIndex, name);
-    const next = nextFun(length, nextIndex, name);
-
-    actions.createPage({
-      path: i === 0 ? `/${name}` : path.join('/', name, `${i + 1}`),
-      component: require.resolve('./src/templates/index.js'),
-      context: {
-        previous,
-        next,
-        limit,
-        skip: i * limit
       }
     });
   });

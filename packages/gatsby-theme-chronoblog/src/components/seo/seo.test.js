@@ -66,7 +66,7 @@ describe('genUrl()', () => {
       expect(test).toEqual('https://someurl/some/path-prefix');
     });
   });
-  describe('with pathPrefix and props.pathName', () => {
+  describe('with pathPrefix and props.slug', () => {
     test('genUrl', () => {
       const test = genUrl(
         { siteUrl: 'someUrl', pathPrefix: 'somePath-Prefix' },
