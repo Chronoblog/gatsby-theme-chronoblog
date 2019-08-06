@@ -16,6 +16,19 @@ module.exports = () => {
     },
     plugins: [
       {
+        // for theme default pages
+        resolve: `gatsby-plugin-page-creator`,
+        options: {
+          path: path.join(__dirname, `src`, `pages`)
+        }
+      },
+      {
+        resolve: `gatsby-plugin-page-creator`,
+        options: {
+          path: path.resolve('pages')
+        }
+      },
+      {
         resolve: 'gatsby-plugin-mdx',
         options: {
           extensions: ['.mdx', '.md'],
@@ -43,16 +56,18 @@ module.exports = () => {
         }
       },
       {
+        // for theme default pages
         resolve: 'gatsby-source-filesystem',
         options: {
           name: 'pages',
-          path: path.resolve('src/pages')
+          path: path.join(__dirname, `src`, `pages`)
         }
       },
       {
-        resolve: `gatsby-plugin-page-creator`,
+        resolve: 'gatsby-source-filesystem',
         options: {
-          path: path.join(__dirname, `src`, `pages`)
+          name: 'pages',
+          path: path.resolve('pages')
         }
       }
     ]

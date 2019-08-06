@@ -80,7 +80,7 @@
     "react/prop-types": "off",
     "simple-import-sort/sort": "warn",
     "sonarjs/cognitive-complexity": "warn",
-    "sonarjs/no-duplicate-string": "warn",
+    "sonarjs/no-duplicate-string": ["warn", 7],
     "sonarjs/no-identical-functions": "warn",
     "sonarjs/prefer-immediate-return": "off",
     "sort-imports": "off",

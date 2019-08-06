@@ -13,7 +13,7 @@ exports.onPreBootstrap = ({ store }) => {
   const dirs = [
     path.join(program.directory, `feed/posts`),
     path.join(program.directory, `feed/links`),
-    path.join(program.directory, `src/pages`)
+    path.join(program.directory, `pages`)
   ];
 
   dirs.forEach((dir) => {
