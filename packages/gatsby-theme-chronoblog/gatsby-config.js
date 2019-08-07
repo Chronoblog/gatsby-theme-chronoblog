@@ -9,7 +9,6 @@ module.exports = () => {
       description: 'Gatsby Theme Chronoblog', // description for SEO and meta
       image: '/banner.jpg', // main image of the site for meta tags
       siteUrl: 'http://localhost:8000', // http://example.com
-      pathPrefix: '/', // prefixes for all links
       language: 'en',
       author: '', // for JSON-LD Person, example - 'Ivan Ganev'
       twitter: '' // for twitter cards, example - '@ganevru'

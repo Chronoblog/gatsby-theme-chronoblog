@@ -40,8 +40,11 @@ exports.onPreBootstrap = ({ store }) => {
 exports.onCreateNode = ({ node, actions, getNode }) => {
   if (node.internal.type !== 'Mdx') return;
 
+  const basePath = '/';
+
   const slugValueDefault = createFilePath({ node, getNode });
   let value = createSlug(node, slugValueDefault);
+  value = `/${basePath}/${value}`.replace(/\/\/+/g, `/`);
   value = value.toLowerCase();
   value = value.replace(/\s/g, '-');
   value = path.join('/', value);
@@ -64,6 +67,7 @@ exports.createPages = async ({ graphql, actions }) => {
               slug
             }
             frontmatter {
+              date
               draft
             }
             parent {
@@ -76,6 +80,7 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     }
   `);
+
   if (result.errors) {
     console.log(result.errors);
     return;
@@ -88,6 +93,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const posts = allMdx.filter(
     (node) => node.parent.sourceInstanceName === 'posts'
   );
+
   const links = allMdx.filter(
     (node) => node.parent.sourceInstanceName === 'links'
   );

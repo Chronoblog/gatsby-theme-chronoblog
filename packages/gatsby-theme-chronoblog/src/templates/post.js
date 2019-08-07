@@ -12,6 +12,9 @@ export const postQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
       }
+      fields {
+        slug
+      }
       body
     }
   }

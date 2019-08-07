@@ -16,6 +16,8 @@ import SEO from '../seo';
  * @property {object} data.mdx.frontmatter
  * @property {string} data.mdx.frontmatter.title
  * @property {string | Date} data.mdx.frontmatter.date
+ * @property {object} data.mdx.fields
+ * @property {string} data.mdx.fields.slug
  */
 
 /**
@@ -26,13 +28,14 @@ const Post = ({
     mdx: {
       id,
       body,
-      frontmatter: { title, date }
+      frontmatter: { title, date },
+      fields: { slug }
     }
   }
 }) => {
   return (
     <Layout>
-      <SEO />
+      <SEO title={title} slug={slug} />
       <Styled.h1>{title}</Styled.h1>
       <Styled.p
         sx={{

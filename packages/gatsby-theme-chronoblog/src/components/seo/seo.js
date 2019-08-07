@@ -25,19 +25,16 @@ const genTitle = (siteMeta, propsTitle = '') => {
  *
  * @param {object} siteMeta
  * @param {string=} siteMeta.siteUrl
- * @param {string=} siteMeta.pathPrefix
  * @param {string} propsSlug
  * @returns {string}
  */
 const genUrl = (siteMeta, propsSlug = '') => {
   const metaUrl = siteMeta.siteUrl ? siteMeta.siteUrl : '';
-  // pathPrefix - like this /gatsby-theme-chronoblog
-  const pathPrefix = siteMeta.pathPrefix || '/';
   const slug = propsSlug.replace(/\s/g, '-');
   /** @constant
     @type {string}
    */
-  let finalUrl = urlJoin(metaUrl, pathPrefix, slug);
+  let finalUrl = urlJoin(metaUrl, '/', slug);
   finalUrl = normalizeUrl(finalUrl);
   finalUrl = finalUrl.toLowerCase();
   return finalUrl;
