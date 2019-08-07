@@ -4,14 +4,13 @@ import Post from '../components/post';
 
 export default Post;
 
-export const pageQuery = graphql`
+export const postQuery = graphql`
   query($id: String!) {
     mdx(id: { eq: $id }) {
       id
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
-        draft
       }
       body
     }

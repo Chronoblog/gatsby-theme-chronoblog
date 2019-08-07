@@ -3,9 +3,22 @@ const { createFilePath } = require('gatsby-source-filesystem');
 const Debug = require('debug');
 const mkdirp = require('mkdirp');
 const fs = require('fs');
+// const _ = require('lodash');
 const pkg = require('./package.json');
 
 const debug = Debug(pkg.name);
+
+/**
+ *
+ * @param {object} node
+ * @param {string} slugValueDefault
+ * @returns {string}
+ */
+const createSlug = (node, slugValueDefault) => {
+  if (!node.frontmatter) return slugValueDefault;
+  if (node.frontmatter.slug) return node.frontmatter.slug;
+  return slugValueDefault;
+};
 
 exports.onPreBootstrap = ({ store }) => {
   const { program } = store.getState();
@@ -27,7 +40,15 @@ exports.onPreBootstrap = ({ store }) => {
 exports.onCreateNode = ({ node, actions, getNode }) => {
   if (node.internal.type !== 'Mdx') return;
 
-  const value = path.join('/', createFilePath({ node, getNode }));
+  // const fileNode = getNode(node.parent);
+  // const source = fileNode.sourceInstanceName;
+  // if (source !== 'posts') return;
+
+  const slugValueDefault = createFilePath({ node, getNode });
+  let value = createSlug(node, slugValueDefault);
+  value = value.toLowerCase();
+  value = path.join('/', value);
+
   actions.createNodeField({
     name: 'slug',
     node,
