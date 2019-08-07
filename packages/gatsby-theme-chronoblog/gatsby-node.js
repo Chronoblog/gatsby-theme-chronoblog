@@ -40,11 +40,8 @@ exports.onPreBootstrap = ({ store }) => {
 exports.onCreateNode = ({ node, actions, getNode }) => {
   if (node.internal.type !== 'Mdx') return;
 
-  const basePath = '/';
-
   const slugValueDefault = createFilePath({ node, getNode });
   let value = createSlug(node, slugValueDefault);
-  value = `/${basePath}/${value}`.replace(/\/\/+/g, `/`);
   value = value.toLowerCase();
   value = value.replace(/\s/g, '-');
   value = path.join('/', value);
@@ -59,7 +56,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 exports.createPages = async ({ graphql, actions }) => {
   const result = await graphql(`
     {
-      allMdx {
+      allMdx(sort: { order: DESC, fields: frontmatter___date }) {
         edges {
           node {
             id
@@ -67,9 +64,11 @@ exports.createPages = async ({ graphql, actions }) => {
               slug
             }
             frontmatter {
+              title
               date
               draft
             }
+            body
             parent {
               ... on File {
                 sourceInstanceName
@@ -86,17 +85,22 @@ exports.createPages = async ({ graphql, actions }) => {
     return;
   }
 
-  let allMdx = result.data.allMdx.edges;
-  allMdx = allMdx.map((edge) => edge.node);
-  allMdx = allMdx.filter((node) => node.frontmatter && !node.frontmatter.draft);
+  const allMdx = result.data.allMdx.edges;
+  let allMdxNodes = allMdx.map((edge) => edge.node);
+  allMdxNodes = allMdxNodes.filter((n) => !n.frontmatter.draft);
 
-  const posts = allMdx.filter(
-    (node) => node.parent.sourceInstanceName === 'posts'
+  let posts = allMdxNodes.filter(
+    (n) => n.parent.sourceInstanceName === 'posts'
   );
+  posts = posts.filter((n) => n.frontmatter.title);
+  posts = posts.filter((n) => n.frontmatter.date);
 
-  const links = allMdx.filter(
-    (node) => node.parent.sourceInstanceName === 'links'
+  let links = allMdxNodes.filter(
+    (n) => n.parent.sourceInstanceName === 'links'
   );
+  links = links.filter((n) => n.frontmatter.title);
+  links = links.filter((n) => n.frontmatter.date);
+  links = links.filter((n) => n.frontmatter.link);
 
   if (posts.length > 0) {
     posts.forEach((post) => {
