@@ -6,6 +6,9 @@ const useFeed = () => {
       allMdx {
         nodes {
           id
+          fields {
+            slug
+          }
           frontmatter {
             title
             date

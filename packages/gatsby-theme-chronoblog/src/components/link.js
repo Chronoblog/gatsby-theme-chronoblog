@@ -7,12 +7,12 @@ import SEO from './seo';
 
 /** @typedef { import('react') } React */
 
-const Post = ({
+const Link = ({
   data: {
     mdx: {
       id,
       body,
-      frontmatter: { title, date, draft }
+      frontmatter: { title, date }
     }
   }
 }) => {
@@ -36,10 +36,9 @@ const Post = ({
       >
         {date}
       </Styled.p>
-      {draft}
       <MDXRenderer>{body}</MDXRenderer>
     </Layout>
   );
 };
 
-export default Post;
+export default Link;

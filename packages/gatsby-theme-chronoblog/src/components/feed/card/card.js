@@ -5,8 +5,7 @@ import { jsx, Styled } from 'theme-ui';
 export default ({ item }) => {
   return (
     <Link
-      // to={item.frontmatter.slug}
-      to="some"
+      to={item.fields.slug}
       sx={{
         display: 'block',
         textDecoration: 'none',

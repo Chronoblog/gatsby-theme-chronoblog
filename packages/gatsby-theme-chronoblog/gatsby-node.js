@@ -40,13 +40,10 @@ exports.onPreBootstrap = ({ store }) => {
 exports.onCreateNode = ({ node, actions, getNode }) => {
   if (node.internal.type !== 'Mdx') return;
 
-  // const fileNode = getNode(node.parent);
-  // const source = fileNode.sourceInstanceName;
-  // if (source !== 'posts') return;
-
   const slugValueDefault = createFilePath({ node, getNode });
   let value = createSlug(node, slugValueDefault);
   value = value.toLowerCase();
+  value = value.replace(/\s/g, '-');
   value = path.join('/', value);
 
   actions.createNodeField({
@@ -59,7 +56,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 exports.createPages = async ({ graphql, actions }) => {
   const result = await graphql(`
     {
-      allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
+      allMdx {
         edges {
           node {
             id
@@ -67,7 +64,6 @@ exports.createPages = async ({ graphql, actions }) => {
               slug
             }
             frontmatter {
-              date
               draft
             }
             parent {
@@ -84,17 +80,39 @@ exports.createPages = async ({ graphql, actions }) => {
     console.log(result.errors);
     return;
   }
-  const posts = result.data.allMdx.edges
-    .map((edge) => edge.node)
-    .filter((node) => node.parent.sourceInstanceName === 'posts');
 
-  posts.forEach((post) => {
-    actions.createPage({
-      path: post.fields.slug,
-      component: require.resolve('./src/templates/post.js'),
-      context: {
-        id: post.id
-      }
+  let allMdx = result.data.allMdx.edges;
+  allMdx = allMdx.map((edge) => edge.node);
+  allMdx = allMdx.filter((node) => node.frontmatter && !node.frontmatter.draft);
+
+  const posts = allMdx.filter(
+    (node) => node.parent.sourceInstanceName === 'posts'
+  );
+  const links = allMdx.filter(
+    (node) => node.parent.sourceInstanceName === 'links'
+  );
+
+  if (posts.length > 0) {
+    posts.forEach((post) => {
+      actions.createPage({
+        path: post.fields.slug,
+        component: require.resolve('./src/templates/post.js'),
+        context: {
+          id: post.id
+        }
+      });
     });
-  });
+  }
+
+  if (links.length > 0) {
+    links.forEach((link) => {
+      actions.createPage({
+        path: link.fields.slug,
+        component: require.resolve('./src/templates/link.js'),
+        context: {
+          id: link.id
+        }
+      });
+    });
+  }
 };
