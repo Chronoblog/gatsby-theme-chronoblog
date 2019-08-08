@@ -3,7 +3,7 @@ import { MDXProvider } from '@mdx-js/react';
 import { jsx } from 'theme-ui';
 
 // @ts-ignore
-import Content from '../siteFooter.mdx';
+import Content from '../site-footer.mdx';
 
 export default () => (
   <footer>

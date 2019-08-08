@@ -10,8 +10,8 @@ module.exports = () => {
       image: '/banner.jpg', // main image of the site for meta tags
       siteUrl: 'http://localhost:8000', // http://example.com
       language: 'en',
-      author: '', // for JSON-LD Person, example - 'Ivan Ganev'
-      twitter: '' // for twitter cards, example - '@ganevru'
+      author: '', // for example - 'Ivan Ganev'
+      twitter: '' // for twitter cards meta data, example - '@ganevru'
     },
     plugins: [
       {

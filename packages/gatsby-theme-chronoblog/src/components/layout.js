@@ -1,10 +1,15 @@
 /** @jsx jsx */
+import { MDXProvider } from '@mdx-js/react';
 import { jsx, Layout, Main } from 'theme-ui';
 
 import Feed from './feed';
 import Footer from './footer';
 import Header from './header';
+import HeaderTitle from './header-title';
 import SEO from './seo';
+import SwitchButton from './switch-button';
+
+const components = { Feed, SwitchButton, HeaderTitle };
 
 /**
  *
@@ -20,19 +25,20 @@ export default ({ children, ...props }) => (
     }}
   >
     <SEO />
-    <Header />
-    <Main>
-      <div
-        sx={{
-          maxWidth: 'container',
-          mx: 'auto',
-          px: 3
-        }}
-      >
-        <article>{children}</article>
-        <Feed />
-      </div>
-    </Main>
-    <Footer />
+    <MDXProvider components={components}>
+      <Header />
+      <Main>
+        <div
+          sx={{
+            maxWidth: 'container',
+            mx: 'auto',
+            px: 3
+          }}
+        >
+          {children}
+        </div>
+      </Main>
+      <Footer />
+    </MDXProvider>
   </Layout>
 );

@@ -74,7 +74,7 @@
     "react/jsx-filename-extension": [
       "warn",
       {
-        "extensions": [".js", ".jsx", ".tsx"]
+        "extensions": [".js",".jsx", ".tsx", "md", "mdx"]
       }
     ],
     "react/prop-types": "off",
@@ -90,7 +90,7 @@
   "settings": {
     "import/resolver": {
       "node": {
-        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+        "extensions": [".js", ".jsx", ".ts", ".tsx", "md", "mdx"]
       }
     },
     "react": {

@@ -1,8 +1,8 @@
 import { graphql } from 'gatsby';
 
-import Post from '../components/post';
+import { PagePost } from '../components/page';
 
-export default Post;
+export default PagePost;
 
 export const postQuery = graphql`
   query($id: String!) {

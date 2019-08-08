@@ -2,6 +2,7 @@
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { jsx, Styled } from 'theme-ui';
 
+import Feed from './feed';
 import Layout from './layout';
 import SEO from './seo';
 
@@ -23,7 +24,7 @@ import SEO from './seo';
 /**
  * @param {Props} props
  */
-export default ({
+const Page = ({
   data: {
     mdx: {
       id,
@@ -53,7 +54,20 @@ export default ({
       >
         {date}
       </Styled.p>
-      <MDXRenderer>{body}</MDXRenderer>
+      <article>
+        <MDXRenderer>{body}</MDXRenderer>
+      </article>
+      <Feed reject={{ id }} />
     </Layout>
   );
 };
+
+const PagePost = ({ data }) => {
+  return <Page data={data} />;
+};
+
+const PageLink = ({ data }) => {
+  return <Page data={data} />;
+};
+
+export { PagePost, PageLink };

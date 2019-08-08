@@ -3,7 +3,7 @@ import { jsx } from 'theme-ui';
 
 import useSiteMetadata from '../hooks/use-site-metadata';
 // @ts-ignore
-import SiteHeader from '../siteHeader.mdx';
+import SiteHeader from '../site-header.mdx';
 
 export default () => {
   const siteMetadata = useSiteMetadata();

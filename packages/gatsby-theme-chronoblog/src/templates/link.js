@@ -1,8 +1,8 @@
 import { graphql } from 'gatsby';
 
-import Link from '../components/link';
+import { PageLink } from '../components/page';
 
-export default Link;
+export default PageLink;
 
 export const linkQuery = graphql`
   query($id: String!) {
