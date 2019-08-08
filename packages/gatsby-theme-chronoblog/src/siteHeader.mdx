@@ -1,3 +1,9 @@
-<a href={props.siteMetadata.siteUrl} title={props.siteMetadata.title}>
+import SwitchButton from './components/switch-button';
+import { Link } from 'gatsby';
+
+<Link to="/" style="color: inherit; text-decoration: none;">
   <h3>{props.siteMetadata.title}</h3>
-</a>
+</Link>
+
+<div style="margin-left: auto; margin-right: auto;"></div>
+<SwitchButton></SwitchButton>

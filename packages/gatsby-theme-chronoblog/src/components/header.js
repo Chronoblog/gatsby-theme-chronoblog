@@ -1,11 +1,9 @@
 /** @jsx jsx */
-import { MDXProvider } from '@mdx-js/react';
 import { jsx } from 'theme-ui';
 
 import useSiteMetadata from '../hooks/use-site-metadata';
 // @ts-ignore
-import Content from '../siteHeader.mdx';
-import SwitchButton from './switch-button';
+import SiteHeader from '../siteHeader.mdx';
 
 export default () => {
   const siteMetadata = useSiteMetadata();
@@ -21,11 +19,7 @@ export default () => {
           py: 2
         }}
       >
-        <MDXProvider>
-          <Content siteMetadata={siteMetadata} />
-        </MDXProvider>
-        <div sx={{ mx: 'auto' }} />
-        <SwitchButton />
+        <SiteHeader siteMetadata={siteMetadata} />
       </div>
     </header>
   );

@@ -1,10 +1,10 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 
-const heading = (Tag) => ({ id, children, ...props }) =>
-  !id ? (
-    <Tag {...props} />
-  ) : (
+const heading = (Tag) => ({ id, children, ...props }) => {
+  if (!id) return <Tag {...props}>{children}</Tag>;
+
+  return (
     <Tag id={id} {...props}>
       <a
         href={`#${id}`}
@@ -17,6 +17,7 @@ const heading = (Tag) => ({ id, children, ...props }) =>
       </a>
     </Tag>
   );
+};
 
 export default {
   h2: heading('h2'),
