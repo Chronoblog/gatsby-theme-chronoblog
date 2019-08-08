@@ -2,8 +2,8 @@
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { jsx, Styled } from 'theme-ui';
 
-import Layout from '../layout';
-import SEO from '../seo';
+import Layout from './layout';
+import SEO from './seo';
 
 /** @typedef { import('react') } React */
 
@@ -23,7 +23,7 @@ import SEO from '../seo';
 /**
  * @param {Props} props
  */
-const Link = ({
+export default ({
   data: {
     mdx: {
       id,
@@ -57,5 +57,3 @@ const Link = ({
     </Layout>
   );
 };
-
-export default Link;

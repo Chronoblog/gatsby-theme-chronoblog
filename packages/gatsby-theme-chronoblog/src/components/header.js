@@ -16,7 +16,7 @@ export default () => {
           maxWidth: 'container',
           mx: 'auto',
           px: 3,
-          py: 2
+          py: 3
         }}
       >
         <SiteHeader siteMetadata={siteMetadata} />

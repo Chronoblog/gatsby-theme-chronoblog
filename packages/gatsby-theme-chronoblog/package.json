@@ -2,13 +2,7 @@
   "name": "gatsby-theme-chronoblog",
   "version": "0.0.1",
   "description": "gatsby-theme-chronoblog",
-  "keywords": [
-    "blog",
-    "gatsby",
-    "gatsby-plugin",
-    "gatsby-theme",
-    "react"
-  ],
+  "keywords": ["blog", "gatsby", "gatsby-plugin", "gatsby-theme", "react"],
   "homepage": "https://github.com/Ganevru/gatsby-theme-chronoblog",
   "repository": {
     "type": "git",
@@ -30,7 +24,7 @@
     "@mdx-js/react": "^1.0.27",
     "@types/lodash": "^4.14.136",
     "debug": "^4.1.1",
-    "gatsby": "^2.13.41",
+    "gatsby": "^2.13.52",
     "gatsby-plugin-emotion": "^4.1.2",
     "gatsby-plugin-mdx": "^1.0.17",
     "gatsby-plugin-page-creator": "^2.1.5",
@@ -47,12 +41,12 @@
     "url-join": "^4.0.1"
   },
   "devDependencies": {
-    "gatsby": "^2.13.41",
+    "gatsby": "^2.13.52",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   },
   "peerDependencies": {
-    "gatsby": "^2.13.41",
+    "gatsby": "^2.13.52",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   },

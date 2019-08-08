@@ -9,15 +9,14 @@ export default (props) => (
       appearance: 'none',
       fontFamily: 'inherit',
       fontWeight: 'bold',
-      fontSize: 0,
+      fontSize: 32,
       textTransform: 'uppercase',
-      letterSpacing: '0.1em',
-      p: 12,
+      p: 0,
       color: 'inherit',
-      bg: 'muted',
+      bg: 'background',
       border: 0,
       '&:focus': {
-        outline: '2px solid'
+        outline: '0px solid'
       }
     }}
   />

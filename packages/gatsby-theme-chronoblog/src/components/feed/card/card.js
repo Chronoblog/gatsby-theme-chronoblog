@@ -4,31 +4,33 @@ import { jsx, Styled } from 'theme-ui';
 
 export default ({ item }) => {
   return (
-    <Link
-      to={item.fields.slug}
-      sx={{
-        display: 'block',
-        textDecoration: 'none',
-        color: 'inherit'
-      }}
-    >
-      <Styled.h2
+    <article>
+      <Link
+        to={item.fields.slug}
         sx={{
-          fontSize: [5, 6]
+          display: 'block',
+          textDecoration: 'none',
+          color: 'inherit'
         }}
       >
-        {item.frontmatter.title}
-      </Styled.h2>
-      <Styled.p
-        sx={{
-          mb: 4,
-          fontSize: [0, 0],
-          fontWeight: 'bold'
-        }}
-      >
-        {item.frontmatter.date}
-      </Styled.p>
-      {/* <Styled.p>{item.excerpt}</Styled.p> */}
-    </Link>
+        <Styled.h2
+          sx={{
+            fontSize: [5, 6]
+          }}
+        >
+          {item.frontmatter.title}
+        </Styled.h2>
+        <Styled.p
+          sx={{
+            mb: 4,
+            fontSize: [0, 0],
+            fontWeight: 'bold'
+          }}
+        >
+          {item.frontmatter.date}
+        </Styled.p>
+        {/* <Styled.p>{item.excerpt}</Styled.p> */}
+      </Link>
+    </article>
   );
 };

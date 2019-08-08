@@ -3,15 +3,16 @@ import { jsx, useColorMode } from 'theme-ui';
 
 import Button from './button';
 
-const modes = ['light', 'dark'];
-
 export default () => {
   const [mode, setMode] = useColorMode();
 
   const cycle = () => {
-    const i = (modes.indexOf(mode) + 1) % modes.length;
-    setMode(modes[i]);
+    const next = mode === 'dark' ? 'light' : 'dark';
+    setMode(next);
   };
 
-  return <Button onClick={cycle}>{mode}</Button>;
+  const makeLabel = (modeParam) => (modeParam === 'dark' ? '🌙' : '☀️');
+  const label = makeLabel(mode);
+
+  return <Button onClick={cycle}>{label}</Button>;
 };

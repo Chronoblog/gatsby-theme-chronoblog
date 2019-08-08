@@ -29,7 +29,7 @@ export default ({ children, ...props }) => (
           px: 3
         }}
       >
-        {children}
+        <article>{children}</article>
         <Feed />
       </div>
     </Main>

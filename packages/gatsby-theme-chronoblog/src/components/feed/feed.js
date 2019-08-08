@@ -7,18 +7,20 @@ import Card from './card';
 export default () => {
   const feedItems = useFeed();
   return (
-    <ul
-      sx={{
-        listStyle: 'none',
-        padding: 0,
-        margin: 0
-      }}
-    >
-      {feedItems.map((item) => (
-        <li key={item.id}>
-          <Card item={item} />
-        </li>
-      ))}
-    </ul>
+    <section>
+      <ul
+        sx={{
+          listStyle: 'none',
+          padding: 0,
+          margin: 0
+        }}
+      >
+        {feedItems.map((item) => (
+          <li key={item.id}>
+            <Card item={item} />
+          </li>
+        ))}
+      </ul>
+    </section>
   );
 };
