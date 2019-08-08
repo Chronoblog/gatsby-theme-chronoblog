@@ -37,3 +37,4 @@ npm i gatsby-theme-chronoblog
 - every `card/preview` need to have `tags`, and feed should be to have `tags` list with hove many `card/preview` have this tags (list must to be automatic)
 - auto `canonnical` main link in link `<link rel=canonnical" href"">`
 - years and dates like http://sidebar.io ?
+- feed type `podcast` for, so, podcasts - with player and links-icons to podcasts platforms (spotify, google podcasts, etc)
