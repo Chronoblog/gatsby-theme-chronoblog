@@ -17,6 +17,7 @@ import SEO from './seo';
  * @property {object} data.mdx.frontmatter
  * @property {string} data.mdx.frontmatter.title
  * @property {string | Date} data.mdx.frontmatter.date
+ * @property {string[]=} data.mdx.frontmatter.tags
  * @property {object} data.mdx.fields
  * @property {string} data.mdx.fields.slug
  */
@@ -29,7 +30,7 @@ const Page = ({
     mdx: {
       id,
       body,
-      frontmatter: { title, date },
+      frontmatter: { title, date, tags },
       fields: { slug }
     }
   }
@@ -57,6 +58,7 @@ const Page = ({
       <article>
         <MDXRenderer>{body}</MDXRenderer>
       </article>
+      <footer>{tags ? tags.length : ''}</footer>
       <Feed reject={{ id }} />
     </Layout>
   );

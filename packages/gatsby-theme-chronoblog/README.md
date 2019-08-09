@@ -38,3 +38,4 @@ npm i gatsby-theme-chronoblog
 - auto `canonnical` main link in link `<link rel=canonnical" href"">`
 - years and dates like http://sidebar.io ?
 - feed type `podcast` for, so, podcasts - with player and links-icons to podcasts platforms (spotify, google podcasts, etc)
+- `<Cut />` tag for posts like in habr.com

@@ -13,3 +13,10 @@ declare module 'react' {
     py?: number;
   }
 }
+
+// input value from
+// https://github.com/rehooks/input-value/blob/master/index.d.ts
+export interface InputValue<T> {
+  value: T;
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+}

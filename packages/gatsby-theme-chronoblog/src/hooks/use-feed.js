@@ -15,6 +15,7 @@ const noSlash = (param) => {
 };
 
 /**
+ * check if page with this path exists
  *
  * @param {object} node
  * @param {object[]} nodesPath
@@ -31,7 +32,7 @@ const checkIfPageExists = (node, nodesPath) => {
 const useFeed = () => {
   const feedQuery = graphql`
     query FeedQuery {
-      allMdx {
+      allMdx(filter: { frontmatter: { hide: { ne: true } } }) {
         nodes {
           id
           fields {
@@ -40,6 +41,7 @@ const useFeed = () => {
           frontmatter {
             title
             date
+            tags
             draft
             hide
           }
@@ -62,7 +64,6 @@ const useFeed = () => {
   let { nodes } = data.allMdx;
 
   // filters
-  nodes = nodes.filter((n) => !n.frontmatter.hide);
   nodes = nodes.filter(
     (n) =>
       n.parent.sourceInstanceName === 'posts' ||
