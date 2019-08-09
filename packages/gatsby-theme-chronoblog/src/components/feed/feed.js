@@ -8,6 +8,8 @@ import FeedItems from './feed-items';
  * Feed
  *
  * @typedef {object} Props
+ * @property {string=} search
+ * @property {boolean=} searchInput
  * @property {object=} filter all feed items predicate returns truthy for
  * @property {object=} reject items of feed that predicate does not return truthy for
  * @property {number=} limit limit of feed items to show
@@ -24,18 +26,28 @@ import FeedItems from './feed-items';
  *   limit={5}
  * />
  */
-export default ({ filter, reject, limit }) => {
-  const search = useInputValue('');
+export default ({
+  search = '',
+  searchInput = false,
+  filter,
+  reject,
+  limit
+}) => {
+  const useSearch = useInputValue(search);
 
   return (
     <section>
       {/*  */}
-      <input {...search} />
-      <p>{search.value}</p>
+      {searchInput ? <input {...useSearch} /> : ''}
       {/*  */}
 
       {/*  */}
-      <FeedItems filter={filter} reject={reject} limit={limit} />
+      <FeedItems
+        search={useSearch.value}
+        filter={filter}
+        reject={reject}
+        limit={limit}
+      />
     </section>
   );
 };

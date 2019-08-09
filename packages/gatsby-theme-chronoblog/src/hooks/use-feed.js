@@ -29,6 +29,9 @@ const checkIfPageExists = (node, nodesPath) => {
   return any.length > 0;
 };
 
+/**
+ * @returns {object[]}
+ */
 const useFeed = () => {
   const feedQuery = graphql`
     query FeedQuery {

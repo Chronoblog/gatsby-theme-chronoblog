@@ -6,15 +6,34 @@ import useFeed from '../../hooks/use-feed';
 import Card from './card';
 
 /**
+ * @param {string[]=} tagsArray
+ * @returns {string}
+ */
+const tagsToString = (tagsArray) =>
+  tagsArray ? tagsArray.toString().toLowerCase() : '';
+
+/**
  * @typedef {import('./feed.js').Props} Props
  */
 
 /**
  * @param {Props=} props
  */
-export default ({ filter, reject, limit }) => {
+export default ({ search = '', filter, reject, limit }) => {
   let feedItems = useFeed();
 
+  // search
+  if (search && search !== '') {
+    let searchWords = search;
+    searchWords = searchWords.toLowerCase();
+    feedItems = feedItems.filter((i) => {
+      let result = false;
+      result = _.includes(i.frontmatter.title.toLowerCase(), searchWords);
+      const tagsString = tagsToString(i.frontmatter.tags);
+      result = _.includes(tagsString, searchWords);
+      return result;
+    });
+  }
   // filter
   if (filter) feedItems = _.filter(feedItems, filter);
   // reject - the opposite of filter

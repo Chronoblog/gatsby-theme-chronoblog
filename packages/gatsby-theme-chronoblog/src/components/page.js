@@ -59,7 +59,7 @@ const Page = ({
         <MDXRenderer>{body}</MDXRenderer>
       </article>
       <footer>{tags ? tags.length : ''}</footer>
-      <Feed reject={{ id }} />
+      <Feed searchInput reject={{ id }} />
     </Layout>
   );
 };
