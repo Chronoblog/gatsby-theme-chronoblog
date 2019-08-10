@@ -17,8 +17,7 @@ export default ({ item }) => {
         <Styled.p
           sx={{
             mb: 4,
-            fontSize: [0, 0],
-            fontWeight: 'bold'
+            fontSize: [0, 0]
           }}
         >
           {item.frontmatter.date}

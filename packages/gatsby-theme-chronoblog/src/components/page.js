@@ -41,16 +41,14 @@ const Page = ({
       <Styled.h1>{title}</Styled.h1>
       <Styled.p
         sx={{
-          fontSize: [0, 0],
-          fontWeight: 'bold'
+          fontSize: [0, 0]
         }}
       >
         {id}
       </Styled.p>
       <Styled.p
         sx={{
-          fontSize: [0, 0],
-          fontWeight: 'bold'
+          fontSize: [0, 0]
         }}
       >
         {date}

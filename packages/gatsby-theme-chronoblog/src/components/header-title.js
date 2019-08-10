@@ -12,7 +12,7 @@ export default ({ children }) => (
   >
     <span
       sx={{
-        fontSize: [2, 3],
+        fontSize: [1, 2],
         fontWeight: 'bold'
       }}
     >
