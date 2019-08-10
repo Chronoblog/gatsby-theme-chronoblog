@@ -3,6 +3,7 @@ import { jsx } from 'theme-ui';
 
 import useInputValue from '../../hooks/use-input-value';
 import FeedItems from './feed-items';
+import FeedSearchInput from './feed-search-input';
 
 /**
  * Feed
@@ -37,11 +38,14 @@ export default ({
 
   return (
     <section>
-      {/*  */}
-      {searchInput ? <input {...useSearch} /> : ''}
-      {/*  */}
-
-      {/*  */}
+      {searchInput ? (
+        <FeedSearchInput
+          value={useSearch.value}
+          onChange={useSearch.onChange}
+        />
+      ) : (
+        ''
+      )}
       <FeedItems
         search={useSearch.value}
         filter={filter}

@@ -13,13 +13,7 @@ export default ({ item }) => {
           color: 'inherit'
         }}
       >
-        <Styled.h2
-          sx={{
-            fontSize: [5, 6]
-          }}
-        >
-          {item.frontmatter.title}
-        </Styled.h2>
+        <Styled.h2>{item.frontmatter.title}</Styled.h2>
         <Styled.p
           sx={{
             mb: 4,

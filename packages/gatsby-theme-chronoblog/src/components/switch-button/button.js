@@ -13,7 +13,7 @@ export default (props) => (
       textTransform: 'uppercase',
       p: 0,
       color: 'inherit',
-      bg: 'background',
+      bg: '#ffffff00',
       border: 0,
       '&:focus': {
         outline: '0px solid'

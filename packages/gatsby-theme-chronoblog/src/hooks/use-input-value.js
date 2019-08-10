@@ -5,7 +5,7 @@ import { useCallback, useState } from 'react';
  */
 
 /**
- * @param {string | number} initialValue
+ * @param {string} initialValue
  * @returns {InputValue}
  *
  * @example

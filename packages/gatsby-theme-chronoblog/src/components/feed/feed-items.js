@@ -29,8 +29,9 @@ export default ({ search = '', filter, reject, limit }) => {
     feedItems = feedItems.filter((i) => {
       let result = false;
       result = _.includes(i.frontmatter.title.toLowerCase(), searchWords);
-      const tagsString = tagsToString(i.frontmatter.tags);
-      result = _.includes(tagsString, searchWords);
+      if (result) return result;
+      result = _.includes(tagsToString(i.frontmatter.tags), searchWords);
+      if (result) return result;
       return result;
     });
   }
