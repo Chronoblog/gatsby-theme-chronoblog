@@ -5,19 +5,19 @@ export default ({ value, onChange }) => {
   return (
     <Flex
       sx={{
-        flexWrap: 'wrap',
+        flexWrap: 'nowrap',
         color: 'inherit',
         bg: 'muted',
-        borderRadius: '5px',
-        p: [1, 2]
+        borderRadius: '5px'
       }}
     >
-      <Box sx={{ maxWidth: ['0%', 40] }}>
+      <Box sx={{ maxWidth: ['0%', 50], py: '1' }}>
         <span
           sx={{
-            fontSize: [18, 26],
-            px: [1, 2],
-            opacity: [0, 1]
+            fontSize: [26],
+            px: [0, 2],
+            pl: [0, 3],
+            opacity: [0, '0.7']
           }}
           role="img"
           aria-label="search"
@@ -32,14 +32,12 @@ export default ({ value, onChange }) => {
             width: ['100%'],
             color: 'inherit',
             bg: 'inherit',
-            p: [1],
-            fontSize: [18, 26],
+            py: [2],
+            px: [2, 1],
+            fontSize: [26],
             border: `0px solid`,
             outline: '0px solid',
-            '&:focus': {
-              opacity: '1',
-              outline: '0px solid'
-            }
+            opacity: '0.9'
           }}
           placeholder="search"
           value={value}
