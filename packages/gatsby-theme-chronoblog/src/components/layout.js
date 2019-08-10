@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { MDXProvider } from '@mdx-js/react';
-import { jsx, Layout, Main } from 'theme-ui';
+import { Container, jsx, Layout, Main } from 'theme-ui';
 
 import Feed from './feed';
 import Footer from './footer';
@@ -28,15 +28,7 @@ export default ({ children, ...props }) => (
     <MDXProvider components={components}>
       <Header />
       <Main>
-        <div
-          sx={{
-            maxWidth: 'container',
-            mx: 'auto',
-            px: 3
-          }}
-        >
-          {children}
-        </div>
+        <Container>{children}</Container>
       </Main>
       <Footer />
     </MDXProvider>

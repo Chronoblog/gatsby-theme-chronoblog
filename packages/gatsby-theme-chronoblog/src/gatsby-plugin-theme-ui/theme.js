@@ -9,12 +9,15 @@ const theme = {
   colors: {
     ...colors
   },
+  fontSizes: [16, 18, 20, 24, 26, 32, 48, 64, 96],
+  fonts: {
+    body: '-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif',
+    heading: 'inherit',
+    monospace: 'Menlo, monospace'
+  },
   styles: {
     ...base.styles,
     ...styles
-  },
-  sizes: {
-    container: 768
   }
 };
 

@@ -7,16 +7,42 @@ const heading = {
 };
 
 export default {
+  Container: {
+    p: 3,
+    maxWidth: 768,
+    mx: 'auto'
+  },
+  root: {
+    fontFamily: 'body',
+    lineHeight: 'body',
+    fontWeight: 'body'
+  },
   h1: {
     ...heading,
-    fontSize: [5, 6]
+    fontSize: [6]
   },
   h2: {
     ...heading,
-    fontSize: [4, 5]
+    fontSize: [5]
+  },
+  h3: {
+    ...heading,
+    fontSize: [4]
+  },
+  h4: {
+    ...heading,
+    fontSize: [3]
+  },
+  h5: {
+    ...heading,
+    fontSize: [2]
+  },
+  h6: {
+    ...heading,
+    fontSize: [1]
   },
   p: {
-    fontSize: [2, 3]
+    fontSize: [2]
   },
   a: {
     color: 'primary',

@@ -1,23 +1,16 @@
 /** @jsx jsx */
 import { MDXProvider } from '@mdx-js/react';
-import { jsx } from 'theme-ui';
+import { Container, jsx } from 'theme-ui';
 
 // @ts-ignore
 import Content from '../site-footer.mdx';
 
 export default () => (
   <footer>
-    <div
-      sx={{
-        maxWidth: 'container',
-        mx: 'auto',
-        px: 3,
-        py: 3
-      }}
-    >
+    <Container>
       <MDXProvider>
         <Content />
       </MDXProvider>
-    </div>
+    </Container>
   </footer>
 );
