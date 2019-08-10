@@ -28,7 +28,7 @@
     "@emotion/core": "^10.0.14",
     "@mdx-js/mdx": "^1.1.0",
     "@mdx-js/react": "^1.0.27",
-    "@theme-ui/presets": "^0.2.30",
+    "@theme-ui/preset-base": "^0.2.29",
     "@types/lodash": "^4.14.136",
     "debug": "^4.1.1",
     "gatsby": "^2.13.52",
