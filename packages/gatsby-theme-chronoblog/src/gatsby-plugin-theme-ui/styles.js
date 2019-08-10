@@ -12,6 +12,11 @@ export default {
     maxWidth: 768,
     mx: 'auto'
   },
+  Layout: {
+    fontFamily: 'body',
+    lineHeight: 'body',
+    fontWeight: 'body'
+  },
   root: {
     fontFamily: 'body',
     lineHeight: 'body',
