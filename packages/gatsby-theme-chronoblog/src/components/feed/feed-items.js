@@ -13,9 +13,15 @@ const tagsToString = (tagsArray) =>
   tagsArray ? tagsArray.toString().toLowerCase() : '';
 
 /**
- * @typedef {import('./feed.js').Props} Props
+ * Feed Items
+ *
+ * @typedef {object} Props
+ * @property {string=} search
+ * @property {object=} filter all feed items predicate returns truthy for
+ * @property {object=} reject items of feed that predicate does not return truthy for
+ * @property {number=} limit limit of feed items to show
+ *
  */
-
 /**
  * @param {Props=} props
  */

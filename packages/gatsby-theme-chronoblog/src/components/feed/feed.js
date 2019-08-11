@@ -3,7 +3,7 @@ import { jsx } from 'theme-ui';
 
 import useInputValue from '../../hooks/use-input-value';
 import FeedItems from './feed-items';
-import FeedSearchInput from './feed-search-input';
+import FeedSearch from './feed-search';
 
 /**
  * Feed
@@ -14,6 +14,7 @@ import FeedSearchInput from './feed-search-input';
  * @property {object=} filter all feed items predicate returns truthy for
  * @property {object=} reject items of feed that predicate does not return truthy for
  * @property {number=} limit limit of feed items to show
+ * @property {*=} children
  *
  */
 
@@ -39,10 +40,7 @@ export default ({
   return (
     <section>
       {searchInput ? (
-        <FeedSearchInput
-          value={useSearch.value}
-          onChange={useSearch.onChange}
-        />
+        <FeedSearch value={useSearch.value} onChange={useSearch.onChange} />
       ) : (
         ''
       )}

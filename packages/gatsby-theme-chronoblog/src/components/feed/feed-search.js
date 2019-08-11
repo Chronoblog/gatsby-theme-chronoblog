@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { Box, Flex, jsx } from 'theme-ui';
 
-export default ({ value, onChange }) => {
+export default ({ placeholder = 'search', value, onChange }) => {
   return (
     <Flex
       sx={{
@@ -17,7 +17,8 @@ export default ({ value, onChange }) => {
             fontSize: [26],
             px: [0, 2],
             pl: [0, 3],
-            opacity: [0, '0.7']
+            opacity: [0, '0.7'],
+            userSelect: 'none'
           }}
           role="img"
           aria-label="search"
@@ -39,7 +40,7 @@ export default ({ value, onChange }) => {
             outline: '0px solid',
             opacity: '0.9'
           }}
-          placeholder="search"
+          placeholder={placeholder}
           value={value}
           onChange={onChange}
         />
