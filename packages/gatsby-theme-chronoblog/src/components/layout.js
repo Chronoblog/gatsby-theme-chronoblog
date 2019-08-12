@@ -1,12 +1,11 @@
 /** @jsx jsx */
 import { MDXProvider } from '@mdx-js/react';
-import { jsx, Layout } from 'theme-ui';
+import { Container, jsx, Layout } from 'theme-ui';
 
 import Feed from './feed';
 import Footer from './footer';
 import Header from './header';
 import LightDarkSwitchButton from './light-dark-switch-button';
-import Main from './main';
 import SEO from './seo';
 import SiteHeaderTitle from './site-header-title';
 
@@ -22,7 +21,7 @@ export default ({ children, ...props }) => (
     <SEO />
     <MDXProvider components={components}>
       <Header />
-      <Main>{children}</Main>
+      <Container>{children}</Container>
       <Footer />
     </MDXProvider>
   </Layout>
