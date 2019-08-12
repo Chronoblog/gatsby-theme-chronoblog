@@ -23,8 +23,8 @@ exports.onPreBootstrap = ({ store }) => {
   const { program } = store.getState();
 
   const dirs = [
-    path.join(program.directory, `feed/posts`),
-    path.join(program.directory, `feed/links`),
+    path.join(program.directory, `content/posts`),
+    path.join(program.directory, `content/links`),
     path.join(program.directory, `pages`)
   ];
 

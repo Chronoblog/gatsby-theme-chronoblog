@@ -44,14 +44,14 @@ module.exports = () => {
         resolve: 'gatsby-source-filesystem',
         options: {
           name: 'posts',
-          path: path.resolve('feed/posts')
+          path: path.resolve('content/posts')
         }
       },
       {
         resolve: 'gatsby-source-filesystem',
         options: {
           name: 'links',
-          path: path.resolve('feed/links')
+          path: path.resolve('content/links')
         }
       },
       {

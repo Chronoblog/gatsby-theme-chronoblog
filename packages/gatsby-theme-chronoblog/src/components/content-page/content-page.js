@@ -3,7 +3,9 @@ import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { jsx, Styled } from 'theme-ui';
 
 // @ts-ignore
-import ContentFooter from '../../content-footer.mdx';
+import LinkFooter from '../../link-footer.mdx';
+// @ts-ignore
+import PostFooter from '../../post-footer.mdx';
 import Layout from '../layout';
 import SEO from '../seo';
 
@@ -56,25 +58,37 @@ const ContentPageFooter = ({ children }) => {
   return <footer>{children}</footer>;
 };
 
-const ContentPage = ({ data }) => {
+const ContentPage = ({ data, children }) => {
   return (
     <Layout>
       <article>
         <SEO title={data.mdx.frontmatter.title} slug={data.mdx.fields.slug} />
-        <ContentPageHeader data={data} />
-        <ContentPageMain data={data} />
-        <ContentPageFooter>
-          <ContentFooter />
-        </ContentPageFooter>
+        {children}
       </article>
     </Layout>
   );
 };
 
 export const PagePost = ({ data }) => {
-  return <ContentPage data={data} />;
+  return (
+    <ContentPage data={data}>
+      <ContentPageHeader data={data} />
+      <ContentPageMain data={data} />
+      <ContentPageFooter>
+        <PostFooter />
+      </ContentPageFooter>
+    </ContentPage>
+  );
 };
 
 export const PageLink = ({ data }) => {
-  return <ContentPage data={data} />;
+  return (
+    <ContentPage data={data}>
+      <ContentPageHeader data={data} />
+      <ContentPageMain data={data} />
+      <ContentPageFooter>
+        <LinkFooter />
+      </ContentPageFooter>
+    </ContentPage>
+  );
 };
