@@ -6,7 +6,6 @@ import { jsx, Styled } from 'theme-ui';
 import LinkFooter from '../../link-footer.mdx';
 // @ts-ignore
 import PostFooter from '../../post-footer.mdx';
-import Feed from '../feed';
 import Layout from '../layout';
 import SEO from '../seo';
 
@@ -63,14 +62,10 @@ const ContentPage = ({ data, children }) => {
   return (
     <Layout>
       <main>
-        <article>
-          <SEO title={data.mdx.frontmatter.title} slug={data.mdx.fields.slug} />
-          {children}
-        </article>
+        <SEO title={data.mdx.frontmatter.title} slug={data.mdx.fields.slug} />
+        <article>{children}</article>
       </main>
-      <aside>
-        <Feed />
-      </aside>
+      <aside>aside for feed</aside>
     </Layout>
   );
 };

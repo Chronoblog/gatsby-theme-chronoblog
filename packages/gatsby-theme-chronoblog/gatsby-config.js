@@ -33,7 +33,7 @@ module.exports = () => {
           extensions: ['.mdx', '.md'],
           remarkPlugins: [remarkSlug, remarkUnwrapImages],
           defaultLayouts: {
-            pages: require.resolve('./src/components/layout')
+            pages: require.resolve('./src/components/page')
           }
         }
       },

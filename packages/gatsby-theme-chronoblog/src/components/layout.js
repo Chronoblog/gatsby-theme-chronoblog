@@ -2,14 +2,13 @@
 import { MDXProvider } from '@mdx-js/react';
 import { Container, jsx, Layout } from 'theme-ui';
 
-import Feed from './feed';
 import Footer from './footer';
 import Header from './header';
 import LightDarkSwitchButton from './light-dark-switch-button';
 import SEO from './seo';
 import SiteHeaderTitle from './site-header-title';
 
-const components = { Feed, LightDarkSwitchButton, SiteHeaderTitle };
+const components = { LightDarkSwitchButton, SiteHeaderTitle };
 
 /**
  * site layout
