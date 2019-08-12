@@ -1,6 +1,6 @@
 import { graphql } from 'gatsby';
 
-import { PagePost } from '../components/page';
+import { PagePost } from '../components/content-page/content-page';
 
 export default PagePost;
 

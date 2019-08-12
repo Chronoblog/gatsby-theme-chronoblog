@@ -48,6 +48,7 @@
     "jsx-a11y"
   ],
   "rules": {
+    "import/no-extraneous-dependencies": "warn",
     "@typescript-eslint/no-var-requires": "off",
     "import/first": "warn",
     "import/newline-after-import": "warn",
@@ -74,7 +75,7 @@
     "react/jsx-filename-extension": [
       "warn",
       {
-        "extensions": [".js",".jsx", ".tsx", "md", "mdx"]
+        "extensions": [".js", ".jsx", ".tsx", "md", "mdx"]
       }
     ],
     "react/prop-types": "off",

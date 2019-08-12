@@ -1,6 +1,6 @@
 import { graphql } from 'gatsby';
 
-import { PageLink } from '../components/page';
+import { PageLink } from '../components/content-page/content-page';
 
 export default PageLink;
 
