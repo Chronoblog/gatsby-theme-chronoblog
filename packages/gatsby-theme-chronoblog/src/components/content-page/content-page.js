@@ -3,6 +3,8 @@ import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { jsx, Styled } from 'theme-ui';
 
 // @ts-ignore
+import ContentBottom from '../../content-bottom.mdx';
+// @ts-ignore
 import LinkFooter from '../../link-footer.mdx';
 // @ts-ignore
 import PostFooter from '../../post-footer.mdx';
@@ -65,7 +67,9 @@ const ContentPage = ({ data, children }) => {
         <SEO title={data.mdx.frontmatter.title} slug={data.mdx.fields.slug} />
         <article>{children}</article>
       </main>
-      <aside>aside for feed</aside>
+      <aside>
+        <ContentBottom />
+      </aside>
     </Layout>
   );
 };
