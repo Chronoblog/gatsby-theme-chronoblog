@@ -1,7 +1,12 @@
 /** @jsx jsx */
+import { useContext } from 'react';
 import { Box, Flex, jsx } from 'theme-ui';
 
-export default ({ placeholder = 'search', value, onChange }) => {
+import FeedContext from '../../contexts/context-feed';
+
+// export default ({ placeholder = 'search', value, onChange }) => {
+export default ({ placeholder = 'search' }) => {
+  const { value, onChange } = useContext(FeedContext);
   return (
     <Flex
       sx={{

@@ -1,7 +1,9 @@
 /** @jsx jsx */
 import _ from 'lodash';
+import { useContext } from 'react';
 import { jsx } from 'theme-ui';
 
+import FeedContext from '../../contexts/context-feed';
 import useFeed from '../../hooks/use-feed';
 import Card from './card';
 
@@ -11,6 +13,16 @@ import Card from './card';
  */
 const tagsToString = (tagsArray) =>
   tagsArray ? tagsArray.toString().toLowerCase() : '';
+
+const filterSearchSymbols = (input, symbolsToSearch) => {
+  let result = false;
+  const sToSearch = symbolsToSearch.toLowerCase();
+  result = _.includes(input.frontmatter.title.toLowerCase(), sToSearch);
+  if (result) return result;
+  result = _.includes(tagsToString(input.frontmatter.tags), sToSearch);
+  if (result) return result;
+  return result;
+};
 
 /**
  * Feed Items
@@ -27,19 +39,17 @@ const tagsToString = (tagsArray) =>
  */
 export default ({ search = '', filter, reject, limit }) => {
   let feedItems = useFeed();
-
-  // search
+  // search from props
   if (search && search !== '') {
-    let searchWords = search;
-    searchWords = searchWords.toLowerCase();
-    feedItems = feedItems.filter((i) => {
-      let result = false;
-      result = _.includes(i.frontmatter.title.toLowerCase(), searchWords);
-      if (result) return result;
-      result = _.includes(tagsToString(i.frontmatter.tags), searchWords);
-      if (result) return result;
-      return result;
-    });
+    feedItems = feedItems.filter((i) => filterSearchSymbols(i, search));
+  }
+  // search from input
+  const { value } = useContext(FeedContext);
+  const searchFromInput = value;
+  if (searchFromInput && searchFromInput !== '') {
+    feedItems = feedItems.filter((i) =>
+      filterSearchSymbols(i, searchFromInput)
+    );
   }
   // filter
   if (filter) feedItems = _.filter(feedItems, filter);
