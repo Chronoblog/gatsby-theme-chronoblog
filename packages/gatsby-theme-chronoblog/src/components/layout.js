@@ -6,6 +6,7 @@ import { Container, jsx, Layout } from 'theme-ui';
 import FeedContext from '../contexts/context-feed';
 import FeedItems from './feed-items';
 import FeedSearch from './feed-search';
+import FeedTags from './feed-tags';
 import Footer from './footer';
 import Header from './header';
 import LightDarkSwitchButton from './light-dark-switch-button';
@@ -13,6 +14,7 @@ import SEO from './seo';
 import SiteHeaderTitle from './site-header-title';
 
 const components = {
+  FeedTags,
   FeedItems,
   FeedSearch,
   LightDarkSwitchButton,
@@ -26,10 +28,10 @@ const components = {
  */
 export default ({ children, ...props }) => {
   //
-  const [value, setValue] = useState('');
+  const [value, setValue] = useState({ searchInput: '', tag: '' });
 
   const onChange = useCallback((event) => {
-    setValue(event.currentTarget.value);
+    setValue({ searchInput: event.currentTarget.value, tag: '' });
   }, []);
   //
   return (

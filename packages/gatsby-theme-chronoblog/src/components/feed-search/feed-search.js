@@ -6,7 +6,10 @@ import FeedContext from '../../contexts/context-feed';
 
 // export default ({ placeholder = 'search', value, onChange }) => {
 export default ({ placeholder = 'search' }) => {
-  const { value, onChange } = useContext(FeedContext);
+  const {
+    value: { searchInput },
+    onChange
+  } = useContext(FeedContext);
   return (
     <Flex
       sx={{
@@ -16,13 +19,13 @@ export default ({ placeholder = 'search' }) => {
         borderRadius: '5px'
       }}
     >
-      <Box sx={{ maxWidth: ['0%', 50], py: '1' }}>
+      <Box sx={{ maxWidth: [50], py: '1' }}>
         <span
           sx={{
             fontSize: [26],
-            px: [0, 2],
-            pl: [0, 3],
-            opacity: [0, '0.7'],
+            px: [1, 2],
+            pl: [3],
+            opacity: ['0.7'],
             userSelect: 'none'
           }}
           role="img"
@@ -46,7 +49,7 @@ export default ({ placeholder = 'search' }) => {
             opacity: '0.9'
           }}
           placeholder={placeholder}
-          value={value}
+          value={searchInput}
           onChange={onChange}
         />
       </Box>

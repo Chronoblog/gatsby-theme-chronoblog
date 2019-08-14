@@ -49,6 +49,7 @@
   ],
   "rules": {
     "import/no-extraneous-dependencies": "warn",
+    "react/jsx-key": "warn",
     "@typescript-eslint/no-var-requires": "off",
     "import/first": "warn",
     "import/newline-after-import": "warn",
