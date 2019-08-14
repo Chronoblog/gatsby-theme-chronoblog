@@ -1,6 +1,11 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 
-export default ({ tag }) => {
-  return <span>{`${tag} `}</span>;
+export default ({ tag, onClick }) => {
+  return (
+    <label>
+      <input name="tag" value={tag} onClick={onClick} type="radio" />
+      {`${tag} `}
+    </label>
+  );
 };
