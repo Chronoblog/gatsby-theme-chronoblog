@@ -30,15 +30,20 @@ export default ({ children, ...props }) => {
   //
   const [value, setValue] = useState({ searchInput: '', tag: '' });
 
-  const onChange = useCallback((event) => {
+  const onChangeSearchInput = useCallback((event) => {
     setValue({ searchInput: event.currentTarget.value, tag: '' });
   }, []);
+  const onChangeTag = (event) => {
+    setValue({ searchInput: '', tag: event.currentTarget.value });
+  };
   //
   return (
     <Layout {...props}>
       <SEO />
       <MDXProvider components={components}>
-        <FeedContext.Provider value={{ value, onChange }}>
+        <FeedContext.Provider
+          value={{ value, onChangeSearchInput, onChangeTag }}
+        >
           <Header />
           <Container>{children}</Container>
           <Footer />

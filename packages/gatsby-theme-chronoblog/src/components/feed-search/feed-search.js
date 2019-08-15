@@ -4,11 +4,10 @@ import { Box, Flex, jsx } from 'theme-ui';
 
 import FeedContext from '../../contexts/context-feed';
 
-// export default ({ placeholder = 'search', value, onChange }) => {
 export default ({ placeholder = 'search' }) => {
   const {
     value: { searchInput },
-    onChange
+    onChangeSearchInput
   } = useContext(FeedContext);
   return (
     <Flex
@@ -50,7 +49,7 @@ export default ({ placeholder = 'search' }) => {
           }}
           placeholder={placeholder}
           value={searchInput}
-          onChange={onChange}
+          onChange={onChangeSearchInput}
         />
       </Box>
     </Flex>

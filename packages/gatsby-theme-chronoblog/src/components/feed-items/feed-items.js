@@ -53,23 +53,22 @@ export default ({ search = '', tag = '', filter, reject, limit }) => {
     feedItems = feedItems.filter((i) => filterSearchSymbols(i, search));
   }
   // context
+  const { value } = useContext(FeedContext);
   // search from input
-  const {
-    value: { searchInput }
-  } = useContext(FeedContext);
-  const searchFromInput = searchInput;
+  const searchFromInput = value.searchInput;
   if (searchFromInput && searchFromInput !== '') {
     feedItems = feedItems.filter((i) =>
       filterSearchSymbols(i, searchFromInput)
     );
   }
   // tag from tags
-  // if (tag && tag !== '') {
-  //   feedItems = feedItems.filter((i) => {
-  //     if (i.frontmatter.tags) return i.frontmatter.tags.includes(tag);
-  //     return false;
-  //   });
-  // }
+  const tagValue = value.tag;
+  if (tagValue && tagValue !== '') {
+    feedItems = feedItems.filter((i) => {
+      if (i.frontmatter.tags) return i.frontmatter.tags.includes(tagValue);
+      return false;
+    });
+  }
   // main
   // filter
   if (filter) feedItems = _.filter(feedItems, filter);

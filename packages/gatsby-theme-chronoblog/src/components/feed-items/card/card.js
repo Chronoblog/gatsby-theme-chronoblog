@@ -22,7 +22,11 @@ export default ({ item }) => {
         >
           {item.frontmatter.date}
         </Styled.p>
-        {/* <Styled.p>{item.excerpt}</Styled.p> */}
+        <Styled.p>
+          {item.frontmatter.tags
+            ? item.frontmatter.tags.map((t) => `${t} `)
+            : ''}
+        </Styled.p>
       </Link>
     </article>
   );
