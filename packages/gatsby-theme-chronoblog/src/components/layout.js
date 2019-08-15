@@ -33,9 +33,17 @@ export default ({ children, ...props }) => {
   const onChangeSearchInput = useCallback((event) => {
     setValue({ searchInput: event.currentTarget.value, tag: '' });
   }, []);
-  const onChangeTag = (event) => {
-    setValue({ searchInput: '', tag: event.currentTarget.value });
-  };
+  const onChangeTag = useCallback(
+    (event) => {
+      // when click the same tag - disables it
+      if (value.tag === event.currentTarget.value) {
+        setValue({ searchInput: '', tag: '' });
+      } else {
+        setValue({ searchInput: '', tag: event.currentTarget.value });
+      }
+    },
+    [value.tag]
+  );
   //
   return (
     <Layout {...props}>

@@ -73,6 +73,7 @@
     "react-hooks/rules-of-hooks": "error",
     "react/destructuring-assignment": "warn",
     "react/display-name": "off",
+    "react/jsx-indent": "off",
     "react/jsx-filename-extension": [
       "warn",
       {

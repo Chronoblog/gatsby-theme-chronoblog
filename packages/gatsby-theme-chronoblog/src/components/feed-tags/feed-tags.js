@@ -9,7 +9,7 @@ import Tag from './tag';
 
 export default () => {
   //
-  const { onChangeTag } = useContext(FeedContext);
+  const { onChangeTag, value } = useContext(FeedContext);
   //
   const feedItems = useFeed();
   //
@@ -21,7 +21,11 @@ export default () => {
 
   return (
     <div>
-      {tags ? tags.map((i) => <Tag tag={i} onClick={onChangeTag} />) : ''}
+      {tags
+        ? tags.map((i) => (
+            <Tag tag={i} valueTag={value.tag} onClick={onChangeTag} />
+          ))
+        : ''}
     </div>
   );
 };
