@@ -10,6 +10,7 @@ const theme = {
     ...colors
   },
   fontSizes: [16, 18, 20, 24, 26, 32, 48, 64, 96],
+  borderRadius: [6],
   fonts: {
     body: '-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif',
     heading: 'inherit',

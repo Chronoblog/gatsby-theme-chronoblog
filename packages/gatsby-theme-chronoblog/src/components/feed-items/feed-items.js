@@ -78,18 +78,20 @@ export default ({ search = '', tag = '', filter, reject, limit }) => {
   if (limit || limit > 0) feedItems = _.take(feedItems, limit);
 
   return (
-    <ul
-      sx={{
-        listStyle: 'none',
-        padding: 0,
-        margin: 0
-      }}
-    >
-      {feedItems.map((item) => (
-        <li key={item.id}>
-          <Card item={item} />
-        </li>
-      ))}
-    </ul>
+    <div sx={{ marginY: [30] }}>
+      <ul
+        sx={{
+          listStyle: 'none',
+          padding: 0,
+          margin: 0
+        }}
+      >
+        {feedItems.map((item) => (
+          <li key={item.id}>
+            <Card item={item} />
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 };

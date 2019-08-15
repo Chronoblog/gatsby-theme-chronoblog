@@ -6,7 +6,12 @@ import { Container, Footer, jsx } from 'theme-ui';
 import Content from '../site-footer.mdx';
 
 export default () => (
-  <Footer>
+  <Footer
+    sx={{
+      marginY: [30],
+      mb: 200
+    }}
+  >
     <Container>
       <MDXProvider>
         <Content />

@@ -7,8 +7,25 @@ export default ({ valueTag, tag, onClick }) => {
   const checked = checkedCheck(valueTag, tag);
   //
   return (
-    <label>
+    <label
+      sx={{
+        // userSelect: 'none',
+        display: 'inline-block',
+        bg: 'muted',
+        padding: '10px 20px',
+        fontSize: [0],
+        border: '1px',
+        borderColor: 'muted',
+        borderStyle: 'solid',
+        borderRadius: [0]
+      }}
+    >
       <input
+        sx={{
+          opacity: 0,
+          position: 'fixed',
+          width: 0
+        }}
         checked={checked}
         name="tag"
         value={tag}

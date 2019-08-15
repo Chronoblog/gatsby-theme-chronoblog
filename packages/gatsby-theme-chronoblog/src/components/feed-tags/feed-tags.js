@@ -20,7 +20,7 @@ export default () => {
   tags = tags.filter(Boolean);
 
   return (
-    <div>
+    <div sx={{ marginY: [30] }}>
       {tags
         ? tags.map((i) => (
             <Tag tag={i} valueTag={value.tag} onClick={onChangeTag} />

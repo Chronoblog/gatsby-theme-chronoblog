@@ -9,7 +9,7 @@ export default () => {
   const siteMetadata = useSiteMetadata();
   return (
     <Header>
-      <Container>
+      <Container sx={{ marginBottom: ['5px'] }}>
         <Flex
           sx={{
             flexWrap: 'wrap'

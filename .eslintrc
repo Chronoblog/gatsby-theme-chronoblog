@@ -74,6 +74,7 @@
     "react/destructuring-assignment": "warn",
     "react/display-name": "off",
     "react/jsx-indent": "off",
+    "react/button-has-type": "warn",
     "react/jsx-filename-extension": [
       "warn",
       {
