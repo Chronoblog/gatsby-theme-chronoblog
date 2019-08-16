@@ -1,30 +1,21 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 
+import Button from '../button';
+
 export default ({ valueTag, tag, onClick }) => {
   // checked - true if the same data from tag
   const checkedCheck = (v, t) => v === t;
   const checked = checkedCheck(valueTag, tag);
   //
   return (
-    <label
+    <Button
+      as="label"
       sx={{
-        userSelect: 'none',
-        display: 'inline-block',
         bg: checked ? 'secondary' : 'muted',
-        padding: '10px 20px',
-        fontSize: [0],
-        border: '1px',
-        borderColor: 'muted',
-        borderStyle: 'solid',
-        borderRadius: [0],
         mr: ['10px'],
         mt: ['5px'],
-        mb: ['5px'],
-        '&:hover': {
-          opacity: 0.8,
-          cursor: 'pointer'
-        }
+        mb: ['5px']
       }}
     >
       <input
@@ -40,6 +31,6 @@ export default ({ valueTag, tag, onClick }) => {
         type="radio"
       />
       {`${tag}`}
-    </label>
+    </Button>
   );
 };

@@ -1,10 +1,11 @@
 /** @jsx jsx */
 import _ from 'lodash';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { jsx } from 'theme-ui';
 
 import FeedContext from '../../contexts/context-feed';
 import useFeed from '../../hooks/use-feed';
+import Button from '../button';
 import Card from './card';
 
 /**
@@ -33,12 +34,22 @@ const filterSearchSymbols = (input, symbolsToSearch) => {
  * @property {object=} filter all feed items predicate returns truthy for
  * @property {object=} reject items of feed that predicate does not return truthy for
  * @property {number=} limit limit of feed items to show
+ * @property {boolean=} showMoreButton
+ * @property {number=} showMoreNumber
  *
  */
 /**
  * @param {Props=} props
  */
-export default ({ search = '', tag = '', filter, reject, limit }) => {
+export default ({
+  search = '',
+  tag = '',
+  filter,
+  reject,
+  limit = 3,
+  showMoreButton = true,
+  showMoreNumber = 10
+}) => {
   let feedItems = useFeed();
   // props
   // tag from props
@@ -75,8 +86,10 @@ export default ({ search = '', tag = '', filter, reject, limit }) => {
   // reject - the opposite of filter
   if (reject) feedItems = _.reject(feedItems, reject);
   // limit
-  if (limit || limit > 0) feedItems = _.take(feedItems, limit);
-
+  // if (limit || limit > 0) feedItems = _.take(feedItems, limit);
+  //
+  const [showLimit, setCount] = useState(limit);
+  //
   return (
     <div sx={{ marginY: [30] }}>
       <ul
@@ -86,12 +99,24 @@ export default ({ search = '', tag = '', filter, reject, limit }) => {
           margin: 0
         }}
       >
-        {feedItems.map((item) => (
+        {_.take(feedItems, showLimit).map((item) => (
           <li key={item.id}>
             <Card item={item} />
           </li>
         ))}
       </ul>
+      {showMoreButton && feedItems.length > showLimit ? (
+        <div sx={{}}>
+          <Button
+            sx={{ fontSize: [1, 2], width: '100%' }}
+            onClick={() => setCount(showLimit + showMoreNumber)}
+          >
+            ➕ Show more
+          </Button>
+        </div>
+      ) : (
+        ''
+      )}
     </div>
   );
 };

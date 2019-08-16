@@ -2,7 +2,7 @@ import { DOMAttributes } from 'react';
 
 // For no Error about checking of libs declaration files
 // declare module 'theme-ui';
-declare module '*';
+// declare module '*';
 declare module '*.mdx';
 
 // typescript don't know prop `sx` from theme-ui.com/sx-prop
