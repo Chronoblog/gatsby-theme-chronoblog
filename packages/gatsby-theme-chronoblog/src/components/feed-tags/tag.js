@@ -9,15 +9,21 @@ export default ({ valueTag, tag, onClick }) => {
   return (
     <label
       sx={{
-        // userSelect: 'none',
+        userSelect: 'none',
         display: 'inline-block',
-        bg: 'muted',
+        bg: checked ? 'secondary' : 'muted',
         padding: '10px 20px',
         fontSize: [0],
         border: '1px',
         borderColor: 'muted',
         borderStyle: 'solid',
-        borderRadius: [0]
+        borderRadius: [0],
+        mr: ['10px'],
+        mt: ['5px'],
+        mb: ['5px'],
+        '&:hover': {
+          borderColor: 'secondary'
+        }
       }}
     >
       <input
