@@ -52,7 +52,8 @@ export default {
   a: {
     color: 'primary',
     '&:hover': {
-      color: 'secondary'
+      color: 'secondary',
+      opacity: 0.8
     }
   },
   img: {

@@ -22,7 +22,8 @@ export default ({ valueTag, tag, onClick }) => {
         mt: ['5px'],
         mb: ['5px'],
         '&:hover': {
-          borderColor: 'secondary'
+          opacity: 0.8,
+          cursor: 'pointer'
         }
       }}
     >
