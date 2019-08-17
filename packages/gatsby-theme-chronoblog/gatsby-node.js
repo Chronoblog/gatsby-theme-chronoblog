@@ -25,6 +25,7 @@ exports.onPreBootstrap = ({ store }) => {
   const dirs = [
     path.join(program.directory, `content/posts`),
     path.join(program.directory, `content/links`),
+    path.join(program.directory, `content/notes`),
     path.join(program.directory, `pages`)
   ];
 
@@ -95,13 +96,6 @@ exports.createPages = async ({ graphql, actions }) => {
   posts = posts.filter((n) => n.frontmatter.title);
   posts = posts.filter((n) => n.frontmatter.date);
 
-  let links = allMdxNodes.filter(
-    (n) => n.parent.sourceInstanceName === 'links'
-  );
-  links = links.filter((n) => n.frontmatter.title);
-  links = links.filter((n) => n.frontmatter.date);
-  links = links.filter((n) => n.frontmatter.link);
-
   if (posts.length > 0) {
     posts.forEach((post) => {
       actions.createPage({
@@ -109,18 +103,6 @@ exports.createPages = async ({ graphql, actions }) => {
         component: require.resolve('./src/templates/post.js'),
         context: {
           id: post.id
-        }
-      });
-    });
-  }
-
-  if (links.length > 0) {
-    links.forEach((link) => {
-      actions.createPage({
-        path: link.fields.slug,
-        component: require.resolve('./src/templates/link.js'),
-        context: {
-          id: link.id
         }
       });
     });
