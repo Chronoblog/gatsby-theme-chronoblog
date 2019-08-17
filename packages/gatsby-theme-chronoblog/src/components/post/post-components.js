@@ -2,40 +2,33 @@
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { jsx, Styled } from 'theme-ui';
 
-export const PostHeader = ({
+export const PostImage = ({
   data: {
-    mdx: {
-      id,
-      frontmatter: { title, date },
-      fields: { slug }
-    }
+    mdx: { frontmatter }
+  }
+}) => {
+  return <div>{frontmatter.image ? <div>{frontmatter.image}</div> : ''}</div>;
+};
+
+export const PostTitle = ({
+  data: {
+    mdx: { frontmatter }
   }
 }) => {
   return (
-    <header>
-      <Styled.h1>{title}</Styled.h1>
-      <Styled.p
-        sx={{
-          fontSize: [0, 0]
-        }}
-      >
-        {id}
-      </Styled.p>
-      <Styled.p
-        sx={{
-          fontSize: [0, 0]
-        }}
-      >
-        {slug}
-      </Styled.p>
-      <Styled.p
-        sx={{
-          fontSize: [0, 0]
-        }}
-      >
-        {date}
-      </Styled.p>
-    </header>
+    <div>
+      {frontmatter.title ? <Styled.h1>{frontmatter.title}</Styled.h1> : ''}
+    </div>
+  );
+};
+
+export const PostDate = ({
+  data: {
+    mdx: { frontmatter }
+  }
+}) => {
+  return (
+    <div>{frontmatter.date ? <Styled.p>{frontmatter.date}</Styled.p> : ''}</div>
   );
 };
 

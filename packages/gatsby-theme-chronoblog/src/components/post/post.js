@@ -7,7 +7,7 @@ import PostBottom from '../../post-bottom.mdx';
 import PostFooter from '../../post-footer.mdx';
 import Layout from '../layout';
 import SEO from '../seo';
-import { PostContent, PostHeader } from './post-components';
+import { PostContent, PostDate, PostImage, PostTitle } from './post-components';
 
 export const Post = ({ data }) => {
   return (
@@ -15,7 +15,11 @@ export const Post = ({ data }) => {
       <SEO title={data.mdx.frontmatter.title} slug={data.mdx.fields.slug} />
       <main>
         <article>
-          <PostHeader data={data} />
+          <header>
+            <PostImage data={data} />
+            <PostTitle data={data} />
+            <PostDate data={data} />
+          </header>
           <PostContent data={data} />
           <footer>
             <PostFooter />
