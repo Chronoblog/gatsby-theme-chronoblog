@@ -9,6 +9,9 @@ import { graphql, useStaticQuery } from 'gatsby';
  * @property {string=} language
  * @property {string=} author
  * @property {string=} twitter
+ * @property {object=} uiText
+ * @property {string=} uiText.feedShowMoreButton
+ * @property {string=} uiText.feedSearchPlaceholder
  */
 
 /**
@@ -32,6 +35,10 @@ const useSiteMetadata = () => {
           language
           author
           twitter
+          uiText {
+            feedShowMoreButton
+            feedSearchPlaceholder
+          }
         }
       }
     }

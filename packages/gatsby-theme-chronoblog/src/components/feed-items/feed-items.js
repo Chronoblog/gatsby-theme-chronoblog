@@ -5,6 +5,7 @@ import { jsx } from 'theme-ui';
 
 import FeedContext from '../../contexts/context-feed';
 import useFeed from '../../hooks/use-feed';
+import useSiteMetadata from '../../hooks/use-site-metadata';
 import Button from '../button';
 import Card from './card';
 
@@ -51,6 +52,11 @@ export default ({
   showMoreNumber = 10
 }) => {
   let feedItems = useFeed();
+  //
+  const {
+    uiText: { feedShowMoreButton }
+  } = useSiteMetadata();
+  //
   // props
   // tag from props
   if (tag && tag !== '') {
@@ -85,8 +91,6 @@ export default ({
   if (filter) feedItems = _.filter(feedItems, filter);
   // reject - the opposite of filter
   if (reject) feedItems = _.reject(feedItems, reject);
-  // limit
-  // if (limit || limit > 0) feedItems = _.take(feedItems, limit);
   //
   const [showLimit, setCount] = useState(limit);
   //
@@ -111,7 +115,7 @@ export default ({
             sx={{ fontSize: [1, 2], width: '100%' }}
             onClick={() => setCount(showLimit + showMoreNumber)}
           >
-            ➕ Show more
+            {feedShowMoreButton || '➕ Show more'}
           </Button>
         </div>
       ) : (

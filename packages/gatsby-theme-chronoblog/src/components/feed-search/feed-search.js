@@ -3,8 +3,15 @@ import { useContext } from 'react';
 import { Box, Flex, jsx } from 'theme-ui';
 
 import FeedContext from '../../contexts/context-feed';
+import useSiteMetadata from '../../hooks/use-site-metadata';
 
-export default ({ placeholder = 'search' }) => {
+export default ({ placeholder = '' }) => {
+  //
+  const {
+    uiText: { feedSearchPlaceholder }
+  } = useSiteMetadata();
+  const searchPlaceholder = placeholder || feedSearchPlaceholder || 'search';
+  //
   const {
     value: { searchInput },
     onChangeSearchInput
@@ -48,7 +55,7 @@ export default ({ placeholder = 'search' }) => {
               outline: '0px solid',
               opacity: '0.9'
             }}
-            placeholder={placeholder}
+            placeholder={searchPlaceholder}
             value={searchInput}
             onChange={onChangeSearchInput}
           />

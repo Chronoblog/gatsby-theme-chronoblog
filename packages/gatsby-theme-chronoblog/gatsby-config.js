@@ -2,7 +2,14 @@ const path = require('path');
 const remarkUnwrapImages = require('remark-unwrap-images');
 const remarkSlug = require('remark-slug');
 
-module.exports = () => {
+module.exports = (options) => {
+  const {
+    uiText: {
+      feedShowMoreButton = '➕ Show more',
+      feedSearchPlaceholder = 'search'
+    }
+  } = options;
+  //
   return {
     siteMetadata: {
       title: 'Chronoblog - Theme for Gatsby js', // site title for SEO and meta
@@ -11,7 +18,12 @@ module.exports = () => {
       siteUrl: 'http://localhost:8000', // http://example.com
       language: 'en',
       author: '', // for example - 'Ivan Ganev'
-      twitter: '' // for twitter cards meta data, example - '@ganevru'
+      twitter: '', // for twitter cards meta data, example - '@ganevru'
+      // ui text fot translate
+      uiText: {
+        feedShowMoreButton,
+        feedSearchPlaceholder
+      }
     },
     plugins: [
       {
