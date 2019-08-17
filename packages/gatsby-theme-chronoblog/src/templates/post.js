@@ -10,7 +10,7 @@ export const postQuery = graphql`
       id
       frontmatter {
         title
-        date(formatString: "MMMM DD, YYYY")
+        date
       }
       fields {
         slug
