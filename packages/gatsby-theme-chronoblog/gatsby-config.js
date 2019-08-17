@@ -5,7 +5,7 @@ const remarkSlug = require('remark-slug');
 module.exports = (options) => {
   const {
     uiText: {
-      feedShowMoreButton = '⬇️ Show more ⬇️',
+      feedShowMoreButton = '⬇️ show more ⬇️',
       feedSearchPlaceholder = 'search'
     }
   } = options;

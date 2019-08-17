@@ -62,7 +62,7 @@ const PageFooter = () => {
   );
 };
 
-const PagePost = ({ data }) => {
+const Post = ({ data }) => {
   return (
     <Layout>
       <SEO title={data.mdx.frontmatter.title} slug={data.mdx.fields.slug} />
@@ -80,4 +80,4 @@ const PagePost = ({ data }) => {
   );
 };
 
-export default PagePost;
+export default Post;

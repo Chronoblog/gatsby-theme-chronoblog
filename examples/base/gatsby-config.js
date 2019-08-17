@@ -9,7 +9,7 @@ module.exports = {
       resolve: 'gatsby-theme-chronoblog',
       options: {
         uiText: {
-          // feedShowMoreButton: '⬇️ Show more ⬇️',
+          // feedShowMoreButton: '⬇️ show more ⬇️',
           // feedSearchPlaceholder: 'search'
         }
       }

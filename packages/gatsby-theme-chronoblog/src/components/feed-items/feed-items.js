@@ -115,7 +115,7 @@ export default ({
             sx={{ fontSize: [1, 2], width: '100%' }}
             onClick={() => setCount(showLimit + showMoreNumber)}
           >
-            {feedShowMoreButton || '➕ Show more'}
+            {feedShowMoreButton || 'show more'}
           </Button>
         </div>
       ) : (
