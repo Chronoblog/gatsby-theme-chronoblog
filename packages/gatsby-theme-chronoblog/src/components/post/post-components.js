@@ -22,16 +22,6 @@ export const PostTitle = ({
   );
 };
 
-export const PostDate = ({
-  data: {
-    mdx: { frontmatter }
-  }
-}) => {
-  return (
-    <div>{frontmatter.date ? <Styled.p>{frontmatter.date}</Styled.p> : ''}</div>
-  );
-};
-
 export const PostContent = ({
   data: {
     mdx: { body }

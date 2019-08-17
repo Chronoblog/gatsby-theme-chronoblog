@@ -5,9 +5,10 @@ import { jsx } from 'theme-ui';
 import PostBottom from '../../post-bottom.mdx';
 // @ts-ignore
 import PostFooter from '../../post-footer.mdx';
+import Date from '../date';
 import Layout from '../layout';
 import SEO from '../seo';
-import { PostContent, PostDate, PostImage, PostTitle } from './post-components';
+import { PostContent, PostImage, PostTitle } from './post-components';
 
 export const Post = ({ data }) => {
   return (
@@ -18,7 +19,7 @@ export const Post = ({ data }) => {
           <header>
             <PostImage data={data} />
             <PostTitle data={data} />
-            <PostDate data={data} />
+            <Date date={data.mdx.frontmatter.date} />
           </header>
           <PostContent data={data} />
           <footer>
