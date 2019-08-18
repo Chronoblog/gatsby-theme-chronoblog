@@ -3,6 +3,7 @@ import { Link } from 'gatsby';
 import { jsx, Styled } from 'theme-ui';
 
 import Date from '../../date';
+import Tags from '../../tags';
 
 export default ({ item }) => {
   //
@@ -23,6 +24,7 @@ export default ({ item }) => {
             ? item.frontmatter.tags.map((t) => `${t} `)
             : ''}
         </Styled.p>
+        <Tags tags={item.frontmatter.tags} />
       </Link>
     </article>
   );

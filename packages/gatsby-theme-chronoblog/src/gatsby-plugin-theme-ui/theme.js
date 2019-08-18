@@ -9,7 +9,7 @@ const theme = {
   colors: {
     ...colors
   },
-  fontSizes: [16, 18, 20, 24, 26, 32, 48, 64, 96],
+  fontSizes: [14, 16, 18, 20, 24, 26, 32, 48],
   borderRadius: [6],
   fonts: {
     body: '-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif',

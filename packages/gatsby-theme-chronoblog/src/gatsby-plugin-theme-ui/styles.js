@@ -24,30 +24,30 @@ export default {
   },
   h1: {
     ...heading,
-    fontSize: [6]
+    fontSize: [7]
   },
   h2: {
     ...heading,
-    fontSize: [5]
+    fontSize: [6]
   },
   h3: {
     ...heading,
-    fontSize: [4]
+    fontSize: [5]
   },
   h4: {
     ...heading,
-    fontSize: [3]
+    fontSize: [4]
   },
   h5: {
     ...heading,
-    fontSize: [2]
+    fontSize: [3]
   },
   h6: {
     ...heading,
-    fontSize: [1]
+    fontSize: [2]
   },
   p: {
-    fontSize: [2]
+    fontSize: [3]
   },
   a: {
     color: 'primary',
