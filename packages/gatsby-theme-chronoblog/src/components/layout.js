@@ -26,9 +26,17 @@ const components = {
  *
  * @param {*} props spread props
  */
-export default ({ children, ...props }) => {
+export default ({
+  defaultSearchInput = '',
+  defaultTag = '',
+  children,
+  ...props
+}) => {
   //
-  const [value, setValue] = useState({ searchInput: '', tag: '' });
+  const [value, setValue] = useState({
+    searchInput: defaultSearchInput,
+    tag: defaultTag
+  });
 
   const onChangeSearchInput = useCallback((event) => {
     setValue({ searchInput: event.currentTarget.value, tag: '' });
