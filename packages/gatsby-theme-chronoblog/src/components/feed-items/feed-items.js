@@ -30,8 +30,8 @@ const filterSearchSymbols = (input, symbolsToSearch) => {
  * Feed Items
  *
  * @typedef {object} Props
- * @property {string=} search
- * @property {string=} tag
+ * @property {string=} filterBySearch
+ * @property {string=} filterByTag
  * @property {object=} filter all feed items predicate returns truthy for
  * @property {object=} reject items of feed that predicate does not return truthy for
  * @property {number=} limit limit of feed items to show
@@ -43,8 +43,8 @@ const filterSearchSymbols = (input, symbolsToSearch) => {
  * @param {Props=} props
  */
 export default ({
-  search = '',
-  tag = '',
+  filterBySearch = '',
+  filterByTag = '',
   filter,
   reject,
   limit = 3,
@@ -59,15 +59,15 @@ export default ({
   //
   // props
   // tag from props
-  if (tag && tag !== '') {
+  if (filterByTag && filterByTag !== '') {
     feedItems = feedItems.filter((i) => {
-      if (i.frontmatter.tags) return i.frontmatter.tags.includes(tag);
+      if (i.frontmatter.tags) return i.frontmatter.tags.includes(filterByTag);
       return false;
     });
   }
   // search from props
-  if (search && search !== '') {
-    feedItems = feedItems.filter((i) => filterSearchSymbols(i, search));
+  if (filterBySearch && filterBySearch !== '') {
+    feedItems = feedItems.filter((i) => filterSearchSymbols(i, filterBySearch));
   }
   // context
   const { value } = useContext(FeedContext);

@@ -23,7 +23,7 @@ export default () => {
     <div sx={{ marginY: [30] }}>
       {tags
         ? tags.map((i) => (
-            <Tag tag={i} valueTag={value.tag} onClick={onChangeTag} />
+            <Tag key={i} tag={i} valueTag={value.tag} onClick={onChangeTag} />
           ))
         : ''}
     </div>

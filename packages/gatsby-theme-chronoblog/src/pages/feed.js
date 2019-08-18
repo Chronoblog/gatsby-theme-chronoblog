@@ -8,8 +8,9 @@ import withLocation from '../components/with-location';
 
 const PageFeed = ({ search }) => {
   const { find } = search;
+  const { tag } = search;
   return (
-    <Layout defaultSearchInput={find}>
+    <Layout defaultSearchInput={find} defaultTag={tag}>
       <FeedSearch />
       <FeedTags />
       <FeedItems />
