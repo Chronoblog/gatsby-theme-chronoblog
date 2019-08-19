@@ -26,7 +26,7 @@ export default ({ as: Element = 'button', children, ...props }) => {
         display: 'inline-block',
         px: '20px',
         py: '10px',
-        fontSize: [0],
+        fontSize: [1],
         border: '1px',
         borderColor: 'muted',
         borderStyle: 'solid',

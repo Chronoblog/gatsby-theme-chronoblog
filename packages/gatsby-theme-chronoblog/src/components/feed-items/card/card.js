@@ -5,7 +5,21 @@ import { jsx, Styled } from 'theme-ui';
 import Date from '../../date';
 import Tags from '../../tags';
 
+const getDescription = (fromFrontmatter, fromExcerpt) => {
+  if (fromFrontmatter) return fromFrontmatter;
+  if (fromFrontmatter === '') return '';
+  if (fromExcerpt && fromExcerpt !== '') {
+    return fromExcerpt;
+  }
+  return '';
+};
+
 export default ({ item }) => {
+  //
+  const description = getDescription(
+    item.frontmatter.description,
+    item.excerpt
+  );
   //
   return (
     <article>
@@ -19,11 +33,7 @@ export default ({ item }) => {
       >
         <Styled.h2>{item.frontmatter.title}</Styled.h2>
         <Date date={item.frontmatter.date} />
-        <Styled.p>
-          {item.frontmatter.tags
-            ? item.frontmatter.tags.map((t) => `${t} `)
-            : ''}
-        </Styled.p>
+        <Styled.p>{description}</Styled.p>
         <Tags tags={item.frontmatter.tags} />
       </Link>
     </article>

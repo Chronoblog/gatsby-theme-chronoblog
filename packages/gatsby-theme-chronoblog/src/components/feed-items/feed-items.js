@@ -36,6 +36,7 @@ const filterSearchSymbols = (input, symbolsToSearch) => {
  * @property {object=} reject items of feed that predicate does not return truthy for
  * @property {number=} limit limit of feed items to show
  * @property {boolean=} showMoreButton
+ * @property {string=} showMoreText
  * @property {number=} showMoreNumber
  *
  */
@@ -49,6 +50,7 @@ export default ({
   reject,
   limit = 3,
   showMoreButton = true,
+  showMoreText = '',
   showMoreNumber = 10
 }) => {
   let feedItems = useFeed();
@@ -110,12 +112,12 @@ export default ({
         ))}
       </ul>
       {showMoreButton && feedItems.length > showLimit ? (
-        <div sx={{}}>
+        <div sx={{ my: '20px' }}>
           <Button
             sx={{ fontSize: [1, 2], width: '100%' }}
             onClick={() => setCount(showLimit + showMoreNumber)}
           >
-            {feedShowMoreButton || 'show more'}
+            {showMoreText || feedShowMoreButton || 'show more'}
           </Button>
         </div>
       ) : (

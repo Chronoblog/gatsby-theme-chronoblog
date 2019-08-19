@@ -8,9 +8,11 @@ export const postQuery = graphql`
   query($id: String!) {
     mdx(id: { eq: $id }) {
       id
+      excerpt
       frontmatter {
         title
         date
+        description
       }
       fields {
         slug

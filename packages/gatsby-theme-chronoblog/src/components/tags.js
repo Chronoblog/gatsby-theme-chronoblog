@@ -20,8 +20,8 @@ const Tag = ({ tag }) => {
           mr: ['5px'],
           mt: ['2px'],
           mb: ['2px'],
-          px: '15px',
-          py: '6px',
+          px: '10px',
+          py: '4px',
           fontSize: [0]
         }}
       >
@@ -41,9 +41,10 @@ const Tag = ({ tag }) => {
  */
 const Tags = ({ tags }) => {
   let tagsUse = tags;
-  if (!tagsUse) return '';
-  tagsUse = tagsUse.filter((t) => typeof t === 'string');
-  return tagsUse ? tagsUse.map((t) => <Tag key={t} tag={t} />) : '';
+  if (tagsUse) tagsUse = tagsUse.filter((t) => typeof t === 'string');
+  return (
+    <div>{tagsUse ? tagsUse.map((t) => <Tag key={t} tag={t} />) : ''}</div>
+  );
 };
 
 export default Tags;

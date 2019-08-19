@@ -38,11 +38,14 @@ const useFeed = () => {
       allMdx(filter: { frontmatter: { hide: { ne: true } } }) {
         nodes {
           id
+          body
+          excerpt
           fields {
             slug
           }
           frontmatter {
             title
+            description
             date
             tags
             draft

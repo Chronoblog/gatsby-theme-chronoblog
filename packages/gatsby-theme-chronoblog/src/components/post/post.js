@@ -10,10 +10,27 @@ import Layout from '../layout';
 import SEO from '../seo';
 import { PostContent, PostImage, PostTitle } from './post-components';
 
+const getDescription = (fromFrontmatter, fromExcerpt) => {
+  if (fromFrontmatter) return fromFrontmatter;
+  if (fromFrontmatter === '') return '';
+  if (fromExcerpt && fromExcerpt !== '') {
+    return fromExcerpt;
+  }
+  return '';
+};
+
 export const Post = ({ data }) => {
+  const description = getDescription(
+    data.mdx.frontmatter.description,
+    data.mdx.excerpt
+  );
   return (
     <Layout>
-      <SEO title={data.mdx.frontmatter.title} slug={data.mdx.fields.slug} />
+      <SEO
+        title={data.mdx.frontmatter.title}
+        slug={data.mdx.fields.slug}
+        description={description}
+      />
       <main>
         <article>
           <header>
