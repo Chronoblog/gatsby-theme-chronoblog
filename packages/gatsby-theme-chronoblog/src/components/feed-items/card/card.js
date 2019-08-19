@@ -5,18 +5,16 @@ import { jsx, Styled } from 'theme-ui';
 import Date from '../../date';
 import Tags from '../../tags';
 
-const getDescription = (fromFrontmatter, fromExcerpt) => {
+const getDescriptionForCard = (fromFrontmatter, fromExcerpt) => {
   if (fromFrontmatter) return fromFrontmatter;
   if (fromFrontmatter === '') return '';
-  if (fromExcerpt && fromExcerpt !== '') {
-    return fromExcerpt;
-  }
+  if (fromExcerpt && fromExcerpt !== '') return fromExcerpt;
   return '';
 };
 
 export default ({ item }) => {
   //
-  const description = getDescription(
+  const description = getDescriptionForCard(
     item.frontmatter.description,
     item.excerpt
   );

@@ -10,17 +10,14 @@ import Layout from '../layout';
 import SEO from '../seo';
 import { PostContent, PostImage, PostTitle } from './post-components';
 
-const getDescription = (fromFrontmatter, fromExcerpt) => {
-  if (fromFrontmatter) return fromFrontmatter;
-  if (fromFrontmatter === '') return '';
-  if (fromExcerpt && fromExcerpt !== '') {
-    return fromExcerpt;
-  }
+const getDescriptionForSeo = (fromFrontmatter, fromExcerpt) => {
+  if (fromFrontmatter && fromFrontmatter !== '') return fromFrontmatter;
+  if (fromExcerpt && fromExcerpt !== '') return fromExcerpt;
   return '';
 };
 
 export const Post = ({ data }) => {
-  const description = getDescription(
+  const description = getDescriptionForSeo(
     data.mdx.frontmatter.description,
     data.mdx.excerpt
   );
