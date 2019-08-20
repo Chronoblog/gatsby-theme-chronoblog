@@ -55,11 +55,7 @@ export default ({ item }) => {
           <Styled.h2 sx={{ mb: '8px', mt: '2px' }}>
             {item.frontmatter.title}
           </Styled.h2>
-        </LinkCard>
-        <LinkCard to={link}>
           <Date date={item.frontmatter.date} />
-        </LinkCard>
-        <LinkCard to={link}>
           <Styled.p sx={{ mb: '18px' }}>{description}</Styled.p>
         </LinkCard>
         <Tags tags={item.frontmatter.tags} />
