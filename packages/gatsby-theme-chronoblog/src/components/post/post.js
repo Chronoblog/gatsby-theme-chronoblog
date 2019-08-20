@@ -17,22 +17,11 @@ const getDescriptionForSeo = (fromFrontmatter, fromExcerpt) => {
   return '';
 };
 
-const useCover = (frontmatterCover) => {
-  if (
-    frontmatterCover &&
-    frontmatterCover.childImageSharp &&
-    frontmatterCover.childImageSharp.fluid
-  )
-    return frontmatterCover.childImageSharp.fluid;
-  return '';
-};
-
 export const Post = ({ data }) => {
   const description = getDescriptionForSeo(
     data.mdx.frontmatter.description,
     data.mdx.excerpt
   );
-  const coverImage = useCover(data.mdx.frontmatter.cover);
   //
   return (
     <Layout>
@@ -44,7 +33,7 @@ export const Post = ({ data }) => {
       <main>
         <article>
           <header>
-            <PostCover image={coverImage} />
+            <PostCover data={data} />
             <PostTitle data={data} />
             <Date date={data.mdx.frontmatter.date} />
             <Tags tags={data.mdx.frontmatter.tags} />

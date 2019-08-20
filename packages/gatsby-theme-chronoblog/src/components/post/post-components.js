@@ -4,8 +4,23 @@ import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { jsx, Styled } from 'theme-ui';
 // import BGImage from "./bg-image"
 
-export const PostCover = ({ image }) => {
-  return <div>{image ? <Img fluid={image} /> : ''}</div>;
+const useCover = (frontmatterCover) => {
+  if (
+    frontmatterCover &&
+    frontmatterCover.childImageSharp &&
+    frontmatterCover.childImageSharp.fluid
+  )
+    return frontmatterCover.childImageSharp.fluid;
+  return '';
+};
+
+export const PostCover = ({
+  data: {
+    mdx: { frontmatter }
+  }
+}) => {
+  const coverImage = useCover(frontmatter.cover);
+  return <div>{coverImage ? <Img fluid={coverImage} /> : ''}</div>;
 };
 
 export const PostTitle = ({
