@@ -50,6 +50,16 @@ const useFeed = () => {
             tags
             draft
             hide
+            cover {
+              childImageSharp {
+                fluid(maxWidth: 1920, quality: 90) {
+                  ...GatsbyImageSharpFluid_withWebp
+                }
+                resize(width: 800) {
+                  src
+                }
+              }
+            }
           }
           parent {
             ... on File {

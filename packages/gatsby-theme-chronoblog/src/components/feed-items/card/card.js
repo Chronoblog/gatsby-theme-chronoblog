@@ -1,9 +1,26 @@
 /** @jsx jsx */
 import { Link } from 'gatsby';
+import Img from 'gatsby-image';
 import { jsx, Styled } from 'theme-ui';
 
 import Date from '../../date';
 import Tags from '../../tags';
+
+const useCover = (frontmatter) => {
+  if (
+    frontmatter &&
+    frontmatter.cover &&
+    frontmatter.cover.childImageSharp &&
+    frontmatter.cover.childImageSharp.fluid
+  )
+    return frontmatter.cover.childImageSharp.fluid;
+  return '';
+};
+
+const CardPostCover = ({ data: { frontmatter } }) => {
+  const coverImage = useCover(frontmatter);
+  return <div>{coverImage ? <Img fluid={coverImage} /> : ''}</div>;
+};
 
 const getDescriptionForCard = (fromFrontmatter, fromExcerpt) => {
   if (fromFrontmatter) return fromFrontmatter;
@@ -57,6 +74,7 @@ export default ({ item }) => {
           </Styled.h2>
           <Date date={item.frontmatter.date} />
           <Styled.p sx={{ mb: '18px' }}>{description}</Styled.p>
+          <CardPostCover data={item} />
         </LinkCard>
         <Tags tags={item.frontmatter.tags} />
       </div>
