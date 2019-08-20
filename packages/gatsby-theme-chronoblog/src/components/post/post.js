@@ -18,7 +18,11 @@ const getDescriptionForSeo = (fromFrontmatter, fromExcerpt) => {
 };
 
 const useCover = (frontmatterCover) => {
-  if (frontmatterCover && frontmatterCover.childImageSharp)
+  if (
+    frontmatterCover &&
+    frontmatterCover.childImageSharp &&
+    frontmatterCover.childImageSharp.fluid
+  )
     return frontmatterCover.childImageSharp.fluid;
   return '';
 };
