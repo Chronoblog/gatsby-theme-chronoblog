@@ -1,13 +1,11 @@
 /** @jsx jsx */
+import Img from 'gatsby-image';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { jsx, Styled } from 'theme-ui';
+// import BGImage from "./bg-image"
 
-export const PostImage = ({
-  data: {
-    mdx: { frontmatter }
-  }
-}) => {
-  return <div>{frontmatter.image ? <div>{frontmatter.image}</div> : ''}</div>;
+export const PostCover = ({ image }) => {
+  return <div>{image ? <Img fluid={image} /> : ''}</div>;
 };
 
 export const PostTitle = ({

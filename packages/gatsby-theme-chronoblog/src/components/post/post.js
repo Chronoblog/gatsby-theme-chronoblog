@@ -9,11 +9,17 @@ import Date from '../date';
 import Layout from '../layout';
 import SEO from '../seo';
 import Tags from '../tags';
-import { PostContent, PostImage, PostTitle } from './post-components';
+import { PostContent, PostCover, PostTitle } from './post-components';
 
 const getDescriptionForSeo = (fromFrontmatter, fromExcerpt) => {
   if (fromFrontmatter && fromFrontmatter !== '') return fromFrontmatter;
   if (fromExcerpt && fromExcerpt !== '') return fromExcerpt;
+  return '';
+};
+
+const useCover = (frontmatterCover) => {
+  if (frontmatterCover && frontmatterCover.childImageSharp)
+    return frontmatterCover.childImageSharp.fluid;
   return '';
 };
 
@@ -22,6 +28,8 @@ export const Post = ({ data }) => {
     data.mdx.frontmatter.description,
     data.mdx.excerpt
   );
+  const coverImage = useCover(data.mdx.frontmatter.cover);
+  //
   return (
     <Layout>
       <SEO
@@ -32,7 +40,7 @@ export const Post = ({ data }) => {
       <main>
         <article>
           <header>
-            <PostImage data={data} />
+            <PostCover image={coverImage} />
             <PostTitle data={data} />
             <Date date={data.mdx.frontmatter.date} />
             <Tags tags={data.mdx.frontmatter.tags} />

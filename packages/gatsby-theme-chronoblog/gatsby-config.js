@@ -46,9 +46,31 @@ module.exports = (options) => {
           remarkPlugins: [remarkSlug, remarkUnwrapImages],
           defaultLayouts: {
             pages: require.resolve('./src/components/page')
-          }
+          },
+          gatsbyRemarkPlugins: [
+            {
+              resolve: `gatsby-remark-images`,
+              options: {
+                maxWidth: 820,
+                quality: 90,
+                linkImagesToOriginal: false
+              }
+            }
+          ],
+          plugins: [
+            {
+              resolve: `gatsby-remark-images`,
+              options: {
+                maxWidth: 820,
+                quality: 90,
+                linkImagesToOriginal: false
+              }
+            }
+          ]
         }
       },
+      `gatsby-transformer-sharp`,
+      `gatsby-plugin-sharp`,
       'gatsby-plugin-theme-ui',
       'gatsby-plugin-react-helmet',
       'gatsby-plugin-emotion',

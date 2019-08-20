@@ -14,6 +14,16 @@ export const postQuery = graphql`
         date
         description
         tags
+        cover {
+          childImageSharp {
+            fluid(maxWidth: 1920, quality: 90) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+            resize(width: 800) {
+              src
+            }
+          }
+        }
       }
       fields {
         slug
