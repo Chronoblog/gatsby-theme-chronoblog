@@ -46,8 +46,7 @@ export default ({ item }) => {
           borderStyle: 'solid',
           borderRadius: [0],
           '&:hover': {
-            opacity: 0.8,
-            cursor: 'pointer',
+            opacity: 0.9,
             borderColor: 'secondary'
           }
         }}
@@ -57,8 +56,12 @@ export default ({ item }) => {
             {item.frontmatter.title}
           </Styled.h2>
         </LinkCard>
-        <Date date={item.frontmatter.date} />
-        <Styled.p sx={{ mb: '18px' }}>{description}</Styled.p>
+        <LinkCard to={link}>
+          <Date date={item.frontmatter.date} />
+        </LinkCard>
+        <LinkCard to={link}>
+          <Styled.p sx={{ mb: '18px' }}>{description}</Styled.p>
+        </LinkCard>
         <Tags tags={item.frontmatter.tags} />
       </div>
     </article>

@@ -22,8 +22,8 @@ const Tag = ({ tag }) => {
           mr: ['5px'],
           mt: ['2px'],
           mb: ['2px'],
-          px: '10px',
-          py: '4px',
+          px: '12px',
+          py: '6px',
           fontSize: [0]
         }}
       >
