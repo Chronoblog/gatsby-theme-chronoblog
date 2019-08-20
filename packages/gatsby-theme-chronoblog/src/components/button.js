@@ -27,13 +27,12 @@ export default ({ as: Element = 'button', children, ...props }) => {
         px: '20px',
         py: '10px',
         fontSize: [1],
-        border: '1px',
-        borderColor: 'muted',
-        borderStyle: 'solid',
+        border: '0px',
         borderRadius: [0],
         '&:hover': {
           opacity: 0.8,
-          cursor: 'pointer'
+          cursor: 'pointer',
+          bg: 'secondary'
         }
       }}
     >

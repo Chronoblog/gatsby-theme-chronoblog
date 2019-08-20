@@ -12,28 +12,56 @@ const getDescriptionForCard = (fromFrontmatter, fromExcerpt) => {
   return '';
 };
 
+const LinkCard = ({ to, children }) => (
+  <Link
+    to={to}
+    sx={{
+      display: 'block',
+      textDecoration: 'none',
+      color: 'inherit'
+    }}
+  >
+    {children}
+  </Link>
+);
 export default ({ item }) => {
   //
   const description = getDescriptionForCard(
     item.frontmatter.description,
     item.excerpt
   );
+  const link = item.fields.slug;
   //
   return (
     <article>
-      <Link
-        to={item.fields.slug}
-        sx={{
-          display: 'block',
-          textDecoration: 'none',
-          color: 'inherit'
-        }}
-      >
-        <Styled.h2>{item.frontmatter.title}</Styled.h2>
-        <Date date={item.frontmatter.date} />
-        <Styled.p>{description}</Styled.p>
-        <Tags tags={item.frontmatter.tags} />
-      </Link>
+      <LinkCard to={link}>
+        <div
+          sx={{
+            px: '20px',
+            py: '20px',
+            my: '20px',
+            color: 'text',
+            bg: 'inherit',
+            border: '2px',
+            borderColor: 'muted',
+            borderStyle: 'solid',
+            borderRadius: [0],
+            '&:hover': {
+              opacity: 0.8,
+              cursor: 'pointer',
+              borderColor: 'secondary',
+              color: 'red'
+            }
+          }}
+        >
+          <Styled.h2 sx={{ mb: '8px', mt: '2px' }}>
+            {item.frontmatter.title}
+          </Styled.h2>
+          <Date date={item.frontmatter.date} />
+          <Styled.p sx={{ mb: '18px' }}>{description}</Styled.p>
+          <Tags tags={item.frontmatter.tags} />
+        </div>
+      </LinkCard>
     </article>
   );
 };

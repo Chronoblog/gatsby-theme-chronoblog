@@ -12,7 +12,7 @@ export default ({ valueTag, tag, onClick }) => {
     <Button
       as="label"
       sx={{
-        bg: checked ? 'secondary' : 'muted',
+        bg: checked ? 'primary' : 'muted',
         mr: ['10px'],
         mt: ['5px'],
         mb: ['5px']
