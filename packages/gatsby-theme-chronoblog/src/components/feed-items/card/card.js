@@ -49,8 +49,7 @@ export default ({ item }) => {
             '&:hover': {
               opacity: 0.8,
               cursor: 'pointer',
-              borderColor: 'secondary',
-              color: 'red'
+              borderColor: 'secondary'
             }
           }}
         >
