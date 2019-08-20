@@ -8,6 +8,7 @@ import PostFooter from '../../post-footer.mdx';
 import Date from '../date';
 import Layout from '../layout';
 import SEO from '../seo';
+import Tags from '../tags';
 import { PostContent, PostImage, PostTitle } from './post-components';
 
 const getDescriptionForSeo = (fromFrontmatter, fromExcerpt) => {
@@ -34,9 +35,11 @@ export const Post = ({ data }) => {
             <PostImage data={data} />
             <PostTitle data={data} />
             <Date date={data.mdx.frontmatter.date} />
+            <Tags tags={data.mdx.frontmatter.tags} />
           </header>
           <PostContent data={data} />
           <footer>
+            <Tags tags={data.mdx.frontmatter.tags} />
             <PostFooter />
           </footer>
         </article>

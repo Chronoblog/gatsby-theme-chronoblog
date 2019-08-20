@@ -13,6 +13,7 @@ export const postQuery = graphql`
         title
         date
         description
+        tags
       }
       fields {
         slug
