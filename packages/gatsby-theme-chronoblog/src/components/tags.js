@@ -2,6 +2,7 @@
 import { Link } from 'gatsby';
 import { jsx } from 'theme-ui';
 
+import useSiteMetadata from '../hooks/use-site-metadata';
 import Button from './button';
 
 /**
@@ -13,8 +14,9 @@ import Button from './button';
  * @param {TagProps=} props
  */
 const Tag = ({ tag }) => {
+  const { siteUrl } = useSiteMetadata();
   return (
-    <Link to={`/feed?tag=${tag}`}>
+    <a href={`${siteUrl}/feed?tag=${tag}`}>
       <Button
         sx={{
           mr: ['5px'],
@@ -27,7 +29,7 @@ const Tag = ({ tag }) => {
       >
         {tag}
       </Button>
-    </Link>
+    </a>
   );
 };
 

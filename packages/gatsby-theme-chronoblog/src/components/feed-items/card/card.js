@@ -34,33 +34,33 @@ export default ({ item }) => {
   //
   return (
     <article>
-      <LinkCard to={link}>
-        <div
-          sx={{
-            px: '20px',
-            py: '20px',
-            my: '20px',
-            color: 'text',
-            bg: 'inherit',
-            border: '2px',
-            borderColor: 'muted',
-            borderStyle: 'solid',
-            borderRadius: [0],
-            '&:hover': {
-              opacity: 0.8,
-              cursor: 'pointer',
-              borderColor: 'secondary'
-            }
-          }}
-        >
+      <div
+        sx={{
+          px: '20px',
+          py: '20px',
+          my: '20px',
+          color: 'text',
+          bg: 'inherit',
+          border: '2px',
+          borderColor: 'muted',
+          borderStyle: 'solid',
+          borderRadius: [0],
+          '&:hover': {
+            opacity: 0.8,
+            cursor: 'pointer',
+            borderColor: 'secondary'
+          }
+        }}
+      >
+        <LinkCard to={link}>
           <Styled.h2 sx={{ mb: '8px', mt: '2px' }}>
             {item.frontmatter.title}
           </Styled.h2>
-          <Date date={item.frontmatter.date} />
-          <Styled.p sx={{ mb: '18px' }}>{description}</Styled.p>
-          <Tags tags={item.frontmatter.tags} />
-        </div>
-      </LinkCard>
+        </LinkCard>
+        <Date date={item.frontmatter.date} />
+        <Styled.p sx={{ mb: '18px' }}>{description}</Styled.p>
+        <Tags tags={item.frontmatter.tags} />
+      </div>
     </article>
   );
 };
