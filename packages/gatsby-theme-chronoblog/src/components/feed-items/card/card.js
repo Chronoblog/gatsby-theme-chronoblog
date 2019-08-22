@@ -6,48 +6,60 @@ import { jsx, Styled } from 'theme-ui';
 import Date from '../../date';
 import Tags from '../../tags';
 
-const getCoverFluid = (frontmatter) => {
+/**
+ * @param {'fixed' | 'fluid'} imgType
+ * @param {*} frontmatter
+ */
+const getCover = (frontmatter, imgType) => {
   if (
     frontmatter &&
     frontmatter.cover &&
     frontmatter.cover.childImageSharp &&
-    frontmatter.cover.childImageSharp.fluid &&
-    frontmatter.cover.childImageSharp.fluid !== '' &&
-    frontmatter.cover.childImageSharp.fluid !== 0
+    frontmatter.cover.childImageSharp[imgType] &&
+    frontmatter.cover.childImageSharp[imgType] !== '' &&
+    frontmatter.cover.childImageSharp[imgType] !== 0
   )
-    return frontmatter.cover.childImageSharp.fluid;
+    return frontmatter.cover.childImageSharp[imgType];
   return '';
 };
 
 const CardPostCover = ({ data: { frontmatter } }) => {
-  const coverFluidImage = getCoverFluid(frontmatter);
+  const coverFluidImage = getCover(frontmatter, 'fluid');
   return (
     <div>
       {coverFluidImage ? (
-        <BackgroundImage
-          fluid={coverFluidImage}
-          style={{
-            backgroundSize: 'cover'
+        <div
+          sx={{
+            border: '0px',
+            borderColor: 'muted',
+            borderStyle: 'solid',
+            borderRadius: [0]
           }}
         >
           <BackgroundImage
-            style={{
-              backgroundSize: 'contain',
-              backdropFilter: 'blur(5px)'
-            }}
             fluid={coverFluidImage}
+            style={{
+              backgroundSize: 'cover'
+            }}
           >
-            <div
-              sx={{
-                minHeight: ['200px', '400px'],
-                backdropFilter: `drop-shadow(0px 0px 50px black)`,
-                boxShadow: 'inset 0px 0px 15px black',
-                border: '0px',
-                borderRadius: [0]
+            <BackgroundImage
+              style={{
+                backgroundSize: 'contain',
+                backdropFilter: 'blur(5px)'
               }}
-            />
+              fluid={coverFluidImage}
+            >
+              <div
+                sx={{
+                  minHeight: ['200px', '400px'],
+                  backdropFilter: `drop-shadow(0px 0px 50px black)`,
+                  boxShadow: 'inset 0px 0px 15px black',
+                  borderRadius: [0]
+                }}
+              />
+            </BackgroundImage>
           </BackgroundImage>
-        </BackgroundImage>
+        </div>
       ) : (
         ''
       )}

@@ -55,7 +55,10 @@ const useFeed = () => {
                 fluid(maxWidth: 920, quality: 90) {
                   ...GatsbyImageSharpFluid_withWebp
                 }
-                resize(width: 768) {
+                fixed(width: 920) {
+                  ...GatsbyImageSharpFixed_withWebp
+                }
+                resize(width: 920) {
                   src
                 }
               }
