@@ -31,10 +31,11 @@ const CardPostCover = ({ data: { frontmatter } }) => {
       {coverFluidImage ? (
         <div
           sx={{
-            border: '0px',
+            border: '1px',
             borderColor: 'muted',
             borderStyle: 'solid',
-            borderRadius: [0]
+            borderRadius: '0px',
+            maxHeight: ['200px', '400px']
           }}
         >
           <BackgroundImage
@@ -44,18 +45,25 @@ const CardPostCover = ({ data: { frontmatter } }) => {
             }}
           >
             <BackgroundImage
-              style={{
-                backgroundSize: 'contain',
-                backdropFilter: 'blur(5px)'
-              }}
+              style={
+                coverFluidImage.presentationHeight < 400 &&
+                coverFluidImage.presentationWidth < 768
+                  ? {
+                      backgroundSize: 'auto auto',
+                      backdropFilter: 'blur(5px)'
+                    }
+                  : {
+                      backgroundSize: 'contain',
+                      backdropFilter: 'blur(5px)'
+                    }
+              }
               fluid={coverFluidImage}
             >
               <div
                 sx={{
                   minHeight: ['200px', '400px'],
                   backdropFilter: `drop-shadow(0px 0px 50px black)`,
-                  boxShadow: 'inset 0px 0px 15px black',
-                  borderRadius: [0]
+                  boxShadow: 'inset 0px 0px 15px black'
                 }}
               />
             </BackgroundImage>

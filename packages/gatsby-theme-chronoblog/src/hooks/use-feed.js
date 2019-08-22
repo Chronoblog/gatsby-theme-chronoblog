@@ -54,6 +54,8 @@ const useFeed = () => {
               childImageSharp {
                 fluid(maxWidth: 920, quality: 90) {
                   ...GatsbyImageSharpFluid_withWebp
+                  presentationWidth
+                  presentationHeight
                 }
                 fixed(width: 920) {
                   ...GatsbyImageSharpFixed_withWebp
