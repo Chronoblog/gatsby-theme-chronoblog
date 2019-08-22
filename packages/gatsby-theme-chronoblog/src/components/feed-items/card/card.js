@@ -1,25 +1,58 @@
 /** @jsx jsx */
 import { Link } from 'gatsby';
-import Img from 'gatsby-image';
+import BackgroundImage from 'gatsby-background-image';
 import { jsx, Styled } from 'theme-ui';
 
 import Date from '../../date';
 import Tags from '../../tags';
 
-const useCover = (frontmatter) => {
+const getCoverFluid = (frontmatter) => {
   if (
     frontmatter &&
     frontmatter.cover &&
     frontmatter.cover.childImageSharp &&
-    frontmatter.cover.childImageSharp.fluid
+    frontmatter.cover.childImageSharp.fluid &&
+    frontmatter.cover.childImageSharp.fluid !== '' &&
+    frontmatter.cover.childImageSharp.fluid !== 0
   )
     return frontmatter.cover.childImageSharp.fluid;
   return '';
 };
 
 const CardPostCover = ({ data: { frontmatter } }) => {
-  const coverImage = useCover(frontmatter);
-  return <div>{coverImage ? <Img fluid={coverImage} /> : ''}</div>;
+  const coverFluidImage = getCoverFluid(frontmatter);
+  return (
+    <div>
+      {coverFluidImage ? (
+        <BackgroundImage
+          fluid={coverFluidImage}
+          style={{
+            backgroundSize: 'cover'
+          }}
+        >
+          <BackgroundImage
+            style={{
+              backgroundSize: 'contain',
+              backdropFilter: 'blur(5px)'
+            }}
+            fluid={coverFluidImage}
+          >
+            <div
+              sx={{
+                minHeight: ['200px', '400px'],
+                backdropFilter: `drop-shadow(0px 0px 50px black)`,
+                boxShadow: 'inset 0px 0px 15px black',
+                border: '0px',
+                borderRadius: [0]
+              }}
+            />
+          </BackgroundImage>
+        </BackgroundImage>
+      ) : (
+        ''
+      )}
+    </div>
+  );
 };
 
 const getDescriptionForCard = (fromFrontmatter, fromExcerpt) => {
@@ -48,13 +81,14 @@ export default ({ item }) => {
     item.excerpt
   );
   const link = item.fields.slug;
+  const { date } = item.frontmatter;
+  const { title } = item.frontmatter;
+  const { tags } = item.frontmatter;
   //
   return (
     <article>
       <div
         sx={{
-          px: '20px',
-          py: '20px',
           my: '20px',
           color: 'text',
           bg: 'inherit',
@@ -68,15 +102,17 @@ export default ({ item }) => {
           }
         }}
       >
-        <LinkCard to={link}>
-          <Styled.h2 sx={{ mb: '8px', mt: '2px' }}>
-            {item.frontmatter.title}
-          </Styled.h2>
-          <Date date={item.frontmatter.date} />
-          <Styled.p sx={{ mb: '18px' }}>{description}</Styled.p>
-          <CardPostCover data={item} />
-        </LinkCard>
-        <Tags tags={item.frontmatter.tags} />
+        <CardPostCover data={item} />
+        <div sx={{ px: '20px', py: '20px' }}>
+          <LinkCard to={link}>
+            <Styled.h2 sx={{ mb: '8px', mt: '12px' }}>{title}</Styled.h2>
+            <Date date={date} />
+            <Styled.p sx={{ mb: '18px' }}>{description}</Styled.p>
+          </LinkCard>
+          <div sx={{ mt: '4px' }}>
+            <Tags tags={tags} />
+          </div>
+        </div>
       </div>
     </article>
   );

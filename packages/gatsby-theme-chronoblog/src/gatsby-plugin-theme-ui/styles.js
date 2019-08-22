@@ -12,6 +12,10 @@ export default {
     maxWidth: 768,
     mx: 'auto'
   },
+  img: {
+    maxWidth: '100%',
+    height: 'auto'
+  },
   Layout: {
     fontFamily: 'body',
     lineHeight: 'body',
@@ -55,9 +59,5 @@ export default {
       color: 'secondary',
       opacity: 0.8
     }
-  },
-  img: {
-    maxWidth: '100%',
-    height: 'auto'
   }
 };
