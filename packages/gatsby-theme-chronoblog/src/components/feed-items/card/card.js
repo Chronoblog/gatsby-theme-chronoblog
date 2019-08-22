@@ -35,7 +35,7 @@ const CardPostCover = ({ data: { frontmatter } }) => {
             borderColor: 'muted',
             borderStyle: 'solid',
             borderRadius: '0px',
-            maxHeight: ['200px', '400px']
+            maxHeight: ['400px']
           }}
         >
           <BackgroundImage
@@ -45,6 +45,8 @@ const CardPostCover = ({ data: { frontmatter } }) => {
             }}
           >
             <BackgroundImage
+              // if image is very small - apply backgroundSize: 'auto auto'
+              // in other cases - backgroundSize: 'contain'
               style={
                 coverFluidImage.presentationHeight < 400 &&
                 coverFluidImage.presentationWidth < 768
@@ -61,7 +63,7 @@ const CardPostCover = ({ data: { frontmatter } }) => {
             >
               <div
                 sx={{
-                  minHeight: ['200px', '400px'],
+                  minHeight: ['400px'],
                   backdropFilter: `drop-shadow(0px 0px 50px black)`,
                   boxShadow: 'inset 0px 0px 15px black'
                 }}
@@ -123,17 +125,23 @@ export default ({ item }) => {
           }
         }}
       >
-        <CardPostCover data={item} />
-        <div sx={{ px: '20px', py: '20px' }}>
-          <LinkCard to={link}>
+        <LinkCard to={link}>
+          <CardPostCover data={item} />
+        </LinkCard>
+        <LinkCard to={link}>
+          <div sx={{ px: '20px', pt: '20px' }}>
             <Styled.h2 sx={{ mb: '8px', mt: '12px' }}>{title}</Styled.h2>
             <Date date={date} />
             <Styled.p sx={{ mb: '18px' }}>{description}</Styled.p>
-          </LinkCard>
-          <div sx={{ mt: '4px' }}>
+          </div>
+        </LinkCard>
+        {tags ? (
+          <div sx={{ mt: '4px', px: '20px', pb: '20px' }}>
             <Tags tags={tags} />
           </div>
-        </div>
+        ) : (
+          ''
+        )}
       </div>
     </article>
   );
