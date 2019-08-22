@@ -25,7 +25,6 @@ exports.onPreBootstrap = ({ store }) => {
   const dirs = [
     path.join(program.directory, `content/posts`),
     path.join(program.directory, `content/links`),
-    path.join(program.directory, `content/notes`),
     path.join(program.directory, `pages`)
   ];
 

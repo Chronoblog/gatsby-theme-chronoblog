@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { Link } from 'gatsby';
 import BackgroundImage from 'gatsby-background-image';
+// import Img from 'gatsby-image';
 import { jsx, Styled } from 'theme-ui';
 
 import Date from '../../date';
