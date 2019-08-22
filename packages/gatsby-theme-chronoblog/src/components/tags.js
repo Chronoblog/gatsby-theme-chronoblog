@@ -44,7 +44,11 @@ const Tags = ({ tags }) => {
   let tagsUse = tags;
   if (tagsUse) tagsUse = tagsUse.filter((t) => typeof t === 'string');
   return (
-    <div>{tagsUse ? tagsUse.map((t) => <Tag key={t} tag={t} />) : ''}</div>
+    <div>
+      {tagsUse && tagsUse !== null
+        ? tagsUse.map((t) => <Tag key={t} tag={t} />)
+        : ''}
+    </div>
   );
 };
 

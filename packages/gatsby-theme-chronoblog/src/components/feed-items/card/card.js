@@ -135,7 +135,7 @@ export default ({ item }) => {
             <Styled.p sx={{ mb: '18px' }}>{description}</Styled.p>
           </div>
         </LinkCard>
-        {tags ? (
+        {tags && tags !== null ? (
           <div sx={{ mt: '4px', px: '20px', pb: '20px' }}>
             <Tags tags={tags} />
           </div>
