@@ -35,7 +35,7 @@ const CardPostCover = ({ data: { frontmatter } }) => {
             borderColor: 'muted',
             borderStyle: 'solid',
             borderRadius: '0px',
-            maxHeight: ['400px']
+            maxHeight: ['384px']
           }}
         >
           <BackgroundImage
@@ -48,7 +48,7 @@ const CardPostCover = ({ data: { frontmatter } }) => {
               // if image is very small - apply backgroundSize: 'auto auto'
               // in other cases - backgroundSize: 'contain'
               style={
-                coverFluidImage.presentationHeight < 400 &&
+                coverFluidImage.presentationHeight < 384 &&
                 coverFluidImage.presentationWidth < 768
                   ? {
                       backgroundSize: 'auto auto',
@@ -63,7 +63,7 @@ const CardPostCover = ({ data: { frontmatter } }) => {
             >
               <div
                 sx={{
-                  minHeight: ['400px'],
+                  minHeight: ['384px'],
                   backdropFilter: `drop-shadow(0px 0px 50px black)`,
                   boxShadow: 'inset 0px 0px 15px black'
                 }}
