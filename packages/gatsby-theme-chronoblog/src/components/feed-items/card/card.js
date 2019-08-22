@@ -31,17 +31,15 @@ const CardPostCover = ({ data: { frontmatter } }) => {
       {coverFluidImage ? (
         <div
           sx={{
-            border: '1px',
-            borderColor: 'muted',
-            borderStyle: 'solid',
-            borderRadius: '0px',
             maxHeight: ['384px']
           }}
         >
           <BackgroundImage
             fluid={coverFluidImage}
             style={{
-              backgroundSize: 'cover'
+              backgroundSize: 'cover',
+              borderRadius: '3px 3px 0px 0px',
+              overflow: 'hidden'
             }}
           >
             <BackgroundImage
