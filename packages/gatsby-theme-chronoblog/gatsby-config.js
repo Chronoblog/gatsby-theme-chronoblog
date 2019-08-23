@@ -70,7 +70,12 @@ module.exports = (options) => {
         }
       },
       `gatsby-transformer-sharp`,
-      `gatsby-plugin-sharp`,
+      {
+        resolve: `gatsby-plugin-sharp`,
+        options: {
+          defaultQuality: 90
+        }
+      },
       'gatsby-plugin-theme-ui',
       'gatsby-plugin-react-helmet',
       'gatsby-plugin-emotion',

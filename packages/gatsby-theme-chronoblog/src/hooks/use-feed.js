@@ -56,6 +56,8 @@ const useFeed = () => {
                   ...GatsbyImageSharpFluid_withWebp
                   presentationWidth
                   presentationHeight
+                  tracedSVG
+                  src
                 }
                 fixed(width: 768, quality: 90) {
                   ...GatsbyImageSharpFixed_withWebp

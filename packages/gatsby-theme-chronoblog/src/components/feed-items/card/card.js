@@ -34,13 +34,13 @@ const CardPostCover = ({ data: { frontmatter } }) => {
             maxHeight: ['384px']
           }}
         >
-          <BackgroundImage
-            fluid={coverFluidImage}
-            style={{
+          <div
+            sx={{
+              backgroundImage: `url(${coverFluidImage.src})`,
               backgroundSize: 'cover',
-              backgroundPosition: 'center'
-              // borderRadius: '3px 3px 0px 0px',
-              // overflow: 'hidden'
+              backgroundPosition: 'center',
+              backgroundClip: 'padding-box',
+              borderRadius: '4px 4px 0px 0px'
             }}
           >
             <BackgroundImage
@@ -51,11 +51,11 @@ const CardPostCover = ({ data: { frontmatter } }) => {
                 coverFluidImage.presentationWidth < 768
                   ? {
                       backgroundSize: 'auto auto',
-                      backdropFilter: 'blur(5px)'
+                      backdropFilter: `blur(5px) contrast(50%)`
                     }
                   : {
                       backgroundSize: 'contain',
-                      backdropFilter: 'blur(5px)'
+                      backdropFilter: `blur(5px) contrast(50%)`
                     }
               }
               fluid={coverFluidImage}
@@ -64,11 +64,12 @@ const CardPostCover = ({ data: { frontmatter } }) => {
                 sx={{
                   minHeight: ['384px'],
                   backdropFilter: `drop-shadow(0px 0px 20px black)`,
-                  boxShadow: 'inset 0px 0px 15px black'
+                  boxShadow: 'inset 0px 0px 15px black',
+                  borderRadius: '4px 4px 0px 0px'
                 }}
               />
             </BackgroundImage>
-          </BackgroundImage>
+          </div>
         </div>
       ) : (
         ''
@@ -117,7 +118,7 @@ export default ({ item }) => {
           border: '2px',
           borderColor: 'muted',
           borderStyle: 'solid',
-          // borderRadius: [0],
+          borderRadius: [0],
           '&:hover': {
             opacity: 0.9,
             borderColor: 'secondary'
