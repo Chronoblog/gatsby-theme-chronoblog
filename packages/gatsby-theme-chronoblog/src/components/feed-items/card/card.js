@@ -38,8 +38,9 @@ const CardPostCover = ({ data: { frontmatter } }) => {
             fluid={coverFluidImage}
             style={{
               backgroundSize: 'cover',
-              borderRadius: '3px 3px 0px 0px',
-              overflow: 'hidden'
+              backgroundPosition: 'center'
+              // borderRadius: '3px 3px 0px 0px',
+              // overflow: 'hidden'
             }}
           >
             <BackgroundImage
@@ -62,7 +63,7 @@ const CardPostCover = ({ data: { frontmatter } }) => {
               <div
                 sx={{
                   minHeight: ['384px'],
-                  backdropFilter: `drop-shadow(0px 0px 50px black)`,
+                  backdropFilter: `drop-shadow(0px 0px 20px black)`,
                   boxShadow: 'inset 0px 0px 15px black'
                 }}
               />
@@ -116,7 +117,7 @@ export default ({ item }) => {
           border: '2px',
           borderColor: 'muted',
           borderStyle: 'solid',
-          borderRadius: [0],
+          // borderRadius: [0],
           '&:hover': {
             opacity: 0.9,
             borderColor: 'secondary'
