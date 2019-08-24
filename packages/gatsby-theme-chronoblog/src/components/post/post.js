@@ -1,15 +1,36 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
+import { jsx, Styled } from 'theme-ui';
 
 // @ts-ignore
 import PostBottom from '../../post-bottom.mdx';
 // @ts-ignore
 import PostFooter from '../../post-footer.mdx';
+import CoverImage from '../cover-image';
 import Date from '../date';
 import Layout from '../layout';
 import SEO from '../seo';
 import Tags from '../tags';
-import { PostContent, PostCover, PostTitle } from './post-components';
+
+const PostTitle = ({
+  data: {
+    mdx: { frontmatter }
+  }
+}) => {
+  return (
+    <div>
+      {frontmatter.title ? <Styled.h1>{frontmatter.title}</Styled.h1> : ''}
+    </div>
+  );
+};
+
+const PostContent = ({
+  data: {
+    mdx: { body }
+  }
+}) => {
+  return <MDXRenderer>{body}</MDXRenderer>;
+};
 
 const getDescriptionForSeo = (fromFrontmatter, fromExcerpt) => {
   if (fromFrontmatter && fromFrontmatter !== '') return fromFrontmatter;
@@ -33,7 +54,7 @@ export const Post = ({ data }) => {
       <main>
         <article>
           <header>
-            <PostCover data={data.mdx} />
+            <CoverImage data={data.mdx} borderRadius="4px" />
             <PostTitle data={data} />
             <Date date={data.mdx.frontmatter.date} />
             <Tags tags={data.mdx.frontmatter.tags} />
