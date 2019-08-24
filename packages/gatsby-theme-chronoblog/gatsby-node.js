@@ -3,6 +3,7 @@ const { createFilePath } = require('gatsby-source-filesystem');
 const Debug = require('debug');
 const mkdirp = require('mkdirp');
 const fs = require('fs');
+const normalizeUrl = require('normalize-url');
 const pkg = require('./package.json');
 
 const debug = Debug(pkg.name);
@@ -13,10 +14,23 @@ const debug = Debug(pkg.name);
  * @param {string} slugValueDefault
  * @returns {string}
  */
-const createSlug = (node, slugValueDefault) => {
+const getSlug = (node, slugValueDefault) => {
   if (!node.frontmatter) return slugValueDefault;
   if (node.frontmatter.slug) return node.frontmatter.slug;
   return slugValueDefault;
+};
+/**
+ *
+ * @param {object} node
+ * @param {string} slugValueDefault
+ * @returns {string}
+ */
+const makeSlug = (node, slugValueDefault) => {
+  let slug = getSlug(node, slugValueDefault);
+  slug = slug.toLowerCase();
+  slug = slug.replace(/\s/g, '-');
+  slug = path.join('/', slug);
+  return slug;
 };
 
 exports.onPreBootstrap = ({ store }) => {
@@ -39,17 +53,29 @@ exports.onPreBootstrap = ({ store }) => {
 exports.onCreateNode = ({ node, actions, getNode }) => {
   if (node.internal.type !== 'Mdx') return;
 
+  // create slug field
   const slugValueDefault = createFilePath({ node, getNode });
-  let value = createSlug(node, slugValueDefault);
-  value = value.toLowerCase();
-  value = value.replace(/\s/g, '-');
-  value = path.join('/', value);
+  const slug = makeSlug(node, slugValueDefault);
 
   actions.createNodeField({
     name: 'slug',
     node,
-    value
+    value: slug
   });
+
+  // create link field for link
+  if (
+    node.frontmatter &&
+    node.frontmatter.link &&
+    node.frontmatter.link !== ''
+  ) {
+    const link = normalizeUrl(node.frontmatter.link);
+    actions.createNodeField({
+      name: 'link',
+      node,
+      value: link
+    });
+  }
 };
 
 exports.createPages = async ({ graphql, actions }) => {
@@ -61,6 +87,7 @@ exports.createPages = async ({ graphql, actions }) => {
             id
             fields {
               slug
+              link
             }
             frontmatter {
               title
@@ -95,6 +122,7 @@ exports.createPages = async ({ graphql, actions }) => {
   );
   posts = posts.filter((n) => n.frontmatter.title);
   posts = posts.filter((n) => n.frontmatter.date);
+  posts = posts.filter((n) => n.fields.slug);
   if (posts.length > 0) {
     posts.forEach((post) => {
       actions.createPage({
@@ -106,6 +134,14 @@ exports.createPages = async ({ graphql, actions }) => {
       });
     });
   }
+  // posts should not have links in frontmatter
+  posts.map((n) =>
+    n.frontmatter.link
+      ? console.warn(
+          `post ${n.frontmatter.title}, have link ${n.frontmatter.link} in frontmatter`
+        )
+      : ''
+  );
 
   // Links
   let links = allMdxNodes.filter(
@@ -113,6 +149,8 @@ exports.createPages = async ({ graphql, actions }) => {
   );
   links = links.filter((n) => n.frontmatter.title);
   links = links.filter((n) => n.frontmatter.date);
+  links = links.filter((n) => n.frontmatter.link);
+  links = links.filter((n) => n.fields.link);
   if (links.length > 0) {
     links.forEach((link) => {
       actions.createPage({

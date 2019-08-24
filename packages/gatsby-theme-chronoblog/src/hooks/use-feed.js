@@ -42,6 +42,7 @@ const useFeed = () => {
           excerpt
           fields {
             slug
+            link
           }
           frontmatter {
             title
@@ -94,8 +95,6 @@ const useFeed = () => {
   );
 
   // check if page with this path exists
-  // !
-  // TODO из-за этого не отображаются link-s
   const nodesPath = data.allSitePage.nodes;
   nodes = nodes.filter((n) => checkIfPageExists(n, nodesPath));
 

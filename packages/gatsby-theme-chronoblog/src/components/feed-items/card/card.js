@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { Link } from 'gatsby';
+import normalizeUrl from 'normalize-url';
 import { jsx, Styled } from 'theme-ui';
 
 import CoverImage from '../../cover-image';
@@ -13,25 +14,59 @@ const getDescriptionForCard = (fromFrontmatter, fromExcerpt) => {
   return '';
 };
 
-const LinkCard = ({ to, children }) => (
-  <Link
-    to={to}
-    sx={{
-      display: 'block',
-      textDecoration: 'none',
-      color: 'inherit'
-    }}
-  >
-    {children}
-  </Link>
-);
+const noStyleLink = {
+  display: 'block',
+  textDecoration: 'none',
+  color: 'inherit'
+};
+
+const LinkCard = ({ item, children }) => {
+  if (item.fields.link && item.parent.sourceInstanceName === 'links')
+    return (
+      <a href={item.fields.link} sx={noStyleLink}>
+        {children}
+      </a>
+    );
+  //
+  return (
+    <Link to={item.fields.slug} sx={noStyleLink}>
+      {children}
+    </Link>
+  );
+};
+
+const LinkText = ({ item }) => {
+  if (item.fields.link && item.parent.sourceInstanceName === 'links') {
+    const link = normalizeUrl(item.fields.link);
+    return (
+      <Styled.p
+        sx={{
+          mt: 0,
+          mb: 0,
+          fontWeight: 'bold'
+        }}
+      >
+        {link}
+      </Styled.p>
+    );
+  }
+  return <div />;
+};
+
+const CardTitle = ({ item }) => {
+  return (
+    <Styled.h2 sx={{ mb: '6px', mt: '12px' }}>
+      {item.frontmatter.title}
+    </Styled.h2>
+  );
+};
+
 export default ({ item }) => {
   //
   const description = getDescriptionForCard(
     item.frontmatter.description,
     item.excerpt
   );
-  const link = item.fields.slug;
   const { date } = item.frontmatter;
   const { title } = item.frontmatter;
   const { tags } = item.frontmatter;
@@ -53,18 +88,19 @@ export default ({ item }) => {
           }
         }}
       >
-        <LinkCard to={link}>
+        <LinkCard item={item}>
           <CoverImage data={item} />
         </LinkCard>
-        <LinkCard to={link}>
+        <LinkCard item={item}>
           <div sx={{ px: '20px', pt: '20px' }}>
-            <Styled.h2 sx={{ mb: '8px', mt: '12px' }}>{title}</Styled.h2>
+            <CardTitle item={item} />
+            <LinkText item={item} />
             <Date date={date} />
             <Styled.p sx={{ mb: '18px' }}>{description}</Styled.p>
           </div>
         </LinkCard>
         {tags && tags !== null ? (
-          <div sx={{ mt: '4px', px: '20px', pb: '20px' }}>
+          <div sx={{ mt: '10px', px: '20px', pb: '20px' }}>
             <Tags tags={tags} />
           </div>
         ) : (

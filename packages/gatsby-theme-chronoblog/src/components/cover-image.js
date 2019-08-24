@@ -22,7 +22,8 @@ const getCover = (frontmatter, imgType) => {
 
 const CoverImage = ({
   data: { frontmatter },
-  borderRadius = '4px 4px 0px 0px'
+  borderRadius = '4px 4px 0px 0px',
+  height = 192
 }) => {
   const coverFluidImage = getCover(frontmatter, 'fluid');
   return (
@@ -30,7 +31,7 @@ const CoverImage = ({
       {coverFluidImage ? (
         <div
           sx={{
-            maxHeight: ['384px']
+            maxHeight: height
           }}
         >
           <div
@@ -46,8 +47,8 @@ const CoverImage = ({
               // if image is very small - apply backgroundSize: 'auto auto'
               // in other cases - backgroundSize: 'contain'
               style={
-                coverFluidImage.presentationHeight < 384 &&
-                coverFluidImage.presentationWidth < 768
+                coverFluidImage.presentationHeight <= height &&
+                coverFluidImage.presentationWidth <= 768
                   ? {
                       backgroundSize: 'auto auto',
                       backdropFilter: `blur(5px) contrast(50%)`,
@@ -63,7 +64,7 @@ const CoverImage = ({
             >
               <div
                 sx={{
-                  minHeight: ['384px'],
+                  minHeight: height,
                   backdropFilter: `drop-shadow(0px 0px 20px black)`,
                   boxShadow: 'inset 0px 0px 15px black',
                   borderRadius
