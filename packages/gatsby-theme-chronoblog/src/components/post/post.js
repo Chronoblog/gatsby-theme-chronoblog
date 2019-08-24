@@ -3,9 +3,9 @@ import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { jsx, Styled } from 'theme-ui';
 
 // @ts-ignore
-import PostBottom from '../../post-bottom.mdx';
+import PostBottomMdx from '../../post-bottom.mdx';
 // @ts-ignore
-import PostFooter from '../../post-footer.mdx';
+import PostFooterMdx from '../../post-footer.mdx';
 import CoverImage from '../cover-image';
 import Date from '../date';
 import Layout from '../layout';
@@ -38,6 +38,16 @@ const getDescriptionForSeo = (fromFrontmatter, fromExcerpt) => {
   return '';
 };
 
+const PostFooter = () => {
+  if (PostFooterMdx && PostFooterMdx !== '')
+    return (
+      <div>
+        <PostFooterMdx />
+      </div>
+    );
+  return <div />;
+};
+
 export const Post = ({ data }) => {
   const description = getDescriptionForSeo(
     data.mdx.frontmatter.description,
@@ -67,7 +77,7 @@ export const Post = ({ data }) => {
         </article>
       </main>
       <aside>
-        <PostBottom />
+        <PostBottomMdx />
       </aside>
     </Layout>
   );
