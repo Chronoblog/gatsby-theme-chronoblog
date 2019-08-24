@@ -1,82 +1,10 @@
 /** @jsx jsx */
 import { Link } from 'gatsby';
-import BackgroundImage from 'gatsby-background-image';
-// import Img from 'gatsby-image';
 import { jsx, Styled } from 'theme-ui';
 
+import CoverImage from '../../cover-image';
 import Date from '../../date';
 import Tags from '../../tags';
-
-/**
- * @param {'fixed' | 'fluid'} imgType
- * @param {*} frontmatter
- */
-const getCover = (frontmatter, imgType) => {
-  if (
-    frontmatter &&
-    frontmatter.cover &&
-    frontmatter.cover.childImageSharp &&
-    frontmatter.cover.childImageSharp[imgType] &&
-    frontmatter.cover.childImageSharp[imgType] !== '' &&
-    frontmatter.cover.childImageSharp[imgType] !== 0
-  )
-    return frontmatter.cover.childImageSharp[imgType];
-  return '';
-};
-
-const CardPostCover = ({ data: { frontmatter } }) => {
-  const coverFluidImage = getCover(frontmatter, 'fluid');
-  return (
-    <div>
-      {coverFluidImage ? (
-        <div
-          sx={{
-            maxHeight: ['384px']
-          }}
-        >
-          <div
-            sx={{
-              backgroundImage: `url(${coverFluidImage.src})`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              backgroundClip: 'padding-box',
-              borderRadius: '4px 4px 0px 0px'
-            }}
-          >
-            <BackgroundImage
-              // if image is very small - apply backgroundSize: 'auto auto'
-              // in other cases - backgroundSize: 'contain'
-              style={
-                coverFluidImage.presentationHeight < 384 &&
-                coverFluidImage.presentationWidth < 768
-                  ? {
-                      backgroundSize: 'auto auto',
-                      backdropFilter: `blur(5px) contrast(50%)`
-                    }
-                  : {
-                      backgroundSize: 'contain',
-                      backdropFilter: `blur(5px) contrast(50%)`
-                    }
-              }
-              fluid={coverFluidImage}
-            >
-              <div
-                sx={{
-                  minHeight: ['384px'],
-                  backdropFilter: `drop-shadow(0px 0px 20px black)`,
-                  boxShadow: 'inset 0px 0px 15px black',
-                  borderRadius: '4px 4px 0px 0px'
-                }}
-              />
-            </BackgroundImage>
-          </div>
-        </div>
-      ) : (
-        ''
-      )}
-    </div>
-  );
-};
 
 const getDescriptionForCard = (fromFrontmatter, fromExcerpt) => {
   if (fromFrontmatter) return fromFrontmatter;
@@ -126,7 +54,7 @@ export default ({ item }) => {
         }}
       >
         <LinkCard to={link}>
-          <CardPostCover data={item} />
+          <CoverImage data={item} />
         </LinkCard>
         <LinkCard to={link}>
           <div sx={{ px: '20px', pt: '20px' }}>

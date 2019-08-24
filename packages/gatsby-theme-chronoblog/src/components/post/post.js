@@ -33,7 +33,7 @@ export const Post = ({ data }) => {
       <main>
         <article>
           <header>
-            <PostCover data={data} />
+            <PostCover data={data.mdx} />
             <PostTitle data={data} />
             <Date date={data.mdx.frontmatter.date} />
             <Tags tags={data.mdx.frontmatter.tags} />

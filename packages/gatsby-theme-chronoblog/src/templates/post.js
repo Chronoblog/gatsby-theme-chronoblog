@@ -16,10 +16,13 @@ export const postQuery = graphql`
         tags
         cover {
           childImageSharp {
-            fluid(maxWidth: 1920, quality: 90) {
+            fluid(maxWidth: 768, quality: 90) {
               ...GatsbyImageSharpFluid_withWebp
+              presentationWidth
+              presentationHeight
+              src
             }
-            resize(width: 800) {
+            resize(width: 768) {
               src
             }
           }
