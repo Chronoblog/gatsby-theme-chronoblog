@@ -81,7 +81,7 @@ exports.createPages = async ({ graphql, actions }) => {
   `);
 
   if (result.errors) {
-    console.log(result.errors);
+    console.error(result.errors);
     return;
   }
 
@@ -89,12 +89,12 @@ exports.createPages = async ({ graphql, actions }) => {
   let allMdxNodes = allMdx.map((edge) => edge.node);
   allMdxNodes = allMdxNodes.filter((n) => !n.frontmatter.draft);
 
+  // Posts
   let posts = allMdxNodes.filter(
     (n) => n.parent.sourceInstanceName === 'posts'
   );
   posts = posts.filter((n) => n.frontmatter.title);
   posts = posts.filter((n) => n.frontmatter.date);
-
   if (posts.length > 0) {
     posts.forEach((post) => {
       actions.createPage({
@@ -102,6 +102,24 @@ exports.createPages = async ({ graphql, actions }) => {
         component: require.resolve('./src/templates/post.js'),
         context: {
           id: post.id
+        }
+      });
+    });
+  }
+
+  // Links
+  let links = allMdxNodes.filter(
+    (n) => n.parent.sourceInstanceName === 'links'
+  );
+  links = links.filter((n) => n.frontmatter.title);
+  links = links.filter((n) => n.frontmatter.date);
+  if (links.length > 0) {
+    links.forEach((link) => {
+      actions.createPage({
+        path: link.fields.slug,
+        component: require.resolve('./src/templates/link.js'),
+        context: {
+          id: link.id
         }
       });
     });

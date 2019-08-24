@@ -8,7 +8,8 @@ const heading = {
 
 export default {
   Container: {
-    p: 3,
+    px: 3,
+    py: 3,
     maxWidth: 768,
     mx: 'auto'
   },
@@ -28,15 +29,15 @@ export default {
   },
   h1: {
     ...heading,
-    fontSize: [7]
+    fontSize: [6, 7]
   },
   h2: {
     ...heading,
-    fontSize: [6]
+    fontSize: [5, 6]
   },
   h3: {
     ...heading,
-    fontSize: [5]
+    fontSize: [4, 5]
   },
   h4: {
     ...heading,
