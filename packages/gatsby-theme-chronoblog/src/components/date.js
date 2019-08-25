@@ -28,7 +28,8 @@ export default ({
       {dateString ? (
         <Styled.p
           sx={{
-            fontSize: [1]
+            fontSize: [1],
+            opacity: 0.8
           }}
         >
           {dateString}
