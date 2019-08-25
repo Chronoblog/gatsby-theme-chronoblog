@@ -59,13 +59,13 @@ const LinkText = ({ item }) => {
 const CardTitle = ({ item }) => {
   if (item.fields.link && item.parent.sourceInstanceName === 'links') {
     return (
-      <Styled.h2 sx={{ mb: '6px', mt: '12px' }}>
+      <Styled.h2 sx={{ mb: '6px', mt: '0px' }}>
         {`🔗 ${item.frontmatter.title}`}
       </Styled.h2>
     );
   }
   return (
-    <Styled.h2 sx={{ mb: '6px', mt: '12px' }}>
+    <Styled.h2 sx={{ mb: '6px', mt: '0px' }}>
       {`${item.frontmatter.title}`}
     </Styled.h2>
   );
