@@ -1,1 +1,1 @@
-/Users/ivanganev/project/chronoblog/gatsby-theme-chronoblog/packages/gatsby-theme-chronoblog/README.md
+packages/gatsby-theme-chronoblog/README.md
