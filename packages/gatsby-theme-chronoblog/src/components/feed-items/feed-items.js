@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import _ from 'lodash';
-import { Children, useContext, useState } from 'react';
+import { useContext, useState } from 'react';
 import { jsx } from 'theme-ui';
 
 import FeedContext from '../../contexts/context-feed';
