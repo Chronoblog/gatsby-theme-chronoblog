@@ -75,6 +75,7 @@ export { genTitle, genUrl };
  * @property {string=} description
  * @property {string=} slug
  * @property {string=} image
+ * @property {string=} canonical
  * @property {React.ReactNode=} children
  */
 
@@ -86,6 +87,7 @@ const SEO = ({
   description = '',
   slug = '',
   image = '',
+  canonical = '',
   children
 }) => {
   const siteMeta = useSiteMetadata();
@@ -97,6 +99,7 @@ const SEO = ({
   const metaImage = genImage(siteMeta, image);
   const twitter = siteMeta.twitter || '';
   // const author = siteMeta.author || twitter;
+  const metaCanonical = genUrl(siteMeta, canonical);
 
   return (
     <Helmet>
@@ -105,6 +108,8 @@ const SEO = ({
       <title>{metaTitle}</title>
       <meta name="description" content={metaDescription} />
       <meta name="image" content={metaImage} />
+
+      {canonical ? <link rel="canonical" href={metaCanonical} /> : ''}
 
       {/* Schema.org */}
 

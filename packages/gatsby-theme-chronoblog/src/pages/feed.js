@@ -4,6 +4,7 @@ import FeedItems from '../components/feed-items';
 import FeedSearch from '../components/feed-search';
 import FeedTags from '../components/feed-tags';
 import Layout from '../components/layout';
+import SEO from '../components/seo';
 import withLocation from '../components/with-location';
 
 const PageFeed = ({ search }) => {
@@ -11,6 +12,7 @@ const PageFeed = ({ search }) => {
   const { tag } = search;
   return (
     <Layout defaultSearchInput={find} defaultTag={tag}>
+      <SEO slug="feed" canonical="feed" />
       <FeedSearch />
       <FeedTags />
       <FeedItems />

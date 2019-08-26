@@ -72,6 +72,7 @@ const filterBySlug = (feedItems, pathname) => {
  * @property {boolean=} showMoreButton
  * @property {string=} showMoreText
  * @property {number=} showMoreNumber
+ * @property {boolean=} skipThisPageItem
  *
  */
 /**
@@ -85,7 +86,8 @@ export default ({
   limit,
   showMoreButton = true,
   showMoreText = '',
-  showMoreNumber = 20
+  showMoreNumber = 20,
+  skipThisPageItem = true
 }) => {
   let feedItems = useFeed();
   //
@@ -136,7 +138,10 @@ export default ({
     <div sx={{ marginY: [30] }}>
       <Location>
         {({ location }) => {
-          let feedItemsToShow = filterBySlug(feedItems, location.pathname);
+          let feedItemsToShow = feedItems;
+          feedItemsToShow = skipThisPageItem
+            ? filterBySlug(feedItemsToShow, location.pathname)
+            : feedItemsToShow;
           feedItemsToShow = _.take(feedItemsToShow, showLimit);
           //
           return (
