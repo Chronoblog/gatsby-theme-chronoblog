@@ -85,8 +85,8 @@ const ExLinkIconBg = ({
       <div
         sx={{
           backgroundImage: `url(${exLinkIcon})`,
-          backgroundSize: '78px',
-          backgroundPosition: '95% 5%',
+          backgroundSize: '90px',
+          backgroundPosition: '100% 22%',
           backgroundRepeat: 'no-repeat'
         }}
       >
@@ -132,7 +132,9 @@ export default ({ item }) => {
               <CardTitle item={item} />
               <LinkText item={item} />
               <Date date={date} />
-              <Styled.p sx={{ mb: '18px' }}>{description}</Styled.p>
+              <Styled.p sx={{ mb: '18px', opacity: '0.9', fontSize: [2] }}>
+                {description}
+              </Styled.p>
             </ExLinkIconBg>
           </div>
         </LinkCard>

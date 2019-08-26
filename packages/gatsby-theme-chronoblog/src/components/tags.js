@@ -23,7 +23,8 @@ const Tag = ({ tag }) => {
           mb: ['2px'],
           px: '12px',
           py: '6px',
-          fontSize: [0]
+          fontSize: [0],
+          opacity: 0.8
         }}
       >
         {tag}

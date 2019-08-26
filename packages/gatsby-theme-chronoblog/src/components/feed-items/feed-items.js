@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import _ from 'lodash';
-import { useContext, useState } from 'react';
+import { Children, useContext, useState } from 'react';
 import { jsx } from 'theme-ui';
 
 import FeedContext from '../../contexts/context-feed';
@@ -24,6 +24,32 @@ const filterSearchSymbols = (input, symbolsToSearch) => {
   result = _.includes(tagsToString(input.frontmatter.tags), sToSearch);
   if (result) return result;
   return result;
+};
+
+/**
+ *
+ */
+const ButtonShowMore = ({
+  showMoreButton = true,
+  feedItemsLength,
+  showLimit = 10,
+  showMoreNumber = 10,
+  setCount,
+  children
+}) => {
+  if (showMoreButton && feedItemsLength > showLimit) {
+    return (
+      <div sx={{ my: '20px' }}>
+        <Button
+          sx={{ fontSize: [1, 2], width: '100%' }}
+          onClick={() => setCount(showLimit + showMoreNumber)}
+        >
+          {children}
+        </Button>
+      </div>
+    );
+  }
+  return <div />;
 };
 
 /**
@@ -111,18 +137,15 @@ export default ({
           </li>
         ))}
       </ul>
-      {showMoreButton && feedItems.length > showLimit ? (
-        <div sx={{ my: '20px' }}>
-          <Button
-            sx={{ fontSize: [1, 2], width: '100%' }}
-            onClick={() => setCount(showLimit + showMoreNumber)}
-          >
-            {showMoreText || feedShowMoreButton || 'show more'}
-          </Button>
-        </div>
-      ) : (
-        ''
-      )}
+      <ButtonShowMore
+        showMoreButton={showMoreButton}
+        feedItemsLength={feedItems.length}
+        showLimit={showLimit}
+        showMoreNumber={showMoreNumber}
+        setCount={setCount}
+      >
+        {showMoreText || feedShowMoreButton || 'Show More'}
+      </ButtonShowMore>
     </div>
   );
 };
