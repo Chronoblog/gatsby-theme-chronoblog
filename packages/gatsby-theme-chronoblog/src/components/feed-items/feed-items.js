@@ -1,4 +1,5 @@
 /** @jsx jsx */
+import { Location } from '@reach/router';
 import _ from 'lodash';
 import { useContext, useState } from 'react';
 import { jsx } from 'theme-ui';
@@ -50,6 +51,13 @@ const ButtonShowMore = ({
     );
   }
   return <div />;
+};
+
+const filterBySlug = (feedItems, pathname) => {
+  if (pathname && pathname !== '' && pathname !== '/') {
+    return feedItems.filter((item) => item.fields.slug !== pathname);
+  }
+  return feedItems;
 };
 
 /**
@@ -124,19 +132,30 @@ export default ({
   //
   return (
     <div sx={{ marginY: [30] }}>
-      <ul
-        sx={{
-          listStyle: 'none',
-          padding: 0,
-          margin: 0
+      <Location>
+        {({ location }) => {
+          let feedItemsToShow = filterBySlug(feedItems, location.pathname);
+          feedItemsToShow = _.take(feedItemsToShow, showLimit);
+          //
+          return (
+            <ul
+              sx={{
+                listStyle: 'none',
+                padding: 0,
+                margin: 0
+              }}
+            >
+              {feedItemsToShow.map((item) => {
+                return (
+                  <li key={item.id}>
+                    <Card item={item} />
+                  </li>
+                );
+              })}
+            </ul>
+          );
         }}
-      >
-        {_.take(feedItems, showLimit).map((item) => (
-          <li key={item.id}>
-            <Card item={item} />
-          </li>
-        ))}
-      </ul>
+      </Location>
       <ButtonShowMore
         showMoreButton={showMoreButton}
         feedItemsLength={feedItems.length}
