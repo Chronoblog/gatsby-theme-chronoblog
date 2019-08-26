@@ -25,7 +25,12 @@ const noStyleLink = {
 const LinkCard = ({ item, children }) => {
   if (item.fields.link && item.parent.sourceInstanceName === 'links')
     return (
-      <a href={item.fields.link} sx={noStyleLink}>
+      <a
+        rel="noopener noreferrer"
+        target="_blank"
+        href={item.fields.link}
+        sx={noStyleLink}
+      >
         {children}
       </a>
     );

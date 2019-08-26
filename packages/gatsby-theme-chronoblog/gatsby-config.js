@@ -82,6 +82,13 @@ module.exports = (options) => {
       'gatsby-plugin-react-helmet',
       'gatsby-plugin-emotion',
       {
+        resolve: 'gatsby-redirect-from',
+        options: {
+          query: 'allMdx'
+        }
+      },
+      'gatsby-plugin-meta-redirect',
+      {
         resolve: 'gatsby-source-filesystem',
         options: {
           name: 'posts',
