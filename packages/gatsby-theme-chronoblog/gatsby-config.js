@@ -7,7 +7,8 @@ module.exports = (options) => {
     uiText: {
       feedShowMoreButton = '⬇️ show more ⬇️',
       feedSearchPlaceholder = 'search'
-    }
+    },
+    feedItemsLimit = 50
   } = options;
   //
   return {
@@ -23,7 +24,8 @@ module.exports = (options) => {
       uiText: {
         feedShowMoreButton,
         feedSearchPlaceholder
-      }
+      },
+      feedItemsLimit
     },
     plugins: [
       {

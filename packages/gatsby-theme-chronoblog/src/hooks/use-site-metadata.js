@@ -12,6 +12,7 @@ import { graphql, useStaticQuery } from 'gatsby';
  * @property {object=} uiText
  * @property {string=} uiText.feedShowMoreButton
  * @property {string=} uiText.feedSearchPlaceholder
+ * @property {number=} feedItemsLimit
  */
 
 /**
@@ -39,6 +40,7 @@ const useSiteMetadata = () => {
             feedShowMoreButton
             feedSearchPlaceholder
           }
+          feedItemsLimit
         }
       }
     }

@@ -82,16 +82,18 @@ export default ({
   filterByTag = '',
   filter,
   reject,
-  limit = 3,
+  limit,
   showMoreButton = true,
   showMoreText = '',
-  showMoreNumber = 10
+  showMoreNumber = 20
 }) => {
   let feedItems = useFeed();
   //
   const {
-    uiText: { feedShowMoreButton }
+    uiText: { feedShowMoreButton },
+    feedItemsLimit
   } = useSiteMetadata();
+  const feedLimit = limit || feedItemsLimit || 10;
   //
   // props
   // tag from props
@@ -128,7 +130,7 @@ export default ({
   // reject - the opposite of filter
   if (reject) feedItems = _.reject(feedItems, reject);
   //
-  const [showLimit, setCount] = useState(limit);
+  const [showLimit, setCount] = useState(feedLimit);
   //
   return (
     <div sx={{ marginY: [30] }}>
