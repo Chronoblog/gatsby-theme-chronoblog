@@ -29,6 +29,8 @@ const LinkCard = ({ item, children }) => {
       </a>
     );
   //
+  if (item.parent.sourceInstanceName === 'notes') return <div>{children}</div>;
+  //
   return (
     <Link to={item.fields.slug} sx={noStyleLink}>
       {children}
@@ -126,6 +128,12 @@ const DescriptionContent = ({ item }) => {
       return <DescriptionStyle>{description}</DescriptionStyle>;
     return <MDXRenderer>{item.body}</MDXRenderer>;
   }
+  if (item.parent && item.parent.sourceInstanceName === 'notes') {
+    const description = getDescriptionFromFrontmatter(item);
+    if (description || description === '')
+      return <DescriptionStyle>{description}</DescriptionStyle>;
+    return <MDXRenderer>{item.body}</MDXRenderer>;
+  }
   return <div />;
 };
 
@@ -137,6 +145,45 @@ const Description = ({ item }) => {
   );
 };
 
+const CardStyle = ({ item, children }) => {
+  const regStyle = {
+    my: '20px',
+    pb: '10px',
+    color: 'text',
+    bg: 'inherit',
+    border: '2px',
+    borderStyle: 'solid',
+    borderRadius: [0]
+  };
+  //
+  if (item.parent && item.parent.sourceInstanceName === 'notes')
+    return (
+      <div
+        sx={{
+          ...regStyle,
+          borderColor: 'muted'
+        }}
+      >
+        {children}
+      </div>
+    );
+  //
+  return (
+    <div
+      sx={{
+        ...regStyle,
+        borderColor: 'muted',
+        '&:hover': {
+          opacity: 0.9,
+          borderColor: 'secondary'
+        }
+      }}
+    >
+      {children}
+    </div>
+  );
+};
+
 export default ({ item }) => {
   //
   const { date } = item.frontmatter;
@@ -144,21 +191,7 @@ export default ({ item }) => {
   //
   return (
     <article>
-      <div
-        sx={{
-          my: '20px',
-          color: 'text',
-          bg: 'inherit',
-          border: '2px',
-          borderColor: 'muted',
-          borderStyle: 'solid',
-          borderRadius: [0],
-          '&:hover': {
-            opacity: 0.9,
-            borderColor: 'secondary'
-          }
-        }}
-      >
+      <CardStyle item={item}>
         <LinkCard item={item}>
           <CoverImage data={item} />
         </LinkCard>
@@ -173,13 +206,13 @@ export default ({ item }) => {
           </div>
         </LinkCard>
         {tags && tags !== null ? (
-          <div sx={{ mt: '10px', px: '20px', pb: '20px' }}>
+          <div sx={{ mt: '10px', px: '20px', pb: '10px' }}>
             <Tags tags={tags} />
           </div>
         ) : (
           ''
         )}
-      </div>
+      </CardStyle>
     </article>
   );
 };

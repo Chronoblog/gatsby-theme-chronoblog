@@ -26,14 +26,15 @@ export default ({
   return (
     <div>
       {dateString ? (
-        <Styled.p
+        <div
           sx={{
             fontSize: [1],
-            opacity: 0.8
+            opacity: 0.8,
+            fontStyle: 'italic'
           }}
         >
           {dateString}
-        </Styled.p>
+        </div>
       ) : (
         ''
       )}

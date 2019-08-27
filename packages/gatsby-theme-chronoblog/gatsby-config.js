@@ -103,6 +103,13 @@ module.exports = (options) => {
         }
       },
       {
+        resolve: 'gatsby-source-filesystem',
+        options: {
+          name: 'notes',
+          path: path.resolve('content/notes')
+        }
+      },
+      {
         // for theme default pages
         resolve: 'gatsby-source-filesystem',
         options: {

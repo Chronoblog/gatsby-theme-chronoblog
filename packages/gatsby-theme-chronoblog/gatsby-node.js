@@ -39,6 +39,7 @@ exports.onPreBootstrap = ({ store }) => {
   const dirs = [
     path.join(program.directory, `content/posts`),
     path.join(program.directory, `content/links`),
+    path.join(program.directory, `content/notes`),
     path.join(program.directory, `pages`)
   ];
 
@@ -76,6 +77,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       value: link
     });
   }
+  //
 };
 
 exports.createPages = async ({ graphql, actions }) => {
@@ -158,6 +160,24 @@ exports.createPages = async ({ graphql, actions }) => {
         component: require.resolve('./src/templates/link.js'),
         context: {
           id: link.id
+        }
+      });
+    });
+  }
+
+  // Notes
+  let notes = allMdxNodes.filter(
+    (n) => n.parent.sourceInstanceName === 'notes'
+  );
+  notes = notes.filter((n) => n.frontmatter.date);
+  notes = notes.filter((n) => n.fields.slug);
+  if (notes.length > 0) {
+    notes.forEach((note) => {
+      actions.createPage({
+        path: note.fields.slug,
+        component: require.resolve('./src/templates/note.js'),
+        context: {
+          id: note.id
         }
       });
     });

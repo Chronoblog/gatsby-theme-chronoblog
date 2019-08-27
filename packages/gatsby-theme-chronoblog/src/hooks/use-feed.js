@@ -91,7 +91,8 @@ const useFeed = () => {
   nodes = nodes.filter(
     (n) =>
       n.parent.sourceInstanceName === 'posts' ||
-      n.parent.sourceInstanceName === 'links'
+      n.parent.sourceInstanceName === 'links' ||
+      n.parent.sourceInstanceName === 'notes'
   );
 
   // check if page with this path exists

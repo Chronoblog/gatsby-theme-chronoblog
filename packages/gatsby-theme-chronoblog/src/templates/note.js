@@ -1,10 +1,10 @@
 import { graphql } from 'gatsby';
 
-import Link from '../components/link';
+import Note from '../components/note';
 
-export default Link;
+export default Note;
 
-export const linkQuery = graphql`
+export const noteQuery = graphql`
   query($id: String!) {
     mdx(id: { eq: $id }) {
       id
@@ -12,7 +12,6 @@ export const linkQuery = graphql`
       frontmatter {
         title
         date
-        link
         tags
         cover {
           childImageSharp {
@@ -30,7 +29,6 @@ export const linkQuery = graphql`
       }
       fields {
         slug
-        link
       }
       body
     }
