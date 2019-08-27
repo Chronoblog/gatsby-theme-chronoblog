@@ -3,7 +3,7 @@
   "private": true,
   "license": "MIT",
   "author": "Ivan Ganev <ganevio92@gmail.com>",
-  "workspaces": ["packages/*", "examples/*"],
+  "workspaces": ["packages/*", "tests/*", "starters/*"],
   "scripts": {
     "build:base": "yarn clean && yarn workspace base build",
     "clean": "yarn workspaces run clean",
