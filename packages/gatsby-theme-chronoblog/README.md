@@ -24,6 +24,11 @@ Feed
 - `read more` text/button in post card
 - hover animation for link in link type card
 
+Tags
+
+- number of posts with this tag - inside the tag, and the order of tags depending on this
+- ability to put `#` (or whatever else) before all tags
+
 Content types
 
 - content type `podcast` for, so, podcasts - with player and links-icons to podcasts platforms (spotify, google podcasts, etc)

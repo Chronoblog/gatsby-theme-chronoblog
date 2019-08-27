@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { Link } from 'gatsby';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
 import normalizeUrl from 'normalize-url';
 import { jsx, Styled } from 'theme-ui';
 
@@ -8,13 +9,6 @@ import Date from '../../date';
 import Tags from '../../tags';
 // @ts-ignore
 // import exLinkIcon from './external-link-alt-solid.svg';
-
-const getDescriptionForCard = (fromFrontmatter, fromExcerpt) => {
-  if (fromFrontmatter) return fromFrontmatter;
-  if (fromFrontmatter === '') return '';
-  if (fromExcerpt && fromExcerpt !== '') return fromExcerpt;
-  return '';
-};
 
 const noStyleLink = {
   display: 'block',
@@ -48,10 +42,11 @@ const LinkText = ({ item }) => {
     return (
       <Styled.p
         sx={{
-          mt: 0,
+          mt: 2,
           mb: 0,
-          fontWeight: 'bold',
-          opacity: '0.5'
+          fontSize: [1],
+          color: 'primary',
+          fontWeight: 'bold'
         }}
       >
         {`${link}`}
@@ -76,7 +71,7 @@ const CardTitle = ({ item }) => {
   );
 };
 
-const ExLinkIconBg = ({
+const LinkIconBg = ({
   item,
   color = 'gray',
   fillOpacity = '0.2',
@@ -85,7 +80,12 @@ const ExLinkIconBg = ({
   //
   const exLinkIcon = `'data:image/svg+xml;utf8,<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="external-link-alt" class="svg-inline--fa fa-external-link-alt fa-w-18" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="${color}" fill-opacity="${fillOpacity}" d="M576 24v127.984c0 21.461-25.96 31.98-40.971 16.971l-35.707-35.709-243.523 243.523c-9.373 9.373-24.568 9.373-33.941 0l-22.627-22.627c-9.373-9.373-9.373-24.569 0-33.941L442.756 76.676l-35.703-35.705C391.982 25.9 402.656 0 424.024 0H552c13.255 0 24 10.745 24 24zM407.029 270.794l-16 16A23.999 23.999 0 0 0 384 303.765V448H64V128h264a24.003 24.003 0 0 0 16.97-7.029l16-16C376.089 89.851 365.381 64 344 64H48C21.49 64 0 85.49 0 112v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V287.764c0-21.382-25.852-32.09-40.971-16.97z"></path></svg>'`;
   //
-  if (item.fields.link && item.parent.sourceInstanceName === 'links') {
+  if (
+    item.fields.link &&
+    item.parent &&
+    item.parent.sourceInstanceName &&
+    item.parent.sourceInstanceName === 'links'
+  ) {
     return (
       <div
         sx={{
@@ -102,12 +102,43 @@ const ExLinkIconBg = ({
   return <div>{children}</div>;
 };
 
+const getDescriptionFromFrontmatter = (item) => {
+  if (item.frontmatter && item.frontmatter.description)
+    return item.frontmatter.description;
+  if (item.frontmatter && item.frontmatter.description === '') return '';
+  return undefined;
+};
+
+const DescriptionStyle = ({ children }) => <Styled.p>{children}</Styled.p>;
+
+const DescriptionContent = ({ item }) => {
+  if (item.parent && item.parent.sourceInstanceName === 'posts') {
+    const description = getDescriptionFromFrontmatter(item);
+    if (description || description === '')
+      return <DescriptionStyle>{description}</DescriptionStyle>;
+    if (item.excerpt)
+      return <DescriptionStyle>{item.excerpt}</DescriptionStyle>;
+    return <div />;
+  }
+  if (item.parent && item.parent.sourceInstanceName === 'links') {
+    const description = getDescriptionFromFrontmatter(item);
+    if (description || description === '')
+      return <DescriptionStyle>{description}</DescriptionStyle>;
+    return <MDXRenderer>{item.body}</MDXRenderer>;
+  }
+  return <div />;
+};
+
+const Description = ({ item }) => {
+  return (
+    <div sx={{ mb: 2, mt: 1 }}>
+      <DescriptionContent item={item} />
+    </div>
+  );
+};
+
 export default ({ item }) => {
   //
-  const description = getDescriptionForCard(
-    item.frontmatter.description,
-    item.excerpt
-  );
   const { date } = item.frontmatter;
   const { tags } = item.frontmatter;
   //
@@ -133,14 +164,12 @@ export default ({ item }) => {
         </LinkCard>
         <LinkCard item={item}>
           <div sx={{ px: '20px', pt: '20px' }}>
-            <ExLinkIconBg item={item}>
+            <LinkIconBg item={item}>
               <CardTitle item={item} />
               <LinkText item={item} />
               <Date date={date} />
-              <Styled.p sx={{ mb: '18px', opacity: '0.9', fontSize: [2] }}>
-                {description}
-              </Styled.p>
-            </ExLinkIconBg>
+              <Description item={item} />
+            </LinkIconBg>
           </div>
         </LinkCard>
         {tags && tags !== null ? (
