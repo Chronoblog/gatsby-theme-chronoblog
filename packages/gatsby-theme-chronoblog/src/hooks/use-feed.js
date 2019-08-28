@@ -95,6 +95,9 @@ const useFeed = () => {
       n.parent.sourceInstanceName === 'notes'
   );
 
+  // filter hide === true
+  nodes = nodes.filter((n) => !n.frontmatter.hide);
+
   // check if page with this path exists
   const nodesPath = data.allSitePage.nodes;
   nodes = nodes.filter((n) => checkIfPageExists(n, nodesPath));

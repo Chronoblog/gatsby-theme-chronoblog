@@ -8,6 +8,7 @@
     "build:base": "yarn clean && yarn workspace base build",
     "clean": "yarn workspaces run clean",
     "start:base": "yarn clean && yarn workspace base start",
+    "start:chronoblog": "yarn clean && yarn workspace chronoblog start",
     "test": "yarn clean && jest",
     "watch": "yarn clean && jest --watch"
   },
