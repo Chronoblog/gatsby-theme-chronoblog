@@ -93,7 +93,7 @@ const LinkIconBg = ({
         sx={{
           backgroundImage: `url(${exLinkIcon})`,
           backgroundSize: '90px',
-          backgroundPosition: '100% 22%',
+          backgroundPosition: '100% 0px',
           backgroundRepeat: 'no-repeat'
         }}
       >
