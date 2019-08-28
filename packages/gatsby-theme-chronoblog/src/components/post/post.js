@@ -4,6 +4,7 @@ import { jsx, Styled } from 'theme-ui';
 
 // @ts-ignore
 import ContentBottomMdx from '../../content-bottom.mdx';
+import useSiteMetadata from '../../hooks/use-site-metadata';
 // @ts-ignore
 import PostFooterMdx from '../../post-footer.mdx';
 import CoverImage from '../cover-image';
@@ -39,9 +40,14 @@ const getDescriptionForSeo = (fromFrontmatter, fromExcerpt) => {
 };
 
 const PostFooter = () => {
+  const siteMetadata = useSiteMetadata();
   return (
     <div sx={{ mt: '40px', mb: '60px' }}>
-      {PostFooterMdx && PostFooterMdx !== '' ? <PostFooterMdx /> : ''}
+      {PostFooterMdx && PostFooterMdx !== '' ? (
+        <PostFooterMdx siteMetadata={siteMetadata} />
+      ) : (
+        ''
+      )}
     </div>
   );
 };

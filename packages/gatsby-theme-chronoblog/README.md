@@ -23,6 +23,8 @@ Feed
 
 - `read more` text/button in post card
 - hover animation for link in link type card
+- years separator
+- mini feed - feed with only dates, titles and tags
 
 Tags
 
@@ -39,12 +41,9 @@ Dates
 - content-related dates/calendar
 - feed **scrollspy** for dates - years and months
 
-Components
-
-- component `contentMap` for MDX, with all Posts and Links and Pages of the site (in url links form) - by tags or/and dates. Examples: https://ricostacruz.com/til/ (by tags), https://tomcritchlow.com/writing/ (by years).
-- `<LinkCard>` component for MDX - work as link, but looks as card and have title, image and description. This is for some important and special links (books, big projects etc.)
-
 Other
 
 - comments for blog posts (disqus?)
 - simple theme-ui change (@theme-ui/\* presets)
+- RSS Feed
+- social media sharing

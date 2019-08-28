@@ -57,7 +57,8 @@ module.exports = (options) => {
                 quality: 90,
                 linkImagesToOriginal: false
               }
-            }
+            },
+            'gatsby-remark-responsive-iframe'
           ],
           plugins: [
             {
@@ -67,7 +68,8 @@ module.exports = (options) => {
                 quality: 90,
                 linkImagesToOriginal: false
               }
-            }
+            },
+            'gatsby-remark-responsive-iframe'
           ]
         }
       },

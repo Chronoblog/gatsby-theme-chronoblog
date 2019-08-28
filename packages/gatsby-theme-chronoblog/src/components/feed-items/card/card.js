@@ -139,7 +139,7 @@ const DescriptionContent = ({ item }) => {
 
 const Description = ({ item }) => {
   return (
-    <div sx={{ mb: 2, mt: 1 }}>
+    <div sx={{ mb: 2, mt: 2 }}>
       <DescriptionContent item={item} />
     </div>
   );
