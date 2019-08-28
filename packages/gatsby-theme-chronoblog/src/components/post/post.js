@@ -71,7 +71,9 @@ export const Post = ({ data }) => {
             <CoverImage data={data.mdx} borderRadius="4px" />
             <PostTitle data={data} />
             <Date date={data.mdx.frontmatter.date} />
-            <Tags tags={data.mdx.frontmatter.tags} />
+            <div sx={{ mt: 20, mb: 3 }}>
+              <Tags tags={data.mdx.frontmatter.tags} />
+            </div>
           </header>
           <PostContent data={data} />
           <footer>

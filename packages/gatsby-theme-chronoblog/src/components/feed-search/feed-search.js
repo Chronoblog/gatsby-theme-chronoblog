@@ -5,7 +5,7 @@ import { Box, Flex, jsx } from 'theme-ui';
 import FeedContext from '../../contexts/context-feed';
 import useSiteMetadata from '../../hooks/use-site-metadata';
 
-export default ({ placeholder = '' }) => {
+export default ({ placeholder }) => {
   //
   const {
     uiText: { feedSearchPlaceholder }

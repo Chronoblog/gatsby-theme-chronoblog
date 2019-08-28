@@ -30,7 +30,7 @@ export default ({ valueTag, tag, onClick }) => {
         onClick={onClick}
         type="radio"
       />
-      {`${tag}`}
+      {`#${tag}`}
     </Button>
   );
 };

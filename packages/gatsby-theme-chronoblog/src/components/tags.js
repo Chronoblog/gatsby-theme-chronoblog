@@ -27,7 +27,7 @@ const Tag = ({ tag }) => {
           opacity: 0.8
         }}
       >
-        {tag}
+        #{tag}
       </Button>
     </a>
   );
