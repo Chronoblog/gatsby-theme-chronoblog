@@ -45,7 +45,7 @@ const LinkText = ({ item }) => {
       <Styled.p
         sx={{
           mt: 2,
-          mb: 0,
+          mb: 2,
           fontSize: [1],
           color: 'primary',
           fontWeight: 'bold'

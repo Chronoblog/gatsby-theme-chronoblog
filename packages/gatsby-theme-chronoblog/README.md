@@ -32,7 +32,7 @@ Tags
 Content types
 
 - content type `podcast` for, so, podcasts - with player and links-icons to podcasts platforms (spotify, google podcasts, etc)
-- `note` - item type for feed, like post, but need only `date`. No link too ful page (like 'reade more'), no cover image (but can have images), no title (but this is md so can have #). All content in feed. Similar to twitter tweets.
+- content type `youtube`
 
 Dates
 

@@ -1,22 +1,8 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 
-const heading = (Tag) => ({ id, children, ...props }) => {
-  if (!id) return <Tag {...props}>{children}</Tag>;
-
-  return (
-    <Tag id={id} {...props}>
-      <a
-        href={`#${id}`}
-        sx={{
-          color: 'inherit',
-          textDecoration: 'none'
-        }}
-      >
-        {children}
-      </a>
-    </Tag>
-  );
+const heading = (Tag) => ({ children, ...props }) => {
+  return <Tag {...props}>{children}</Tag>;
 };
 
 export default {
