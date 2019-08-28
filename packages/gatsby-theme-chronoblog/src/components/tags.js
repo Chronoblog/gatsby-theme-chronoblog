@@ -43,7 +43,9 @@ const Tag = ({ tag }) => {
  */
 const Tags = ({ tags }) => {
   let tagsUse = tags;
-  if (tagsUse) tagsUse = tagsUse.filter((t) => typeof t === 'string');
+  if (!tagsUse) return <div />;
+  tagsUse = tagsUse.filter((t) => typeof t === 'string');
+  tagsUse = tagsUse.filter((t) => t !== '');
   return (
     <div>
       {tagsUse && tagsUse !== null

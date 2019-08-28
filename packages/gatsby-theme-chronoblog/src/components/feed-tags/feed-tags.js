@@ -11,7 +11,9 @@ export default () => {
   //
   const { onChangeTag, value } = useContext(FeedContext);
   //
-  const feedItems = useFeed();
+  let feedItems = useFeed();
+  feedItems = feedItems.filter((i) => !i.frontmatter.draft);
+  feedItems = feedItems.filter((i) => !i.frontmatter.hide);
   //
   // item.frontmatter.tags
   let tags = feedItems.map((i) => i.frontmatter.tags);
