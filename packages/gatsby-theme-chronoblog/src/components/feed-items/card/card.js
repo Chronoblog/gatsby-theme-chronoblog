@@ -104,45 +104,30 @@ const LinkIconBg = ({
   return <div>{children}</div>;
 };
 
-const getDescriptionFromFrontmatter = (item) => {
+const Description = ({ item }) => {
   if (item.frontmatter && item.frontmatter.description)
-    return item.frontmatter.description;
-  if (item.frontmatter && item.frontmatter.description === '') return '';
-  return undefined;
-};
-
-const DescriptionStyle = ({ children }) => <Styled.p>{children}</Styled.p>;
-
-const DescriptionContent = ({ item }) => {
-  if (item.parent && item.parent.sourceInstanceName === 'posts') {
-    const description = getDescriptionFromFrontmatter(item);
-    if (description || description === '')
-      return <DescriptionStyle>{description}</DescriptionStyle>;
-    if (item.excerpt)
-      return <DescriptionStyle>{item.excerpt}</DescriptionStyle>;
-    return <div />;
-  }
-  if (item.parent && item.parent.sourceInstanceName === 'links') {
-    const description = getDescriptionFromFrontmatter(item);
-    if (description || description === '')
-      return <DescriptionStyle>{description}</DescriptionStyle>;
-    return <MDXRenderer>{item.body}</MDXRenderer>;
-  }
-  if (item.parent && item.parent.sourceInstanceName === 'notes') {
-    const description = getDescriptionFromFrontmatter(item);
-    if (description || description === '')
-      return <DescriptionStyle>{description}</DescriptionStyle>;
-    return <MDXRenderer>{item.body}</MDXRenderer>;
-  }
+    return <Styled.p>{item.frontmatter.description}</Styled.p>;
   return <div />;
 };
 
-const Description = ({ item }) => {
-  return (
-    <div sx={{ mb: 2, mt: 2 }}>
-      <DescriptionContent item={item} />
-    </div>
-  );
+const Excerpt = ({ item }) => {
+  if (
+    item.parent.sourceInstanceName === 'notes' ||
+    item.parent.sourceInstanceName === 'links'
+  )
+    return <div />;
+  if (item.excerpt) return <Styled.p>{item.excerpt}</Styled.p>;
+  return <div />;
+};
+
+const BodyMdx = ({ item }) => {
+  if (
+    item.parent.sourceInstanceName === 'notes' ||
+    item.parent.sourceInstanceName === 'links'
+  ) {
+    return <MDXRenderer>{item.body}</MDXRenderer>;
+  }
+  return <div />;
 };
 
 const CardStyle = ({ item, children }) => {
@@ -202,6 +187,8 @@ export default ({ item }) => {
               <LinkText item={item} />
               <Date date={date} />
               <Description item={item} />
+              <Excerpt item={item} />
+              <BodyMdx item={item} />
             </LinkIconBg>
           </div>
         </LinkCard>
