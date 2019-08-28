@@ -41,7 +41,7 @@
     "gatsby-plugin-page-creator": "^2.1.5",
     "gatsby-plugin-react-helmet": "^3.1.2",
     "gatsby-plugin-sharp": "^2.2.12",
-    "gatsby-plugin-theme-ui": "^0.2.18",
+    "gatsby-plugin-theme-ui": "^0.2.34",
     "gatsby-redirect-from": "^0.2.1",
     "gatsby-remark-images": "^3.1.12",
     "gatsby-source-filesystem": "^2.1.6",
@@ -53,7 +53,7 @@
     "react-helmet": "^5.2.1",
     "remark-slug": "^5.1.2",
     "remark-unwrap-images": "^0.2.0",
-    "theme-ui": "^0.2.18",
+    "theme-ui": "^0.2.36",
     "url-join": "^4.0.1"
   },
   "devDependencies": {
