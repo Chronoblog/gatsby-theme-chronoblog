@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: 'gatsby-theme-chronoblog demo site',
-    description: 'Demo site for gatsby-theme-chronoblog',
+    title: 'Chronoblog',
+    description: 'Starter for Gatsby Theme Chronoblog',
     siteUrl: 'http://localhost:8000', // http://example.com
     author: 'Site Author'
   },
@@ -11,7 +11,7 @@ module.exports = {
       options: {
         uiText: {
           feedShowMoreButton: '⬇️ show more ⬇️',
-          feedSearchPlaceholder: 'feed search'
+          feedSearchPlaceholder: 'search'
         }
       }
     }

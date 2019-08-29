@@ -13,6 +13,7 @@ Community
 
 - write a normal readme
 - develop a starter with examples and descriptions
+- GitHub actions for synchronize starters https://twitter.com/lekoarts_de/status/1167124503312457730
 
 CMS and hosting
 
@@ -44,6 +45,5 @@ Dates
 Other
 
 - comments for blog posts (disqus?)
-- simple theme-ui change (@theme-ui/\* presets)
 - RSS Feed
 - social media sharing
