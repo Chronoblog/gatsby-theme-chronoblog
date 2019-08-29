@@ -30,7 +30,8 @@ export default ({
           sx={{
             fontSize: [1],
             opacity: 0.8,
-            fontStyle: 'italic'
+            // fontStyle: 'italic',
+            fontWeight: 'bold'
           }}
         >
           {dateString}

@@ -54,6 +54,9 @@ export default {
   p: {
     fontSize: [3]
   },
+  li: {
+    fontSize: [3]
+  },
   a: {
     color: 'primary',
     ':hover': {

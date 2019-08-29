@@ -185,7 +185,9 @@ export default ({ item }) => {
             <LinkIconBg item={item}>
               <CardTitle item={item} />
               <LinkText item={item} />
-              <Date date={date} />
+              <div sx={{ mb: 2 }}>
+                <Date date={date} />
+              </div>
               <Description item={item} />
               <Excerpt item={item} />
               <BodyMdx item={item} />
