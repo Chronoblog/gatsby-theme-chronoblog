@@ -158,7 +158,7 @@ const CardStyle = ({ item, children }) => {
       sx={{
         ...regStyle,
         borderColor: 'muted',
-        '&:hover': {
+        ':hover': {
           opacity: 0.9,
           borderColor: 'secondary'
         }
@@ -193,7 +193,13 @@ export default ({ item }) => {
           </div>
         </LinkCard>
         {tags && tags !== null ? (
-          <div sx={{ mt: '10px', px: '20px', pb: '10px' }}>
+          <div
+            sx={{
+              mt: '10px',
+              px: '20px',
+              pb: '10px'
+            }}
+          >
             <Tags tags={tags} />
           </div>
         ) : (

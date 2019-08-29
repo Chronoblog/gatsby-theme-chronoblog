@@ -56,7 +56,7 @@ export default {
   },
   a: {
     color: 'primary',
-    '&:hover': {
+    ':hover': {
       color: 'secondary',
       opacity: 0.8
     }

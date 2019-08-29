@@ -29,7 +29,7 @@ export default ({ as: Element = 'button', children, ...props }) => {
         fontSize: [1],
         border: '0px',
         borderRadius: [0],
-        '&:hover': {
+        ':hover': {
           opacity: 0.8,
           cursor: 'pointer',
           bg: 'secondary'
