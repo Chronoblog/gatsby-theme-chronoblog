@@ -8,8 +8,6 @@ export default {
     dark: {
       text: '#fff',
       background: '#000',
-      primary: '#3a5f7d',
-      secondary: '#5a809e',
       muted: '#161b1d'
     }
   }
