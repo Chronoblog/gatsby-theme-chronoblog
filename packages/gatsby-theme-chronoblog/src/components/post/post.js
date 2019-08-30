@@ -72,12 +72,12 @@ export const Post = ({ data }) => {
             <PostTitle data={data} />
             <Date date={data.mdx.frontmatter.date} />
             <div sx={{ mt: 20, mb: 3 }}>
-              <Tags tags={data.mdx.frontmatter.tags} />
+              <Tags type="item" tags={data.mdx.frontmatter.tags} />
             </div>
           </header>
           <PostContent data={data} />
           <footer>
-            <Tags tags={data.mdx.frontmatter.tags} />
+            <Tags type="item" tags={data.mdx.frontmatter.tags} />
             <PostFooter />
           </footer>
         </article>

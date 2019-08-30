@@ -202,7 +202,7 @@ export default ({ item }) => {
               pb: '10px'
             }}
           >
-            <Tags tags={tags} />
+            <Tags type="item" tags={tags} />
           </div>
         ) : (
           ''

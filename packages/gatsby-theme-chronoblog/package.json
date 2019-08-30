@@ -44,7 +44,6 @@
     "lodash": "^4.17.15",
     "mkdirp": "^0.5.1",
     "normalize-url": "^4.3.0",
-    "query-string": "^6.8.2",
     "react-helmet": "^5.2.1",
     "remark-slug": "^5.1.2",
     "remark-unwrap-images": "^0.2.0",

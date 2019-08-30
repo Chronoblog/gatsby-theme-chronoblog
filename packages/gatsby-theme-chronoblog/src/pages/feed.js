@@ -1,23 +1,22 @@
+import get from 'lodash/get';
 import React from 'react';
 
 import FeedItems from '../components/feed-items';
 import FeedSearch from '../components/feed-search';
-import FeedTags from '../components/feed-tags';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-import withLocation from '../components/with-location';
+import Tags from '../components/tags';
 
-const PageFeed = ({ search }) => {
-  const { find } = search;
-  const { tag } = search;
+const PageFeed = ({ location }) => {
+  const tagFromLink = get(location, 'state.tag', '');
   return (
-    <Layout defaultSearchInput={find} defaultTag={tag}>
+    <Layout>
       <SEO slug="feed" canonical="feed" />
       <FeedSearch />
-      <FeedTags />
-      <FeedItems />
+      <Tags />
+      <FeedItems filterByTag={tagFromLink} />
     </Layout>
   );
 };
 
-export default withLocation(PageFeed);
+export default PageFeed;

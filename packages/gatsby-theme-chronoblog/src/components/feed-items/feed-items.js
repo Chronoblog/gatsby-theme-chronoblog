@@ -118,14 +118,6 @@ export default ({
       filterSearchSymbols(i, searchFromInput)
     );
   }
-  // tag from tags
-  const tagValue = value.tag;
-  if (tagValue && tagValue !== '') {
-    feedItems = feedItems.filter((i) => {
-      if (i.frontmatter.tags) return i.frontmatter.tags.includes(tagValue);
-      return false;
-    });
-  }
   // main
   // filter
   if (filter) feedItems = _.filter(feedItems, filter);
