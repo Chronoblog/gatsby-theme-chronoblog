@@ -1,5 +1,3 @@
-# gatsby-starter-chronoblog
+# gatsby-starter-chronoblog-minimal
 
-Starter for Chronoblog theme
-
-Idea of this starter not only help you to start a chronoblog website, but also teach how to use them.
+Minimum possible starter
