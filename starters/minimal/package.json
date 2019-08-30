@@ -6,7 +6,7 @@
   "scripts": {
     "clean": "gatsby clean",
     "start": "gatsby develop",
-    "build": "gatsby build --prefix-paths"
+    "build": "gatsby build"
   },
   "keywords": [],
   "author": "Ivan Ganev <ganevio92@gmail.com>",

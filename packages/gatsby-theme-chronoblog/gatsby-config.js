@@ -24,9 +24,8 @@ module.exports = (options = {}) => {
       description: 'Gatsby Theme Chronoblog', // description for SEO and meta
       image: '/banner.jpg', // main image of the site for meta tags
       siteUrl: 'http://localhost:8000', // http://localhost:8000
-      pathPrefix: '/',
       language: 'en',
-      author: '', // for example - 'Ivan Ganev'
+      author: 'Name Placeholder', // for example - 'Ivan Ganev'
       twitter: '', // for twitter cards meta data, example - '@ganevru'
       // ui text fot translate
       uiText,
