@@ -5,10 +5,10 @@
   "author": "Ivan Ganev <ganevio92@gmail.com>",
   "workspaces": ["packages/*", "tests/*", "starters/*"],
   "scripts": {
-    "build:base": "yarn clean && yarn workspace base build",
+    "build:test": "yarn clean && yarn workspace test build",
     "build:minimal": "yarn clean && yarn workspace minimal build",
     "clean": "yarn workspaces run clean",
-    "start:base": "yarn clean && yarn workspace base start",
+    "start:test": "yarn clean && yarn workspace test start",
     "start:chronoblog": "yarn clean && yarn workspace chronoblog start",
     "start:minimal": "yarn clean && yarn workspace minimal start",
     "test": "yarn clean && jest",
@@ -16,7 +16,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn test && yarn build:minimal && lint-staged"
+      "pre-commit": "yarn test && yarn build:test && lint-staged"
     }
   },
   "lint-staged": {
