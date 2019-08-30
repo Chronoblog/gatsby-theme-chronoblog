@@ -23,15 +23,18 @@ export default ({ placeholder }) => {
           flexWrap: 'nowrap',
           color: 'inherit',
           bg: 'muted',
-          borderRadius: [0]
+          borderRadius: [0],
+          borderColor: 'muted',
+          borderStyle: 'solid',
+          borderWidth: `1px`
         }}
       >
-        <Box sx={{ maxWidth: [50], py: '1' }}>
+        <Box sx={{ maxWidth: [50], pt: '6px' }}>
           <span
             sx={{
               fontSize: [26],
-              px: [1, 2],
-              pl: [3],
+              pr: [2],
+              pl: [2],
               opacity: ['0.7'],
               userSelect: 'none'
             }}
@@ -47,11 +50,14 @@ export default ({ placeholder }) => {
             sx={{
               width: ['100%'],
               color: 'inherit',
-              bg: 'inherit',
+              bg: 'background',
               py: [2],
-              px: [2, 1],
-              fontSize: [26],
-              border: `0px solid`,
+              px: [2],
+              fontSize: [4],
+              borderColor: 'muted',
+              borderStyle: 'solid',
+              borderWidth: `2px`,
+              borderRadius: [0],
               outline: '0px solid',
               opacity: '0.9'
             }}
