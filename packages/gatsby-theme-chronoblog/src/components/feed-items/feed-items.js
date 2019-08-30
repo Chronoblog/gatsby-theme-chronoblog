@@ -170,7 +170,7 @@ export default ({
         showMoreNumber={showMoreNumber}
         setCount={setCount}
       >
-        {showMoreText || feedShowMoreButton || 'Show More'}
+        {showMoreText || feedShowMoreButton}
       </ButtonShowMore>
     </div>
   );

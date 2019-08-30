@@ -2,7 +2,7 @@ const path = require('path');
 const remarkUnwrapImages = require('remark-unwrap-images');
 const remarkSlug = require('remark-slug');
 
-module.exports = (options) => {
+module.exports = (options = {}) => {
   const {
     uiText: {
       feedShowMoreButton = 'show more',
@@ -16,7 +16,8 @@ module.exports = (options) => {
       title: 'Chronoblog - Theme for Gatsby js', // site title for SEO and meta
       description: 'Gatsby Theme Chronoblog', // description for SEO and meta
       image: '/banner.jpg', // main image of the site for meta tags
-      siteUrl: 'http://localhost:8000', // http://example.com
+      siteUrl: 'http://localhost:8000', // http://localhost:8000
+      pathPrefix: '/',
       language: 'en',
       author: '', // for example - 'Ivan Ganev'
       twitter: '', // for twitter cards meta data, example - '@ganevru'

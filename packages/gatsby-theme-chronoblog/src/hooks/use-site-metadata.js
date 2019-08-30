@@ -1,4 +1,5 @@
 import { graphql, useStaticQuery } from 'gatsby';
+import _ from 'lodash';
 
 /**
  * @typedef {object} SiteMetadata
@@ -25,7 +26,7 @@ import { graphql, useStaticQuery } from 'gatsby';
  * @returns {SiteMetadata}
  */
 const useSiteMetadata = () => {
-  const seoQuery = graphql`
+  const siteMetaQuery = graphql`
     query SEOQuery {
       site {
         siteMetadata {
@@ -48,8 +49,28 @@ const useSiteMetadata = () => {
   /** @constant
     @type {SiteData}
    */
-  const data = useStaticQuery(seoQuery);
-  return data.site.siteMetadata;
+  const data = useStaticQuery(siteMetaQuery);
+  const { siteMetadata } = data.site;
+
+  // default value
+  siteMetadata.language = siteMetadata.language || 'en';
+
+  siteMetadata.uiText = siteMetadata.uiText || {};
+
+  siteMetadata.uiText.feedShowMoreButton = _.get(
+    siteMetadata,
+    'uiText.feedShowMoreButton',
+    'Show More'
+  );
+  siteMetadata.uiText.feedSearchPlaceholder = _.get(
+    siteMetadata,
+    'uiText.feedSearchPlaceholder',
+    'search'
+  );
+
+  siteMetadata.feedItemsLimit = siteMetadata.feedItemsLimit || 50;
+
+  return siteMetadata;
 };
 
 export default useSiteMetadata;
