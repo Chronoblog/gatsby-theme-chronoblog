@@ -12,7 +12,8 @@ module.exports = {
       options: {
         uiText: {
           feedShowMoreButton: '⬇️ show more ⬇️',
-          feedSearchPlaceholder: 'search'
+          feedSearchPlaceholder: 'search',
+          allTagsButton: 'all tags'
         }
       }
     }

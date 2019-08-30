@@ -4,52 +4,33 @@ import _ from 'lodash';
 import { jsx } from 'theme-ui';
 
 import useFeed from '../../hooks/use-feed';
+import useSiteMetadata from '../../hooks/use-site-metadata';
 import Button from '../button';
 
 /**
  * @typedef {object} TagProps
  * @property {string} tag
+ * @property {object} style
  */
 
 /**
  * @param {TagProps=} props
  */
-const Tag = ({ tag }) => {
+const Tag = ({ tag, style }) => {
   return (
     <Link to="/feed" state={{ tag }}>
-      <Button
-        sx={{
-          mr: ['5px'],
-          mt: ['2px'],
-          mb: ['2px'],
-          px: '12px',
-          py: '6px',
-          fontSize: [0],
-          opacity: 0.8
-        }}
-      >
-        #{tag}
-      </Button>
+      <Button sx={style}>#{tag}</Button>
     </Link>
   );
 };
 
-const AllTagsButton = () => {
+const AllTagsButton = ({ style }) => {
+  const {
+    uiText: { allTagsButton }
+  } = useSiteMetadata();
   return (
     <Link to="/feed">
-      <Button
-        sx={{
-          mr: ['5px'],
-          mt: ['2px'],
-          mb: ['2px'],
-          px: '12px',
-          py: '6px',
-          fontSize: [0],
-          opacity: 0.8
-        }}
-      >
-        all tags
-      </Button>
+      <Button sx={style}>{allTagsButton}</Button>
     </Link>
   );
 };
@@ -64,11 +45,20 @@ const AllTagsButton = () => {
  * @param {TagsProps=} props
  */
 const Tags = ({ type, tags }) => {
+  const style = {
+    mr: type === 'feed' ? '6px' : '5px',
+    my: '2px',
+    px: type === 'feed' ? '16px' : '12px',
+    py: type === 'feed' ? '10px' : '6px',
+    fontSize: type === 'feed' ? [2] : [0],
+    opacity: 0.8
+  };
+  //
   return (
     <div>
-      {type === 'feed' ? <AllTagsButton /> : ''}
+      {type === 'feed' ? <AllTagsButton style={style} /> : ''}
       {tags.map((t) => (
-        <Tag key={t} tag={t} />
+        <Tag key={t} tag={t} style={style} />
       ))}
     </div>
   );
@@ -101,7 +91,6 @@ export default ({ type = 'feed', tags }) => {
     let tagsUse = tags;
     tagsUse = tagsUse.filter((t) => typeof t === 'string');
     tagsUse = tagsUse.filter((t) => t !== '');
-    if (!tagsUse) return <div />;
     if (tagsUse) return <Tags type={type} tags={tagsUse} />;
   }
   //

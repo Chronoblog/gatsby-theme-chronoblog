@@ -39,6 +39,7 @@ const useSiteMetadata = () => {
           uiText {
             feedShowMoreButton
             feedSearchPlaceholder
+            allTagsButton
           }
           feedItemsLimit
         }

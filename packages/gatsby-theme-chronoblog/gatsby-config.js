@@ -15,7 +15,8 @@ module.exports = (options = {}) => {
       options,
       'uiText.feedSearchPlaceholder',
       'search'
-    )
+    ),
+    allTagsButton: _.get(options, 'uiText.allTagsButton', 'all tags')
   };
   //
   return {
