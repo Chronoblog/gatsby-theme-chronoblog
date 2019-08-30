@@ -6,15 +6,17 @@
   "workspaces": ["packages/*", "tests/*", "starters/*"],
   "scripts": {
     "build:base": "yarn clean && yarn workspace base build",
+    "build:minimal": "yarn clean && yarn workspace minimal build",
     "clean": "yarn workspaces run clean",
     "start:base": "yarn clean && yarn workspace base start",
     "start:chronoblog": "yarn clean && yarn workspace chronoblog start",
+    "start:minimal": "yarn clean && yarn workspace minimal start",
     "test": "yarn clean && jest",
     "watch": "yarn clean && jest --watch"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn test && yarn build:base && lint-staged"
+      "pre-commit": "yarn test && yarn build:minimal && lint-staged"
     }
   },
   "lint-staged": {

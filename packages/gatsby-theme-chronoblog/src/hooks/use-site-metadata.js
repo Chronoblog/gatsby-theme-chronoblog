@@ -1,5 +1,4 @@
 import { graphql, useStaticQuery } from 'gatsby';
-import _ from 'lodash';
 
 /**
  * @typedef {object} SiteMetadata
@@ -51,24 +50,6 @@ const useSiteMetadata = () => {
    */
   const data = useStaticQuery(siteMetaQuery);
   const { siteMetadata } = data.site;
-
-  // default value
-  siteMetadata.language = siteMetadata.language || 'en';
-
-  siteMetadata.uiText = siteMetadata.uiText || {};
-
-  siteMetadata.uiText.feedShowMoreButton = _.get(
-    siteMetadata,
-    'uiText.feedShowMoreButton',
-    'Show More'
-  );
-  siteMetadata.uiText.feedSearchPlaceholder = _.get(
-    siteMetadata,
-    'uiText.feedSearchPlaceholder',
-    'search'
-  );
-
-  siteMetadata.feedItemsLimit = siteMetadata.feedItemsLimit || 50;
 
   return siteMetadata;
 };

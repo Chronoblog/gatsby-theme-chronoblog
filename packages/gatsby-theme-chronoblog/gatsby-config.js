@@ -1,15 +1,22 @@
 const path = require('path');
 const remarkUnwrapImages = require('remark-unwrap-images');
 const remarkSlug = require('remark-slug');
+const _ = require('lodash');
 
 module.exports = (options = {}) => {
-  const {
-    uiText: {
-      feedShowMoreButton = 'show more',
-      feedSearchPlaceholder = 'search'
-    },
-    feedItemsLimit = 50
-  } = options;
+  //
+  const uiText = {
+    feedShowMoreButton: _.get(
+      options,
+      'uiText.feedShowMoreButton',
+      'Show More'
+    ),
+    feedSearchPlaceholder: _.get(
+      options,
+      'uiText.feedSearchPlaceholder',
+      'search'
+    )
+  };
   //
   return {
     siteMetadata: {
@@ -22,11 +29,8 @@ module.exports = (options = {}) => {
       author: '', // for example - 'Ivan Ganev'
       twitter: '', // for twitter cards meta data, example - '@ganevru'
       // ui text fot translate
-      uiText: {
-        feedShowMoreButton,
-        feedSearchPlaceholder
-      },
-      feedItemsLimit
+      uiText,
+      feedItemsLimit: options.feedItemsLimit || 50
     },
     plugins: [
       {
