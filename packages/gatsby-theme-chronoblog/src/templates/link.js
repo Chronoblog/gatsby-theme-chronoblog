@@ -30,7 +30,6 @@ export const linkQuery = graphql`
       }
       fields {
         slug
-        link
       }
       body
     }

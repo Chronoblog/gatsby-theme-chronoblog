@@ -15,7 +15,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn test && yarn build:minimal && lint-staged"
+      "pre-commit": "yarn test && yarn build:minimal && lint-staged",
+      "pre-push": "yarn test && yarn build:minimal && yarn build:chronoblog"
     }
   },
   "lint-staged": {

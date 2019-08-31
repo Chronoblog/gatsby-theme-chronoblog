@@ -42,7 +42,6 @@ const useFeed = () => {
           excerpt
           fields {
             slug
-            link
           }
           frontmatter {
             title

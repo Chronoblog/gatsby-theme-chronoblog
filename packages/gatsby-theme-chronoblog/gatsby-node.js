@@ -3,7 +3,6 @@ const { createFilePath } = require('gatsby-source-filesystem');
 const Debug = require('debug');
 const mkdirp = require('mkdirp');
 const fs = require('fs');
-const normalizeUrl = require('normalize-url');
 const pkg = require('./package.json');
 
 const debug = Debug(pkg.name);
@@ -63,21 +62,6 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     node,
     value: slug
   });
-
-  // create link field for link
-  if (
-    node.frontmatter &&
-    node.frontmatter.link &&
-    node.frontmatter.link !== ''
-  ) {
-    const link = normalizeUrl(node.frontmatter.link);
-    actions.createNodeField({
-      name: 'link',
-      node,
-      value: link
-    });
-  }
-  //
 };
 
 exports.createPages = async ({ graphql, actions }) => {
@@ -89,7 +73,6 @@ exports.createPages = async ({ graphql, actions }) => {
             id
             fields {
               slug
-              link
             }
             frontmatter {
               title
@@ -118,41 +101,12 @@ exports.createPages = async ({ graphql, actions }) => {
   let allMdxNodes = allMdx.map((edge) => edge.node);
   allMdxNodes = allMdxNodes.filter((n) => !n.frontmatter.draft);
 
-  // Posts
-  let posts = allMdxNodes.filter(
-    (n) => n.parent.sourceInstanceName === 'posts'
-  );
-  posts = posts.filter((n) => n.frontmatter.title);
-  posts = posts.filter((n) => n.frontmatter.date);
-  posts = posts.filter((n) => n.fields.slug);
-  if (posts.length > 0) {
-    posts.forEach((post) => {
-      actions.createPage({
-        path: post.fields.slug,
-        component: require.resolve('./src/templates/post.js'),
-        context: {
-          id: post.id
-        }
-      });
-    });
-  }
-  // posts should not have links in frontmatter
-  posts.map((n) =>
-    n.frontmatter.link
-      ? console.warn(
-          `post ${n.frontmatter.title}, have link ${n.frontmatter.link} in frontmatter`
-        )
-      : ''
-  );
-
   // Links
   let links = allMdxNodes.filter(
     (n) => n.parent.sourceInstanceName === 'links'
   );
-  links = links.filter((n) => n.frontmatter.title);
   links = links.filter((n) => n.frontmatter.date);
   links = links.filter((n) => n.frontmatter.link);
-  links = links.filter((n) => n.fields.link);
   if (links.length > 0) {
     links.forEach((link) => {
       actions.createPage({
@@ -182,4 +136,31 @@ exports.createPages = async ({ graphql, actions }) => {
       });
     });
   }
+
+  // Posts
+  let posts = allMdxNodes.filter(
+    (n) => n.parent.sourceInstanceName === 'posts'
+  );
+  posts = posts.filter((n) => n.frontmatter.title);
+  posts = posts.filter((n) => n.frontmatter.date);
+  posts = posts.filter((n) => n.fields.slug);
+  if (posts.length > 0) {
+    posts.forEach((post) => {
+      actions.createPage({
+        path: post.fields.slug,
+        component: require.resolve('./src/templates/post.js'),
+        context: {
+          id: post.id
+        }
+      });
+    });
+  }
+  // posts should not have links in frontmatter
+  posts.map((n) =>
+    n.frontmatter.link
+      ? console.warn(
+          `post ${n.frontmatter.title}, have link ${n.frontmatter.link} in frontmatter`
+        )
+      : ''
+  );
 };
