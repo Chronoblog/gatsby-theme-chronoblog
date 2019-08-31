@@ -28,6 +28,7 @@ const makeSlug = (node, slugValueDefault) => {
   let slug = getSlug(node, slugValueDefault);
   slug = slug.toLowerCase();
   slug = slug.replace(/\s/g, '-');
+  slug = slug.replace(/\/\//g, '/');
   slug = path.join('/', slug);
   return slug;
 };
@@ -52,10 +53,18 @@ exports.onPreBootstrap = ({ store }) => {
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   if (node.internal.type !== 'Mdx') return;
-
-  // create slug field
-  const slugValueDefault = createFilePath({ node, getNode });
-  const slug = makeSlug(node, slugValueDefault);
+  // get slug Default
+  const fileName = createFilePath({ node, getNode });
+  // get parent folder name
+  const parent = getNode(node.parent);
+  const folderName = parent.sourceInstanceName;
+  //
+  // if notes - use folder for slug link
+  // because notes have no title
+  const type = folderName === 'notes' ? folderName : '';
+  const slugDefault = `${type}${fileName}`;
+  // make final slug
+  const slug = makeSlug(node, slugDefault);
 
   actions.createNodeField({
     name: 'slug',
@@ -105,6 +114,7 @@ exports.createPages = async ({ graphql, actions }) => {
   let links = allMdxNodes.filter(
     (n) => n.parent.sourceInstanceName === 'links'
   );
+  links = links.filter((n) => n.frontmatter.title);
   links = links.filter((n) => n.frontmatter.date);
   links = links.filter((n) => n.frontmatter.link);
   if (links.length > 0) {
