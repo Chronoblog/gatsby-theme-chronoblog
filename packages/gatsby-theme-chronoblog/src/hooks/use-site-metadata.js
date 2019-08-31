@@ -2,17 +2,18 @@ import { graphql, useStaticQuery } from 'gatsby';
 
 /**
  * @typedef {object} SiteMetadata
- * @property {string=} title
- * @property {string=} description
- * @property {string=} image
- * @property {string=} siteUrl
- * @property {string=} language
- * @property {string=} author
- * @property {string=} twitter
- * @property {object=} uiText
- * @property {string=} uiText.feedShowMoreButton
- * @property {string=} uiText.feedSearchPlaceholder
- * @property {number=} feedItemsLimit
+ * @property {string} title
+ * @property {string} description
+ * @property {string} image
+ * @property {string} siteUrl
+ * @property {string} language
+ * @property {string} author
+ * @property {string} twitter
+ * @property {object} uiText
+ * @property {string} uiText.feedShowMoreButton
+ * @property {string} uiText.feedSearchPlaceholder
+ * @property {string} uiText.allTagsButton
+ * @property {number} feedItemsLimit
  */
 
 /**
@@ -51,7 +52,7 @@ const useSiteMetadata = () => {
    */
   const data = useStaticQuery(siteMetaQuery);
   const { siteMetadata } = data.site;
-
+  //
   return siteMetadata;
 };
 

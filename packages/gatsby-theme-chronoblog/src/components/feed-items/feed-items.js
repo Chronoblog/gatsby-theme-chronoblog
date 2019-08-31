@@ -95,7 +95,7 @@ export default ({
     uiText: { feedShowMoreButton },
     feedItemsLimit
   } = useSiteMetadata();
-  const feedLimit = limit || feedItemsLimit || 10;
+  const feedLimit = limit || feedItemsLimit;
   //
   // props
   // tag from props

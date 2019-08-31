@@ -1,36 +1,38 @@
 const path = require('path');
 const remarkUnwrapImages = require('remark-unwrap-images');
 const remarkSlug = require('remark-slug');
-const _ = require('lodash');
 
-module.exports = (options = {}) => {
+module.exports = (options) => {
   //
-  const uiText = {
-    feedShowMoreButton: _.get(
-      options,
-      'uiText.feedShowMoreButton',
-      'Show More'
-    ),
-    feedSearchPlaceholder: _.get(
-      options,
-      'uiText.feedSearchPlaceholder',
-      'search'
-    ),
-    allTagsButton: _.get(options, 'uiText.allTagsButton', 'all tags')
-  };
+  const {
+    feedItemsLimit = 50,
+    uiText = {
+      feedShowMoreButton: 'show more',
+      feedSearchPlaceholder: 'search',
+      allTagsButton: 'all tags'
+    }
+  } = options;
+  const {
+    feedShowMoreButton = 'show more',
+    feedSearchPlaceholder = 'search',
+    allTagsButton = 'all tags'
+  } = uiText;
   //
   return {
     siteMetadata: {
-      title: 'Chronoblog - Theme for Gatsby js', // site title for SEO and meta
-      description: 'Gatsby Theme Chronoblog', // description for SEO and meta
+      title: 'Chronoblog - Theme for Gatsby js',
+      description: 'Gatsby Theme Chronoblog',
       image: '/banner.jpg', // main image of the site for meta tags
       siteUrl: 'http://localhost:8000', // http://localhost:8000
       language: 'en',
-      author: 'Name Placeholder', // for example - 'Ivan Ganev'
-      twitter: '', // for twitter cards meta data, example - '@ganevru'
-      // ui text fot translate
-      uiText,
-      feedItemsLimit: options.feedItemsLimit || 50
+      author: 'Name Placeholder',
+      twitter: '',
+      uiText: {
+        feedShowMoreButton,
+        feedSearchPlaceholder,
+        allTagsButton
+      },
+      feedItemsLimit
     },
     plugins: [
       {
