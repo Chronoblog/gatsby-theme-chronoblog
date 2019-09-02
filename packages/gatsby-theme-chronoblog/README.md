@@ -17,7 +17,9 @@ Community
 
 CMS and hosting
 
-- simple installation and use for CMS [contentful](https://www.contentful.com/)
+- simple installation and use for [contentful](https://www.contentful.com/)
+- simple installation and use for [prismic](https://prismic.io)
+- simple installation and use for [sanity](https://www.sanity.io/)
 - simple installation netlify.com
 
 Feed

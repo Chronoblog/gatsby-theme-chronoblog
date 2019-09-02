@@ -23,6 +23,7 @@ module.exports = (options) => {
       title: 'Chronoblog - Theme for Gatsby js',
       description: 'Gatsby Theme Chronoblog',
       image: '/banner.jpg', // main image of the site for meta tags
+      avatar: '/avatar.jpg', // author avatar
       siteUrl: 'http://localhost:8000', // http://localhost:8000
       language: 'en',
       author: 'Name Placeholder',

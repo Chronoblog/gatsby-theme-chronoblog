@@ -12,8 +12,8 @@ module.exports = {
     {
       resolve: 'gatsby-theme-chronoblog',
       options: {
-        // ui text fot translate
         uiText: {
+          // ui text fot translate
           feedShowMoreButton: '⬇️ show more ⬇️',
           feedSearchPlaceholder: 'search',
           allTagsButton: 'all tags'
