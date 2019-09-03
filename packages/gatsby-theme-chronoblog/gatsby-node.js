@@ -40,7 +40,8 @@ exports.onPreBootstrap = ({ store }) => {
     path.join(program.directory, `content/posts`),
     path.join(program.directory, `content/links`),
     path.join(program.directory, `content/notes`),
-    path.join(program.directory, `pages`)
+    path.join(program.directory, `pages`),
+    path.join(program.directory, `images`)
   ];
 
   dirs.forEach((dir) => {

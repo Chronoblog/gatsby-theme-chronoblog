@@ -133,6 +133,13 @@ module.exports = (options) => {
           name: 'pages',
           path: path.resolve('pages')
         }
+      },
+      {
+        resolve: 'gatsby-source-filesystem',
+        options: {
+          name: 'images',
+          path: path.resolve('images')
+        }
       }
     ]
   };
