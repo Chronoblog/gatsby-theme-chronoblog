@@ -63,7 +63,8 @@ module.exports = (options) => {
               options: {
                 maxWidth: 820,
                 quality: 90,
-                linkImagesToOriginal: false
+                linkImagesToOriginal: false,
+                backgroundColor: 'transparent'
               }
             },
             'gatsby-remark-responsive-iframe'
@@ -74,7 +75,8 @@ module.exports = (options) => {
               options: {
                 maxWidth: 820,
                 quality: 90,
-                linkImagesToOriginal: false
+                linkImagesToOriginal: false,
+                backgroundColor: 'transparent'
               }
             },
             'gatsby-remark-responsive-iframe'
