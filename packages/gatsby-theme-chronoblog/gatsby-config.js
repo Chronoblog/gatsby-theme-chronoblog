@@ -23,8 +23,8 @@ module.exports = (options) => {
       title: 'Chronoblog - Theme for Gatsby js',
       description: 'Gatsby Theme Chronoblog',
       image: '/banner.jpg', // main image of the site for meta tags
-      avatar: '/avatar.jpg', // author avatar
       siteUrl: 'http://localhost:8000', // http://localhost:8000
+      pathPrefix: '/',
       language: 'en',
       author: 'Name Placeholder',
       twitter: '',
@@ -140,7 +140,7 @@ module.exports = (options) => {
         resolve: 'gatsby-source-filesystem',
         options: {
           name: 'images',
-          path: path.resolve('images')
+          path: path.resolve('src/images')
         }
       }
     ]
