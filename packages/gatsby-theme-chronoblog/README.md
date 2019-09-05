@@ -7,6 +7,20 @@ Gatsby theme for building blogs with MDX
 npm i gatsby-theme-chronoblog
 ```
 
+## Work with the project
+
+To install a new package:
+
+```
+yarn workspace gatsby-theme-chronoblog add [INSTALLABLE PACKAGE]
+```
+
+To start chronoblog starter
+
+```
+yarn start:chronoblog
+```
+
 ## TODO
 
 Community
@@ -36,8 +50,8 @@ Tags
 
 Content types
 
-- content type `podcast` for, so, podcasts - with player and links-icons to podcasts platforms (spotify, google podcasts, etc)
-- content type `youtube`
+- content type `podcast` for, so, podcasts - with player and links-icons to podcasts platforms (spotify, google podcasts, etc) ?
+- content type `youtube` ?
 
 Dates
 
