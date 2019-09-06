@@ -2,13 +2,12 @@
 import { Link } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import normalizeUrl from 'normalize-url';
+import ReactHoverObserver from 'react-hover-observer';
 import { jsx, Styled } from 'theme-ui';
 
 import CoverImage from '../../cover-image';
 import Date from '../../date';
 import Tags from '../../tags';
-// @ts-ignore
-// import exLinkIcon from './external-link-alt-solid.svg';
 
 const noStyleLink = {
   display: 'block',
@@ -17,20 +16,24 @@ const noStyleLink = {
 };
 
 const LinkCard = ({ item, children }) => {
+  //
+  // links
   if (item.frontmatter.link && item.parent.sourceInstanceName === 'links') {
     const link = normalizeUrl(item.frontmatter.link);
     return (
       <a rel="noopener noreferrer" target="_blank" href={link} sx={noStyleLink}>
-        {children}
+        <div className="hover-on">{children}</div>
       </a>
     );
   }
   //
+  // notes
   if (item.parent.sourceInstanceName === 'notes') return <div>{children}</div>;
   //
+  // posts / rest
   return (
     <Link to={item.fields.slug} sx={noStyleLink}>
-      {children}
+      <div className="hover-on">{children}</div>
     </Link>
   );
 };
@@ -94,7 +97,7 @@ const LinkIconBg = ({
         sx={{
           backgroundImage: `url(${exLinkIcon})`,
           backgroundSize: '90px',
-          backgroundPosition: '100% 0px',
+          backgroundPosition: '97% 20px',
           backgroundRepeat: 'no-repeat'
         }}
       >
@@ -131,6 +134,50 @@ const BodyMdx = ({ item }) => {
   return <div />;
 };
 
+const HoverStyle = ({ isHovering = false, style, children }) => (
+  <div
+    sx={{
+      ...style,
+      borderColor: isHovering ? 'secondary' : 'muted',
+      opacity: isHovering ? 0.8 : 1
+    }}
+  >
+    {children}
+  </div>
+);
+
+/**
+ * @param {*} eTarget
+ * @param {string} className
+ * @returns {boolean}
+ */
+const eClassCheck = (eTarget, className = '') => {
+  if (!className || !eTarget) return false;
+  if (eTarget.className.includes(className)) return true;
+  if (eTarget.parentElement.className.includes(className)) return true;
+  if (eTarget.parentElement.parentElement.className.includes(className))
+    return true;
+  if (
+    eTarget.parentElement.parentElement.parentElement.className.includes(
+      className
+    )
+  )
+    return true;
+  if (
+    eTarget.parentElement.parentElement.parentElement.parentElement.className.includes(
+      className
+    )
+  )
+    return true;
+  if (
+    eTarget.parentElement.parentElement.parentElement.parentElement.parentElement.className.includes(
+      className
+    )
+  )
+    return true;
+  return false;
+};
+
 const CardStyle = ({ item, children }) => {
   const regStyle = {
     my: '20px',
@@ -155,19 +202,37 @@ const CardStyle = ({ item, children }) => {
     );
   //
   return (
-    <div
-      sx={{
-        ...regStyle,
-        borderColor: 'muted',
-        ':hover': {
-          opacity: 0.9,
-          borderColor: 'secondary'
+    <ReactHoverObserver
+      {...{
+        onMouseOver: ({ e, setIsHovering, unsetIsHovering }) => {
+          if (eClassCheck(e.target, 'hover-on')) {
+            setIsHovering();
+          } else {
+            unsetIsHovering();
+          }
         }
       }}
     >
-      {children}
-    </div>
+      <HoverStyle style={regStyle}>{children}</HoverStyle>
+    </ReactHoverObserver>
   );
+};
+
+const TagsComponent = ({ tags }) => {
+  if (tags && tags !== null) {
+    return (
+      <div
+        sx={{
+          mt: '10px',
+          px: '20px',
+          pb: '10px'
+        }}
+      >
+        <Tags type="item" tags={tags} />
+      </div>
+    );
+  }
+  return <div />;
 };
 
 export default ({ item }) => {
@@ -181,33 +246,23 @@ export default ({ item }) => {
         <LinkCard item={item}>
           <CoverImage data={item} />
         </LinkCard>
-        <LinkCard item={item}>
-          <div sx={{ px: '20px', pt: '20px' }}>
-            <LinkIconBg item={item}>
+        <LinkIconBg item={item}>
+          <LinkCard item={item}>
+            <div sx={{ px: '20px', pt: '20px' }}>
               <CardTitle item={item} />
               <LinkText item={item} />
               <div sx={{ mb: 2 }}>
                 <Date date={date} />
               </div>
-              <Description item={item} />
-              <Excerpt item={item} />
-              <BodyMdx item={item} />
-            </LinkIconBg>
+            </div>
+          </LinkCard>
+          <div sx={{ px: '20px' }}>
+            <Description item={item} />
+            <Excerpt item={item} />
+            <BodyMdx item={item} />
           </div>
-        </LinkCard>
-        {tags && tags !== null ? (
-          <div
-            sx={{
-              mt: '10px',
-              px: '20px',
-              pb: '10px'
-            }}
-          >
-            <Tags type="item" tags={tags} />
-          </div>
-        ) : (
-          ''
-        )}
+        </LinkIconBg>
+        <TagsComponent tags={tags} />
       </CardStyle>
     </article>
   );

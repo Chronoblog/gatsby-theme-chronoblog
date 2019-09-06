@@ -9,15 +9,15 @@ npm i gatsby-theme-chronoblog
 
 ## Work with the project
 
-To install a new package:
+To install a new package for gatsby-theme-chronoblog:
 
-```
+```sh
 yarn workspace gatsby-theme-chronoblog add [INSTALLABLE PACKAGE]
 ```
 
-To start chronoblog starter
+To start chronoblog starter:
 
-```
+```sh
 yarn start:chronoblog
 ```
 
