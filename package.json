@@ -13,7 +13,12 @@
     "test": "yarn clean && jest",
     "watch": "yarn clean && jest --watch"
   },
-
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn test && yarn build:minimal && lint-staged",
+      "pre-push": "yarn test && yarn build:chronoblog"
+    }
+  },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": ["eslint --fix", "git add"]
   },
