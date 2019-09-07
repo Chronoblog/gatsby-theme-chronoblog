@@ -12,6 +12,7 @@ import { graphql, useStaticQuery } from 'gatsby';
  * @property {object} uiText
  * @property {string} uiText.feedShowMoreButton
  * @property {string} uiText.feedSearchPlaceholder
+ * @property {string} uiText.cardReadMoreButton
  * @property {string} uiText.allTagsButton
  * @property {number} feedItemsLimit
  */
@@ -40,6 +41,7 @@ const useSiteMetadata = () => {
           uiText {
             feedShowMoreButton
             feedSearchPlaceholder
+            cardReadMoreButton
             allTagsButton
           }
           feedItemsLimit

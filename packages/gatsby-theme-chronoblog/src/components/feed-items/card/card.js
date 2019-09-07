@@ -235,7 +235,23 @@ const TagsComponent = ({ tags }) => {
   return <div />;
 };
 
-export default ({ item }) => {
+const ReadMoreButton = ({ item, text }) => {
+  if (text && item.parent.sourceInstanceName === 'posts')
+    return (
+      <Styled.p
+        sx={{
+          fontSize: [1],
+          opacity: 0.8,
+          fontWeight: 'bold'
+        }}
+      >
+        {text}
+      </Styled.p>
+    );
+  return <div />;
+};
+
+export default ({ item, uiText }) => {
   //
   const { date } = item.frontmatter;
   const { tags } = item.frontmatter;
@@ -260,6 +276,9 @@ export default ({ item }) => {
             <Description item={item} />
             <Excerpt item={item} />
             <BodyMdx item={item} />
+            <LinkCard item={item}>
+              <ReadMoreButton item={item} text={uiText.cardReadMoreButton} />
+            </LinkCard>
           </div>
         </LinkIconBg>
         <TagsComponent tags={tags} />

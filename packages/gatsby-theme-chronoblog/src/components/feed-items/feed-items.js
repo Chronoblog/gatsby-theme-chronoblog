@@ -91,10 +91,7 @@ export default ({
 }) => {
   let feedItems = useFeed();
   //
-  const {
-    uiText: { feedShowMoreButton },
-    feedItemsLimit
-  } = useSiteMetadata();
+  const { uiText, feedItemsLimit } = useSiteMetadata();
   const feedLimit = limit || feedItemsLimit;
   //
   // props
@@ -147,7 +144,7 @@ export default ({
               {feedItemsToShow.map((item) => {
                 return (
                   <li key={item.id}>
-                    <Card item={item} />
+                    <Card item={item} uiText={uiText} />
                   </li>
                 );
               })}
@@ -162,7 +159,7 @@ export default ({
         showMoreNumber={showMoreNumber}
         setCount={setCount}
       >
-        {showMoreText || feedShowMoreButton}
+        {showMoreText || uiText.feedShowMoreButton}
       </ButtonShowMore>
     </div>
   );

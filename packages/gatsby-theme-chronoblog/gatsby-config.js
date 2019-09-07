@@ -7,14 +7,16 @@ module.exports = (options) => {
   const {
     feedItemsLimit = 50,
     uiText = {
-      feedShowMoreButton: 'show more',
+      feedShowMoreButton: '↓ show more ↓',
       feedSearchPlaceholder: 'search',
+      cardReadMoreButton: 'read more →',
       allTagsButton: 'all tags'
     }
   } = options;
   const {
-    feedShowMoreButton = 'show more',
+    feedShowMoreButton = '↓ show more ↓',
     feedSearchPlaceholder = 'search',
+    cardReadMoreButton = 'read more →',
     allTagsButton = 'all tags'
   } = uiText;
   //
@@ -31,6 +33,7 @@ module.exports = (options) => {
       uiText: {
         feedShowMoreButton,
         feedSearchPlaceholder,
+        cardReadMoreButton,
         allTagsButton
       },
       feedItemsLimit
