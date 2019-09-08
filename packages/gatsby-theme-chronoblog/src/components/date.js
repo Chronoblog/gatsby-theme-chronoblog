@@ -21,7 +21,7 @@ export default ({
   options = { year: 'numeric', month: 'long', day: 'numeric' }
 }) => {
   const meta = useSiteMetadata();
-  const dateString = makeDate(date, meta.language, options);
+  const dateString = makeDate(date, meta.siteLanguage, options);
   //
   return (
     <div>
