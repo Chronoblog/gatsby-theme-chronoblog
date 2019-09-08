@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: 'Chronoblog Starter',
-    description: 'Starter for Gatsby Theme Chronoblog',
+    siteTitle: 'Chronoblog Starter',
+    siteDescription: 'Starter for Gatsby Theme Chronoblog',
     siteUrl: 'http://localhost:8000', // example - http://example.com
     pathPrefix: '/',
     siteLanguage: 'en',

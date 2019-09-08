@@ -8,12 +8,12 @@ import useSiteMetadata from '../../hooks/use-site-metadata';
 /**
  *
  * @param {object} siteMeta
- * @param {string=} siteMeta.title
+ * @param {string=} siteMeta.siteTitle
  * @param {string} propsTitle
  * @returns {string}
  */
 const genTitle = (siteMeta, propsTitle = '') => {
-  const siteMetaTitle = siteMeta.title || '';
+  const siteMetaTitle = siteMeta.siteTitle || '';
   if (propsTitle !== '') {
     if (siteMetaTitle === '') return propsTitle;
     return `${propsTitle} | ${siteMetaTitle}`;
@@ -43,26 +43,26 @@ const genUrl = (siteMeta, propsSlug = '') => {
 /**
  *
  * @param {object} siteMeta
- * @param {string=} siteMeta.description
+ * @param {string=} siteMeta.siteDescription
  * @param {string} propsDescription
  * @returns {string}
  */
 const genDescription = (siteMeta, propsDescription = '') => {
   if (propsDescription !== '') return propsDescription;
-  if (siteMeta && siteMeta.description) return siteMeta.description;
+  if (siteMeta && siteMeta.siteDescription) return siteMeta.siteDescription;
   return '';
 };
 
 /**
  *
  * @param {object} siteMeta
- * @param {string=} siteMeta.image
+ * @param {string=} siteMeta.siteImage
  * @param {string} propsImage
  * @returns {string}
  */
 const genImage = (siteMeta, propsImage = '') => {
   if (propsImage !== '') return propsImage;
-  if (siteMeta && siteMeta.image) return siteMeta.image;
+  if (siteMeta && siteMeta.siteImage) return siteMeta.siteImage;
   return '';
 };
 
@@ -74,7 +74,7 @@ export { genTitle, genUrl };
  * @property {string=} title
  * @property {string=} description
  * @property {string=} slug
- * @property {string=} image
+ * @property {string=} siteImage
  * @property {string=} canonical
  * @property {React.ReactNode=} children
  */
@@ -86,7 +86,7 @@ const SEO = ({
   title = '',
   description = '',
   slug = '',
-  image = '',
+  siteImage = '',
   canonical = '',
   children
 }) => {
@@ -97,7 +97,7 @@ const SEO = ({
   const metaUrl = genUrl(siteMeta, slug);
   const siteLanguage = siteMeta.siteLanguage || 'en';
   const ogLanguage = siteMeta.ogLanguage || 'en_US';
-  const metaImage = genImage(siteMeta, image);
+  const metaImage = genImage(siteMeta, siteImage);
   const twitter = siteMeta.twitter || '';
   // const author = siteMeta.author || twitter;
   const metaCanonical = genUrl(siteMeta, canonical);

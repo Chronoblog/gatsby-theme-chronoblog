@@ -8,15 +8,15 @@ describe('SEO', () => {
 
 describe('genTitle()', () => {
   test('genTitle only meta title', () => {
-    const test = genTitle({ title: 'Meta Title' });
+    const test = genTitle({ siteTitle: 'Meta Title' });
     expect(test).toEqual('Meta Title');
   });
   test('genTitle meta title and props title', () => {
-    const test = genTitle({ title: 'Meta Title' }, 'Props Title');
+    const test = genTitle({ siteTitle: 'Meta Title' }, 'Props Title');
     expect(test).toEqual('Props Title | Meta Title');
   });
   test('genTitle only props title', () => {
-    const test = genTitle({ title: undefined }, 'Props Title');
+    const test = genTitle({ siteTitle: undefined }, 'Props Title');
     expect(test).toEqual('Props Title');
   });
 });

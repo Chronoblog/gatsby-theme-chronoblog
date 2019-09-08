@@ -22,9 +22,9 @@ module.exports = (options) => {
   //
   return {
     siteMetadata: {
-      title: 'Chronoblog - Theme for Gatsby js',
-      description: 'Gatsby Theme Chronoblog',
-      image: '/banner.jpg', // main image of the site for meta tags
+      siteTitle: 'Chronoblog - Theme for Gatsby js',
+      siteDescription: 'Gatsby Theme Chronoblog',
+      siteImage: '/banner.jpg', // main image of the site for meta tags
       siteUrl: 'http://localhost:8000', // http://localhost:8000
       pathPrefix: '/',
       siteLanguage: 'en',

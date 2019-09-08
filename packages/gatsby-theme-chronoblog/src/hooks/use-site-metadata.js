@@ -2,9 +2,9 @@ import { graphql, useStaticQuery } from 'gatsby';
 
 /**
  * @typedef {object} SiteMetadata
- * @property {string} title
- * @property {string} description
- * @property {string} image
+ * @property {string} siteTitle
+ * @property {string} siteDescription
+ * @property {string} siteImage
  * @property {string} siteUrl
  * @property {string} siteLanguage
  * @property {string} ogLanguage
@@ -32,9 +32,9 @@ const useSiteMetadata = () => {
     query SEOQuery {
       site {
         siteMetadata {
-          title
-          description
-          image
+          siteTitle
+          siteDescription
+          siteImage
           siteUrl
           siteLanguage
           ogLanguage
