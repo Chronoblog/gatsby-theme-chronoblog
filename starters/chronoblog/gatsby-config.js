@@ -4,7 +4,8 @@ module.exports = {
     description: 'Starter for Gatsby Theme Chronoblog',
     siteUrl: 'http://localhost:8000', // example - http://example.com
     pathPrefix: '/',
-    language: 'en',
+    siteLanguage: 'en',
+    ogLanguage: `en_US`,
     author: 'Site Author', // for example - 'Ivan Ganev'
     twitter: '' // for twitter cards meta data, example - '@ganevru'
   },

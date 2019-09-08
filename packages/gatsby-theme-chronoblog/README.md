@@ -36,10 +36,12 @@ CMS and hosting
 - simple installation and use for [sanity](https://www.sanity.io/)
 - simple installation netlify.com
 
+i18n
+
+- example: https://github.com/gatsbyjs/gatsby/tree/master/examples/using-i18n
+
 Feed
 
-- `read more` text/button in post card
-- hover animation for link in link type card
 - years separator
 - mini feed - feed with only dates, titles and tags
 
@@ -50,6 +52,7 @@ Tags
 
 Content types
 
+- twitter tweets in `notes`
 - content type `podcast` for, so, podcasts - with player and links-icons to podcasts platforms (spotify, google podcasts, etc) ?
 - content type `youtube` ?
 

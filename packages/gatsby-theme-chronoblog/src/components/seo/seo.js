@@ -95,7 +95,8 @@ const SEO = ({
   const metaTitle = genTitle(siteMeta, title);
   const metaDescription = genDescription(siteMeta, description);
   const metaUrl = genUrl(siteMeta, slug);
-  const language = siteMeta.language || '';
+  const siteLanguage = siteMeta.siteLanguage || 'en';
+  const ogLanguage = siteMeta.ogLanguage || 'en_US';
   const metaImage = genImage(siteMeta, image);
   const twitter = siteMeta.twitter || '';
   // const author = siteMeta.author || twitter;
@@ -104,7 +105,7 @@ const SEO = ({
   return (
     <Helmet>
       {/* Main tags */}
-      <html lang={language} />
+      <html lang={siteLanguage} />
       <title>{metaTitle}</title>
       <meta name="description" content={metaDescription} />
       <meta name="image" content={metaImage} />
@@ -120,6 +121,7 @@ const SEO = ({
       <meta property="og:image" content={metaImage} />
       <meta property="og:image:alt" content={metaTitle} />
       <meta property="og:type" content="website" />
+      <meta property="og:locale" content={ogLanguage} />
 
       {/* Twitter */}
       <meta name="twitter:card" content="summary" />

@@ -6,7 +6,8 @@ import { graphql, useStaticQuery } from 'gatsby';
  * @property {string} description
  * @property {string} image
  * @property {string} siteUrl
- * @property {string} language
+ * @property {string} siteLanguage
+ * @property {string} ogLanguage
  * @property {string} author
  * @property {string} twitter
  * @property {object} uiText
@@ -35,7 +36,8 @@ const useSiteMetadata = () => {
           description
           image
           siteUrl
-          language
+          siteLanguage
+          ogLanguage
           author
           twitter
           uiText {

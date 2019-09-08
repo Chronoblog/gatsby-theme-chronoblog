@@ -27,7 +27,8 @@ module.exports = (options) => {
       image: '/banner.jpg', // main image of the site for meta tags
       siteUrl: 'http://localhost:8000', // http://localhost:8000
       pathPrefix: '/',
-      language: 'en',
+      siteLanguage: 'en',
+      ogLanguage: `en_US`,
       author: 'Name Placeholder',
       twitter: '',
       uiText: {
