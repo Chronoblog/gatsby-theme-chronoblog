@@ -1,6 +1,9 @@
 # Chronoblog - Gatsby Theme
 
 **WIP**
+
+**⚠️ This theme is very unstable ⚠️**
+
 Gatsby theme for building blogs with MDX
 
 ```sh

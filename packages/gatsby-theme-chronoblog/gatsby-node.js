@@ -41,6 +41,7 @@ exports.onPreBootstrap = ({ store }) => {
     path.join(program.directory, `content/links`),
     path.join(program.directory, `content/notes`),
     path.join(program.directory, `pages`),
+    path.join(program.directory, `src/pages`),
     path.join(program.directory, `src/images`)
   ];
 
@@ -166,7 +167,7 @@ exports.createPages = async ({ graphql, actions }) => {
       });
     });
   }
-  // posts should not have links in frontmatter
+  // posts should not have `links` in frontmatter
   posts.map((n) =>
     n.frontmatter.link
       ? console.warn(

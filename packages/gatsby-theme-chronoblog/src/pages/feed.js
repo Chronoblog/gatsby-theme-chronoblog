@@ -7,7 +7,7 @@ import Layout from '../components/layout';
 import SEO from '../components/seo';
 import Tags from '../components/tags';
 
-const PageFeed = ({ location }) => {
+export default ({ location }) => {
   const tagFromLink = get(location, 'state.tag', '');
   return (
     <Layout>
@@ -18,5 +18,3 @@ const PageFeed = ({ location }) => {
     </Layout>
   );
 };
-
-export default PageFeed;

@@ -40,17 +40,75 @@ module.exports = (options) => {
       feedItemsLimit
     },
     plugins: [
+      `gatsby-transformer-sharp`,
       {
-        // for theme default pages
-        resolve: `gatsby-plugin-page-creator`,
+        resolve: `gatsby-plugin-sharp`,
         options: {
-          path: path.join(__dirname, `src`, `pages`)
+          defaultQuality: 90
+        }
+      },
+      'gatsby-plugin-theme-ui',
+      'gatsby-plugin-react-helmet',
+      'gatsby-plugin-emotion',
+      {
+        resolve: 'gatsby-redirect-from',
+        options: {
+          query: 'allMdx'
+        }
+      },
+      'gatsby-plugin-meta-redirect',
+      {
+        resolve: 'gatsby-source-filesystem',
+        options: {
+          name: 'pages',
+          path: path.resolve('pages')
+        }
+      },
+      {
+        resolve: 'gatsby-source-filesystem',
+        options: {
+          name: 'pages',
+          path: path.resolve('src/pages')
+        }
+      },
+      {
+        resolve: 'gatsby-source-filesystem',
+        options: {
+          name: 'posts',
+          path: path.resolve('content/posts')
+        }
+      },
+      {
+        resolve: 'gatsby-source-filesystem',
+        options: {
+          name: 'links',
+          path: path.resolve('content/links')
+        }
+      },
+      {
+        resolve: 'gatsby-source-filesystem',
+        options: {
+          name: 'notes',
+          path: path.resolve('content/notes')
+        }
+      },
+      {
+        resolve: 'gatsby-source-filesystem',
+        options: {
+          name: 'images',
+          path: path.resolve('src/images')
         }
       },
       {
         resolve: `gatsby-plugin-page-creator`,
         options: {
           path: path.resolve('pages')
+        }
+      },
+      {
+        resolve: `gatsby-plugin-page-creator`,
+        options: {
+          path: path.join(__dirname, `src`, `pages`)
         }
       },
       {
@@ -85,66 +143,6 @@ module.exports = (options) => {
             },
             'gatsby-remark-responsive-iframe'
           ]
-        }
-      },
-      `gatsby-transformer-sharp`,
-      {
-        resolve: `gatsby-plugin-sharp`,
-        options: {
-          defaultQuality: 90
-        }
-      },
-      'gatsby-plugin-theme-ui',
-      'gatsby-plugin-react-helmet',
-      'gatsby-plugin-emotion',
-      {
-        resolve: 'gatsby-redirect-from',
-        options: {
-          query: 'allMdx'
-        }
-      },
-      'gatsby-plugin-meta-redirect',
-      {
-        resolve: 'gatsby-source-filesystem',
-        options: {
-          name: 'posts',
-          path: path.resolve('content/posts')
-        }
-      },
-      {
-        resolve: 'gatsby-source-filesystem',
-        options: {
-          name: 'links',
-          path: path.resolve('content/links')
-        }
-      },
-      {
-        resolve: 'gatsby-source-filesystem',
-        options: {
-          name: 'notes',
-          path: path.resolve('content/notes')
-        }
-      },
-      {
-        // for theme default pages
-        resolve: 'gatsby-source-filesystem',
-        options: {
-          name: 'pages',
-          path: path.join(__dirname, `src`, `pages`)
-        }
-      },
-      {
-        resolve: 'gatsby-source-filesystem',
-        options: {
-          name: 'pages',
-          path: path.resolve('pages')
-        }
-      },
-      {
-        resolve: 'gatsby-source-filesystem',
-        options: {
-          name: 'images',
-          path: path.resolve('src/images')
         }
       }
     ]

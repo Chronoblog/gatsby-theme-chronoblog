@@ -16,7 +16,11 @@
     "types": ["@emotion/core", "jest"]
     // "noImplicitAny": true
   },
-  "include": ["./packages/**/src/**/*", "./examples/**/src/**/*"],
+  "include": [
+    "./packages/**/src/**/*",
+    "./examples/**/src/**/*",
+    "packages/gatsby-theme-chronoblog/pages"
+  ],
   "exclude": [
     "node_modules",
     "node_modules/**/*",
