@@ -52,6 +52,3 @@ yarn-error.log
 .pnp/
 .pnp.js
 .yarn-integrity
-
-# personal
-README-RU.md

@@ -14,6 +14,7 @@ import SiteHeaderTitle from './site-header-title';
 import Tags from './tags';
 
 const components = {
+  SEO,
   Tags,
   FeedItems,
   FeedSearch,
