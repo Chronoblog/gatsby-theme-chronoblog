@@ -52,6 +52,23 @@ const PostFooter = () => {
   );
 };
 
+/**
+ * @param {'fixed' | 'fluid'} imgType
+ * @param {*} frontmatter
+ */
+const getImage = (frontmatter, imgType) => {
+  if (
+    frontmatter &&
+    frontmatter.cover &&
+    frontmatter.cover.childImageSharp &&
+    frontmatter.cover.childImageSharp[imgType] &&
+    frontmatter.cover.childImageSharp[imgType] !== '' &&
+    frontmatter.cover.childImageSharp[imgType] !== 0
+  )
+    return frontmatter.cover.childImageSharp[imgType].src;
+  return '';
+};
+
 export const Post = ({ data }) => {
   const description = getDescriptionForSeo(
     data.mdx.frontmatter.description,
@@ -64,6 +81,7 @@ export const Post = ({ data }) => {
         title={data.mdx.frontmatter.title}
         slug={data.mdx.fields.slug}
         description={description}
+        image={getImage(data.mdx.frontmatter, 'fluid')}
       />
       <main>
         <article>

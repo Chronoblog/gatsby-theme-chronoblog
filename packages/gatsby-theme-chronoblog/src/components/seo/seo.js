@@ -76,7 +76,7 @@ export { genTitle, genUrl };
  * @property {string=} title
  * @property {string=} description
  * @property {string=} slug
- * @property {string=} siteImage
+ * @property {string=} image
  * @property {string=} canonical
  * @property {React.ReactNode=} children
  */
@@ -88,7 +88,7 @@ const SEO = ({
   title = '',
   description = '',
   slug = '',
-  siteImage = '',
+  image = '',
   canonical = '',
   children
 }) => {
@@ -99,13 +99,10 @@ const SEO = ({
   const metaUrl = genUrl(siteMeta, slug);
   const siteLanguage = siteMeta.siteLanguage || 'en';
   const ogLanguage = siteMeta.ogLanguage || 'en_US';
-  const metaImage = genImage(siteMeta, siteImage);
+  const metaImage = genImage(siteMeta, image);
   const twitter = siteMeta.twitter || '';
   // const author = siteMeta.author || twitter;
   const metaCanonical = genUrl(siteMeta, canonical);
-
-  console.log('metaUrl');
-  console.log(metaUrl);
 
   return (
     <Helmet>
