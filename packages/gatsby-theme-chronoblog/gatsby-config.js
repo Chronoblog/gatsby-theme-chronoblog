@@ -61,13 +61,6 @@ module.exports = (options) => {
         resolve: 'gatsby-source-filesystem',
         options: {
           name: 'pages',
-          path: path.resolve('pages')
-        }
-      },
-      {
-        resolve: 'gatsby-source-filesystem',
-        options: {
-          name: 'pages',
           path: path.resolve('src/pages')
         }
       },
@@ -90,19 +83,6 @@ module.exports = (options) => {
         options: {
           name: 'notes',
           path: path.resolve('content/notes')
-        }
-      },
-      {
-        resolve: 'gatsby-source-filesystem',
-        options: {
-          name: 'images',
-          path: path.resolve('src/images')
-        }
-      },
-      {
-        resolve: `gatsby-plugin-page-creator`,
-        options: {
-          path: path.resolve('pages')
         }
       },
       {
