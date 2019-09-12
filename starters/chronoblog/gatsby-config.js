@@ -4,7 +4,7 @@ module.exports = {
     siteDescription: 'Starter for Gatsby Theme Chronoblog',
     siteImage: '/banner.png', // main image of the site for meta tags
     siteUrl: 'http://localhost:8000', // example - http://example.com
-    pathPrefix: '/',
+    pathPrefix: '/', // '/' - default, example - '/someprefix'
     siteLanguage: 'en',
     ogLanguage: `en_US`,
     author: 'Site Author', // for example - 'Ivan Ganev'

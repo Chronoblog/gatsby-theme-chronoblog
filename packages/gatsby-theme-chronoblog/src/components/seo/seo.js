@@ -25,16 +25,18 @@ const genTitle = (siteMeta, propsTitle = '') => {
  *
  * @param {object} siteMeta
  * @param {string=} siteMeta.siteUrl
+ * @param {string=} siteMeta.pathPrefix
  * @param {string} propsSlug
  * @returns {string}
  */
 const genUrl = (siteMeta, propsSlug = '') => {
   const metaUrl = siteMeta.siteUrl ? siteMeta.siteUrl : '';
+  const prefix = siteMeta.pathPrefix ? siteMeta.pathPrefix : '/';
   const slug = propsSlug.replace(/\s/g, '-');
   /** @constant
     @type {string}
    */
-  let finalUrl = urlJoin(metaUrl, '/', slug);
+  let finalUrl = urlJoin(metaUrl, '/', prefix, '/', slug);
   finalUrl = normalizeUrl(finalUrl);
   finalUrl = finalUrl.toLowerCase();
   return finalUrl;
@@ -101,6 +103,9 @@ const SEO = ({
   const twitter = siteMeta.twitter || '';
   // const author = siteMeta.author || twitter;
   const metaCanonical = genUrl(siteMeta, canonical);
+
+  console.log('metaUrl');
+  console.log(metaUrl);
 
   return (
     <Helmet>

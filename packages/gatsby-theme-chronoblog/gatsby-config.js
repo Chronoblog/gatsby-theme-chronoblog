@@ -26,7 +26,7 @@ module.exports = (options) => {
       siteDescription: 'Gatsby Theme Chronoblog',
       siteImage: '/banner.png', // main image of the site for meta tags
       siteUrl: 'http://localhost:8000', // http://localhost:8000
-      pathPrefix: '/',
+      pathPrefix: '/', // '/' - default, example - '/someprefix'
       siteLanguage: 'en',
       ogLanguage: `en_US`,
       author: 'Name Placeholder',
