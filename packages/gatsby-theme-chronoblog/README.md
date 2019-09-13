@@ -30,6 +30,10 @@ Community
 
 - write a normal readme
 - develop a starter with examples and descriptions
+
+Development environment
+
+- Automate NPM publish with GitHub Actions: https://medium.com/faun/automate-your-npm-publish-with-github-actions-dfe8059645dd
 - GitHub actions for synchronize starters https://twitter.com/lekoarts_de/status/1167124503312457730
 
 CMS and hosting
@@ -38,10 +42,6 @@ CMS and hosting
 - simple installation and use for [prismic](https://prismic.io)
 - simple installation and use for [sanity](https://www.sanity.io/)
 - simple installation netlify.com
-
-i18n
-
-- example: https://github.com/gatsbyjs/gatsby/tree/master/examples/using-i18n
 
 Feed
 
@@ -55,7 +55,7 @@ Tags
 
 Content types
 
-- twitter tweets in `notes`
+- `twitter` tweets in `notes`
 - content type `podcast` for, so, podcasts - with player and links-icons to podcasts platforms (spotify, google podcasts, etc) ?
 - content type `youtube` ?
 

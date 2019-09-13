@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { MDXProvider } from '@mdx-js/react';
+import { Link } from 'gatsby';
 import { useCallback, useState } from 'react';
 import { Container, jsx, Layout } from 'theme-ui';
 
@@ -9,8 +10,8 @@ import FeedSearch from './feed-search';
 import Footer from './footer';
 import Header from './header';
 import LightDarkSwitchButton from './light-dark-switch-button';
+import LinkNoStyle from './link-no-style';
 import SEO from './seo';
-import SiteHeaderTitle from './site-header-title';
 import Tags from './tags';
 
 const components = {
@@ -19,7 +20,8 @@ const components = {
   FeedItems,
   FeedSearch,
   LightDarkSwitchButton,
-  SiteHeaderTitle
+  LinkNoStyle,
+  Link
 };
 
 /**
