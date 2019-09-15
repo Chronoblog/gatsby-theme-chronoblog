@@ -6,7 +6,6 @@ import styles from './styles';
 const theme = {
   ...base,
   initialColorMode: 'light',
-  useCustomProperties: true,
   colors: {
     ...colors
   },
