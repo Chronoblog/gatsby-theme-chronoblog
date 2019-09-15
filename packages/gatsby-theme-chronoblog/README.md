@@ -43,6 +43,7 @@ Development environment
 
 - Automate NPM publish with GitHub Actions: https://medium.com/faun/automate-your-npm-publish-with-github-actions-dfe8059645dd
 - GitHub actions for synchronize starters https://twitter.com/lekoarts_de/status/1167124503312457730
+- [cypress](https://www.cypress.io/) for E2E tests
 
 CMS and hosting
 

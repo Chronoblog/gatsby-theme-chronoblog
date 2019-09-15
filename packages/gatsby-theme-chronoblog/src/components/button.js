@@ -15,13 +15,18 @@ import { jsx } from 'theme-ui';
  *
  * @param {Props=} props
  */
-export default ({ as: Element = 'button', children, ...props }) => {
+export default ({
+  as: Element = 'button',
+  active = false,
+  children,
+  ...props
+}) => {
   return (
     <Element
       {...props}
       sx={{
         color: 'text',
-        bg: 'muted',
+        bg: active ? 'secondary' : 'muted',
         userSelect: 'none',
         display: 'inline-block',
         px: '20px',

@@ -10,16 +10,20 @@ import Button from '../button';
 /**
  * @typedef {object} TagProps
  * @property {string} tag
+ * @property {string=} pageContextTag
  * @property {object} style
  */
 
 /**
  * @param {TagProps=} props
  */
-const Tag = ({ tag, style }) => {
+const Tag = ({ tag, style, pageContextTag }) => {
+  const active = tag === pageContextTag;
   return (
-    <Link to="/feed" state={{ tag }}>
-      <Button sx={style}>#{tag}</Button>
+    <Link to={`/tags/${_.kebabCase(tag)}/`}>
+      <Button sx={style} active={active}>
+        #{tag}
+      </Button>
     </Link>
   );
 };
@@ -29,7 +33,7 @@ const AllTagsButton = ({ style }) => {
     uiText: { allTagsButton }
   } = useSiteMetadata();
   return (
-    <Link to="/feed">
+    <Link to="/tags">
       <Button sx={style}>{allTagsButton}</Button>
     </Link>
   );
@@ -39,15 +43,16 @@ const AllTagsButton = ({ style }) => {
  * @typedef {object} TagsProps
  * @property {string[]} tags
  * @property {string} type
+ * @property {string=} pageContextTag
  */
 
 /**
  * @param {TagsProps=} props
  */
-const Tags = ({ type, tags }) => {
+const Tags = ({ type, tags, pageContextTag }) => {
   const style = {
     mr: type === 'feed' ? '6px' : '5px',
-    my: '2px',
+    my: type === 'feed' ? '3px' : '2.5px',
     px: type === 'feed' ? '16px' : '12px',
     py: type === 'feed' ? '10px' : '6px',
     fontSize: type === 'feed' ? [2] : [0],
@@ -58,7 +63,7 @@ const Tags = ({ type, tags }) => {
     <div>
       {type === 'feed' ? <AllTagsButton style={style} /> : ''}
       {tags.map((t) => (
-        <Tag key={t} tag={t} style={style} />
+        <Tag key={t} tag={t} style={style} pageContextTag={pageContextTag} />
       ))}
     </div>
   );
@@ -68,12 +73,13 @@ const Tags = ({ type, tags }) => {
  * @typedef {object} Props
  * @property {'feed' | 'item'=} type
  * @property {string[]=} tags
+ * @property {string=} pageContextTag
  */
 
 /**
  * @param {Props=} props
  */
-export default ({ type = 'feed', tags }) => {
+export default ({ type = 'feed', tags, pageContextTag }) => {
   if (type === 'feed') {
     let feedItems = useFeed();
     feedItems = feedItems.filter((i) => !i.frontmatter.draft);
@@ -84,7 +90,9 @@ export default ({ type = 'feed', tags }) => {
     tagsFromItems = _.flatten(tagsFromItems);
     tagsFromItems = _.uniq(tagsFromItems);
     tagsFromItems = tagsFromItems.filter(Boolean);
-    return <Tags type={type} tags={tagsFromItems} />;
+    return (
+      <Tags type={type} tags={tagsFromItems} pageContextTag={pageContextTag} />
+    );
   }
   //
   if (tags) {
