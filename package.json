@@ -15,43 +15,42 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn test && yarn build:minimal && lint-staged",
-      "pre-push": "yarn test && yarn build:chronoblog"
+      "pre-commit": "yarn test && yarn build:chronoblog && lint-staged"
     }
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": ["eslint --fix", "git add"]
   },
   "devDependencies": {
-    "@types/jest": "^24.0.16",
-    "@types/node": "^12.0.12",
-    "@types/react": "^16.8.23",
-    "@types/react-dom": "^16.8.4",
-    "@types/react-helmet": "^5.0.8",
-    "@typescript-eslint/eslint-plugin": "^1.11.0",
-    "@typescript-eslint/parser": "^1.11.0",
-    "babel-jest": "^24.8.0",
-    "babel-preset-gatsby": "^0.2.11",
-    "eslint": "^5.3.0",
+    "@types/jest": "^24.0.18",
+    "@types/node": "^12.7.5",
+    "@types/react": "^16.9.2",
+    "@types/react-dom": "^16.9.0",
+    "@types/react-helmet": "^5.0.10",
+    "@typescript-eslint/eslint-plugin": "^1.13.0",
+    "@typescript-eslint/parser": "^1.13.0",
+    "babel-jest": "^24.9.0",
+    "babel-preset-gatsby": "^0.2.13",
+    "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.1",
-    "eslint-config-prettier": "^6.0.0",
+    "eslint-config-prettier": "^6.3.0",
     "eslint-plugin-html": "^5.0.5",
     "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-jsdoc": "^15.7.2",
+    "eslint-plugin-jsdoc": "^15.9.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.14.3",
-    "eslint-plugin-react-hooks": "^1.6.1",
+    "eslint-plugin-react-hooks": "^1.7.0",
     "eslint-plugin-simple-import-sort": "^4.0.0",
     "eslint-plugin-sonarjs": "^0.4.0",
     "eslint-plugin-unicorn": "^9.1.1",
-    "husky": "^3.0.1",
+    "husky": "^3.0.5",
     "identity-obj-proxy": "^3.0.0",
-    "jest": "^24.8.0",
-    "lint-staged": "^9.2.1",
+    "jest": "^24.9.0",
+    "lint-staged": "^9.2.5",
     "prettier": "^1.18.2",
-    "react-test-renderer": "^16.8.6",
-    "typescript": "^3.5.2",
+    "react-test-renderer": "^16.9.0",
+    "typescript": "^3.6.3",
     "yarn": "^1.17.3"
   }
 }
