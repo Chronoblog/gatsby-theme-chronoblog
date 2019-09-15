@@ -29,10 +29,16 @@ export default ({ placeholder = '' }) => {
           borderWidth: `1px`
         }}
       >
-        <Box sx={{ maxWidth: [50], pt: '6px' }}>
+        <Box
+          sx={{
+            maxWidth: ['40px'],
+            minWidth: ['40px'],
+            pt: '6px'
+          }}
+        >
           <span
             sx={{
-              fontSize: [26],
+              fontSize: ['26px'],
               pr: [2],
               pl: [2],
               opacity: ['0.7'],

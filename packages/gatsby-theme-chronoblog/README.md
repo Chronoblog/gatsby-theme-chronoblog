@@ -80,3 +80,7 @@ Other
 - comments for blog posts (disqus?)
 - RSS Feed
 - social media sharing
+
+Fix
+
+- gatsby-plugin-theme-ui - uses prefers-color-scheme [theme-ui.com/color-modes](https://theme-ui.com/color-modes) - we don't need this.
