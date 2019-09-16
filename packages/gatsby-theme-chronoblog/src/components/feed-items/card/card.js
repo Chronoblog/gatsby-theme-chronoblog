@@ -264,7 +264,7 @@ export default ({ item, uiText }) => {
         </LinkCard>
         <LinkIconBg item={item}>
           <LinkCard item={item}>
-            <div sx={{ px: '20px', pt: '20px' }}>
+            <div sx={{ px: ['10px', '20px'], pt: '20px' }}>
               <CardTitle item={item} />
               <LinkText item={item} />
               <div sx={{ mb: 2 }}>
@@ -272,7 +272,7 @@ export default ({ item, uiText }) => {
               </div>
             </div>
           </LinkCard>
-          <div sx={{ px: '20px' }}>
+          <div sx={{ px: ['10px', '20px'] }}>
             <Description item={item} />
             <Excerpt item={item} />
             <BodyMdx item={item} />

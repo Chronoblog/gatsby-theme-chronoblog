@@ -45,7 +45,11 @@ export default ({ children, ...props }) => {
       <MDXProvider components={components}>
         <FeedContext.Provider value={{ value, onChangeSearchInput }}>
           <Header />
-          <Container sx={{ wordBreak: 'break-all' }}>{children}</Container>
+          <Container
+            sx={{ overflowWrap: 'break-word', wordWrap: 'break-word' }}
+          >
+            {children}
+          </Container>
           <Footer />
         </FeedContext.Provider>
       </MDXProvider>
