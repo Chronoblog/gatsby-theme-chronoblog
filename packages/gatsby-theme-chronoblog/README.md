@@ -36,8 +36,10 @@ yarn start:chronoblog
 
 Community
 
+- move all todo to GitHub Issues
 - write a normal readme
 - develop a starter with examples and descriptions
+- A `step-by-step guide` on how to start the chronoblog and configure it "for yourself". In the `.md` file format inside the starter - so that it can be read both on the github and on the site.
 
 Development environment
 
@@ -48,16 +50,18 @@ Development environment
 
 CMS and hosting
 
-- simple installation and use for [contentful](https://www.contentful.com/)
-- simple installation and use for [prismic](https://prismic.io)
-- simple installation and use for [sanity](https://www.sanity.io/)
-- simple installation netlify.com
-- simple installation netlify CMS
+- create starter for netlify-cms, similar to ordinary Chronoblog starter, but with ready to go [netlifycms](https://www.netlifycms.org/)
+- starter for [contentful](https://www.contentful.com/) ?
+- starter for [sanity](https://www.sanity.io/) ?
 
 Feed
 
 - years separator
 - mini feed - feed with only dates, titles and tags
+
+Images
+
+- Ability to set different behavior for **cover images**. Both for all content and for specific content. Leave the current behavior (with the blue background) as default.
 
 Tags
 
@@ -85,3 +89,4 @@ Other
 Fix
 
 - gatsby-plugin-theme-ui - uses prefers-color-scheme [theme-ui.com/color-modes](https://theme-ui.com/color-modes) - we don't need this.
+- Safari search field is not displayed correctly
