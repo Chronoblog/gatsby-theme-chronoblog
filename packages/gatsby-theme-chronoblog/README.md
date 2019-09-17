@@ -47,6 +47,7 @@ Development environment
 - GitHub actions for synchronize starters https://twitter.com/lekoarts_de/status/1167124503312457730
 - [cypress](https://www.cypress.io/) for E2E tests ?
 - [circleci](https://circleci.com/) CI/CD ? but [GitHub Actions now supports CI/CD](https://github.blog/2019-08-08-github-actions-now-supports-ci-cd/) (beta)
+- `eslint` and `prettier` for Starters
 
 CMS and hosting
 
