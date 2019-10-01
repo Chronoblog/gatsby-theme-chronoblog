@@ -52,11 +52,13 @@ const CoverImage = ({
                   ? {
                       backgroundSize: 'auto auto',
                       backdropFilter: `blur(5px) contrast(50%)`,
+                      '-webkit-backdrop-filter': `blur(5px) contrast(50%)`,
                       borderRadius
                     }
                   : {
                       backgroundSize: 'contain',
                       backdropFilter: `blur(5px) contrast(50%)`,
+                      '-webkit-backdrop-filter': `blur(5px) contrast(50%)`,
                       borderRadius
                     }
               }
