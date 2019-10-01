@@ -58,6 +58,8 @@ CMS and hosting
 Feed
 
 - years separator
+- month separator
+- global setting, the ability to turn separators on and off
 - mini feed - feed with only dates, titles and tags
 
 Images
