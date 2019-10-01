@@ -44,9 +44,9 @@ Community
 Development environment
 
 - Automate NPM publish with GitHub Actions: https://medium.com/faun/automate-your-npm-publish-with-github-actions-dfe8059645dd ?
-- GitHub actions for synchronize starters https://twitter.com/lekoarts_de/status/1167124503312457730
+- GitHub actions for synchronize starters https://twitter.com/lekoarts_de/status/1167124503312457730 [Publishing Gatsby starters from a monorepo](https://johno.com/publishing-gatsby-starters-from-monorepo?utm_source=newsletter&utm_medium=email&utm_campaign=Newsletter+2019-08-31)
+- GitHub Actions: start github builds on commit
 - [cypress](https://www.cypress.io/) for E2E tests ?
-- [circleci](https://circleci.com/) CI/CD ? but [GitHub Actions now supports CI/CD](https://github.blog/2019-08-08-github-actions-now-supports-ci-cd/) (beta)
 - `eslint` and `prettier` for Starters
 
 CMS and hosting
@@ -83,12 +83,12 @@ Dates
 
 Other
 
-- comments for blog posts (disqus?)
+- comments for blog posts (disqus?) ?
 - RSS Feed
 - social media sharing
 - code in mdx
 
 Bugs
 
-- gatsby-plugin-theme-ui - uses prefers-color-scheme [theme-ui.com/color-modes](https://theme-ui.com/color-modes) - we don't need this.
-- Safari search field is not displayed correctly
+- Safari on Mac - search field is not displayed correctly
+- Firefox on Windows - search field is not displayed correctly
