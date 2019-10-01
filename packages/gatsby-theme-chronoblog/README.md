@@ -93,4 +93,3 @@ Other
 Bugs
 
 - Firefox on Windows - search field is not displayed correctly
-- Safari and Firefox - blur doesn't work on cover images
