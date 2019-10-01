@@ -92,5 +92,5 @@ Other
 
 Bugs
 
-- Safari on Mac - search field is not displayed correctly
 - Firefox on Windows - search field is not displayed correctly
+- Safari and Firefox - blur doesn't work on cover images

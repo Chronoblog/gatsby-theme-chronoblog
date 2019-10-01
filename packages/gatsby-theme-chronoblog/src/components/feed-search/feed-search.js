@@ -54,6 +54,7 @@ export default ({ placeholder = '' }) => {
           <input
             type="search"
             sx={{
+              '-webkit-appearance': 'textfield',
               width: ['100%'],
               color: 'inherit',
               bg: 'background',
