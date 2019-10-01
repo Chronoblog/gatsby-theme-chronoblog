@@ -12,8 +12,8 @@
   "license": "MIT",
   "dependencies": {
     "gatsby-theme-chronoblog": "^0.0.6",
-    "gatsby": "^2.15.17",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0"
+    "gatsby": "^2.15.28",
+    "react": "^16.10.1",
+    "react-dom": "^16.10.1"
   }
 }
