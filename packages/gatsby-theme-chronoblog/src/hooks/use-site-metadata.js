@@ -17,6 +17,7 @@ import { graphql, useStaticQuery } from 'gatsby';
  * @property {string} uiText.cardReadMoreButton
  * @property {string} uiText.allTagsButton
  * @property {number} feedItemsLimit
+ * @property {boolean} yearSeparator
  */
 
 /**
@@ -49,6 +50,7 @@ const useSiteMetadata = () => {
             allTagsButton
           }
           feedItemsLimit
+          yearSeparator
         }
       }
     }

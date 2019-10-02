@@ -60,6 +60,23 @@ const filterBySlug = (feedItems, pathname) => {
   return feedItems;
 };
 
+const listStyleObject = {
+  listStyle: 'none',
+  padding: 0,
+  margin: 0
+};
+
+const getItemYear = (item, lang) => {
+  const date = new Date(item.frontmatter.date);
+  const year = date.toLocaleString(lang, { year: 'numeric' });
+  return year;
+};
+const getYears = (items, lang = 'en-US') => {
+  let years = items.map((item) => getItemYear(item, lang));
+  years = [...new Set(years)];
+  return years;
+};
+
 /**
  * Feed Items
  *
@@ -73,6 +90,7 @@ const filterBySlug = (feedItems, pathname) => {
  * @property {string=} showMoreText
  * @property {number=} showMoreNumber
  * @property {boolean=} skipThisPageItem
+ * @property {boolean=} yearSeparator
  *
  */
 /**
@@ -92,6 +110,7 @@ export default ({
   let feedItems = useFeed();
   //
   const { uiText, feedItemsLimit } = useSiteMetadata();
+  const yearSeparatorMetadata = useSiteMetadata().yearSeparator;
   const feedLimit = limit || feedItemsLimit;
   //
   // props
@@ -133,19 +152,41 @@ export default ({
             : feedItemsToShow;
           feedItemsToShow = _.take(feedItemsToShow, showLimit);
           //
+          const yearsArray = getYears(feedItemsToShow);
+          //
           return (
-            <ul
-              sx={{
-                listStyle: 'none',
-                padding: 0,
-                margin: 0
-              }}
-            >
-              {feedItemsToShow.map((item) => {
+            <ul sx={listStyleObject}>
+              {yearsArray.map((year) => {
                 return (
-                  <li key={item.id}>
-                    <Card item={item} uiText={uiText} />
-                  </li>
+                  <div key={year}>
+                    {yearSeparatorMetadata ? (
+                      <div
+                        sx={{
+                          fontSize: [3],
+                          opacity: 0.8,
+                          fontWeight: 'bold',
+                          px: ['10px', '20px'],
+                          mt: '48px'
+                        }}
+                      >
+                        {year}
+                      </div>
+                    ) : (
+                      ''
+                    )}
+                    <ul sx={listStyleObject}>
+                      {feedItemsToShow.map((item) => {
+                        if (getItemYear(item) === year) {
+                          return (
+                            <li key={item.id}>
+                              <Card item={item} uiText={uiText} />
+                            </li>
+                          );
+                        }
+                        return undefined;
+                      })}
+                    </ul>
+                  </div>
                 );
               })}
             </ul>

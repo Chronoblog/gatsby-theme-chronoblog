@@ -6,6 +6,7 @@ module.exports = (options) => {
   //
   const {
     feedItemsLimit = 50,
+    yearSeparator = true,
     uiText = {
       feedShowMoreButton: '↓ show more ↓',
       feedSearchPlaceholder: 'search',
@@ -37,7 +38,8 @@ module.exports = (options) => {
         cardReadMoreButton,
         allTagsButton
       },
-      feedItemsLimit
+      feedItemsLimit,
+      yearSeparator
     },
     plugins: [
       `gatsby-transformer-sharp`,
