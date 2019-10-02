@@ -32,6 +32,10 @@ To start chronoblog starter:
 yarn start:chronoblog
 ```
 
+### Starters
+
+This repository uses action [github-action-to-push-subdirectories-to-another-repo](https://github.com/marketplace/actions/github-action-to-push-subdirectories-to-another-repo) to publish starters.
+
 ## TODO
 
 Community
@@ -44,7 +48,6 @@ Community
 Development environment
 
 - Automate NPM publish with GitHub Actions: https://medium.com/faun/automate-your-npm-publish-with-github-actions-dfe8059645dd ?
-- GitHub actions for synchronize starters https://twitter.com/lekoarts_de/status/1167124503312457730 [Publishing Gatsby starters from a monorepo](https://johno.com/publishing-gatsby-starters-from-monorepo?utm_source=newsletter&utm_medium=email&utm_campaign=Newsletter+2019-08-31)
 - GitHub Actions: start github builds on commit
 - [cypress](https://www.cypress.io/) for E2E tests ?
 - `eslint` and `prettier` for Starters
