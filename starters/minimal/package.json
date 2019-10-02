@@ -1,7 +1,7 @@
 {
   "name": "minimal",
   "version": "1.0.0",
-  "description": "gatsby-starter-minimal",
+  "description": "gatsby-starter-chronoblog-minimal",
   "keywords": [],
   "license": "MIT",
   "author": "Ivan Ganev <ganevio92@gmail.com>",
@@ -16,5 +16,5 @@
     "react": "^16.10.1",
     "react-dom": "^16.10.1"
   },
-  "starter-name": "gatsby-starter-minimal"
+  "starter-name": "gatsby-starter-chronoblog-minimal"
 }
