@@ -18,6 +18,13 @@ At the same time, this is still a blog, Chronoblog can be used as a theme for cr
 npm i gatsby-theme-chronoblog
 ```
 
+## List of Starters
+
+The standard way to start using Chronoblog: [Gatsby Starter Chronoblog](https://github.com/Ganevru/gatsby-starter-chronoblog)
+
+Minimum possible starter for Chronoblog Gatsby Theme:
+[Gatsby Starter Chronoblog Minimal](https://github.com/Ganevru/gatsby-starter-chronoblog-minimal)
+
 ## Contribute
 
 To install a new package for gatsby-theme-chronoblog:
@@ -31,10 +38,6 @@ To start chronoblog starter:
 ```sh
 yarn start:chronoblog
 ```
-
-### Starters
-
-This repository uses action [github-action-to-push-subdirectories-to-another-repo](https://github.com/marketplace/actions/github-action-to-push-subdirectories-to-another-repo) to publish starters.
 
 ## TODO
 
