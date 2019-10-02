@@ -89,7 +89,7 @@ const getYears = (items, lang = 'en-US') => {
  * @property {boolean=} showMoreButton
  * @property {string=} showMoreText
  * @property {number=} showMoreNumber
- * @property {boolean=} skipThisPageItem
+ * @property {boolean=} skipThisPageItem page where the user is now
  * @property {boolean=} yearSeparator
  *
  */
