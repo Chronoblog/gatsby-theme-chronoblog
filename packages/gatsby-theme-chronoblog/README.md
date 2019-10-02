@@ -57,10 +57,9 @@ CMS and hosting
 
 Feed
 
-- years separator
 - month separator
 - global setting, the ability to turn separators on and off
-- mini feed - feed with only dates, titles and tags
+- types of feed - type: "cards" (normal) and type: "compact" (feed with only dates, titles and tags)
 
 Images
 
@@ -75,7 +74,6 @@ Content types
 
 - `twitter` tweets in `notes`
 - content type `podcast` for, so, podcasts - with player and links-icons to podcasts platforms (spotify, google podcasts, etc) ?
-- content type `youtube` ?
 - different paths to content. Currently, `notes` all paths begin with `notes` - like `example.com/notes/some-note`, while `links` and `posts` do not have special paths. Make the user decide the path for each type of content. Save the current version as default.
 
 Dates
