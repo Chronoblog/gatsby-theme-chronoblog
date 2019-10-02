@@ -1,4 +1,4 @@
-name:
+name: Tests and Publish Starters
 on: [push]
 jobs:
   tests:
@@ -26,3 +26,18 @@ jobs:
         run: yarn build:chronoblog
       - name: yarn build:minimal
         run: yarn build:minimal
+  publish_starters:
+    needs: tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "10.x"
+      - name: publish:starters
+        uses: johno/actions-push-subdirectories@master
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          args: starters Ganevru starter-name
