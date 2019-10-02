@@ -18,6 +18,7 @@ jobs:
 
       - name: yarn, test, build
         run: |
+          npm install yarn
           yarn
           yarn test
           yarn build:chronoblog
