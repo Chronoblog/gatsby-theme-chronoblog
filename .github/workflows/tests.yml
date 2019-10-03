@@ -2,6 +2,7 @@ name: Tests
 on: [push]
 jobs:
   tests:
+    timeout-minutes: 30
     name: Test on node ${{ matrix.node_version }} and ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     strategy:
@@ -24,5 +25,9 @@ jobs:
         run: yarn test
       - name: yarn build:chronoblog
         run: yarn build:chronoblog
+        if: failure()
+        run: yarn build:chronoblog
       - name: yarn build:minimal
+        run: yarn build:minimal
+        if: failure()
         run: yarn build:minimal
