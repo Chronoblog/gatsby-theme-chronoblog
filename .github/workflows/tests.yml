@@ -7,7 +7,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        node_version: [12]
+        node_version: [10, 12]
         os: [ubuntu-latest, macos-latest]
     steps:
       - uses: actions/checkout@v1
@@ -18,16 +18,17 @@ jobs:
           node-version: ${{ matrix.node_version }}
 
       - name: yarn install
-        run: |
-          npm install --global yarn
-          yarn
+        timeout-minutes: 10
+        run: yarn install
+
       - name: yarn test
+        timeout-minutes: 10
         run: yarn test
+
       - name: yarn build:chronoblog
+        timeout-minutes: 10
         run: yarn build:chronoblog
-        if: failure()
-        run: yarn build:chronoblog
+
       - name: yarn build:minimal
-        run: yarn build:minimal
-        if: failure()
+        timeout-minutes: 10
         run: yarn build:minimal
