@@ -5,9 +5,8 @@ jobs:
     name: Test on node ${{ matrix.node_version }} and ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     strategy:
-      max-parallel: 1
       matrix:
-        node_version: [10, 12]
+        node_version: [12]
         os: [ubuntu-latest, macos-latest]
     steps:
       - uses: actions/checkout@v1
