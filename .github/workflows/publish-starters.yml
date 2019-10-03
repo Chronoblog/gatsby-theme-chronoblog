@@ -22,7 +22,8 @@ jobs:
 
       - name: ${{ matrix.starter }}
         run: |
-          cd starters ${{ matrix.starter }}
+          cd starters/${{ matrix.starter }}/
+          echo $PWD
           npm install
           npm run build
 
