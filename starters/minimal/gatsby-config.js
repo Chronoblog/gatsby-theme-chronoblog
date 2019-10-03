@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
-    siteTitle: 'Chronoblog Minimal Starter'
+    siteTitle: 'Chronoblog Minimal Starter',
+    siteUrl: 'https://chronoblog-minimal.netlify.com/' // example - http://example.com
   },
   plugins: [
     {
