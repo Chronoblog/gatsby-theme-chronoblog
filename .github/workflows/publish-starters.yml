@@ -4,7 +4,30 @@ on:
     branches:
       - master
 jobs:
-  master:
+  tests:
+    name: Test on node ${{ matrix.node_version }} and ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        node_version: [10, 12]
+        os: [ubuntu-latest, macos-latest]
+        starter: [chronoblog, minimal]
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Use Node.js ${{ matrix.node_version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node_version }}
+
+      - name: ${{ matrix.starter }}
+        run: |
+          cd starters ${{ matrix.starter }}
+          npm install
+          npm run build
+
+  publish:
+    needs: [tests]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master

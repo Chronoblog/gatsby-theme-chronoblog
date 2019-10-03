@@ -53,7 +53,6 @@ Community
 Development environment
 
 - Automate NPM publish with GitHub Actions: https://medium.com/faun/automate-your-npm-publish-with-github-actions-dfe8059645dd ?
-- GitHub Actions: start github builds on commit
 - [cypress](https://www.cypress.io/) for E2E tests ?
 - `eslint` and `prettier` for Starters
 
