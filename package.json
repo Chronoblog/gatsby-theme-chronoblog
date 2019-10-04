@@ -51,5 +51,9 @@
     "react-test-renderer": "^16.9.0",
     "typescript": "^3.6.3",
     "yarn": "^1.17.3"
+  },
+  "engines": {
+    "node": ">=10.15.0",
+    "yarn": ">=1.5.1"
   }
 }
