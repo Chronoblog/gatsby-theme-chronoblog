@@ -3,11 +3,15 @@
   "private": true,
   "license": "MIT",
   "author": "Ivan Ganev <ganevio92@gmail.com>",
-  "workspaces": ["packages/*", "starters/*"],
+  "workspaces": [
+    "packages/*",
+    "starters/*"
+  ],
   "scripts": {
     "build:chronoblog": "yarn clean && yarn workspace chronoblog build",
     "build:minimal": "yarn clean && yarn workspace minimal build",
     "clean": "yarn workspaces run clean",
+    "lerna": "lerna",
     "start:chronoblog": "yarn clean && yarn workspace chronoblog start",
     "start:minimal": "yarn clean && yarn workspace minimal start",
     "test": "yarn clean && jest",
@@ -17,9 +21,6 @@
     "hooks": {
       "pre-commit": "yarn test && lint-staged"
     }
-  },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx}": ["eslint --fix", "git add"]
   },
   "devDependencies": {
     "@types/jest": "^24.0.18",
@@ -47,6 +48,7 @@
     "husky": "^3.0.5",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^24.9.0",
+    "lerna": "^3.16.4",
     "lint-staged": "^9.2.5",
     "prettier": "^1.18.2",
     "react-test-renderer": "^16.9.0",

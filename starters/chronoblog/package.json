@@ -1,6 +1,7 @@
 {
   "name": "chronoblog",
   "version": "1.0.0",
+  "private": true,
   "description": "gatsby-starter-chronoblog",
   "keywords": [],
   "license": "MIT",
