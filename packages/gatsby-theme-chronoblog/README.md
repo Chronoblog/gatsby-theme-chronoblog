@@ -31,7 +31,6 @@ Community
 
 Development environment
 
-- Automate NPM publish with GitHub Actions: https://medium.com/faun/automate-your-npm-publish-with-github-actions-dfe8059645dd ?
 - [cypress](https://www.cypress.io/) for E2E tests ?
 - `eslint` and `prettier` for Starters
 
@@ -73,7 +72,3 @@ Other
 - RSS Feed
 - social media sharing
 - code in mdx
-
-Bugs
-
-- Firefox on Windows - search field is not displayed correctly

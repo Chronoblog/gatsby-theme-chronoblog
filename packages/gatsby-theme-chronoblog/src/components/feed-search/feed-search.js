@@ -33,14 +33,13 @@ export default ({ placeholder = '' }) => {
           sx={{
             maxWidth: ['40px'],
             minWidth: ['40px'],
+            textAlign: 'center',
             pt: '6px'
           }}
         >
           <span
             sx={{
               fontSize: ['26px'],
-              pr: [2],
-              pl: [2],
               opacity: ['0.7'],
               userSelect: 'none'
             }}
