@@ -18,17 +18,17 @@ jobs:
           node-version: ${{ matrix.node_version }}
 
       - name: yarn install
-        timeout-minutes: 10
+        timeout-minutes: 20
         run: yarn install
 
       - name: yarn test
-        timeout-minutes: 10
+        timeout-minutes: 20
         run: yarn test
 
       - name: yarn build:chronoblog
-        timeout-minutes: 10
+        timeout-minutes: 20
         run: yarn build:chronoblog
 
       - name: yarn build:minimal
-        timeout-minutes: 10
+        timeout-minutes: 20
         run: yarn build:minimal
