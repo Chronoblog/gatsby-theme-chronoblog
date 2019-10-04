@@ -1,4 +1,4 @@
-name: Publish Starters
+name: Test and Publish Starters
 on:
   push:
     branches:
