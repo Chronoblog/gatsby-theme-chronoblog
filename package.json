@@ -3,10 +3,7 @@
   "private": true,
   "license": "MIT",
   "author": "Ivan Ganev <ganevio92@gmail.com>",
-  "workspaces": [
-    "packages/*",
-    "starters/*"
-  ],
+  "workspaces": ["packages/*", "starters/*"],
   "scripts": {
     "build:chronoblog": "yarn clean && yarn workspace chronoblog build",
     "build:minimal": "yarn clean && yarn workspace minimal build",
