@@ -2,7 +2,6 @@ name: Tests
 on: [push]
 jobs:
   tests:
-    timeout-minutes: 30
     name: Test on node ${{ matrix.node_version }} and ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     strategy:
@@ -18,17 +17,13 @@ jobs:
           node-version: ${{ matrix.node_version }}
 
       - name: yarn install
-        timeout-minutes: 20
         run: yarn install
 
       - name: yarn test
-        timeout-minutes: 20
         run: yarn test
 
       - name: yarn build:chronoblog
-        timeout-minutes: 20
         run: yarn build:chronoblog
 
       - name: yarn build:minimal
-        timeout-minutes: 20
         run: yarn build:minimal
