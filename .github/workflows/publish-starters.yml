@@ -5,6 +5,7 @@ on:
       - master
 jobs:
   tests:
+    timeout-minutes: 30
     name: Test Starter ${{ matrix.starter }} on node ${{ matrix.node_version }} and ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     strategy:
@@ -28,6 +29,7 @@ jobs:
           npm run build
 
   publish:
+    timeout-minutes: 30
     needs: [tests]
     runs-on: ubuntu-latest
     steps:

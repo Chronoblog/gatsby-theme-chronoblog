@@ -12,8 +12,13 @@
     "start": "gatsby develop"
   },
   "dependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.1",
+    "eslint-config-prettier": "^6.3.0",
+    "eslint-plugin-prettier": "^3.1.0",
     "gatsby": "^2.15.28",
     "gatsby-theme-chronoblog": "^0.0.9",
+    "prettier": "^1.18.2",
     "react": "^16.10.1",
     "react-dom": "^16.10.1"
   },

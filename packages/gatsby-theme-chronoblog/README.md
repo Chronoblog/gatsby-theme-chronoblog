@@ -36,7 +36,7 @@ Development environment
 
 CMS and hosting
 
-- create starter for netlify-cms, similar to ordinary Chronoblog starter, but with ready to go [netlifycms](https://www.netlifycms.org/)
+- create starter for netlify-cms, similar to ordinary Chronoblog starter, but with ready to go [netlifycms](https://www.netlifycms.org/) ?
 - starter for [contentful](https://www.contentful.com/) ?
 - starter for [sanity](https://www.sanity.io/) ?
 
@@ -45,6 +45,7 @@ Feed
 - month separator
 - global setting, the ability to turn separators on and off
 - types of feed - type: "cards" (normal) and type: "compact" (feed with only dates, titles and tags)
+- `search` should work across all content
 
 Images
 
