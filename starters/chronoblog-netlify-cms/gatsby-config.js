@@ -28,7 +28,7 @@ module.exports = {
       resolve: 'gatsby-plugin-netlify-cms',
       options: {
         publicPath: `admin`,
-        modulePath: `${__dirname}/src/cms/cms.js`
+        modulePath: `${__dirname}/src/netlifycms/cms.js`
       }
     },
     'gatsby-plugin-netlify' // make sure to keep it last in the array
