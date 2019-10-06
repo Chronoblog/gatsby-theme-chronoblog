@@ -1,0 +1,28 @@
+{
+  "name": "chronoblog-netlify-cms",
+  "version": "1.0.0",
+  "private": true,
+  "description": "gatsby-starter-chronoblog-netlify-cms",
+  "keywords": [],
+  "license": "MIT",
+  "author": "Ivan Ganev <ganevio92@gmail.com>",
+  "scripts": {
+    "build": "gatsby build",
+    "clean": "gatsby clean",
+    "start": "gatsby develop"
+  },
+  "dependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.1",
+    "eslint-config-prettier": "^6.3.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "gatsby": "^2.15.28",
+    "gatsby-plugin-netlify": "^2.1.17",
+    "gatsby-plugin-netlify-cms": "^4.1.22",
+    "gatsby-theme-chronoblog": "^0.0.9",
+    "prettier": "^1.18.2",
+    "react": "^16.10.1",
+    "react-dom": "^16.10.1"
+  },
+  "starter-name": "gatsby-starter-chronoblog-netlify-cms"
+}
