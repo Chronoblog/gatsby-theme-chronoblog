@@ -32,7 +32,6 @@ Community
 Development environment
 
 - [cypress](https://www.cypress.io/) for E2E tests ?
-- `eslint` and `prettier` for Starters
 
 CMS and hosting
 
