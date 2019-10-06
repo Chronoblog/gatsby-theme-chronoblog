@@ -17,5 +17,8 @@
     "react": "^16.10.1",
     "react-dom": "^16.10.1"
   },
+  "engines": {
+    "node": ">=10.15.0"
+  },
   "starter-name": "gatsby-starter-chronoblog-minimal"
 }
