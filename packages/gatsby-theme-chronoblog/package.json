@@ -38,6 +38,7 @@
     "gatsby-plugin-theme-ui": "^0.2.43",
     "gatsby-redirect-from": "^0.2.1",
     "gatsby-remark-images": "^3.1.22",
+    "gatsby-remark-relative-images": "^0.2.3",
     "gatsby-remark-responsive-iframe": "^2.2.16",
     "gatsby-source-filesystem": "^2.1.22",
     "gatsby-transformer-sharp": "^2.2.14",

@@ -62,6 +62,13 @@ module.exports = (options) => {
       {
         resolve: 'gatsby-source-filesystem',
         options: {
+          name: 'uploads',
+          path: path.resolve('static/uploads')
+        }
+      },
+      {
+        resolve: 'gatsby-source-filesystem',
+        options: {
           name: 'pages',
           path: path.resolve('src/pages')
         }
@@ -103,6 +110,9 @@ module.exports = (options) => {
           },
           gatsbyRemarkPlugins: [
             {
+              resolve: `gatsby-remark-relative-images`
+            },
+            {
               resolve: `gatsby-remark-images`,
               options: {
                 maxWidth: 820,
@@ -114,6 +124,9 @@ module.exports = (options) => {
             'gatsby-remark-responsive-iframe'
           ],
           plugins: [
+            {
+              resolve: `gatsby-remark-relative-images`
+            },
             {
               resolve: `gatsby-remark-images`,
               options: {
