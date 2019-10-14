@@ -1,6 +1,6 @@
 {
   "name": "chronoblog",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "private": true,
   "description": "gatsby-starter-chronoblog",
   "keywords": [],
@@ -17,7 +17,7 @@
     "eslint-config-prettier": "^6.3.0",
     "eslint-plugin-prettier": "^3.1.0",
     "gatsby": "^2.15.29",
-    "gatsby-theme-chronoblog": "^0.0.9",
+    "gatsby-theme-chronoblog": "^0.0.10",
     "prettier": "^1.18.2",
     "react": "^16.10.2",
     "react-dom": "^16.10.2"
