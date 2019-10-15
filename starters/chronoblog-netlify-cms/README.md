@@ -4,4 +4,6 @@
 
 The standard way to start using Chronoblog Gatsby Theme. Includes Netlify CMS.
 
+Demo: [chronoblog-netlify-cms.netlify.com](https://chronoblog-netlify-cms.netlify.com)
+
 Netlify CMS Documentation: [www.netlifycms.org](https://www.netlifycms.org/)

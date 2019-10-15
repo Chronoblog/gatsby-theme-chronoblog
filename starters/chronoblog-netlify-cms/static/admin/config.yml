@@ -12,13 +12,72 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - {
-          label: "Template Key",
-          name: "templateKey",
-          widget: "hidden",
-          default: "post",
-        }
       - { label: "Title", name: "title", widget: "string" }
+      - { label: "Cover", name: "cover", widget: "image", required: false }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - {
+          label: "Description",
+          name: "description",
+          widget: "string",
+          required: false,
+        }
+      - {
+          label: "Slug (link)",
+          name: "slug",
+          widget: "string",
+          required: false,
+        }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Tags", name: "tags", widget: "list", required: false }
+      - {
+          label: "Redirect from",
+          name: "redirect_from",
+          widget: "list",
+          allow_add: true,
+          required: false,
+        }
+      - { label: "Draft", name: "draft", widget: "boolean", required: false }
+      - { label: "Hide", name: "hide", widget: "boolean", required: false }
+  - name: "link"
+    label: "Link"
+    folder: "content/links"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Link", name: "link", widget: "string" }
+      - { label: "Cover", name: "cover", widget: "image", required: false }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - {
+          label: "Description",
+          name: "description",
+          widget: "string",
+          required: false,
+        }
+      - {
+          label: "Slug (link)",
+          name: "slug",
+          widget: "string",
+          required: false,
+        }
+      - { label: "Body", name: "body", widget: "markdown", required: false }
+      - { label: "Tags", name: "tags", widget: "list", required: false }
+      - {
+          label: "Redirect from",
+          name: "redirect_from",
+          widget: "list",
+          allow_add: true,
+          required: false,
+        }
+      - { label: "Draft", name: "draft", widget: "boolean", required: false }
+      - { label: "Hide", name: "hide", widget: "boolean", required: false }
+  - name: "note"
+    label: "Note"
+    folder: "content/notes"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string", required: false }
       - { label: "Cover", name: "cover", widget: "image", required: false }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - {
