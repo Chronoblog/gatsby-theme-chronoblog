@@ -1,10 +1,8 @@
 const path = require('path');
 const { createFilePath } = require('gatsby-source-filesystem');
 const Debug = require('debug');
-const mkdirp = require('mkdirp');
 const fs = require('fs');
 const _ = require('lodash');
-const { fmImagesToRelative } = require('gatsby-remark-relative-images');
 const pkg = require('./package.json');
 
 const debug = Debug(pkg.name);
@@ -43,22 +41,18 @@ exports.onPreBootstrap = ({ store }) => {
     path.join(program.directory, `content/links`),
     path.join(program.directory, `content/notes`),
     path.join(program.directory, `src/pages`),
-    path.join(program.directory, `static`),
-    path.join(program.directory, `static/media`)
+    path.join(program.directory, `static`)
   ];
 
   dirs.forEach((dir) => {
     debug(`Initializing ${dir} directory`);
     if (!fs.existsSync(dir)) {
-      mkdirp.sync(dir);
+      fs.mkdirSync(dir, { recursive: true });
     }
   });
 };
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
-  // for gatsby-remark-relative-images
-  // https://github.com/danielmahon/gatsby-remark-relative-images
-  fmImagesToRelative(node);
   //
   if (node.internal.type !== 'Mdx') return;
   // get slug Default

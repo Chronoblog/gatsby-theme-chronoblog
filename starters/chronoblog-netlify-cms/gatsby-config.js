@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   siteMetadata: {
     siteTitle: 'Chronoblog Starter with Netlify CMS',
@@ -11,6 +13,13 @@ module.exports = {
     twitter: '' // for twitter cards meta data, example - '@ganevru'
   },
   plugins: [
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: path.join(__dirname, `static`, `media`),
+        name: 'media'
+      }
+    },
     {
       resolve: 'gatsby-theme-chronoblog',
       options: {
@@ -28,7 +37,7 @@ module.exports = {
       resolve: 'gatsby-plugin-netlify-cms',
       options: {
         publicPath: `admin`,
-        modulePath: `${__dirname}/src/netlifycms/cms.js`
+        modulePath: path.join(__dirname, `src`, `netlifycms`, 'cms.js')
       }
     },
     'gatsby-plugin-netlify' // make sure to keep it last in the array
