@@ -42,6 +42,13 @@ module.exports = (options) => {
       yearSeparator
     },
     plugins: [
+      {
+        resolve: 'gatsby-source-filesystem',
+        options: {
+          path: path.resolve('static/media'),
+          name: 'media'
+        }
+      },
       `gatsby-transformer-sharp`,
       {
         resolve: `gatsby-plugin-sharp`,
@@ -103,6 +110,9 @@ module.exports = (options) => {
           },
           gatsbyRemarkPlugins: [
             {
+              resolve: `gatsby-remark-relative-images`
+            },
+            {
               resolve: `gatsby-remark-images`,
               options: {
                 maxWidth: 820,
@@ -114,6 +124,9 @@ module.exports = (options) => {
             'gatsby-remark-responsive-iframe'
           ],
           plugins: [
+            {
+              resolve: `gatsby-remark-relative-images`
+            },
             {
               resolve: `gatsby-remark-images`,
               options: {

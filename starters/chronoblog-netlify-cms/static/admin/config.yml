@@ -2,12 +2,12 @@ backend:
   name: git-gateway
   branch: master
 
-media_folder: static/img
-public_folder: /img
+media_folder: static/media
+public_folder: /media
 
 collections:
-  - name: "blog"
-    label: "Blog"
+  - name: "post"
+    label: "Blog Post"
     folder: "content/posts"
     create: true
     slug: "{{slug}}"
@@ -16,10 +16,31 @@ collections:
           label: "Template Key",
           name: "templateKey",
           widget: "hidden",
-          default: "blog-post",
+          default: "post",
         }
       - { label: "Title", name: "title", widget: "string" }
+      - { label: "Cover", name: "cover", widget: "image", required: false }
       - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Description", name: "description", widget: "text" }
+      - {
+          label: "Description",
+          name: "description",
+          widget: "string",
+          required: false,
+        }
+      - {
+          label: "Slug (link)",
+          name: "slug",
+          widget: "string",
+          required: false,
+        }
       - { label: "Body", name: "body", widget: "markdown" }
-      - { label: "Tags", name: "tags", widget: "list" }
+      - { label: "Tags", name: "tags", widget: "list", required: false }
+      - {
+          label: "Redirect from",
+          name: "redirect_from",
+          widget: "list",
+          allow_add: true,
+          required: false,
+        }
+      - { label: "Draft", name: "draft", widget: "boolean", required: false }
+      - { label: "Hide", name: "hide", widget: "boolean", required: false }
