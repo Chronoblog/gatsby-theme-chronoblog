@@ -12,15 +12,17 @@
     "start": "gatsby develop"
   },
   "dependencies": {
+    "gatsby": "^2.15.29",
+    "gatsby-theme-chronoblog": "^0.0.11",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2"
+  },
+  "devDependencies": {
     "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.1",
     "eslint-config-prettier": "^6.3.0",
     "eslint-plugin-prettier": "^3.1.0",
-    "gatsby": "^2.15.29",
-    "gatsby-theme-chronoblog": "^0.0.11",
-    "prettier": "^1.18.2",
-    "react": "^16.10.2",
-    "react-dom": "^16.10.2"
+    "prettier": "^1.18.2"
   },
   "engines": {
     "node": ">=10.15.0"
