@@ -26,6 +26,7 @@ Community
 
 - move all todo to GitHub Issues
 - write a normal readme
+- `starters` should be more understandable and standardized
 - A `step-by-step guide` on how to start the chronoblog and configure it "for yourself". In the `.md` file format inside the starter - so that it can be read both on the github and on the site.
 
 Development environment
