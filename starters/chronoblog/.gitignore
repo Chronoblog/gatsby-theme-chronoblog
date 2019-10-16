@@ -56,3 +56,11 @@ yarn-error.log
 # lock
 yarn.lock
 package-lock.json
+
+# dotenv environment variables file
+.env
+
+# secrets
+.contentful.json
+.env*
+!.env.example

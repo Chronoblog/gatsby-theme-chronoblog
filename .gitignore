@@ -55,3 +55,11 @@ yarn-error.log
 
 # personal
 README-RU.md
+
+# dotenv environment variables file
+.env
+
+# secrets
+.contentful.json
+.env*
+!.env.example
