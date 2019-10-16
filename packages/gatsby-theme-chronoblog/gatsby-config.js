@@ -88,13 +88,6 @@ module.exports = (options) => {
         }
       },
       {
-        resolve: 'gatsby-source-filesystem',
-        options: {
-          name: 'assets',
-          path: path.resolve('content/assets')
-        }
-      },
-      {
         resolve: `gatsby-plugin-page-creator`,
         options: {
           path: path.join(__dirname, `src`, `pages`)
