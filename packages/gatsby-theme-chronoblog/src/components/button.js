@@ -38,6 +38,9 @@ export default ({
           opacity: 0.8,
           cursor: 'pointer',
           boxShadow: (theme) => `inset 0 0 0 2px ${theme.colors.secondary}`
+        },
+        '&:focus': {
+          outline: '0px'
         }
       }}
     >

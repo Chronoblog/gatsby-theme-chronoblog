@@ -33,7 +33,7 @@ export default ({ darkLabel = '🌙', lightLabel = '☀️', fontSize = 32 }) =>
         bg: '#ffffff00',
         border: 0,
         '&:focus': {
-          outline: '0px solid'
+          outline: '0px'
         },
         userSelect: 'none',
         cursor: 'pointer'
