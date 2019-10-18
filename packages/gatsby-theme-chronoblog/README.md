@@ -36,8 +36,7 @@ Development environment
 CMS and hosting
 
 - create starter for netlify-cms, similar to ordinary Chronoblog starter, but with ready to go [netlifycms](https://www.netlifycms.org/) ?
-- starter for [contentful](https://www.contentful.com/) ?
-- starter for [sanity](https://www.sanity.io/) ?
+- [contentful](https://www.contentful.com/) (like [github.com/narative/gatsby-theme-novela](https://github.com/narative/gatsby-theme-novela))
 
 Feed
 
