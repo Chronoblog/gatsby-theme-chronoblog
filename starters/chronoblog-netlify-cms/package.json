@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "gatsby": "^2.15.29",
+    "gatsby-plugin-google-analytics": "^2.1.23",
     "gatsby-plugin-netlify": "^2.1.17",
     "gatsby-plugin-netlify-cms": "^4.1.22",
     "gatsby-remark-relative-images": "^0.2.3",
