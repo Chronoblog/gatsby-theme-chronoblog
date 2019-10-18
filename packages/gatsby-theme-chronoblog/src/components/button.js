@@ -37,7 +37,7 @@ export default ({
         ':hover': {
           opacity: 0.8,
           cursor: 'pointer',
-          bg: 'secondary'
+          boxShadow: (theme) => `inset 0 0 0 2px ${theme.colors.secondary}`
         }
       }}
     >

@@ -32,6 +32,11 @@ const AllTagsButton = ({ style }) => {
   const {
     uiText: { allTagsButton }
   } = useSiteMetadata();
+  style = {
+    ...style,
+    boxShadow: (theme) => `inset 0 0 0 2px ${theme.colors.muted}`,
+    bg: `rgba(0,0,0,0)`
+  };
   return (
     <Link to="/tags">
       <Button sx={style}>{allTagsButton}</Button>
@@ -43,25 +48,30 @@ const AllTagsButton = ({ style }) => {
  * @typedef {object} TagsProps
  * @property {string[]} tags
  * @property {string} type
+ * @property {boolean=} showAllTagsButton
  * @property {string=} pageContextTag
  */
 
 /**
  * @param {TagsProps=} props
  */
-const Tags = ({ type, tags, pageContextTag }) => {
+const Tags = ({ type, showAllTagsButton = false, tags, pageContextTag }) => {
   const style = {
     mr: type === 'feed' ? '6px' : '5px',
     my: type === 'feed' ? '3px' : '2.5px',
-    px: type === 'feed' ? '16px' : '12px',
-    py: type === 'feed' ? '10px' : '6px',
-    fontSize: type === 'feed' ? [2] : [0],
-    opacity: 0.8
+    px: type === 'feed' ? '16px' : '14px',
+    py: type === 'feed' ? '10px' : '8px',
+    fontSize: [2],
+    opacity: 0.75
   };
   //
   return (
     <div>
-      {type === 'feed' ? <AllTagsButton style={style} /> : ''}
+      {type === 'feed' && showAllTagsButton ? (
+        <AllTagsButton style={style} />
+      ) : (
+        ''
+      )}
       {tags.map((t) => (
         <Tag key={t} tag={t} style={style} pageContextTag={pageContextTag} />
       ))}
@@ -72,6 +82,7 @@ const Tags = ({ type, tags, pageContextTag }) => {
 /**
  * @typedef {object} Props
  * @property {'feed' | 'item'=} type
+ * @property {boolean=} showAllTagsButton
  * @property {string[]=} tags
  * @property {string=} pageContextTag
  */
@@ -79,11 +90,14 @@ const Tags = ({ type, tags, pageContextTag }) => {
 /**
  * @param {Props=} props
  */
-export default ({ type = 'feed', tags, pageContextTag }) => {
+export default ({
+  type = 'feed',
+  showAllTagsButton = true,
+  tags,
+  pageContextTag
+}) => {
   if (type === 'feed') {
-    let feedItems = useFeed();
-    feedItems = feedItems.filter((i) => !i.frontmatter.draft);
-    feedItems = feedItems.filter((i) => !i.frontmatter.hide);
+    const feedItems = useFeed();
     //
     // item.frontmatter.tags
     let tagsFromItems = feedItems.map((i) => i.frontmatter.tags);
@@ -91,7 +105,12 @@ export default ({ type = 'feed', tags, pageContextTag }) => {
     tagsFromItems = _.uniq(tagsFromItems);
     tagsFromItems = tagsFromItems.filter(Boolean);
     return (
-      <Tags type={type} tags={tagsFromItems} pageContextTag={pageContextTag} />
+      <Tags
+        type={type}
+        showAllTagsButton={showAllTagsButton}
+        tags={tagsFromItems}
+        pageContextTag={pageContextTag}
+      />
     );
   }
   //

@@ -36,7 +36,7 @@ const useFeed = () => {
     query FeedQuery {
       allMdx(
         sort: { fields: frontmatter___date, order: DESC }
-        filter: { frontmatter: { hide: { ne: true } } }
+        filter: { frontmatter: { hide: { ne: true }, draft: { ne: true } } }
       ) {
         nodes {
           id
