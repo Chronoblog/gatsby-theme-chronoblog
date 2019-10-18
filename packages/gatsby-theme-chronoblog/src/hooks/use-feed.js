@@ -1,5 +1,4 @@
 import { graphql, useStaticQuery } from 'gatsby';
-import _ from 'lodash';
 
 /**
  * remove first and last slash
@@ -35,7 +34,10 @@ const checkIfPageExists = (node, nodesPath) => {
 const useFeed = () => {
   const feedQuery = graphql`
     query FeedQuery {
-      allMdx(filter: { frontmatter: { hide: { ne: true } } }) {
+      allMdx(
+        sort: { fields: frontmatter___date, order: DESC }
+        filter: { frontmatter: { hide: { ne: true } } }
+      ) {
         nodes {
           id
           body
@@ -94,18 +96,9 @@ const useFeed = () => {
       n.parent.sourceInstanceName === 'notes'
   );
 
-  // filter hide === true
-  nodes = nodes.filter((n) => !n.frontmatter.hide);
-
   // check if page with this path exists
   const nodesPath = data.allSitePage.nodes;
   nodes = nodes.filter((n) => checkIfPageExists(n, nodesPath));
-
-  // sort - ABC title and New to Old date
-  nodes = _.sortBy(nodes, [(n) => n.frontmatter.title]);
-  nodes = _.reverse(nodes);
-  nodes = _.sortBy(nodes, [(n) => n.frontmatter.date]);
-  nodes = _.reverse(nodes);
 
   return nodes;
 };
