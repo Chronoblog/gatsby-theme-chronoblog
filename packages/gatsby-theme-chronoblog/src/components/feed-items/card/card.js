@@ -120,7 +120,8 @@ const Excerpt = ({ item }) => {
     item.parent.sourceInstanceName === 'links'
   )
     return <div />;
-  if (item.excerpt) return <Styled.p>{item.excerpt}</Styled.p>;
+  if (item.excerpt && !item.frontmatter.description)
+    return <Styled.p>{item.excerpt}</Styled.p>;
   return <div />;
 };
 
