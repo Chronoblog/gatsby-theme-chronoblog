@@ -10,7 +10,24 @@ Back in early 2013, I was working at a small startup in San Francisco called Sti
 
 ![image-in-post](./image-in-post.png)
 
-We were both enamored by the work that people like Nicole Sullivan and Nicolas Gallagher were doing with Object-Oriented CSS and stealing lots of ideas for what we were working on. After we left the company, I decided to move back to the east coast and work for Kickstarter.
+We were both enamored by the work that people like Nicole Sullivan and Nicolas Gallagher were doing with Object-Oriented CSS and stealing lots of ideas for what we were working on.
+
+```bash
+bash command test
+```
+
+I learned Flash in college and taught myself HTML and CSS on the side over the years, using it for small side projects and design prototypes for user research, but had never used Git and knew next-to-nothing about JavaScript.
+
+```js
+const someFun = (text) => {
+  console.log('some ' + text);
+};
+//
+someFun('text');
+//
+```
+
+After we left the company, I decided to move back to the east coast and work for Kickstarter.
 
 ![logo](/avatar.png)
 
