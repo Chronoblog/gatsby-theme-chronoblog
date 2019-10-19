@@ -12,7 +12,7 @@
     "start": "gatsby develop"
   },
   "dependencies": {
-    "gatsby": "^2.15.29",
+    "gatsby": "^2.16.5",
     "gatsby-plugin-google-analytics": "^2.1.23",
     "gatsby-theme-chronoblog": "^0.0.12",
     "react": "^16.10.2",
