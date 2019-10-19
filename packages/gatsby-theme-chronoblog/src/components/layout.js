@@ -5,7 +5,6 @@ import { useCallback, useState } from 'react';
 import { Container, jsx, Layout } from 'theme-ui';
 
 import FeedContext from '../contexts/context-feed';
-import Code from './code';
 import FeedItems from './feed-items';
 import FeedSearch from './feed-search';
 import Footer from './footer';
@@ -22,8 +21,7 @@ const components = {
   FeedSearch,
   LightDarkSwitchButton,
   LinkNoStyle,
-  Link,
-  code: Code
+  Link
 };
 
 /**

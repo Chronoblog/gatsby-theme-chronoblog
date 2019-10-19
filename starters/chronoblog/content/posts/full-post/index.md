@@ -29,6 +29,28 @@ someFun('text');
 
 After we left the company, I decided to move back to the east coast and work for Kickstarter.
 
+```css
+/* example in CSS */
+.thing {
+  font-size: 16px;
+  width: 100%;
+}
+@media screen and (min-width: 40em) {
+  font-size: 20px;
+  width: 50%;
+}
+@media screen and (min-width: 52em) {
+  font-size: 24px;
+}
+```
+
+```jsx
+// example with Styled System
+<Thing fontSize={[16, 20, 24]} width={[1, 1 / 2]} />
+```
+
+some
+
 ![logo](/avatar.png)
 
 In late 2013, I'd taken some of the ideas Adam and I were talking about at the time, and some of the problems we were working on at Kickstarter (involving a 1MB+ CSS bundle), and released the first version of Basscss. Around the same time, Adam released Tachyons. We both continued to develop each project separately and never landed on a common API for the two libraries.
