@@ -36,6 +36,7 @@ Development environment
 CMS and hosting
 
 - [contentful](https://www.contentful.com/) (like [github.com/narative/gatsby-theme-novela](https://github.com/narative/gatsby-theme-novela))
+- [prismic.io](prismic.io) (like [github.com/LekoArts/portfolio](https://github.com/LekoArts/portfolio))
 
 Feed
 
@@ -55,7 +56,7 @@ Tags
 
 Content types
 
-- `twitter` tweets in `notes`
+- `twitter` tweets in `notes` - [gatsby-plugin-twitter](https://www.npmjs.com/package/gatsby-plugin-twitter)
 - content type `podcast` for, so, podcasts - with player and links-icons to podcasts platforms (spotify, google podcasts, etc) ?
 - different paths to content. Currently, `notes` all paths begin with `notes` - like `example.com/notes/some-note`, while `links` and `posts` do not have special paths. Make the user decide the path for each type of content. Save the current version as default.
 
