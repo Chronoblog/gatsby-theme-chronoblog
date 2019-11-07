@@ -48,6 +48,7 @@
     "jsx-a11y"
   ],
   "rules": {
+    "@typescript-eslint/ban-ts-ignore": "off",
     "@typescript-eslint/no-var-requires": "off",
     "import/first": "warn",
     "import/newline-after-import": "warn",
