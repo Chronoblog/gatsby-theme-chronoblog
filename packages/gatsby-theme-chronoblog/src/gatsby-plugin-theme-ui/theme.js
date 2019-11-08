@@ -11,7 +11,7 @@ const theme = {
   colors: {
     ...colors
   },
-  breakpoints: ['375px', '768px', '1024px'],
+  breakpoints: ['768px', '1024px'],
   fontSizes: [14, 16, 18, 20, 22, 24, 28, 36],
   borderRadius: [6],
   fonts: {

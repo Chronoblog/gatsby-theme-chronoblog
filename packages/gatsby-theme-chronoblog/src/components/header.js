@@ -6,6 +6,7 @@ import { Container, Header, jsx } from 'theme-ui';
 // @ts-ignore
 import SiteHeader from '../site-header.mdx';
 
+// https://theme-ui.com/sx-prop#using-the-sx-prop-in-mdx
 const Link = ({ to, ...props }) => (
   <LinkGatsby sx={{ variant: 'link.noStyle' }} to={to} {...props} />
 );
@@ -50,9 +51,21 @@ export default () => {
   return (
     <Header>
       <MDXProvider components={{ MenuMain, MenuBlock, Link, A }}>
-        <Container>
-          <SiteHeader />
-        </Container>
+        <div
+          sx={{
+            maxWidth: [null, '824px'],
+            width: '100%',
+            marginX: 'auto',
+            marginBottom: ['6px', '10px'],
+            marginTop: ['0px', '10px'],
+            // boxShadow: '0 4px 6px -4px #00000038',
+            borderRadius: ['0px', '16px']
+          }}
+        >
+          <Container>
+            <SiteHeader />
+          </Container>
+        </div>
       </MDXProvider>
     </Header>
   );
