@@ -15,7 +15,7 @@ export default ({ pageContext }) => {
       <SEO canonical="tags" />
       <FeedSearch />
       <Tags pageContextTag={pageContext.tag || 'tags'} />
-      <FeedItems filterByTag={tag} />
+      <FeedItems filterByTags={[tag]} />
     </Layout>
   );
 };

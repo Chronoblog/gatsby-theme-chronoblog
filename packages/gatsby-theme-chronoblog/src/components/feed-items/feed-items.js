@@ -82,7 +82,7 @@ const getYears = (items, lang = 'en-US') => {
  *
  * @typedef {object} Props
  * @property {string=} filterBySearch
- * @property {string=} filterByTag
+ * @property {string[]=} filterByTags
  * @property {object=} filter all feed items predicate returns truthy for
  * @property {object=} reject items of feed that predicate does not return truthy for
  * @property {number=} limit limit of feed items to show
@@ -98,7 +98,7 @@ const getYears = (items, lang = 'en-US') => {
  */
 export default ({
   filterBySearch = '',
-  filterByTag = '',
+  filterByTags,
   filter,
   reject,
   limit,
@@ -114,10 +114,15 @@ export default ({
   const feedLimit = limit || feedItemsLimit;
   //
   // props
-  // tag from props
-  if (filterByTag && filterByTag !== '') {
+  // tags array from props
+  if (filterByTags && filterByTags.length > 0) {
     feedItems = feedItems.filter((i) => {
-      if (i.frontmatter.tags) return i.frontmatter.tags.includes(filterByTag);
+      if (i.frontmatter.tags && i.frontmatter.tags.length > 0) {
+        const filteredTags = i.frontmatter.tags.filter((t) =>
+          filterByTags.includes(t)
+        );
+        return filteredTags.length > 0;
+      }
       return false;
     });
   }
