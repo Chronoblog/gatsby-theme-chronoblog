@@ -1,0 +1,24 @@
+{
+  "name": "minimal-core",
+  "version": "1.0.0",
+  "private": true,
+  "description": "gatsby-starter-chronoblog-minimal-core",
+  "keywords": [],
+  "license": "MIT",
+  "author": "Ivan Ganev <ganevio92@gmail.com>",
+  "scripts": {
+    "build": "gatsby build",
+    "clean": "gatsby clean",
+    "start": "gatsby develop"
+  },
+  "dependencies": {
+    "gatsby": "^2.16.5",
+    "gatsby-theme-chronoblog-core": "^0.0.1",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2"
+  },
+  "engines": {
+    "node": ">=10.15.0"
+  },
+  "starter-name": "gatsby-starter-chronoblog-minimal-core"
+}
