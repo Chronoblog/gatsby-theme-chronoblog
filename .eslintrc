@@ -48,6 +48,7 @@
     "jsx-a11y"
   ],
   "rules": {
+    "react/jsx-props-no-spreading": "off",
     "@typescript-eslint/ban-ts-ignore": "off",
     "@typescript-eslint/no-var-requires": "off",
     "import/first": "warn",
