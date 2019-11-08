@@ -5,8 +5,9 @@ import { Container, Header, jsx } from 'theme-ui';
 // @ts-ignore
 import SiteHeader from '../site-header.mdx';
 
-const MenuMain = ({ children }) => (
+const MenuMain = ({ children, ...props }) => (
   <div
+    {...props}
     sx={{
       width: '100%',
       display: 'flex',
@@ -21,12 +22,13 @@ const MenuMain = ({ children }) => (
   </div>
 );
 
-const MenuBlock = ({ children }) => (
+const MenuBlock = ({ children, ...props }) => (
   <div
+    {...props}
     sx={{
       display: 'grid',
       gridAutoFlow: 'column',
-      gridGap: '1rem',
+      gridGap: [`1rem`, '2rem'],
       alignItems: 'center'
     }}
   >

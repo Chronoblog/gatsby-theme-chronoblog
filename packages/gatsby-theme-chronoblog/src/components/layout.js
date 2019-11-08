@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { MDXProvider } from '@mdx-js/react';
-import { Link } from 'gatsby';
+import { Link as LinkGatsby } from 'gatsby';
 import { useCallback, useState } from 'react';
 import { Container, jsx, Layout } from 'theme-ui';
 
@@ -10,9 +10,11 @@ import FeedSearch from './feed-search';
 import Footer from './footer';
 import Header from './header';
 import LightDarkSwitchButton from './light-dark-switch-button';
-import LinkNoStyle from './link-no-style';
 import SEO from './seo';
 import Tags from './tags';
+
+const Link = ({ to, ...props }) => <LinkGatsby to={to} {...props} />;
+const A = ({ ...props }) => <a {...props} />;
 
 const components = {
   SEO,
@@ -20,8 +22,8 @@ const components = {
   FeedItems,
   FeedSearch,
   LightDarkSwitchButton,
-  LinkNoStyle,
-  Link
+  Link,
+  A
 };
 
 /**

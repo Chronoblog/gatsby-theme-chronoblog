@@ -21,15 +21,15 @@ const theme = {
   prism,
   styles: {
     ...base.styles,
-    ...styles,
-    pre: {
-      fontFamily: 'monospace',
-      fontSize: 1,
-      bg: 'muted',
-      p: 3,
-      borderRadius: 8,
-      overflowX: 'auto',
-      variant: 'prism'
+    ...styles
+  },
+  link: {
+    noStyle: {
+      color: 'text',
+      textDecoration: 'none',
+      ':hover': {
+        opacity: 0.7
+      }
     }
   }
 };

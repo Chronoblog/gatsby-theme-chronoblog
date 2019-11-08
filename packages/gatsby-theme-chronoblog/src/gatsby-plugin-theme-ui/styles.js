@@ -60,8 +60,16 @@ export default {
   a: {
     color: 'primary',
     ':hover': {
-      color: 'secondary',
-      opacity: 0.8
+      opacity: 0.7
     }
+  },
+  pre: {
+    fontFamily: 'monospace',
+    fontSize: 1,
+    bg: 'muted',
+    p: 3,
+    borderRadius: 8,
+    overflowX: 'auto',
+    variant: 'prism'
   }
 };

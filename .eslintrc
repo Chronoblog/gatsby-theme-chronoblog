@@ -48,7 +48,6 @@
     "jsx-a11y"
   ],
   "rules": {
-    "react/jsx-props-no-spreading": "off",
     "@typescript-eslint/ban-ts-ignore": "off",
     "@typescript-eslint/no-var-requires": "off",
     "import/first": "warn",
@@ -68,6 +67,7 @@
     "jsdoc/require-returns-description": "off",
     "jsdoc/valid-types": "off",
     "jsx-a11y/accessible-emoji": "warn",
+    "jsx-a11y/anchor-has-content": "warn",
     "jsx-a11y/label-has-associated-control": "off",
     "no-console": "off",
     "no-nested-ternary": "warn",
@@ -88,6 +88,7 @@
     "react/jsx-indent": "off",
     "react/jsx-key": "warn",
     "react/jsx-one-expression-per-line": "off",
+    "react/jsx-props-no-spreading": "off",
     "react/no-children-prop": "warn",
     "react/prop-types": "off",
     "simple-import-sort/sort": "warn",
