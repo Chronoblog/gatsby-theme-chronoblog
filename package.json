@@ -23,9 +23,10 @@
   },
   "devDependencies": {
     "@types/jest": "^24.0.18",
+    "@types/lodash": "^4.14.144",
     "@types/node": "^12.7.5",
-    "@types/react": "^16.9.2",
-    "@types/react-dom": "^16.9.0",
+    "@types/react": "^16.9.11",
+    "@types/react-dom": "^16.9.4",
     "@types/react-helmet": "^5.0.10",
     "@typescript-eslint/eslint-plugin": "^2.6.1",
     "@typescript-eslint/parser": "^2.6.1",
@@ -55,8 +56,8 @@
     "yarn": "^1.19.1"
   },
   "engines": {
-    "npm": "! use yarn !",
     "node": ">=10.15.0",
+    "npm": "! use yarn !",
     "yarn": ">=1.5.1"
   }
 }

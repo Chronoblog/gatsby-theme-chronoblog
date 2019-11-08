@@ -15,7 +15,7 @@ import SEO from './seo';
 import Tags from './tags';
 
 const Link = ({ to, ...props }) => <LinkGatsby to={to} {...props} />;
-const A = ({ ...props }) => <a {...props} />;
+const A = ({ children, ...props }) => <a {...props}>{children}</a>;
 
 const components = {
   SEO,

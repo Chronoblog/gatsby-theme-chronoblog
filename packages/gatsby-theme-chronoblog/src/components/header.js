@@ -1,9 +1,19 @@
 /** @jsx jsx */
 import { MDXProvider } from '@mdx-js/react';
+import { Link as LinkGatsby } from 'gatsby';
 import { Container, Header, jsx } from 'theme-ui';
 
 // @ts-ignore
 import SiteHeader from '../site-header.mdx';
+
+const Link = ({ to, ...props }) => (
+  <LinkGatsby sx={{ variant: 'link.noStyle' }} to={to} {...props} />
+);
+const A = ({ children, ...props }) => (
+  <a sx={{ variant: 'link.noStyle' }} {...props}>
+    {children}
+  </a>
+);
 
 const MenuMain = ({ children, ...props }) => (
   <div
@@ -39,7 +49,7 @@ const MenuBlock = ({ children, ...props }) => (
 export default () => {
   return (
     <Header>
-      <MDXProvider components={{ MenuMain, MenuBlock }}>
+      <MDXProvider components={{ MenuMain, MenuBlock, Link, A }}>
         <Container>
           <SiteHeader />
         </Container>
