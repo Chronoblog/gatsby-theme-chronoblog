@@ -8,10 +8,14 @@ const heading = {
 
 export default {
   Container: {
-    px: [0, 3],
+    px: [2, 3],
     py: 3,
     maxWidth: 768,
     mx: 'auto'
+  },
+  Footer: {
+    color: 'modes.dark.text',
+    bg: 'modes.dark.muted'
   },
   img: {
     maxWidth: '100%',
@@ -58,7 +62,7 @@ export default {
     fontSize: [3]
   },
   a: {
-    color: 'primary',
+    color: '#3a5f7d',
     ':hover': {
       opacity: 0.7
     }
@@ -68,7 +72,7 @@ export default {
     fontSize: 1,
     bg: 'muted',
     p: 3,
-    borderRadius: 8,
+    borderRadius: 6,
     overflowX: 'auto',
     variant: 'prism'
   }

@@ -1,4 +1,5 @@
 /** @jsx jsx */
+import { Global } from '@emotion/core';
 import { MDXProvider } from '@mdx-js/react';
 import { Link as LinkGatsby } from 'gatsby';
 import { useCallback, useState } from 'react';
@@ -43,6 +44,16 @@ export default ({ children, ...props }) => {
   //
   return (
     <Layout {...props}>
+      <Global
+        styles={{
+          '*': {
+            boxSizing: 'border-box'
+          },
+          body: {
+            margin: 0
+          }
+        }}
+      />
       <SEO />
       <MDXProvider components={components}>
         <FeedContext.Provider value={{ value, onChangeSearchInput }}>
