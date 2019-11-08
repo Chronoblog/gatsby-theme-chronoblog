@@ -182,7 +182,7 @@ const eClassCheck = (eTarget, className = '') => {
 const CardStyle = ({ item, children }) => {
   const regStyle = {
     my: '20px',
-    pb: '10px',
+    pb: ['5px', '10px'],
     color: 'text',
     bg: 'inherit',
     border: '2px',
@@ -205,13 +205,14 @@ const CardStyle = ({ item, children }) => {
   return (
     <ReactHoverObserver
       {...{
-        onMouseOver: ({ e, setIsHovering, unsetIsHovering }) => {
-          if (eClassCheck(e.target, 'hover-on')) {
-            setIsHovering();
-          } else {
-            unsetIsHovering();
-          }
-        }
+        onMouseOver: ({ e, setIsHovering, unsetIsHovering }) =>
+          eClassCheck(e.target, 'hover-on')
+            ? setIsHovering()
+            : unsetIsHovering(),
+        onFocus: ({ e, setIsHovering, unsetIsHovering }) =>
+          eClassCheck(e.target, 'hover-on')
+            ? setIsHovering()
+            : unsetIsHovering()
       }}
     >
       <HoverStyle style={regStyle}>{children}</HoverStyle>
@@ -225,7 +226,6 @@ const TagsComponent = ({ tags }) => {
       <div
         sx={{
           mt: '10px',
-          px: '20px',
           pb: '10px'
         }}
       >
@@ -265,7 +265,7 @@ export default ({ item, uiText }) => {
         </LinkCard>
         <LinkIconBg item={item}>
           <LinkCard item={item}>
-            <div sx={{ px: ['10px', '20px'], pt: '20px' }}>
+            <div sx={{ px: ['10px', '20px'], pt: ['10px', '20px'] }}>
               <CardTitle item={item} />
               <LinkText item={item} />
               <div sx={{ mb: 2 }}>
@@ -282,7 +282,9 @@ export default ({ item, uiText }) => {
             </LinkCard>
           </div>
         </LinkIconBg>
-        <TagsComponent tags={tags} />
+        <div sx={{ px: ['10px', '20px'] }}>
+          <TagsComponent tags={tags} />
+        </div>
       </CardStyle>
     </article>
   );
