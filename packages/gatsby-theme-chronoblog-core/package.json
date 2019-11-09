@@ -1,6 +1,6 @@
 {
   "name": "gatsby-theme-chronoblog-core",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "gatsby-theme-chronoblog-core",
   "keywords": ["blog", "gatsby", "gatsby-plugin", "gatsby-theme", "react"],
   "homepage": "https://github.com/Ganevru/gatsby-theme-chronoblog",
