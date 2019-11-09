@@ -7,8 +7,8 @@ export default {
   muted: '#dae1e3',
   modes: {
     dark: {
-      text: '#fff',
-      background: '#000',
+      text: '#eaeaea',
+      background: '#0e0f17',
       muted: '#161b1d'
     }
   }
