@@ -17,7 +17,7 @@ export default ({ placeholder = '' }) => {
     onChangeSearchInput
   } = useContext(FeedContext);
   return (
-    <div sx={{ marginY: [10] }}>
+    <div sx={{ marginY: [20] }}>
       <Flex
         sx={{
           flexWrap: 'nowrap',
@@ -36,8 +36,6 @@ export default ({ placeholder = '' }) => {
             justifyContent: 'center',
             maxWidth: ['40px'],
             minWidth: ['40px']
-            // textAlign: 'center'
-            // pt: '4px'
           }}
         >
           <div

@@ -20,7 +20,7 @@ import Button from '../button';
 const Tag = ({ tag, style, pageContextTag }) => {
   const active = tag === pageContextTag;
   return (
-    <Link to={`/tags/${_.kebabCase(tag)}/`}>
+    <Link to={`/tags/${_.kebabCase(tag)}#tags`}>
       <Button sx={style} active={active}>
         #{tag}
       </Button>
@@ -38,7 +38,7 @@ const AllTagsButton = ({ style }) => {
     bg: `rgba(0,0,0,0)`
   };
   return (
-    <Link to="/tags">
+    <Link to="/tags#tags">
       <Button sx={style}>{allTagsButton}</Button>
     </Link>
   );
@@ -105,12 +105,14 @@ export default ({
     tagsFromItems = _.uniq(tagsFromItems);
     tagsFromItems = tagsFromItems.filter(Boolean);
     return (
-      <Tags
-        type={type}
-        showAllTagsButton={showAllTagsButton}
-        tags={tagsFromItems}
-        pageContextTag={pageContextTag}
-      />
+      <div id="tags" sx={{ marginY: [20] }}>
+        <Tags
+          type={type}
+          showAllTagsButton={showAllTagsButton}
+          tags={tagsFromItems}
+          pageContextTag={pageContextTag}
+        />
+      </div>
     );
   }
   //
