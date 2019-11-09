@@ -6,8 +6,8 @@ export default {
   colors: {
     ...chronoblogTheme.color,
     text: '#000',
-    // link: '#3a5f7d' - style
     background: '#fff',
+    link: '#3d7e9a',
     primary: '#3a5f7d',
     secondary: '#5a809e',
     muted: '#dae1e3',

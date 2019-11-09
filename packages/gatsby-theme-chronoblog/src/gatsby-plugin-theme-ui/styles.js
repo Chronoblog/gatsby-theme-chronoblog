@@ -62,7 +62,7 @@ export default {
     fontSize: [3]
   },
   a: {
-    color: '#3a5f7d',
+    color: 'link',
     ':hover': {
       opacity: 0.7
     }
