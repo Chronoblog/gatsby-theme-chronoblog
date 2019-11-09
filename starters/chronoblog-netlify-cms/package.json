@@ -1,6 +1,6 @@
 {
   "name": "chronoblog-netlify-cms",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "private": true,
   "description": "gatsby-starter-chronoblog-netlify-cms",
   "keywords": [],
@@ -17,7 +17,7 @@
     "gatsby-plugin-netlify": "^2.1.17",
     "gatsby-plugin-netlify-cms": "^4.1.22",
     "gatsby-remark-relative-images": "^0.2.3",
-    "gatsby-theme-chronoblog": "^0.1.2",
+    "gatsby-theme-chronoblog": "^0.1.3",
     "netlify-cms-app": "^2.9.7",
     "react": "^16.10.2",
     "react-dom": "^16.10.2"
