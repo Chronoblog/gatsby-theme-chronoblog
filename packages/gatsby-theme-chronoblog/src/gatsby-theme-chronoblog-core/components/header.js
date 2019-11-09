@@ -48,7 +48,7 @@ const MenuMain = ({ children, ...props }) => (
       justifyContent: ['space-between'],
       alignItems: 'center',
       fontWeight: 'bold',
-      fontSize: '18px'
+      fontSize: [1, 2]
     }}
   >
     {children}
@@ -93,7 +93,7 @@ export default ({ ...props }) => {
               backgroundColor: 'background'
             }}
           >
-            <Container>
+            <Container sx={{ py: ['6px', '12px'] }}>
               <SiteHeader />
             </Container>
           </div>
