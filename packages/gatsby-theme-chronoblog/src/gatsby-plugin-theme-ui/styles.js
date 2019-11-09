@@ -15,7 +15,7 @@ export default {
   },
   Footer: {
     color: 'modes.dark.text',
-    bg: 'modes.dark.muted'
+    bg: 'modes.dark.background'
   },
   img: {
     maxWidth: '100%',

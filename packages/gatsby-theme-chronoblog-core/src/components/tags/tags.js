@@ -19,7 +19,7 @@ import Button from '../button';
  */
 const Tag = ({ tag, style, pageContextTag }) => {
   const active = tag === pageContextTag;
-  const link = active ? '/tags#tags' : `/tags/${_.kebabCase(tag)}#tags`;
+  const link = active ? '/tags' : `/tags/${_.kebabCase(tag)}`;
   return (
     <Link to={link}>
       <Button sx={style} active={active}>
@@ -39,7 +39,7 @@ const AllTagsButton = ({ style }) => {
     bg: `rgba(0,0,0,0)`
   };
   return (
-    <Link to="/tags#tags">
+    <Link to="/tags">
       <Button sx={style}>{allTagsButton}</Button>
     </Link>
   );
