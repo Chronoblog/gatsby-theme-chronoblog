@@ -4,6 +4,7 @@ export default {
   ...chronoblogTheme,
   initialColorMode: 'light',
   colors: {
+    ...chronoblogTheme.color,
     text: '#000',
     background: '#fff',
     primary: '#3a5f7d',
@@ -17,7 +18,9 @@ export default {
       }
     }
   },
+  fontSizes: [14, 16, 18, 20, 22, 24, 28, 36],
   fonts: {
+    ...chronoblogTheme.fonts,
     body: '-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif',
     heading: 'inherit',
     monospace: 'Menlo, monospace'
