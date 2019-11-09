@@ -1,3 +1,3 @@
-import chronoblogCoreTheme from 'gatsby-theme-chronoblog-core/src/gatsby-plugin-theme-ui';
+import theme from './theme';
 
-export default chronoblogCoreTheme;
+export default theme;
