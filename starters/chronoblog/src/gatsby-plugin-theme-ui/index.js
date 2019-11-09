@@ -13,6 +13,7 @@ export default {
     muted: '#dae1e3',
     modes: {
       dark: {
+        ...chronoblogTheme.colors.modes.dark,
         text: '#fff',
         background: '#000',
         muted: '#161b1d'
