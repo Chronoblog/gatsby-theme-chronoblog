@@ -18,7 +18,7 @@
     "start": "gatsby develop"
   },
   "dependencies": {
-    "gatsby-theme-chronoblog-core": "^0.0.1"
+    "gatsby-theme-chronoblog-core": "^0.1.0"
   },
   "devDependencies": {
     "gatsby": "^2.16.5",
