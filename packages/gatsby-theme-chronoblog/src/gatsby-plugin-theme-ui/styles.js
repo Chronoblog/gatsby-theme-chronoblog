@@ -75,5 +75,8 @@ export default {
     borderRadius: 6,
     overflowX: 'auto',
     variant: 'prism'
+  },
+  hr: {
+    marginY: 40
   }
 };

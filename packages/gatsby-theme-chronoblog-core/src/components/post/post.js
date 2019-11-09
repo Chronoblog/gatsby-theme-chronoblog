@@ -42,7 +42,7 @@ const getDescriptionForSeo = (fromFrontmatter, fromExcerpt) => {
 const PostFooter = () => {
   const siteMetadata = useSiteMetadata();
   return (
-    <div sx={{ mt: '40px', mb: '60px' }}>
+    <div sx={{ mt: '50px', mb: '50px' }}>
       {PostFooterMdx && PostFooterMdx !== '' ? (
         <PostFooterMdx siteMetadata={siteMetadata} />
       ) : (
