@@ -17,7 +17,7 @@ export default ({ placeholder = '' }) => {
     onChangeSearchInput
   } = useContext(FeedContext);
   return (
-    <div sx={{ marginY: [30] }}>
+    <div sx={{ marginY: [10] }}>
       <Flex
         sx={{
           flexWrap: 'nowrap',
@@ -29,26 +29,29 @@ export default ({ placeholder = '' }) => {
           borderWidth: `1px`
         }}
       >
-        <Box
+        <div
           sx={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
             maxWidth: ['40px'],
-            minWidth: ['40px'],
-            textAlign: 'center',
-            pt: '6px'
+            minWidth: ['40px']
+            // textAlign: 'center'
+            // pt: '4px'
           }}
         >
-          <span
+          <div
             sx={{
               fontSize: ['26px'],
               opacity: ['0.7'],
               userSelect: 'none'
             }}
-            role="img"
-            aria-label="search"
           >
-            🔎
-          </span>
-        </Box>
+            <span role="img" aria-label="search">
+              🔎
+            </span>
+          </div>
+        </div>
         <Box sx={{ flexGrow: 1 }}>
           <input
             type="search"
