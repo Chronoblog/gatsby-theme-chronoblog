@@ -23,15 +23,6 @@ const theme = {
   styles: {
     ...base.styles,
     ...styles
-  },
-  link: {
-    noStyle: {
-      color: 'text',
-      textDecoration: 'none',
-      ':hover': {
-        opacity: 0.7
-      }
-    }
   }
 };
 

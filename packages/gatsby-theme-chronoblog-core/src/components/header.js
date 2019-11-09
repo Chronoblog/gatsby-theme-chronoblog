@@ -8,10 +8,14 @@ import SiteHeader from '../site-header.mdx';
 
 // https://theme-ui.com/sx-prop#using-the-sx-prop-in-mdx
 const Link = ({ to, ...props }) => (
-  <LinkGatsby sx={{ variant: 'link.noStyle' }} to={to} {...props} />
+  <LinkGatsby
+    sx={{ color: 'text', textDecoration: 'none' }}
+    to={to}
+    {...props}
+  />
 );
 const A = ({ children, ...props }) => (
-  <a sx={{ variant: 'link.noStyle' }} {...props}>
+  <a sx={{ color: 'text', textDecoration: 'none' }} {...props}>
     {children}
   </a>
 );
