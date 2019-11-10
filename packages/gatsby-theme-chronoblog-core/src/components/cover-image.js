@@ -26,6 +26,11 @@ const CoverImage = ({
   height = 192
 }) => {
   const coverFluidImage = getCover(frontmatter, 'fluid');
+  const backgroundImageStyle = {
+    backdropFilter: `blur(5px) contrast(50%)`,
+    WebkitBackdropFilter: `blur(5px) contrast(50%)`,
+    borderRadius
+  };
   return (
     <div>
       {coverFluidImage ? (
@@ -51,15 +56,11 @@ const CoverImage = ({
                 coverFluidImage.presentationWidth <= 768
                   ? {
                       backgroundSize: 'auto auto',
-                      backdropFilter: `blur(5px) contrast(50%)`,
-                      '-webkit-backdrop-filter': `blur(5px) contrast(50%)`,
-                      borderRadius
+                      ...backgroundImageStyle
                     }
                   : {
                       backgroundSize: 'contain',
-                      backdropFilter: `blur(5px) contrast(50%)`,
-                      '-webkit-backdrop-filter': `blur(5px) contrast(50%)`,
-                      borderRadius
+                      ...backgroundImageStyle
                     }
               }
               fluid={coverFluidImage}
