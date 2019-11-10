@@ -126,7 +126,7 @@ const SEO = ({
       <meta property="og:locale" content={ogLanguage} />
 
       {/* Twitter */}
-      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={metaTitle} />
       <meta name="twitter:description" content={metaDescription} />
       <meta name="twitter:creator" content={twitter} />
