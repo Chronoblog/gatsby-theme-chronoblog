@@ -78,6 +78,7 @@ export { genTitle, genUrl };
  * @property {string=} slug
  * @property {string=} image
  * @property {string=} canonical
+ * @property {string=} twitterCardType
  * @property {React.ReactNode=} children
  */
 
@@ -90,6 +91,7 @@ const SEO = ({
   slug = '',
   image = '',
   canonical = '',
+  twitterCardType = 'summary_large_image',
   children
 }) => {
   const siteMeta = useSiteMetadata();
@@ -126,7 +128,7 @@ const SEO = ({
       <meta property="og:locale" content={ogLanguage} />
 
       {/* Twitter */}
-      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:card" content={twitterCardType} />
       <meta name="twitter:title" content={metaTitle} />
       <meta name="twitter:description" content={metaDescription} />
       <meta name="twitter:creator" content={twitter} />
