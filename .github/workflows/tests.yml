@@ -31,6 +31,3 @@ jobs:
 
       - name: yarn build:minimal
         run: yarn build:minimal
-
-      - name: yarn build:minimal-core
-        run: yarn build:minimal-core
