@@ -29,10 +29,6 @@ Community
 - `starters` should be more understandable and standardized
 - A `step-by-step guide` on how to start the chronoblog and configure it "for yourself". In the `.md` file format inside the starter - so that it can be read both on the github and on the site.
 
-Development environment
-
-- [cypress](https://www.cypress.io/) for E2E tests ?
-
 CMS and hosting
 
 - [contentful](https://www.contentful.com/) (like [github.com/narative/gatsby-theme-novela](https://github.com/narative/gatsby-theme-novela))
