@@ -1,8 +1,14 @@
 {
   "name": "gatsby-theme-chronoblog",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "gatsby-theme-chronoblog",
-  "keywords": ["blog", "gatsby", "gatsby-plugin", "gatsby-theme", "react"],
+  "keywords": [
+    "blog",
+    "gatsby",
+    "gatsby-plugin",
+    "gatsby-theme",
+    "react"
+  ],
   "homepage": "https://github.com/Ganevru/gatsby-theme-chronoblog",
   "repository": {
     "type": "git",
