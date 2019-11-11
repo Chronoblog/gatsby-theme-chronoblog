@@ -1,5 +1,5 @@
 const path = require('path');
-
+/* eslint-disable @typescript-eslint/camelcase */
 module.exports = {
   siteMetadata: {
     siteTitle: 'Chronoblog Starter with Netlify CMS',
@@ -31,6 +31,18 @@ module.exports = {
           allTagsButton: 'all tags'
         },
         feedItemsLimit: 50
+      }
+    },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Chronoblog Gatsby Theme`,
+        short_name: `Chronoblog`,
+        start_url: `/`,
+        background_color: `#fff`,
+        theme_color: `#3a5f7d`,
+        display: `standalone`,
+        icon: `src/assets/favicon.png`
       }
     },
     {
