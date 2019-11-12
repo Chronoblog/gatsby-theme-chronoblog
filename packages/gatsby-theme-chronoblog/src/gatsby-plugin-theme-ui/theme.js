@@ -13,7 +13,12 @@ const theme = {
   },
   breakpoints: ['768px', '1024px'],
   fontSizes: [14, 16, 18, 20, 22, 24, 28, 36],
-  borderRadius: [6],
+  borderRadius: {
+    card: 6,
+    button: 6,
+    search: 6,
+    code: 6
+  },
   fonts: {
     body: '-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif',
     heading: 'inherit',

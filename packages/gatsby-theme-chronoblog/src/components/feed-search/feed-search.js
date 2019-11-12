@@ -23,7 +23,7 @@ export default ({ placeholder = '' }) => {
           flexWrap: 'nowrap',
           color: 'inherit',
           bg: 'muted',
-          borderRadius: [0],
+          borderRadius: 'search',
           borderColor: 'muted',
           borderStyle: 'solid',
           borderWidth: `1px`
@@ -64,7 +64,7 @@ export default ({ placeholder = '' }) => {
               borderColor: 'muted',
               borderStyle: 'solid',
               borderWidth: `2px`,
-              borderRadius: [0],
+              borderRadius: 'search',
               outline: '0px solid',
               opacity: '0.9'
             }}

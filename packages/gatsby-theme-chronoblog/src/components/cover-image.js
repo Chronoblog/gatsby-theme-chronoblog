@@ -29,7 +29,7 @@ export default ({ data, height = 192, type = 'post' }) => {
               backgroundImage: `url(${coverFluidImage.src})`,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
-              borderRadius: [0],
+              borderRadius: 'card',
               ...borderRadiusForCard
             }}
           >
@@ -57,7 +57,7 @@ export default ({ data, height = 192, type = 'post' }) => {
               <div
                 sx={{
                   minHeight: height,
-                  borderRadius: [0],
+                  borderRadius: 'card',
                   ...borderRadiusForCard,
                   backdropFilter: `drop-shadow(0px 0px 20px black)`,
                   boxShadow: 'inset 0px 0px 15px black'

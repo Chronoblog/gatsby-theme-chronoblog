@@ -179,7 +179,7 @@ const CardStyle = ({ children, isHovering = false }) => (
       opacity: isHovering ? 0.8 : 1,
       border: '2px',
       borderStyle: 'solid',
-      borderRadius: [0],
+      borderRadius: 'card',
       borderColor: isHovering ? 'secondary' : 'muted',
       backgroundColor: isHovering ? 'secondary' : 'muted'
     }}
@@ -231,7 +231,7 @@ const CardBody = ({ item, children }) => {
       sx={{
         backgroundColor: 'background',
         pb: ['5px', '10px'],
-        borderRadius: [0],
+        borderRadius: 'card',
         borderTopLeftRadius: coverFluidImage ? 0 : null,
         borderTopRightRadius: coverFluidImage ? 0 : null
       }}

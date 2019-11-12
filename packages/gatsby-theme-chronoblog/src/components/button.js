@@ -33,7 +33,7 @@ export default ({
         py: '10px',
         fontSize: [1],
         border: '0px',
-        borderRadius: [0],
+        borderRadius: 'button',
         ':hover': {
           opacity: 0.8,
           cursor: 'pointer',

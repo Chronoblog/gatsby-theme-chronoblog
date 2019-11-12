@@ -72,7 +72,7 @@ export default {
     fontSize: 1,
     bg: 'muted',
     p: 3,
-    borderRadius: 6,
+    borderRadius: 'code',
     overflowX: 'auto',
     variant: 'prism'
   },
