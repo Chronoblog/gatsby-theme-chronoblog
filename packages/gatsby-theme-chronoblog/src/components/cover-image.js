@@ -22,9 +22,10 @@ const getCover = (frontmatter, imgType) => {
 
 const CoverImage = ({
   data: { frontmatter },
-  borderRadius = '4px 4px 0px 0px',
-  height = 192
+  height = 192,
+  isHovering = false
 }) => {
+  const borderRadius = '6px 6px 0px 0px';
   const coverFluidImage = getCover(frontmatter, 'fluid');
   const backgroundImageStyle = {
     backdropFilter: `blur(5px) contrast(50%)`,
@@ -36,6 +37,7 @@ const CoverImage = ({
       {coverFluidImage ? (
         <div
           sx={{
+            backgroundColor: isHovering ? 'secondary' : 'muted',
             maxHeight: height
           }}
         >

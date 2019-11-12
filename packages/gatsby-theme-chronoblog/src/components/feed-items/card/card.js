@@ -138,18 +138,6 @@ const BodyMdx = ({ item }) => {
   return <div />;
 };
 
-const HoverStyle = ({ isHovering = false, style, children }) => (
-  <div
-    sx={{
-      ...style,
-      borderColor: isHovering ? 'secondary' : 'muted',
-      opacity: isHovering ? 0.8 : 1
-    }}
-  >
-    {children}
-  </div>
-);
-
 /**
  * @param {*} eTarget
  * @param {string} className
@@ -182,46 +170,23 @@ const eClassCheck = (eTarget, className = '') => {
   return false;
 };
 
-const CardStyle = ({ item, children }) => {
-  const regStyle = {
-    my: '20px',
-    pb: ['5px', '10px'],
-    color: 'text',
-    bg: 'inherit',
-    border: '2px',
-    borderStyle: 'solid',
-    borderRadius: [0]
-  };
-  //
-  if (item.parent && item.parent.sourceInstanceName === 'notes')
-    return (
-      <div
-        sx={{
-          ...regStyle,
-          borderColor: 'muted'
-        }}
-      >
-        {children}
-      </div>
-    );
-  //
-  return (
-    <ReactHoverObserver
-      {...{
-        onMouseOver: ({ e, setIsHovering, unsetIsHovering }) =>
-          eClassCheck(e.target, 'hover-on')
-            ? setIsHovering()
-            : unsetIsHovering(),
-        onFocus: ({ e, setIsHovering, unsetIsHovering }) =>
-          eClassCheck(e.target, 'hover-on')
-            ? setIsHovering()
-            : unsetIsHovering()
-      }}
-    >
-      <HoverStyle style={regStyle}>{children}</HoverStyle>
-    </ReactHoverObserver>
-  );
-};
+const CardStyle = ({ children, isHovering = false }) => (
+  <div
+    sx={{
+      my: '20px',
+      pb: ['5px', '10px'],
+      color: 'text',
+      bg: 'inherit',
+      opacity: isHovering ? 0.8 : 1,
+      border: '2px',
+      borderStyle: 'solid',
+      borderRadius: [0],
+      borderColor: isHovering ? 'secondary' : 'muted'
+    }}
+  >
+    {children}
+  </div>
+);
 
 const TagsComponent = ({ tags }) => {
   if (tags && tags !== null) {
@@ -262,33 +227,51 @@ export default ({ item, uiText }) => {
   //
   return (
     <article>
-      <CardStyle item={item}>
-        <LinkCard item={item}>
-          <CoverImage data={item} />
-        </LinkCard>
-        <LinkIconBg item={item}>
-          <LinkCard item={item}>
-            <div sx={{ px: ['10px', '20px'], pt: ['10px', '20px'] }}>
-              <CardTitle item={item} />
-              <LinkText item={item} />
-              <div sx={{ mb: 2 }}>
-                <Date date={date} />
-              </div>
-            </div>
-          </LinkCard>
-          <div sx={{ px: ['10px', '20px'] }}>
-            <Description item={item} />
-            <Excerpt item={item} />
-            <BodyMdx item={item} />
+      <ReactHoverObserver
+        {...{
+          onMouseOver: ({ e, setIsHovering, unsetIsHovering }) =>
+            eClassCheck(e.target, 'hover-on')
+              ? setIsHovering()
+              : unsetIsHovering(),
+          onFocus: ({ e, setIsHovering, unsetIsHovering }) =>
+            eClassCheck(e.target, 'hover-on')
+              ? setIsHovering()
+              : unsetIsHovering()
+        }}
+      >
+        {({ isHovering }) => (
+          <CardStyle isHovering={isHovering}>
             <LinkCard item={item}>
-              <ReadMoreButton item={item} text={uiText.cardReadMoreButton} />
+              <CoverImage data={item} isHovering={isHovering} />
             </LinkCard>
-          </div>
-        </LinkIconBg>
-        <div sx={{ px: ['10px', '20px'] }}>
-          <TagsComponent tags={tags} />
-        </div>
-      </CardStyle>
+            <LinkIconBg item={item}>
+              <LinkCard item={item}>
+                <div sx={{ px: ['10px', '20px'], pt: ['10px', '20px'] }}>
+                  <CardTitle item={item} />
+                  <LinkText item={item} />
+                  <div sx={{ mb: 2 }}>
+                    <Date date={date} />
+                  </div>
+                </div>
+              </LinkCard>
+              <div sx={{ px: ['10px', '20px'] }}>
+                <Description item={item} />
+                <Excerpt item={item} />
+                <BodyMdx item={item} />
+                <LinkCard item={item}>
+                  <ReadMoreButton
+                    item={item}
+                    text={uiText.cardReadMoreButton}
+                  />
+                </LinkCard>
+              </div>
+            </LinkIconBg>
+            <div sx={{ px: ['10px', '20px'] }}>
+              <TagsComponent tags={tags} />
+            </div>
+          </CardStyle>
+        )}
+      </ReactHoverObserver>
     </article>
   );
 };
