@@ -64,4 +64,4 @@ Other
 
 - comments for blog posts (disqus?) ?
 - RSS Feed
-- social media sharing
+- social media icons (in MDX?), [react-fontawesome](https://github.com/FortAwesome/react-fontawesome) ?
