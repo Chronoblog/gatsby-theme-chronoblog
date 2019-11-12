@@ -20,25 +20,16 @@ const getCover = (frontmatter, imgType) => {
   return '';
 };
 
-const CoverImage = ({
-  data: { frontmatter },
-  height = 192,
-  isHovering = false
-}) => {
-  const borderRadius = '6px 6px 0px 0px';
+const CoverImage = ({ data: { frontmatter }, height = 192 }) => {
   const coverFluidImage = getCover(frontmatter, 'fluid');
-  const backgroundImageStyle = {
-    backdropFilter: `blur(5px) contrast(50%)`,
-    WebkitBackdropFilter: `blur(5px) contrast(50%)`,
-    borderRadius
-  };
   return (
-    <div>
+    <div sx={{ backgroundClip: 'padding-box', borderRadius: [0] }}>
       {coverFluidImage ? (
         <div
           sx={{
-            backgroundColor: isHovering ? 'secondary' : 'muted',
-            maxHeight: height
+            maxHeight: height,
+            backgroundClip: 'padding-box',
+            borderRadius: [0]
           }}
         >
           <div
@@ -47,22 +38,30 @@ const CoverImage = ({
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               backgroundClip: 'padding-box',
-              borderRadius
+              borderRadius: [0]
             }}
           >
             <BackgroundImage
               // if image is very small - apply backgroundSize: 'auto auto'
               // in other cases - backgroundSize: 'contain'
-              style={
+              sx={
                 coverFluidImage.presentationHeight <= height &&
                 coverFluidImage.presentationWidth <= 768
                   ? {
                       backgroundSize: 'auto auto',
-                      ...backgroundImageStyle
+                      backdropFilter: `blur(5px) contrast(50%)`,
+                      WebkitBackdropFilter: `blur(5px) contrast(50%)`,
+                      // borderRadius: [0],
+                      borderRadius: 'inherit',
+                      backgroundClip: 'padding-box'
                     }
                   : {
                       backgroundSize: 'contain',
-                      ...backgroundImageStyle
+                      backdropFilter: `blur(5px) contrast(50%)`,
+                      WebkitBackdropFilter: `blur(5px) contrast(50%)`,
+                      // borderRadius: [0],
+                      borderRadius: 'inherit',
+                      backgroundClip: 'padding-box'
                     }
               }
               fluid={coverFluidImage}
@@ -70,9 +69,10 @@ const CoverImage = ({
               <div
                 sx={{
                   minHeight: height,
+                  borderRadius: [0],
+                  backgroundClip: 'padding-box',
                   backdropFilter: `drop-shadow(0px 0px 20px black)`,
-                  boxShadow: 'inset 0px 0px 15px black',
-                  borderRadius
+                  boxShadow: 'inset 0px 0px 15px black'
                 }}
               />
             </BackgroundImage>

@@ -174,14 +174,13 @@ const CardStyle = ({ children, isHovering = false }) => (
   <div
     sx={{
       my: '20px',
-      pb: ['5px', '10px'],
       color: 'text',
-      bg: 'inherit',
       opacity: isHovering ? 0.8 : 1,
       border: '2px',
       borderStyle: 'solid',
       borderRadius: [0],
-      borderColor: isHovering ? 'secondary' : 'muted'
+      borderColor: isHovering ? 'secondary' : 'muted',
+      backgroundColor: isHovering ? 'secondary' : 'muted'
     }}
   >
     {children}
@@ -220,6 +219,20 @@ const ReadMoreButton = ({ item, text }) => {
   return <div />;
 };
 
+const CardBody = ({ children, isHovering = false }) => {
+  return (
+    <div
+      sx={{
+        backgroundColor: 'background',
+        pb: ['5px', '10px'],
+        borderRadius: [0]
+      }}
+    >
+      {children}
+    </div>
+  );
+};
+
 export default ({ item, uiText }) => {
   //
   const { date } = item.frontmatter;
@@ -242,33 +255,35 @@ export default ({ item, uiText }) => {
         {({ isHovering }) => (
           <CardStyle isHovering={isHovering}>
             <LinkCard item={item}>
-              <CoverImage data={item} isHovering={isHovering} />
+              <CoverImage data={item} />
             </LinkCard>
-            <LinkIconBg item={item}>
-              <LinkCard item={item}>
-                <div sx={{ px: ['10px', '20px'], pt: ['10px', '20px'] }}>
-                  <CardTitle item={item} />
-                  <LinkText item={item} />
-                  <div sx={{ mb: 2 }}>
-                    <Date date={date} />
-                  </div>
-                </div>
-              </LinkCard>
-              <div sx={{ px: ['10px', '20px'] }}>
-                <Description item={item} />
-                <Excerpt item={item} />
-                <BodyMdx item={item} />
+            <CardBody>
+              <LinkIconBg item={item}>
                 <LinkCard item={item}>
-                  <ReadMoreButton
-                    item={item}
-                    text={uiText.cardReadMoreButton}
-                  />
+                  <div sx={{ px: ['10px', '20px'], pt: ['10px', '20px'] }}>
+                    <CardTitle item={item} />
+                    <LinkText item={item} />
+                    <div sx={{ mb: 2 }}>
+                      <Date date={date} />
+                    </div>
+                  </div>
                 </LinkCard>
+                <div sx={{ px: ['10px', '20px'] }}>
+                  <Description item={item} />
+                  <Excerpt item={item} />
+                  <BodyMdx item={item} />
+                  <LinkCard item={item}>
+                    <ReadMoreButton
+                      item={item}
+                      text={uiText.cardReadMoreButton}
+                    />
+                  </LinkCard>
+                </div>
+              </LinkIconBg>
+              <div sx={{ px: ['10px', '20px'] }}>
+                <TagsComponent tags={tags} />
               </div>
-            </LinkIconBg>
-            <div sx={{ px: ['10px', '20px'] }}>
-              <TagsComponent tags={tags} />
-            </div>
+            </CardBody>
           </CardStyle>
         )}
       </ReactHoverObserver>
