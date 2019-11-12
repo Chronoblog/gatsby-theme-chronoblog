@@ -1,27 +1,21 @@
 /** @jsx jsx */
-// import Img from 'gatsby-image';
 import BackgroundImage from 'gatsby-background-image';
+import get from 'lodash/get';
 import { jsx } from 'theme-ui';
 
-/**
- * @param {'fixed' | 'fluid'} imgType
- * @param {*} frontmatter
- */
-const getCover = (frontmatter, imgType) => {
-  if (
-    frontmatter &&
-    frontmatter.cover &&
-    frontmatter.cover.childImageSharp &&
-    frontmatter.cover.childImageSharp[imgType] &&
-    frontmatter.cover.childImageSharp[imgType] !== '' &&
-    frontmatter.cover.childImageSharp[imgType] !== 0
-  )
-    return frontmatter.cover.childImageSharp[imgType];
-  return '';
-};
-
-const CoverImage = ({ data: { frontmatter }, height = 192 }) => {
-  const coverFluidImage = getCover(frontmatter, 'fluid');
+export default ({ data, height = 192, type = 'post' }) => {
+  const coverFluidImage = get(
+    data,
+    'frontmatter.cover.childImageSharp["fluid"]',
+    undefined
+  );
+  const borderRadiusForCard =
+    type === 'card'
+      ? {
+          borderBottomLeftRadius: 0,
+          borderBottomRightRadius: 0
+        }
+      : {};
   return (
     <div>
       {coverFluidImage ? (
@@ -35,7 +29,8 @@ const CoverImage = ({ data: { frontmatter }, height = 192 }) => {
               backgroundImage: `url(${coverFluidImage.src})`,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
-              borderRadius: [0]
+              borderRadius: [0],
+              ...borderRadiusForCard
             }}
           >
             <BackgroundImage
@@ -63,6 +58,7 @@ const CoverImage = ({ data: { frontmatter }, height = 192 }) => {
                 sx={{
                   minHeight: height,
                   borderRadius: [0],
+                  ...borderRadiusForCard,
                   backdropFilter: `drop-shadow(0px 0px 20px black)`,
                   boxShadow: 'inset 0px 0px 15px black'
                 }}
@@ -76,5 +72,3 @@ const CoverImage = ({ data: { frontmatter }, height = 192 }) => {
     </div>
   );
 };
-
-export default CoverImage;

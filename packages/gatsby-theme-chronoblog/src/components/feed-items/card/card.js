@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { Link } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
+import get from 'lodash/get';
 import normalizeUrl from 'normalize-url';
 import ReactHoverObserver from 'react-hover-observer';
 import { jsx, Styled } from 'theme-ui';
@@ -219,13 +220,20 @@ const ReadMoreButton = ({ item, text }) => {
   return <div />;
 };
 
-const CardBody = ({ children, isHovering = false }) => {
+const CardBody = ({ item, children }) => {
+  const coverFluidImage = get(
+    item,
+    'frontmatter.cover.childImageSharp["fluid"]',
+    undefined
+  );
   return (
     <div
       sx={{
         backgroundColor: 'background',
         pb: ['5px', '10px'],
-        borderRadius: [0]
+        borderRadius: [0],
+        borderTopLeftRadius: coverFluidImage ? 0 : null,
+        borderTopRightRadius: coverFluidImage ? 0 : null
       }}
     >
       {children}
@@ -255,9 +263,9 @@ export default ({ item, uiText }) => {
         {({ isHovering }) => (
           <CardStyle isHovering={isHovering}>
             <LinkCard item={item}>
-              <CoverImage data={item} />
+              <CoverImage data={item} type="card" />
             </LinkCard>
-            <CardBody>
+            <CardBody item={item}>
               <LinkIconBg item={item}>
                 <LinkCard item={item}>
                   <div sx={{ px: ['10px', '20px'], pt: ['10px', '20px'] }}>
