@@ -23,13 +23,11 @@ const getCover = (frontmatter, imgType) => {
 const CoverImage = ({ data: { frontmatter }, height = 192 }) => {
   const coverFluidImage = getCover(frontmatter, 'fluid');
   return (
-    <div sx={{ backgroundClip: 'padding-box', borderRadius: [0] }}>
+    <div>
       {coverFluidImage ? (
         <div
           sx={{
-            maxHeight: height,
-            backgroundClip: 'padding-box',
-            borderRadius: [0]
+            maxHeight: height
           }}
         >
           <div
@@ -37,7 +35,6 @@ const CoverImage = ({ data: { frontmatter }, height = 192 }) => {
               backgroundImage: `url(${coverFluidImage.src})`,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
-              backgroundClip: 'padding-box',
               borderRadius: [0]
             }}
           >
@@ -51,17 +48,13 @@ const CoverImage = ({ data: { frontmatter }, height = 192 }) => {
                       backgroundSize: 'auto auto',
                       backdropFilter: `blur(5px) contrast(50%)`,
                       WebkitBackdropFilter: `blur(5px) contrast(50%)`,
-                      // borderRadius: [0],
-                      borderRadius: 'inherit',
-                      backgroundClip: 'padding-box'
+                      borderRadius: 'inherit'
                     }
                   : {
                       backgroundSize: 'contain',
                       backdropFilter: `blur(5px) contrast(50%)`,
                       WebkitBackdropFilter: `blur(5px) contrast(50%)`,
-                      // borderRadius: [0],
-                      borderRadius: 'inherit',
-                      backgroundClip: 'padding-box'
+                      borderRadius: 'inherit'
                     }
               }
               fluid={coverFluidImage}
@@ -70,7 +63,6 @@ const CoverImage = ({ data: { frontmatter }, height = 192 }) => {
                 sx={{
                   minHeight: height,
                   borderRadius: [0],
-                  backgroundClip: 'padding-box',
                   backdropFilter: `drop-shadow(0px 0px 20px black)`,
                   boxShadow: 'inset 0px 0px 15px black'
                 }}
