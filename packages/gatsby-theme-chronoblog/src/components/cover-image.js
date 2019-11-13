@@ -3,7 +3,8 @@ import BackgroundImage from 'gatsby-background-image';
 import get from 'lodash/get';
 import { jsx } from 'theme-ui';
 
-export default ({ data, height = 192, type = 'post' }) => {
+export default ({ data, type = 'post' }) => {
+  const height = 366;
   const coverFluidImage = get(
     data,
     'frontmatter.cover.childImageSharp["fluid"]',
