@@ -10,4 +10,4 @@ tags: ['video', 'note']
   frameborder="0"
 ></iframe>
 
-YouTube video
+An example of how you can embed YouTube video in a note.
