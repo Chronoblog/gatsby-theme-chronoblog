@@ -55,10 +55,10 @@ export default ({ children, ...props }) => {
             boxSizing: 'border-box'
           },
           body: {
-            margin: 0
-          },
-          overflowWrap: 'break-word',
-          wordWrap: 'break-word'
+            margin: 0,
+            overflowWrap: 'break-word',
+            wordWrap: 'break-word'
+          }
         }}
       />
       <SEO />
