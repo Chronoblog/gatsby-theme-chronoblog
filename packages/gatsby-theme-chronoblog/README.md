@@ -20,6 +20,10 @@ At the same time, this is still a blog, Chronoblog can be used as a theme for cr
 npm i gatsby-theme-chronoblog
 ```
 
+## Icons
+
+Brands svg icons from fontawesome [https://github.com/FortAwesome/react-fontawesome](https://github.com/FortAwesome/react-fontawesome)
+
 ## TODO
 
 Community

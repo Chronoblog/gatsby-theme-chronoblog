@@ -27,6 +27,10 @@
   "dependencies": {
     "@babel/core": "^7.6.4",
     "@emotion/core": "^10.0.22",
+    "@fortawesome/fontawesome-svg-core": "^1.2.25",
+    "@fortawesome/free-brands-svg-icons": "^5.11.2",
+    "@fortawesome/free-solid-svg-icons": "^5.11.2",
+    "@fortawesome/react-fontawesome": "^0.1.7",
     "@mdx-js/mdx": "^1.5.1",
     "@mdx-js/react": "^1.5.1",
     "@reach/router": "^1.2.1",

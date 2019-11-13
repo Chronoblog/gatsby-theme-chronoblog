@@ -86,7 +86,7 @@ export const Post = ({ data }) => {
       <main>
         <article>
           <header>
-            <CoverImage data={data.mdx} borderRadius="4px" />
+            <CoverImage data={data.mdx} type="post" height={384} />
             <PostTitle data={data} />
             <Date date={data.mdx.frontmatter.date} />
             <div sx={{ mt: 20, mb: 3 }}>
