@@ -2,13 +2,7 @@
 import { Global } from '@emotion/core';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
-import {
-  faAt,
-  faEnvelope,
-  faMoon,
-  faPhone,
-  faSun
-} from '@fortawesome/free-solid-svg-icons';
+import { faAt, faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { MDXProvider } from '@mdx-js/react';
 import { Link as LinkGatsby } from 'gatsby';
@@ -22,7 +16,7 @@ import LightDarkSwitchButton from './light-dark-switch-button';
 import SEO from './seo';
 import Tags from './tags';
 
-library.add(fab, faEnvelope, faPhone, faAt, faSun, faMoon);
+library.add(fab, faEnvelope, faPhone, faAt);
 
 const Link = ({ to, ...props }) => <LinkGatsby to={to} {...props} />;
 const A = ({ children, ...props }) => <a {...props}>{children}</a>;
