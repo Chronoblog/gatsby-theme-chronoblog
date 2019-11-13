@@ -17,7 +17,8 @@ const theme = {
     card: 6,
     button: 6,
     search: 6,
-    code: 6
+    code: 6,
+    img: 6
   },
   fonts: {
     body: '-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif',

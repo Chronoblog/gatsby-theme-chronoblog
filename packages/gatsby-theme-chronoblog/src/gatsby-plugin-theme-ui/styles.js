@@ -19,7 +19,8 @@ export default {
   },
   img: {
     maxWidth: '100%',
-    height: 'auto'
+    height: 'auto',
+    borderRadius: 'img'
   },
   Layout: {
     fontFamily: 'body',
