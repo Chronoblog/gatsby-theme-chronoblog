@@ -78,7 +78,7 @@ export { genTitle, genUrl };
  * @property {string=} slug
  * @property {string=} image
  * @property {string=} canonical
- * @property {string=} twitterCardType
+ * @property {'summary' | 'summary_large_image' | 'app' | 'player'=} twitterCardType
  * @property {React.ReactNode=} children
  */
 
