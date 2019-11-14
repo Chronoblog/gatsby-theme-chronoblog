@@ -79,5 +79,11 @@ export default {
   },
   hr: {
     marginY: 40
+  },
+  blockquote: {
+    p: {
+      fontSize: [2]
+    },
+    py: 1
   }
 };
