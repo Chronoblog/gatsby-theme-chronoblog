@@ -15,6 +15,7 @@ export const postQuery = graphql`
         description
         tags
         cover {
+          absolutePath
           childImageSharp {
             fluid(maxWidth: 768, quality: 90) {
               ...GatsbyImageSharpFluid_withWebp

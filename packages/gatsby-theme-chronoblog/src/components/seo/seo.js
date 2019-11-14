@@ -59,12 +59,30 @@ const genDescription = (siteMeta, propsDescription = '') => {
  *
  * @param {object} siteMeta
  * @param {string=} siteMeta.siteImage
+ * @param {string=} siteMeta.siteUrl
+ * @param {string=} siteMeta.pathPrefix
  * @param {string} propsImage
  * @returns {string}
  */
 const genImage = (siteMeta, propsImage = '') => {
-  if (propsImage !== '') return propsImage;
-  if (siteMeta && siteMeta.siteImage) return siteMeta.siteImage;
+  const metaUrl = siteMeta.siteUrl ? siteMeta.siteUrl : '';
+  const prefix = siteMeta.pathPrefix ? siteMeta.pathPrefix : '/';
+  //
+  if (propsImage !== '') {
+    // if (propsImage) {
+    //   let finalUrl = urlJoin(metaUrl, '/', prefix, '/', propsImage);
+    //   finalUrl = normalizeUrl(finalUrl);
+    //   finalUrl = finalUrl.toLowerCase();
+    //   return finalUrl;
+    // }
+    return propsImage;
+  }
+  if (siteMeta && siteMeta.siteImage) {
+    let finalUrl = urlJoin(metaUrl, '/', prefix, '/', siteMeta.siteImage);
+    finalUrl = normalizeUrl(finalUrl);
+    finalUrl = finalUrl.toLowerCase();
+    return finalUrl;
+  }
   return '';
 };
 
