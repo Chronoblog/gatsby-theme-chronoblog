@@ -102,8 +102,10 @@ const SEO = ({
   const siteLanguage = siteMeta.siteLanguage || 'en';
   const ogLanguage = siteMeta.ogLanguage || 'en_US';
   const metaImage = genImage(siteMeta, image);
-  const twitter = siteMeta.twitter || '';
-  // const author = siteMeta.author || twitter;
+  //
+  const twitterCreator = siteMeta.twitterCreator || '';
+  const twitterSite = siteMeta.twitterSite || '';
+  //
   const metaCanonical = genUrl(siteMeta, canonical);
 
   return (
@@ -131,7 +133,8 @@ const SEO = ({
       <meta name="twitter:card" content={twitterCardType} />
       <meta name="twitter:title" content={metaTitle} />
       <meta name="twitter:description" content={metaDescription} />
-      <meta name="twitter:creator" content={twitter} />
+      <meta name="twitter:creator" content={twitterCreator} />
+      <meta name="twitter:site" content={twitterSite} />
       <meta name="twitter:url" content={metaUrl} />
       <meta name="twitter:image" content={metaImage} />
       <meta name="twitter:image:alt" content={metaTitle} />

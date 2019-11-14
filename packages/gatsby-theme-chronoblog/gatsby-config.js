@@ -31,7 +31,8 @@ module.exports = (options) => {
       siteLanguage: 'en',
       ogLanguage: `en_US`,
       author: 'Name Placeholder',
-      twitter: '',
+      twitterSite: '',
+      twitterCreator: '',
       uiText: {
         feedShowMoreButton,
         feedSearchPlaceholder,

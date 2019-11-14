@@ -9,7 +9,8 @@ module.exports = {
     siteLanguage: 'en',
     ogLanguage: `en_US`,
     author: 'Site Author', // for example - 'Ivan Ganev'
-    twitter: '' // for twitter cards meta data, example - '@ganevru'
+    twitterSite: '', // web site account on twitter for cards meta data, example - '@ganevru'
+    twitterCreator: '' // creator account on twitter for cards meta data, example - '@ganevru'
   },
   plugins: [
     {
