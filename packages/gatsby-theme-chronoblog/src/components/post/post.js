@@ -58,7 +58,11 @@ export const Post = ({ data }) => {
     data.mdx.frontmatter.description,
     data.mdx.excerpt
   );
-  const imageAbsolutePath = get(data, 'mdx.frontmatter.cover.absolutePath', '');
+  const imagePath = get(
+    data,
+    'mdx.frontmatter.cover.childImageSharp.fluid.src',
+    ''
+  );
   //
   return (
     <Layout>
@@ -66,7 +70,7 @@ export const Post = ({ data }) => {
         title={data.mdx.frontmatter.title}
         slug={data.mdx.fields.slug}
         description={description}
-        image={imageAbsolutePath}
+        image={imagePath}
       />
       <main>
         <article>

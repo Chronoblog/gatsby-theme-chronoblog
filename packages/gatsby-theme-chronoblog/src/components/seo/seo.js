@@ -69,13 +69,10 @@ const genImage = (siteMeta, propsImage = '') => {
   const prefix = siteMeta.pathPrefix ? siteMeta.pathPrefix : '/';
   //
   if (propsImage !== '') {
-    // if (propsImage) {
-    //   let finalUrl = urlJoin(metaUrl, '/', prefix, '/', propsImage);
-    //   finalUrl = normalizeUrl(finalUrl);
-    //   finalUrl = finalUrl.toLowerCase();
-    //   return finalUrl;
-    // }
-    return propsImage;
+    let finalUrl = urlJoin(metaUrl, '/', prefix, '/', propsImage);
+    finalUrl = normalizeUrl(finalUrl);
+    finalUrl = finalUrl.toLowerCase();
+    return finalUrl;
   }
   if (siteMeta && siteMeta.siteImage) {
     let finalUrl = urlJoin(metaUrl, '/', prefix, '/', siteMeta.siteImage);
