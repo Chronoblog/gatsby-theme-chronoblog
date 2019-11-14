@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.13](https://github.com/Ganevru/gatsby-theme-chronoblog/compare/chronoblog-netlify-cms@1.0.12...chronoblog-netlify-cms@1.0.13) (2019-11-14)
+
+**Note:** Version bump only for package chronoblog-netlify-cms
+
+
+
+
+
 ## [1.0.12](https://github.com/Ganevru/gatsby-theme-chronoblog/compare/chronoblog-netlify-cms@1.0.11...chronoblog-netlify-cms@1.0.12) (2019-11-14)
 
 **Note:** Version bump only for package chronoblog-netlify-cms
