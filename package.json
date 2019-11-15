@@ -3,16 +3,21 @@
   "private": true,
   "license": "MIT",
   "author": "Ivan Ganev <ganevio92@gmail.com>",
-  "workspaces": ["packages/*", "starters/*"],
+  "workspaces": [
+    "packages/*",
+    "starters/*"
+  ],
   "scripts": {
     "build:chronoblog": "yarn clean && yarn workspace chronoblog build",
     "build:chronoblog-netlify-cms": "yarn clean && yarn workspace chronoblog-netlify-cms build",
     "build:minimal": "yarn clean && yarn workspace minimal build",
+    "build:tests": "yarn clean && yarn workspace tests build",
     "clean": "yarn workspaces run clean",
     "lerna": "lerna",
     "start:chronoblog": "yarn clean && yarn workspace chronoblog start",
     "start:chronoblog-netlify-cms": "yarn clean && yarn workspace chronoblog-netlify-cms start",
     "start:minimal": "yarn clean && yarn workspace minimal start",
+    "start:tests": "yarn clean && yarn workspace tests start",
     "test": "yarn clean && jest",
     "watch": "yarn clean && jest --watch"
   },
