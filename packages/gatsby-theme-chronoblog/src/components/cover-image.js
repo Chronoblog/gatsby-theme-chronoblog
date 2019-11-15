@@ -10,6 +10,8 @@ export default ({ data, type = 'post' }) => {
     'frontmatter.cover.childImageSharp["fluid"]',
     undefined
   );
+  if (!coverFluidImage) return <div />;
+  //
   const borderRadiusForCard =
     type === 'card'
       ? {
@@ -17,59 +19,42 @@ export default ({ data, type = 'post' }) => {
           borderBottomRightRadius: 0
         }
       : {};
+  //
   return (
-    <div>
-      {coverFluidImage ? (
-        <div
+    <div
+      sx={{
+        maxHeight: height
+      }}
+    >
+      <div
+        sx={{
+          backgroundImage: `url(${coverFluidImage.src})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          borderRadius: 'card',
+          ...borderRadiusForCard
+        }}
+      >
+        <BackgroundImage
           sx={{
-            maxHeight: height
+            backgroundSize: 'contain',
+            backdropFilter: `blur(5px) contrast(50%)`,
+            WebkitBackdropFilter: `blur(5px) contrast(50%)`,
+            borderRadius: 'inherit'
           }}
+          fluid={coverFluidImage}
         >
           <div
             sx={{
-              backgroundImage: `url(${coverFluidImage.src})`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
+              minHeight: height,
               borderRadius: 'card',
-              ...borderRadiusForCard
+              ...borderRadiusForCard,
+              backdropFilter: `drop-shadow(0px 0px 20px black)`,
+              boxShadow: 'inset 0px 0px 15px black'
             }}
-          >
-            <BackgroundImage
-              // if image is very small - apply backgroundSize: 'auto auto'
-              // in other cases - backgroundSize: 'contain'
-              sx={
-                coverFluidImage.presentationHeight <= height &&
-                coverFluidImage.presentationWidth <= 768
-                  ? {
-                      backgroundSize: 'auto auto',
-                      backdropFilter: `blur(5px) contrast(50%)`,
-                      WebkitBackdropFilter: `blur(5px) contrast(50%)`,
-                      borderRadius: 'inherit'
-                    }
-                  : {
-                      backgroundSize: 'contain',
-                      backdropFilter: `blur(5px) contrast(50%)`,
-                      WebkitBackdropFilter: `blur(5px) contrast(50%)`,
-                      borderRadius: 'inherit'
-                    }
-              }
-              fluid={coverFluidImage}
-            >
-              <div
-                sx={{
-                  minHeight: height,
-                  borderRadius: 'card',
-                  ...borderRadiusForCard,
-                  backdropFilter: `drop-shadow(0px 0px 20px black)`,
-                  boxShadow: 'inset 0px 0px 15px black'
-                }}
-              />
-            </BackgroundImage>
-          </div>
-        </div>
-      ) : (
-        ''
-      )}
+          />
+        </BackgroundImage>
+      </div>
     </div>
   );
 };
