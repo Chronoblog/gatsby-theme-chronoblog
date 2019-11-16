@@ -28,7 +28,9 @@ export default ({ data, type = 'post' }) => {
     WebkitBackdropFilter: `blur(5px) contrast(50%)`,
     borderRadius: 'inherit'
   };
-  const backgroundSize = { backgroundSize: 'contain' };
+  let backgroundSize = { backgroundSize: 'contain' };
+  if (coverFluidImage.presentationWidth < 320)
+    backgroundSize = { backgroundSize: 'auto auto' };
   //
   return (
     <div
