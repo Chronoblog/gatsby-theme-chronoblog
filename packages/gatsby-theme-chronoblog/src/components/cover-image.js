@@ -4,14 +4,17 @@ import get from 'lodash/get';
 import { jsx } from 'theme-ui';
 
 export default ({ data, type = 'post' }) => {
-  const height = 366;
+  //
   const coverFluidImage = get(
     data,
     'frontmatter.cover.childImageSharp["fluid"]',
     undefined
   );
   if (!coverFluidImage) return <div />;
+  const imageAlt = get(data, 'frontmatter.title', '');
   //
+  const height = 366;
+  const mobileHeight = height / 2;
   const borderRadiusForCard =
     type === 'card'
       ? {
@@ -20,10 +23,17 @@ export default ({ data, type = 'post' }) => {
         }
       : {};
   //
+  const blurStyle = {
+    backdropFilter: `blur(5px) contrast(50%)`,
+    WebkitBackdropFilter: `blur(5px) contrast(50%)`,
+    borderRadius: 'inherit'
+  };
+  const backgroundSize = { backgroundSize: 'contain' };
+  //
   return (
     <div
       sx={{
-        maxHeight: height
+        maxHeight: [mobileHeight, height]
       }}
     >
       <div
@@ -36,17 +46,16 @@ export default ({ data, type = 'post' }) => {
         }}
       >
         <BackgroundImage
-          sx={{
-            backgroundSize: 'contain',
-            backdropFilter: `blur(5px) contrast(50%)`,
-            WebkitBackdropFilter: `blur(5px) contrast(50%)`,
-            borderRadius: 'inherit'
+          style={{
+            ...blurStyle,
+            ...backgroundSize
           }}
+          alt={imageAlt}
           fluid={coverFluidImage}
         >
           <div
             sx={{
-              minHeight: height,
+              minHeight: [mobileHeight, height],
               borderRadius: 'card',
               ...borderRadiusForCard,
               backdropFilter: `drop-shadow(0px 0px 20px black)`,
