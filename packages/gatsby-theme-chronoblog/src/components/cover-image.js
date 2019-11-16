@@ -58,13 +58,18 @@ export default ({ data, type = 'post' }) => {
         >
           <div
             sx={{
-              minHeight: [mobileHeight, height],
               borderRadius: 'card',
               ...borderRadiusForCard,
               backdropFilter: `drop-shadow(0px 0px 20px black)`,
               boxShadow: 'inset 0px 0px 15px black'
             }}
-          />
+          >
+            <div
+              sx={{
+                minHeight: [mobileHeight, height]
+              }}
+            />
+          </div>
         </BackgroundImage>
       </div>
     </div>
