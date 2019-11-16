@@ -51,6 +51,7 @@ export default ({ data, type = 'post' }) => {
             ...backgroundSize
           }}
           alt={imageAlt}
+          title={imageAlt}
           fluid={coverFluidImage}
         >
           <div
