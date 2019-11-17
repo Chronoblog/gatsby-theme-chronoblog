@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { useBreakpointIndex } from '@theme-ui/match-media';
+import { useBreakpointIndex, useResponsiveValue } from '@theme-ui/match-media';
 import BackgroundImage from 'gatsby-background-image';
 import get from 'lodash/get';
 import { jsx } from 'theme-ui';
@@ -31,9 +31,18 @@ export default ({ data, type = 'post' }) => {
   };
   //
   const breakpointIndex = useBreakpointIndex();
-  let backgroundSize = {
-    backgroundSize: `${coverFluidImage.presentationWidth}px auto`
-  };
+  // 'contain' - default value
+  let backgroundSize = { backgroundSize: 'contain' };
+  // if img small - 'auto auto'
+  const containerMaxWidth = useResponsiveValue((theme) => [
+    theme.styles.Container.maxWidth
+  ]);
+  if (
+    coverFluidImage.presentationWidth < containerMaxWidth &&
+    coverFluidImage.presentationHeight < height
+  )
+    backgroundSize = { backgroundSize: 'auto auto' };
+  // for small media - 'contain'
   if (breakpointIndex === 0) backgroundSize = { backgroundSize: 'contain' };
   //
   return (
