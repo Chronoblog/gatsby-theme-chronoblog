@@ -2372,6 +2372,11 @@
   resolved "https://registry.yarnpkg.com/@styled-system/css/-/css-5.0.23.tgz#35ad4f34fe0fec9b011a5468ac0821f12f5e4b1a"
   integrity sha512-yC3S0Iox8OTPAyrP1t5yY9nURUICcUdhVYOkwffftuxa5+txxI4qkT2e9JNCc2aaem+DG8mlXTdnYefjqge5wg==
 
+"@theme-ui/match-media@^0.2.49":
+  version "0.2.49"
+  resolved "https://registry.yarnpkg.com/@theme-ui/match-media/-/match-media-0.2.49.tgz#3119a9070e5cf55a9e840dfae9484f07f99202c1"
+  integrity sha512-zlXg3x2Didzavu+9rwuN6cWTYc1snXr0NpzKJIQSY2fLQ2Ob0ZEbKkqSkewPTtr7DginWrdSy9/ybGDUDMW6vg==
+
 "@theme-ui/preset-base@^0.2.44":
   version "0.2.44"
   resolved "https://registry.yarnpkg.com/@theme-ui/preset-base/-/preset-base-0.2.44.tgz#ae8e938288a534f129111a56b1971e1cc12ddc9d"

@@ -1,4 +1,5 @@
 /** @jsx jsx */
+import { useBreakpointIndex } from '@theme-ui/match-media';
 import BackgroundImage from 'gatsby-background-image';
 import get from 'lodash/get';
 import { jsx } from 'theme-ui';
@@ -28,9 +29,12 @@ export default ({ data, type = 'post' }) => {
     WebkitBackdropFilter: `blur(5px) contrast(50%)`,
     borderRadius: 'inherit'
   };
-  let backgroundSize = { backgroundSize: 'contain' };
-  if (coverFluidImage.presentationWidth < 320)
-    backgroundSize = { backgroundSize: 'auto auto' };
+  //
+  const breakpointIndex = useBreakpointIndex();
+  let backgroundSize = {
+    backgroundSize: `${coverFluidImage.presentationWidth}px auto`
+  };
+  if (breakpointIndex === 0) backgroundSize = { backgroundSize: 'contain' };
   //
   return (
     <div

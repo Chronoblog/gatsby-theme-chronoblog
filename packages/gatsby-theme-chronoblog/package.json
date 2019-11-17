@@ -34,6 +34,7 @@
     "@mdx-js/mdx": "^1.5.1",
     "@mdx-js/react": "^1.5.1",
     "@reach/router": "^1.2.1",
+    "@theme-ui/match-media": "^0.2.49",
     "@theme-ui/preset-base": "^0.2.44",
     "@theme-ui/prism": "^0.2.40",
     "debug": "^4.1.1",
