@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { useBreakpointIndex } from '@theme-ui/match-media';
+import { useBreakpointIndex, useResponsiveValue } from '@theme-ui/match-media';
 import BackgroundImage from 'gatsby-background-image';
 import get from 'lodash/get';
 import { jsx } from 'theme-ui';
@@ -14,8 +14,16 @@ export default ({ data, type = 'post' }) => {
   if (!coverFluidImage) return <div />;
   const imageAlt = get(data, 'frontmatter.title', '');
   //
-  const height = 366;
-  const mobileHeight = height / 2;
+  let breakpointIndex = 0;
+  try {
+    breakpointIndex = useBreakpointIndex();
+  } catch (error) {
+    breakpointIndex = 0;
+  }
+  //
+  let height = 366;
+  if (breakpointIndex === 0) height = 183;
+  //
   const borderRadiusForCard =
     type === 'card'
       ? {
@@ -30,32 +38,29 @@ export default ({ data, type = 'post' }) => {
     borderRadius: 'inherit'
   };
   //
-  let breakpointIndex = 0;
-  try {
-    breakpointIndex = useBreakpointIndex();
-  } catch (error) {
-    console.log(error);
-    breakpointIndex = 0;
-  }
   // 'contain' - default value
   let backgroundSize = { backgroundSize: 'contain' };
   // if img small - 'auto auto'
-  // const containerMaxWidth = useResponsiveValue((theme) => [
-  //   theme.styles.Container.maxWidth
-  // ]);
+  let containerMaxWidth = 768;
+  try {
+    containerMaxWidth = useResponsiveValue((theme) => [
+      theme.styles.Container.maxWidth
+    ]);
+  } catch (error) {
+    containerMaxWidth = 768;
+  }
   if (
-    coverFluidImage.presentationWidth < 768 &&
+    coverFluidImage.presentationWidth < containerMaxWidth &&
     coverFluidImage.presentationHeight < height
   )
     backgroundSize = { backgroundSize: 'auto auto' };
   // for small media - 'contain'
-  if (!breakpointIndex || breakpointIndex === 0)
-    backgroundSize = { backgroundSize: 'contain' };
+  if (breakpointIndex === 0) backgroundSize = { backgroundSize: 'contain' };
   //
   return (
     <div
       sx={{
-        maxHeight: [mobileHeight, height]
+        maxHeight: [height]
       }}
     >
       <BackgroundImage
@@ -86,7 +91,7 @@ export default ({ data, type = 'post' }) => {
           >
             <div
               sx={{
-                minHeight: [mobileHeight, height]
+                minHeight: [height]
               }}
             />
           </div>
