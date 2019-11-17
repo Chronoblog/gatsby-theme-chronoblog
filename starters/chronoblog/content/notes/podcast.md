@@ -12,4 +12,4 @@ tags: ['note', 'podcast']
   src="https://player.simplecast.com/62a1da0d-f39d-4d65-97d7-8faa48ae046f?dark=false"
 ></iframe>
 
-An example of how to embed podcasts in a note.
+An example of how to embed podcast (from simplecast) in a note.
