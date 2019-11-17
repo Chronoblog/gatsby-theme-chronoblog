@@ -51,9 +51,9 @@ export default ({ data, type = 'post' }) => {
         maxHeight: [mobileHeight, height]
       }}
     >
-      <div
-        sx={{
-          backgroundImage: `url(${coverFluidImage.src})`,
+      <BackgroundImage
+        fluid={coverFluidImage}
+        style={{
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           borderRadius: 'card',
@@ -84,7 +84,7 @@ export default ({ data, type = 'post' }) => {
             />
           </div>
         </BackgroundImage>
-      </div>
+      </BackgroundImage>
     </div>
   );
 };
