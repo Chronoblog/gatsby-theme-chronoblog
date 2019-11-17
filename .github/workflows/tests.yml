@@ -31,3 +31,6 @@ jobs:
 
       - name: yarn build:minimal
         run: yarn build:minimal
+
+      - name: yarn build:tests
+        run: yarn build:tests

@@ -12,7 +12,7 @@
     "start": "gatsby develop"
   },
   "dependencies": {
-    "gatsby": "^2.17.11",
+    "gatsby": "^2.17.15",
     "gatsby-plugin-google-analytics": "^2.1.23",
     "gatsby-plugin-manifest": "^2.2.27",
     "gatsby-plugin-netlify": "^2.1.17",
@@ -20,8 +20,8 @@
     "gatsby-remark-relative-images": "^0.2.3",
     "gatsby-theme-chronoblog": "^0.2.8",
     "netlify-cms-app": "^2.9.7",
-    "react": "^16.10.2",
-    "react-dom": "^16.10.2"
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
   },
   "devDependencies": {
     "eslint": "^5.16.0",
