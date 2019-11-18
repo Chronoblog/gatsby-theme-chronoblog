@@ -1,8 +1,10 @@
 /** @jsx jsx */
-import { useBreakpointIndex, useResponsiveValue } from '@theme-ui/match-media';
-import BackgroundImage from 'gatsby-background-image';
+import { useBreakpointIndex } from '@theme-ui/match-media';
+import GatsbyBackgroundImage from 'gatsby-background-image';
 import get from 'lodash/get';
 import { jsx } from 'theme-ui';
+
+const BackgroundImage = (props) => <GatsbyBackgroundImage {...props} />;
 
 const CoverImageBase = ({
   height,
@@ -19,7 +21,7 @@ const CoverImageBase = ({
     >
       <BackgroundImage
         fluid={coverFluidImage}
-        style={{
+        sx={{
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           borderRadius: 'card',
@@ -27,7 +29,7 @@ const CoverImageBase = ({
         }}
       >
         <BackgroundImage
-          style={{
+          sx={{
             backdropFilter: `blur(5px) contrast(50%)`,
             WebkitBackdropFilter: `blur(5px) contrast(50%)`,
             borderRadius: 'inherit',
@@ -71,7 +73,7 @@ export default ({ data, type = 'post' }) => {
   let breakpointIndex = 0;
   try {
     breakpointIndex = useBreakpointIndex();
-  } catch (error) {
+  } catch {
     breakpointIndex = 0;
   }
   //
@@ -86,23 +88,16 @@ export default ({ data, type = 'post' }) => {
         }
       : {};
   //
+  const containerMaxWidth = 768;
+  //
   // 'contain' - default value
   let backgroundSize = { backgroundSize: 'contain' };
   // if img small - 'auto auto'
-  let containerMaxWidth = 768;
-  try {
-    containerMaxWidth = useResponsiveValue((theme) => [
-      theme.styles.Container.maxWidth
-    ]);
-  } catch (error) {
-    containerMaxWidth = 768;
-  }
   if (
     coverFluidImage.presentationWidth < containerMaxWidth &&
     coverFluidImage.presentationHeight < height
-  ) {
+  )
     backgroundSize = { backgroundSize: 'auto auto' };
-  }
   // for small media - 'contain'
   if (breakpointIndex === 0) backgroundSize = { backgroundSize: 'contain' };
   //
