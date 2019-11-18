@@ -1,10 +1,8 @@
 /** @jsx jsx */
 import { useBreakpointIndex } from '@theme-ui/match-media';
-import GatsbyBackgroundImage from 'gatsby-background-image';
+import BackgroundImage from 'gatsby-background-image';
 import get from 'lodash/get';
 import { jsx } from 'theme-ui';
-
-const BackgroundImage = (props) => <GatsbyBackgroundImage {...props} />;
 
 const CoverImageBase = ({
   data,
@@ -88,7 +86,6 @@ export default ({ data, type = 'post' }) => {
   const heightMain = 366;
   const heightMobile = 183;
   const heightArray = [heightMobile, heightMain];
-  // if (breakpointIndex === 0) height = 183;
   //
   const containerMaxWidth = 768;
   //
@@ -97,28 +94,17 @@ export default ({ data, type = 'post' }) => {
   // if img small - 'auto auto'
   // if (
   //   coverFluidImage.presentationWidth < containerMaxWidth &&
-  //   coverFluidImage.presentationHeight < height
+  //   coverFluidImage.presentationHeight < heightMain
   // )
   //   backgroundSize = { backgroundSize: 'auto auto' };
   // for small media - 'contain'
   // if (breakpointIndex === 0) backgroundSize = { backgroundSize: 'contain' };
   //
-  if (breakpointIndex === 0) {
-    return (
-      <CoverImageBase
-        data={data}
-        type={type}
-        height={heightArray}
-        coverFluidImage={coverFluidImage}
-        backgroundSize={{ backgroundSize: 'contain' }}
-      />
-    );
-  }
-  //
   if (
+    breakpointIndex === 0 &&
     coverFluidImage.presentationWidth < containerMaxWidth &&
-    coverFluidImage.presentationHeight < heightMain
-  ) {
+    coverFluidImage.presentationHeight < heightMobile
+  )
     return (
       <CoverImageBase
         data={data}
@@ -128,7 +114,31 @@ export default ({ data, type = 'post' }) => {
         backgroundSize={{ backgroundSize: 'auto auto' }}
       />
     );
-  }
+  //
+  if (breakpointIndex === 0)
+    return (
+      <CoverImageBase
+        data={data}
+        type={type}
+        height={heightArray}
+        coverFluidImage={coverFluidImage}
+        backgroundSize={{ backgroundSize: 'contain' }}
+      />
+    );
+  //
+  if (
+    coverFluidImage.presentationWidth < containerMaxWidth &&
+    coverFluidImage.presentationHeight < heightMain
+  )
+    return (
+      <CoverImageBase
+        data={data}
+        type={type}
+        height={heightArray}
+        coverFluidImage={coverFluidImage}
+        backgroundSize={{ backgroundSize: 'auto auto' }}
+      />
+    );
   //
   return (
     <CoverImageBase
