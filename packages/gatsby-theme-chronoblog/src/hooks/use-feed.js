@@ -55,16 +55,16 @@ const useFeed = () => {
             hide
             cover {
               childImageSharp {
-                fluid(maxWidth: 768, quality: 90) {
+                fluid(maxWidth: 768, quality: 100) {
                   ...GatsbyImageSharpFluid_withWebp
                   presentationWidth
                   presentationHeight
                   src
                 }
-                fixed(width: 768, quality: 90) {
+                fixed(width: 768, quality: 100) {
                   ...GatsbyImageSharpFixed_withWebp
                 }
-                resize(width: 768, quality: 90) {
+                resize(width: 768, quality: 100) {
                   src
                 }
               }
