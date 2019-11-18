@@ -69,3 +69,4 @@ Other
 - social media icons (in MDX?), [react-fontawesome](https://github.com/FortAwesome/react-fontawesome) ?
 - author banner component for post footer. A component that takes information from `gatsby-config`, about the author’s name, social networks, his avatar and background img.
 - The component with the buttons “next ->” and “<- previous”, working with all types of materials.
+- include in starters [github.com/raae/gatsby-remark-oembed#example-site](https://github.com/raae/gatsby-remark-oembed#example-site) ?
