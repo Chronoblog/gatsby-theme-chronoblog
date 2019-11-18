@@ -19,9 +19,9 @@ const CoverImageBase = ({
         maxHeight: [height]
       }}
     >
-      <BackgroundImage
-        fluid={coverFluidImage}
+      <div
         sx={{
+          backgroundImage: `url(${coverFluidImage})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           borderRadius: 'card',
@@ -29,7 +29,7 @@ const CoverImageBase = ({
         }}
       >
         <BackgroundImage
-          sx={{
+          style={{
             backdropFilter: `blur(5px) contrast(50%)`,
             WebkitBackdropFilter: `blur(5px) contrast(50%)`,
             borderRadius: 'inherit',
@@ -54,7 +54,7 @@ const CoverImageBase = ({
             />
           </div>
         </BackgroundImage>
-      </BackgroundImage>
+      </div>
     </div>
   );
 };
