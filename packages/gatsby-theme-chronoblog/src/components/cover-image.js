@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { useBreakpointIndex } from '@theme-ui/match-media';
+import { useBreakpointIndex, useResponsiveValue } from '@theme-ui/match-media';
 import BackgroundImage from 'gatsby-background-image';
 import get from 'lodash/get';
 import { jsx } from 'theme-ui';
@@ -87,22 +87,18 @@ export default ({ data, type = 'post' }) => {
   const heightMobile = 183;
   const heightArray = [heightMobile, heightMain];
   //
-  const containerMaxWidth = 768;
-  //
-  // 'contain' - default value
-  // let backgroundSize = { backgroundSize: 'contain' };
-  // if img small - 'auto auto'
-  // if (
-  //   coverFluidImage.presentationWidth < containerMaxWidth &&
-  //   coverFluidImage.presentationHeight < heightMain
-  // )
-  //   backgroundSize = { backgroundSize: 'auto auto' };
-  // for small media - 'contain'
-  // if (breakpointIndex === 0) backgroundSize = { backgroundSize: 'contain' };
+  let containerMaxWidth = 768;
+  try {
+    containerMaxWidth = useResponsiveValue((theme) => [
+      theme.styles.Container.maxWidth
+    ]);
+  } catch {
+    containerMaxWidth = 768;
+  }
   //
   if (
     breakpointIndex === 0 &&
-    coverFluidImage.presentationWidth < containerMaxWidth &&
+    coverFluidImage.presentationWidth < 320 &&
     coverFluidImage.presentationHeight < heightMobile
   )
     return (
