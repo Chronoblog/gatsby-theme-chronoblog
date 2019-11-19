@@ -113,6 +113,17 @@ const createTagsStatistics = (tagsArray) => {
 };
 
 /**
+ * @param {TagWithStat[]} array
+ */
+const sortTags = (array) => {
+  array = _.sortBy(array, ['tagName']);
+  array = array.reverse();
+  array = _.sortBy(array, ['tagStat']);
+  array = array.reverse();
+  return array;
+};
+
+/**
  * @typedef {object} Props
  * @property {'feed' | 'item'=} type
  * @property {boolean=} showAllTagsButton
@@ -136,10 +147,7 @@ export default ({
   tagsFromItems = _.flatten(tagsFromItems);
   tagsFromItems = tagsFromItems.filter(Boolean);
   let tagsWithStat = createTagsStatistics(tagsFromItems);
-  tagsWithStat = _.sortBy(tagsWithStat, ['tagName']);
-  tagsWithStat = tagsWithStat.reverse();
-  tagsWithStat = _.sortBy(tagsWithStat, ['tagStat']);
-  tagsWithStat = tagsWithStat.reverse();
+  tagsWithStat = sortTags(tagsWithStat);
   //
   if (type === 'feed') {
     return (
@@ -166,6 +174,7 @@ export default ({
     tagsToShowWithStat = tagsToShowWithStat.filter(Boolean);
     //
     if (tagsToShowWithStat) {
+      tagsToShowWithStat = sortTags(tagsToShowWithStat);
       return <Tags type={type} tagsWithStat={tagsToShowWithStat} />;
     }
   }
