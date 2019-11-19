@@ -1,4 +1,5 @@
 /** @jsx jsx */
+import { Badge } from '@theme-ui/components';
 import { Link } from 'gatsby';
 import _ from 'lodash';
 import { jsx } from 'theme-ui';
@@ -8,8 +9,14 @@ import useSiteMetadata from '../../hooks/use-site-metadata';
 import Button from '../button';
 
 /**
+ * @typedef {object} TagWithStat
+ * @property {string} tagName
+ * @property {number} tagStat
+ */
+
+/**
  * @typedef {object} TagProps
- * @property {string} tag
+ * @property {TagWithStat} tagWithStat
  * @property {string=} pageContextTag
  * @property {object} style
  */
@@ -17,13 +24,16 @@ import Button from '../button';
 /**
  * @param {TagProps=} props
  */
-const Tag = ({ tag, style, pageContextTag }) => {
-  const active = tag === pageContextTag;
-  const link = active ? '/tags' : `/tags/${_.kebabCase(tag)}`;
+const Tag = ({ tagWithStat, style, pageContextTag }) => {
+  const active = tagWithStat.tagName === pageContextTag;
+  const link = active ? '/tags' : `/tags/${_.kebabCase(tagWithStat.tagName)}`;
   return (
     <Link to={link}>
       <Button sx={style} active={active}>
-        #{tag}
+        #{tagWithStat.tagName}{' '}
+        <Badge variant="tags" ml={1}>
+          {tagWithStat.tagStat}
+        </Badge>
       </Button>
     </Link>
   );
@@ -47,7 +57,7 @@ const AllTagsButton = ({ style }) => {
 
 /**
  * @typedef {object} TagsProps
- * @property {string[]} tags
+ * @property {TagWithStat[]} tagsWithStat
  * @property {string} type
  * @property {boolean=} showAllTagsButton
  * @property {string=} pageContextTag
@@ -56,7 +66,12 @@ const AllTagsButton = ({ style }) => {
 /**
  * @param {TagsProps=} props
  */
-const Tags = ({ type, showAllTagsButton = false, tags, pageContextTag }) => {
+const Tags = ({
+  type,
+  showAllTagsButton = false,
+  tagsWithStat,
+  pageContextTag
+}) => {
   const style = {
     mr: type === 'feed' ? '6px' : '5px',
     my: type === 'feed' ? '3px' : '2.5px',
@@ -73,11 +88,28 @@ const Tags = ({ type, showAllTagsButton = false, tags, pageContextTag }) => {
       ) : (
         ''
       )}
-      {tags.map((t) => (
-        <Tag key={t} tag={t} style={style} pageContextTag={pageContextTag} />
+      {tagsWithStat.map((tws) => (
+        <Tag
+          key={tws.tagName}
+          tagWithStat={tws}
+          style={style}
+          pageContextTag={pageContextTag}
+        />
       ))}
     </div>
   );
+};
+
+/**
+ * @param {string[]} tagsArray
+ */
+const createTagsStatistics = (tagsArray) => {
+  const uniqTags = _.uniq(tagsArray);
+  const tagsWithStats = uniqTags.map((uTag) => {
+    const tagsArrayThisTag = tagsArray.filter((t) => t === uTag);
+    return { tagName: uTag, tagStat: tagsArrayThisTag.length };
+  });
+  return tagsWithStats;
 };
 
 /**
@@ -97,20 +129,25 @@ export default ({
   tags,
   pageContextTag
 }) => {
+  // get tags statistics
+  const feedItems = useFeed();
+  // item.frontmatter.tags
+  let tagsFromItems = feedItems.map((i) => i.frontmatter.tags);
+  tagsFromItems = _.flatten(tagsFromItems);
+  tagsFromItems = tagsFromItems.filter(Boolean);
+  let tagsWithStat = createTagsStatistics(tagsFromItems);
+  tagsWithStat = _.sortBy(tagsWithStat, ['tagName']);
+  tagsWithStat = tagsWithStat.reverse();
+  tagsWithStat = _.sortBy(tagsWithStat, ['tagStat']);
+  tagsWithStat = tagsWithStat.reverse();
+  //
   if (type === 'feed') {
-    const feedItems = useFeed();
-    //
-    // item.frontmatter.tags
-    let tagsFromItems = feedItems.map((i) => i.frontmatter.tags);
-    tagsFromItems = _.flatten(tagsFromItems);
-    tagsFromItems = _.uniq(tagsFromItems);
-    tagsFromItems = tagsFromItems.filter(Boolean);
     return (
       <div id="tags" sx={{ marginY: [20] }}>
         <Tags
           type={type}
           showAllTagsButton={showAllTagsButton}
-          tags={tagsFromItems}
+          tagsWithStat={tagsWithStat}
           pageContextTag={pageContextTag}
         />
       </div>
@@ -118,10 +155,19 @@ export default ({
   }
   //
   if (tags) {
-    let tagsUse = tags;
-    tagsUse = tagsUse.filter((t) => typeof t === 'string');
-    tagsUse = tagsUse.filter((t) => t !== '');
-    if (tagsUse) return <Tags type={type} tags={tagsUse} />;
+    let tagsToShow = tags;
+    tagsToShow = tagsToShow.filter((t) => typeof t === 'string');
+    tagsToShow = tagsToShow.filter(Boolean);
+    if (!tagsToShow) return <div />;
+    //
+    let tagsToShowWithStat = tagsToShow.map((tts) =>
+      _.find(tagsWithStat, { tagName: tts })
+    );
+    tagsToShowWithStat = tagsToShowWithStat.filter(Boolean);
+    //
+    if (tagsToShowWithStat) {
+      return <Tags type={type} tagsWithStat={tagsToShowWithStat} />;
+    }
   }
   //
   return <div />;

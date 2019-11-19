@@ -29,6 +29,17 @@ const theme = {
   styles: {
     ...base.styles,
     ...styles
+  },
+  badges: {
+    primary: {
+      color: 'background',
+      bg: 'primary'
+    },
+    tags: {
+      color: 'text',
+      bg: 'transparent',
+      opacity: 0.5
+    }
   }
 };
 
