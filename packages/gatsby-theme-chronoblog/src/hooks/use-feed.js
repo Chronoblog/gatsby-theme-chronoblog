@@ -61,12 +61,6 @@ const useFeed = () => {
                   presentationHeight
                   src
                 }
-                fixed(width: 768, quality: 100) {
-                  ...GatsbyImageSharpFixed_withWebp
-                }
-                resize(width: 768, quality: 100) {
-                  src
-                }
               }
             }
           }
