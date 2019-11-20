@@ -8,6 +8,7 @@
     "gatsby-plugin",
     "gatsby-theme",
     "react",
+    "timeline",
     "chronoblog"
   ],
   "homepage": "https://github.com/Ganevru/gatsby-theme-chronoblog",

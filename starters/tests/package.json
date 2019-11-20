@@ -9,10 +9,12 @@
   "scripts": {
     "build": "gatsby clean && gatsby build",
     "clean": "gatsby clean",
+    "serve": "gatsby clean && gatsby build && gatsby serve",
     "start": "gatsby clean && gatsby develop"
   },
   "dependencies": {
     "gatsby": "^2.17.15",
+    "gatsby-plugin-sitemap": "^2.2.21",
     "gatsby-theme-chronoblog": "^0.2.11",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"

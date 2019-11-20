@@ -7,6 +7,9 @@ module.exports = {
     {
       resolve: 'gatsby-theme-chronoblog',
       options: {}
+    },
+    {
+      resolve: `gatsby-plugin-sitemap`
     }
   ]
 };

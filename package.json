@@ -14,6 +14,7 @@
     "build:tests": "yarn clean && yarn workspace tests build",
     "clean": "yarn workspaces run clean",
     "lerna": "lerna",
+    "serve:tests": "yarn clean && yarn workspace tests serve",
     "start:chronoblog": "yarn clean && yarn workspace chronoblog start",
     "start:chronoblog-netlify-cms": "yarn clean && yarn workspace chronoblog-netlify-cms start",
     "start:minimal": "yarn clean && yarn workspace minimal start",
