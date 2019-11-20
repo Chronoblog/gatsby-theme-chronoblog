@@ -5,7 +5,34 @@ import { Box, Flex, jsx } from 'theme-ui';
 import FeedContext from '../../contexts/context-feed';
 import useSiteMetadata from '../../hooks/use-site-metadata';
 
-export default ({ placeholder = '' }) => {
+const Symbol = ({ symbol }) => {
+  if (!symbol) return <div />;
+  return (
+    <div
+      sx={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        maxWidth: ['40px'],
+        minWidth: ['40px']
+      }}
+    >
+      <div
+        sx={{
+          fontSize: ['26px'],
+          opacity: ['0.7'],
+          userSelect: 'none'
+        }}
+      >
+        <span role="img" aria-label="search">
+          {symbol}
+        </span>
+      </div>
+    </div>
+  );
+};
+
+export default ({ placeholder = '', symbol = '🔎' }) => {
   //
   const {
     uiText: { feedSearchPlaceholder }
@@ -29,27 +56,7 @@ export default ({ placeholder = '' }) => {
           borderWidth: `1px`
         }}
       >
-        <div
-          sx={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            maxWidth: ['40px'],
-            minWidth: ['40px']
-          }}
-        >
-          <div
-            sx={{
-              fontSize: ['26px'],
-              opacity: ['0.7'],
-              userSelect: 'none'
-            }}
-          >
-            <span role="img" aria-label="search">
-              🔎
-            </span>
-          </div>
-        </div>
+        <Symbol symbol={symbol} />
         <Box sx={{ flexGrow: 1 }}>
           <input
             type="search"
