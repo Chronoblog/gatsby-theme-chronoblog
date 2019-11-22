@@ -3,7 +3,7 @@ title: 'Link to Chronoblog Theme repo'
 cover: ./image.jpg
 date: 2019-11-12
 link: https://github.com/Ganevru/gatsby-theme-chronoblog
-tags: ['link']
+tags: ['link', 'project']
 ---
 
 **Link card** is a card, when clicked, the user goes to the specified link.
