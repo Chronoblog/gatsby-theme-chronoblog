@@ -254,13 +254,15 @@ Notes is a type of content that is fully located in the feed. Cards of notes in 
 
 At the same time, notes allow you to place almost anything in the feed. The starter shows different options for how you can use notes - post podcasts, YouTube videos, presentations, post links or, in fact, text notes.
 
+A typical note:
+
 ```md
 ---
 date: 2019-11-02
 tags: ['note']
 ---
 
-Note card - the type of content that is fully displayed in the feed of the site - it is suitable for short notes (like this one), videos, podcasts, slides, etc.
+Note card - the type of content that is fully displayed in the feed of the site.
 ```
 
 A note only needs a `date`.
