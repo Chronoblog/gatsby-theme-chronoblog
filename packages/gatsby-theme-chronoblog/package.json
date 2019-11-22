@@ -11,6 +11,7 @@
     "react",
     "theme-ui",
     "mdx",
+    "feed",
     "timeline",
     "chronoblog"
   ],

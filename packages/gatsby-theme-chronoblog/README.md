@@ -9,9 +9,9 @@ The main idea of ​​Chronoblog is to allow you not only to write a personal b
 
 I never liked the blog format so that, regardless of the platform (be it Medium or WordPress), they all expect that the content that I will create is text, and it is desirable that this be a long article. A blog consisting of long articles looks and works organically (on any platform). But a blog consisting of any other content (video, presentations, links to external resources, or even just short notes) - it feels and works "somehow wrong".
 
-But what if we make a blog theme based on a feed? Something like twitter, but without restrictions, and in the form of a personal site?
+But what if we make a blog theme based on a feed? something like twitter or hackernews, but without restrictions, and in the form of a personal blog?
 
-This is the main idea of Chronoblog - to help create a personal website where any type of content will look and work organically.
+The Chronoblog feed allows you to post almost anything, since it allows you to post not only blog **posts**, but also **links** in the form of cards. And also **notes** - an extremely flexible format similar to something like tweets. And all this in one feed, sorted by date and organized using tags.
 
 # Guide - How to start working with Chronoblog Gatsby Theme
 
@@ -187,6 +187,83 @@ export default {
 ```
 
 In general, this file explains itself. The easiest way to understand what and how it works is simply to “play” with it. Try changing the primary and secondary colors, double the rounding of all elements, and so on.
+
+## Content Types
+
+Chronoblog has three types of content: **posts**, **links**, and **notes**.
+
+All of them are in the `content` folder. They are located in the appropriate folders. The names of folders and their structure are important for the operation of the Chronoblog!
+
+### Posts
+
+Posts are regular blog posts.
+
+A typical post looks like this:
+
+```md
+---
+title: Full Blog Post Example
+cover: ./image.jpg
+date: 2019-11-05
+description: All the usual blog post.
+tags: ['post']
+---
+
+Some blog post text
+```
+
+Each post should have a `title` and `date`.
+
+The `cover` should lead to a picture file, in this case the file is located in the same folder as the blog post itself.
+
+The `description` will appear in the post card in the feed, and will also be used for post meta tags (for SEO). If there is no description, then the text of the beginning of the post itself will be used instead.
+
+`tags` are needed for organization within the Chronoblog, they are displayed in the post itself and in the post card in the feed.
+
+### Links
+
+Links in the feed aren’t very different from blog posts. But when clicked, the user will follow the link.
+
+The basic idea of ​​links is that they work and feel "equivalent" to blog posts - the link also has a cover, title, tags, date, description, etc.
+
+Links are needed for materials that you consider important to post in your feed, but for some reason you can’t post them in the form of posts. This can be your articles on other sites (which you do not have the right to host), interviews, your projects (say on the github), received certificates, completed courses, etc.
+
+To prevent users of the site from confusing posts and links, links have additional distinctive elements - emoji "chain" in front of the title, an outgoing link icon in the card itself. Also, links do not have a "read more" button like posts.
+
+A typical link looks like this:
+
+```md
+---
+title: 'Link to Chronoblog Theme repo'
+cover: ./image.jpg
+date: 2019-11-12
+link: https://github.com/Ganevru/gatsby-theme-chronoblog
+tags: ['link', 'project']
+---
+
+Link card is a card, when clicked, the user goes to the specified link.
+```
+
+Like a post, a link must have a `title` and a `date`, and also, of course, the link must have a `link`.
+
+All other elements are the same as the post. Only in contrast to the post, the body of the link is fully displayed in the feed - because when you click, the user will follow the link, and not the "full version". So do not make the link body too large.
+
+### Notes
+
+Notes is a type of content that is fully located in the feed. Cards of notes in themselves do not refer anywhere and do not lead anywhere.
+
+At the same time, notes allow you to place almost anything in the feed. The starter shows different options for how you can use notes - post podcasts, YouTube videos, presentations, post links or, in fact, text notes.
+
+```md
+---
+date: 2019-11-02
+tags: ['note']
+---
+
+Note card - the type of content that is fully displayed in the feed of the site - it is suitable for short notes (like this one), videos, podcasts, slides, etc.
+```
+
+A note only needs a `date`.
 
 # Status
 
