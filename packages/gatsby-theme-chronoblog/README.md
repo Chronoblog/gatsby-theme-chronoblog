@@ -3,27 +3,45 @@
 [![npm](https://img.shields.io/npm/v/gatsby-theme-chronoblog?color=brightgreen)](https://www.npmjs.com/package/gatsby-theme-chronoblog) [![node](https://img.shields.io/node/v/gatsby-theme-chronoblog)](https://www.npmjs.com/package/gatsby-theme-chronoblog)  
 [![Netlify Status](https://api.netlify.com/api/v1/badges/f36aa133-5611-484c-97fe-8d65fac4391b/deploy-status)](https://app.netlify.com/sites/chronoblog/deploys) [![Netlify Status](https://api.netlify.com/api/v1/badges/ed253426-cae8-40fc-9647-28a8cd1f5a28/deploy-status)](https://app.netlify.com/sites/chronoblog-netlify-cms/deploys) [![Netlify Status](https://api.netlify.com/api/v1/badges/89481a31-c0c3-46ac-bf12-1fa638f0cd82/deploy-status)](https://app.netlify.com/sites/chronoblog-minimal/deploys)
 
-**WIP**
+Chronoblog is a Gatsby js theme specifically designed to create a personal website.
 
-**⚠️ This theme is very unstable ⚠️**
+The main idea of ​​Chronoblog is to allow you not only to write a personal blog, but also to keep a record of everything important that you have done.
 
-The theme for gatsbyjs designed specifically for creating a personal site. The main idea of ​​Chronoblog is to allow you not only to write a personal blog, but also to keep a record of everything important that you have done.
+I never liked the blog format so that, regardless of the platform (be it Medium or WordPress), they all expect that the content that I will create is text, and it is desirable that this be a long article. A blog consisting of long articles looks and works organically (on any platform). But a blog consisting of any other content (video, links to external resources, or even just short notes) - it feels and works "somehow wrong."
 
-I never liked that most blog systems were created exclusively with the expectation of long articles, and any other content always looked foreign in them, whether it was links to other sites, videos, podcasts, or even just short notes. On most blog systems, all this does not look organic.
+But what if we make a blog theme based on a feed? Something like twitter, but without restrictions, and in the form of a personal site?
 
-But what if we make a blog theme based on a feed? Something like Twitter, but without restrictions, and in the form of a personal site?
+This is the main idea of Chronoblog - to help create a personal website in which any type of content will look organic.
 
-In the feed, almost anything looks organic - links to your articles on any site, videos of your lectures, your projects, completed courses, interviews, podcasts in which you participated - all this can be placed in the Chronoblog feed and structured using tags.
+## How to start working with Chronoblog
 
-At the same time, this is still a blog, Chronoblog can be used as a theme for creating a personal blog.
+### 1 - Installation and Development
+
+If you have `gatsby-cli`:
 
 ```sh
-npm i gatsby-theme-chronoblog
+gatsby new chronoblog-site https://github.com/Ganevru/gatsby-starter-chronoblog
+
+cd chronoblog-site
+
+npm start
 ```
 
-## Icons
+Or using git clone:
 
-Brands svg icons from fontawesome [https://github.com/FortAwesome/react-fontawesome](https://github.com/FortAwesome/react-fontawesome)
+```sh
+git clone git@github.com:Ganevru/gatsby-starter-chronoblog.git chronoblog-site
+
+cd chronoblog-site
+
+npm i
+
+npm start
+```
+
+Your site is now running at http://localhost:8000
+
+You can start developing your site.
 
 ## Status
 

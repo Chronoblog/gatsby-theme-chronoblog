@@ -31,7 +31,7 @@ npm i
 ### Develop
 
 ```bash
-npm run build
+npm start
 ```
 
 ## More information
