@@ -19,6 +19,8 @@ This guide will show how to create a personal website using Gatsby Theme Chronob
 
 ## Installation and Development
 
+In this guide, we will set up our new site using this starter: [gatsby-starter-chronoblog](https://github.com/Ganevru/gatsby-starter-chronoblog)
+
 If you have `gatsby-cli`:
 
 ```sh
@@ -48,6 +50,31 @@ You can start developing your site.
 ## Folder structure
 
 Here's how the Chronoblog Starter is organized:
+
+```
+chronoblog-site
+  ├─ content // unique site content is located here
+  │  ├─ links // content type - link cards
+  │  ├─ notes // content type - note cards
+  │  └─ posts // standard blog posts
+  ├─ gatsby-config.js
+  ├─ package.json
+  ├─ src
+  │  ├─ assets
+  │  ├─ gatsby-plugin-theme-ui // style of the site
+  │  │  └─ index.js
+  │  ├─ gatsby-theme-chronoblog // chronoblog shadow
+  │  │  ├─ post-footer.mdx // what comes after every blog post
+  │  │  ├─ site-footer.mdx
+  │  │  └─ site-header.mdx // site main menu
+  │  └─ pages // specially defined pages of the site
+  │     ├─ index.mdx // the main page of the site
+  │     └─ projects.mdx
+  └─ static
+     └─ robots.txt
+```
+
+Below will be more explanation about various aspects of the site.
 
 ## Gatsby Config
 
