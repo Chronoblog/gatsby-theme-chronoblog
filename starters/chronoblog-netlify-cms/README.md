@@ -12,29 +12,29 @@ Netlify CMS Documentation: [www.netlifycms.org](https://www.netlifycms.org/)
 
 ## How to start using Chronoblog Starter
 
-### Installation
+If you have `gatsby-cli`:
 
-With `gatsby-cli`:
+```sh
+gatsby new chronoblog-site https://github.com/Ganevru/gatsby-starter-chronoblog-netlify-cms
 
-```bash
-gatsby new chronoblog-netlify-site https://github.com/Ganevru/gatsby-starter-chronoblog-netlify-cms
-```
+cd chronoblog-site
 
-Or with `git clone`:
-
-```bash
-git clone git@github.com:Ganevru/gatsby-starter-chronoblog-netlify-cms.git chronoblog-site
-
-cd chronoblog-netlify-site
-
-npm i
-```
-
-### Develop
-
-```bash
 npm start
 ```
+
+Or using git clone:
+
+```sh
+git clone git@github.com:Ganevru/gatsby-starter-chronoblog-netlify-cms.git chronoblog-site
+
+cd chronoblog-site
+
+npm i
+
+npm start
+```
+
+Your site is now running at http://localhost:8000
 
 ## More information
 

@@ -10,29 +10,29 @@ See a live demo: [chronoblog.netlify.com](https://chronoblog.netlify.com/)
 
 ## How to start using Chronoblog Starter
 
-### Installation
+If you have `gatsby-cli`:
 
-With `gatsby-cli`:
-
-```bash
+```sh
 gatsby new chronoblog-site https://github.com/Ganevru/gatsby-starter-chronoblog
+
+cd chronoblog-site
+
+npm start
 ```
 
-Or with `git clone`:
+Or using git clone:
 
-```bash
+```sh
 git clone git@github.com:Ganevru/gatsby-starter-chronoblog.git chronoblog-site
 
 cd chronoblog-site
 
 npm i
-```
 
-### Develop
-
-```bash
 npm start
 ```
+
+Your site is now running at http://localhost:8000
 
 ## More information
 
