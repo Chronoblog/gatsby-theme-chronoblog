@@ -2,7 +2,7 @@
 title: 'Link to Chronoblog Theme repo'
 cover: ./image.jpg
 date: 2019-11-12
-tags: ['link']
+tags: ['link', 'project']
 ---
 
 **Link card** is a card, when clicked, the user goes to the specified link.

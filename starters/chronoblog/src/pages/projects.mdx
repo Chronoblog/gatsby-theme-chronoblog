@@ -1,0 +1,74 @@
+# Projects
+
+## About site pages
+
+This is the site page. This page could also be called a **portfolio**, or **cases**, or, say, a **contacts**.
+
+The file for **this** page is here: **`src/pages/project.mdx`**
+
+You can change the name of the file to any, this is just an example. The most important thing for a site page is that the site page file must be in the "pages" folder: **`src/pages/`**
+
+## About main menu
+
+In order to add or change a link to a page, you need to go to the "site-header.mdx" file: **`src/gatsby-theme-chronoblog/site-header.mdx`**
+
+Here it looks like this:
+
+```md
+<MenuMain>
+  <MenuBlock>
+    <Link to="/">Home</Link>
+    <Link to="/projects">Projects</Link>
+  </MenuBlock>
+  <MenuBlock>
+    <LightDarkSwitchButton darkLabel="🌙" lightLabel="☀️" />
+  </MenuBlock>
+</MenuMain>
+```
+
+The file explains itself. Here, for example, is the option without a link to this page:
+
+```md
+<MenuMain>
+  <MenuBlock>
+    <Link to="/">Home</Link>
+  </MenuBlock>
+  <MenuBlock>
+    <LightDarkSwitchButton darkLabel="🌙" lightLabel="☀️" />
+  </MenuBlock>
+</MenuMain>
+```
+
+Or only with a link to the main page:
+
+```md
+<MenuMain>
+  <MenuBlock>
+    <Link to="/">Home</Link>
+  </MenuBlock>
+</MenuMain>
+```
+
+## About `FeedItems` component
+
+**`FeedItems`** component shows feed with posts, links and notes - in the form of cards.
+
+To just show the content of the site, it is enough to use this component in this way (as it is used on the main page of the site):
+
+```jsx
+<FeedItems />
+```
+
+But on this page, this component uses the **`filterByTags`** argument, which takes an array of tags:
+
+```jsx
+<FeedItems filterByTags={['project']} />
+```
+
+In this case, the feed shows only materials that have the tag "project".
+
+This can be useful if you want to use this page only, for example, to display your portfolio, or to display only articles on a specific topic.
+
+<p>&nbsp;</p>
+
+<FeedItems filterByTags={['project']} />

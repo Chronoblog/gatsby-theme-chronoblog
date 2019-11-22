@@ -3,7 +3,7 @@ title: Full Blog Post Example
 cover: ./image.jpg
 date: 2019-11-05
 description: All the usual blog post.
-tags: ['post']
+tags: ['post', 'project']
 ---
 
 Back in early 2013, I was working at a small startup in San Francisco called Stitch Fix, alongside Adam Morse and a handful of others. We were designing and building out early versions of their marketing pages and some internal tools.

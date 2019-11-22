@@ -5,9 +5,12 @@
   "keywords": [
     "blog",
     "gatsby",
+    "gatsbyjs",
     "gatsby-plugin",
     "gatsby-theme",
     "react",
+    "theme-ui",
+    "mdx",
     "timeline",
     "chronoblog"
   ],
