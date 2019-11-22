@@ -4,7 +4,6 @@ cover: ./image.png
 date: 2010-01-01
 link: http://example.com
 slug: invisible-ghost-post
-redirect_from: ['/old-invisible-ghost-post']
 description: 'this post has all of the right fields'
 tags: ['notags']
 draft: true
