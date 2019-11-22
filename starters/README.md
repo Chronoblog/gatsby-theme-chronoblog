@@ -1,3 +1,3 @@
 # Chronoblog Theme Starters
 
-Starters for Chronoblog theme.
+Starters for Chronoblog Gatsby Theme.
