@@ -269,9 +269,30 @@ Note card - the type of content that is fully displayed in the feed of the site.
 
 A note only needs a `date`.
 
-### Content Creation
+### Adding Content
 
-For local content creation you need:
+To add content locally, you need to create a folder in `content/posts/` (if you are creating a new **blog `post`**). Give this folder any name (`some-blog-post` for example), and create file `index.md` inside this folder.
+
+The file `index.md` may be something like this:
+
+```md
+---
+title: Some Blog Post Example
+cover: ./image.jpg
+date: 2019-11-05
+tags: ['post']
+---
+
+Some blog post text
+```
+
+Put some image in the same folder (in `some-blog-post`). If its name matches the `cover` from the `index.md` file, then this image will become the post cover.
+
+To create a new **`link`** you need to do the same thing, but in the folder `content/links/` (and do not forget that the link must have `link:`).
+
+And to create a new **`note`**, yes, again the same thing, but in the folder `content/notes/`.
+
+The type of content is determined by the folder in which it is located!
 
 # Status
 
