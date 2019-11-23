@@ -543,7 +543,7 @@ Path where you can find page corresponds to the name of the file, that is, the p
 
 Pages can be used to create: contact pages, portfolio/project pages, pages dedicated to one type of content (articles on a specific topic filtered by tags), etc.
 
-Just remember to add a link to the page in the main menu (if you want to see this page in the menu). Read more about it here: [#site-header](#site-header)
+Just remember to add a link to the page in the main menu (if you want to see this page in the menu). Read more about it here: [site-header](#site-header)
 
 Due to how Chronoblog works, pages are not the primary way to provide information. In fact, it’s quite normal not to use a single page at all (except for the main page). The main way to organize content in Chronoblog is tags, not pages.
 
@@ -572,11 +572,8 @@ You should replace the content of the main page with your own.
 Pay attention to these components:
 
 ```md
-<!-- Feed Search String  -->
 <FeedSearch />
-<!-- Site Content Tags -->
 <Tags />
-<!-- Component showing site content -->
 <FeedItems />
 ```
 
