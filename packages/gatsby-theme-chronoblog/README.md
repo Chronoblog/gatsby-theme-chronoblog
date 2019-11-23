@@ -50,6 +50,7 @@ This demo is at the same time the Chronoblog starter.
     - [site-footer](#site-footer)
     - [post-footer](#post-footer)
   - [Pages](#pages)
+    - [index.mdx - homepage of your site](#indexmdx---homepage-of-your-site)
 - [Status](#status)
   - [Starters status](#starters-status)
   - [Status of development and test versions](#status-of-development-and-test-versions)
@@ -545,6 +546,45 @@ Pages can be used to create: contact pages, portfolio/project pages, pages dedic
 Just remember to add a link to the page in the main menu (if you want to see this page in the menu). Read more about it here: [#site-header](#site-header)
 
 Due to how Chronoblog works, pages are not the primary way to provide information. In fact, it’s quite normal not to use a single page at all (except for the main page). The main way to organize content in Chronoblog is tags, not pages.
+
+### index.mdx - homepage of your site
+
+By default, it looks something like this:
+
+`src/pages/index.mdx`
+
+```md
+# ⌛ Gatsby Theme Chronoblog
+
+Welcome to the Chronoblog starter!
+
+This text lives in a file: **`src/pages/index.mdx`** - replace it with what you want to see on the main page of your site. 🧐
+
+<p>&nbsp;</p>
+
+<FeedSearch />
+<Tags />
+<FeedItems />
+```
+
+You should replace the content of the main page with your own - this is not difficult to do since it uses the `mdx` format (close to markdown).
+
+Pay attention to these components:
+
+```md
+<!-- Feed Search String  -->
+<FeedSearch />
+<!-- Site Content Tags -->
+<Tags />
+<!-- Component showing site content -->
+<FeedItems />
+```
+
+You can read more about them here:
+
+- [FeedItems component](#feeditems-component)
+- [Tags component](#tags-component)
+- [FeedSearch component](#feedsearch-component)
 
 # Status
 
