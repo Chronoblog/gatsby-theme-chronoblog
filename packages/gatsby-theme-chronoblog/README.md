@@ -11,7 +11,7 @@ I never liked the blog format so that, regardless of the platform (be it Medium 
 
 But what if we make a blog theme based on a feed? something like twitter or hackernews, but without restrictions, and in the form of a personal blog?
 
-The Chronoblog feed allows you to post almost anything, since it allows you to post not only blog **posts**, but also **links** in the form of cards. And also **notes** - an extremely flexible format similar to something like tweets. And all this in one feed, sorted by date and organized using tags.
+Chronoblog is a theme that allows you to do just that - to help create a more organic and universal personal site.
 
 # Guide - How to start working with Chronoblog Gatsby Theme
 
@@ -305,6 +305,105 @@ If content has `hide: true`, then this content will NOT be displayed in the feed
 #### draft
 
 If content has `draft: true`, this content will not be on the site in any form.
+
+## Permanent parts of the site
+
+It makes sense to change the default values of some parts of the site.
+
+### site-header.mdx
+
+You can find this file here: **`src/gatsby-theme-chronoblog/site-header.mdx`**
+
+Usually here is the main menu of the site. By default, it looks like this:
+
+```md
+<MenuMain>
+  <MenuBlock>
+    <Link to="/">Home</Link>
+    <Link to="/projects">Projects</Link>
+  </MenuBlock>
+  <MenuBlock>
+    <LightDarkSwitchButton darkLabel="🌙" lightLabel="☀️" />
+  </MenuBlock>
+</MenuMain>
+```
+
+By default, the starter has two links in the menu - to the main page of the site (`<Link to="/">Home</Link>`) and to the additional page of the site (`<Link to="/projects">Projects</Link>`). The additional page of the site in the menu exists only as an example, you can change it or delete it if you do not need it. Then this file will look like this:
+
+```md
+<MenuMain>
+  <MenuBlock>
+    <Link to="/">Home</Link>
+  </MenuBlock>
+  <MenuBlock>
+    <LightDarkSwitchButton darkLabel="🌙" lightLabel="☀️" />
+  </MenuBlock>
+</MenuMain>
+```
+
+### site-footer.mdx
+
+This is a footer of your site, place here everything that you consider necessary to see in the footer.
+
+By default, this file looks like this:
+
+```md
+<div>© {new Date().getFullYear()}</div>
+```
+
+### post-footer.mdx
+
+Footer of the post is what comes after every post on the blog. Usually information about the author is placed here.
+
+By default, this file looks like this:
+
+```md
+import avatar from './avatar.png';
+
+<p>&nbsp;</p>
+
+<div
+  style={{
+    display: 'flex',
+    flexWrap: 'wrap',
+    alignItems: 'center'
+  }}
+>
+  <div style={{ marginRight: '30px' }}>
+    <img
+      style={{ borderRadius: '100%', height: '100%', width: '180px' }}
+      src={avatar}
+    ></img>
+  </div>
+  <div>
+    <h4>Author Name</h4>
+    <p>
+      <FontAwesomeIcon icon={['fab', 'twitter']} />
+      &nbsp;<a href="https://twitter.com/twitter">yourTwitter</a>
+      <br />
+      <FontAwesomeIcon icon={['fab', 'github']} />
+      &nbsp;<a href="https://github.com/github">yourGithub</a>
+      <br />
+      <FontAwesomeIcon icon={['fab', 'instagram']} />
+      &nbsp;<a href="https://www.instagram.com/">yourInstagram</a>
+      <br />
+      <FontAwesomeIcon icon="at" />
+      &nbsp;<b>author@mail.com</b>
+    </p>
+  </div>
+</div>
+
+This is a `post-footer.mdx` - this file lives here:  
+**`src/gatsby-theme-chronoblog/post-footer.mdx`**.
+
+This file is just an example, you can completely rewrite it.
+
+Everything that will be written here will be displayed after **each blog post**. Place your avatar, name, links to social networks and other information here.
+
+<p>&nbsp;</p>
+```
+
+The whole point of this file is to show how you can use it! Feel free to modify this file as you wish.
 
 # Status
 
