@@ -310,6 +310,18 @@ If content has `draft: true`, this content will not be on the site in any form.
 
 The feed and related components display site content. By default - in the form of cards.
 
+The standard way to use these components is how the main page of the site uses them:
+
+`src/pages/index.mdx`
+
+```md
+<FeedSearch />
+<Tags />
+<FeedItems />
+```
+
+How do these components work in `mdx` files if we did not import them there? They are already imported to `mdx` inside Chronoblog! So you do not need to do this. You can read about this technique here: [mdxjs.com/advanced/components](https://mdxjs.com/advanced/components)
+
 ### FeedItems component
 
 The most important component of the feed - this component displays content.
