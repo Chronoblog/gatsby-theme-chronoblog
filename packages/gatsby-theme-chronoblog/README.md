@@ -306,6 +306,49 @@ If content has `hide: true`, then this content will NOT be displayed in the feed
 
 If content has `draft: true`, this content will not be on the site in any form.
 
+## Feed
+
+The feed and related components display site content. By default - in the form of cards.
+
+### FeedItems component
+
+The most important component of the feed - this component displays content.
+
+In this form, it is used, for example, on the main page of the site (`src/pages/index.mdx`):
+
+```md
+<FeedItems />
+```
+
+This component has various arguments.
+
+#### filterByTags
+
+`filterByTags` takes an array of tags (in the form of strings) and displays all materials that have at least one of these tags.
+
+This component will display all site content that have the `project` tag
+
+```md
+<FeedItems filterByTags={['project']} />
+```
+
+### Tags component
+
+This component displays all tags available on the site.
+
+```md
+<Tags />
+```
+
+### FeedSearch component
+
+Search string to search feed items. It makes no sense to put this component if there is no `<FeedItems />` component nearby.
+
+```md
+<FeedSearch />
+<FeedItems />
+```
+
 ## Permanent parts of the site
 
 It makes sense to change the default values of some parts of the site.
@@ -343,6 +386,8 @@ By default, the starter has two links in the menu - to the main page of the site
 
 ### site-footer.mdx
 
+You can find this file here: **`src/gatsby-theme-chronoblog/site-footer.mdx`**
+
 This is a footer of your site, place here everything that you consider necessary to see in the footer.
 
 By default, this file looks like this:
@@ -354,6 +399,8 @@ By default, this file looks like this:
 ### post-footer.mdx
 
 Footer of the post is what comes after every post on the blog. Usually information about the author is placed here.
+
+You can find this file here: **`src/gatsby-theme-chronoblog/post-footer.mdx`**
 
 By default, this file looks like this:
 
@@ -403,7 +450,7 @@ Everything that will be written here will be displayed after **each blog post**.
 <p>&nbsp;</p>
 ```
 
-The whole point of this file is to show how you can use it! Feel free to modify this file as you wish.
+The whole point of this file is to show how you can use it! Feel free to modify this file.
 
 # Status
 
