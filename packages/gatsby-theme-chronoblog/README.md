@@ -177,7 +177,7 @@ In **`siteMetadata`**, replace information about:
 
 **`siteDescription`** - description of the site.
 
-**`siteImage`** - picture for meta site information. Default picture is here: `static/banner.png` - you can simply replace this picture with your own, leaving the name.
+**`siteImage`** - picture for meta site information. Default picture is here: `static/banner.png` - you can simply replace this picture with your own.
 
 **`siteUrl`** - domain where the site will be located.
 
@@ -304,9 +304,9 @@ All other elements are the same as the post. Only in contrast to the post, the b
 
 #### Notes
 
-Notes is a type of content that is fully located in the feed. Cards of notes in themselves do not refer anywhere and do not lead anywhere.
+Notes is a type of content that is fully located in the feed. Cards of notes do not refer anywhere and do not lead anywhere.
 
-At the same time, notes allow you to place almost anything in the feed. The starter shows different options for how you can use notes - post podcasts, YouTube videos, presentations, post links or, in fact, text notes.
+At the same time, notes allow you to place almost anything in the feed. The starter (demo: [chronoblog.netlify.com](https://chronoblog.netlify.com)) shows different options for how you can use notes - post podcasts, YouTube videos, presentations, post links or, in fact, text notes.
 
 A typical note:
 
@@ -384,7 +384,7 @@ This component has various arguments.
 
 **`filterByTags`** takes an array of tags (in the form of strings) and displays all materials that have at least one of these tags.
 
-This component will display all site content that have the `project` tag
+This component will display all site content that have the `project` tag:
 
 ```md
 <FeedItems filterByTags={['project']} />
@@ -508,7 +508,7 @@ Everything that will be written here will be displayed after **each blog post**.
 <p>&nbsp;</p>
 ```
 
-The whole point of this file is to show how you can use it! Feel free to modify this file.
+The whole point of this file is to show how you can use it! Feel free to modify this file. Or, if you do not need it, remove everything from it and leave it blank.
 
 ## Pages
 
@@ -526,7 +526,7 @@ Path where you can find page corresponds to the name of the file, that is, the p
 
 Pages can be used to create: contact pages, portfolio/project pages, pages dedicated to one type of content (articles on a specific topic filtered by tags), etc.
 
-Just remember to add a link to the page in the main menu. Read more about it here: [#site-header](#site-header)
+Just remember to add a link to the page in the main menu (if you want to see this page in the menu). Read more about it here: [#site-header](#site-header)
 
 Due to how Chronoblog works, pages are not the primary way to provide information. In fact, it’s quite normal not to use a single page at all (except for the main page). The main way to organize content in Chronoblog is tags, not pages.
 
