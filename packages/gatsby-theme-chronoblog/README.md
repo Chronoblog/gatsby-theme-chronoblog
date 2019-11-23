@@ -567,7 +567,7 @@ This text lives in a file: **`src/pages/index.mdx`** - replace it with what you 
 <FeedItems />
 ```
 
-You should replace the content of the main page with your own - this is not difficult to do since it uses the `mdx` format (close to markdown).
+You should replace the content of the main page with your own.
 
 Pay attention to these components:
 
