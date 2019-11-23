@@ -361,22 +361,6 @@ Search string to search feed items. It makes no sense to put this component if t
 <FeedItems />
 ```
 
-## Pages
-
-Site pages can be found here: **`src/pages`**
-
-In Chronoblog starter you can find two pages:
-
-`index.mdx` - the main page of the site
-
-`projects.mdx` - example page that you can rename, change, or simply delete
-
-Path where you can find page corresponds to the name of the file, that is, the page `projects.mdx` can be found at `http://localhost:8000/projects`.
-
-`index` is an exception to this.
-
-Due to how Chronoblog works, pages are not the primary way to provide information. In fact, it’s quite normal not to use a single page at all (except for the main page).
-
 ## Permanent parts of the site
 
 It makes sense to change the default values of some parts of the site.
@@ -479,6 +463,26 @@ Everything that will be written here will be displayed after **each blog post**.
 ```
 
 The whole point of this file is to show how you can use it! Feel free to modify this file.
+
+## Pages
+
+Site pages can be found here: **`src/pages`**
+
+In Chronoblog starter you can find two pages:
+
+`index.mdx` - the main page of the site
+
+`projects.mdx` - example page that you can rename, change, or simply delete
+
+Path where you can find page corresponds to the name of the file, that is, the page `projects.mdx` can be found at `http://localhost:8000/projects`.
+
+`index` is an exception to this.
+
+Pages can be used to create: contact pages, portfolio/project pages, pages dedicated to one type of content (articles on a specific topic filtered by tags), etc.
+
+Just remember to add a link to the page in the main menu. Read more about it here: [#site-headermdx](https://github.com/Ganevru/gatsby-theme-chronoblog#site-headermdx)
+
+Due to how Chronoblog works, pages are not the primary way to provide information. In fact, it’s quite normal not to use a single page at all (except for the main page). The main way to organize content in Chronoblog is tags, not pages.
 
 # Status
 
