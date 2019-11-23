@@ -17,7 +17,7 @@ Chronoblog is a theme that allows you to do just that - to help create a more or
 
 This guide will show how to create a personal website using Gatsby Theme Chronoblog.
 
-## Installation and Development
+## 1. Installation and Development
 
 In this guide, we will set up our new site using this starter: [gatsby-starter-chronoblog](https://github.com/Ganevru/gatsby-starter-chronoblog)
 
@@ -47,7 +47,7 @@ Your site is now running at http://localhost:8000
 
 You can start developing your site.
 
-## Folder structure
+## 2. Folder structure
 
 Here's how the Chronoblog Starter is organized:
 
@@ -76,7 +76,7 @@ chronoblog-site
 
 Below will be more explanation about various aspects of the site.
 
-## Gatsby Config
+## 3. Gatsby Config
 
 **`gatsby-config.js`** located in the root of your site and looks like this:
 
@@ -149,13 +149,13 @@ In **`siteMetadata`**, replace information about:
 
 Most of this data is needed for the website meta tags to work properly.
 
-### Plugins
+### 3.1. Plugins
 
 `gatsby-theme-chronoblog` - most important plugin of this starter. Here you can replace the default values of the UI of the elements of the Chronoblog. This is done to simplify the localization of the site in various languages. If your site is in English, you can leave it as it is. If the site will use any other language - translate the default values right here.
 
 All other plugins are optional. Chronoblog does not rely on them, so if you do not need, say, `gatsby-plugin-google-analytics`, you can ignore it or remove it from the list of plugins.
 
-## Style settings
+## 4. Style settings
 
 Chronoblog allows you to change many style settings of the site. You can change the primary and secondary colors, fonts, border-radius of most elements, etc. All this happens thanks to the [Theme-UI](https://theme-ui.com/) library.
 
@@ -206,15 +206,15 @@ export default {
 
 In general, this file explains itself. The easiest way to understand what and how it works is simply to “play” with it. Try changing the primary and secondary colors, double the rounding of all elements, and so on.
 
-## Content
+## 5. Content
 
 Chronoblog has three types of content: **posts**, **links**, and **notes**.
 
 All of them are in the `content` folder. They are located in the appropriate folders. The names of folders and their structure are important for the operation of the Chronoblog!
 
-### Content Types
+### 5.1. Content Types
 
-#### Posts
+#### 5.1.1. Posts
 
 Posts are regular blog posts.
 
@@ -240,7 +240,7 @@ The `description` will appear in the post card in the feed, and will also be use
 
 `tags` are needed for organization within the Chronoblog, they are displayed in the post itself and in the post card in the feed.
 
-#### Links
+#### 5.1.2. Links
 
 Links in the feed aren’t very different from blog posts. But when clicked, the user will follow the link.
 
@@ -268,7 +268,7 @@ Like a post, a link must have a `title` and a `date`, and also, of course, the l
 
 All other elements are the same as the post. Only in contrast to the post, the body of the link is fully displayed in the feed - because when you click, the user will follow the link, and not the "full version". So do not make the link body too large.
 
-#### Notes
+#### 5.1.3. Notes
 
 Notes is a type of content that is fully located in the feed. Cards of notes in themselves do not refer anywhere and do not lead anywhere.
 
@@ -287,7 +287,7 @@ Note card - the type of content that is fully displayed in the feed of the site.
 
 A note only needs a `date`.
 
-### Adding Content
+### 5.2. Adding Content
 
 To add content locally, you need to create a folder in `content/posts/` (if you are creating a new **blog `post`**). Give this folder any name (`some-blog-post` for example), and create file `index.md` inside this folder.
 
@@ -312,19 +312,15 @@ And to create a new **`note`**, yes, again the same thing, but in the folder `co
 
 The type of content is determined by the folder in which it is located!
 
-### Additional options available to content
+### 5.3. Additional options available to content
 
 All types of content have additional, optional options that can help you manage the content on the site.
 
-#### hide
+**`hide`** - if content has `hide: true`, then this content will not be displayed in the feed on the site (in any feed). But at the same time, this content itself will exist and will be available.
 
-If content has `hide: true`, then this content will not be displayed in the feed on the site (in any feed). But at the same time, this content itself will exist and will be available.
+**`draft`** - if content has `draft: true`, this content will not be on the site in any form.
 
-#### draft
-
-If content has `draft: true`, this content will not be on the site in any form.
-
-## Feed
+## 6. Feed
 
 Feed displays site content.
 
@@ -340,7 +336,7 @@ The standard way to use these components is how the main page of the site uses t
 
 How do these components work in `mdx` files if we did not import them there? They are already imported to `mdx` inside Chronoblog! So you do not need to do this. You can read about this technique here: [mdxjs.com/advanced/components](https://mdxjs.com/advanced/components)
 
-### FeedItems component
+### 6.1. FeedItems component
 
 The most important component of the feed - this component displays content.
 
@@ -352,7 +348,7 @@ In this form, it is used, for example, on the main page of the site (`src/pages/
 
 This component has various arguments.
 
-#### filterByTags
+#### 6.1.1. filterByTags
 
 `filterByTags` takes an array of tags (in the form of strings) and displays all materials that have at least one of these tags.
 
@@ -362,7 +358,7 @@ This component will display all site content that have the `project` tag
 <FeedItems filterByTags={['project']} />
 ```
 
-### Tags component
+### 6.2. Tags component
 
 This component displays all tags available on the site.
 
@@ -370,7 +366,7 @@ This component displays all tags available on the site.
 <Tags />
 ```
 
-### FeedSearch component
+### 6.3. FeedSearch component
 
 Search string to search feed items. It makes no sense to put this component if there is no `<FeedItems />` component nearby.
 
@@ -379,11 +375,11 @@ Search string to search feed items. It makes no sense to put this component if t
 <FeedItems />
 ```
 
-## Permanent parts of the site
+## 7. Permanent parts of the site
 
 It makes sense to change the default values of some parts of the site.
 
-### site-header.mdx
+### 7.1. site-header.mdx
 
 You can find this file here: **`src/gatsby-theme-chronoblog/site-header.mdx`**
 
@@ -414,7 +410,7 @@ By default, the starter has two links in the menu - to the main page of the site
 </MenuMain>
 ```
 
-### site-footer.mdx
+### 7.2. site-footer.mdx
 
 You can find this file here: **`src/gatsby-theme-chronoblog/site-footer.mdx`**
 
@@ -426,7 +422,7 @@ By default, this file looks like this:
 <div>© {new Date().getFullYear()}</div>
 ```
 
-### post-footer.mdx
+### 7.3. post-footer.mdx
 
 Footer of the post is what comes after every post on the blog. Usually information about the author is placed here.
 
@@ -482,7 +478,7 @@ Everything that will be written here will be displayed after **each blog post**.
 
 The whole point of this file is to show how you can use it! Feel free to modify this file.
 
-## Pages
+## 8. Pages
 
 Site pages can be found here: **`src/pages`**
 
@@ -504,7 +500,7 @@ Due to how Chronoblog works, pages are not the primary way to provide informatio
 
 # Status
 
-## Starters status
+## 9. Starters status
 
 If at least one starter is not working - something went wrong.
 
@@ -514,7 +510,7 @@ If at least one starter is not working - something went wrong.
 | [![Netlify Status](https://api.netlify.com/api/v1/badges/ed253426-cae8-40fc-9647-28a8cd1f5a28/deploy-status)](https://app.netlify.com/sites/chronoblog-netlify-cms/deploys) | https://github.com/Ganevru/gatsby-starter-chronoblog-netlify-cms | https://chronoblog-netlify-cms.netlify.com/ |
 | [![Netlify Status](https://api.netlify.com/api/v1/badges/89481a31-c0c3-46ac-bf12-1fa638f0cd82/deploy-status)](https://app.netlify.com/sites/chronoblog-minimal/deploys) | https://github.com/Ganevru/gatsby-starter-chronoblog-minimal | https://chronoblog-minimal.netlify.com/ |
 
-## Status of development and test versions
+## 10. Status of development and test versions
 
 All these versions work from master branch of this repository. It’s ok if they do not work.
 
