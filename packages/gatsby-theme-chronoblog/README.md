@@ -135,7 +135,25 @@ module.exports = {
 };
 ```
 
-This is the standard file for the gatsby starter, just replace the information with your own.
+This is the standard file for the gatsby starter.
+
+In **`siteMetadata`**, replace information about:
+
+**`siteTitle`** - The main name of your site, if this is your personal site, you can simply write your name.
+
+**`siteDescription`** - description of the site.
+
+**`siteImage`** - picture for meta site information. Default picture is here: `static/banner.png` - you can simply replace this picture with your own, leaving the name.
+
+**`siteUrl`** - domain where the site will be located.
+
+Most of this data is needed for the website meta tags to work properly.
+
+### Plugins
+
+`gatsby-theme-chronoblog` - most important plugin of this starter. Here you can replace the default values of the UI of the elements of the Chronoblog. This is done to simplify the localization of the site in various languages. If your site is in English, you can leave it as it is. If the site will use any other language - translate the default values right here.
+
+All other plugins are optional. Chronoblog does not rely on them, so if you do not need, say, `gatsby-plugin-google-analytics`, you can ignore it or remove it from the list of plugins.
 
 ## Style settings
 
