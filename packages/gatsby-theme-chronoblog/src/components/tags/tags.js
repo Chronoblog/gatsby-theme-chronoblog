@@ -136,7 +136,7 @@ const sortTags = (array) => {
  */
 export default ({
   type = 'feed',
-  showAllTagsButton = true,
+  showAllTagsButton = false,
   tags,
   pageContextTag
 }) => {

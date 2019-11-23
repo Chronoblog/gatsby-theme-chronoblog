@@ -188,13 +188,15 @@ export default {
 
 In general, this file explains itself. The easiest way to understand what and how it works is simply to “play” with it. Try changing the primary and secondary colors, double the rounding of all elements, and so on.
 
-## Content Types
+## Content
 
 Chronoblog has three types of content: **posts**, **links**, and **notes**.
 
 All of them are in the `content` folder. They are located in the appropriate folders. The names of folders and their structure are important for the operation of the Chronoblog!
 
-### Posts
+### Content Types
+
+#### Posts
 
 Posts are regular blog posts.
 
@@ -220,7 +222,7 @@ The `description` will appear in the post card in the feed, and will also be use
 
 `tags` are needed for organization within the Chronoblog, they are displayed in the post itself and in the post card in the feed.
 
-### Links
+#### Links
 
 Links in the feed aren’t very different from blog posts. But when clicked, the user will follow the link.
 
@@ -228,7 +230,7 @@ The basic idea of ​​links is that they work and feel "equivalent" to blog po
 
 Links are needed for materials that you consider important to post in your feed, but for some reason you can’t post them in the form of posts. This can be your articles on other sites (which you do not have the right to host), interviews, your projects (say on the github), received certificates, completed courses, etc.
 
-To prevent users of the site from confusing posts and links, links have additional distinctive elements - emoji "chain" in front of the title, an outgoing link icon in the card itself. Also, links do not have a "read more" button like posts.
+To prevent users of the site from confusing posts and links, links have additional distinctive elements - emoji (🔗) in front of the title, an outgoing link icon in the card itself. Also, links do not have a "read more" button like posts.
 
 A typical link looks like this:
 
@@ -248,7 +250,7 @@ Like a post, a link must have a `title` and a `date`, and also, of course, the l
 
 All other elements are the same as the post. Only in contrast to the post, the body of the link is fully displayed in the feed - because when you click, the user will follow the link, and not the "full version". So do not make the link body too large.
 
-### Notes
+#### Notes
 
 Notes is a type of content that is fully located in the feed. Cards of notes in themselves do not refer anywhere and do not lead anywhere.
 
@@ -266,6 +268,10 @@ Note card - the type of content that is fully displayed in the feed of the site.
 ```
 
 A note only needs a `date`.
+
+### Content Creation
+
+For local content creation you need:
 
 # Status
 

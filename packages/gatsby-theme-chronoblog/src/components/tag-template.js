@@ -14,7 +14,7 @@ export default ({ pageContext }) => {
     <Layout>
       <SEO canonical="tags" />
       <FeedSearch />
-      <Tags pageContextTag={pageContext.tag || 'tags'} />
+      <Tags showAllTagsButton pageContextTag={pageContext.tag || 'tags'} />
       <FeedItems filterByTags={[tag]} />
     </Layout>
   );

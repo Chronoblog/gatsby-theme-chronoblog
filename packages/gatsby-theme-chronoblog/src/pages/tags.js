@@ -11,7 +11,7 @@ export default () => {
     <Layout>
       <SEO slug="tags" canonical="tags" />
       <FeedSearch />
-      <Tags />
+      <Tags showAllTagsButton />
       <FeedItems />
     </Layout>
   );
