@@ -365,6 +365,12 @@ All types of content have additional, optional options that can help you manage 
 
 **`draft`** - if content has `draft: true`, this content will not be on the site in any form.
 
+### frontmatter-placeholder
+
+After you understand the content of the starter, you can delete the default content and start filling the site with your own content.
+
+However, it is better to leave the file `content/links/frontmatter-placeholder` in place and do not delete it. This content still doesn’t appear on the site (since it has `draft: true`). But its existence prevents some errors related to Gatsby and GraphQL, which may appear on an empty site.
+
 ## Feed
 
 Feed displays site content.
