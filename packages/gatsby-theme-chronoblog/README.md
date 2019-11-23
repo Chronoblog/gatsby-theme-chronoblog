@@ -12,7 +12,7 @@ Chronoblog - Gatsby Theme
 [![npm](https://img.shields.io/npm/v/gatsby-theme-chronoblog?color=brightgreen)](https://www.npmjs.com/package/gatsby-theme-chronoblog) [![node](https://img.shields.io/node/v/gatsby-theme-chronoblog)](https://www.npmjs.com/package/gatsby-theme-chronoblog)  
 [![Netlify Status](https://api.netlify.com/api/v1/badges/f36aa133-5611-484c-97fe-8d65fac4391b/deploy-status)](https://app.netlify.com/sites/chronoblog/deploys) [![Netlify Status](https://api.netlify.com/api/v1/badges/ed253426-cae8-40fc-9647-28a8cd1f5a28/deploy-status)](https://app.netlify.com/sites/chronoblog-netlify-cms/deploys) [![Netlify Status](https://api.netlify.com/api/v1/badges/89481a31-c0c3-46ac-bf12-1fa638f0cd82/deploy-status)](https://app.netlify.com/sites/chronoblog-minimal/deploys)
 
-Chronoblog is a Gatsby js theme specifically designed to create a personal website.
+Chronoblog is a [Gatsby js](https://github.com/gatsbyjs/gatsby) theme specifically designed to create a personal website.
 
 The main idea of ​​Chronoblog is to allow you not only to write a personal blog, but also to keep a record of everything important that you have done.
 
@@ -22,7 +22,7 @@ But what if we make a blog theme based on a feed? something like twitter or hack
 
 Chronoblog is a theme that allows you to do just that - to help create a more organic and universal personal site.
 
-**Demo: [https://chronoblog.netlify.com](https://chronoblog.netlify.com)**
+**Demo Website: [https://chronoblog.netlify.com](https://chronoblog.netlify.com)**
 
 This demo is at the same time the Chronoblog starter.
 
