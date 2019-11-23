@@ -1,6 +1,6 @@
 {
   "name": "chronoblog-netlify-cms",
-  "version": "1.0.18",
+  "version": "1.0.19",
   "private": true,
   "description": "gatsby-starter-chronoblog-netlify-cms",
   "keywords": [],
@@ -17,9 +17,9 @@
     "gatsby-plugin-manifest": "^2.2.27",
     "gatsby-plugin-netlify": "^2.1.17",
     "gatsby-plugin-netlify-cms": "^4.1.22",
-    "gatsby-remark-relative-images": "^0.2.3",
     "gatsby-plugin-sitemap": "^2.2.21",
-    "gatsby-theme-chronoblog": "^0.2.11",
+    "gatsby-remark-relative-images": "^0.2.3",
+    "gatsby-theme-chronoblog": "^0.2.12",
     "netlify-cms-app": "^2.9.7",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
