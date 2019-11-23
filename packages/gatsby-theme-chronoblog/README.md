@@ -613,3 +613,8 @@ All these versions work from master branch of this repository. It’s ok if they
 🐦 You can also contact me on Twitter: [twitter.com/Ganevru](https://twitter.com/Ganevru), I will be glad to know your opinion about Chronoblog.
 
 ✍️ If you made a site using Chronoblog - write to me about it!
+
+At the moment, as far as I know, the only real site using Chronoblog is my personal site: [www.ganevdev.com](https://www.ganevdev.com/)  
+Repo: [github.com/Ganevru/ganev-personal-site](https://github.com/Ganevru/ganev-personal-site)
+
+But I definitely want to expand this list.
