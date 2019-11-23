@@ -1,3 +1,9 @@
+<br/>
+<a href="https://chronoblog.netlify.com" target="_blank">
+<img src="./banner.png" alt="Chronoblog - Gatsby Theme" />
+</a>
+<br/>
+
 # Chronoblog - Gatsby Theme <!-- omit in toc -->
 
 [![npm](https://img.shields.io/npm/v/gatsby-theme-chronoblog?color=brightgreen)](https://www.npmjs.com/package/gatsby-theme-chronoblog) [![node](https://img.shields.io/node/v/gatsby-theme-chronoblog)](https://www.npmjs.com/package/gatsby-theme-chronoblog)  
@@ -13,7 +19,7 @@ But what if we make a blog theme based on a feed? something like twitter or hack
 
 Chronoblog is a theme that allows you to do just that - to help create a more organic and universal personal site.
 
-**Check out the Demo: [https://chronoblog.netlify.com](https://chronoblog.netlify.com)**
+**Demo: [https://chronoblog.netlify.com](https://chronoblog.netlify.com)**
 
 This demo is at the same time the Chronoblog starter.
 
