@@ -294,6 +294,18 @@ And to create a new **`note`**, yes, again the same thing, but in the folder `co
 
 The type of content is determined by the folder in which it is located!
 
+### Additional options available to content
+
+All types of content have additional, optional options that can help you manage the content on the site.
+
+#### hide
+
+If content has `hide: true`, then this content will NOT be displayed in the feed on the site (in any feed). But at the same time, this content itself will exist and will be available by link.
+
+#### draft
+
+If content has `draft: true`, this content will not be on the site in any form.
+
 # Status
 
 ## Starters status
