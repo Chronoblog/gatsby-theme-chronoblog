@@ -29,13 +29,6 @@ collections:
         }
       - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Tags", name: "tags", widget: "list", required: false }
-      - {
-          label: "Redirect from",
-          name: "redirect_from",
-          widget: "list",
-          allow_add: true,
-          required: false,
-        }
       - { label: "Draft", name: "draft", widget: "boolean", required: false }
       - { label: "Hide", name: "hide", widget: "boolean", required: false }
   - name: "link"
@@ -62,13 +55,6 @@ collections:
         }
       - { label: "Body", name: "body", widget: "markdown", required: false }
       - { label: "Tags", name: "tags", widget: "list", required: false }
-      - {
-          label: "Redirect from",
-          name: "redirect_from",
-          widget: "list",
-          allow_add: true,
-          required: false,
-        }
       - { label: "Draft", name: "draft", widget: "boolean", required: false }
       - { label: "Hide", name: "hide", widget: "boolean", required: false }
   - name: "note"
@@ -94,12 +80,5 @@ collections:
         }
       - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Tags", name: "tags", widget: "list", required: false }
-      - {
-          label: "Redirect from",
-          name: "redirect_from",
-          widget: "list",
-          allow_add: true,
-          required: false,
-        }
       - { label: "Draft", name: "draft", widget: "boolean", required: false }
       - { label: "Hide", name: "hide", widget: "boolean", required: false }
