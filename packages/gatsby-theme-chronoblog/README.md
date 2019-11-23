@@ -379,7 +379,7 @@ Search string to search feed items. It makes no sense to put this component if t
 
 It makes sense to change the default values of some parts of the site.
 
-### site-header.mdx
+### site-header
 
 You can find this file here: **`src/gatsby-theme-chronoblog/site-header.mdx`**
 
@@ -410,7 +410,7 @@ By default, the starter has two links in the menu - to the main page of the site
 </MenuMain>
 ```
 
-### site-footer.mdx
+### site-footer
 
 You can find this file here: **`src/gatsby-theme-chronoblog/site-footer.mdx`**
 
@@ -422,7 +422,7 @@ By default, this file looks like this:
 <div>© {new Date().getFullYear()}</div>
 ```
 
-### post-footer.mdx
+### post-footer
 
 Footer of the post is what comes after every post on the blog. Usually information about the author is placed here.
 
@@ -494,7 +494,7 @@ Path where you can find page corresponds to the name of the file, that is, the p
 
 Pages can be used to create: contact pages, portfolio/project pages, pages dedicated to one type of content (articles on a specific topic filtered by tags), etc.
 
-Just remember to add a link to the page in the main menu. Read more about it here: [#site-headermdx](https://github.com/Ganevru/gatsby-theme-chronoblog#site-headermdx)
+Just remember to add a link to the page in the main menu. Read more about it here: [#site-headermdx](#site-headermdx)
 
 Due to how Chronoblog works, pages are not the primary way to provide information. In fact, it’s quite normal not to use a single page at all (except for the main page). The main way to organize content in Chronoblog is tags, not pages.
 
