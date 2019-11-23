@@ -300,7 +300,7 @@ All types of content have additional, optional options that can help you manage 
 
 #### hide
 
-If content has `hide: true`, then this content will NOT be displayed in the feed on the site (in any feed). But at the same time, this content itself will exist and will be available by link.
+If content has `hide: true`, then this content will not be displayed in the feed on the site (in any feed). But at the same time, this content itself will exist and will be available.
 
 #### draft
 
@@ -308,7 +308,7 @@ If content has `draft: true`, this content will not be on the site in any form.
 
 ## Feed
 
-The feed and related components display site content. By default - in the form of cards.
+Feed displays site content.
 
 The standard way to use these components is how the main page of the site uses them:
 
@@ -360,6 +360,22 @@ Search string to search feed items. It makes no sense to put this component if t
 <FeedSearch />
 <FeedItems />
 ```
+
+## Pages
+
+Site pages can be found here: **`src/pages`**
+
+In Chronoblog starter you can find two pages:
+
+`index.mdx` - the main page of the site
+
+`projects.mdx` - example page that you can rename, change, or simply delete
+
+Path where you can find page corresponds to the name of the file, that is, the page `projects.mdx` can be found at `http://localhost:8000/projects`.
+
+`index` is an exception to this.
+
+Due to how Chronoblog works, pages are not the primary way to provide information. In fact, it’s quite normal not to use a single page at all (except for the main page).
 
 ## Permanent parts of the site
 
