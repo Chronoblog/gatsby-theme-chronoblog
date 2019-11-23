@@ -13,6 +13,10 @@ But what if we make a blog theme based on a feed? something like twitter or hack
 
 Chronoblog is a theme that allows you to do just that - to help create a more organic and universal personal site.
 
+**Check out the Demo: [https://chronoblog.netlify.com](https://chronoblog.netlify.com)**
+
+This demo is at the same time the Chronoblog starter.
+
 ## Table of Contents
 
 - [Guide - How to start working with Chronoblog Gatsby Theme](#guide---how-to-start-working-with-chronoblog-gatsby-theme)
@@ -40,6 +44,8 @@ Chronoblog is a theme that allows you to do just that - to help create a more or
 - [Status](#status)
   - [Starters status](#starters-status)
   - [Status of development and test versions](#status-of-development-and-test-versions)
+
+<br />
 
 # Guide - How to start working with Chronoblog Gatsby Theme
 
