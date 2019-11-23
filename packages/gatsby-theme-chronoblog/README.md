@@ -421,6 +421,12 @@ Search string to search feed items. It makes no sense to put this component if t
 
 It makes sense to change the default values of some parts of the site.
 
+All these parts are just theme components. Starter replaces them with its own using [Component Shadowing](https://www.gatsbyjs.org/blog/2019-04-29-component-shadowing/).
+
+> Component Shadowing let’s you replace the theme’s original file
+
+In fact, you can replace any component of Chronoblog. But the parts listed here are not just possible to replace - it is recommended to do to make your site unique.
+
 ### site-header
 
 You can find this file here: **`src/gatsby-theme-chronoblog/site-header.mdx`**
