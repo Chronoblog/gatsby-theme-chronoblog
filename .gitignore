@@ -55,6 +55,7 @@ yarn-error.log
 
 # personal
 README-RU.md
+README-DEV.md
 
 # dotenv environment variables file
 .env
