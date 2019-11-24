@@ -260,7 +260,7 @@ Chronoblog has three types of content: **posts**, **links**, and **notes**.
 
 All of them are in the `content` folder. They are located in the appropriate folders. The names of folders and their structure are important for the operation of the Chronoblog!
 
-All types of content use markdown syntax, you can read more about this in the Gatsby documentation. It is especially useful to know about [Frontmatter](https://www.gatsbyjs.org/docs/mdx/markdown-syntax/#frontmatter).
+All types of content use markdown syntax, you can read more about this in the Gatsby documentation ([markdown-syntax](https://www.gatsbyjs.org/docs/mdx/markdown-syntax)). Especially useful to know about [frontmatter](https://www.gatsbyjs.org/docs/mdx/markdown-syntax/#frontmatter)
 
 ### Content Types
 
