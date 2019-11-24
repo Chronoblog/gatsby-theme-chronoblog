@@ -41,6 +41,7 @@ This demo is at the same time the Chronoblog starter.
       - [Notes](#notes)
     - [Adding Content](#adding-content)
     - [Additional options available to content](#additional-options-available-to-content)
+    - [frontmatter-placeholder](#frontmatter-placeholder)
   - [Feed](#feed)
     - [FeedItems component](#feeditems-component)
     - [Tags component](#tags-component)
@@ -620,7 +621,9 @@ All these versions work from master branch of this repository. It’s ok if they
 
 ✍️ If you made a site using Chronoblog - write to me about it!
 
-At the moment, as far as I know, the only real site using Chronoblog is my personal site: [www.ganevdev.com](https://www.ganevdev.com/)  
+At the moment, as far as I know, the only real site using Chronoblog is my personal site:
+
+Site: [www.ganevdev.com](https://www.ganevdev.com/)  
 Repo: [github.com/Ganevru/ganev-personal-site](https://github.com/Ganevru/ganev-personal-site)
 
 But I definitely want to expand this list.
