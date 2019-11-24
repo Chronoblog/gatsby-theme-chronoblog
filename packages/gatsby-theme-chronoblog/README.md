@@ -18,9 +18,11 @@ The main idea of ​​Chronoblog is to allow you not only to write a personal b
 
 I never liked the blog format so that, regardless of the platform (be it Medium or WordPress), they all expect that the content that I will create is text, and it is desirable that this be a long article. A blog consisting of long articles looks and works organically (on any platform). But a blog consisting of any other content (video, presentations, links to external resources, or even just short notes) - it feels and works "somehow wrong".
 
+Many people solve this problem like this - create separate pages on their website for a blog, for conversations, for podcasts, for a portfolio, etc. But it is difficult to maintain and update.
+
 But what if we make a blog theme based on a feed? Something like twitter or hackernews, but without restrictions, and in the form of a personal blog?
 
-Chronoblog is a theme that allows you to do just that - to help create a more organic and universal personal site.
+Chronoblog is a theme that allows you to do just that - to help create a more organic and universal personal website.
 
 **Demo Website: [https://chronoblog.netlify.com](https://chronoblog.netlify.com)**
 
@@ -42,16 +44,18 @@ This demo is at the same time the Chronoblog starter.
     - [Adding Content](#adding-content)
     - [Additional options available to content](#additional-options-available-to-content)
     - [frontmatter-placeholder](#frontmatter-placeholder)
-  - [Feed](#feed)
-    - [FeedItems component](#feeditems-component)
-    - [Tags component](#tags-component)
-    - [FeedSearch component](#feedsearch-component)
   - [Permanent parts of the site](#permanent-parts-of-the-site)
     - [site-header](#site-header)
     - [site-footer](#site-footer)
     - [post-footer](#post-footer)
   - [Pages](#pages)
     - [index.mdx - homepage of your site](#indexmdx---homepage-of-your-site)
+- [Documentation](#documentation)
+  - [Feed](#feed)
+    - [FeedItems component](#feeditems-component)
+    - [Tags component](#tags-component)
+    - [FeedSearch component](#feedsearch-component)
+  - [Font Awesome Icons](#font-awesome-icons)
 - [Status](#status)
   - [Starters status](#starters-status)
   - [Status of development and test versions](#status-of-development-and-test-versions)
@@ -298,7 +302,7 @@ The basic idea of ​​links is that they work and feel "equivalent" to blog po
 
 Links are needed for materials that you consider important to post in your feed, but for some reason you can’t post them in the form of posts. This can be your articles on other sites (which you do not have the right to host), interviews, your projects (say on the github), received certificates, completed courses, etc.
 
-To prevent users of the site from confusing posts and links, links have additional distinctive elements - emoji (🔗) in front of the title, an outgoing link icon in the card itself. Also, links do not have a "read more" button like posts.
+To prevent users of the site from confusing posts and links, links have additional distinctive elements - emoji (🔗) in front of the title, path where the link leads under the heading, an outgoing link icon in the card. Also, links do not have a "read more ->" button like posts.
 
 A typical link looks like this:
 
@@ -375,59 +379,6 @@ All types of content have additional, optional options that can help you manage 
 After you understand the content of the starter, you can delete the default content and start filling the site with your own content.
 
 However, it is better to leave the file `content/links/frontmatter-placeholder` in place and do not delete it. This content still doesn’t appear on the site (since it has `draft: true`). But its existence prevents some errors related to Gatsby and GraphQL, which may appear on an empty site.
-
-## Feed
-
-Feed displays site content.
-
-The standard way to use these components is how the main page of the site uses them:
-
-`src/pages/index.mdx`
-
-```md
-<FeedSearch />
-<Tags />
-<FeedItems />
-```
-
-How do these components work in `mdx` files if we did not import them there? They are already imported to `mdx` inside Chronoblog! So you do not need to do this. You can read about this technique here: [mdxjs.com/advanced/components](https://mdxjs.com/advanced/components)
-
-### FeedItems component
-
-The most important component of the feed - this component displays content.
-
-In this form, it is used, for example, on the main page of the site (`src/pages/index.mdx`):
-
-```md
-<FeedItems />
-```
-
-This component has various arguments.
-
-**`filterByTags`** takes an array of tags (in the form of strings) and displays all materials that have at least one of these tags.
-
-This component will display all site content that have the `project` tag:
-
-```md
-<FeedItems filterByTags={['project']} />
-```
-
-### Tags component
-
-This component displays all tags available on the site.
-
-```md
-<Tags />
-```
-
-### FeedSearch component
-
-Search string to search feed items. It makes no sense to put this component if there is no `<FeedItems />` component nearby.
-
-```md
-<FeedSearch />
-<FeedItems />
-```
 
 ## Permanent parts of the site
 
@@ -538,6 +489,18 @@ Everything that will be written here will be displayed after **each blog post**.
 
 The whole point of this file is to show how you can use it! Feel free to modify this file. Or, if you do not need it, remove everything from it and leave it blank.
 
+In the example, you might notice that Font Awesome Icon is often used here.
+
+For example, in order to show the github icon, just insert the following component:
+
+```md
+<FontAwesomeIcon icon={['fab', 'github']} />
+```
+
+This works in any `.mdx` files.
+
+More about this here: [Font Awesome Icons](#font-awesome-icons)
+
 ## Pages
 
 Site pages can be found here: **`src/pages`**
@@ -593,6 +556,81 @@ You can read more about them here:
 - [FeedItems component](#feeditems-component)
 - [Tags component](#tags-component)
 - [FeedSearch component](#feedsearch-component)
+
+# Documentation
+
+Here is more in-depth information about various aspects of Chronoblog.
+
+## Feed
+
+Feed displays site content.
+
+The standard way to use these components is how the main page of the site uses them:
+
+`src/pages/index.mdx`
+
+```md
+<FeedSearch />
+<Tags />
+<FeedItems />
+```
+
+How do these components work in `mdx` files if we did not import them there? They are already imported to `mdx` inside Chronoblog! So you do not need to do this. You can read about this technique here: [mdxjs.com/advanced/components](https://mdxjs.com/advanced/components)
+
+### FeedItems component
+
+The most important component of the feed - this component displays content.
+
+In this form, it is used, for example, on the main page of the site (`src/pages/index.mdx`):
+
+```md
+<FeedItems />
+```
+
+This component has various arguments.
+
+**`filterByTags`** takes an array of tags (in the form of strings) and displays all materials that have at least one of these tags.
+
+This component will display all site content that have the `project` tag:
+
+```md
+<FeedItems filterByTags={['project']} />
+```
+
+### Tags component
+
+This component displays all tags available on the site.
+
+```md
+<Tags />
+```
+
+### FeedSearch component
+
+Search string to search feed items. It makes no sense to put this component if there is no `<FeedItems />` component nearby.
+
+```md
+<FeedSearch />
+<FeedItems />
+```
+
+## Font Awesome Icons
+
+The Chronoblog uses [react-fontawesome](https://github.com/FortAwesome/react-fontawesome) for icons. Brand icons (they call them “fab”) are already built into all `.mdx` files - you don’t need to import them from anywhere, just use them, for example like this:
+
+```md
+<FontAwesomeIcon icon={['fab', 'twitter']} />  
+<FontAwesomeIcon icon={['fab', 'github']} />  
+<FontAwesomeIcon icon={['fab', 'instagram']} />
+```
+
+These three icons that were not related to any brands were also built in:
+
+```md
+<FontAwesomeIcon icon="at" />
+<FontAwesomeIcon icon="envelope" />
+<FontAwesomeIcon icon="phone" />
+```
 
 # Status
 
