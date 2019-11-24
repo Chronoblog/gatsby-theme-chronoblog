@@ -528,7 +528,7 @@ By default, it looks something like this:
 `src/pages/index.mdx`
 
 ```md
-# ⌛ Gatsby Theme Chronoblog
+# Gatsby Theme Chronoblog
 
 Welcome to the Chronoblog starter!
 
