@@ -14,11 +14,11 @@ Chronoblog - Gatsby Theme
 
 Chronoblog is a [Gatsby js](https://github.com/gatsbyjs/gatsby) theme specifically designed to create a personal website.
 
-The main idea of ​​Chronoblog is to allow you not only to write a personal blog, but also to keep a record of everything important that you have done.
+The main idea of ​​Chronoblog is to allow you not only to write a personal blog but also to keep a record of everything important that you have done.
 
 I never liked the blog format so that, regardless of the platform (be it Medium or WordPress), they all expect that the content that I will create is text, and it is desirable that this be a long article. A blog consisting of long articles looks and works organically (on any platform). But a blog consisting of any other content (video, presentations, links to external resources, or even just short notes) - it feels and works "somehow wrong".
 
-But what if we make a blog theme based on a feed? something like twitter or hackernews, but without restrictions, and in the form of a personal blog?
+But what if we make a blog theme based on a feed? Something like twitter or hackernews, but without restrictions, and in the form of a personal blog?
 
 Chronoblog is a theme that allows you to do just that - to help create a more organic and universal personal site.
 
