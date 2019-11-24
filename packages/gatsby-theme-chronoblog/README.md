@@ -616,7 +616,7 @@ Search string to search feed items. It makes no sense to put this component if t
 
 ## Font Awesome Icons
 
-The Chronoblog uses [react-fontawesome](https://github.com/FortAwesome/react-fontawesome) for icons. Brand icons (they call them “fab”) are already built into all `.mdx` files - you don’t need to import them from anywhere, just use them, for example like this:
+Chronoblog uses [react-fontawesome](https://github.com/FortAwesome/react-fontawesome) for icons. Brand icons (they call them “fab”) are already built into all `.mdx` files - you don’t need to import them from anywhere, just use them, for example like this:
 
 ```md
 <FontAwesomeIcon icon={['fab', 'twitter']} />  
