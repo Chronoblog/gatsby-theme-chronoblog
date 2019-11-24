@@ -655,6 +655,8 @@ All these versions work from master branch of this repository. It’s ok if they
 | [![Netlify Status](https://api.netlify.com/api/v1/badges/856e7fea-a790-4b10-b982-76cab60ce4df/deploy-status)](https://app.netlify.com/sites/chronoblog-master-minimal/deploys) | https://chronoblog-master-minimal.netlify.com |
 | [![Netlify Status](https://api.netlify.com/api/v1/badges/3bddc25b-758e-4215-a6ee-4f0bc5997b87/deploy-status)](https://app.netlify.com/sites/chronoblog-master-netlify-cms/deploys) | https://chronoblog-master-netlify-cms.netlify.com |
 
+[![Actions Status](https://github.com/Ganevru/gatsby-theme-chronoblog/workflows/tests/badge.svg)](https://github.com/Ganevru/gatsby-theme-chronoblog/actions)
+
 # Feedback
 
 🤝 If you have any problems with the Chronoblog, or you have interesting ideas, write to the github issue: [github.com/Ganevru/gatsby-theme-chronoblog/issues](https://github.com/Ganevru/gatsby-theme-chronoblog/issues)
