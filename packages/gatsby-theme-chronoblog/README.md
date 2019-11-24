@@ -63,6 +63,8 @@ This demo is at the same time the Chronoblog starter.
 
 This guide will show how to create a personal website using Gatsby Theme Chronoblog.
 
+To create a website using the Chronoblog theme, you do not need to be an expert in using Gatsbyjs. However, it’s still recommended that you complete the basic tutorial: [Gatsby.js Tutorials](https://www.gatsbyjs.org/tutorial/)
+
 ## Installation and Development
 
 In this guide, we will set up our new site using this starter: [gatsby-starter-chronoblog](https://github.com/Ganevru/gatsby-starter-chronoblog)
@@ -257,6 +259,8 @@ In general, this file explains itself. The easiest way to understand what and ho
 Chronoblog has three types of content: **posts**, **links**, and **notes**.
 
 All of them are in the `content` folder. They are located in the appropriate folders. The names of folders and their structure are important for the operation of the Chronoblog!
+
+All types of content use markdown syntax, you can read more about this in the Gatsby documentation. It is especially useful to know about [Frontmatter](https://www.gatsbyjs.org/docs/mdx/markdown-syntax/#frontmatter).
 
 ### Content Types
 
