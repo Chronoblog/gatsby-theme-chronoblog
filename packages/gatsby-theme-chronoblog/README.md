@@ -59,6 +59,7 @@ This demo is at the same time the Chronoblog starter.
 - [Status](#status)
   - [Starters status](#starters-status)
   - [Status of development and test versions](#status-of-development-and-test-versions)
+  - [GitHub Workflows](#github-workflows)
 - [Feedback](#feedback)
 
 <br />
@@ -655,7 +656,11 @@ All these versions work from master branch of this repository. It’s ok if they
 | [![Netlify Status](https://api.netlify.com/api/v1/badges/856e7fea-a790-4b10-b982-76cab60ce4df/deploy-status)](https://app.netlify.com/sites/chronoblog-master-minimal/deploys) | https://chronoblog-master-minimal.netlify.com |
 | [![Netlify Status](https://api.netlify.com/api/v1/badges/3bddc25b-758e-4215-a6ee-4f0bc5997b87/deploy-status)](https://app.netlify.com/sites/chronoblog-master-netlify-cms/deploys) | https://chronoblog-master-netlify-cms.netlify.com |
 
-![tests](https://github.com/Ganevru/gatsby-theme-chronoblog/workflows/tests/badge.svg)
+## GitHub Workflows
+
+![](https://github.com/Ganevru/gatsby-theme-chronoblog/workflows/Tests/badge.svg)
+
+![](https://github.com/Ganevru/gatsby-theme-chronoblog/workflows/Test%20and%20Publish%20Starters/badge.svg)
 
 # Feedback
 
