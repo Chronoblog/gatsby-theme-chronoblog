@@ -1,4 +1,13 @@
-# Gatsby Starter Chronoblog - starter for Chronoblog Gatsby Theme
+<br />
+<p align="center">
+<a href="https://chronoblog.netlify.com" target="_blank">
+<img src="https://github.com/Ganevru/gatsby-theme-chronoblog/raw/master/banner.png" alt="Gatsby Starter Chronoblog" />
+</a>
+</p>
+
+<h1 align="center">
+Gatsby Starter Chronoblog - starter for Chronoblog Gatsby Theme
+</h1>
 
 [![npm](https://img.shields.io/npm/v/gatsby-theme-chronoblog?color=brightgreen)](https://www.npmjs.com/package/gatsby-theme-chronoblog) [![node](https://img.shields.io/node/v/gatsby-theme-chronoblog)](https://www.npmjs.com/package/gatsby-theme-chronoblog) [![Netlify Status](https://api.netlify.com/api/v1/badges/f36aa133-5611-484c-97fe-8d65fac4391b/deploy-status)](https://app.netlify.com/sites/chronoblog/deploys)
 
@@ -40,4 +49,4 @@ Your site is now running at http://localhost:8000
 
 ## More information
 
-To get all the basic information, go to the main repository: [github.com/Ganevru/gatsby-theme-chronoblog](https://github.com/Ganevru/gatsby-starter-chronoblog)
+For complete information, go to the main repository: [github.com/Ganevru/gatsby-theme-chronoblog](https://github.com/Ganevru/gatsby-starter-chronoblog)
