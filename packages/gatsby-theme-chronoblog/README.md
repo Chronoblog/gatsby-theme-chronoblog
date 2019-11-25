@@ -34,6 +34,7 @@ This demo is at the same time the Chronoblog starter.
   - [Installation and Development](#installation-and-development)
   - [Folder structure](#folder-structure)
   - [Gatsby Config](#gatsby-config)
+    - [favicon](#favicon)
     - [Plugins](#plugins)
   - [Style settings](#style-settings)
   - [Content](#content)
@@ -202,11 +203,17 @@ In **`siteMetadata`**, replace information about:
 
 Most of this data is needed for the website meta tags to work properly.
 
+### favicon
+
+Thanks to the plugin [gatsby-plugin-manifest](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-plugin-manifest), you can use one image as an icon (including favicon) for all devices. Just replace `src/assets/favicon.png` image with your own. It is better to use the size of `512x512`.
+
 ### Plugins
 
 `gatsby-theme-chronoblog` - most important plugin of this starter. Here you can replace the default values of the UI of the elements of the Chronoblog. This is done to simplify the localization of the site in various languages. If your site is in English, you can leave it as it is. If the site will use any other language - translate the default values right here.
 
 All other plugins are optional. Chronoblog does not rely on them, so if you do not need, say, `gatsby-plugin-google-analytics`, you can ignore it or remove it from the list of plugins.
+
+And of course you can use any other plugins. Gatsby Plugin Ecosystem: [www.gatsbyjs.org/plugins](https://www.gatsbyjs.org/plugins/)
 
 ## Style settings
 
@@ -632,6 +639,38 @@ These three icons that were not related to any brands were also built in:
 <FontAwesomeIcon icon="envelope" />
 <FontAwesomeIcon icon="phone" />
 ```
+
+## SEO and metadata
+
+To work with metadata, Chronoblog relies on [react-helmet](https://www.npmjs.com/package/react-helmet) and [gatsby-plugin-react-helmet](https://www.npmjs.com/package/gatsby-plugin-react-helmet).
+
+Most of the work related to SEO and metadata goes automatically. Just based on what information you most likely would like to see in metadata. It is enough for the user to correctly fill in the information about the site in `gatsby-config.js` - [gatsby-config](#gatsby-config).
+
+### Metadata generation
+
+**Basic metadata:**
+- title is taken from the post title + site name.
+- description is taken from the description of the post, or, if there is no description, from the beginning of the post itself.
+- cover (if any) is used as the main image.
+
+The same logic generates metadata for [`Open Graph`](https://www.ogp.me/) and for [Twitter Cards](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started).
+
+### Metadata Verification Tools
+
+See how Chronoblog works with metadata using these tools. For example, copy this link and paste it into the validation tool:
+
+```
+https://chronoblog.netlify.com/full-blog-post/
+```
+
+Twitter: [twitter card validator](https://cards-dev.twitter.com/validator)  
+Facebook: [facebook debug og](https://developers.facebook.com/tools/debug/og/object)
+
+### SEO component in `.mdx`
+
+You can use `SEO` component in any `.mdx` file (it does not need to be imported). This component accepts child elements and you can set any metatags inside it, as if you used the [react-helmet](https://www.npmjs.com/package/react-helmet) plugin on its own.
+
+This can be useful if you need to set, for example, a special title for some page on the site.
 
 # Status
 
