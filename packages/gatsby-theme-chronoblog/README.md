@@ -653,11 +653,12 @@ Most of the work related to SEO and metadata goes automatically. Just based on w
 ### Metadata generation
 
 **Basic metadata:**
+
 - title is taken from the post title + site name.
 - description is taken from the description of the post, or, if there is no description, from the beginning of the post itself.
 - cover (if any) is used as the main image.
 
-The same logic generates metadata for [`Open Graph`](https://www.ogp.me/) and for [Twitter Cards](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started).
+The same logic generates metadata for [Open Graph](https://www.ogp.me/) and for [Twitter Cards](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started).
 
 ### Metadata Verification Tools
 
@@ -667,8 +668,8 @@ See how Chronoblog works with metadata using these tools. For example, copy this
 https://chronoblog.netlify.com/full-blog-post/
 ```
 
-Twitter: [twitter card validator](https://cards-dev.twitter.com/validator)  
-Facebook: [facebook debug og](https://developers.facebook.com/tools/debug/og/object)
+Twitter card validator: [cards-dev.twitter.com/validator](https://cards-dev.twitter.com/validator)  
+Facebook debug OG: [developers.facebook.com/tools/debug/og/object](https://developers.facebook.com/tools/debug/og/object)
 
 ### SEO component in `.mdx`
 
