@@ -5,7 +5,7 @@ export default {
   initialColorMode: 'light',
   colors: {
     ...chronoblogTheme.color,
-    text: '#000',
+    text: '#222',
     background: '#fff',
     link: '#3d7e9a',
     primary: '#3a5f7d',
