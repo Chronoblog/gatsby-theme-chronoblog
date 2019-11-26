@@ -1,6 +1,8 @@
 /** @jsx jsx */
+import '@fortawesome/fontawesome-svg-core/styles.css';
+
 import { Global } from '@emotion/core';
-import { library } from '@fortawesome/fontawesome-svg-core';
+import { config, library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { faAt, faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -16,6 +18,7 @@ import LightDarkSwitchButton from './light-dark-switch-button';
 import SEO from './seo';
 import Tags from './tags';
 
+config.autoAddCss = false;
 library.add(fab, faEnvelope, faPhone, faAt);
 
 const Link = ({ to, ...props }) => <LinkGatsby to={to} {...props} />;
