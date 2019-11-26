@@ -284,7 +284,25 @@ All types of content use markdown syntax, you can read more about this in the Ga
 
 Posts are regular blog posts.
 
+Place your posts inside `content/posts`:
+
+```
+chronoblog-site
+  ├─ content
+  │  ├─ links
+  │  ├─ notes
+  │  └─ posts // <- your blog posts folder
+  │     └─ some-blog-post // <- one blog post
+  │        ├─ image.jpg // <- cover
+  │        └─ index.md // <- main post file
+  ├─ gatsby-config.js
+  ├─ package.json
+  └─ src
+```
+
 A typical post looks like this:
+
+`content/posts/some-blog-post/index.md`
 
 ```md
 ---
@@ -316,7 +334,25 @@ Links are needed for materials that you consider important to post in your feed,
 
 To prevent users of the site from confusing posts and links, links have additional distinctive elements - emoji (🔗) in front of the title, path where the link leads under the heading, an outgoing link icon in the card. Also, links do not have a "read more ->" button like posts.
 
+Place your links inside `content/links`:
+
+```
+chronoblog-site
+  ├─ content
+  │  ├─ links // <- your links folder
+  │  │  └─ link-to-chronoblog // <- one link folder
+  │  │     ├─ image.jpg // <- link cover
+  │  │     └─ index.md // <- main link file
+  │  ├─ notes
+  │  └─ posts
+  ├─ gatsby-config.js
+  ├─ package.json
+  └─ src
+```
+
 A typical link looks like this:
+
+`content/links/link-to-chronoblog/index.md`
 
 ```md
 ---
@@ -340,7 +376,24 @@ Notes is a type of content that is fully located in the feed. Cards of notes do 
 
 At the same time, notes allow you to place almost anything in the feed. The starter (demo: [chronoblog.netlify.com](https://chronoblog.netlify.com)) shows different options for how you can use notes - post podcasts, YouTube videos, presentations, post links or, in fact, text notes.
 
+Place your links inside `content/links`:
+
+```
+chronoblog-site
+  ├─ content
+  │  ├─ links
+  │  ├─ notes // <- notes folder
+  │  │  └─ note-chronoblog // <- one note folder
+  │  │     └─ index.md // <- main note file
+  │  └─ posts
+  ├─ gatsby-config.js
+  ├─ package.json
+  └─ src
+```
+
 A typical note:
+
+`content/notes/note-chronoblog/index.md`
 
 ```md
 ---
