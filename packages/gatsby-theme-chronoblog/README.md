@@ -296,7 +296,7 @@ chronoblog-site
   │  └─ posts // <- your blog posts folder
   │     └─ some-blog-post // <- one blog post
   │        ├─ image.jpg // <- cover
-  │        └─ index.md // <- main post file
+  │        └─ index.md // <- post file
   ├─ gatsby-config.js
   ├─ package.json
   └─ src
@@ -344,7 +344,7 @@ chronoblog-site
   │  ├─ links // <- your links folder
   │  │  └─ link-to-chronoblog // <- one link folder
   │  │     ├─ image.jpg // <- link cover
-  │  │     └─ index.md // <- main link file
+  │  │     └─ index.md // <- link file
   │  ├─ notes
   │  └─ posts
   ├─ gatsby-config.js
@@ -378,7 +378,7 @@ Notes is a type of content that is fully located in the feed. Cards of notes do 
 
 At the same time, notes allow you to place almost anything in the feed. The starter (demo: [chronoblog.netlify.com](https://chronoblog.netlify.com)) shows different options for how you can use notes - post podcasts, YouTube videos, presentations, post links or, in fact, text notes.
 
-Place your links inside `content/links`:
+Place your notes inside `content/notes`:
 
 ```
 chronoblog-site
@@ -386,7 +386,7 @@ chronoblog-site
   │  ├─ links
   │  ├─ notes // <- notes folder
   │  │  └─ note-chronoblog // <- one note folder
-  │  │     └─ index.md // <- main note file
+  │  │     └─ index.md // <- note file
   │  └─ posts
   ├─ gatsby-config.js
   ├─ package.json
