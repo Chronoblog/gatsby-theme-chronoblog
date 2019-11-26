@@ -23,11 +23,11 @@ export default {
   fontSizes: [14, 16, 18, 20, 22, 24, 28, 36],
   borderRadius: {
     ...chronoblogTheme.borderRadius,
-    card: 16,
-    button: 16,
-    search: 16,
-    code: 16,
-    img: 16
+    card: 36,
+    button: 36,
+    search: 36,
+    code: 36,
+    img: 36
   },
   fonts: {
     ...chronoblogTheme.fonts,
