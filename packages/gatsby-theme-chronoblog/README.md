@@ -274,7 +274,9 @@ In general, this file explains itself. The easiest way to understand what and ho
 
 Chronoblog has three types of content: **posts**, **links**, and **notes**.
 
-All of them are in the `content` folder. They are located in the appropriate folders. The names of folders and their structure are important for the operation of the Chronoblog!
+All of them are in the `content` folder. They are located in the appropriate folders.
+
+Chronoblog has [pages](#pages), but they are not in the content folder, why? The fact is that everything in the content folder is not just site content, it is [Feed](#feed) content. Everything in the content folder is displayed in the feed (sorted by date, filtered by tags, etc.). But pages are not feed content.
 
 All types of content use markdown syntax, you can read more about this in the Gatsby documentation ([markdown-syntax](https://www.gatsbyjs.org/docs/mdx/markdown-syntax)). Especially useful to know about [frontmatter](https://www.gatsbyjs.org/docs/mdx/markdown-syntax/#frontmatter)
 
