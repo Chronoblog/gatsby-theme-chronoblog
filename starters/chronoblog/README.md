@@ -1,7 +1,7 @@
 <br />
 <p align="center">
 <a href="https://chronoblog.netlify.com" target="_blank">
-<img src="https://github.com/Ganevru/gatsby-theme-chronoblog/raw/master/banner.png" alt="Gatsby Starter Chronoblog" />
+<img src="https://github.com/Ganevru/gatsby-theme-chronoblog/raw/master/banner-small-2.png" alt="Gatsby Starter Chronoblog" />
 </a>
 </p>
 
