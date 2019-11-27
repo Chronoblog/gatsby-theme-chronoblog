@@ -11,6 +11,7 @@ const CoverImageBase = ({
   type,
   height,
   coverFluidImage,
+  objectFit = 'scale-down',
   backdropType = `blurImage`
 }) => {
   const borderRadiusForCard =
@@ -57,7 +58,7 @@ const CoverImageBase = ({
             ...borderRadiusForCard
           }}
           imgStyle={{
-            objectFit: 'none',
+            objectFit,
             objectPosition: '50% 50%'
           }}
           alt={imageTitle}
@@ -91,6 +92,7 @@ export default ({ data, type = 'post' }) => {
       type={type}
       height={heightArray}
       coverFluidImage={coverFluidImage}
+      objectFit="scale-down"
       backdropType={backdropType}
     />
   );
