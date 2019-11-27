@@ -1,16 +1,11 @@
 /** @jsx jsx */
-import { useBreakpointIndex, useResponsiveValue } from '@theme-ui/match-media';
-import BackgroundImage from 'gatsby-background-image';
+import GatsbyImage from 'gatsby-image';
 import get from 'lodash/get';
 import { jsx } from 'theme-ui';
 
-const CoverImageBase = ({
-  data,
-  type,
-  height,
-  coverFluidImage,
-  backgroundSize
-}) => {
+const Image = (props) => <GatsbyImage {...props} />;
+
+const CoverImageBase = ({ data, type, height, coverFluidImage }) => {
   const borderRadiusForCard =
     type === 'card'
       ? {
@@ -19,7 +14,7 @@ const CoverImageBase = ({
         }
       : {};
   //
-  const imageAlt = get(data, 'frontmatter.title', '');
+  const imageTitle = get(data, 'frontmatter.title', '');
   //
   return (
     <div
@@ -29,6 +24,10 @@ const CoverImageBase = ({
     >
       <div
         sx={{
+          maxHeight: height,
+          backdropFilter: `drop-shadow(0px 0px 20px black)`,
+          boxShadow: 'inset 0px 0px 15px black',
+          // backgroundColor: 'green',
           backgroundImage: `url(${coverFluidImage.src})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
@@ -36,32 +35,23 @@ const CoverImageBase = ({
           ...borderRadiusForCard
         }}
       >
-        <BackgroundImage
-          style={{
+        <Image
+          sx={{
             backdropFilter: `blur(5px) contrast(50%)`,
             WebkitBackdropFilter: `blur(5px) contrast(50%)`,
-            borderRadius: 'inherit',
-            ...backgroundSize
+            maxHeight: height,
+            minHeight: height,
+            borderRadius: 'card',
+            ...borderRadiusForCard
           }}
-          alt={imageAlt}
-          title={imageAlt}
+          imgStyle={{
+            objectFit: 'none',
+            objectPosition: '50% 50%'
+          }}
+          alt={imageTitle}
+          title={imageTitle}
           fluid={coverFluidImage}
-        >
-          <div
-            sx={{
-              borderRadius: 'card',
-              ...borderRadiusForCard,
-              backdropFilter: `drop-shadow(0px 0px 20px black)`,
-              boxShadow: 'inset 0px 0px 15px black'
-            }}
-          >
-            <div
-              sx={{
-                minHeight: height
-              }}
-            />
-          </div>
-        </BackgroundImage>
+        />
       </div>
     </div>
   );
@@ -76,65 +66,9 @@ export default ({ data, type = 'post' }) => {
   );
   if (!coverFluidImage) return <div />;
   //
-  let breakpointIndex = 0;
-  try {
-    breakpointIndex = useBreakpointIndex();
-  } catch {
-    breakpointIndex = 0;
-  }
-  //
   const heightMain = 366;
   const heightMobile = 183;
   const heightArray = [heightMobile, heightMain];
-  //
-  let containerMaxWidth = 768;
-  try {
-    containerMaxWidth = useResponsiveValue((theme) => [
-      theme.styles.Container.maxWidth
-    ]);
-  } catch {
-    containerMaxWidth = 768;
-  }
-  //
-  if (
-    breakpointIndex === 0 &&
-    coverFluidImage.presentationWidth < 320 &&
-    coverFluidImage.presentationHeight < heightMobile
-  )
-    return (
-      <CoverImageBase
-        data={data}
-        type={type}
-        height={heightArray}
-        coverFluidImage={coverFluidImage}
-        backgroundSize={{ backgroundSize: 'auto auto' }}
-      />
-    );
-  //
-  if (breakpointIndex === 0)
-    return (
-      <CoverImageBase
-        data={data}
-        type={type}
-        height={heightArray}
-        coverFluidImage={coverFluidImage}
-        backgroundSize={{ backgroundSize: 'contain' }}
-      />
-    );
-  //
-  if (
-    coverFluidImage.presentationWidth < containerMaxWidth &&
-    coverFluidImage.presentationHeight < heightMain
-  )
-    return (
-      <CoverImageBase
-        data={data}
-        type={type}
-        height={heightArray}
-        coverFluidImage={coverFluidImage}
-        backgroundSize={{ backgroundSize: 'auto auto' }}
-      />
-    );
   //
   return (
     <CoverImageBase
@@ -142,7 +76,6 @@ export default ({ data, type = 'post' }) => {
       type={type}
       height={heightArray}
       coverFluidImage={coverFluidImage}
-      backgroundSize={{ backgroundSize: 'contain' }}
     />
   );
 };
