@@ -20,7 +20,7 @@ I never liked the blog format so that, regardless of the platform (be it Medium 
 
 Many people solve this problem like this - create separate pages on their website for a blog, for talks, for podcasts, for a portfolio, etc. But it is difficult to maintain and update.
 
-But what if we make a blog theme based on a feed? Something like twitter or hackernews, but without restrictions, and in the form of a personal blog?
+But what if we make a blog theme based on a feed? Something like twitter or hackernews or reddit, but without restrictions, and in the form of a personal blog?
 
 Chronoblog is a theme that allows you to do just that - to help create a more organic and universal personal website.
 
@@ -56,6 +56,7 @@ This demo is at the same time the Chronoblog starter.
     - [FeedItems component](#feeditems-component)
     - [Tags component](#tags-component)
     - [FeedSearch component](#feedsearch-component)
+  - [Content Cover](#content-cover)
   - [Font Awesome Icons](#font-awesome-icons)
   - [SEO and metadata](#seo-and-metadata)
     - [Metadata generation](#metadata-generation)
@@ -680,6 +681,39 @@ Search string to search feed items. It makes no sense to put this component if t
 <FeedSearch />
 <FeedItems />
 ```
+
+## Content Cover
+
+Any [content](#content) can have a cover.
+
+You most likely want to keep the cover image in the same folder as your blog `post` (or `link`, or `note`). But this is optional:
+
+```
+chronoblog-site
+  └─ content
+     ├─ links
+     ├─ notes
+     └─ posts
+        └─ some-blog-post // <- blog post with cover
+           ├─ image.jpg // <- cover image
+           └─ index.md // <- post file
+```
+
+In `index.md` or in `index.mdx` file of the post:
+
+```md
+---
+title: Full Blog Post Example
+cover: ./image.jpg <- cover image
+date: 2019-11-05
+---
+
+Some blog post text
+```
+
+Cover used in the feed, in the full blog post, as well as the main image for the metadata of the content.
+
+Cover very forgiving to the size of the image, it is always in the center and always retains its proportions.
 
 ## Font Awesome Icons
 
