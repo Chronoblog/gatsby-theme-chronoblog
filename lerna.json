@@ -8,6 +8,7 @@
   "command": {
     "publish": {
       "allowBranch": "master",
+      "bump": "minor",
       "conventionalCommits": true,
       "message": "chore(release): Publish"
     },
