@@ -123,11 +123,11 @@ chronoblog-site
   │  │  └─ index.js
   │  ├─ gatsby-theme-chronoblog // chronoblog shadow
   │  │  ├─ post-footer.mdx // what comes after every blog post
-  │  │  ├─ site-footer.mdx
+  │  │  ├─ site-footer.mdx // where is the main menu of the site
   │  │  └─ site-header.mdx // site main menu
   │  └─ pages // specially defined pages of the site
   │     ├─ index.mdx // the main page of the site
-  │     └─ projects.mdx
+  │     └─ projects.mdx // optional site page
   └─ static
      └─ robots.txt
 ```
