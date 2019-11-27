@@ -8,9 +8,11 @@
   "command": {
     "publish": {
       "allowBranch": "master",
-      "bump": "patch",
       "conventionalCommits": true,
       "message": "chore(release): Publish"
+    },
+    "bootstrap": {
+      "npmClientArgs": ["--no-package-lock"]
     }
   }
 }
