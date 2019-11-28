@@ -11,8 +11,7 @@ const CoverImageBase = ({
   type,
   height,
   coverFluidImage,
-  objectFit = 'scale-down',
-  backdropType = `blurImage`
+  objectFit = 'scale-down'
 }) => {
   const borderRadiusForCard =
     type === 'card'
@@ -22,14 +21,6 @@ const CoverImageBase = ({
         }
       : {};
   //
-  const blurImageStyle = {
-    backdropFilter: `drop-shadow(0px 0px 20px black)`,
-    boxShadow: 'inset 0px 0px 15px black',
-    backgroundImage: `url(${coverFluidImage.src})`,
-    backgroundSize: 'cover'
-  };
-  let backdropStyle = {};
-  if (backdropType === `blurImage`) backdropStyle = blurImageStyle;
   //
   const imageTitle = get(data, 'frontmatter.title', '');
   //
@@ -40,13 +31,28 @@ const CoverImageBase = ({
       }}
     >
       <div
-        sx={{
-          maxHeight: height,
-          ...backdropStyle,
-          backgroundPosition: 'center',
-          borderRadius: 'card',
-          ...borderRadiusForCard
-        }}
+        sx={
+          isFirefox
+            ? {
+                backgroundColor: 'muted',
+                //
+                maxHeight: height,
+                backgroundPosition: 'center',
+                borderRadius: 'card',
+                ...borderRadiusForCard
+              }
+            : {
+                backdropFilter: `drop-shadow(0px 0px 20px black)`,
+                boxShadow: 'inset 0px 0px 15px black',
+                backgroundImage: `url(${coverFluidImage.src})`,
+                backgroundSize: 'cover',
+                //
+                maxHeight: height,
+                backgroundPosition: 'center',
+                borderRadius: 'card',
+                ...borderRadiusForCard
+              }
+        }
       >
         <Image
           sx={{
@@ -79,9 +85,6 @@ export default ({ data, type = 'post' }) => {
   );
   if (!coverFluidImage) return <div />;
   //
-  let backdropType = 'blurImage';
-  if (isFirefox) backdropType = 'none';
-  //
   const heightMain = 366;
   const heightMobile = 183;
   const heightArray = [heightMobile, heightMain];
@@ -93,7 +96,6 @@ export default ({ data, type = 'post' }) => {
       height={heightArray}
       coverFluidImage={coverFluidImage}
       objectFit="scale-down"
-      backdropType={backdropType}
     />
   );
 };
