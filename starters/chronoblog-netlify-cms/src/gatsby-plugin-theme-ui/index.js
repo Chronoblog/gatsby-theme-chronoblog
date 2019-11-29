@@ -27,7 +27,8 @@ export default {
     button: 6,
     search: 6,
     code: 6,
-    img: 6
+    img: 6,
+    authorBanner: 6
   },
   fonts: {
     ...chronoblogTheme.fonts,

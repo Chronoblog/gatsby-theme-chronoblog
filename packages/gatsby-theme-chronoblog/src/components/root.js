@@ -13,6 +13,8 @@ import { useCallback, useState } from 'react';
 import { jsx, Layout } from 'theme-ui';
 
 import FeedContext from '../contexts/context-feed';
+// @ts-ignore
+import AuthorBanner from './author-banner';
 import FeedItems from './feed-items';
 import FeedSearch from './feed-search';
 import LightDarkSwitchButton from './light-dark-switch-button';
@@ -41,7 +43,8 @@ const components = {
   Embed,
   Box,
   Flex,
-  Avatar
+  Avatar,
+  AuthorBanner
 };
 
 /**

@@ -23,14 +23,16 @@ module.exports = (options) => {
   //
   return {
     siteMetadata: {
-      siteTitle: 'Chronoblog - Theme for Gatsby js',
-      siteDescription: 'Gatsby Theme Chronoblog',
-      siteImage: '/banner.png',
+      siteTitle: '',
+      siteDescription: '',
+      siteImage: '',
       siteUrl: 'http://localhost:8000',
       pathPrefix: '/',
       siteLanguage: 'en',
       ogLanguage: `en_US`,
-      author: 'Name Placeholder',
+      author: '',
+      authorDescription: '',
+      avatar: '',
       twitterSite: '',
       twitterCreator: '',
       uiText: {

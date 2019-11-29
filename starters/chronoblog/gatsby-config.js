@@ -9,6 +9,8 @@ module.exports = {
     siteLanguage: 'en',
     ogLanguage: `en_US`,
     author: 'Site Author', // for example - 'Ivan Ganev'
+    authorDescription: '', // short text about the author
+    avatar: '/avatar.png',
     twitterSite: '', // website account on twitter
     twitterCreator: '', // creator account on twitter
     social: [
@@ -19,6 +21,10 @@ module.exports = {
       {
         icon: `github`,
         url: `https://github.com/Ganevru/gatsby-theme-chronoblog`
+      },
+      {
+        icon: `node-js`,
+        url: `https://www.npmjs.com/package/gatsby-theme-chronoblog`
       }
     ]
   },

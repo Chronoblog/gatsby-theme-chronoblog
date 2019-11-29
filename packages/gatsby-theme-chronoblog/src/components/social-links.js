@@ -15,6 +15,7 @@ const SocialUrl = ({ icon, url, ...props }) => {
   return (
     <div {...props}>
       <Styled.a
+        target="_blank"
         href={url}
         sx={{
           color: 'currentcolor',
@@ -29,24 +30,7 @@ const SocialUrl = ({ icon, url, ...props }) => {
   );
 };
 
-/**
- * @typedef {object} SocialLinks
- * @property {string | number=} fontSize
- * @property {string=} justifyContent
- */
-
-/**
- * @param {SocialLinks=} props
- */
-export default ({ fontSize, justifyContent = 'start', ...props }) => {
-  const siteMeta = useSiteMetadata();
-  if (!siteMeta.social) return <div />;
-  const { social } = siteMeta;
-  if (!social || social.length === 0) return <div />;
-  //
-  let fontSizeObj = {};
-  if (fontSize) fontSizeObj = { fontSize };
-  //
+const SocialLinksMain = ({ justifyContent, fontSizeObj, social, ...props }) => {
   return (
     <div
       sx={{ display: 'flex', flexWrap: 'wrap', justifyContent, ...fontSizeObj }}
@@ -64,4 +48,50 @@ export default ({ fontSize, justifyContent = 'start', ...props }) => {
       </div>
     </div>
   );
+};
+
+/**
+ * @typedef {object} SocialLinks
+ * @property {string | number=} fontSize
+ * @property {string=} justifyContent
+ * @property {[]=} socialLinks
+ */
+
+/**
+ * @param {SocialLinks=} props
+ */
+export default ({
+  fontSize,
+  justifyContent = 'start',
+  socialLinks,
+  ...props
+}) => {
+  let fontSizeObj = {};
+  if (fontSize) fontSizeObj = { fontSize };
+  //
+  if (socialLinks && socialLinks.length > 0) {
+    return (
+      <SocialLinksMain
+        fontSizeObj={fontSizeObj}
+        justifyContent={justifyContent}
+        social={socialLinks}
+        {...props}
+      />
+    );
+  }
+  //
+  const siteMeta = useSiteMetadata();
+  if (!siteMeta.social) return <div />;
+  const socialFromMeta = siteMeta.social;
+  if (socialFromMeta && socialFromMeta.length > 0)
+    return (
+      <SocialLinksMain
+        fontSizeObj={fontSizeObj}
+        justifyContent={justifyContent}
+        social={socialFromMeta}
+        {...props}
+      />
+    );
+  //
+  return <div />;
 };
