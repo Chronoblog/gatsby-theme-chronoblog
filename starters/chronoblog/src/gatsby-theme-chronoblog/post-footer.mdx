@@ -10,26 +10,11 @@ import avatar from './avatar.png';
   }}
 >
   <div style={{ marginRight: '30px' }}>
-    <img
-      style={{ borderRadius: '100%', height: '100%', width: '180px' }}
-      src={avatar}
-    ></img>
+  <Avatar src={avatar}/>
   </div>
   <div>
     <h4>Author Name</h4>
-    <p>
-      <FontAwesomeIcon icon={['fab', 'twitter']} />
-      &nbsp;<a href="https://twitter.com/twitter">yourTwitter</a>
-      <br />
-      <FontAwesomeIcon icon={['fab', 'github']} />
-      &nbsp;<a href="https://github.com/github">yourGithub</a>
-      <br />
-      <FontAwesomeIcon icon={['fab', 'instagram']} />
-      &nbsp;<a href="https://www.instagram.com/">yourInstagram</a>
-      <br />
-      <FontAwesomeIcon icon="at" />
-      &nbsp;<b>author@mail.com</b>
-    </p>
+    <SocialLinks fontSize='40px' />
   </div>
 </div>
 

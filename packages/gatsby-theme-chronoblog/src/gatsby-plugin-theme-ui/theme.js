@@ -40,6 +40,13 @@ const theme = {
       bg: 'transparent',
       opacity: 0.5
     }
+  },
+  images: {
+    avatar: {
+      width: 140,
+      height: '100%',
+      borderRadius: 99999
+    }
   }
 };
 

@@ -7,6 +7,7 @@ import { fab } from '@fortawesome/free-brands-svg-icons';
 import { faAt, faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { MDXProvider } from '@mdx-js/react';
+import { Avatar, Box, Embed, Flex } from '@theme-ui/components';
 import { Link as LinkGatsby } from 'gatsby';
 import { useCallback, useState } from 'react';
 import { jsx, Layout } from 'theme-ui';
@@ -16,6 +17,7 @@ import FeedItems from './feed-items';
 import FeedSearch from './feed-search';
 import LightDarkSwitchButton from './light-dark-switch-button';
 import SEO from './seo';
+import SocialLinks from './social-links';
 import Tags from './tags';
 
 config.autoAddCss = false;
@@ -23,16 +25,23 @@ library.add(fab, faEnvelope, faPhone, faAt);
 
 const Link = ({ to, ...props }) => <LinkGatsby to={to} {...props} />;
 const A = ({ children, ...props }) => <a {...props}>{children}</a>;
+const Div = ({ children, ...props }) => <div {...props}>{children}</div>;
 
 const components = {
   SEO,
   Tags,
   FeedItems,
   FeedSearch,
+  SocialLinks,
   LightDarkSwitchButton,
   Link,
   A,
-  FontAwesomeIcon
+  Div,
+  FontAwesomeIcon,
+  Embed,
+  Box,
+  Flex,
+  Avatar
 };
 
 /**

@@ -4,13 +4,23 @@ module.exports = {
     siteTitle: 'Chronoblog Starter',
     siteDescription: 'Starter for Gatsby Theme Chronoblog',
     siteImage: '/banner.png', // main image of the site for meta tags
-    siteUrl: 'https://chronoblog.netlify.com/', // example - http://example.com
-    pathPrefix: '/', // '/' - default, example - '/someprefix'
+    siteUrl: 'https://chronoblog.netlify.com/',
+    pathPrefix: '/',
     siteLanguage: 'en',
     ogLanguage: `en_US`,
     author: 'Site Author', // for example - 'Ivan Ganev'
-    twitterSite: '', // web site account on twitter for cards meta data, example - '@ganevru'
-    twitterCreator: '' // creator account on twitter for cards meta data, example - '@ganevru'
+    twitterSite: '', // website account on twitter
+    twitterCreator: '', // creator account on twitter
+    social: [
+      {
+        icon: `twitter`,
+        url: `https://twitter.com/ganevru`
+      },
+      {
+        icon: `github`,
+        url: `https://github.com/Ganevru/gatsby-theme-chronoblog`
+      }
+    ]
   },
   plugins: [
     {
