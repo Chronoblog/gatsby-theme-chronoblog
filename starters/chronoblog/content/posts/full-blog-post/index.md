@@ -8,6 +8,12 @@ tags: ['post']
 
 This is an example blog post. All your blog posts should be here: `content/posts`.
 
+Websites like Reddit, StackOverflow, and GitHub had millions of people using Markdown. And Markdown started to be used beyond the web, to author books, articles, slide shows, letters, and lecture notes.
+
+What distinguishes Markdown from many other lightweight markup syntaxes, which are often easier to write, is its readability. As Gruber writes:
+
+> The overriding design goal for Markdown’s formatting syntax is to make it as readable as possible. The idea is that a Markdown-formatted document should be publishable as-is, as plain text, without looking like it’s been marked up with tags or formatting instructions.
+
 ## Frontmatter
 
 Metadata for your Markdown.
