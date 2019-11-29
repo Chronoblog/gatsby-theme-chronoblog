@@ -40,7 +40,13 @@ module.exports = (options) => {
         allTagsButton
       },
       feedItemsLimit,
-      yearSeparator
+      yearSeparator,
+      social: [
+        {
+          icon: `github`,
+          url: `https://github.com/Ganevru/gatsby-theme-chronoblog`
+        }
+      ]
     },
     plugins: [
       `gatsby-transformer-sharp`,
