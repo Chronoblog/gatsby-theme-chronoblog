@@ -43,8 +43,8 @@ module.exports = (options) => {
       yearSeparator,
       social: [
         {
-          icon: `github`,
-          url: `https://github.com/Ganevru/gatsby-theme-chronoblog`
+          icon: ``,
+          url: ``
         }
       ]
     },

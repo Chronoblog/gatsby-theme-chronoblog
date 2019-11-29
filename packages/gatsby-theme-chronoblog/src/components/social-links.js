@@ -40,8 +40,9 @@ const SocialUrl = ({ icon, url, ...props }) => {
  */
 export default ({ fontSize, justifyContent = 'start', ...props }) => {
   const siteMeta = useSiteMetadata();
+  if (!siteMeta.social) return <div />;
   const { social } = siteMeta;
-  if (social.length === 0) return <div />;
+  if (!social || social.length === 0) return <div />;
   //
   let fontSizeObj = {};
   if (fontSize) fontSizeObj = { fontSize };
