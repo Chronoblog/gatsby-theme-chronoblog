@@ -241,60 +241,81 @@ const CardBody = ({ item, children }) => {
   );
 };
 
+const CardMain = ({ isHovering, item, uiText, tags, date }) => {
+  return (
+    <article>
+      <CardStyle isHovering={isHovering}>
+        <LinkCard item={item}>
+          <CoverImage data={item} type="card" />
+        </LinkCard>
+        <CardBody item={item}>
+          <LinkIconBg item={item}>
+            <LinkCard item={item}>
+              <div sx={{ px: ['10px', '20px'], pt: ['10px', '20px'] }}>
+                <CardTitle item={item} />
+                <LinkText item={item} />
+                <div sx={{ mb: 2 }}>
+                  <Date date={date} />
+                </div>
+              </div>
+            </LinkCard>
+            <div sx={{ px: ['10px', '20px'] }}>
+              <Description item={item} />
+              <Excerpt item={item} />
+              <BodyMdx item={item} />
+              <LinkCard item={item}>
+                <ReadMoreButton item={item} text={uiText.cardReadMoreButton} />
+              </LinkCard>
+            </div>
+          </LinkIconBg>
+          <div sx={{ px: ['10px', '20px'] }}>
+            <TagsComponent tags={tags} />
+          </div>
+        </CardBody>
+      </CardStyle>
+    </article>
+  );
+};
+
 export default ({ item, uiText }) => {
   //
   const { date } = item.frontmatter;
   const { tags } = item.frontmatter;
+  const type = item.parent.sourceInstanceName;
+  //
+  if (type === 'notes')
+    return (
+      <CardMain
+        isHovering={false}
+        item={item}
+        date={date}
+        tags={tags}
+        uiText={uiText}
+      />
+    );
   //
   return (
-    <article>
-      <ReactHoverObserver
-        {...{
-          onMouseOver: ({ e, setIsHovering, unsetIsHovering }) =>
-            eClassCheck(e.target, 'hover-on')
-              ? setIsHovering()
-              : unsetIsHovering(),
-          onFocus: ({ e, setIsHovering, unsetIsHovering }) =>
-            eClassCheck(e.target, 'hover-on')
-              ? setIsHovering()
-              : unsetIsHovering()
-        }}
-      >
-        {({ isHovering }) => (
-          <CardStyle isHovering={isHovering}>
-            <LinkCard item={item}>
-              <CoverImage data={item} type="card" />
-            </LinkCard>
-            <CardBody item={item}>
-              <LinkIconBg item={item}>
-                <LinkCard item={item}>
-                  <div sx={{ px: ['10px', '20px'], pt: ['10px', '20px'] }}>
-                    <CardTitle item={item} />
-                    <LinkText item={item} />
-                    <div sx={{ mb: 2 }}>
-                      <Date date={date} />
-                    </div>
-                  </div>
-                </LinkCard>
-                <div sx={{ px: ['10px', '20px'] }}>
-                  <Description item={item} />
-                  <Excerpt item={item} />
-                  <BodyMdx item={item} />
-                  <LinkCard item={item}>
-                    <ReadMoreButton
-                      item={item}
-                      text={uiText.cardReadMoreButton}
-                    />
-                  </LinkCard>
-                </div>
-              </LinkIconBg>
-              <div sx={{ px: ['10px', '20px'] }}>
-                <TagsComponent tags={tags} />
-              </div>
-            </CardBody>
-          </CardStyle>
-        )}
-      </ReactHoverObserver>
-    </article>
+    <ReactHoverObserver
+      {...{
+        onMouseOver: ({ e, setIsHovering, unsetIsHovering }) =>
+          eClassCheck(e.target, 'hover-on')
+            ? setIsHovering()
+            : unsetIsHovering(),
+        onFocus: ({ e, setIsHovering, unsetIsHovering }) =>
+          eClassCheck(e.target, 'hover-on')
+            ? setIsHovering()
+            : unsetIsHovering()
+      }}
+    >
+      {({ isHovering }) => (
+        <CardMain
+          isHovering={isHovering}
+          item={item}
+          date={date}
+          tags={tags}
+          uiText={uiText}
+        />
+      )}
+    </ReactHoverObserver>
   );
 };
