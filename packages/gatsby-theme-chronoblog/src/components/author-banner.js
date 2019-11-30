@@ -5,25 +5,75 @@ import { jsx } from 'theme-ui';
 import useSiteMetadata from '../hooks/use-site-metadata';
 import SocialLinks from './social-links';
 
-const AuthorBannerMain = ({
-  avatar = '',
-  author = '',
-  authorDescription = '',
-  socialLinks,
-  //
-  avatarStyle = {},
-  //
-  authorHeadingAs = 'h3',
-  authorHeadingStyle = {},
-  //
-  authorDescriptionStyle = {},
-  //
-  socialLinksFontSize = '30px',
-  socialLinksStyle = {},
-  //
-  children,
-  ...props
-}) => {
+/**
+ * @typedef {object} AuthorBannerDescriptionProps
+ * @property {React.ReactNode=} children
+ */
+
+/**
+ * @param {AuthorBannerDescriptionProps=} props
+ */
+export const AuthorBannerDescription = ({ children, ...props }) => {
+  const siteMeta = useSiteMetadata();
+  if (children)
+    return (
+      <Text sx={{ fontSize: [2], mb: '8px' }} {...props}>
+        {children}
+      </Text>
+    );
+  if (siteMeta.authorDescription)
+    return (
+      <Text sx={{ fontSize: [2], mb: '8px' }} {...props}>
+        {siteMeta.authorDescription}
+      </Text>
+    );
+  return <div />;
+};
+
+export const AuthorBannerAvatar = ({ src = '', ...props }) => {
+  const siteMeta = useSiteMetadata();
+  if (src)
+    return (
+      <Avatar sx={{ marginRight: '30px', mb: '8px' }} src={src} {...props} />
+    );
+  if (siteMeta.avatar)
+    return (
+      <Avatar
+        sx={{ marginRight: '30px', mb: '8px' }}
+        src={siteMeta.avatar}
+        {...props}
+      />
+    );
+  return <div />;
+};
+
+/**
+ * @typedef {object} AuthorBannerHeadingProps
+ * @property {React.ReactNode=} children
+ * @property {string=} as
+ */
+
+/**
+ * @param {AuthorBannerHeadingProps=} props
+ */
+export const AuthorBannerHeading = ({ as = 'h3', children, ...props }) => {
+  const siteMeta = useSiteMetadata();
+  if (children)
+    return (
+      <Heading sx={{ fontSize: [5] }} as={as} {...props}>
+        {children}
+      </Heading>
+    );
+  if (siteMeta.author)
+    return (
+      <Heading sx={{ fontSize: [5] }} as={as} {...props}>
+        {siteMeta.author}
+      </Heading>
+    );
+  return <div />;
+};
+
+const AuthorBannerMain = ({ children, ...props }) => {
   return (
     <div
       sx={{
@@ -31,68 +81,32 @@ const AuthorBannerMain = ({
         borderRadius: 'authorBanner',
         px: ['6px', '36px'],
         pt: '36px',
-        pb: '36px'
+        pb: '36px',
+        display: 'flex',
+        flexWrap: 'wrap',
+        alignItems: 'center'
       }}
       {...props}
     >
-      <div
-        sx={{
-          display: 'flex',
-          flexWrap: 'wrap',
-          alignItems: 'center'
-        }}
-      >
-        {avatar ? (
-          <Avatar
-            sx={{ marginRight: '30px', mb: '4px', ...avatarStyle }}
-            src={avatar}
-          />
-        ) : (
-          ''
-        )}
-        <div>
-          <Heading as={authorHeadingAs} sx={{ ...authorHeadingStyle }}>
-            {author}
-          </Heading>
-          <Text sx={{ fontSize: [3], mb: '8px', ...authorDescriptionStyle }}>
-            {authorDescription}
-          </Text>
-          {socialLinks && socialLinks.length > 0 ? (
-            <SocialLinks
-              socialLinks={socialLinks}
-              fontSize={socialLinksFontSize}
-              sx={{ ...socialLinksStyle }}
-            />
-          ) : (
-            ''
-          )}
-        </div>
-      </div>
-      <div sx={{ px: ['6px', '6px'] }}>
-        <div>{children}</div>
-      </div>
+      {children}
     </div>
   );
 };
 
-export default ({
-  avatar = '',
-  author = '',
-  authorDescription = '',
-  socialLinks,
-  children,
-  ...props
-}) => {
-  const siteMeta = useSiteMetadata();
+const AuthorBanner = ({ children, ...props }) => {
+  if (children) {
+    return <AuthorBannerMain {...props}>{children}</AuthorBannerMain>;
+  }
   return (
-    <AuthorBannerMain
-      avatar={avatar || siteMeta.avatar}
-      author={author || siteMeta.author}
-      authorDescription={authorDescription || siteMeta.authorDescription}
-      socialLinks={socialLinks || siteMeta.social}
-      {...props}
-    >
-      {children}
+    <AuthorBannerMain {...props}>
+      <AuthorBannerAvatar />
+      <div>
+        <AuthorBannerHeading />
+        <AuthorBannerDescription />
+        <SocialLinks fontSize="30px" />
+      </div>
     </AuthorBannerMain>
   );
 };
+
+export default AuthorBanner;

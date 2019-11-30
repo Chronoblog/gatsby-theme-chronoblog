@@ -13,8 +13,11 @@ import { useCallback, useState } from 'react';
 import { jsx, Layout } from 'theme-ui';
 
 import FeedContext from '../contexts/context-feed';
-// @ts-ignore
-import AuthorBanner from './author-banner';
+import AuthorBanner, {
+  AuthorBannerAvatar,
+  AuthorBannerDescription,
+  AuthorBannerHeading
+} from './author-banner';
 import FeedItems from './feed-items';
 import FeedSearch from './feed-search';
 import LightDarkSwitchButton from './light-dark-switch-button';
@@ -29,6 +32,20 @@ const Link = ({ to, ...props }) => <LinkGatsby to={to} {...props} />;
 const A = ({ children, ...props }) => <a {...props}>{children}</a>;
 const Div = ({ children, ...props }) => <div {...props}>{children}</div>;
 
+const authorBannerComponents = {
+  AuthorBanner,
+  AuthorBannerHeading,
+  AuthorBannerDescription,
+  AuthorBannerAvatar
+};
+
+const themeUiComponents = {
+  Avatar,
+  Box,
+  Embed,
+  Flex
+};
+
 const components = {
   SEO,
   Tags,
@@ -40,11 +57,8 @@ const components = {
   A,
   Div,
   FontAwesomeIcon,
-  Embed,
-  Box,
-  Flex,
-  Avatar,
-  AuthorBanner
+  ...themeUiComponents,
+  ...authorBannerComponents
 };
 
 /**
