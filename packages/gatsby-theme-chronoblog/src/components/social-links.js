@@ -54,7 +54,7 @@ const SocialLinksMain = ({ justifyContent, fontSizeObj, social, ...props }) => {
  * @typedef {object} SocialLinksProps
  * @property {React.ReactNode=} children
  * @property {string | number=} fontSize
- * @property {string=} justifyContent
+ * @property {string | string[]=} justifyContent
  * @property {*=} socialLinks
  */
 
@@ -63,7 +63,7 @@ const SocialLinksMain = ({ justifyContent, fontSizeObj, social, ...props }) => {
  */
 export default ({
   fontSize,
-  justifyContent = 'start',
+  justifyContent = ['center', 'start'],
   socialLinks,
   ...props
 }) => {
