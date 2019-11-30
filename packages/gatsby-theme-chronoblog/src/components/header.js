@@ -88,7 +88,7 @@ export default ({ ...props }) => {
               marginTop: ['0px', '0px'],
               boxShadow: [
                 '0 4px 6px -4px #00000038',
-                '0 4px 6px -4px #00000012'
+                '0 0px 0px 0px #00000000'
               ],
               backgroundColor: 'background'
             }}
