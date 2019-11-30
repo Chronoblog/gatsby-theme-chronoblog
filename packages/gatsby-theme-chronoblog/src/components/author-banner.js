@@ -17,13 +17,13 @@ export const AuthorBannerDescription = ({ children, ...props }) => {
   const siteMeta = useSiteMetadata();
   if (children)
     return (
-      <Text sx={{ fontSize: [2], mb: '8px' }} {...props}>
+      <Text sx={{ fontSize: [2], px: '2px', mb: '8px' }} {...props}>
         {children}
       </Text>
     );
   if (siteMeta.authorDescription)
     return (
-      <Text sx={{ fontSize: [2], mb: '8px' }} {...props}>
+      <Text sx={{ fontSize: [2], px: '2px', mb: '8px' }} {...props}>
         {siteMeta.authorDescription}
       </Text>
     );
@@ -33,13 +33,11 @@ export const AuthorBannerDescription = ({ children, ...props }) => {
 export const AuthorBannerAvatar = ({ src = '', ...props }) => {
   const siteMeta = useSiteMetadata();
   if (src)
-    return (
-      <Avatar sx={{ marginRight: '30px', mb: '8px' }} src={src} {...props} />
-    );
+    return <Avatar sx={{ marginX: '30px', my: '8px' }} src={src} {...props} />;
   if (siteMeta.avatar)
     return (
       <Avatar
-        sx={{ marginRight: '30px', mb: '8px' }}
+        sx={{ marginX: '30px', my: '10px' }}
         src={siteMeta.avatar}
         {...props}
       />
@@ -79,12 +77,13 @@ const AuthorBannerMain = ({ children, ...props }) => {
       sx={{
         bg: 'muted',
         borderRadius: 'authorBanner',
-        px: ['6px', '36px'],
-        pt: '36px',
-        pb: '36px',
+        px: '4px',
+        py: '16px',
         display: 'flex',
         flexWrap: 'wrap',
-        alignItems: 'center'
+        alignItems: 'center',
+        justifyContent: ['center', 'flex-start'],
+        textAlign: ['center', 'left']
       }}
       {...props}
     >
