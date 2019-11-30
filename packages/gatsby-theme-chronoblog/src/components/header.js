@@ -39,20 +39,22 @@ const A = ({ children, ...props }) => (
 );
 
 const MenuMain = ({ children, ...props }) => (
-  <div
-    {...props}
-    sx={{
-      width: '100%',
-      display: 'flex',
-      flexWrap: 'wrap',
-      justifyContent: ['space-between'],
-      alignItems: 'center',
-      fontWeight: 'bold',
-      fontSize: [1, 2]
-    }}
-  >
-    {children}
-  </div>
+  <Container sx={{ py: ['6px', '12px'] }}>
+    <div
+      {...props}
+      sx={{
+        width: '100%',
+        display: 'flex',
+        flexWrap: 'wrap',
+        justifyContent: ['space-between'],
+        alignItems: 'center',
+        fontWeight: 'bold',
+        fontSize: [1, 2]
+      }}
+    >
+      {children}
+    </div>
+  </Container>
 );
 
 const MenuBlock = ({ children, ...props }) => (
@@ -84,7 +86,7 @@ export default ({ ...props }) => {
             sx={{
               width: '100%',
               marginX: 'auto',
-              marginBottom: ['6px', '10px'],
+              marginBottom: ['2px', '2px'],
               marginTop: ['0px', '0px'],
               boxShadow: [
                 '0 4px 6px -4px #00000038',
@@ -93,9 +95,7 @@ export default ({ ...props }) => {
               backgroundColor: 'background'
             }}
           >
-            <Container sx={{ py: ['6px', '12px'] }}>
-              <SiteHeader />
-            </Container>
+            <SiteHeader />
           </div>
         </MDXProvider>
       </Header>
