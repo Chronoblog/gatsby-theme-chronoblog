@@ -10,6 +10,17 @@ const AuthorBannerMain = ({
   author = '',
   authorDescription = '',
   socialLinks,
+  //
+  avatarStyle = {},
+  //
+  authorHeadingAs = 'h3',
+  authorHeadingStyle = {},
+  //
+  authorDescriptionStyle = {},
+  //
+  socialLinksFontSize = '30px',
+  socialLinksStyle = {},
+  //
   children,
   ...props
 }) => {
@@ -31,12 +42,27 @@ const AuthorBannerMain = ({
           alignItems: 'center'
         }}
       >
-        {avatar ? <Avatar sx={{ marginRight: '30px' }} src={avatar} /> : ''}
+        {avatar ? (
+          <Avatar
+            sx={{ marginRight: '30px', mb: '4px', ...avatarStyle }}
+            src={avatar}
+          />
+        ) : (
+          ''
+        )}
         <div>
-          <Heading>{author}</Heading>
-          <Text sx={{ fontSize: [3], mb: '8px' }}>{authorDescription}</Text>
+          <Heading as={authorHeadingAs} sx={{ ...authorHeadingStyle }}>
+            {author}
+          </Heading>
+          <Text sx={{ fontSize: [3], mb: '8px', ...authorDescriptionStyle }}>
+            {authorDescription}
+          </Text>
           {socialLinks && socialLinks.length > 0 ? (
-            <SocialLinks socialLinks={socialLinks} fontSize="30px" />
+            <SocialLinks
+              socialLinks={socialLinks}
+              fontSize={socialLinksFontSize}
+              sx={{ ...socialLinksStyle }}
+            />
           ) : (
             ''
           )}
@@ -53,36 +79,20 @@ export default ({
   avatar = '',
   author = '',
   authorDescription = '',
-  socialLinks = [],
+  socialLinks,
   children,
   ...props
 }) => {
-  if (avatar || author || authorDescription || children)
-    return (
-      <AuthorBannerMain
-        avatar={avatar}
-        author={author}
-        authorDescription={authorDescription}
-        socialLinks={socialLinks}
-        {...props}
-      >
-        {children}
-      </AuthorBannerMain>
-    );
-  //
   const siteMeta = useSiteMetadata();
-  if (siteMeta.author || siteMeta.authorDescription)
-    return (
-      <AuthorBannerMain
-        avatar={siteMeta.avatar}
-        author={siteMeta.author}
-        authorDescription={siteMeta.authorDescription}
-        socialLinks={siteMeta.social}
-        {...props}
-      >
-        {children}
-      </AuthorBannerMain>
-    );
-  //
-  return <div />;
+  return (
+    <AuthorBannerMain
+      avatar={avatar || siteMeta.avatar}
+      author={author || siteMeta.author}
+      authorDescription={authorDescription || siteMeta.authorDescription}
+      socialLinks={socialLinks || siteMeta.social}
+      {...props}
+    >
+      {children}
+    </AuthorBannerMain>
+  );
 };
