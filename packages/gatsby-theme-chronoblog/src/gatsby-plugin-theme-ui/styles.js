@@ -78,7 +78,10 @@ export default {
     variant: 'prism'
   },
   hr: {
-    marginY: 40
+    maxWidth: '400px',
+    marginY: 40,
+    opacity: 0.3,
+    borderColor: 'muted'
   },
   blockquote: {
     p: {
