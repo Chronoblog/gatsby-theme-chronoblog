@@ -1,12 +1,10 @@
-<AuthorBanner></AuthorBanner>
-
-some
-
-<AuthorBanner>
+<AuthorBanner sx={{color: '#f1f2f6', backgroundImage: `url(/banner-bg.png)`,}}>
   <AuthorBannerAvatar />
-  <div>
-    <AuthorBannerDescription />
-  </div>
+      <div>
+        <AuthorBannerHeading sx={{fontSize: [7]}} />
+        <AuthorBannerDescription />
+        <SocialLinks fontSize="30px" />
+      </div>
 </AuthorBanner>
 
 # Test version of Chronoblog
@@ -32,7 +30,26 @@ I never liked the blog format so that, regardless of the platform (be it Medium 
   <FontAwesomeIcon icon="at" />
   &nbsp;<b>author@mail.com</b>
 </p>
+
+some
+
 <AuthorBanner></AuthorBanner>
+
+some
+
+<AuthorBanner></AuthorBanner>
+
+some
+
+<AuthorBanner>
+  <AuthorBannerAvatar />
+  <div>
+    <AuthorBannerDescription />
+  </div>
+</AuthorBanner>
+
+some
+
 <FeedSearch />
 <Tags />
 <FeedItems />
