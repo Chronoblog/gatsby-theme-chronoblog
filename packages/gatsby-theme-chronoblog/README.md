@@ -16,11 +16,11 @@ Chronoblog is a [Gatsby js](https://github.com/gatsbyjs/gatsby) theme specifical
 
 The main idea of ​​Chronoblog is to allow you not only to write a personal blog but also to keep a record of everything important that you have done.
 
-I never liked the blog format so that, regardless of the platform (be it Medium or WordPress), they all expect that the content that I will create is text, and it is desirable that this be a long article. A blog consisting of long articles looks and works organically (on any platform). But a blog consisting of any other content (video, presentations, links to articles on other sites, or even just short notes) - it feels and works "somehow wrong".
+I never liked the blog format so that, regardless of the platform (be it Medium or WordPress), they all expect that the content that I will create is text, and this should be a long article. A blog consisting of long articles looks and works organically (on any platform). But a blog consisting of any other content (video, presentations, links to articles on other sites, or even just short notes) - it feels and works "somehow wrong".
 
 Many people solve this problem like this - create separate pages on their website for a blog, for talks, for podcasts, for a portfolio, etc. But it is difficult to maintain and update.
 
-But what if we make a blog theme based on a feed? Something like twitter or hackernews or reddit, but without restrictions, and in the form of a personal blog?
+But what if we make a blog theme based on a feed? Something like twitter or hackernews or Reddit, but without restrictions, and in the form of a personal blog?
 
 Chronoblog is a theme that allows you to do just that - to help create a more organic and universal personal website.
 
@@ -202,9 +202,9 @@ In **`siteMetadata`**, replace information about:
 
 **`siteDescription`** - description of the site.
 
-**`siteImage`** - picture for meta site information. Default picture is here: `static/banner.png` - you can simply replace this picture with your own.
+**`siteImage`** - picture for meta site information. The default picture is here: `static/banner.png` - you can simply replace this picture with your own.
 
-**`siteUrl`** - domain where the site will be located.
+**`siteUrl`** - a domain where the site will be located.
 
 Most of this data is needed for the website meta tags to work properly.
 
@@ -218,7 +218,7 @@ Thanks to the plugin [gatsby-plugin-manifest](https://github.com/gatsbyjs/gatsby
 
 All other plugins are optional. Chronoblog does not rely on them, so if you do not need, say, `gatsby-plugin-google-analytics`, you can ignore it or remove it from the list of plugins.
 
-And of course you can use any other plugins. Gatsby Plugin Ecosystem: [www.gatsbyjs.org/plugins](https://www.gatsbyjs.org/plugins/)
+And of course, you can use any other plugins. Gatsby Plugin Ecosystem: [www.gatsbyjs.org/plugins](https://www.gatsbyjs.org/plugins/)
 
 ## Style settings
 
@@ -277,7 +277,7 @@ Chronoblog has three types of content: **posts**, **links**, and **notes**.
 
 All of them are in the `content` folder. They are located in the appropriate folders.
 
-Chronoblog has [pages](#pages), but they are not in the content folder, why? The fact is that everything in the content folder is not just site content, it is [Feed](#feed) content. Everything in the content folder is displayed in the feed (sorted by date, filtered by tags, etc.). But pages are not feed content.
+Chronoblog has [pages](#pages), but they are not in the content folder, why? The fact is that everything in the content folder is not just website content, it is [Feed](#feed) content. Everything in the content folder is displayed in the feed (sorted by date, filtered by tags, etc.). But pages are not a `feed` content.
 
 All types of content use markdown syntax, you can read more about this in the Gatsby documentation ([markdown-syntax](https://www.gatsbyjs.org/docs/mdx/markdown-syntax)). Especially useful to know about [frontmatter](https://www.gatsbyjs.org/docs/mdx/markdown-syntax/#frontmatter)
 
@@ -321,11 +321,11 @@ Some blog post text
 
 Each post should have a `title` and `date`.
 
-The `cover` should lead to a picture file, in this case the file is located in the same folder as the blog post itself.
+The `cover` should lead to a picture file, in this case, the file is located in the same folder as the blog post itself.
 
 The `description` will appear in the post card in the feed, and will also be used for post meta tags (for SEO). If there is no description, then the text of the beginning of the post itself will be used instead.
 
-`tags` are needed for organization within the Chronoblog, they are displayed in the post itself and in the post card in the feed.
+`tags` are needed for organization within the Chronoblog, they are displayed in the post itself and the post card in the feed.
 
 #### Links
 
@@ -333,7 +333,7 @@ Links in the feed aren’t very different from blog posts. But when clicked, the
 
 The basic idea of ​​links is that they work and feel "equivalent" to blog posts - the link also has a cover, title, tags, date, description, etc.
 
-Links are needed for materials that you consider important to post in your feed, but for some reason you can’t post them in the form of posts. This can be your articles on other sites (which you do not have the right to host), interviews, your projects (say on the github), received certificates, completed courses, etc.
+Links are needed for materials that you consider important to post in your feed, but for some reason, you can’t post them in the form of posts. This can be your articles on other sites (which you do not have the right to host), interviews, your projects (say on the GitHub), received certificates, completed courses, etc.
 
 To prevent users of the site from confusing posts and links, links have additional distinctive elements - emoji (🔗) in front of the title, path where the link leads under the heading, an outgoing link icon in the card. Also, links do not have a "read more ->" button like posts.
 
@@ -366,7 +366,7 @@ link: https://github.com/Ganevru/gatsby-theme-chronoblog
 tags: ['link', 'project']
 ---
 
-Link card is a card, when clicked, the user goes to the specified link.
+Link card is a card when clicked, the user goes to the specified link.
 ```
 
 Like a post, a link must have a `title` and a `date`, and also, of course, the link must have a `link`.
@@ -375,7 +375,7 @@ All other elements are the same as the post. Only in contrast to the post, the b
 
 #### Notes
 
-Notes is a type of content that is fully located in the feed. Cards of notes do not refer anywhere and do not lead anywhere.
+Notes are a type of content that is fully located in the feed. Cards of notes do not refer anywhere and do not lead anywhere.
 
 At the same time, notes allow you to place almost anything in the feed. The starter (demo: [chronoblog.netlify.com](https://chronoblog.netlify.com)) shows different options for how you can use notes - post podcasts, YouTube videos, presentations, post links or, in fact, text notes.
 
@@ -413,7 +413,7 @@ A note only needs a `date`.
 
 To add content locally, you need to create a folder in `content/posts/` (if you are creating a new **blog `post`**). Give this folder any name (`some-blog-post` for example), and create file `index.md` inside this folder.
 
-The file `index.md` may be something like this:
+The file `index.md` maybe something like this:
 
 ```md
 ---
@@ -428,7 +428,7 @@ Some blog post text
 
 Put some image in the same folder (in `some-blog-post`). If its name matches the `cover` from the `index.md` file, then this image will become the post cover.
 
-To create a new **`link`** you need to do the same thing, but in the folder `content/links/` (and do not forget that the link must have `link:`).
+To create a new **`link`** you need to do the same thing but in the folder `content/links/` (and do not forget that the link must have `link:`).
 
 And to create a new **`note`**, yes, again the same thing, but in the folder `content/notes/`.
 
@@ -438,13 +438,13 @@ The type of content is determined by the folder in which it is located!
 
 All types of content have additional, optional options that can help you manage the content on the site.
 
-**`hide`** - if content has `hide: true`, then this content will not be displayed in the feed on the site (in any feed). But at the same time, this content itself will exist and will be available.
+**`hide`** - if the content has `hide: true`, then this content will not be displayed in the feed on the site (in any feed). But at the same time, this content itself will exist and will be available.
 
-**`draft`** - if content has `draft: true`, this content will not be on the site in any form.
+**`draft`** - if the content has `draft: true`, this content will not be on the site in any form.
 
 ### frontmatter-placeholder
 
-After you understand the content of the starter, you can delete the default content and start filling the site with your own content.
+After you understand the content of the starter, you can delete the default content and start filling the site with your content.
 
 However, it is better to leave the file `content/links/frontmatter-placeholder` in place and do not delete it. This content still doesn’t appear on the site (since it has `draft: true`). But its existence prevents some errors related to Gatsby and GraphQL, which may appear on an empty site.
 
@@ -452,11 +452,11 @@ However, it is better to leave the file `content/links/frontmatter-placeholder` 
 
 It makes sense to change the default values of some parts of the site.
 
-All these parts are just theme components. Starter replaces them with its own using [Component Shadowing](https://www.gatsbyjs.org/blog/2019-04-29-component-shadowing/).
+All these parts are just theme components. Starter replaces them with its using [Component Shadowing](https://www.gatsbyjs.org/blog/2019-04-29-component-shadowing/).
 
-> Component Shadowing let’s you replace the theme’s original file
+> Component Shadowing lets you replace the theme’s original file
 
-In fact, you can replace any component of Chronoblog. But the parts listed here are not just possible to replace - it is recommended to do to make your site unique.
+You can replace any component of Chronoblog. But the parts listed here are not just possible to replace - it is recommended to do to make your site unique.
 
 ### site-header
 
@@ -503,7 +503,7 @@ By default, this file looks like this:
 
 ### post-footer
 
-Footer of the post is what comes after every post on the blog. Usually information about the author is placed here.
+Footer of the post is what comes after every post on the blog. Usually, information about the author is placed here.
 
 You can find this file here: **`src/gatsby-theme-chronoblog/post-footer.mdx`**
 
@@ -545,8 +545,7 @@ import avatar from './avatar.png';
   </div>
 </div>
 
-This is a `post-footer.mdx` - this file lives here:  
-**`src/gatsby-theme-chronoblog/post-footer.mdx`**.
+This is a `post-footer.mdx` - this file lives here: **`src/gatsby-theme-chronoblog/post-footer.mdx`**.
 
 This file is just an example, you can completely rewrite it.
 
@@ -579,7 +578,7 @@ In Chronoblog starter you can find two pages:
 
 `projects.mdx` - example page that you can rename, change, or simply delete
 
-Path where you can find page corresponds to the name of the file, that is, the page `projects.mdx` can be found at `http://localhost:8000/projects`.
+A path where you can find page corresponds to the name of the file, that is, the page `projects.mdx` can be found at `http://localhost:8000/projects`.
 
 `index` is an exception to this.
 
@@ -587,7 +586,7 @@ Pages can be used to create: contact pages, portfolio/project pages, pages dedic
 
 Just remember to add a link to the page in the main menu (if you want to see this page in the menu). Read more about it here: [site-header](#site-header)
 
-Due to how Chronoblog works, pages are not the primary way to provide information. In fact, it’s quite normal not to use a single page at all (except for the main page). The main way to organize content in Chronoblog is tags, not pages.
+Due to how Chronoblog works, pages are not the primary way to provide information. It’s quite normal not to use a single page at all (except for the main page). The main way to organize content in Chronoblog is tags, not pages.
 
 ### index.mdx - homepage of your site
 
@@ -631,7 +630,7 @@ Here is more in-depth information about various aspects of Chronoblog.
 
 ## Feed
 
-Feed displays site content.
+The feed displays site content.
 
 The standard way to use these components is how the main page of the site uses them:
 
@@ -675,7 +674,7 @@ This component displays all tags available on the site.
 
 ### FeedSearch component
 
-Search string to search feed items. It makes no sense to put this component if there is no `<FeedItems />` component nearby.
+The search string to search feed items. It makes no sense to put this component if there is no `<FeedItems />` component nearby.
 
 ```md
 <FeedSearch />
@@ -762,7 +761,7 @@ Facebook debug OG: [developers.facebook.com/tools/debug/og/object](https://devel
 
 ### SEO component in `.mdx`
 
-You can use `SEO` component in any `.mdx` file (it does not need to be imported). This component accepts child elements and you can set any metatags inside it, as if you used the [react-helmet](https://www.npmjs.com/package/react-helmet) plugin on its own.
+You can use `SEO` component in any `.mdx` file (it does not need to be imported). This component accepts child elements and you can set any metatags inside it as if you used the [react-helmet](https://www.npmjs.com/package/react-helmet) plugin on its own.
 
 This can be useful if you need to set, for example, a special title for some page on the site.
 
@@ -803,7 +802,7 @@ All these versions work from master branch of this repository. It’s ok if they
 
 ✍️ If you made a site using Chronoblog - write to me about it!
 
-At the moment, as far as I know, the only real site using Chronoblog is my personal site:
+At the moment, as far as I know, the only real site using Chronoblog is my site:
 
 Site: [www.ganevdev.com](https://www.ganevdev.com/)  
 Repo: [github.com/Ganevru/ganev-personal-site](https://github.com/Ganevru/ganev-personal-site)
