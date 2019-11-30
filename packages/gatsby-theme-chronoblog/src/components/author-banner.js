@@ -15,15 +15,16 @@ import SocialLinks from './social-links';
  */
 export const AuthorBannerDescription = ({ children, ...props }) => {
   const siteMeta = useSiteMetadata();
+  const style = { fontSize: [2], px: '2px', mb: '8px' };
   if (children)
     return (
-      <Text sx={{ fontSize: [2], px: '2px', mb: '8px' }} {...props}>
+      <Text sx={style} {...props}>
         {children}
       </Text>
     );
   if (siteMeta.authorDescription)
     return (
-      <Text sx={{ fontSize: [2], px: '2px', mb: '8px' }} {...props}>
+      <Text sx={style} {...props}>
         {siteMeta.authorDescription}
       </Text>
     );
@@ -32,16 +33,10 @@ export const AuthorBannerDescription = ({ children, ...props }) => {
 
 export const AuthorBannerAvatar = ({ src = '', ...props }) => {
   const siteMeta = useSiteMetadata();
-  if (src)
-    return <Avatar sx={{ marginX: '30px', my: '8px' }} src={src} {...props} />;
+  const style = { marginX: '30px', my: '10px' };
+  if (src) return <Avatar sx={style} src={src} {...props} />;
   if (siteMeta.avatar)
-    return (
-      <Avatar
-        sx={{ marginX: '30px', my: '10px' }}
-        src={siteMeta.avatar}
-        {...props}
-      />
-    );
+    return <Avatar sx={style} src={siteMeta.avatar} {...props} />;
   return <div />;
 };
 
@@ -56,15 +51,16 @@ export const AuthorBannerAvatar = ({ src = '', ...props }) => {
  */
 export const AuthorBannerHeading = ({ as = 'h3', children, ...props }) => {
   const siteMeta = useSiteMetadata();
+  const style = { fontSize: [5] };
   if (children)
     return (
-      <Heading sx={{ fontSize: [5] }} as={as} {...props}>
+      <Heading sx={style} as={as} {...props}>
         {children}
       </Heading>
     );
   if (siteMeta.author)
     return (
-      <Heading sx={{ fontSize: [5] }} as={as} {...props}>
+      <Heading sx={style} as={as} {...props}>
         {siteMeta.author}
       </Heading>
     );
@@ -96,6 +92,7 @@ const AuthorBanner = ({ children, ...props }) => {
   if (children) {
     return <AuthorBannerMain {...props}>{children}</AuthorBannerMain>;
   }
+  //
   return (
     <AuthorBannerMain {...props}>
       <AuthorBannerAvatar />
