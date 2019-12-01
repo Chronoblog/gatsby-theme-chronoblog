@@ -211,6 +211,8 @@ module.exports = {
 
 This is the standard file for the gatsby starter.
 
+### Site Metadata
+
 In **`siteMetadata`**, replace information about:
 
 **`siteTitle`** - The main name of your site, if this is your personal site, you can simply write your name.
