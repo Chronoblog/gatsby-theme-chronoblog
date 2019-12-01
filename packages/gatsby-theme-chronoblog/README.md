@@ -58,7 +58,8 @@ This demo is at the same time the Chronoblog starter.
     - [Tags component](#tags-component)
     - [FeedSearch component](#feedsearch-component)
   - [SocialLinks component](#sociallinks-component)
-  - [AuthorBanner Component](#authorbanner-component)
+  - [AuthorBanner component](#authorbanner-component)
+  - [LightDarkSwitchButton component](#lightdarkswitchbutton-component)
   - [Content Cover](#content-cover)
   - [Font Awesome Icons](#font-awesome-icons)
   - [SEO and metadata](#seo-and-metadata)
@@ -677,7 +678,31 @@ The search string to search feed items. It makes no sense to put this component 
 
 ## SocialLinks component
 
-## AuthorBanner Component
+`SocialLinks` component displays links to your profiles on social networks in the form of icons. The information about what to display this component takes from [`gatsby-config.js`](#gatsby-config), from `siteMetadata.social`.
+
+`<SocialLinks />` already included in all `mdx`, it can simply be used in any `.mdx` file.
+
+```md
+<SocialLinks />
+```
+
+Props:
+
+| Prop | Required | Type | Description |
+| --- | --- | --- | --- |
+| `fontSize` | optional | number / string | size of the icons |
+| `justifyContent` | optional | string[] / string |  |
+| `socialLinks` | optional | array | allows you to set any links, instead of those taken from `siteMetadata.social` |
+
+This component also accepts any other props, this can be used to, say, set the style you need. For example, change color:
+
+```md
+<SocialLinks sx={{ color: "#407b6e" }} />
+```
+
+## AuthorBanner component
+
+## LightDarkSwitchButton component
 
 ## Content Cover
 
