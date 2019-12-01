@@ -525,7 +525,9 @@ By default, the starter has two links in the menu - to the main page of the site
 </MenuMain>
 ```
 
-You may also have noticed the `<SocialLinks />`. This component is designed to display social network icons. Read more about this component here: [SocialLinks Component](#sociallinks-component)
+You may also have noticed the `<SocialLinks />`. This component is designed to display social network icons. Read more about this component here: [`SocialLinks`](#sociallinks-component)
+
+More about the button for switching between light and dark: [`LightDarkSwitchButton`](#lightdarkswitchbutton-component)
 
 ### site-footer
 
@@ -798,6 +800,12 @@ These three icons that were not related to any brands were also built in:
 <FontAwesomeIcon icon="at" />
 <FontAwesomeIcon icon="envelope" />
 <FontAwesomeIcon icon="phone" />
+```
+
+You can use the icons inside the text in the `.md` and `.mdx` files:
+
+```md
+Some Text. Text with <FontAwesomeIcon icon={['fab', 'github']} /> Icon
 ```
 
 ## SEO and metadata
