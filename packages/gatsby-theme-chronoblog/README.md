@@ -34,6 +34,7 @@ This demo is at the same time the Chronoblog starter.
   - [Installation and Development](#installation-and-development)
   - [Folder structure](#folder-structure)
   - [Gatsby Config](#gatsby-config)
+    - [Site Metadata](#site-metadata)
     - [favicon](#favicon)
     - [Plugins](#plugins)
   - [Style settings](#style-settings)
@@ -56,6 +57,8 @@ This demo is at the same time the Chronoblog starter.
     - [FeedItems component](#feeditems-component)
     - [Tags component](#tags-component)
     - [FeedSearch component](#feedsearch-component)
+  - [SocialLinks component](#sociallinks-component)
+  - [AuthorBanner Component](#authorbanner-component)
   - [Content Cover](#content-cover)
   - [Font Awesome Icons](#font-awesome-icons)
   - [SEO and metadata](#seo-and-metadata)
@@ -221,7 +224,7 @@ In **`siteMetadata`**, replace information about:
 
 **`siteImage`** - picture for meta site information. The default picture: `static/banner.png` - you can simply replace this picture with your own.
 
-**`siteUrl`** - a domain where the site will be located.
+**`siteUrl`** - a domain where the site will be located. Example: 'https://chronoblog.netlify.com'.
 
 **`author`** - the author of the site. For information at the end of each blog post, as well as for site metadata. Just write your name.
 
@@ -233,7 +236,7 @@ In **`siteMetadata`**, replace information about:
 
 **`twitterCreator`** - same as `twitterSite`.
 
-**`social`** - your social networks. List the links to your social networks in the format presented. All of them will be automatically used in the `<SocialLinks />` component (in this starter this is the main menu, footer and the author banner). **`url`** - link to your social network profile, **`icon`** - name of the icon of this social network. Icons use brand icons from [fontawesome.com/icons?d=gallery&s=brands](https://fontawesome.com/icons?d=gallery&s=brands).
+**`social`** - your social networks. List the links to your social networks in the format presented. All of them will be automatically used in the [`<SocialLinks />` component](#sociallinks-component) (in this starter this is the main menu, footer and the author banner). **`url`** - link to your social network profile, **`icon`** - name of the icon of this social network. Icons use brand icons from [fontawesome.com/icons?d=gallery&s=brands](https://fontawesome.com/icons?d=gallery&s=brands).
 
 ### favicon
 
@@ -285,7 +288,8 @@ export default {
     button: 6,
     search: 6,
     code: 6,
-    img: 6
+    img: 6,
+    authorBanner: 6
   },
   fonts: {
     ...chronoblogTheme.fonts,
@@ -498,6 +502,8 @@ Usually here is the main menu of the site. By default, it looks like this:
     <Link to="/projects">Projects</Link>
   </MenuBlock>
   <MenuBlock>
+    <SocialLinks />
+    <span>&nbsp;&nbsp;</span>
     <LightDarkSwitchButton darkLabel="🌙" lightLabel="☀️" />
   </MenuBlock>
 </MenuMain>
@@ -511,10 +517,14 @@ By default, the starter has two links in the menu - to the main page of the site
     <Link to="/">Home</Link>
   </MenuBlock>
   <MenuBlock>
+    <SocialLinks />
+    <span>&nbsp;&nbsp;</span>
     <LightDarkSwitchButton darkLabel="🌙" lightLabel="☀️" />
   </MenuBlock>
 </MenuMain>
 ```
+
+You may also have noticed the `<SocialLinks />`. This component is designed to display social network icons. Read more about this component here: [SocialLinks Component](#sociallinks-component)
 
 ### site-footer
 
@@ -525,7 +535,11 @@ This is a footer of your site, place here everything that you consider necessary
 By default, this file looks like this:
 
 ```md
+<div style={{textAlign: 'center'}}>
+<SocialLinks justifyContent='center' fontSize={40} />
+<p>&nbsp;</p>
 <div>© {new Date().getFullYear()}</div>
+</div>
 ```
 
 ### post-footer
@@ -537,63 +551,16 @@ You can find this file here: **`src/gatsby-theme-chronoblog/post-footer.mdx`**
 By default, this file looks like this:
 
 ```md
-import avatar from './avatar.png';
+<AuthorBanner></AuthorBanner>
 
-<p>&nbsp;</p>
-
-<div
-  style={{
-    display: 'flex',
-    flexWrap: 'wrap',
-    alignItems: 'center'
-  }}
->
-  <div style={{ marginRight: '30px' }}>
-    <img
-      style={{ borderRadius: '100%', height: '100%', width: '180px' }}
-      src={avatar}
-    ></img>
-  </div>
-  <div>
-    <h4>Author Name</h4>
-    <p>
-      <FontAwesomeIcon icon={['fab', 'twitter']} />
-      &nbsp;<a href="https://twitter.com/twitter">yourTwitter</a>
-      <br />
-      <FontAwesomeIcon icon={['fab', 'github']} />
-      &nbsp;<a href="https://github.com/github">yourGithub</a>
-      <br />
-      <FontAwesomeIcon icon={['fab', 'instagram']} />
-      &nbsp;<a href="https://www.instagram.com/">yourInstagram</a>
-      <br />
-      <FontAwesomeIcon icon="at" />
-      &nbsp;<b>author@mail.com</b>
-    </p>
-  </div>
-</div>
-
-This is a `post-footer.mdx` - this file lives here: **`src/gatsby-theme-chronoblog/post-footer.mdx`**.
-
-This file is just an example, you can completely rewrite it.
-
-Everything that will be written here will be displayed after **each blog post**. Place your avatar, name, links to social networks and other information here.
-
-<p>&nbsp;</p>
+---
 ```
 
 The whole point of this file is to show how you can use it! Feel free to modify this file. Or, if you do not need it, remove everything from it and leave it blank.
 
-In the example, you might notice that Font Awesome Icon is often used here.
+By default, there is the author’s banner component that displays the author of the site.
 
-For example, in order to show the github icon, just insert the following component:
-
-```md
-<FontAwesomeIcon icon={['fab', 'github']} />
-```
-
-This works in any `.mdx` files.
-
-More about this here: [Font Awesome Icons](#font-awesome-icons)
+More about `AuthorBanner` component: [AuthorBanner Component](#authorbanner-component).
 
 ## Pages
 
@@ -622,13 +589,13 @@ By default, it looks something like this:
 `src/pages/index.mdx`
 
 ```md
-# Gatsby Theme Chronoblog
+<AuthorBanner />
 
-Welcome to the Chronoblog starter!
+Welcome to the Gatsby Starter Chronoblog! This starter will help you quickly and easily create a website using Chronoblog Gatsby Theme.
 
-This text lives in a file: **`src/pages/index.mdx`** - replace it with what you want to see on the main page of your site. 🧐
+What you see is the main page of the site. Replace everything here with your own content by editing this file: `src/pages/index.mdx`
 
-<p>&nbsp;</p>
+---
 
 <FeedSearch />
 <Tags />
@@ -707,6 +674,10 @@ The search string to search feed items. It makes no sense to put this component 
 <FeedSearch />
 <FeedItems />
 ```
+
+## SocialLinks component
+
+## AuthorBanner Component
 
 ## Content Cover
 
