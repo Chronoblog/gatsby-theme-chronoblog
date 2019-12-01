@@ -140,19 +140,34 @@ Below will be more explanation about various aspects of the site.
 **`gatsby-config.js`** located in the root of your site and looks like this:
 
 ```js
-/* eslint-disable @typescript-eslint/camelcase */
 module.exports = {
   siteMetadata: {
     siteTitle: 'Chronoblog Starter',
     siteDescription: 'Starter for Gatsby Theme Chronoblog',
-    siteImage: '/banner.png', // main image of the site for meta tags
-    siteUrl: 'https://chronoblog.netlify.com/', // example - http://example.com
-    pathPrefix: '/', // '/' - default, example - '/someprefix'
+    siteImage: '/banner.png', // main image of the site for metadata
+    siteUrl: 'https://chronoblog.netlify.com/',
+    pathPrefix: '/',
     siteLanguage: 'en',
     ogLanguage: `en_US`,
     author: 'Site Author', // for example - 'Ivan Ganev'
-    twitterSite: '', // web site account on twitter for cards meta data, example - '@ganevru'
-    twitterCreator: '' // creator account on twitter for cards meta data, example - '@ganevru'
+    authorDescription: 'short author description', // short text about the author
+    avatar: '/avatar.jpg',
+    twitterSite: '', // website account on twitter
+    twitterCreator: '', // creator account on twitter
+    social: [
+      {
+        icon: `twitter`,
+        url: `https://twitter.com/ganevru`
+      },
+      {
+        icon: `github`,
+        url: `https://github.com/Ganevru/gatsby-theme-chronoblog`
+      },
+      {
+        icon: `node-js`,
+        url: `https://www.npmjs.com/package/gatsby-theme-chronoblog`
+      }
+    ]
   },
   plugins: [
     {
@@ -200,13 +215,23 @@ In **`siteMetadata`**, replace information about:
 
 **`siteTitle`** - The main name of your site, if this is your personal site, you can simply write your name.
 
-**`siteDescription`** - description of the site.
+**`siteDescription`** - description of the website.
 
-**`siteImage`** - picture for meta site information. The default picture is here: `static/banner.png` - you can simply replace this picture with your own.
+**`siteImage`** - picture for meta site information. The default picture: `static/banner.png` - you can simply replace this picture with your own.
 
 **`siteUrl`** - a domain where the site will be located.
 
-Most of this data is needed for the website meta tags to work properly.
+**`author`** - the author of the site. For information at the end of each blog post, as well as for site metadata. Just write your name.
+
+**`authorDescription`** - short description of the author. For example, "web developer", "designer", "front-end engineer" and so on.
+
+**`avatar`** - author avatar. The file is located here: `static/avatar.jpg`. Replace this file with yours. It is recommended to use image with a resolution of 1:1 (the size of the default picture - 300x300).
+
+**`twitterSite`** - twitter account, you can simply write your own account. For example `@ganevru`. Needed for twitter metadata. Not necessary.
+
+**`twitterCreator`** - same as `twitterSite`.
+
+**`social`** - your social networks. List the links to your social networks in the format presented. All of them will be automatically used in the `<SocialLinks />` component (in this starter this is the main menu, footer and the author banner). **`url`** - link to your social network profile, **`icon`** - name of the icon of this social network. Icons use brand icons from [fontawesome.com/icons?d=gallery&s=brands](https://fontawesome.com/icons?d=gallery&s=brands).
 
 ### favicon
 
