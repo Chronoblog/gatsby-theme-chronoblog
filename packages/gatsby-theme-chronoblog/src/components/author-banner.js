@@ -36,7 +36,7 @@ export const AuthorBannerAvatar = ({ src = '', ...props }) => {
   const style = {
     marginX: '30px',
     my: '10px',
-    boxShadow: 'inset 0 2px 4px 0 hsla(0, 0%, 0%, .2)'
+    boxShadow: '0 2px 4px 0 hsla(0, 0%, 0%, .2)'
   };
   if (src) return <Avatar sx={style} src={src} {...props} />;
   if (siteMeta.avatar)
