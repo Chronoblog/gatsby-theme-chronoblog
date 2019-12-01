@@ -67,7 +67,7 @@ This demo is at the same time the Chronoblog starter.
     - [Metadata Verification Tools](#metadata-verification-tools)
     - [SEO component in `.mdx`](#seo-component-in-mdx)
     - [Shadowing in Chronoblog Gatsby Theme](#shadowing-in-chronoblog-gatsby-theme)
-      - [✅ Components that can and should be shadowed](#-components-that-can-and-should-be-shadowed)
+      - [Components that can and should be shadowed](#components-that-can-and-should-be-shadowed)
 - [Status](#status)
   - [Starters status](#starters-status)
   - [Status of development and test versions](#status-of-development-and-test-versions)
@@ -847,7 +847,9 @@ Shadowing is a feature of any Gatsby Theme. You can read more about this in Gats
 
 This all works in the case of Chronoblog Theme. However, there are components that are still better not to touch so as not to break anything when updating Chronoblog.
 
-#### ✅ Components that can and should be shadowed
+For example, if you want to change the site menu, you need to create file `site-header.mdx` here: `src/gatsby-theme-chronoblog/site-header.mdx`. This will automatically replace default file of Chronoblog itself (which you can see here: [github.com/Ganevru/gatsby-theme-chronoblog/blob/master/packages/gatsby-theme-chronoblog/src/site-header.mdx](https://github.com/Ganevru/gatsby-theme-chronoblog/blob/master/packages/gatsby-theme-chronoblog/src/site-header.mdx))
+
+#### Components that can and should be shadowed
 
 Components that were specially created for you to change them:
 
