@@ -839,7 +839,7 @@ You can use `SEO` component in any `.mdx` file (it does not need to be imported)
 
 This can be useful if you need to set, for example, a special title for some page on the site.
 
-### Shadowing in Chronoblog Gatsby Theme
+## Shadowing in Chronoblog Gatsby Theme
 
 Shadowing is a feature of any Gatsby Theme. You can read more about this in Gatsby docs: [Shadowing in Gatsby Themes](https://www.gatsbyjs.org/docs/themes/shadowing/)
 
@@ -849,7 +849,7 @@ This all works in the case of Chronoblog Theme. However, there are components th
 
 For example, if you want to change the site menu, you need to create file `site-header.mdx` here: `src/gatsby-theme-chronoblog/site-header.mdx`. This will automatically replace default file of Chronoblog itself (which you can see here: [github.com/Ganevru/gatsby-theme-chronoblog/blob/master/packages/gatsby-theme-chronoblog/src/site-header.mdx](https://github.com/Ganevru/gatsby-theme-chronoblog/blob/master/packages/gatsby-theme-chronoblog/src/site-header.mdx))
 
-#### Components that can and should be shadowed
+### Components that can and should be shadowed
 
 Components that were specially created for you to change them:
 
