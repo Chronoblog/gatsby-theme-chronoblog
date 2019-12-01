@@ -651,8 +651,6 @@ In this form, it is used, for example, on the main page of the site (`src/pages/
 <FeedItems />
 ```
 
-Props:
-
 | Prop | Required | Type | Description |
 | --- | --- | --- | --- |
 | `filterByTags` | optional | string[] | takes an array of tags and displays all content that have at least one of these tags |
@@ -689,8 +687,6 @@ The search string to search feed items. It makes no sense to put this component 
 ```md
 <SocialLinks />
 ```
-
-Props:
 
 | Prop | Required | Type | Description |
 | --- | --- | --- | --- |
