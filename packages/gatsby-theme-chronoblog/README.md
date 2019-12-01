@@ -714,10 +714,10 @@ Example:
 <AuthorBanner></AuthorBanner>
 ```
 
-The component accepts `children`, together with them it can be much more optional:
+`AuthorBanner` accepts `children`, together with them it can be much more specific:
 
-```md
-<AuthorBanner sx={{color: '#f1f2f6', backgroundColor: `#222`,}}>
+```mdx
+<AuthorBanner sx={{color: '#f1f2f6', backgroundColor: `#222`}}>
   <AuthorBannerAvatar />
   <div>
     <AuthorBannerHeading as='h1' sx={{fontSize: [7]}} />
