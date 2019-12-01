@@ -708,8 +708,6 @@ This component also accepts any other props, this can be used to, say, set the s
 
 Information about the author (name, description of the author, avatar and links to social networks) are taken from [`gatsby-config.js`](#gatsby-config).
 
-Example:
-
 ```md
 <AuthorBanner></AuthorBanner>
 ```
@@ -730,6 +728,26 @@ Example:
 This way you can more specifically customize the look of the banner.
 
 ## LightDarkSwitchButton component
+
+This component displays a button for switching between light and dark themes.
+
+In the starter, it is used in the main menu: [site-header](#site-header)
+
+```md
+<LightDarkSwitchButton />
+```
+
+| Prop         | Required | Type            | Description       |
+| ------------ | -------- | --------------- | ----------------- |
+| `fontSize`   | optional | number / string | size of the icons |
+| `darkLabel`  | optional | string          | dark mode label   |
+| `lightLabel` | optional | string          | light mode label  |
+
+You can use emojis for switches:
+
+```md
+<LightDarkSwitchButton darkLabel="🌙" lightLabel="☀️" />
+```
 
 ## Content Cover
 

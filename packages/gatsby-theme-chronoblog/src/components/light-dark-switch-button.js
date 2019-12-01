@@ -11,7 +11,12 @@ import { jsx, useColorMode } from 'theme-ui';
 /**
  * @param {Props} props
  */
-export default ({ darkLabel = '🌙', lightLabel = '☀️', fontSize = 32 }) => {
+export default ({
+  darkLabel = '🌙',
+  lightLabel = '☀️',
+  fontSize = 32,
+  ...props
+}) => {
   const [mode, setMode] = useColorMode();
 
   const cycle = () => {
@@ -39,6 +44,7 @@ export default ({ darkLabel = '🌙', lightLabel = '☀️', fontSize = 32 }) =>
         cursor: 'pointer'
       }}
       onClick={cycle}
+      {...props}
     >
       {label}
     </button>
