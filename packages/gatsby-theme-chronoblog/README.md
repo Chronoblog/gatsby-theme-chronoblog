@@ -66,6 +66,8 @@ This demo is at the same time the Chronoblog starter.
     - [Metadata generation](#metadata-generation)
     - [Metadata Verification Tools](#metadata-verification-tools)
     - [SEO component in `.mdx`](#seo-component-in-mdx)
+    - [Shadowing in Chronoblog Gatsby Theme](#shadowing-in-chronoblog-gatsby-theme)
+      - [✅ Components that can and should be shadowed](#-components-that-can-and-should-be-shadowed)
 - [Status](#status)
   - [Starters status](#starters-status)
   - [Status of development and test versions](#status-of-development-and-test-versions)
@@ -836,6 +838,26 @@ Facebook debug OG: [developers.facebook.com/tools/debug/og/object](https://devel
 You can use `SEO` component in any `.mdx` file (it does not need to be imported). This component accepts child elements and you can set any metatags inside it as if you used the [react-helmet](https://www.npmjs.com/package/react-helmet) plugin on its own.
 
 This can be useful if you need to set, for example, a special title for some page on the site.
+
+### Shadowing in Chronoblog Gatsby Theme
+
+Shadowing is a feature of any Gatsby Theme. You can read more about this in Gatsby docs: [Shadowing in Gatsby Themes](https://www.gatsbyjs.org/docs/themes/shadowing/)
+
+> This feature allows users to replace a file in the src directory that is included in the webpack bundle with their own implementation. This works for React components, pages in src/pages, JSON files, TypeScript files, as well as any other imported file (such as .css) in your site.
+
+This all works in the case of Chronoblog Theme. However, there are components that are still better not to touch so as not to break anything when updating Chronoblog.
+
+#### ✅ Components that can and should be shadowed
+
+Components that were specially created for you to change them:
+
+| shadow | name | description |
+| --- | --- | --- |
+| ✅ | `post-footer.mdx` | read: [post-footer](#post-footer) |
+| ✅ | `site-header.mdx` | read: [site-header](#site-header) |
+| ✅ | `site-footer.mdx` | read: [post-footer](#post-footer) |
+| ✅ | `content-bottom.mdx` |  |
+| ✅ | `pages/index.mdx` | read: [index.mdx](#indexmdx---homepage-of-your-site) |
 
 # Status
 
