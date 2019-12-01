@@ -625,7 +625,7 @@ Here is more in-depth information about various aspects of Chronoblog.
 
 ## Feed
 
-The feed displays site content.
+Feed displays site content.
 
 The standard way to use these components is how the main page of the site uses them:
 
@@ -649,11 +649,13 @@ In this form, it is used, for example, on the main page of the site (`src/pages/
 <FeedItems />
 ```
 
-This component has various arguments.
+Props:
 
-**`filterByTags`** takes an array of tags (in the form of strings) and displays all materials that have at least one of these tags.
+| Prop | Required | Type | Description |
+| --- | --- | --- | --- |
+| `filterByTags` | optional | string[] | takes an array of tags and displays all content that have at least one of these tags |
 
-This component will display all site content that have the `project` tag:
+`filterByTags` example. This component will display all site content that have the `project` tag:
 
 ```md
 <FeedItems filterByTags={['project']} />
@@ -680,7 +682,7 @@ The search string to search feed items. It makes no sense to put this component 
 
 `SocialLinks` component displays links to your profiles on social networks in the form of icons. The information about what to display this component takes from [`gatsby-config.js`](#gatsby-config), from `siteMetadata.social`.
 
-`<SocialLinks />` already included in all `mdx`, it can simply be used in any `.mdx` file.
+`<SocialLinks />` already included in all `mdx`, it can simply be used in any `.mdx` file:
 
 ```md
 <SocialLinks />
@@ -701,6 +703,31 @@ This component also accepts any other props, this can be used to, say, set the s
 ```
 
 ## AuthorBanner component
+
+`AuthorBanner` component displays information about the author of the site. First of all, this component is needed to display the author at the end of each blog post (see [`post-footer`](#post-footer)). But it can be used in any `.mdx` file.
+
+Information about the author (name, description of the author, avatar and links to social networks) are taken from [`gatsby-config.js`](#gatsby-config).
+
+Example:
+
+```md
+<AuthorBanner></AuthorBanner>
+```
+
+The component accepts `children`, together with them it can be much more optional:
+
+```md
+<AuthorBanner sx={{color: '#f1f2f6', backgroundColor: `#222`,}}>
+  <AuthorBannerAvatar />
+  <div>
+    <AuthorBannerHeading as='h1' sx={{fontSize: [7]}} />
+    <AuthorBannerDescription />
+    <SocialLinks fontSize="30px" />
+  </div>
+</AuthorBanner>
+```
+
+This way you can more specifically customize the look of the banner.
 
 ## LightDarkSwitchButton component
 
