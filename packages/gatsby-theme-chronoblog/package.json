@@ -59,7 +59,6 @@
     "gatsby-transformer-sharp": "^2.3.6",
     "lodash": "^4.17.15",
     "normalize-url": "^4.5.0",
-    "react-device-detect": "^1.9.10",
     "react-headroom": "^3.0.0",
     "react-helmet": "^5.2.1",
     "react-hover-observer": "^2.1.1",

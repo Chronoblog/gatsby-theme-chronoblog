@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import GatsbyImage from 'gatsby-image';
 import get from 'lodash/get';
-import { isFirefox } from 'react-device-detect';
 import { jsx } from 'theme-ui';
 
 const Image = (props) => <GatsbyImage {...props} />;
@@ -31,28 +30,17 @@ const CoverImageBase = ({
       }}
     >
       <div
-        sx={
-          isFirefox
-            ? {
-                backgroundColor: 'muted',
-                //
-                maxHeight: height,
-                backgroundPosition: 'center',
-                borderRadius: 'card',
-                ...borderRadiusForCard
-              }
-            : {
-                backdropFilter: `drop-shadow(0px 0px 20px black)`,
-                boxShadow: 'inset 0px 0px 15px black',
-                backgroundImage: `url(${coverFluidImage.src})`,
-                backgroundSize: 'cover',
-                //
-                maxHeight: height,
-                backgroundPosition: 'center',
-                borderRadius: 'card',
-                ...borderRadiusForCard
-              }
-        }
+        sx={{
+          backdropFilter: `drop-shadow(0px 0px 20px black)`,
+          boxShadow: 'inset 0px 0px 15px black',
+          backgroundImage: `url(${coverFluidImage.src})`,
+          backgroundSize: 'cover',
+          //
+          maxHeight: height,
+          backgroundPosition: 'center',
+          borderRadius: 'card',
+          ...borderRadiusForCard
+        }}
       >
         <Image
           sx={{
