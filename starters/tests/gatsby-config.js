@@ -4,7 +4,7 @@ module.exports = {
     siteUrl: 'https://chronoblog-tests.netlify.com/',
     author: 'Site Author', // for example - 'Ivan Ganev'
     authorDescription: 'short text about the', // short text about the author
-    avatar: '/avatar.png',
+    avatar: '/avatar.jpg',
     social: [
       {
         icon: `twitter`,
