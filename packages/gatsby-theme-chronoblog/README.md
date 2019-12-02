@@ -855,11 +855,20 @@ Components that were specially created for you to change them:
 
 | shadow | name | description |
 | --- | --- | --- |
-| ✅ | `post-footer.mdx` | read: [post-footer](#post-footer) |
-| ✅ | `site-header.mdx` | read: [site-header](#site-header) |
-| ✅ | `site-footer.mdx` | read: [post-footer](#post-footer) |
-| ✅ | `content-bottom.mdx` |  |
-| ✅ | `pages/index.mdx` | read: [index.mdx](#indexmdx---homepage-of-your-site) |
+| ✅ | `src/gatsby-theme-chronoblog/post-footer.mdx` | read: [post-footer](#post-footer) |
+| ✅ | `src/gatsby-theme-chronoblog/site-header.mdx` | read: [site-header](#site-header) |
+| ✅ | `src/gatsby-theme-chronoblog/site-footer.mdx` | read: [post-footer](#post-footer) |
+| ✅ | `src/gatsby-theme-chronoblog/content-bottom.mdx` |  |
+
+### Components that can be shadowed
+
+These components can be shadowed if you think that you really need it:
+
+| shadow | name | description |
+| --- | --- | --- |
+| 👍 | `src/gatsby-theme-chronoblog/components/layout.js` | the whole site is wrapped in this component |
+| 👍 | `src/gatsby-theme-chronoblog/components/header.js` |  |
+| 👍 | `src/gatsby-theme-chronoblog/components/footer.js` |  |
 
 # Status
 
