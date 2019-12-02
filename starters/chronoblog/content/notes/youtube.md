@@ -7,4 +7,4 @@ tags: ['video', 'note']
   src="https://www.youtube.com/embed/dpw9EHDh2bM"
 />
 
-An example of how you can embed YouTube video in a note.
+An example of how you can embed YouTube videos in a note.
