@@ -23,6 +23,7 @@ export const Note = ({ data }) => {
           limit={1}
           showMoreButton={false}
           skipThisPageItem={false}
+          yearSeparator={false}
           // filter by slug - get only with this slug
           filter={(item) => item.fields.slug === data.mdx.fields.slug}
         />
