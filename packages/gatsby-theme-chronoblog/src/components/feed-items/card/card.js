@@ -19,7 +19,7 @@ const noStyleLink = {
 const LinkCard = ({ item, children }) => {
   //
   // links
-  if (item.frontmatter.link && item.parent.sourceInstanceName === 'links') {
+  if (item.frontmatter.link && item.fields.type === 'links') {
     const link = normalizeUrl(item.frontmatter.link);
     return (
       <a rel="noopener noreferrer" target="_blank" href={link} sx={noStyleLink}>
@@ -29,7 +29,7 @@ const LinkCard = ({ item, children }) => {
   }
   //
   // notes
-  if (item.parent.sourceInstanceName === 'notes') return <div>{children}</div>;
+  if (item.fields.type === 'notes') return <div>{children}</div>;
   //
   // posts / rest
   return (
@@ -40,7 +40,7 @@ const LinkCard = ({ item, children }) => {
 };
 
 const LinkText = ({ item }) => {
-  if (item.frontmatter.link && item.parent.sourceInstanceName === 'links') {
+  if (item.frontmatter.link && item.fields.type === 'links') {
     const link = normalizeUrl(item.frontmatter.link);
     return (
       <Styled.p
@@ -66,7 +66,7 @@ const CardTitle = ({ item }) => {
   if (
     item.frontmatter.title &&
     item.frontmatter.link &&
-    item.parent.sourceInstanceName === 'links'
+    item.fields.type === 'links'
   ) {
     return (
       <Styled.h2 sx={{ mb: '6px', mt: '0px' }}>
@@ -92,9 +92,8 @@ const LinkIconBg = ({
   //
   if (
     item.frontmatter.link &&
-    item.parent &&
-    item.parent.sourceInstanceName &&
-    item.parent.sourceInstanceName === 'links'
+    item.fields.type &&
+    item.fields.type === 'links'
   ) {
     return (
       <div
@@ -119,10 +118,7 @@ const Description = ({ item }) => {
 };
 
 const Excerpt = ({ item }) => {
-  if (
-    item.parent.sourceInstanceName === 'notes' ||
-    item.parent.sourceInstanceName === 'links'
-  )
+  if (item.fields.type === 'notes' || item.fields.type === 'links')
     return <div />;
   if (item.excerpt && !item.frontmatter.description)
     return <Styled.p>{item.excerpt}</Styled.p>;
@@ -130,10 +126,7 @@ const Excerpt = ({ item }) => {
 };
 
 const BodyMdx = ({ item }) => {
-  if (
-    item.parent.sourceInstanceName === 'notes' ||
-    item.parent.sourceInstanceName === 'links'
-  ) {
+  if (item.fields.type === 'notes' || item.fields.type === 'links') {
     return <MDXRenderer>{item.body}</MDXRenderer>;
   }
   return <div />;
@@ -205,7 +198,7 @@ const TagsComponent = ({ tags }) => {
 };
 
 const ReadMoreButton = ({ item, text }) => {
-  if (text && item.parent.sourceInstanceName === 'posts')
+  if (text && item.fields.type === 'posts')
     return (
       <Styled.p
         sx={{
@@ -281,7 +274,7 @@ export default ({ item, uiText }) => {
   //
   const { date } = item.frontmatter;
   const { tags } = item.frontmatter;
-  const type = item.parent.sourceInstanceName;
+  const { type } = item.fields;
   //
   if (type === 'notes')
     return (

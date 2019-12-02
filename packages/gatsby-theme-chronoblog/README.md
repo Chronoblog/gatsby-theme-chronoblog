@@ -557,8 +557,6 @@ By default, this file looks like this:
 
 ```md
 <AuthorBanner></AuthorBanner>
-
----
 ```
 
 The whole point of this file is to show how you can use it! Feel free to modify this file. Or, if you do not need it, remove everything from it and leave it blank.

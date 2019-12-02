@@ -44,6 +44,7 @@ const useFeed = () => {
           excerpt
           fields {
             slug
+            type
           }
           frontmatter {
             title
@@ -64,11 +65,6 @@ const useFeed = () => {
               }
             }
           }
-          parent {
-            ... on File {
-              sourceInstanceName
-            }
-          }
         }
       }
       allSitePage {
@@ -85,9 +81,9 @@ const useFeed = () => {
   // filters
   nodes = nodes.filter(
     (n) =>
-      n.parent.sourceInstanceName === 'posts' ||
-      n.parent.sourceInstanceName === 'links' ||
-      n.parent.sourceInstanceName === 'notes'
+      n.fields.type === 'posts' ||
+      n.fields.type === 'links' ||
+      n.fields.type === 'notes'
   );
 
   // check if page with this path exists

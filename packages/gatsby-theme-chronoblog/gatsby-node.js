@@ -61,13 +61,22 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   const parent = getNode(node.parent);
   const folderName = parent.sourceInstanceName;
   //
+  // create type field
+  const type = folderName;
+  actions.createNodeField({
+    name: 'type',
+    node,
+    value: type
+  });
+  //
+  // create slug field
   // if notes - use folder for slug link
   // because notes have no title
-  const type = folderName === 'notes' ? folderName : '';
-  const slugDefault = `${type}${fileName}`;
+  const typeFromFolderName = folderName === 'notes' ? folderName : '';
+  const slugDefault = `${typeFromFolderName}${fileName}`;
   // make final slug
   const slug = makeSlug(node, slugDefault);
-
+  //
   actions.createNodeField({
     name: 'slug',
     node,
@@ -84,6 +93,7 @@ exports.createPages = async ({ graphql, actions }) => {
             id
             fields {
               slug
+              type
             }
             frontmatter {
               title
@@ -93,11 +103,6 @@ exports.createPages = async ({ graphql, actions }) => {
               tags
             }
             body
-            parent {
-              ... on File {
-                sourceInstanceName
-              }
-            }
           }
         }
       }
@@ -132,9 +137,7 @@ exports.createPages = async ({ graphql, actions }) => {
   }
 
   // Links
-  let links = allMdxNodes.filter(
-    (n) => n.parent.sourceInstanceName === 'links'
-  );
+  let links = allMdxNodes.filter((n) => n.fields.type === 'links');
   links = links.filter((n) => n.frontmatter.title);
   links = links.filter((n) => n.frontmatter.date);
   links = links.filter((n) => n.frontmatter.link);
@@ -151,9 +154,7 @@ exports.createPages = async ({ graphql, actions }) => {
   }
 
   // Notes
-  let notes = allMdxNodes.filter(
-    (n) => n.parent.sourceInstanceName === 'notes'
-  );
+  let notes = allMdxNodes.filter((n) => n.fields.type === 'notes');
   notes = notes.filter((n) => n.frontmatter.date);
   notes = notes.filter((n) => n.fields.slug);
   if (notes.length > 0) {
@@ -169,9 +170,7 @@ exports.createPages = async ({ graphql, actions }) => {
   }
 
   // Posts
-  let posts = allMdxNodes.filter(
-    (n) => n.parent.sourceInstanceName === 'posts'
-  );
+  let posts = allMdxNodes.filter((n) => n.fields.type === 'posts');
   posts = posts.filter((n) => n.frontmatter.title);
   posts = posts.filter((n) => n.frontmatter.date);
   posts = posts.filter((n) => n.fields.slug);
