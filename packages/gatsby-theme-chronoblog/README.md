@@ -343,7 +343,7 @@ A typical post looks like this:
 
 `content/posts/some-blog-post/index.md`
 
-```md
+```yaml
 ---
 title: Full Blog Post Example
 cover: ./image.jpg
@@ -393,7 +393,7 @@ A typical link looks like this:
 
 `content/links/link-to-chronoblog/index.md`
 
-```md
+```yaml
 ---
 title: 'Link to Chronoblog Theme repo'
 cover: ./image.jpg
@@ -434,7 +434,7 @@ A typical note:
 
 `content/notes/note-chronoblog/index.md`
 
-```md
+```yaml
 ---
 date: 2019-11-02
 tags: ['note']
@@ -451,7 +451,7 @@ To add content locally, you need to create a folder in `content/posts/` (if you 
 
 The file `index.md` maybe something like this:
 
-```md
+```yaml
 ---
 title: Some Blog Post Example
 cover: ./image.jpg
@@ -500,7 +500,7 @@ You can find this file here: **`src/gatsby-theme-chronoblog/site-header.mdx`**
 
 Usually here is the main menu of the site. By default, it looks like this:
 
-```md
+```html
 <MenuMain>
   <MenuBlock>
     <Link to="/">Home</Link>
@@ -516,7 +516,7 @@ Usually here is the main menu of the site. By default, it looks like this:
 
 By default, the starter has two links in the menu - to the main page of the site (`<Link to="/">Home</Link>`) and to the additional page of the site (`<Link to="/projects">Projects</Link>`). The additional page of the site in the menu exists only as an example, you can change it or delete it if you do not need it. Then this file will look like this:
 
-```md
+```html
 <MenuMain>
   <MenuBlock>
     <Link to="/">Home</Link>
@@ -541,7 +541,7 @@ This is a footer of your site, place here everything that you consider necessary
 
 By default, this file looks like this:
 
-```md
+```html
 <div style={{textAlign: 'center'}}>
 <SocialLinks justifyContent='center' fontSize={40} />
 <p>&nbsp;</p>
@@ -557,7 +557,7 @@ You can find this file here: **`src/gatsby-theme-chronoblog/post-footer.mdx`**
 
 By default, this file looks like this:
 
-```md
+```html
 <AuthorBanner></AuthorBanner>
 ```
 
@@ -593,7 +593,7 @@ By default, it looks something like this:
 
 `src/pages/index.mdx`
 
-```md
+```html
 <AuthorBanner />
 
 Welcome to the Gatsby Starter Chronoblog! This starter will help you quickly and easily create a website using Chronoblog Gatsby Theme.
@@ -611,7 +611,7 @@ You should replace the content of the main page with your own.
 
 Pay attention to these components:
 
-```md
+```html
 <FeedSearch />
 <Tags />
 <FeedItems />
@@ -635,7 +635,7 @@ The standard way to use these components is how the main page of the site uses t
 
 `src/pages/index.mdx`
 
-```md
+```html
 <FeedSearch />
 <Tags />
 <FeedItems />
@@ -649,7 +649,7 @@ The most important component of the feed - this component displays content.
 
 In this form, it is used, for example, on the main page of the site (`src/pages/index.mdx`):
 
-```md
+```html
 <FeedItems />
 ```
 
@@ -659,7 +659,7 @@ In this form, it is used, for example, on the main page of the site (`src/pages/
 
 `filterByTags` example. This component will display all site content that have the `project` tag:
 
-```md
+```html
 <FeedItems filterByTags={['project']} />
 ```
 
@@ -667,7 +667,7 @@ In this form, it is used, for example, on the main page of the site (`src/pages/
 
 This component displays all tags available on the site.
 
-```md
+```html
 <Tags />
 ```
 
@@ -675,7 +675,7 @@ This component displays all tags available on the site.
 
 The search string to search feed items. It makes no sense to put this component if there is no `<FeedItems />` component nearby.
 
-```md
+```html
 <FeedSearch />
 <FeedItems />
 ```
@@ -686,7 +686,7 @@ The search string to search feed items. It makes no sense to put this component 
 
 `<SocialLinks />` already included in all `mdx`, it can simply be used in any `.mdx` file:
 
-```md
+```html
 <SocialLinks />
 ```
 
@@ -698,7 +698,7 @@ The search string to search feed items. It makes no sense to put this component 
 
 This component also accepts any other props, this can be used to, say, set the style you need. For example, change color:
 
-```md
+```html
 <SocialLinks sx={{ color: "#407b6e" }} />
 ```
 
@@ -708,13 +708,13 @@ This component also accepts any other props, this can be used to, say, set the s
 
 Information about the author (name, description of the author, avatar and links to social networks) are taken from [`gatsby-config.js`](#gatsby-config).
 
-```md
+```html
 <AuthorBanner></AuthorBanner>
 ```
 
 `AuthorBanner` accepts `children`, together with them it can be much more specific:
 
-```mdx
+```html
 <AuthorBanner sx={{color: '#f1f2f6', backgroundColor: `#222`}}>
   <AuthorBannerAvatar />
   <div>
@@ -733,7 +733,7 @@ This component displays a button for switching between light and dark themes.
 
 In the starter, it is used in the main menu: [site-header](#site-header)
 
-```md
+```html
 <LightDarkSwitchButton />
 ```
 
@@ -745,7 +745,7 @@ In the starter, it is used in the main menu: [site-header](#site-header)
 
 You can use emojis for switches:
 
-```md
+```html
 <LightDarkSwitchButton darkLabel="🌙" lightLabel="☀️" />
 ```
 
@@ -768,7 +768,7 @@ chronoblog-site
 
 In `index.md` or in `index.mdx` file of the post:
 
-```md
+```yaml
 ---
 title: Full Blog Post Example
 cover: ./image.jpg <- cover image
@@ -786,7 +786,7 @@ Cover very forgiving to the size of the image, it is always in the center and al
 
 Chronoblog uses [react-fontawesome](https://github.com/FortAwesome/react-fontawesome) for icons. Brand icons (they call them “fab”) are already built into all `.mdx` files - you don’t need to import them from anywhere, just use them, for example like this:
 
-```md
+```html
 <FontAwesomeIcon icon={['fab', 'twitter']} />  
 <FontAwesomeIcon icon={['fab', 'github']} />  
 <FontAwesomeIcon icon={['fab', 'instagram']} />
@@ -794,7 +794,7 @@ Chronoblog uses [react-fontawesome](https://github.com/FortAwesome/react-fontawe
 
 These three icons that were not related to any brands were also built in:
 
-```md
+```html
 <FontAwesomeIcon icon="at" />
 <FontAwesomeIcon icon="envelope" />
 <FontAwesomeIcon icon="phone" />
