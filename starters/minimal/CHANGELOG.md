@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.6.0](https://github.com/Ganevru/gatsby-theme-chronoblog/compare/minimal@1.5.1...minimal@1.6.0) (2019-12-02)
+
+**Note:** Version bump only for package minimal
+
+
+
+
+
 ## [1.5.1](https://github.com/Ganevru/gatsby-theme-chronoblog/compare/minimal@1.5.0...minimal@1.5.1) (2019-12-01)
 
 **Note:** Version bump only for package minimal
