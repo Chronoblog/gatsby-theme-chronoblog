@@ -543,9 +543,9 @@ By default, this file looks like this:
 
 ```html
 <div style={{textAlign: 'center'}}>
-<SocialLinks justifyContent='center' fontSize={40} />
-<p>&nbsp;</p>
-<div>© {new Date().getFullYear()}</div>
+  <SocialLinks justifyContent='center' fontSize={40} />
+  <p>&nbsp;</p>
+  <div>© {new Date().getFullYear()}</div>
 </div>
 ```
 
