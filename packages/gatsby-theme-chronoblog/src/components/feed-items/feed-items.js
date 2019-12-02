@@ -77,12 +77,36 @@ const getYears = (items, lang = 'en-US') => {
   return years;
 };
 
+const YearSeparator = ({ key, year, yearSeparatorShow, children }) => {
+  return (
+    <div key={key}>
+      {yearSeparatorShow ? (
+        <div
+          sx={{
+            fontSize: [3],
+            opacity: 0.8,
+            fontWeight: 'bold',
+            px: ['10px', '20px'],
+            mt: '48px'
+          }}
+        >
+          {year}
+        </div>
+      ) : (
+        ''
+      )}
+      <div>{children}</div>
+    </div>
+  );
+};
+
 /**
  * Feed Items
  *
  * @typedef {object} Props
  * @property {string=} filterBySearch
  * @property {string[]=} filterByTags
+ * @property {string[]=} filterByTypes
  * @property {object=} filter all feed items predicate returns truthy for
  * @property {object=} reject items of feed that predicate does not return truthy for
  * @property {number=} limit limit of feed items to show
@@ -99,6 +123,7 @@ const getYears = (items, lang = 'en-US') => {
 export default ({
   filterBySearch = '',
   filterByTags,
+  filterByTypes,
   filter,
   reject,
   limit,
@@ -113,14 +138,14 @@ export default ({
   const siteMeta = useSiteMetadata();
   const { uiText, feedItemsLimit } = siteMeta;
   //
-  let yearSeparatorUse = siteMeta.yearSeparator;
+  let yearSeparatorShow = siteMeta.yearSeparator;
   if (yearSeparator !== undefined && typeof yearSeparator === 'boolean')
-    yearSeparatorUse = yearSeparator;
+    yearSeparatorShow = yearSeparator;
   //
   const feedLimit = limit || feedItemsLimit;
   //
   // props
-  // tags array from props
+  // Tags array from props
   if (filterByTags && filterByTags.length > 0) {
     feedItems = feedItems.filter((i) => {
       if (i.frontmatter.tags && i.frontmatter.tags.length > 0) {
@@ -129,6 +154,13 @@ export default ({
         );
         return filteredTags.length > 0;
       }
+      return false;
+    });
+  }
+  // Types array from props
+  if (filterByTypes && filterByTypes.length > 0) {
+    feedItems = feedItems.filter((i) => {
+      if (i.fields.type) return filterByTypes.includes(i.fields.type);
       return false;
     });
   }
@@ -169,22 +201,11 @@ export default ({
             <ul sx={listStyleObject}>
               {yearsArray.map((year) => {
                 return (
-                  <div key={year}>
-                    {yearSeparatorUse ? (
-                      <div
-                        sx={{
-                          fontSize: [3],
-                          opacity: 0.8,
-                          fontWeight: 'bold',
-                          px: ['10px', '20px'],
-                          mt: '48px'
-                        }}
-                      >
-                        {year}
-                      </div>
-                    ) : (
-                      ''
-                    )}
+                  <YearSeparator
+                    key={year}
+                    year={year}
+                    yearSeparatorShow={yearSeparatorShow}
+                  >
                     <ul sx={listStyleObject}>
                       {feedItemsToShow.map((item) => {
                         if (getItemYear(item) === year) {
@@ -197,7 +218,7 @@ export default ({
                         return undefined;
                       })}
                     </ul>
-                  </div>
+                  </YearSeparator>
                 );
               })}
             </ul>
