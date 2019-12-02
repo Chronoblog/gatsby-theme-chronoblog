@@ -72,8 +72,10 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   // create slug field
   // if notes - use folder for slug link
   // because notes have no title
-  const typeFromFolderName = folderName === 'notes' ? folderName : '';
-  const slugDefault = `${typeFromFolderName}${fileName}`;
+  let typeFromFolder = '';
+  typeFromFolder = folderName === 'notes' ? 'notes' : typeFromFolder;
+  typeFromFolder = folderName === 'links' ? 'links' : typeFromFolder;
+  const slugDefault = `${typeFromFolder}${fileName}`;
   // make final slug
   const slug = makeSlug(node, slugDefault);
   //
