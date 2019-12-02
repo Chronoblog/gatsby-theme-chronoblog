@@ -104,13 +104,19 @@ export default ({
   limit,
   showMoreButton = true,
   showMoreText = '',
-  showMoreNumber = 20,
-  skipThisPageItem = true
+  showMoreNumber = 50,
+  skipThisPageItem = true,
+  yearSeparator
 }) => {
   let feedItems = useFeed();
   //
-  const { uiText, feedItemsLimit } = useSiteMetadata();
-  const yearSeparatorMetadata = useSiteMetadata().yearSeparator;
+  const siteMeta = useSiteMetadata();
+  const { uiText, feedItemsLimit } = siteMeta;
+  //
+  let yearSeparatorUse = siteMeta.yearSeparator;
+  if (yearSeparator !== undefined && typeof yearSeparator === 'boolean')
+    yearSeparatorUse = yearSeparator;
+  //
   const feedLimit = limit || feedItemsLimit;
   //
   // props
@@ -164,7 +170,7 @@ export default ({
               {yearsArray.map((year) => {
                 return (
                   <div key={year}>
-                    {yearSeparatorMetadata ? (
+                    {yearSeparatorUse ? (
                       <div
                         sx={{
                           fontSize: [3],
