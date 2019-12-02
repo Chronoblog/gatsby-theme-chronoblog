@@ -69,9 +69,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     value: type
   });
   //
-  // create slug field
-  // if notes - use folder for slug link
-  // because notes have no title
+  // create slug field (for links)
   let typeFromFolder = '';
   typeFromFolder = folderName === 'notes' ? 'notes' : typeFromFolder;
   typeFromFolder = folderName === 'links' ? 'links' : typeFromFolder;
