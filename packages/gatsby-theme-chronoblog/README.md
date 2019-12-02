@@ -235,9 +235,9 @@ In **`siteMetadata`**, replace information about:
 
 **`avatar`** - author avatar. The file is located here: `static/avatar.jpg`. Replace this file with yours. It is recommended to use image with a resolution of 1:1 (the size of the default picture - 300x300).
 
-**`twitterSite`** - twitter account, you can simply write your own account. For example `@ganevru`. Needed for twitter metadata. Not necessary.
+**`twitterSite`** - twitter account of this site. Needed for twitter metadata.
 
-**`twitterCreator`** - same as `twitterSite`.
+**`twitterCreator`** - same as `twitterSite`, but for the author.
 
 **`social`** - your social networks. List the links to your social networks in the format presented. All of them will be automatically used in the [`<SocialLinks />` component](#sociallinks-component) (in this starter this is the main menu, footer and the author banner). **`url`** - link to your social network profile, **`icon`** - name of the icon of this social network. Icons use brand icons from [fontawesome.com/icons?d=gallery&s=brands](https://fontawesome.com/icons?d=gallery&s=brands).
 
@@ -304,6 +304,8 @@ export default {
 ```
 
 In general, this file explains itself. The easiest way to understand what and how it works is simply to “play” with it. Try changing the primary and secondary colors, double the rounding of all elements, and so on.
+
+`initialColorMode` - here you can select the starting color mode of the site. My be `light` or `dark`.
 
 ## Content
 
