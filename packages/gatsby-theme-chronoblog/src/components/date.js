@@ -18,27 +18,26 @@ const makeDate = (date, language, options) => {
 
 export default ({
   date,
-  options = { year: 'numeric', month: 'long', day: 'numeric' }
+  options = { year: 'numeric', month: 'long', day: 'numeric' },
+  ...props
 }) => {
   const meta = useSiteMetadata();
   const dateString = makeDate(date, meta.siteLanguage, options);
-  //
-  return (
-    <div>
-      {dateString ? (
-        <div
-          sx={{
-            fontSize: [1],
-            opacity: 0.8,
-            // fontStyle: 'italic',
-            fontWeight: 'bold'
-          }}
-        >
-          {dateString}
-        </div>
-      ) : (
-        ''
-      )}
-    </div>
-  );
+  if (dateString)
+    //
+    return (
+      <div
+        sx={{
+          color: 'text',
+          fontSize: [1],
+          opacity: 0.8,
+          // fontStyle: 'italic',
+          fontWeight: 'normal'
+        }}
+        {...props}
+      >
+        {dateString}
+      </div>
+    );
+  return <div />;
 };
