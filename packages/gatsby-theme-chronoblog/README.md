@@ -343,7 +343,7 @@ A typical post looks like this:
 
 `content/posts/some-blog-post/index.md`
 
-```yaml
+```md
 ---
 title: Full Blog Post Example
 cover: ./image.jpg
@@ -351,6 +351,7 @@ date: 2019-11-05
 description: All the usual blog post.
 tags: ['post']
 ---
+
 Some blog post text
 ```
 
@@ -392,7 +393,7 @@ A typical link looks like this:
 
 `content/links/link-to-chronoblog/index.md`
 
-```yaml
+```md
 ---
 title: 'Link to Chronoblog Theme repo'
 cover: ./image.jpg
@@ -400,6 +401,7 @@ date: 2019-11-12
 link: https://github.com/Ganevru/gatsby-theme-chronoblog
 tags: ['link', 'project']
 ---
+
 Link card is a card when clicked, the user goes to the specified link.
 ```
 
@@ -432,11 +434,12 @@ A typical note:
 
 `content/notes/note-chronoblog/index.md`
 
-```yaml
+```md
 ---
 date: 2019-11-02
 tags: ['note']
 ---
+
 Note card - the type of content that is fully displayed in the feed of the site.
 ```
 
@@ -448,13 +451,14 @@ To add content locally, you need to create a folder in `content/posts/` (if you 
 
 The file `index.md` maybe something like this:
 
-```yaml
+```md
 ---
 title: Some Blog Post Example
 cover: ./image.jpg
 date: 2019-11-05
 tags: ['post']
 ---
+
 Some blog post text
 ```
 
@@ -762,12 +766,13 @@ chronoblog-site
 
 In `index.md` or in `index.mdx` file of the post:
 
-```yaml
+```md
 ---
 title: Full Blog Post Example
 cover: ./image.jpg <- cover image
 date: 2019-11-05
 ---
+
 Some blog post text
 ```
 
