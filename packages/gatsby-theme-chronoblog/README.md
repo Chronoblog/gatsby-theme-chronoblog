@@ -68,6 +68,7 @@ This demo is at the same time the Chronoblog starter.
     - [SEO component in `.mdx`](#seo-component-in-mdx)
   - [Shadowing in Chronoblog Gatsby Theme](#shadowing-in-chronoblog-gatsby-theme)
     - [Components that can and should be shadowed](#components-that-can-and-should-be-shadowed)
+    - [Components that can be shadowed](#components-that-can-be-shadowed)
 - [Status](#status)
   - [Starters status](#starters-status)
   - [Status of development and test versions](#status-of-development-and-test-versions)
@@ -185,8 +186,7 @@ module.exports = {
           feedSearchPlaceholder: 'search',
           cardReadMoreButton: 'read more →',
           allTagsButton: 'all tags'
-        },
-        feedItemsLimit: 50
+        }
       }
     },
     {
@@ -351,7 +351,6 @@ date: 2019-11-05
 description: All the usual blog post.
 tags: ['post']
 ---
-
 Some blog post text
 ```
 
@@ -401,7 +400,6 @@ date: 2019-11-12
 link: https://github.com/Ganevru/gatsby-theme-chronoblog
 tags: ['link', 'project']
 ---
-
 Link card is a card when clicked, the user goes to the specified link.
 ```
 
@@ -439,7 +437,6 @@ A typical note:
 date: 2019-11-02
 tags: ['note']
 ---
-
 Note card - the type of content that is fully displayed in the feed of the site.
 ```
 
@@ -458,7 +455,6 @@ cover: ./image.jpg
 date: 2019-11-05
 tags: ['post']
 ---
-
 Some blog post text
 ```
 
@@ -596,11 +592,10 @@ By default, it looks something like this:
 ```html
 <AuthorBanner />
 
-Welcome to the Gatsby Starter Chronoblog! This starter will help you quickly and easily create a website using Chronoblog Gatsby Theme.
-
-What you see is the main page of the site. Replace everything here with your own content by editing this file: `src/pages/index.mdx`
-
----
+Welcome to the Gatsby Starter Chronoblog! This starter will help you quickly and
+easily create a website using Chronoblog Gatsby Theme. What you see is the main
+page of the site. Replace everything here with your own content by editing this
+file: `src/pages/index.mdx` ---
 
 <FeedSearch />
 <Tags />
@@ -676,8 +671,7 @@ This component displays all tags available on the site.
 The search string to search feed items. It makes no sense to put this component if there is no `<FeedItems />` component nearby.
 
 ```html
-<FeedSearch />
-<FeedItems />
+<FeedSearch /> <FeedItems />
 ```
 
 ## SocialLinks component
@@ -774,7 +768,6 @@ title: Full Blog Post Example
 cover: ./image.jpg <- cover image
 date: 2019-11-05
 ---
-
 Some blog post text
 ```
 
@@ -787,9 +780,8 @@ Cover very forgiving to the size of the image, it is always in the center and al
 Chronoblog uses [react-fontawesome](https://github.com/FortAwesome/react-fontawesome) for icons. Brand icons (they call them “fab”) are already built into all `.mdx` files - you don’t need to import them from anywhere, just use them, for example like this:
 
 ```html
-<FontAwesomeIcon icon={['fab', 'twitter']} />  
-<FontAwesomeIcon icon={['fab', 'github']} />  
-<FontAwesomeIcon icon={['fab', 'instagram']} />
+<FontAwesomeIcon icon={['fab', 'twitter']} /> <FontAwesomeIcon icon={['fab',
+'github']} /> <FontAwesomeIcon icon={['fab', 'instagram']} />
 ```
 
 These three icons that were not related to any brands were also built in:

@@ -46,8 +46,7 @@ module.exports = {
           feedSearchPlaceholder: 'search',
           cardReadMoreButton: 'read more →',
           allTagsButton: 'all tags'
-        },
-        feedItemsLimit: 50
+        }
       }
     },
     {
