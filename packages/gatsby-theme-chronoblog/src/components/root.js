@@ -10,7 +10,6 @@ import { MDXProvider } from '@mdx-js/react';
 import { Avatar, Box, Embed, Flex } from '@theme-ui/components';
 import { Link as LinkGatsby } from 'gatsby';
 import { useCallback, useState } from 'react';
-import { Helmet } from 'react-helmet';
 import { jsx, Layout } from 'theme-ui';
 
 import FeedContext from '../contexts/context-feed';
@@ -49,7 +48,6 @@ const themeUiComponents = {
 
 const components = {
   SEO,
-  Helmet,
   Tags,
   FeedItems,
   FeedSearch,
