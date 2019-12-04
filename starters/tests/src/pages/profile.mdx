@@ -2,12 +2,23 @@
 
 ## Last Posts
 
-<FeedItems filterByTypes={['posts']} limit={5} showMoreButton={false} />
+<FeedItems
+  itemsFormat="compact"
+  filterByTypes={['posts']}
+  limit={5}
+  showMoreButton={false}
+/>
 
 ## Podcasts
 
-<FeedItems filterByTags={['podcast']} limit={5} />
+<FeedItems itemsFormat="compact" filterByTags={['podcast']} limit={5} />
 
 ## Links
 
-<FeedItems filterByTypes={['links']} limit={5} />
+<FeedItems
+  yearSeparatorSkipFirst={true}
+  yearSeparator="space"
+  itemsFormat="compact"
+  filterByTypes={['links']}
+  limit={5}
+/>

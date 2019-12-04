@@ -17,7 +17,6 @@ const noStyleLink = {
 };
 
 const LinkCard = ({ item, children }) => {
-  //
   // links
   if (item.frontmatter.link && item.fields.type === 'links') {
     const link = normalizeUrl(item.frontmatter.link);
@@ -27,10 +26,8 @@ const LinkCard = ({ item, children }) => {
       </a>
     );
   }
-  //
   // notes
   if (item.fields.type === 'notes') return <div>{children}</div>;
-  //
   // posts / rest
   return (
     <Link to={item.fields.slug} sx={noStyleLink}>
@@ -63,22 +60,15 @@ const LinkText = ({ item }) => {
 };
 
 const CardTitle = ({ item }) => {
+  const style = { mb: '6px', mt: '0px' };
   if (
     item.frontmatter.title &&
     item.frontmatter.link &&
     item.fields.type === 'links'
   ) {
-    return (
-      <Styled.h2 sx={{ mb: '6px', mt: '0px' }}>
-        {`🔗 ${item.frontmatter.title}`}
-      </Styled.h2>
-    );
+    return <Styled.h2 sx={style}>{`🔗 ${item.frontmatter.title}`}</Styled.h2>;
   }
-  return (
-    <Styled.h2 sx={{ mb: '6px', mt: '0px' }}>
-      {`${item.frontmatter.title}`}
-    </Styled.h2>
-  );
+  return <Styled.h2 sx={style}>{`${item.frontmatter.title}`}</Styled.h2>;
 };
 
 const LinkIconBg = ({

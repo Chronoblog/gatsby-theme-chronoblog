@@ -9,6 +9,7 @@ import useFeed from '../../hooks/use-feed';
 import useSiteMetadata from '../../hooks/use-site-metadata';
 import Button from '../button';
 import Card from './card';
+import Compact from './compact';
 
 /**
  * @param {string[]=} tagsArray
@@ -77,26 +78,63 @@ const getYears = (items, lang = 'en-US') => {
   return years;
 };
 
-const YearSeparator = ({ key, year, yearSeparatorShow, children }) => {
+const YearSeparator = ({
+  key,
+  year,
+  firstYear,
+  yearSeparatorType,
+  yearSeparatorSkipFirst = false,
+  children
+}) => {
+  const style = {
+    fontSize: [3],
+    opacity: 0.8,
+    fontWeight: 'normal',
+    px: ['10px', '20px'],
+    mt: '48px'
+  };
+  //
+  if (yearSeparatorSkipFirst && firstYear === year)
+    return (
+      <div key={key}>
+        <div>{children}</div>
+      </div>
+    );
+  //
+  if (!yearSeparatorType)
+    return (
+      <div key={key}>
+        <div>{children}</div>
+      </div>
+    );
+  //
+  if (yearSeparatorType === 'space')
+    return (
+      <div key={key}>
+        <div sx={style} />
+        <div>{children}</div>
+      </div>
+    );
+  //
   return (
     <div key={key}>
-      {yearSeparatorShow ? (
-        <div
-          sx={{
-            fontSize: [3],
-            opacity: 0.8,
-            fontWeight: 'bold',
-            px: ['10px', '20px'],
-            mt: '48px'
-          }}
-        >
-          {year}
-        </div>
-      ) : (
-        ''
-      )}
+      <div sx={style}>{year}</div>
       <div>{children}</div>
     </div>
+  );
+};
+
+const Item = ({ itemsFormat, item, uiText }) => {
+  if (itemsFormat === 'compact')
+    return (
+      <li key={item.id}>
+        <Compact item={item} uiText={uiText} />
+      </li>
+    );
+  return (
+    <li key={item.id}>
+      <Card item={item} uiText={uiText} />
+    </li>
   );
 };
 
@@ -114,7 +152,9 @@ const YearSeparator = ({ key, year, yearSeparatorShow, children }) => {
  * @property {string=} showMoreText
  * @property {number=} showMoreNumber
  * @property {boolean=} skipThisPageItem page where the user is now
- * @property {boolean=} yearSeparator
+ * @property {'year' | 'space' | boolean=} yearSeparator
+ * @property {boolean=} yearSeparatorSkipFirst
+ * @property {string} itemsFormat
  *
  */
 /**
@@ -131,18 +171,25 @@ export default ({
   showMoreText = '',
   showMoreNumber = 50,
   skipThisPageItem = true,
-  yearSeparator
+  yearSeparator,
+  yearSeparatorSkipFirst,
+  itemsFormat = 'cards'
 }) => {
   let feedItems = useFeed();
   //
   const siteMeta = useSiteMetadata();
-  const { uiText, feedItemsLimit } = siteMeta;
+  const { uiText } = siteMeta;
+  const feedItemsFromMeta = siteMeta.feedItems;
   //
-  let yearSeparatorShow = siteMeta.yearSeparator;
-  if (yearSeparator !== undefined && typeof yearSeparator === 'boolean')
-    yearSeparatorShow = yearSeparator;
+  let yearSeparatorType = siteMeta.feedItems.yearSeparator;
+  if (yearSeparator !== undefined) yearSeparatorType = yearSeparator;
   //
-  const feedLimit = limit || feedItemsLimit;
+  let yearSeparatorSkipFirstUse = siteMeta.feedItems.yearSeparatorSkipFirst;
+  if (yearSeparator === 'space') yearSeparatorSkipFirstUse = true;
+  if (yearSeparatorSkipFirst !== undefined)
+    yearSeparatorSkipFirstUse = yearSeparatorSkipFirst;
+  //
+  const feedLimit = limit || feedItemsFromMeta.limit;
   //
   // props
   // Tags array from props
@@ -196,6 +243,7 @@ export default ({
           feedItemsToShow = _.take(feedItemsToShow, showLimit);
           //
           const yearsArray = getYears(feedItemsToShow);
+          const firstYear = yearsArray[0];
           //
           return (
             <ul sx={listStyleObject}>
@@ -204,15 +252,19 @@ export default ({
                   <YearSeparator
                     key={year}
                     year={year}
-                    yearSeparatorShow={yearSeparatorShow}
+                    firstYear={firstYear}
+                    yearSeparatorSkipFirst={yearSeparatorSkipFirstUse}
+                    yearSeparatorType={yearSeparatorType}
                   >
                     <ul sx={listStyleObject}>
                       {feedItemsToShow.map((item) => {
                         if (getItemYear(item) === year) {
                           return (
-                            <li key={item.id}>
-                              <Card item={item} uiText={uiText} />
-                            </li>
+                            <Item
+                              itemsFormat={itemsFormat}
+                              item={item}
+                              uiText={uiText}
+                            />
                           );
                         }
                         return undefined;

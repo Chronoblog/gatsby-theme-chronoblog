@@ -18,22 +18,32 @@ import Button from '../button';
  * @typedef {object} TagProps
  * @property {TagWithStat} tagWithStat
  * @property {string=} pageContextTag
+ * @property {boolean=} showStatsNumber
  * @property {object} style
  */
 
 /**
  * @param {TagProps=} props
  */
-const Tag = ({ tagWithStat, style, pageContextTag }) => {
+const Tag = ({ tagWithStat, style, pageContextTag, showStatsNumber }) => {
   const active = tagWithStat.tagName === pageContextTag;
   const link = active ? '/tags' : `/tags/${_.kebabCase(tagWithStat.tagName)}`;
+  if (showStatsNumber)
+    return (
+      <Link to={link}>
+        <Button sx={style} active={active}>
+          #{tagWithStat.tagName}{' '}
+          <Badge variant="tags" ml={1}>
+            {tagWithStat.tagStat}
+          </Badge>
+        </Button>
+      </Link>
+    );
+  //
   return (
     <Link to={link}>
       <Button sx={style} active={active}>
-        #{tagWithStat.tagName}{' '}
-        <Badge variant="tags" ml={1}>
-          {tagWithStat.tagStat}
-        </Badge>
+        #{tagWithStat.tagName}
       </Button>
     </Link>
   );
@@ -60,7 +70,9 @@ const AllTagsButton = ({ style }) => {
  * @property {TagWithStat[]} tagsWithStat
  * @property {string} type
  * @property {boolean=} showAllTagsButton
+ * @property {boolean=} showStatsNumber
  * @property {string=} pageContextTag
+ * @property {object=} tagStyle
  */
 
 /**
@@ -69,8 +81,10 @@ const AllTagsButton = ({ style }) => {
 const Tags = ({
   type,
   showAllTagsButton = false,
+  showStatsNumber,
   tagsWithStat,
-  pageContextTag
+  pageContextTag,
+  tagStyle
 }) => {
   const style = {
     mr: type === 'feed' ? '6px' : '5px',
@@ -78,7 +92,8 @@ const Tags = ({
     px: type === 'feed' ? '16px' : '14px',
     py: type === 'feed' ? '10px' : '8px',
     fontSize: [2],
-    opacity: 0.75
+    opacity: 0.75,
+    ...tagStyle
   };
   //
   return (
@@ -91,6 +106,7 @@ const Tags = ({
       {tagsWithStat.map((tws) => (
         <Tag
           key={tws.tagName}
+          showStatsNumber={showStatsNumber}
           tagWithStat={tws}
           style={style}
           pageContextTag={pageContextTag}
@@ -127,8 +143,10 @@ const sortTags = (array) => {
  * @typedef {object} Props
  * @property {'feed' | 'item'=} type
  * @property {boolean=} showAllTagsButton
+ * @property {boolean=} showStatsNumber
  * @property {string[]=} tags
  * @property {string=} pageContextTag
+ * @property {object=} tagStyle
  */
 
 /**
@@ -137,8 +155,10 @@ const sortTags = (array) => {
 export default ({
   type = 'feed',
   showAllTagsButton = false,
+  showStatsNumber = true,
   tags,
-  pageContextTag
+  pageContextTag,
+  tagStyle
 }) => {
   // get tags statistics
   const feedItems = useFeed();
@@ -154,9 +174,11 @@ export default ({
       <div id="tags" sx={{ marginY: [20] }}>
         <Tags
           type={type}
+          showStatsNumber={showStatsNumber}
           showAllTagsButton={showAllTagsButton}
           tagsWithStat={tagsWithStat}
           pageContextTag={pageContextTag}
+          tagStyle={tagStyle}
         />
       </div>
     );
@@ -175,7 +197,14 @@ export default ({
     //
     if (tagsToShowWithStat) {
       tagsToShowWithStat = sortTags(tagsToShowWithStat);
-      return <Tags type={type} tagsWithStat={tagsToShowWithStat} />;
+      return (
+        <Tags
+          type={type}
+          showStatsNumber={showStatsNumber}
+          tagsWithStat={tagsToShowWithStat}
+          tagStyle={tagStyle}
+        />
+      );
     }
   }
   //

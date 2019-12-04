@@ -5,8 +5,11 @@ const remarkSlug = require('remark-slug');
 module.exports = (options) => {
   //
   const {
-    feedItemsLimit = 50,
-    yearSeparator = true,
+    feedItems = {
+      limit: 50,
+      yearSeparator: true,
+      yearSeparatorSkipFirst: true
+    },
     uiText = {
       feedShowMoreButton: '↓ show more ↓',
       feedSearchPlaceholder: 'search',
@@ -14,12 +17,18 @@ module.exports = (options) => {
       allTagsButton: 'all tags'
     }
   } = options;
+  //
   const {
     feedShowMoreButton = '↓ show more ↓',
     feedSearchPlaceholder = 'search',
     cardReadMoreButton = 'read more →',
     allTagsButton = 'all tags'
   } = uiText;
+  const {
+    limit = 50,
+    yearSeparator = true,
+    yearSeparatorSkipFirst = true
+  } = feedItems;
   //
   return {
     siteMetadata: {
@@ -41,8 +50,11 @@ module.exports = (options) => {
         cardReadMoreButton,
         allTagsButton
       },
-      feedItemsLimit,
-      yearSeparator,
+      feedItems: {
+        limit,
+        yearSeparator,
+        yearSeparatorSkipFirst
+      },
       social: [
         {
           icon: ``,
