@@ -225,7 +225,7 @@ In **`siteMetadata`**, replace information about:
 
 **`siteDescription`** - description of the website.
 
-**`siteImage`** - picture for meta site information. The default picture: `static/banner.png` - you can simply replace this picture with your own.
+**`siteImage`** - image for metadata. Default: `static/banner.png` - you can simply replace this image with your own.
 
 **`siteUrl`** - a domain where the site will be located. Example: 'https://chronoblog.netlify.com'.
 
@@ -239,7 +239,7 @@ In **`siteMetadata`**, replace information about:
 
 **`twitterCreator`** - same as `twitterSite`, but for the author.
 
-**`social`** - your social networks. List the links to your social networks in the format presented. All of them will be automatically used in the [`<SocialLinks />` component](#sociallinks-component) (in this starter this is the main menu, footer and the author banner). **`url`** - link to your social network profile, **`icon`** - name of the icon of this social network. Icons use brand icons from [fontawesome.com/icons?d=gallery&s=brands](https://fontawesome.com/icons?d=gallery&s=brands).
+**`social`** - your social networks. List the links to your social networks in the format presented. All of them will be automatically used in the [<SocialLinks /> component](#sociallinks-component) (in this starter this is the main menu, footer and the author banner). **`url`** - link to your social network profile, **`icon`** - name of the icon of this social network. Icons use brand icons from [fontawesome.com/icons?d=gallery&s=brands](https://fontawesome.com/icons?d=gallery&s=brands).
 
 ### favicon
 
@@ -910,3 +910,9 @@ Site: [www.ganevdev.com](https://www.ganevdev.com/)
 Repo: [github.com/Ganevru/ganev-personal-site](https://github.com/Ganevru/ganev-personal-site)
 
 But I definitely want to expand this list.
+
+# Contribute
+
+One of the easiest, and at the same time, useful ways to help the project is to help in writing this readme. English is not native to me, and I can’t say that I am very good at it. So if you see something strange in the text, or if you think you can write better, correct and make a pull request.
+
+Any other type of contribution to the project is also welcome!
