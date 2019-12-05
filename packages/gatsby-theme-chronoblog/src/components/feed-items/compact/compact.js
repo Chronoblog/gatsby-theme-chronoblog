@@ -70,13 +70,20 @@ const LinkCompact = ({ item, children }) => {
   );
 };
 
+const titleForNote = (string, sliceTo = 40) => {
+  string = string.replace(/\.\.\.$/, '');
+  if (string.length > sliceTo) {
+    string = string.slice(0, sliceTo);
+    return `${string}...`;
+  }
+  return string;
+};
+
 const TitleForNote = ({ item }) => {
   if (item.frontmatter.title) return item.frontmatter.title;
-  // if (item.headings) {
-  //   return item.headings.value;
-  // }
-  if (item.frontmatter.description) return item.frontmatter.description;
-  return item.excerpt;
+  if (item.frontmatter.description)
+    return titleForNote(item.frontmatter.description);
+  return titleForNote(item.excerpt);
 };
 
 const TitleCompact = ({ item, ...props }) => {
