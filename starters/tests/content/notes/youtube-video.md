@@ -10,4 +10,12 @@ tags: ['video', 'note']
   frameborder="0"
 ></iframe>
 
+### title in note 3
+
+# Title in Note 1
+
+## Title in Note 2
+
+## Title in Note 2 2
+
 An example of how you can embed YouTube videos in a note.

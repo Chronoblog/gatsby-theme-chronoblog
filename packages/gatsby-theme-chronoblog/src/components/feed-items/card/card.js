@@ -71,7 +71,7 @@ const CardTitle = ({ item }) => {
   return <Styled.h2 sx={style}>{`${item.frontmatter.title}`}</Styled.h2>;
 };
 
-const LinkIconBg = ({
+const LinkExternalIconBg = ({
   item,
   color = 'gray',
   fillOpacity = '0.2',
@@ -232,7 +232,7 @@ const CardMain = ({ isHovering, item, uiText, tags, date }) => {
           <CoverImage data={item} type="card" />
         </LinkCard>
         <CardBody item={item}>
-          <LinkIconBg item={item}>
+          <LinkExternalIconBg item={item}>
             <LinkCard item={item}>
               <div sx={{ px: ['10px', '20px'], pt: ['10px', '20px'] }}>
                 <CardTitle item={item} />
@@ -250,7 +250,7 @@ const CardMain = ({ isHovering, item, uiText, tags, date }) => {
                 <ReadMoreButton item={item} text={uiText.cardReadMoreButton} />
               </LinkCard>
             </div>
-          </LinkIconBg>
+          </LinkExternalIconBg>
           <div sx={{ px: ['10px', '20px'] }}>
             <TagsComponent tags={tags} />
           </div>

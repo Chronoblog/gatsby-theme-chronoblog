@@ -82,16 +82,19 @@ const YearSeparator = ({
   key,
   year,
   firstYear,
+  itemsFormat,
   yearSeparatorType,
   yearSeparatorSkipFirst = false,
   children
 }) => {
+  const mtStylePx = itemsFormat === 'card' ? '48px' : '20px';
+  const mtStyle = yearSeparatorType === 'space' ? '38px' : mtStylePx;
   const style = {
-    fontSize: [3],
+    fontSize: itemsFormat === 'card' ? [3] : [1],
     opacity: 0.8,
     fontWeight: 'normal',
-    px: ['10px', '20px'],
-    mt: '48px'
+    px: itemsFormat === 'card' ? ['10px', '20px'] : 0,
+    mt: mtStyle
   };
   //
   if (yearSeparatorSkipFirst && firstYear === year)
@@ -128,7 +131,7 @@ const Item = ({ itemsFormat, item, uiText }) => {
   if (itemsFormat === 'compact')
     return (
       <li key={item.id}>
-        <Compact item={item} uiText={uiText} />
+        <Compact item={item} />
       </li>
     );
   return (
@@ -253,6 +256,7 @@ export default ({
                     key={year}
                     year={year}
                     firstYear={firstYear}
+                    itemsFormat={itemsFormat}
                     yearSeparatorSkipFirst={yearSeparatorSkipFirstUse}
                     yearSeparatorType={yearSeparatorType}
                   >

@@ -70,6 +70,15 @@ const LinkCompact = ({ item, children }) => {
   );
 };
 
+const TitleForNote = ({ item }) => {
+  if (item.frontmatter.title) return item.frontmatter.title;
+  // if (item.headings) {
+  //   return item.headings.value;
+  // }
+  if (item.frontmatter.description) return item.frontmatter.description;
+  return item.excerpt;
+};
+
 const TitleCompact = ({ item, ...props }) => {
   const style = { fontSize: [1, 1], fontWeight: 'normal', mb: '1px' };
   if (
@@ -80,6 +89,13 @@ const TitleCompact = ({ item, ...props }) => {
     return (
       <Styled.h2 sx={style} {...props}>
         {`🔗 ${item.frontmatter.title}`}
+      </Styled.h2>
+    );
+  }
+  if (item.fields.type === 'notes') {
+    return (
+      <Styled.h2 sx={style} {...props}>
+        <TitleForNote item={item} />
       </Styled.h2>
     );
   }
@@ -94,7 +110,7 @@ const CompactStyle = ({ children, isHovering = false }) => {
       sx={{
         my: '10px',
         color: 'text',
-        opacity: isHovering ? 0.8 : 1
+        opacity: isHovering ? 0.7 : 1
       }}
     >
       {children}

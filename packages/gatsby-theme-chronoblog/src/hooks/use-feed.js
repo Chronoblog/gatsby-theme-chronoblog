@@ -46,6 +46,10 @@ const useFeed = () => {
             slug
             type
           }
+          headings {
+            value
+            depth
+          }
           frontmatter {
             title
             description

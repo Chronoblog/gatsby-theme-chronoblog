@@ -198,12 +198,14 @@ export default ({
     if (tagsToShowWithStat) {
       tagsToShowWithStat = sortTags(tagsToShowWithStat);
       return (
-        <Tags
-          type={type}
-          showStatsNumber={showStatsNumber}
-          tagsWithStat={tagsToShowWithStat}
-          tagStyle={tagStyle}
-        />
+        <div>
+          <Tags
+            type={type}
+            showStatsNumber={showStatsNumber}
+            tagsWithStat={tagsToShowWithStat}
+            tagStyle={tagStyle}
+          />
+        </div>
       );
     }
   }
