@@ -76,7 +76,7 @@ const LinkCompact = ({ item, children, ...props }) => {
   );
 };
 
-const titleForNote = (string, sliceTo = 40) => {
+const titleForNoteSlice = (string, sliceTo = 40) => {
   string = string.replace(/\.\.\.$/, '');
   if (string.length > sliceTo) {
     string = string.slice(0, sliceTo);
@@ -87,13 +87,21 @@ const titleForNote = (string, sliceTo = 40) => {
 
 const TitleForNote = ({ item }) => {
   if (item.frontmatter.title) return item.frontmatter.title;
+  if (item.headings && item.headings.length > 0) {
+    return item.headings[0].value;
+  }
   if (item.frontmatter.description)
-    return titleForNote(item.frontmatter.description);
-  return titleForNote(item.excerpt);
+    return titleForNoteSlice(item.frontmatter.description);
+  return titleForNoteSlice(item.excerpt);
 };
 
 const TitleCompact = ({ item, ...props }) => {
-  const style = { fontSize: [1, 1], fontWeight: 'normal', mb: '0px' };
+  const style = {
+    fontSize: [1, 1],
+    fontWeight: 'normal',
+    mb: '0px',
+    lineHeight: null
+  };
   if (
     item.frontmatter.title &&
     item.frontmatter.link &&
@@ -121,7 +129,7 @@ const CompactStyle = ({ children, isHovering = false }) => {
   return (
     <div
       sx={{
-        my: '10px',
+        my: '12px',
         color: 'text',
         opacity: isHovering ? 0.7 : 1
       }}
