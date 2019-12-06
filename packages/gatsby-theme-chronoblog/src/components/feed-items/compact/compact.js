@@ -45,12 +45,18 @@ const eClassCheck = (eTarget, className = '') => {
   return false;
 };
 
-const LinkCompact = ({ item, children }) => {
+const LinkCompact = ({ item, children, ...props }) => {
   // links
   if (item.frontmatter.link && item.fields.type === 'links') {
     const link = normalizeUrl(item.frontmatter.link);
     return (
-      <a rel="noopener noreferrer" target="_blank" href={link} sx={noStyleLink}>
+      <a
+        rel="noopener noreferrer"
+        target="_blank"
+        href={link}
+        sx={noStyleLink}
+        {...props}
+      >
         <div className="hover-on">{children}</div>
       </a>
     );
@@ -58,13 +64,13 @@ const LinkCompact = ({ item, children }) => {
   // notes
   if (item.fields.type === 'notes')
     return (
-      <Link to={item.fields.slug} sx={noStyleLink}>
+      <Link to={item.fields.slug} sx={noStyleLink} {...props}>
         <div className="hover-on">{children}</div>
       </Link>
     );
   // posts / rest
   return (
-    <Link to={item.fields.slug} sx={noStyleLink}>
+    <Link to={item.fields.slug} sx={noStyleLink} {...props}>
       <div className="hover-on">{children}</div>
     </Link>
   );
@@ -87,7 +93,7 @@ const TitleForNote = ({ item }) => {
 };
 
 const TitleCompact = ({ item, ...props }) => {
-  const style = { fontSize: [1, 1], fontWeight: 'normal', mb: '1px' };
+  const style = { fontSize: [1, 1], fontWeight: 'normal', mb: '0px' };
   if (
     item.frontmatter.title &&
     item.frontmatter.link &&
