@@ -87,14 +87,14 @@ const YearSeparator = ({
   yearSeparatorSkipFirst = false,
   children
 }) => {
-  const mtStylePx = itemsFormat === 'card' ? '48px' : '20px';
+  const mtStylePx = itemsFormat === 'cards' ? '48px' : '20px';
   const mtStyle = yearSeparatorType === 'space' ? '38px' : mtStylePx;
   const style = {
-    fontSize: itemsFormat === 'card' ? [3] : [1],
+    fontSize: itemsFormat === 'cards' ? [4] : [1],
     opacity: 0.8,
     fontWeight: 'normal',
-    px: itemsFormat === 'card' ? ['10px', '20px'] : 0,
-    mt: mtStyle
+    mt: mtStyle,
+    textAlign: itemsFormat === 'cards' ? 'center' : null
   };
   //
   if (yearSeparatorSkipFirst && firstYear === year)
@@ -157,7 +157,7 @@ const Item = ({ itemsFormat, item, uiText }) => {
  * @property {boolean=} skipThisPageItem page where the user is now
  * @property {'year' | 'space' | boolean=} yearSeparator
  * @property {boolean=} yearSeparatorSkipFirst
- * @property {string} itemsFormat
+ * @property {'cards' | 'compact'=} itemsFormat
  *
  */
 /**
