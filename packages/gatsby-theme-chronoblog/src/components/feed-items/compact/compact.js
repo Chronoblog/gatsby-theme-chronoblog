@@ -129,7 +129,8 @@ const CompactStyle = ({ children, isHovering = false }) => {
   return (
     <div
       sx={{
-        my: '12px',
+        mb: '18px',
+        mt: '6px',
         color: 'text',
         opacity: isHovering ? 0.7 : 1
       }}
