@@ -2,12 +2,12 @@ name: Tests
 on: [push]
 jobs:
   tests:
-    timeout-minutes: 220
+    timeout-minutes: 120
     name: Test on node ${{ matrix.node_version }} and ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        node_version: [8, 10, 12]
+        node_version: [10, 12]
         os: [ubuntu-latest, macos-latest]
     steps:
       - uses: actions/checkout@v1
