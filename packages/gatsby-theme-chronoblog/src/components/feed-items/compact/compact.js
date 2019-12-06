@@ -144,9 +144,7 @@ const CompactMain = ({ isHovering, item, date, tags }) => {
     <article>
       <CompactStyle isHovering={isHovering}>
         <LinkCompact item={item}>
-          <div>
-            <TitleCompact item={item} />
-          </div>
+          <TitleCompact item={item} />
         </LinkCompact>
         <div
           sx={{
