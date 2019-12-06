@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.9.0](https://github.com/ganevru/gatsby-theme-chronoblog/compare/gatsby-theme-chronoblog@0.8.0...gatsby-theme-chronoblog@0.9.0) (2019-12-06)
+
+
+### Reverts
+
+* Revert "engines "node": ">=8.0.0"," ([a1bc0e5](https://github.com/ganevru/gatsby-theme-chronoblog/commit/a1bc0e537e75b58509b6e927e4745abecf0d2f7e))
+
+
+
+
+
 # [0.8.0](https://github.com/ganevru/gatsby-theme-chronoblog/compare/gatsby-theme-chronoblog@0.7.1...gatsby-theme-chronoblog@0.8.0) (2019-12-02)
 
 **Note:** Version bump only for package gatsby-theme-chronoblog
