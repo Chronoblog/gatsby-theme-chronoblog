@@ -19,6 +19,7 @@ const makeDate = (date, language, options) => {
 export default ({
   date,
   options = { year: 'numeric', month: 'long', day: 'numeric' },
+  fontSize = [1],
   ...props
 }) => {
   const meta = useSiteMetadata();
@@ -29,7 +30,7 @@ export default ({
       <div
         sx={{
           color: 'text',
-          fontSize: [1],
+          fontSize,
           opacity: 0.8,
           // fontStyle: 'italic',
           fontWeight: 'normal'

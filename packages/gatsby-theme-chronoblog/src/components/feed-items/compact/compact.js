@@ -144,11 +144,20 @@ const CompactMain = ({ isHovering, item, date, tags }) => {
     <article>
       <CompactStyle isHovering={isHovering}>
         <LinkCompact item={item}>
-          <TitleCompact item={item} />
+          <div>
+            <TitleCompact item={item} />
+          </div>
         </LinkCompact>
-        <div sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'baseline' }}>
+        <div
+          sx={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            alignItems: 'baseline',
+            mt: '0px'
+          }}
+        >
           <LinkCompact item={item}>
-            <Date date={date} sx={{ mr: '10px' }} />
+            <Date date={date} sx={{ mr: '10px', mt: '6px' }} fontSize={[0]} />
           </LinkCompact>
           <Tags
             tagStyle={{ fontSize: [0], py: 1, px: 2, bg: 'transparent' }}
