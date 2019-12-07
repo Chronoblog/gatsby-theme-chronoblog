@@ -230,7 +230,7 @@ const ItemHoveringStyle = ({ children, isHovering = false }) => (
 
 const ItemMain = ({ isHovering, item, uiText }) => {
   return (
-    <article sx={{ my: '20px', color: 'text' }}>
+    <article sx={{ mb: '40px', mt: '20px', color: 'text' }}>
       <ItemHoveringStyle isHovering={isHovering}>
         <ItemLink item={item}>
           <CoverImage data={item} type="card" />
