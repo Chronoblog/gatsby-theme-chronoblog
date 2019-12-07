@@ -184,7 +184,7 @@ export default ({
     );
   }
   //
-  if (tags) {
+  if (tags && tags.length > 0) {
     let tagsToShow = tags;
     tagsToShow = tagsToShow.filter((t) => typeof t === 'string');
     tagsToShow = tagsToShow.filter(Boolean);

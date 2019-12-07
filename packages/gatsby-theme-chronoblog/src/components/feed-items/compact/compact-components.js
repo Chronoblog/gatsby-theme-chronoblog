@@ -103,7 +103,8 @@ const ItemTitle = ({ item, ...props }) => {
 /**
  * @typedef {object} Props
  * @property {boolean=} isHovering
- * @property {object=} sxHover
+ * @property {object=} sxHovering
+ * @property {object=} sxNotHovering
  * @property {React.ReactNode=} children
  */
 
@@ -112,13 +113,14 @@ const ItemTitle = ({ item, ...props }) => {
  */
 const ItemHoveringStyle = ({
   isHovering = false,
-  sxHover = { opacity: 0.7 },
+  sxHovering = { opacity: 0.7 },
+  sxNotHovering = {},
   children
 }) => {
   return isHovering ? (
-    <div sx={{ ...sxHover }}>{children}</div>
+    <div sx={{ ...sxHovering }}>{children}</div>
   ) : (
-    <div>{children}</div>
+    <div sx={{ ...sxNotHovering }}>{children}</div>
   );
 };
 

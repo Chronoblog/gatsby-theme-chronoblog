@@ -9,7 +9,7 @@ export default ({ item, isHovering }) => {
   return (
     <article sx={{ mb: '18px', mt: '6px', color: 'text' }}>
       <CompactComponents.ItemHoveringStyle
-        sxHover={{ opacity: 0.7 }}
+        sxHovering={{ opacity: 0.7 }}
         isHovering={isHovering}
       >
         <CompactComponents.ItemLink item={item}>
