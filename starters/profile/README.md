@@ -1,6 +1,6 @@
 <br />
 <p align="center">
-<a href="https://chronoblog.netlify.com" target="_blank">
+<a href="https://chronoblog-profile.netlify.com" target="_blank">
 <img src="https://github.com/Ganevru/gatsby-theme-chronoblog/raw/master/banner-small-2.png" alt="Gatsby Starter Chronoblog Profile" />
 </a>
 </p>
