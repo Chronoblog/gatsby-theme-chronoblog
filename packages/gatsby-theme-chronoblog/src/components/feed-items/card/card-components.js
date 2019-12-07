@@ -159,7 +159,7 @@ const ItemBody = ({ item, children }) => {
       sx={{
         borderRadius: 'card',
         backgroundColor: 'background',
-        pb: ['5px', '10px'],
+        pb: ['10px', '20px'],
         px: ['10px', '20px'],
         borderTopLeftRadius: coverFluidImage ? 0 : null,
         borderTopRightRadius: coverFluidImage ? 0 : null
