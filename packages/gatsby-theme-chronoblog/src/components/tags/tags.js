@@ -198,7 +198,7 @@ export default ({
     if (tagsToShowWithStat) {
       tagsToShowWithStat = sortTags(tagsToShowWithStat);
       return (
-        <div sx={{ marginTop: ['20px'] }}>
+        <div>
           <Tags
             type={type}
             showStatsNumber={showStatsNumber}

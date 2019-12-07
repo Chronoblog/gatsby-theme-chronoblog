@@ -4,8 +4,40 @@ Welcome to the Gatsby Starter Chronoblog! This starter will help you quickly and
 
 What you see is the main page of the site. Replace everything here with your own content by editing this file: `src/pages/index.mdx`
 
----
+## Last Posts
 
-<FeedSearch />
-<Tags />
-<FeedItems />
+<FeedItems
+  itemsFormat="compact"
+  filterByTypes={['posts']}
+  limit={5}
+  showMoreButton={false}
+/>
+
+## Notes
+
+<FeedItems
+  itemsFormat="compact"
+  filterByTypes={['notes']}
+  limit={5}
+  showMoreButton={false}
+/>
+
+## Podcasts
+
+<FeedItems
+  itemsFormat="compact"
+  filterByTags={['podcast']}
+  limit={5}
+  showMoreButton={false}
+/>
+
+## Links
+
+<FeedItems
+  yearSeparatorSkipFirst={true}
+  yearSeparator="space"
+  itemsFormat="compact"
+  filterByTypes={['links']}
+  limit={5}
+  showMoreButton={false}
+/>

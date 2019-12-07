@@ -83,7 +83,7 @@ export const Post = ({ data }) => {
             </div>
           </header>
           <PostContent data={data} />
-          <footer>
+          <footer sx={{ marginTop: '20px' }}>
             <Tags type="item" tags={data.mdx.frontmatter.tags} />
             <PostFooter />
           </footer>

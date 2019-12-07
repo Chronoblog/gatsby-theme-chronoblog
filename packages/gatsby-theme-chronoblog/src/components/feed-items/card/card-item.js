@@ -27,7 +27,9 @@ export default ({ item, isHovering }) => {
           <Card.Link item={item}>
             <Card.ReadMoreButton item={item} />
           </Card.Link>
-          <Tags type="item" tags={item.frontmatter.tags} />
+          <div sx={{ marginTop: '20px' }}>
+            <Tags type="item" tags={item.frontmatter.tags} />
+          </div>
         </Card.Body>
       </Card.HoveringStyle>
     </article>
