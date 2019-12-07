@@ -127,7 +127,7 @@ const YearSeparator = ({
   );
 };
 
-const Item = ({ itemsFormat, item, uiText }) => {
+const Item = ({ itemsFormat, item }) => {
   if (itemsFormat === 'compact')
     return (
       <li key={item.id}>
@@ -136,7 +136,7 @@ const Item = ({ itemsFormat, item, uiText }) => {
     );
   return (
     <li key={item.id}>
-      <Card item={item} uiText={uiText} />
+      <Card item={item} />
     </li>
   );
 };
@@ -263,13 +263,7 @@ export default ({
                     <ul sx={listStyleObject}>
                       {feedItemsToShow.map((item) => {
                         if (getItemYear(item) === year) {
-                          return (
-                            <Item
-                              itemsFormat={itemsFormat}
-                              item={item}
-                              uiText={uiText}
-                            />
-                          );
+                          return <Item itemsFormat={itemsFormat} item={item} />;
                         }
                         return undefined;
                       })}

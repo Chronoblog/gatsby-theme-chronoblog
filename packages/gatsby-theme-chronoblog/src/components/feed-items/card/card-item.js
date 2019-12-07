@@ -6,7 +6,7 @@ import Date from '../../date';
 import Tags from '../../tags';
 import CardComponents from './card-components';
 
-export default ({ item, isHovering, uiText }) => {
+export default ({ item, isHovering }) => {
   return (
     <article sx={{ mb: '40px', mt: '20px', color: 'text' }}>
       <CardComponents.ItemHoveringStyle isHovering={isHovering}>
@@ -23,10 +23,7 @@ export default ({ item, isHovering, uiText }) => {
           </CardComponents.ItemLink>
           <CardComponents.ItemContent item={item} />
           <CardComponents.ItemLink item={item}>
-            <CardComponents.ItemReadMoreButton
-              item={item}
-              text={uiText.cardReadMoreButton}
-            />
+            <CardComponents.ItemReadMoreButton item={item} />
           </CardComponents.ItemLink>
           <Tags tags={item.frontmatter.tags} />
         </CardComponents.ItemBody>

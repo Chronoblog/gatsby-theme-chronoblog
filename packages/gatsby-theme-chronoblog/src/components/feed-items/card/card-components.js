@@ -5,6 +5,8 @@ import get from 'lodash/get';
 import normalizeUrl from 'normalize-url';
 import { jsx, Styled } from 'theme-ui';
 
+import useSiteMetadata from '../../../hooks/use-site-metadata';
+
 const noStyleLink = {
   display: 'block',
   textDecoration: 'none',
@@ -124,19 +126,25 @@ const BodyMdx = ({ item }) => {
   return <div />;
 };
 
-const ItemReadMoreButton = ({ item, text }) => {
-  if (text && item.fields.type === 'posts')
-    return (
-      <Styled.p
-        sx={{
-          fontSize: [1],
-          opacity: 0.8,
-          fontWeight: 'bold'
-        }}
-      >
-        {text}
-      </Styled.p>
-    );
+const ReadMoreButton = ({ children }) => (
+  <Styled.p
+    sx={{
+      fontSize: [1],
+      opacity: 0.8,
+      fontWeight: 'bold'
+    }}
+  >
+    {children}
+  </Styled.p>
+);
+
+const ItemReadMoreButton = ({ item, text = '' }) => {
+  const siteMeta = useSiteMetadata();
+  const { uiText } = siteMeta;
+  if (item.fields.type !== 'posts') return <div />;
+  if (text) return <ReadMoreButton>{text}</ReadMoreButton>;
+  if (uiText.cardReadMoreButton)
+    return <ReadMoreButton>{uiText.cardReadMoreButton}</ReadMoreButton>;
   return <div />;
 };
 
