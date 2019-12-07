@@ -21,8 +21,14 @@ const LinkCard = ({ item, children }) => {
   if (item.frontmatter.link && item.fields.type === 'links') {
     const link = normalizeUrl(item.frontmatter.link);
     return (
-      <a rel="noopener noreferrer" target="_blank" href={link} sx={noStyleLink}>
-        <div className="hover-on">{children}</div>
+      <a
+        className="hover-on"
+        rel="noopener noreferrer"
+        target="_blank"
+        href={link}
+        sx={noStyleLink}
+      >
+        {children}
       </a>
     );
   }
@@ -30,8 +36,8 @@ const LinkCard = ({ item, children }) => {
   if (item.fields.type === 'notes') return <div>{children}</div>;
   // posts / rest
   return (
-    <Link to={item.fields.slug} sx={noStyleLink}>
-      <div className="hover-on">{children}</div>
+    <Link className="hover-on" to={item.fields.slug} sx={noStyleLink}>
+      {children}
     </Link>
   );
 };

@@ -51,27 +51,38 @@ const LinkCompact = ({ item, children, ...props }) => {
     const link = normalizeUrl(item.frontmatter.link);
     return (
       <a
+        className="hover-on"
         rel="noopener noreferrer"
         target="_blank"
         href={link}
         sx={noStyleLink}
         {...props}
       >
-        <div className="hover-on">{children}</div>
+        {children}
       </a>
     );
   }
   // notes
   if (item.fields.type === 'notes')
     return (
-      <Link to={item.fields.slug} sx={noStyleLink} {...props}>
-        <div className="hover-on">{children}</div>
+      <Link
+        className="hover-on"
+        to={item.fields.slug}
+        sx={noStyleLink}
+        {...props}
+      >
+        {children}
       </Link>
     );
   // posts / rest
   return (
-    <Link to={item.fields.slug} sx={noStyleLink} {...props}>
-      <div className="hover-on">{children}</div>
+    <Link
+      className="hover-on"
+      to={item.fields.slug}
+      sx={noStyleLink}
+      {...props}
+    >
+      {children}
     </Link>
   );
 };
@@ -125,25 +136,32 @@ const TitleCompact = ({ item, ...props }) => {
   );
 };
 
-const CompactStyle = ({ children, isHovering = false }) => {
-  return (
-    <div
-      sx={{
-        mb: '18px',
-        mt: '6px',
-        color: 'text',
-        opacity: isHovering ? 0.7 : 1
-      }}
-    >
-      {children}
-    </div>
+/**
+ * @typedef {object} Props
+ * @property {boolean=} isHovering
+ * @property {object=} sxHover
+ * @property {React.ReactNode=} children
+ */
+
+/**
+ * @param {Props=} props
+ */
+const CompactHoveringStyle = ({
+  isHovering = false,
+  sxHover = { opacity: 0.7 },
+  children
+}) => {
+  return isHovering ? (
+    <div sx={{ ...sxHover }}>{children}</div>
+  ) : (
+    <div>{children}</div>
   );
 };
 
 const CompactMain = ({ isHovering, item, date, tags }) => {
   return (
-    <article>
-      <CompactStyle isHovering={isHovering}>
+    <article sx={{ mb: '18px', mt: '6px', color: 'text' }}>
+      <CompactHoveringStyle isHovering={isHovering}>
         <LinkCompact item={item}>
           <TitleCompact item={item} />
         </LinkCompact>
@@ -165,7 +183,7 @@ const CompactMain = ({ isHovering, item, date, tags }) => {
             showStatsNumber={false}
           />
         </div>
-      </CompactStyle>
+      </CompactHoveringStyle>
     </article>
   );
 };
