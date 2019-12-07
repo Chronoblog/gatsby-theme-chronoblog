@@ -89,8 +89,8 @@ const Tags = ({
   const style = {
     mr: type === 'feed' ? '6px' : '5px',
     my: type === 'feed' ? '3px' : '2.5px',
-    px: type === 'feed' ? '16px' : '14px',
-    py: type === 'feed' ? '10px' : '8px',
+    px: type === 'feed' ? '16px' : '12px',
+    py: type === 'feed' ? '10px' : '6px',
     fontSize: [2],
     opacity: 0.75,
     ...tagStyle
