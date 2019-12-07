@@ -16,7 +16,7 @@ const noStyleLink = {
   color: 'inherit'
 };
 
-const LinkCard = ({ item, children }) => {
+const ItemLink = ({ item, children }) => {
   // links
   if (item.frontmatter.link && item.fields.type === 'links') {
     const link = normalizeUrl(item.frontmatter.link);
@@ -65,7 +65,7 @@ const LinkText = ({ item }) => {
   return <div />;
 };
 
-const CardTitle = ({ item }) => {
+const ItemTitle = ({ item }) => {
   const style = { mb: '6px', mt: '0px' };
   if (
     item.frontmatter.title &&
@@ -160,23 +160,6 @@ const eClassCheck = (eTarget, className = '') => {
   return false;
 };
 
-const CardStyle = ({ children, isHovering = false }) => (
-  <div
-    sx={{
-      my: '20px',
-      color: 'text',
-      opacity: isHovering ? 0.8 : 1,
-      border: '2px',
-      borderStyle: 'solid',
-      borderRadius: 'card',
-      borderColor: isHovering ? 'secondary' : 'muted',
-      backgroundColor: isHovering ? 'secondary' : 'muted'
-    }}
-  >
-    {children}
-  </div>
-);
-
 const TagsComponent = ({ tags }) => {
   if (tags && tags !== null) {
     return (
@@ -209,7 +192,7 @@ const ReadMoreButton = ({ item, text }) => {
   return <div />;
 };
 
-const CardBody = ({ item, children }) => {
+const ItemBody = ({ item, children }) => {
   const coverFluidImage = get(
     item,
     'frontmatter.cover.childImageSharp["fluid"]',
@@ -230,38 +213,53 @@ const CardBody = ({ item, children }) => {
   );
 };
 
-const CardMain = ({ isHovering, item, uiText }) => {
+const ItemHoveringStyle = ({ children, isHovering = false }) => (
+  <div
+    sx={{
+      opacity: isHovering ? 0.8 : 1,
+      border: '2px',
+      borderStyle: 'solid',
+      borderRadius: 'card',
+      borderColor: isHovering ? 'secondary' : 'muted',
+      backgroundColor: isHovering ? 'secondary' : 'muted'
+    }}
+  >
+    {children}
+  </div>
+);
+
+const ItemMain = ({ isHovering, item, uiText }) => {
   return (
-    <article>
-      <CardStyle isHovering={isHovering}>
-        <LinkCard item={item}>
+    <article sx={{ my: '20px', color: 'text' }}>
+      <ItemHoveringStyle isHovering={isHovering}>
+        <ItemLink item={item}>
           <CoverImage data={item} type="card" />
-        </LinkCard>
-        <CardBody item={item}>
+        </ItemLink>
+        <ItemBody item={item}>
           <LinkExternalIconBg item={item}>
-            <LinkCard item={item}>
+            <ItemLink item={item}>
               <div sx={{ px: ['10px', '20px'], pt: ['10px', '20px'] }}>
-                <CardTitle item={item} />
+                <ItemTitle item={item} />
                 <LinkText item={item} />
                 <div sx={{ mb: 2 }}>
                   <Date date={item.frontmatter.date} />
                 </div>
               </div>
-            </LinkCard>
+            </ItemLink>
             <div sx={{ px: ['10px', '20px'] }}>
               <Description item={item} />
               <Excerpt item={item} />
               <BodyMdx item={item} />
-              <LinkCard item={item}>
+              <ItemLink item={item}>
                 <ReadMoreButton item={item} text={uiText.cardReadMoreButton} />
-              </LinkCard>
+              </ItemLink>
             </div>
           </LinkExternalIconBg>
           <div sx={{ px: ['10px', '20px'] }}>
             <TagsComponent tags={item.frontmatter.tags} />
           </div>
-        </CardBody>
-      </CardStyle>
+        </ItemBody>
+      </ItemHoveringStyle>
     </article>
   );
 };
@@ -271,7 +269,7 @@ export default ({ item, uiText }) => {
   const { type } = item.fields;
   //
   if (type === 'notes')
-    return <CardMain isHovering={false} item={item} uiText={uiText} />;
+    return <ItemMain isHovering={false} item={item} uiText={uiText} />;
   //
   return (
     <ReactHoverObserver
@@ -287,7 +285,7 @@ export default ({ item, uiText }) => {
       }}
     >
       {({ isHovering }) => (
-        <CardMain isHovering={isHovering} item={item} uiText={uiText} />
+        <ItemMain isHovering={isHovering} item={item} uiText={uiText} />
       )}
     </ReactHoverObserver>
   );

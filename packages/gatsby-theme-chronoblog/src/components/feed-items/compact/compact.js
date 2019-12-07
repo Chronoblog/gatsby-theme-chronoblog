@@ -45,7 +45,7 @@ const eClassCheck = (eTarget, className = '') => {
   return false;
 };
 
-const LinkCompact = ({ item, children, ...props }) => {
+const ItemLink = ({ item, children, ...props }) => {
   // links
   if (item.frontmatter.link && item.fields.type === 'links') {
     const link = normalizeUrl(item.frontmatter.link);
@@ -106,7 +106,7 @@ const TitleForNote = ({ item }) => {
   return titleForNoteSlice(item.excerpt);
 };
 
-const TitleCompact = ({ item, ...props }) => {
+const ItemTitle = ({ item, ...props }) => {
   const style = {
     fontSize: [1, 1],
     fontWeight: 'normal',
@@ -146,7 +146,7 @@ const TitleCompact = ({ item, ...props }) => {
 /**
  * @param {Props=} props
  */
-const CompactHoveringStyle = ({
+const ItemHoveringStyle = ({
   isHovering = false,
   sxHover = { opacity: 0.7 },
   children
@@ -158,13 +158,13 @@ const CompactHoveringStyle = ({
   );
 };
 
-const CompactMain = ({ isHovering, item }) => {
+const ItemMain = ({ isHovering, item }) => {
   return (
     <article sx={{ mb: '18px', mt: '6px', color: 'text' }}>
-      <CompactHoveringStyle isHovering={isHovering}>
-        <LinkCompact item={item}>
-          <TitleCompact item={item} />
-        </LinkCompact>
+      <ItemHoveringStyle isHovering={isHovering}>
+        <ItemLink item={item}>
+          <ItemTitle item={item} />
+        </ItemLink>
         <div
           sx={{
             display: 'flex',
@@ -173,13 +173,13 @@ const CompactMain = ({ isHovering, item }) => {
             mt: '0px'
           }}
         >
-          <LinkCompact item={item}>
+          <ItemLink item={item}>
             <Date
               date={item.frontmatter.date}
               sx={{ mr: '10px', mt: '6px' }}
               fontSize={[0]}
             />
-          </LinkCompact>
+          </ItemLink>
           <Tags
             tagStyle={{ fontSize: [0], py: 1, px: 2, bg: 'transparent' }}
             type="item"
@@ -187,7 +187,7 @@ const CompactMain = ({ isHovering, item }) => {
             showStatsNumber={false}
           />
         </div>
-      </CompactHoveringStyle>
+      </ItemHoveringStyle>
     </article>
   );
 };
@@ -207,7 +207,7 @@ export default ({ item }) => {
             : unsetIsHovering()
       }}
     >
-      {({ isHovering }) => <CompactMain isHovering={isHovering} item={item} />}
+      {({ isHovering }) => <ItemMain isHovering={isHovering} item={item} />}
     </ReactHoverObserver>
   );
 };
