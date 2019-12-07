@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { Link } from 'gatsby';
+import { Link as GatsbyLink } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import get from 'lodash/get';
 import normalizeUrl from 'normalize-url';
@@ -33,9 +33,9 @@ const ItemLink = ({ item, children }) => {
   if (item.fields.type === 'notes') return <div>{children}</div>;
   // posts / rest
   return (
-    <Link className="hover-on" to={item.fields.slug} sx={noStyleLink}>
+    <GatsbyLink className="hover-on" to={item.fields.slug} sx={noStyleLink}>
       {children}
-    </Link>
+    </GatsbyLink>
   );
 };
 
@@ -196,12 +196,12 @@ const ItemHoveringStyle = ({ children, isHovering = false }) => (
 );
 
 const CardComponents = {
-  ItemLink,
-  ItemLinkText,
-  ItemTitle,
-  ItemReadMoreButton,
-  ItemBody,
-  ItemContent,
-  ItemHoveringStyle
+  Link: ItemLink,
+  LinkText: ItemLinkText,
+  Title: ItemTitle,
+  ReadMoreButton: ItemReadMoreButton,
+  Body: ItemBody,
+  Content: ItemContent,
+  HoveringStyle: ItemHoveringStyle
 };
 export default CardComponents;

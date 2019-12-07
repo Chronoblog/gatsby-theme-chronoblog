@@ -124,5 +124,9 @@ const ItemHoveringStyle = ({
   );
 };
 
-const CompactComponents = { ItemLink, ItemTitle, ItemHoveringStyle };
+const CompactComponents = {
+  Link: ItemLink,
+  Title: ItemTitle,
+  HoveringStyle: ItemHoveringStyle
+};
 export default CompactComponents;

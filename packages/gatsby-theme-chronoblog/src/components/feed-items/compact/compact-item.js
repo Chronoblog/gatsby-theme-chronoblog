@@ -5,16 +5,18 @@ import Date from '../../date';
 import Tags from '../../tags';
 import CompactComponents from './compact-components';
 
+const Compact = CompactComponents;
+
 export default ({ item, isHovering }) => {
   return (
     <article sx={{ mb: '18px', mt: '6px', color: 'text' }}>
-      <CompactComponents.ItemHoveringStyle
+      <Compact.HoveringStyle
         sxHovering={{ opacity: 0.7 }}
         isHovering={isHovering}
       >
-        <CompactComponents.ItemLink item={item}>
-          <CompactComponents.ItemTitle item={item} />
-        </CompactComponents.ItemLink>
+        <Compact.Link item={item}>
+          <Compact.Title item={item} />
+        </Compact.Link>
         <div
           sx={{
             display: 'flex',
@@ -23,13 +25,13 @@ export default ({ item, isHovering }) => {
             mt: '0px'
           }}
         >
-          <CompactComponents.ItemLink item={item}>
+          <Compact.Link item={item}>
             <Date
               date={item.frontmatter.date}
               sx={{ mr: '10px', mt: '6px' }}
               fontSize={[0]}
             />
-          </CompactComponents.ItemLink>
+          </Compact.Link>
           <Tags
             tagStyle={{ fontSize: [0], py: 1, px: 2, bg: 'transparent' }}
             type="item"
@@ -37,7 +39,7 @@ export default ({ item, isHovering }) => {
             showStatsNumber={false}
           />
         </div>
-      </CompactComponents.ItemHoveringStyle>
+      </Compact.HoveringStyle>
     </article>
   );
 };
