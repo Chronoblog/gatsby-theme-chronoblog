@@ -158,7 +158,7 @@ const CompactHoveringStyle = ({
   );
 };
 
-const CompactMain = ({ isHovering, item, date, tags }) => {
+const CompactMain = ({ isHovering, item }) => {
   return (
     <article sx={{ mb: '18px', mt: '6px', color: 'text' }}>
       <CompactHoveringStyle isHovering={isHovering}>
@@ -174,12 +174,16 @@ const CompactMain = ({ isHovering, item, date, tags }) => {
           }}
         >
           <LinkCompact item={item}>
-            <Date date={date} sx={{ mr: '10px', mt: '6px' }} fontSize={[0]} />
+            <Date
+              date={item.frontmatter.date}
+              sx={{ mr: '10px', mt: '6px' }}
+              fontSize={[0]}
+            />
           </LinkCompact>
           <Tags
             tagStyle={{ fontSize: [0], py: 1, px: 2, bg: 'transparent' }}
             type="item"
-            tags={tags}
+            tags={item.frontmatter.tags}
             showStatsNumber={false}
           />
         </div>
@@ -189,9 +193,6 @@ const CompactMain = ({ isHovering, item, date, tags }) => {
 };
 
 export default ({ item }) => {
-  const { date } = item.frontmatter;
-  const { tags } = item.frontmatter;
-  // const { type } = item.fields;
   //
   return (
     <ReactHoverObserver
@@ -206,14 +207,7 @@ export default ({ item }) => {
             : unsetIsHovering()
       }}
     >
-      {({ isHovering }) => (
-        <CompactMain
-          isHovering={isHovering}
-          item={item}
-          date={date}
-          tags={tags}
-        />
-      )}
+      {({ isHovering }) => <CompactMain isHovering={isHovering} item={item} />}
     </ReactHoverObserver>
   );
 };

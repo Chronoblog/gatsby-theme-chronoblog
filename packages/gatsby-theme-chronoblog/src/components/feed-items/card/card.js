@@ -230,7 +230,7 @@ const CardBody = ({ item, children }) => {
   );
 };
 
-const CardMain = ({ isHovering, item, uiText, tags, date }) => {
+const CardMain = ({ isHovering, item, uiText }) => {
   return (
     <article>
       <CardStyle isHovering={isHovering}>
@@ -244,7 +244,7 @@ const CardMain = ({ isHovering, item, uiText, tags, date }) => {
                 <CardTitle item={item} />
                 <LinkText item={item} />
                 <div sx={{ mb: 2 }}>
-                  <Date date={date} />
+                  <Date date={item.frontmatter.date} />
                 </div>
               </div>
             </LinkCard>
@@ -258,7 +258,7 @@ const CardMain = ({ isHovering, item, uiText, tags, date }) => {
             </div>
           </LinkExternalIconBg>
           <div sx={{ px: ['10px', '20px'] }}>
-            <TagsComponent tags={tags} />
+            <TagsComponent tags={item.frontmatter.tags} />
           </div>
         </CardBody>
       </CardStyle>
@@ -268,20 +268,10 @@ const CardMain = ({ isHovering, item, uiText, tags, date }) => {
 
 export default ({ item, uiText }) => {
   //
-  const { date } = item.frontmatter;
-  const { tags } = item.frontmatter;
   const { type } = item.fields;
   //
   if (type === 'notes')
-    return (
-      <CardMain
-        isHovering={false}
-        item={item}
-        date={date}
-        tags={tags}
-        uiText={uiText}
-      />
-    );
+    return <CardMain isHovering={false} item={item} uiText={uiText} />;
   //
   return (
     <ReactHoverObserver
@@ -297,13 +287,7 @@ export default ({ item, uiText }) => {
       }}
     >
       {({ isHovering }) => (
-        <CardMain
-          isHovering={isHovering}
-          item={item}
-          date={date}
-          tags={tags}
-          uiText={uiText}
-        />
+        <CardMain isHovering={isHovering} item={item} uiText={uiText} />
       )}
     </ReactHoverObserver>
   );
