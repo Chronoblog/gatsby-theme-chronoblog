@@ -108,20 +108,20 @@ const TitleCompact = ({ item, ...props }) => {
     item.fields.type === 'links'
   ) {
     return (
-      <Styled.h2 sx={style} {...props}>
+      <Styled.h3 sx={style} {...props}>
         {`🔗 ${item.frontmatter.title}`}
-      </Styled.h2>
+      </Styled.h3>
     );
   }
   if (item.fields.type === 'notes') {
     return (
-      <Styled.h2 sx={style} {...props}>
+      <Styled.h3 sx={style} {...props}>
         <TitleForNote item={item} />
-      </Styled.h2>
+      </Styled.h3>
     );
   }
   return (
-    <Styled.h2 sx={style} {...props}>{`${item.frontmatter.title}`}</Styled.h2>
+    <Styled.h3 sx={style} {...props}>{`${item.frontmatter.title}`}</Styled.h3>
   );
 };
 
