@@ -46,6 +46,12 @@ module.exports = {
           feedSearchPlaceholder: 'search',
           cardReadMoreButton: 'read more →',
           allTagsButton: 'all tags'
+        },
+        feedItems: {
+          // global settings for feed items
+          limit: 50,
+          yearSeparator: true,
+          yearSeparatorSkipFirst: true
         }
       }
     },
