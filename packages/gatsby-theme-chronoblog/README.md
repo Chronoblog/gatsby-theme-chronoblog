@@ -35,7 +35,8 @@ This demo is at the same time the Chronoblog starter.
   - [Folder structure](#folder-structure)
   - [Gatsby Config](#gatsby-config)
     - [Site Metadata](#site-metadata)
-    - [favicon](#favicon)
+      - [favicon](#favicon)
+    - [Global settings](#global-settings)
     - [Plugins](#plugins)
   - [Style settings](#style-settings)
   - [Content](#content)
@@ -74,6 +75,7 @@ This demo is at the same time the Chronoblog starter.
   - [Status of development and test versions](#status-of-development-and-test-versions)
   - [GitHub Workflows](#github-workflows)
 - [Feedback](#feedback)
+- [Contribute](#contribute)
 
 <br />
 
@@ -247,13 +249,19 @@ In **`siteMetadata`**, replace information about:
 
 **`social`** - your social networks. List the links to your social networks in the format presented. All of them will be automatically used in the [<SocialLinks /> component](#sociallinks-component) (in this starter this is the main menu, footer and the author banner). **`url`** - link to your social network profile, **`icon`** - name of the icon of this social network. Icons use brand icons from [fontawesome.com/icons?d=gallery&s=brands](https://fontawesome.com/icons?d=gallery&s=brands).
 
-### favicon
+#### favicon
 
 Thanks to the plugin [gatsby-plugin-manifest](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-plugin-manifest), you can use one image as an icon (including favicon) for all devices. Just replace `src/assets/favicon.png` image with your own. It is better to use the size of `512x512`.
 
-### Plugins
+### Global settings
 
-`gatsby-theme-chronoblog` - most important plugin of this starter. Here you can replace the default values of the UI of the elements of the Chronoblog. This is done to simplify the localization of the site in various languages. If your site is in English, you can leave it as it is. If the site will use any other language - translate the default values right here.
+In `options` for `gatsby-theme-chronoblog` you can find various global settings.
+
+**`uiText`** - Here you can replace the default values of the UI of the elements of the Chronoblog. This is done to simplify the localization of the site in various languages. If your site is in English, you can leave it as it is. If the site will use any other language - translate the default values right here.
+
+**`feedItems`** - global options for `feedItems` component. Inside any `feedItems` component on the site, you can specify other settings. Settings that are set through props are always in priority.
+
+### Plugins
 
 All other plugins are optional. Chronoblog does not rely on them, so if you do not need, say, `gatsby-plugin-google-analytics`, you can ignore it or remove it from the list of plugins.
 
