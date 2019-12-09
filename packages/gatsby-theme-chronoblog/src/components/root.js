@@ -18,6 +18,7 @@ import AuthorBanner, {
   AuthorBannerDescription,
   AuthorBannerHeading
 } from './author-banner';
+import Button from './button';
 import FeedItems from './feed-items';
 import FeedSearch from './feed-search';
 import LightDarkSwitchButton from './light-dark-switch-button';
@@ -53,6 +54,7 @@ const components = {
   FeedSearch,
   SocialLinks,
   LightDarkSwitchButton,
+  Button,
   Link,
   A,
   Div,

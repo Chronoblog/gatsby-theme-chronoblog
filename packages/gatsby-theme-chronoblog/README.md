@@ -66,7 +66,7 @@ This demo is at the same time the Chronoblog starter.
   - [SEO and metadata](#seo-and-metadata)
     - [Metadata generation](#metadata-generation)
     - [Metadata Verification Tools](#metadata-verification-tools)
-    - [SEO component in `.mdx`](#seo-component-in-mdx)
+    - [SEO component in .mdx](#seo-component-in-mdx)
   - [Shadowing in Chronoblog Gatsby Theme](#shadowing-in-chronoblog-gatsby-theme)
     - [Components that can and should be shadowed](#components-that-can-and-should-be-shadowed)
     - [Components that can be shadowed](#components-that-can-be-shadowed)
@@ -749,13 +749,13 @@ In the starter, it is used in the main menu: [site-header](#site-header)
 <LightDarkSwitchButton />
 ```
 
-| Prop         | Required | Type            | Description       |
-| ------------ | -------- | --------------- | ----------------- |
-| `fontSize`   | optional | number / string | size of the icons |
-| `darkLabel`  | optional | string          | dark mode label   |
-| `lightLabel` | optional | string          | light mode label  |
+| Prop         | Required | Type            | Description      |
+| ------------ | -------- | --------------- | ---------------- |
+| `fontSize`   | optional | number / string | size of the font |
+| `darkLabel`  | optional | string          | dark mode label  |
+| `lightLabel` | optional | string          | light mode label |
 
-You can use emojis for switches:
+You can use any text for switches (including emoji):
 
 ```html
 <LightDarkSwitchButton darkLabel="🌙" lightLabel="☀️" />

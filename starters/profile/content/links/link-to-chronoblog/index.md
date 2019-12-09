@@ -1,5 +1,5 @@
 ---
-title: 'Link to Chronoblog Theme repo'
+title: 'Link to Chronoblog Theme'
 cover: ./image.jpg
 date: 2019-11-12
 link: https://github.com/Ganevru/gatsby-theme-chronoblog

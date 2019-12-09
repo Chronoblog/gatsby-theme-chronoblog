@@ -29,7 +29,7 @@ export default ({
         bg: active ? 'secondary' : 'muted',
         userSelect: 'none',
         display: 'inline-block',
-        px: '20px',
+        px: '16px',
         py: '10px',
         fontSize: [1],
         border: '0px',

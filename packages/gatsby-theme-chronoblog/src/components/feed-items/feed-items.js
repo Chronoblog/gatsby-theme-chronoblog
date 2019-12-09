@@ -37,9 +37,36 @@ const ButtonShowMore = ({
   showLimit = 10,
   showMoreNumber = 10,
   setCount,
+  itemsFormat = 'card',
   children
 }) => {
-  if (showMoreButton && feedItemsLength > showLimit) {
+  //
+  if (
+    itemsFormat === 'compact' &&
+    showMoreButton &&
+    feedItemsLength > showLimit
+  ) {
+    return (
+      <div sx={{ my: '10px' }}>
+        <Button
+          sx={{
+            fontSize: [1, 2],
+            fontWeight: 'bolder',
+            bg: 'background',
+            p: 0,
+            ':hover': {
+              boxShadow: `inset 0 0 0 0px`
+            }
+          }}
+          onClick={() => setCount(showLimit + showMoreNumber)}
+        >
+          {children}
+        </Button>
+      </div>
+    );
+  }
+  //
+  if (itemsFormat === 'card' && showMoreButton && feedItemsLength > showLimit) {
     return (
       <div sx={{ my: '20px' }}>
         <Button
@@ -51,6 +78,7 @@ const ButtonShowMore = ({
       </div>
     );
   }
+  //
   return <div />;
 };
 
@@ -87,14 +115,14 @@ const YearSeparator = ({
   yearSeparatorSkipFirst = false,
   children
 }) => {
-  const mtStylePx = itemsFormat === 'cards' ? '48px' : '20px';
+  const mtStylePx = itemsFormat === 'card' ? '48px' : '20px';
   const mtStyle = yearSeparatorType === 'space' ? '38px' : mtStylePx;
   const style = {
-    fontSize: itemsFormat === 'cards' ? [4] : [1],
+    fontSize: itemsFormat === 'card' ? [4] : [1],
     opacity: 0.8,
     fontWeight: 'normal',
     mt: mtStyle,
-    textAlign: itemsFormat === 'cards' ? 'center' : null
+    textAlign: itemsFormat === 'card' ? 'center' : null
   };
   //
   if (yearSeparatorSkipFirst && firstYear === year)
@@ -157,7 +185,7 @@ const Item = ({ itemsFormat, item }) => {
  * @property {boolean=} skipThisPageItem page where the user is now
  * @property {'year' | 'space' | boolean=} yearSeparator
  * @property {boolean=} yearSeparatorSkipFirst
- * @property {'cards' | 'compact'=} itemsFormat
+ * @property {'card' | 'compact'=} itemsFormat
  *
  */
 /**
@@ -176,7 +204,7 @@ export default ({
   skipThisPageItem = true,
   yearSeparator,
   yearSeparatorSkipFirst,
-  itemsFormat = 'cards'
+  itemsFormat = 'card'
 }) => {
   let feedItems = useFeed();
   //
@@ -281,6 +309,7 @@ export default ({
         showLimit={showLimit}
         showMoreNumber={showMoreNumber}
         setCount={setCount}
+        itemsFormat={itemsFormat}
       >
         {showMoreText || uiText.feedShowMoreButton}
       </ButtonShowMore>

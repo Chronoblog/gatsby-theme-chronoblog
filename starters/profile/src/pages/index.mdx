@@ -1,35 +1,16 @@
 <AuthorBanner />
 &nbsp;
+<h3>Posts and Articles&nbsp;&nbsp;<Link to='posts-and-articles'><Button sx={{py: '4px'}}>all posts and articles</Button></Link></h3>
 
-## Last Posts
+<FeedItems itemsFormat="compact" filterByTypes={['posts', 'article']} limit={5} />
 
-<FeedItems itemsFormat="compact" filterByTypes={['posts']} limit={5} />
+<h3>Podcasts&nbsp;&nbsp;<Link to='tags/podcast'><Button sx={{py: '4px'}}>all podcasts</Button></Link></h3>
 
-## Notes
+<FeedItems itemsFormat="compact" filterByTags={['podcast']} limit={5} />
 
-<FeedItems
-  itemsFormat="compact"
-  filterByTypes={['notes']}
-  limit={5}
-  showMoreButton={false}
-/>
-
-## Podcasts
+<h3>Projects</h3>
 
 <FeedItems
   itemsFormat="compact"
-  filterByTags={['podcast']}
-  limit={5}
-  showMoreButton={false}
-/>
-
-## Links
-
-<FeedItems
-  yearSeparatorSkipFirst={true}
-  yearSeparator="space"
-  itemsFormat="compact"
-  filterByTypes={['links']}
-  limit={5}
-  showMoreButton={false}
+  filterByTags={['project']}
 />
