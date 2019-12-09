@@ -1,7 +1,7 @@
 ---
 title: And this is another blog post
 cover: ./image.jpg
-date: 2018-02-01
+date: 2018-01-01
 tags: ['post', 'fake']
 ---
 
