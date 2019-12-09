@@ -1,16 +1,10 @@
 ---
-date: 2019-08-05
+title: Jenn Creighton Chats With Kent About Avoiding An "Apropcolypse"
+date: 2019-11-28
 tags: ['note', 'podcast']
 ---
 
-<iframe
-  height="200px"
-  width="100%"
-  frameborder="no"
-  scrolling="no"
-  seamless
-  src="https://player.simplecast.com/62a1da0d-f39d-4d65-97d7-8faa48ae046f?dark=false"
-></iframe>
+<iframe height="200px" width="100%" frameborder="no" scrolling="no" seamless src="https://player.simplecast.com/6866a015-36f4-43f9-a35c-7f44cf623147?dark=false"></iframe>
 
 This podcast on:
 
@@ -19,5 +13,3 @@ This podcast on:
 <FontAwesomeIcon icon={['fab', 'apple']} />&nbsp;<a href="https://podcasts.apple.com/us/podcast/chats-with-kent-c-dodds/id1475543959">Apple Podcasts</a><br/>
 <FontAwesomeIcon icon={['fab', 'spotify']} />&nbsp;<a href="https://open.spotify.com/show/7GkO2poedjbltWT5lduL5w">Spotify</a>
 </p>
-
-An example of how to embed podcast (in this case from simplecast, but you can use any other sources) in a note.
