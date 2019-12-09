@@ -11,7 +11,7 @@ module.exports = (options) => {
       yearSeparatorSkipFirst: true
     },
     uiText = {
-      feedShowMoreButton: '↓ show more ↓',
+      feedShowMoreButton: 'show more',
       feedSearchPlaceholder: 'search',
       cardReadMoreButton: 'read more →',
       allTagsButton: 'all tags'
@@ -19,7 +19,7 @@ module.exports = (options) => {
   } = options;
   //
   const {
-    feedShowMoreButton = '↓ show more ↓',
+    feedShowMoreButton = 'show more',
     feedSearchPlaceholder = 'search',
     cardReadMoreButton = 'read more →',
     allTagsButton = 'all tags'

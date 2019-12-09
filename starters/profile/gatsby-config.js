@@ -34,7 +34,7 @@ module.exports = {
       options: {
         uiText: {
           // ui text fot translate
-          feedShowMoreButton: '↓ show more ↓',
+          feedShowMoreButton: 'show more',
           feedSearchPlaceholder: 'search',
           cardReadMoreButton: 'read more →',
           allTagsButton: 'all tags'
