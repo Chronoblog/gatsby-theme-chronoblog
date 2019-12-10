@@ -26,13 +26,15 @@ Live demo of this starter: [chronoblog.netlify.com](https://chronoblog.netlify.c
 - Specially designed to create a personal website
 - A universal Feed where you can display any type of content. Not only blog posts, but also links to projects, podcasts, videos, etc.
 - Search and Tags for organizing content
-- Simple style management (thanks to Theme UI theming)
+- Simple change of primary and secondary colors of the site, fonts, radius of curvature of elements, etc (thanks to Theme UI theming)
+- Clean and Universal UI
+- Mobile friendly, all elements and custom images are adapted to any screen
 - Light/Dark mode
 - Easy customization of icons and links to your social networks
-- MDX for the main menu of the site, footer and other permanent elements of the site
+- MDX for the main menu of the site, footer and other elements of the site
 - MDX for pages and content
-- SEO and metadata out of the box with default settings that make sense
-- Starter based on Chronoblog Gatsby Theme
+- Code syntax highlighting
+- SEO and metadata out of the box with default settings that make sense (thanks to React Helmet)
 
 ## How to start using Chronoblog Starter
 
