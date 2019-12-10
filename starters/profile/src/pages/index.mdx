@@ -2,19 +2,21 @@
 &nbsp;
 <h3>Posts and Articles&nbsp;&nbsp;<Link to='posts-and-articles'><Button>all posts and articles</Button></Link></h3>
 
-<FeedItems itemsFormat="compact" filterByTags={['post', 'article']} limit={4} />
+<FeedItems 
+  itemsFormat="compact" 
+  filterByTags={['post', 'article']} 
+  limit={4} 
+/>
 
-<h3>Podcasts&nbsp;&nbsp;<Link to='tags/podcast'><Button>all podcasts</Button></Link></h3>
+<h3>Podcasts&nbsp;&nbsp;<Link to='tags/podcast'>
+<Button>all podcasts</Button></Link></h3>
 
 <FeedItems itemsFormat="compact" filterByTags={['podcast']} limit={3} />
 
-<h3>Certificates&nbsp;&nbsp;</h3>
+### Certificates
 
 <FeedItems itemsFormat="compact" filterByTags={['certificate']} />
 
-<h3>Projects</h3>
+### Projects
 
-<FeedItems
-  itemsFormat="compact"
-  filterByTags={['project']}
-/>
+<FeedItems itemsFormat="compact" filterByTags={['project']} />
