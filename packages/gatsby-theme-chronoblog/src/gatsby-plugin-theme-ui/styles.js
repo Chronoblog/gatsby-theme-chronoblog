@@ -1,3 +1,6 @@
+import github from '@theme-ui/prism/presets/github.json';
+import nightOwl from '@theme-ui/prism/presets/night-owl.json';
+
 const heading = {
   fontFamily: 'heading',
   fontWeight: 'heading',
@@ -76,6 +79,9 @@ export default {
     borderRadius: 'code',
     overflowX: 'auto',
     variant: 'prism'
+  },
+  code: {
+    ...github
   },
   hr: {
     maxWidth: '400px',
