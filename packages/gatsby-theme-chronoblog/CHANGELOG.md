@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.10.0](https://github.com/ganevru/gatsby-theme-chronoblog/compare/gatsby-theme-chronoblog@0.9.3...gatsby-theme-chronoblog@0.10.0) (2019-12-10)
+
+**Note:** Version bump only for package gatsby-theme-chronoblog
+
+
+
+
+
 ## [0.9.3](https://github.com/ganevru/gatsby-theme-chronoblog/compare/gatsby-theme-chronoblog@0.9.2...gatsby-theme-chronoblog@0.9.3) (2019-12-07)
 
 **Note:** Version bump only for package gatsby-theme-chronoblog

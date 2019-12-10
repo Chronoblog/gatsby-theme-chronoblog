@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.8.0](https://github.com/Ganevru/gatsby-theme-chronoblog/compare/tests@1.7.3...tests@1.8.0) (2019-12-10)
+
+**Note:** Version bump only for package tests
+
+
+
+
+
 ## [1.7.3](https://github.com/Ganevru/gatsby-theme-chronoblog/compare/tests@1.7.2...tests@1.7.3) (2019-12-07)
 
 **Note:** Version bump only for package tests
