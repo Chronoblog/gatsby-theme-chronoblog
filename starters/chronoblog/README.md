@@ -11,7 +11,9 @@ Gatsby Starter Chronoblog - starter for Chronoblog Gatsby Theme
 
 [![npm](https://img.shields.io/npm/v/gatsby-theme-chronoblog?color=brightgreen)](https://www.npmjs.com/package/gatsby-theme-chronoblog) [![node](https://img.shields.io/node/v/gatsby-theme-chronoblog)](https://www.npmjs.com/package/gatsby-theme-chronoblog) [![Netlify Status](https://api.netlify.com/api/v1/badges/f36aa133-5611-484c-97fe-8d65fac4391b/deploy-status)](https://app.netlify.com/sites/chronoblog/deploys)
 
-The standard way to start using Chronoblog Gatsby Theme.
+The main page of the site is a feed with all the content of the site. The feed is sorted by date, and the content is organized using tags and search.
+
+This starter is the standard way to run a Chronoblog Gatsby Theme site.
 
 What is a Chronoblog?
 
@@ -34,7 +36,7 @@ Live demo of this starter: [chronoblog.netlify.com](https://chronoblog.netlify.c
 - MDX for the main menu of the site, footer and other elements of the site
 - MDX for pages and content
 - Code syntax highlighting
-- SEO and metadata out of the box with default settings that make sense (thanks to React Helmet)
+- SEO (OpenGraph and Twitter) out of the box with default settings that make sense (thanks to React Helmet)
 
 ## How to start using Chronoblog Starter
 
