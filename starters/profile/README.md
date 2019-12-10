@@ -9,7 +9,7 @@
 Gatsby Starter Chronoblog Profile - starter for Chronoblog Gatsby Theme
 </h1>
 
-[![npm](https://img.shields.io/npm/v/gatsby-theme-chronoblog?color=brightgreen)](https://www.npmjs.com/package/gatsby-theme-chronoblog) [![node](https://img.shields.io/node/v/gatsby-theme-chronoblog)](https://www.npmjs.com/package/gatsby-theme-chronoblog) [![Netlify Status](https://api.netlify.com/api/v1/badges/f36aa133-5611-484c-97fe-8d65fac4391b/deploy-status)](https://app.netlify.com/sites/chronoblog/deploys)
+[![npm](https://img.shields.io/npm/v/gatsby-theme-chronoblog?color=brightgreen)](https://www.npmjs.com/package/gatsby-theme-chronoblog) [![node](https://img.shields.io/node/v/gatsby-theme-chronoblog)](https://www.npmjs.com/package/gatsby-theme-chronoblog) [![Netlify Status](https://api.netlify.com/api/v1/badges/b66fd3f1-2f68-40f8-9572-3317b5fe71a9/deploy-status)](https://app.netlify.com/sites/chronoblog-profile/deploys)
 
 What is a Chronoblog?
 
