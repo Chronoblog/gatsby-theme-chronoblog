@@ -17,7 +17,20 @@ What is a Chronoblog?
 
 Read more about Chronoblog Gatsby Theme here: [github.com/ganevru/gatsby-theme-chronoblog](https://github.com/Ganevru/gatsby-theme-chronoblog)
 
-See a live demo: [chronoblog-profile.netlify.com](https://chronoblog-profile.netlify.com/)
+Live demo of this starter: [chronoblog-profile.netlify.com](https://chronoblog-profile.netlify.com/)
+
+## Features
+
+- Specially designed to create a personal website (in a simple and strict "text" style)
+- Universal text feed divided into categories
+- Search and Tags for organizing content
+- Simple style management (thanks to Theme UI theming)
+- Light/Dark mode
+- Easy customization of icons and links to your social networks
+- MDX for the main menu of the site, footer and other permanent elements of the site
+- MDX for pages and content
+- SEO and metadata out of the box with default settings that make sense
+- Starter based on Chronoblog Gatsby Theme
 
 ## How to start using Chronoblog Profile Starter
 

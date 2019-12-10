@@ -20,9 +20,9 @@ I never liked the blog format so that, regardless of the platform (be it Medium 
 
 Many people solve this problem like this - create separate pages on their website for a blog, for talks, for podcasts, for a portfolio, etc. But it is difficult to maintain and update.
 
-But what if we make a blog theme based on a feed? Something like twitter or hackernews or reddit, but without restrictions, and in the form of a personal blog?
+But what if we make a blog theme based on a **feed**? Something like twitter or hackernews or reddit, but without restrictions, and in the form of a personal blog?
 
-Chronoblog is a theme that allows you to do just that - to help create a more organic and universal personal website.
+Chronoblog is a theme that allows you to do just that - to help create a more organic and universal personal website. 
 
 **Demo Website: [https://chronoblog.netlify.com](https://chronoblog.netlify.com)**
 
