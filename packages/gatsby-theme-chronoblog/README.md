@@ -890,8 +890,9 @@ If at least one starter is not working - something went wrong.
 | Status | Repo | Link |
 | --- | --- | --- |
 | [![Netlify Status](https://api.netlify.com/api/v1/badges/f36aa133-5611-484c-97fe-8d65fac4391b/deploy-status)](https://app.netlify.com/sites/chronoblog/deploys) | https://github.com/Ganevru/gatsby-starter-chronoblog | https://chronoblog.netlify.com |
-| [![Netlify Status](https://api.netlify.com/api/v1/badges/ed253426-cae8-40fc-9647-28a8cd1f5a28/deploy-status)](https://app.netlify.com/sites/chronoblog-netlify-cms/deploys) | https://github.com/Ganevru/gatsby-starter-chronoblog-netlify-cms | https://chronoblog-netlify-cms.netlify.com/ |
-| [![Netlify Status](https://api.netlify.com/api/v1/badges/89481a31-c0c3-46ac-bf12-1fa638f0cd82/deploy-status)](https://app.netlify.com/sites/chronoblog-minimal/deploys) | https://github.com/Ganevru/gatsby-starter-chronoblog-minimal | https://chronoblog-minimal.netlify.com/ |
+| [![Netlify Status](https://api.netlify.com/api/v1/badges/ed253426-cae8-40fc-9647-28a8cd1f5a28/deploy-status)](https://app.netlify.com/sites/chronoblog-netlify-cms/deploys) | https://github.com/Ganevru/gatsby-starter-chronoblog-netlify-cms | https://chronoblog-netlify-cms.netlify.com |
+| [![Netlify Status](https://api.netlify.com/api/v1/badges/b66fd3f1-2f68-40f8-9572-3317b5fe71a9/deploy-status)](https://app.netlify.com/sites/chronoblog-profile/deploys) | https://github.com/Ganevru/gatsby-starter-chronoblog-profile | https://chronoblog-profile.netlify.com |
+| [![Netlify Status](https://api.netlify.com/api/v1/badges/89481a31-c0c3-46ac-bf12-1fa638f0cd82/deploy-status)](https://app.netlify.com/sites/chronoblog-minimal/deploys) | https://github.com/Ganevru/gatsby-starter-chronoblog-minimal | https://chronoblog-minimal.netlify.com |
 
 ## Status of development and test versions
 
@@ -901,6 +902,7 @@ All these versions work from master branch of this repository. It’s ok if they
 | --- | --- |
 | [![Netlify Status](https://api.netlify.com/api/v1/badges/e26ac6b2-92f3-4744-8384-c64b144a1f74/deploy-status)](https://app.netlify.com/sites/chronoblog-master/deploys) | https://chronoblog-master.netlify.com |
 | [![Netlify Status](https://api.netlify.com/api/v1/badges/d6c88fb7-14d5-495a-8bc4-f0994e728881/deploy-status)](https://app.netlify.com/sites/chronoblog-tests/deploys) | https://chronoblog-tests.netlify.com |
+| [![Netlify Status](https://api.netlify.com/api/v1/badges/b8dc064f-6625-4380-88ed-55345a548489/deploy-status)](https://app.netlify.com/sites/chronoblog-master-profile/deploys) | chronoblog-master-profile.netlify.com |
 | [![Netlify Status](https://api.netlify.com/api/v1/badges/856e7fea-a790-4b10-b982-76cab60ce4df/deploy-status)](https://app.netlify.com/sites/chronoblog-master-minimal/deploys) | https://chronoblog-master-minimal.netlify.com |
 | [![Netlify Status](https://api.netlify.com/api/v1/badges/3bddc25b-758e-4215-a6ee-4f0bc5997b87/deploy-status)](https://app.netlify.com/sites/chronoblog-master-netlify-cms/deploys) | https://chronoblog-master-netlify-cms.netlify.com |
 
