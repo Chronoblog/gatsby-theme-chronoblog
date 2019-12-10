@@ -1,5 +1,4 @@
-import github from '@theme-ui/prism/presets/github.json';
-import nightOwl from '@theme-ui/prism/presets/night-owl.json';
+import oceanicNext from '@theme-ui/prism/presets/oceanic-next.json';
 
 const heading = {
   fontFamily: 'heading',
@@ -81,7 +80,7 @@ export default {
     variant: 'prism'
   },
   code: {
-    ...github
+    ...oceanicNext
   },
   hr: {
     maxWidth: '400px',
