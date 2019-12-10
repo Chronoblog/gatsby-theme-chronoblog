@@ -84,9 +84,11 @@ export default {
     borderColor: 'muted'
   },
   blockquote: {
-    p: {
-      fontSize: [2]
-    },
-    py: 1
+    px: 4,
+    py: 1,
+    borderRadius: 'blockquote',
+    bg: 'muted',
+    marginX: 0,
+    marginY: 1
   }
 };

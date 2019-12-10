@@ -19,7 +19,8 @@ const theme = {
     search: 6,
     code: 6,
     img: 6,
-    authorBanner: 6
+    authorBanner: 6,
+    blockquote: 6
   },
   fonts: {
     body: '-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif',
