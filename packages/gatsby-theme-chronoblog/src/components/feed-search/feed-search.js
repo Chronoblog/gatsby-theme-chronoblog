@@ -32,7 +32,7 @@ const Symbol = ({ symbol }) => {
   );
 };
 
-export default ({ placeholder = '', symbol = '🔎' }) => {
+export default ({ placeholder = '', symbol = '🔍' }) => {
   //
   const {
     uiText: { feedSearchPlaceholder }
