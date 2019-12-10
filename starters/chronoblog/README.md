@@ -28,7 +28,7 @@ Live demo of this starter: [chronoblog.netlify.com](https://chronoblog.netlify.c
 - Specially designed to create a personal website
 - A universal Feed where you can display any type of content. Not only blog posts, but also links to projects, podcasts, videos, etc.
 - Search and Tags for organizing content
-- Simple change of primary and secondary colors of the site, fonts, radius of curvature of elements, etc (thanks to Theme UI theming)
+- A simple change of primary and secondary colors of the site, fonts, radius of curvature of elements, etc (thanks to Theme UI theming)
 - Clean and Universal UI
 - Mobile friendly, all elements and custom images are adapted to any screen
 - Light/Dark mode
