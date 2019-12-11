@@ -26,28 +26,16 @@ Chronoblog is a theme that allows you to do just that - to help create a more or
 
 > Despite the fact that versions start with "0.", I want to make the Chronoblog API as stable as possible.
 
-**Demo Website: [https://chronoblog.netlify.com](https://chronoblog.netlify.com)**
-
-This demo is at the same time the Chronoblog starter.
-
 ## Demo and Starters
 
 ### Gatsby Starter Chronoblog
 
-<p>
-<a href="https://chronoblog.netlify.com" target="_blank">
-<img src="https://github.com/Ganevru/gatsby-theme-chronoblog/raw/master/st-chronoblog.jpg" alt="Chronoblog - Gatsby Theme" /></a>
-</p>
-
 Demo: [chronoblog.netlify.com](https://chronoblog.netlify.com/)  
 Repo: [github.com/ganevru/gatsby-starter-chronoblog](https://github.com/Ganevru/gatsby-starter-chronoblog)
 
-### Gatsby Starter Chronoblog Profile
+<br />
 
-<p>
-<a href="https://chronoblog-profile.netlify.com" target="_blank">
-<img src="https://github.com/Ganevru/gatsby-theme-chronoblog/raw/master/st-profile.jpg" alt="Chronoblog - Gatsby Theme" /></a>
-</p>
+### Gatsby Starter Chronoblog Profile
 
 Demo: [chronoblog-profile.netlify.com](https://chronoblog-profile.netlify.com/)  
 Repo: [github.com/ganevru/gatsby-starter-chronoblog-profile](https://github.com/Ganevru/gatsby-starter-chronoblog-profile)
