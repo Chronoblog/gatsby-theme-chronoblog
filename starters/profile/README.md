@@ -21,7 +21,7 @@ What is a Chronoblog?
 
 Read more about Chronoblog Gatsby Theme here: [github.com/ganevru/gatsby-theme-chronoblog](https://github.com/Ganevru/gatsby-theme-chronoblog)
 
-Live demo of this starter: [chronoblog-profile.netlify.com](https://chronoblog-profile.netlify.com/)
+**Live demo of this starter: [https://chronoblog-profile.netlify.com](https://chronoblog-profile.netlify.com/)**
 
 ## Features
 
