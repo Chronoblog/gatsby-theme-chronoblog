@@ -24,11 +24,17 @@ But what if we make a blog theme based on a **feed**? Something like twitter or 
 
 Chronoblog is a theme that allows you to do just that - to help create a more organic and universal personal website.
 
+> Despite the fact that versions start with "0.", I want to make the Chronoblog API as stable as possible.
+
 **Demo Website: [https://chronoblog.netlify.com](https://chronoblog.netlify.com)**
 
 This demo is at the same time the Chronoblog starter.
 
-> Despite the fact that versions start with "0.", I want to make the Chronoblog API as stable as possible.
+## Starters
+
+<a href="https://chronoblog.netlify.com" target="_blank">
+<img src="https://github.com/Ganevru/gatsby-theme-chronoblog/raw/master/st-chronoblog.jpg" alt="Chronoblog - Gatsby Theme" />
+</a>
 
 ## Table of Contents
 
