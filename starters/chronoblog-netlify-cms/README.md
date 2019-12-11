@@ -32,7 +32,7 @@ gatsby new chronoblog-site https://github.com/Ganevru/gatsby-starter-chronoblog-
 
 cd chronoblog-site
 
-npm start
+gatsby develop
 ```
 
 Or using git clone:

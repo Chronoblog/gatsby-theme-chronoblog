@@ -30,11 +30,27 @@ Chronoblog is a theme that allows you to do just that - to help create a more or
 
 This demo is at the same time the Chronoblog starter.
 
-## Starters
+## Demo and Starters
 
+### Gatsby Starter Chronoblog
+
+<p>
 <a href="https://chronoblog.netlify.com" target="_blank">
-<img src="https://github.com/Ganevru/gatsby-theme-chronoblog/raw/master/st-chronoblog.jpg" alt="Chronoblog - Gatsby Theme" />
-</a>
+<img src="https://github.com/Ganevru/gatsby-theme-chronoblog/raw/master/st-chronoblog.jpg" alt="Chronoblog - Gatsby Theme" /></a>
+</p>
+
+Demo: [chronoblog.netlify.com](https://chronoblog.netlify.com/)  
+Repo: [github.com/ganevru/gatsby-starter-chronoblog](https://github.com/Ganevru/gatsby-starter-chronoblog)
+
+### Gatsby Starter Chronoblog Profile
+
+<p>
+<a href="https://chronoblog-profile.netlify.com" target="_blank">
+<img src="https://github.com/Ganevru/gatsby-theme-chronoblog/raw/master/st-profile.jpg" alt="Chronoblog - Gatsby Theme" /></a>
+</p>
+
+Demo: [chronoblog-profile.netlify.com](https://chronoblog-profile.netlify.com/)  
+Repo: [github.com/ganevru/gatsby-starter-chronoblog-profile](https://github.com/Ganevru/gatsby-starter-chronoblog-profile)
 
 ## Table of Contents
 
@@ -104,7 +120,7 @@ gatsby new chronoblog-site https://github.com/Ganevru/gatsby-starter-chronoblog
 
 cd chronoblog-site
 
-npm start
+gatsby develop
 ```
 
 Or using git clone:

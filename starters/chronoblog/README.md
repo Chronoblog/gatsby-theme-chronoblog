@@ -1,8 +1,6 @@
-<br />
 <p align="center">
 <a href="https://chronoblog.netlify.com" target="_blank">
-<img src="https://github.com/Ganevru/gatsby-theme-chronoblog/raw/master/banner-small-2.png" alt="Gatsby Starter Chronoblog" />
-</a>
+<img src="https://github.com/Ganevru/gatsby-theme-chronoblog/raw/master/st-chronoblog.jpg" alt="Chronoblog - Gatsby Theme" /></a>
 </p>
 
 <h1 align="center">
@@ -45,7 +43,7 @@ gatsby new chronoblog-site https://github.com/Ganevru/gatsby-starter-chronoblog
 
 cd chronoblog-site
 
-npm start
+gatsby develop
 ```
 
 Or using git clone:
