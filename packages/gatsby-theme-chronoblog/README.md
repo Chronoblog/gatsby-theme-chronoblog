@@ -40,6 +40,8 @@ Repo: [github.com/ganevru/gatsby-starter-chronoblog](https://github.com/Ganevru/
 Demo: [chronoblog-profile.netlify.com](https://chronoblog-profile.netlify.com/)  
 Repo: [github.com/ganevru/gatsby-starter-chronoblog-profile](https://github.com/Ganevru/gatsby-starter-chronoblog-profile)
 
+<br />
+
 ## Table of Contents
 
 - [Guide - How to start working with Chronoblog Gatsby Theme](#guide---how-to-start-working-with-chronoblog-gatsby-theme)
