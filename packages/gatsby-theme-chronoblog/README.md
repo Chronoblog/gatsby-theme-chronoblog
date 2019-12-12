@@ -28,28 +28,42 @@ Chronoblog is a theme that allows you to do just that - to help create a more or
 
 ## Demo and Starters
 
-<h3>Gatsby Starter Chronoblog</h3>
+<a target="_blank" href="https://chronoblog.netlify.com">
+  <img align="left" src="https://github.com/Ganevru/gatsby-theme-chronoblog/raw/master/st-img-chronoblog.jpg" alt="Chronoblog - Gatsby Theme" style="max-width:100%;">
+</a>
 
-Demo: [chronoblog.netlify.com](https://chronoblog.netlify.com/)  
+### Gatsby Starter Chronoblog
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/f36aa133-5611-484c-97fe-8d65fac4391b/deploy-status)](https://app.netlify.com/sites/chronoblog/deploys)
+
+This starter is the standard way to start a Chronoblog Gatsby Theme website.
+
+Demo: [chronoblog.netlify.com](https://chronoblog.netlify.com)  
 Repo: [github.com/ganevru/gatsby-starter-chronoblog](https://github.com/Ganevru/gatsby-starter-chronoblog)
 
 <br />
+<br />
+<br />
+<br />
+<br />
+<br />
 
-<div style="display:'flex';">
-<div>
 <a target="_blank" href="https://chronoblog.netlify.com">
-  <img src="https://github.com/Ganevru/gatsby-theme-chronoblog/raw/master/st-img-chronoblog.jpg" alt="Chronoblog - Gatsby Theme" style="max-width:100%;">
+  <img align="left" src="https://github.com/Ganevru/gatsby-theme-chronoblog/raw/master/st-img-profile.jpg" alt="Chronoblog - Gatsby Theme" style="max-width:100%;">
 </a>
-</div>
-<div>
-  <h3>Gatsby Starter Chronoblog Profile</h3>
-  <p>
-  Demo: <a href="https://chronoblog-profile.netlify.com">chronoblog-profile.netlify.com</a><br>
-  Repo: <a href="https://github.com/Ganevru/gatsby-starter-chronoblog-profile">github.com/ganevru/gatsby-starter-chronoblog-profile</a>
-  </p>
-</div>
-</div>
 
+### Gatsby Starter Chronoblog Profile
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b66fd3f1-2f68-40f8-9572-3317b5fe71a9/deploy-status)](https://app.netlify.com/sites/chronoblog-profile/deploys)
+
+This starter will help you launch a personal website with a simple text feed on the main page.
+
+Demo: [chronoblog-profile.netlify.com](https://chronoblog-profile.netlify.com)  
+Repo: [github.com/ganevru/gatsby-starter-chronoblog-profile](https://github.com/Ganevru/gatsby-starter-chronoblog-profile)
+
+<br />
+<br />
+<br />
 <br />
 
 ## Table of Contents
