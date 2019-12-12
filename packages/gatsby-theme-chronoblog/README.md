@@ -38,7 +38,7 @@ Chronoblog is a theme that allows you to do just that - to help create a more or
 
 This starter is the standard way to start a Chronoblog Gatsby Theme website.
 
-Demo: [chronoblog.netlify.com](https://chronoblog.netlify.com)  
+**Demo: [chronoblog.netlify.com](https://chronoblog.netlify.com)**  
 Repo: [github.com/ganevru/gatsby-starter-chronoblog](https://github.com/Ganevru/gatsby-starter-chronoblog)
 
 <br />
@@ -58,7 +58,7 @@ Repo: [github.com/ganevru/gatsby-starter-chronoblog](https://github.com/Ganevru/
 
 This starter will help you launch a personal website with a simple text feed on the main page.
 
-Demo: [chronoblog-profile.netlify.com](https://chronoblog-profile.netlify.com)  
+**Demo: [chronoblog-profile.netlify.com](https://chronoblog-profile.netlify.com)**  
 Repo: [github.com/ganevru/gatsby-starter-chronoblog-profile](https://github.com/Ganevru/gatsby-starter-chronoblog-profile)
 
 <br />
