@@ -159,6 +159,13 @@ Your site is now running at http://localhost:8000
 
 You can start developing your site.
 
+> If you want to use some other starter for Chronoblog, for example, a [Profile Starter](https://github.com/Ganevru/gatsby-starter-chronoblog-profile), just install it according to the instructions from its [readme](https://github.com/Ganevru/gatsby-starter-chronoblog-profile), or just change the name during installation to:
+>
+> `gatsby new chronoblog-site https://github.com/Ganevru/gatsby-starter-chronoblog-profile`
+>
+> or, if using git clone:  
+> `git clone git@github.com:Ganevru/gatsby-starter-chronoblog-profile.git chronoblog-site`.
+
 ## Folder structure
 
 Here's how the Chronoblog Starter is organized:
