@@ -1,5 +1,5 @@
 <a href="https://chronoblog-profile.netlify.com" target="_blank">
-<img src="https://github.com/Ganevru/gatsby-theme-chronoblog/raw/master/st-banner-profile.jpg" alt="Chronoblog - Gatsby Theme" />
+<img src="https://github.com/Ganevru/gatsby-theme-chronoblog/raw/master/assets/st-banner-profile.jpg" alt="Chronoblog - Gatsby Theme" />
 </a>
 
 <h1 align="center">

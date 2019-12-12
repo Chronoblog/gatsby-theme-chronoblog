@@ -1,7 +1,7 @@
 <br />
 <p align="center">
 <a href="https://chronoblog-netlify-cms.netlify.com" target="_blank">
-<img src="https://github.com/Ganevru/gatsby-theme-chronoblog/raw/master/banner-small-2.png" alt="Chronoblog Gatsby Theme Starter with Netlify CMS" />
+<img src="https://github.com/Ganevru/gatsby-theme-chronoblog/raw/master/assets/banner-small-2.png" alt="Chronoblog Gatsby Theme Starter with Netlify CMS" />
 </a>
 </p>
 

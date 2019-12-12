@@ -1,7 +1,7 @@
 <br />
 <p align="center">
 <a href="https://chronoblog.netlify.com" target="_blank">
-<img src="https://github.com/Ganevru/gatsby-theme-chronoblog/raw/master/banner-small-2.png" alt="Chronoblog - Gatsby Theme" />
+<img src="https://github.com/Ganevru/gatsby-theme-chronoblog/raw/master/assets/banner-small-2.png" alt="Chronoblog - Gatsby Theme" />
 </a>
 </p>
 
@@ -29,7 +29,7 @@ Chronoblog is a theme that allows you to do just that - to help create a more or
 ## Demo and Starters
 
 <a target="_blank" href="https://chronoblog.netlify.com">
-  <img align="left" src="https://github.com/Ganevru/gatsby-theme-chronoblog/raw/master/st-img-chronoblog.jpg" alt="Chronoblog - Gatsby Theme" style="max-width:100%;">
+  <img align="left" src="https://github.com/Ganevru/gatsby-theme-chronoblog/raw/master/assets/st-img-chronoblog.jpg" alt="Chronoblog - Gatsby Theme" style="max-width:100%;">
 </a>
 
 ### Gatsby Starter Chronoblog
@@ -51,7 +51,7 @@ Repo: [github.com/ganevru/gatsby-starter-chronoblog](https://github.com/Ganevru/
 <br />
 
 <a target="_blank" href="https://chronoblog-profile.netlify.com">
-  <img align="left" src="https://github.com/Ganevru/gatsby-theme-chronoblog/raw/master/st-img-profile.jpg" alt="Chronoblog - Gatsby Theme" style="max-width:100%;">
+  <img align="left" src="https://github.com/Ganevru/gatsby-theme-chronoblog/raw/master/assets/st-img-profile.jpg" alt="Chronoblog - Gatsby Theme" style="max-width:100%;">
 </a>
 
 ### Gatsby Starter Chronoblog Profile
