@@ -37,7 +37,7 @@ Repo: [github.com/ganevru/gatsby-starter-chronoblog](https://github.com/Ganevru/
 
 <div style="display:'flex';">
 <div>
-<a href="https://chronoblog.netlify.com">
+<a target="_blank" href="https://chronoblog.netlify.com">
   <img src="https://github.com/Ganevru/gatsby-theme-chronoblog/raw/master/st-img-chronoblog.jpg" alt="Chronoblog - Gatsby Theme" style="max-width:100%;">
 </a>
 </div>
