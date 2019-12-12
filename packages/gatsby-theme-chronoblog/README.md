@@ -28,17 +28,27 @@ Chronoblog is a theme that allows you to do just that - to help create a more or
 
 ## Demo and Starters
 
-### Gatsby Starter Chronoblog
+<h3>Gatsby Starter Chronoblog</h3>
 
 Demo: [chronoblog.netlify.com](https://chronoblog.netlify.com/)  
 Repo: [github.com/ganevru/gatsby-starter-chronoblog](https://github.com/Ganevru/gatsby-starter-chronoblog)
 
 <br />
 
-### Gatsby Starter Chronoblog Profile
-
-Demo: [chronoblog-profile.netlify.com](https://chronoblog-profile.netlify.com/)  
-Repo: [github.com/ganevru/gatsby-starter-chronoblog-profile](https://github.com/Ganevru/gatsby-starter-chronoblog-profile)
+<div style="display:'flex';">
+<div>
+<a href="https://chronoblog.netlify.com">
+  <img src="https://github.com/Ganevru/gatsby-theme-chronoblog/raw/master/st-img-chronoblog.jpg" alt="Chronoblog - Gatsby Theme" style="max-width:100%;">
+</a>
+</div>
+<div>
+  <h3>Gatsby Starter Chronoblog Profile</h3>
+  <p>
+  Demo: <a href="https://chronoblog-profile.netlify.com">chronoblog-profile.netlify.com</a><br>
+  Repo: <a href="https://github.com/Ganevru/gatsby-starter-chronoblog-profile">github.com/ganevru/gatsby-starter-chronoblog-profile</a>
+  </p>
+</div>
+</div>
 
 <br />
 
