@@ -1,3 +1,7 @@
+<a href="https://chronoblog.netlify.com" target="_blank">
+<img src="https://github.com/Ganevru/gatsby-theme-chronoblog/raw/master/st-banner-chronoblog.jpg" alt="Chronoblog - Gatsby Theme" />
+</a>
+
 <h1 align="center">
 Gatsby Starter Chronoblog - starter for Chronoblog Gatsby Theme
 </h1>
