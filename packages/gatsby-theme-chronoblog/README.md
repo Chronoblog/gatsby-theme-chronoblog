@@ -41,6 +41,8 @@ This starter is the standard way to start a Chronoblog Gatsby Theme website.
 **Demo: [chronoblog.netlify.com](https://chronoblog.netlify.com)**  
 Repo: [github.com/ganevru/gatsby-starter-chronoblog](https://github.com/Ganevru/gatsby-starter-chronoblog)
 
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Ganevru/gatsby-starter-chronoblog)
+
 <br />
 <br />
 <br />
@@ -61,6 +63,10 @@ This starter will help you launch a personal website with a simple text feed on 
 **Demo: [chronoblog-profile.netlify.com](https://chronoblog-profile.netlify.com)**  
 Repo: [github.com/ganevru/gatsby-starter-chronoblog-profile](https://github.com/Ganevru/gatsby-starter-chronoblog-profile)
 
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Ganevru/gatsby-starter-chronoblog-profile)
+
+<br />
+<br />
 <br />
 <br />
 <br />

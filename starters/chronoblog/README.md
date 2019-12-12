@@ -59,6 +59,15 @@ npm start
 
 Your site is now running at http://localhost:8000
 
+## Deploying
+
+### Deploying to Netlify
+
+Gatsby Docs: [www.gatsbyjs.org/docs/deploying-to-netlify](https://www.gatsbyjs.org/docs/deploying-to-netlify/)
+
+Quick Deployment:  
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Ganevru/gatsby-starter-chronoblog)
+
 ## More information
 
 For complete information, go to the main repository: [github.com/Ganevru/gatsby-theme-chronoblog](https://github.com/Ganevru/gatsby-starter-chronoblog)
