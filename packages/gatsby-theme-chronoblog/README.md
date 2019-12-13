@@ -22,7 +22,7 @@ Many people solve this problem like this - create separate pages on their websit
 
 But what if we make a blog theme based on a **feed**? Something like twitter or hackernews or reddit, but without restrictions, and in the form of a personal blog?
 
-Chronoblog is a theme that allows you to do just that - to help create a more organic and universal personal website.
+Chronoblog is a theme that allows you to do just that - create a more universal personal website.
 
 > Despite the fact that versions start with "0.", I want to make the Chronoblog API as stable as possible.
 
@@ -175,7 +175,7 @@ chronoblog-site
   ├─ content // unique site content is located here
   │  ├─ links // content type - link cards
   │  ├─ notes // content type - note cards
-  │  └─ posts // standard blog posts
+  │  └─ posts // content type - blog posts
   ├─ gatsby-config.js
   ├─ package.json
   ├─ src
@@ -184,9 +184,9 @@ chronoblog-site
   │  │  └─ index.js
   │  ├─ gatsby-theme-chronoblog // chronoblog shadow
   │  │  ├─ post-footer.mdx // what comes after every blog post
-  │  │  ├─ site-footer.mdx // where is the main menu of the site
-  │  │  └─ site-header.mdx // site main menu
-  │  └─ pages // specially defined pages of the site
+  │  │  ├─ site-footer.mdx // site footer
+  │  │  └─ site-header.mdx // where is the main menu of the site
+  │  └─ pages // pages of the site
   │     ├─ index.mdx // the main page of the site
   │     └─ projects.mdx // optional site page
   └─ static
