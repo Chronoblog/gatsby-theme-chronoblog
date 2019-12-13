@@ -1,6 +1,10 @@
 <AuthorBanner />
 <p>&nbsp;</p>
-<h3>Posts and Articles&nbsp;&nbsp;<Link to='posts-and-articles'><Button>all posts and articles</Button></Link></h3>
+<h3>Posts and Articles&nbsp;&nbsp;
+  <Link to='posts-and-articles'>
+    <Button style={{marginTop: '8px'}}>all posts and articles</Button>
+  </Link>
+</h3>
 
 <FeedItems 
   itemsFormat="compact" 
@@ -9,8 +13,11 @@
 />
 
 <p>&nbsp;</p>
-<h3>Podcasts&nbsp;&nbsp;<Link to='tags/podcast'>
-<Button>all podcasts</Button></Link></h3>
+<h3>Podcasts&nbsp;&nbsp;
+  <Link to='tags/podcast'>
+    <Button style={{marginTop: '8px'}}>all podcasts</Button>
+  </Link>
+</h3>
 
 <FeedItems itemsFormat="compact" filterByTags={['podcast']} limit={3} />
 
