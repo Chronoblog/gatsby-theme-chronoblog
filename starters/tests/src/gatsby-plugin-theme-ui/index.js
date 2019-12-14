@@ -12,6 +12,7 @@ export default {
     secondary: '#9b59b6',
     muted: '#dae1e3',
     modes: {
+      ...chronoblogTheme.colors.modes,
       dark: {
         ...chronoblogTheme.colors.modes.dark,
         text: '#eaeaea',

@@ -12,6 +12,7 @@
     "build:chronoblog-netlify-cms": "yarn clean && yarn workspace chronoblog-netlify-cms build",
     "build:minimal": "yarn clean && yarn workspace minimal build",
     "build:profile": "yarn clean && yarn workspace profile build",
+    "build:hacker": "yarn clean && yarn workspace hacker build",
     "build:tests": "yarn clean && yarn workspace tests build",
     "clean": "yarn workspaces run clean",
     "lerna": "lerna",
@@ -20,6 +21,7 @@
     "start:chronoblog-netlify-cms": "yarn clean && yarn workspace chronoblog-netlify-cms start",
     "start:minimal": "yarn clean && yarn workspace minimal start",
     "start:profile": "yarn clean && yarn workspace profile start",
+    "start:hacker": "yarn clean && yarn workspace hacker start",
     "start:tests": "yarn clean && yarn workspace tests start",
     "test": "yarn clean && jest",
     "watch": "yarn clean && jest --watch"

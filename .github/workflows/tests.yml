@@ -37,3 +37,6 @@ jobs:
 
       - name: yarn build:profile
         run: yarn build:profile
+
+      - name: yarn build:hacker
+        run: yarn build:hacker
