@@ -3,16 +3,23 @@ import chronoblogTheme from 'gatsby-theme-chronoblog/src/gatsby-plugin-theme-ui'
 export default {
   ...chronoblogTheme,
   initialColorMode: 'dark',
+  useColorSchemeMediaQuery: true,
   colors: {
     ...chronoblogTheme.color,
-    text: '#eaeaea',
-    background: '#0e0f17',
-    muted: '#161b1d',
+    text: '#222',
+    background: '#fff',
     link: '#3d7e9a',
     primary: '#f5cd79',
     secondary: '#f7d794',
+    muted: '#f7f7f7',
     modes: {
-      ...chronoblogTheme.colors.modes
+      ...chronoblogTheme.colors.modes,
+      dark: {
+        ...chronoblogTheme.colors.modes.dark,
+        text: '#eaeaea',
+        background: '#0e0f17',
+        muted: '#161b1d'
+      }
     }
   },
   fontSizes: [14, 16, 18, 20, 22, 24, 28, 36],

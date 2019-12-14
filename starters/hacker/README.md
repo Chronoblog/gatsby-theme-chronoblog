@@ -30,7 +30,6 @@ Read more about Chronoblog Gatsby Theme here: [github.com/ganevru/gatsby-theme-c
 - A simple change of primary and secondary colors of the site, fonts, radius of curvature of elements, etc (thanks to Theme UI theming)
 - Clean and Universal UI
 - Mobile friendly, all elements and custom images are adapted to any screen
-- Light/Dark mode (Dark by default)
 - Easy customization of icons and links to your social networks
 - MDX for the main menu of the site, footer and other elements of the site
 - MDX for pages and content

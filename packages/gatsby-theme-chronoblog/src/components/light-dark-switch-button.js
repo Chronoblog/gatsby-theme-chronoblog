@@ -26,7 +26,6 @@ export default ({
 
   const makeLabel = (modeParam) =>
     modeParam === 'dark' ? darkLabel : lightLabel;
-  const label = makeLabel(mode);
 
   return (
     <button
@@ -46,7 +45,7 @@ export default ({
       onClick={cycle}
       {...props}
     >
-      {label}
+      {makeLabel(mode)}
     </button>
   );
 };
