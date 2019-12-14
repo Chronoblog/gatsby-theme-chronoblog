@@ -1,4 +1,4 @@
-// import Container from 'gatsby-theme-chronoblog/src/components/container';
+import Container from 'gatsby-theme-chronoblog/src/components/container';
 import Footer from 'gatsby-theme-chronoblog/src/components/footer';
 import Header from 'gatsby-theme-chronoblog/src/components/header';
 import Root from 'gatsby-theme-chronoblog/src/components/root';
@@ -8,7 +8,7 @@ export default ({ children }) => {
   return (
     <Root>
       <Header />
-      {children}
+      <Container>{children}</Container>
       <Footer />
     </Root>
   );
