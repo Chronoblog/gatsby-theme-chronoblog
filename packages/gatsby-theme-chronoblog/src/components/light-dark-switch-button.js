@@ -14,7 +14,7 @@ import { jsx, useColorMode } from 'theme-ui';
 export default ({
   darkLabel = '🌙',
   lightLabel = '☀️',
-  fontSize = 32,
+  fontSize = 28,
   ...props
 }) => {
   const [mode, setMode] = useColorMode();
