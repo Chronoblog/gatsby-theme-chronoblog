@@ -15,19 +15,7 @@ module.exports = {
         url: `https://github.com/Ganevru/gatsby-theme-chronoblog`
       },
       {
-        icon: `node-js`,
-        url: `https://www.npmjs.com/package/gatsby-theme-chronoblog`
-      },
-      {
-        icon: `node-js`,
-        url: `https://www.npmjs.com/package/gatsby-theme-chronoblog`
-      },
-      {
-        icon: `node-js`,
-        url: `https://www.npmjs.com/package/gatsby-theme-chronoblog`
-      },
-      {
-        icon: `node-js`,
+        icon: `npm`,
         url: `https://www.npmjs.com/package/gatsby-theme-chronoblog`
       }
     ]

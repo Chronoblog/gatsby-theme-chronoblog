@@ -34,12 +34,10 @@ const Symbol = ({ symbol }) => {
 
 export default ({ placeholder = '', symbol = '' }) => {
   //
-  const {
-    uiText: { feedSearchPlaceholder },
-    feedSearch
-  } = useSiteMetadata();
+  const { uiText, feedSearch } = useSiteMetadata();
   //
-  const searchPlaceholder = placeholder || feedSearchPlaceholder || 'search';
+  const searchPlaceholder =
+    placeholder || uiText.feedSearchPlaceholder || 'search';
   const symbolToUse = symbol || feedSearch.symbol || '';
   //
   const {
