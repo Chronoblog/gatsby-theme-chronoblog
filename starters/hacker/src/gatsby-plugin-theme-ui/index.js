@@ -44,21 +44,21 @@ export default {
     card: 1,
     search: 1
   },
-  // buttons: {
-  //   ...chronoblogTheme.buttons,
-  //   primary: {
-  //     ...chronoblogTheme.buttons.primary,
-  //     ...buttonHover
-  //   },
-  //   active: {
-  //     ...chronoblogTheme.buttons.active,
-  //     ...buttonHover
-  //   },
-  //   special: {
-  //     ...chronoblogTheme.buttons.special,
-  //     ...buttonHover
-  //   }
-  // },
+  buttons: {
+    ...chronoblogTheme.buttons,
+    primary: {
+      ...chronoblogTheme.buttons.primary,
+      ...buttonHover
+    },
+    active: {
+      ...chronoblogTheme.buttons.active,
+      ...buttonHover
+    },
+    special: {
+      ...chronoblogTheme.buttons.special,
+      ...buttonHover
+    }
+  },
   fonts: {
     ...chronoblogTheme.fonts,
     body:
