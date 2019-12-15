@@ -1,5 +1,13 @@
 import chronoblogTheme from 'gatsby-theme-chronoblog/src/gatsby-plugin-theme-ui';
 
+const buttonHover = {
+  '&:hover': {
+    opacity: 0.8,
+    cursor: 'pointer',
+    boxShadow: (theme) => `inset 0 0 0 1px ${theme.colors.secondary}`
+  }
+};
+
 export default {
   ...chronoblogTheme,
   initialColorMode: 'dark',
@@ -35,6 +43,21 @@ export default {
     ...chronoblogTheme.borderWidth,
     card: 1,
     search: 1
+  },
+  buttons: {
+    ...chronoblogTheme.buttons,
+    primary: {
+      ...chronoblogTheme.buttons.primary,
+      ...buttonHover
+    },
+    active: {
+      ...chronoblogTheme.buttons.active,
+      ...buttonHover
+    },
+    special: {
+      ...chronoblogTheme.buttons.special,
+      ...buttonHover
+    }
   },
   fonts: {
     ...chronoblogTheme.fonts,
