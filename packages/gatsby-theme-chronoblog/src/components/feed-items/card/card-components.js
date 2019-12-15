@@ -49,9 +49,6 @@ const ItemLinkText = ({ item }) => {
           mb: 2,
           fontSize: [1],
           color: 'link',
-          textDecorationLine: 'underline',
-          textDecorationStyle: 'solid',
-          textDecorationColor: 'link',
           fontWeight: 'bold'
         }}
       >

@@ -7,7 +7,13 @@ import { fab } from '@fortawesome/free-brands-svg-icons';
 import { faAt, faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { MDXProvider } from '@mdx-js/react';
-import { Avatar, Box, Embed, Flex } from '@theme-ui/components';
+import {
+  Avatar,
+  Box,
+  Embed,
+  Flex,
+  Link as LinkThemeUi
+} from '@theme-ui/components';
 import { Link as LinkGatsby } from 'gatsby';
 import { useCallback, useState } from 'react';
 import { jsx, Layout } from 'theme-ui';
@@ -29,7 +35,11 @@ import Tags from './tags';
 config.autoAddCss = false;
 library.add(fab, faEnvelope, faPhone, faAt);
 
-const Link = ({ to, ...props }) => <LinkGatsby to={to} {...props} />;
+const Link = ({ to, children, ...props }) => (
+  <LinkGatsby to={to} {...props}>
+    <LinkThemeUi>{children}</LinkThemeUi>
+  </LinkGatsby>
+);
 const A = ({ children, ...props }) => <a {...props}>{children}</a>;
 const Div = ({ children, ...props }) => <div {...props}>{children}</div>;
 

@@ -15,7 +15,7 @@ export default {
     ...chronoblogTheme.color,
     text: '#111',
     background: '#fdfdfd',
-    link: '#2e8877',
+    link: '#155045',
     primary: '#104c4e',
     secondary: '#1B6A6D',
     muted: '#d5dedb',
@@ -25,6 +25,7 @@ export default {
         ...chronoblogTheme.colors.modes.dark,
         text: '#eaeaea',
         background: '#080c0a',
+        link: '#2e8877',
         muted: '#161d1c'
       }
     }

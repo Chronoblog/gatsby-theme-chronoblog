@@ -92,6 +92,14 @@ _This text will be italic_
 
 [github.com/Ganevru/gatsby-theme-chronoblog](https://github.com/Ganevru/gatsby-theme-chronoblog)
 
+### Gatsby Links
+
+```jsx
+<Link to="posts-and-articles">posts-and-articles</Link>
+```
+
+Link: <Link to='posts-and-articles'>posts-and-articles</Link>
+
 ### Blockquotes
 
 ```md
