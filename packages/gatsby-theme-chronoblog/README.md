@@ -9,7 +9,7 @@
 Chronoblog - Gatsby Theme
 </h1>
 
-[![npm](https://img.shields.io/npm/v/gatsby-theme-chronoblog?color=brightgreen)](https://www.npmjs.com/package/gatsby-theme-chronoblog) [![node](https://img.shields.io/node/v/gatsby-theme-chronoblog)](https://www.npmjs.com/package/gatsby-theme-chronoblog)  
+[![npm](https://img.shields.io/npm/v/gatsby-theme-chronoblog?color=brightgreen)](https://www.npmjs.com/package/gatsby-theme-chronoblog) [![node](https://img.shields.io/node/v/gatsby-theme-chronoblog)](https://www.npmjs.com/package/gatsby-theme-chronoblog) [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](code_of_conduct.md)  
 [![Netlify Status](https://api.netlify.com/api/v1/badges/f36aa133-5611-484c-97fe-8d65fac4391b/deploy-status)](https://app.netlify.com/sites/chronoblog/deploys) [![Netlify Status](https://api.netlify.com/api/v1/badges/ed253426-cae8-40fc-9647-28a8cd1f5a28/deploy-status)](https://app.netlify.com/sites/chronoblog-netlify-cms/deploys) [![Netlify Status](https://api.netlify.com/api/v1/badges/89481a31-c0c3-46ac-bf12-1fa638f0cd82/deploy-status)](https://app.netlify.com/sites/chronoblog-minimal/deploys) [![Netlify Status](https://api.netlify.com/api/v1/badges/b66fd3f1-2f68-40f8-9572-3317b5fe71a9/deploy-status)](https://app.netlify.com/sites/chronoblog-profile/deploys)
 
 Chronoblog is a [Gatsby js](https://github.com/gatsbyjs/gatsby) theme specifically designed to create a personal website.
@@ -717,14 +717,14 @@ In this form, it is used, for example, on the main page of the site (`src/pages/
 <FeedItems />
 ```
 
-| Prop | Required | Type | Description |
-| --- | --- | --- | --- |
-| `filterByTags` | optional | string[] | takes an array of tags and displays all content that have at least one of these tags |
-| `filterByTypes` | optional | string[] | takes an array of content types (`links`, `posts`, `notes`) and displays only this content type |
-| `itemsFormat` | optional | string | show `compact` or `card` items format |
-| `limit` | optional | number | number of content items to be displayed |
-| `showMoreButton` | optional | boolean | show or not to show the button "show more". |
-| `yearSeparator` | optional | `year` / `space` / boolean | show or not the separator by year, and if the separator is displayed, then show the year or the gap of empty space |
+| Prop             | Required | Type                       | Description                                                                                                        |
+| ---------------- | -------- | -------------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| `filterByTags`   | optional | string[]                   | takes an array of tags and displays all content that have at least one of these tags                               |
+| `filterByTypes`  | optional | string[]                   | takes an array of content types (`links`, `posts`, `notes`) and displays only this content type                    |
+| `itemsFormat`    | optional | string                     | show `compact` or `card` items format                                                                              |
+| `limit`          | optional | number                     | number of content items to be displayed                                                                            |
+| `showMoreButton` | optional | boolean                    | show or not to show the button "show more".                                                                        |
+| `yearSeparator`  | optional | `year` / `space` / boolean | show or not the separator by year, and if the separator is displayed, then show the year or the gap of empty space |
 
 `filterByTags` example. This component will display all site content that have the `project` tag:
 
@@ -758,11 +758,11 @@ The search string to search feed items. It makes no sense to put this component 
 <SocialLinks />
 ```
 
-| Prop | Required | Type | Description |
-| --- | --- | --- | --- |
-| `fontSize` | optional | number / string | size of the icons |
-| `justifyContent` | optional | string[] / string |  |
-| `socialLinks` | optional | array | allows you to set any links, instead of those taken from `siteMetadata.social` |
+| Prop             | Required | Type              | Description                                                                    |
+| ---------------- | -------- | ----------------- | ------------------------------------------------------------------------------ |
+| `fontSize`       | optional | number / string   | size of the icons                                                              |
+| `justifyContent` | optional | string[] / string |                                                                                |
+| `socialLinks`    | optional | array             | allows you to set any links, instead of those taken from `siteMetadata.social` |
 
 This component also accepts any other props, this can be used to, say, set the style you need. For example, change color:
 
@@ -920,22 +920,22 @@ For example, if you want to change the site menu, you need to create file `site-
 
 Components that were specially created for you to change them:
 
-| shadow | name | description |
-| --- | --- | --- |
-| ✅ | `src/gatsby-theme-chronoblog/post-footer.mdx` | read: [post-footer](#post-footer) |
-| ✅ | `src/gatsby-theme-chronoblog/site-header.mdx` | read: [site-header](#site-header) |
-| ✅ | `src/gatsby-theme-chronoblog/site-footer.mdx` | read: [post-footer](#post-footer) |
-| ✅ | `src/gatsby-theme-chronoblog/content-bottom.mdx` |  |
+| shadow | name                                             | description                       |
+| ------ | ------------------------------------------------ | --------------------------------- |
+| ✅     | `src/gatsby-theme-chronoblog/post-footer.mdx`    | read: [post-footer](#post-footer) |
+| ✅     | `src/gatsby-theme-chronoblog/site-header.mdx`    | read: [site-header](#site-header) |
+| ✅     | `src/gatsby-theme-chronoblog/site-footer.mdx`    | read: [post-footer](#post-footer) |
+| ✅     | `src/gatsby-theme-chronoblog/content-bottom.mdx` |                                   |
 
 ### Components that can be shadowed
 
 These components can be shadowed if you think that you really need it:
 
-| shadow | name | description |
-| --- | --- | --- |
-| 👍 | `src/gatsby-theme-chronoblog/components/layout.js` | the whole site is wrapped in this component |
-| 👍 | `src/gatsby-theme-chronoblog/components/header.js` |  |
-| 👍 | `src/gatsby-theme-chronoblog/components/footer.js` |  |
+| shadow | name                                               | description                                 |
+| ------ | -------------------------------------------------- | ------------------------------------------- |
+| 👍     | `src/gatsby-theme-chronoblog/components/layout.js` | the whole site is wrapped in this component |
+| 👍     | `src/gatsby-theme-chronoblog/components/header.js` |                                             |
+| 👍     | `src/gatsby-theme-chronoblog/components/footer.js` |                                             |
 
 # Status
 
@@ -943,25 +943,25 @@ These components can be shadowed if you think that you really need it:
 
 If at least one starter is not working - something went wrong.
 
-| Status | Repo | Link |
-| --- | --- | --- |
-| [![Netlify Status](https://api.netlify.com/api/v1/badges/f36aa133-5611-484c-97fe-8d65fac4391b/deploy-status)](https://app.netlify.com/sites/chronoblog/deploys) | https://github.com/Ganevru/gatsby-starter-chronoblog | https://chronoblog.netlify.com |
+| Status                                                                                                                                                                      | Repo                                                             | Link                                       |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- | ------------------------------------------ |
+| [![Netlify Status](https://api.netlify.com/api/v1/badges/f36aa133-5611-484c-97fe-8d65fac4391b/deploy-status)](https://app.netlify.com/sites/chronoblog/deploys)             | https://github.com/Ganevru/gatsby-starter-chronoblog             | https://chronoblog.netlify.com             |
 | [![Netlify Status](https://api.netlify.com/api/v1/badges/ed253426-cae8-40fc-9647-28a8cd1f5a28/deploy-status)](https://app.netlify.com/sites/chronoblog-netlify-cms/deploys) | https://github.com/Ganevru/gatsby-starter-chronoblog-netlify-cms | https://chronoblog-netlify-cms.netlify.com |
-| [![Netlify Status](https://api.netlify.com/api/v1/badges/b66fd3f1-2f68-40f8-9572-3317b5fe71a9/deploy-status)](https://app.netlify.com/sites/chronoblog-profile/deploys) | https://github.com/Ganevru/gatsby-starter-chronoblog-profile | https://chronoblog-profile.netlify.com |
-| [![Netlify Status](https://api.netlify.com/api/v1/badges/d50e7f05-b930-4ca1-9fba-2304213cff1a/deploy-status)](https://app.netlify.com/sites/chronoblog-hacker/deploys) | https://github.com/Ganevru/gatsby-starter-chronoblog-hacker | https://chronoblog-hacker.netlify.com |
-| [![Netlify Status](https://api.netlify.com/api/v1/badges/89481a31-c0c3-46ac-bf12-1fa638f0cd82/deploy-status)](https://app.netlify.com/sites/chronoblog-minimal/deploys) | https://github.com/Ganevru/gatsby-starter-chronoblog-minimal | https://chronoblog-minimal.netlify.com |
+| [![Netlify Status](https://api.netlify.com/api/v1/badges/b66fd3f1-2f68-40f8-9572-3317b5fe71a9/deploy-status)](https://app.netlify.com/sites/chronoblog-profile/deploys)     | https://github.com/Ganevru/gatsby-starter-chronoblog-profile     | https://chronoblog-profile.netlify.com     |
+| [![Netlify Status](https://api.netlify.com/api/v1/badges/d50e7f05-b930-4ca1-9fba-2304213cff1a/deploy-status)](https://app.netlify.com/sites/chronoblog-hacker/deploys)      | https://github.com/Ganevru/gatsby-starter-chronoblog-hacker      | https://chronoblog-hacker.netlify.com      |
+| [![Netlify Status](https://api.netlify.com/api/v1/badges/89481a31-c0c3-46ac-bf12-1fa638f0cd82/deploy-status)](https://app.netlify.com/sites/chronoblog-minimal/deploys)     | https://github.com/Ganevru/gatsby-starter-chronoblog-minimal     | https://chronoblog-minimal.netlify.com     |
 
 ## Status of development and test versions
 
 All these versions work from master branch of this repository. It’s ok if they do not work.
 
-| Status | Link |
-| --- | --- |
-| [![Netlify Status](https://api.netlify.com/api/v1/badges/e26ac6b2-92f3-4744-8384-c64b144a1f74/deploy-status)](https://app.netlify.com/sites/chronoblog-master/deploys) | https://chronoblog-master.netlify.com |
-| [![Netlify Status](https://api.netlify.com/api/v1/badges/d6c88fb7-14d5-495a-8bc4-f0994e728881/deploy-status)](https://app.netlify.com/sites/chronoblog-tests/deploys) | https://chronoblog-tests.netlify.com |
-| [![Netlify Status](https://api.netlify.com/api/v1/badges/b8dc064f-6625-4380-88ed-55345a548489/deploy-status)](https://app.netlify.com/sites/chronoblog-master-profile/deploys) | https://chronoblog-master-profile.netlify.com |
-| [![Netlify Status](https://api.netlify.com/api/v1/badges/a3436984-202d-4ec0-915d-60639ceb2e13/deploy-status)](https://app.netlify.com/sites/chronoblog-master-hacker/deploys) | https://chronoblog-master-hacker.netlify.com |
-| [![Netlify Status](https://api.netlify.com/api/v1/badges/856e7fea-a790-4b10-b982-76cab60ce4df/deploy-status)](https://app.netlify.com/sites/chronoblog-master-minimal/deploys) | https://chronoblog-master-minimal.netlify.com |
+| Status                                                                                                                                                                             | Link                                              |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------- |
+| [![Netlify Status](https://api.netlify.com/api/v1/badges/e26ac6b2-92f3-4744-8384-c64b144a1f74/deploy-status)](https://app.netlify.com/sites/chronoblog-master/deploys)             | https://chronoblog-master.netlify.com             |
+| [![Netlify Status](https://api.netlify.com/api/v1/badges/d6c88fb7-14d5-495a-8bc4-f0994e728881/deploy-status)](https://app.netlify.com/sites/chronoblog-tests/deploys)              | https://chronoblog-tests.netlify.com              |
+| [![Netlify Status](https://api.netlify.com/api/v1/badges/b8dc064f-6625-4380-88ed-55345a548489/deploy-status)](https://app.netlify.com/sites/chronoblog-master-profile/deploys)     | https://chronoblog-master-profile.netlify.com     |
+| [![Netlify Status](https://api.netlify.com/api/v1/badges/a3436984-202d-4ec0-915d-60639ceb2e13/deploy-status)](https://app.netlify.com/sites/chronoblog-master-hacker/deploys)      | https://chronoblog-master-hacker.netlify.com      |
+| [![Netlify Status](https://api.netlify.com/api/v1/badges/856e7fea-a790-4b10-b982-76cab60ce4df/deploy-status)](https://app.netlify.com/sites/chronoblog-master-minimal/deploys)     | https://chronoblog-master-minimal.netlify.com     |
 | [![Netlify Status](https://api.netlify.com/api/v1/badges/3bddc25b-758e-4215-a6ee-4f0bc5997b87/deploy-status)](https://app.netlify.com/sites/chronoblog-master-netlify-cms/deploys) | https://chronoblog-master-netlify-cms.netlify.com |
 
 ## GitHub Workflows
