@@ -22,6 +22,10 @@ const theme = {
     authorBanner: 6,
     blockquote: 6
   },
+  borderWidth: {
+    card: 2,
+    search: 2
+  },
   fonts: {
     body: '-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif',
     heading: 'inherit',

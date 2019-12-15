@@ -31,6 +31,11 @@ export default {
     img: 6,
     authorBanner: 6
   },
+  borderWidth: {
+    ...chronoblogTheme.borderWidth,
+    card: 2,
+    search: 2
+  },
   fonts: {
     ...chronoblogTheme.fonts,
     body: '-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif',

@@ -5,8 +5,8 @@ export default {
   initialColorMode: 'dark',
   colors: {
     ...chronoblogTheme.color,
-    text: '#222',
-    background: '#f3f5f3',
+    text: '#111',
+    background: '#fdfdfd',
     link: '#2e8877',
     primary: '#104c4e',
     secondary: '#1B6A6D',
@@ -30,6 +30,11 @@ export default {
     code: 3,
     img: 3,
     authorBanner: 3
+  },
+  borderWidth: {
+    ...chronoblogTheme.borderWidth,
+    card: 1,
+    search: 1
   },
   fonts: {
     ...chronoblogTheme.fonts,

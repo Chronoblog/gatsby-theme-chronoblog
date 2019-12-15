@@ -188,7 +188,7 @@ const ItemHoveringStyle = ({ children, isHovering = false }) => (
   <div
     sx={{
       opacity: isHovering ? 0.8 : 1,
-      border: '2px',
+      borderWidth: 'card',
       borderStyle: 'solid',
       borderRadius: 'card',
       borderColor: isHovering ? 'secondary' : 'muted',

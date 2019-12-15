@@ -74,7 +74,7 @@ export default ({ placeholder = '', symbol = '' }) => {
               fontFamily: 'inherit',
               borderColor: 'muted',
               borderStyle: 'solid',
-              borderWidth: `2px`,
+              borderWidth: `search`,
               borderRadius: 'search',
               outline: '0px solid',
               opacity: '0.9'
