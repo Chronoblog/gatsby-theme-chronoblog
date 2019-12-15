@@ -6,11 +6,7 @@
 Gatsby Starter Chronoblog Hacker - starter for Chronoblog Gatsby Theme
 </h1>
 
-[![npm](https://img.shields.io/npm/v/gatsby-theme-chronoblog?color=brightgreen)](https://www.npmjs.com/package/gatsby-theme-chronoblog) [![node](https://img.shields.io/node/v/gatsby-theme-chronoblog)](https://www.npmjs.com/package/gatsby-theme-chronoblog) [![Netlify Status](https://api.netlify.com/api/v1/badges/b66fd3f1-2f68-40f8-9572-3317b5fe71a9/deploy-status)](https://app.netlify.com/sites/chronoblog-hacker/deploys)
-
-This starter will help you launch a personal website with a simple text feed on the main page. This starter looks simple and neat, but at the same time, it has great potential for organizing your content using tags, dates, and search.
-
-The homepage is organized in compact feeds. The display of content in these feeds is based on the tags of this content (for example, only content with a `podcast` tag gets into the feed with podcasts).
+[![npm](https://img.shields.io/npm/v/gatsby-theme-chronoblog?color=brightgreen)](https://www.npmjs.com/package/gatsby-theme-chronoblog) [![node](https://img.shields.io/node/v/gatsby-theme-chronoblog)](https://www.npmjs.com/package/gatsby-theme-chronoblog) [![Netlify Status](https://api.netlify.com/api/v1/badges/d50e7f05-b930-4ca1-9fba-2304213cff1a/deploy-status)](https://app.netlify.com/sites/chronoblog-hacker/deploys)
 
 The starter is based on the Gatsby Theme Chronoblog.
 
@@ -30,6 +26,7 @@ Read more about Chronoblog Gatsby Theme here: [github.com/ganevru/gatsby-theme-c
 - A simple change of primary and secondary colors of the site, fonts, radius of curvature of elements, etc (thanks to Theme UI theming)
 - Clean and Universal UI
 - Mobile friendly, all elements and custom images are adapted to any screen
+- Light/Dark mode
 - Easy customization of icons and links to your social networks
 - MDX for the main menu of the site, footer and other elements of the site
 - MDX for pages and content

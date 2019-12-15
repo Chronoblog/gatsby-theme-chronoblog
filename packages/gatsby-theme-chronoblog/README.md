@@ -948,6 +948,7 @@ If at least one starter is not working - something went wrong.
 | [![Netlify Status](https://api.netlify.com/api/v1/badges/f36aa133-5611-484c-97fe-8d65fac4391b/deploy-status)](https://app.netlify.com/sites/chronoblog/deploys) | https://github.com/Ganevru/gatsby-starter-chronoblog | https://chronoblog.netlify.com |
 | [![Netlify Status](https://api.netlify.com/api/v1/badges/ed253426-cae8-40fc-9647-28a8cd1f5a28/deploy-status)](https://app.netlify.com/sites/chronoblog-netlify-cms/deploys) | https://github.com/Ganevru/gatsby-starter-chronoblog-netlify-cms | https://chronoblog-netlify-cms.netlify.com |
 | [![Netlify Status](https://api.netlify.com/api/v1/badges/b66fd3f1-2f68-40f8-9572-3317b5fe71a9/deploy-status)](https://app.netlify.com/sites/chronoblog-profile/deploys) | https://github.com/Ganevru/gatsby-starter-chronoblog-profile | https://chronoblog-profile.netlify.com |
+| [![Netlify Status](https://api.netlify.com/api/v1/badges/d50e7f05-b930-4ca1-9fba-2304213cff1a/deploy-status)](https://app.netlify.com/sites/chronoblog-hacker/deploys) | https://github.com/Ganevru/gatsby-starter-chronoblog-hacker | https://chronoblog-hacker.netlify.com |
 | [![Netlify Status](https://api.netlify.com/api/v1/badges/89481a31-c0c3-46ac-bf12-1fa638f0cd82/deploy-status)](https://app.netlify.com/sites/chronoblog-minimal/deploys) | https://github.com/Ganevru/gatsby-starter-chronoblog-minimal | https://chronoblog-minimal.netlify.com |
 
 ## Status of development and test versions
