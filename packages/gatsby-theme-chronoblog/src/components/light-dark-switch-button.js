@@ -34,6 +34,7 @@ export default ({
         appearance: 'none',
         fontSize,
         color: 'inherit',
+        fontFamily: 'inherit',
         bg: '#ffffff00',
         border: 0,
         '&:focus': {

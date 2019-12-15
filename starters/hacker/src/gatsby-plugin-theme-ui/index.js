@@ -6,34 +6,35 @@ export default {
   colors: {
     ...chronoblogTheme.color,
     text: '#222',
-    background: '#fff',
-    link: '#3d7e9a',
-    primary: '#f5cd79',
-    secondary: '#f7d794',
-    muted: '#f7f7f7',
+    background: '#f3f5f3',
+    link: '#2e8877',
+    primary: '#104c4e',
+    secondary: '#1B6A6D',
+    muted: '#d5dedb',
     modes: {
       ...chronoblogTheme.colors.modes,
       dark: {
         ...chronoblogTheme.colors.modes.dark,
         text: '#eaeaea',
-        background: '#0e0f17',
-        muted: '#161b1d'
+        background: '#080c0a',
+        muted: '#161d1c'
       }
     }
   },
-  fontSizes: [14, 16, 18, 20, 22, 24, 28, 36],
+  fontSizes: [13, 15, 16, 17, 22, 24, 28, 32],
   borderRadius: {
     ...chronoblogTheme.borderRadius,
-    card: 8,
-    button: 8,
-    search: 8,
-    code: 8,
-    img: 8,
-    authorBanner: 8
+    card: 3,
+    button: 3,
+    search: 3,
+    code: 3,
+    img: 3,
+    authorBanner: 3
   },
   fonts: {
     ...chronoblogTheme.fonts,
-    body: '-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif',
+    body:
+      'Source Code Pro, -apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif',
     heading: 'inherit',
     monospace: 'Menlo, monospace'
   }

@@ -32,6 +32,7 @@ export default ({
         px: '16px',
         py: '10px',
         fontSize: [1],
+        fontFamily: 'inherit',
         border: '0px',
         borderRadius: 'button',
         ':hover': {

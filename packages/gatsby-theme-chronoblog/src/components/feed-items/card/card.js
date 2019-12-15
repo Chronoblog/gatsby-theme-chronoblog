@@ -36,11 +36,17 @@ const eClassCheck = (eTarget, className = '') => {
   return false;
 };
 
-const ItemMain = ({ isHovering, item }) => {
-  return <CardItem isHovering={isHovering} item={item} />;
+const ItemMain = ({ isHovering, item, linksBeforeTitle = '' }) => {
+  return (
+    <CardItem
+      isHovering={isHovering}
+      item={item}
+      linksBeforeTitle={linksBeforeTitle}
+    />
+  );
 };
 
-export default ({ item }) => {
+export default ({ item, linksBeforeTitle = '' }) => {
   //
   const { type } = item.fields;
   //
@@ -59,7 +65,13 @@ export default ({ item }) => {
             : unsetIsHovering()
       }}
     >
-      {({ isHovering }) => <ItemMain isHovering={isHovering} item={item} />}
+      {({ isHovering }) => (
+        <ItemMain
+          isHovering={isHovering}
+          item={item}
+          linksBeforeTitle={linksBeforeTitle}
+        />
+      )}
     </ReactHoverObserver>
   );
 };

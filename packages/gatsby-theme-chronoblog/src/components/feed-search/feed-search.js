@@ -32,12 +32,15 @@ const Symbol = ({ symbol }) => {
   );
 };
 
-export default ({ placeholder = '', symbol = '🔍' }) => {
+export default ({ placeholder = '', symbol = '' }) => {
   //
   const {
-    uiText: { feedSearchPlaceholder }
+    uiText: { feedSearchPlaceholder },
+    feedSearch
   } = useSiteMetadata();
+  //
   const searchPlaceholder = placeholder || feedSearchPlaceholder || 'search';
+  const symbolToUse = symbol || feedSearch.symbol || '';
   //
   const {
     value: { searchInput },
@@ -56,7 +59,7 @@ export default ({ placeholder = '', symbol = '🔍' }) => {
           borderWidth: `1px`
         }}
       >
-        <Symbol symbol={symbol} />
+        <Symbol symbol={symbolToUse} />
         <Box sx={{ flexGrow: 1 }}>
           <input
             type="search"
@@ -68,6 +71,7 @@ export default ({ placeholder = '', symbol = '🔍' }) => {
               py: [2],
               px: [2],
               fontSize: [4],
+              fontFamily: 'inherit',
               borderColor: 'muted',
               borderStyle: 'solid',
               borderWidth: `2px`,

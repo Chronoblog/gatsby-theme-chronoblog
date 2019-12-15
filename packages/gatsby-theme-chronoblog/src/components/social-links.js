@@ -33,7 +33,13 @@ const SocialUrl = ({ icon, url, ...props }) => {
 const SocialLinksMain = ({ justifyContent, fontSizeObj, social, ...props }) => {
   return (
     <div
-      sx={{ display: 'flex', flexWrap: 'wrap', justifyContent, ...fontSizeObj }}
+      sx={{
+        display: 'flex',
+        flexWrap: 'wrap',
+        fontFamily: 'sans-serif',
+        justifyContent,
+        ...fontSizeObj
+      }}
       {...props}
     >
       <div

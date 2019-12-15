@@ -8,7 +8,7 @@ import CardComponents from './card-components';
 
 const Card = CardComponents;
 
-export default ({ item, isHovering }) => {
+export default ({ item, isHovering, linksBeforeTitle = '' }) => {
   return (
     <article sx={{ mb: '40px', mt: '20px', color: 'text' }}>
       <Card.HoveringStyle isHovering={isHovering}>
@@ -18,7 +18,7 @@ export default ({ item, isHovering }) => {
         <Card.Body item={item}>
           <Card.Link item={item}>
             <div sx={{ pt: ['10px', '20px'], mb: 2 }}>
-              <Card.Title item={item} />
+              <Card.Title item={item} linksBeforeTitle={linksBeforeTitle} />
               <Card.LinkText item={item} />
               <Date date={item.frontmatter.date} />
             </div>

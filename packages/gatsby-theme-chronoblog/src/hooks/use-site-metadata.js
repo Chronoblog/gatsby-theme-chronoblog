@@ -29,6 +29,11 @@ import { graphql, useStaticQuery } from 'gatsby';
  * @property {number} feedItems.limit
  * @property {'year' | 'space' | boolean} feedItems.yearSeparator
  * @property {boolean} feedItems.yearSeparatorSkipFirst
+ * @property {boolean} feedItems.contentTypes
+ * @property {boolean} feedItems.contentTypes.links
+ * @property {string} feedItems.contentTypes.links.beforeTitle
+ * @property {object} feedSearch
+ * @property {string} feedSearch.symbol
  * @property {SocialObject[]} social
  */
 
@@ -68,6 +73,14 @@ const useSiteMetadata = () => {
             limit
             yearSeparator
             yearSeparatorSkipFirst
+            contentTypes {
+              links {
+                beforeTitle
+              }
+            }
+          }
+          feedSearch {
+            symbol
           }
           social {
             icon

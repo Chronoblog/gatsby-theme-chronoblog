@@ -8,7 +8,15 @@ module.exports = (options) => {
     feedItems = {
       limit: 50,
       yearSeparator: true,
-      yearSeparatorSkipFirst: true
+      yearSeparatorSkipFirst: true,
+      contentTypes: {
+        links: {
+          beforeTitle: '🔗 '
+        }
+      }
+    },
+    feedSearch = {
+      symbol: '🔍'
     },
     uiText = {
       feedShowMoreButton: 'show more',
@@ -27,8 +35,10 @@ module.exports = (options) => {
   const {
     limit = 50,
     yearSeparator = true,
-    yearSeparatorSkipFirst = true
+    yearSeparatorSkipFirst = true,
+    contentTypes = { links: { beforeTitle: '🔗 ' } }
   } = feedItems;
+  const { symbol = '🔍' } = feedSearch;
   //
   return {
     siteMetadata: {
@@ -53,7 +63,11 @@ module.exports = (options) => {
       feedItems: {
         limit,
         yearSeparator,
-        yearSeparatorSkipFirst
+        yearSeparatorSkipFirst,
+        contentTypes
+      },
+      feedSearch: {
+        symbol
       },
       social: [
         {

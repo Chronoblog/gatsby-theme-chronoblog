@@ -70,21 +70,26 @@ const TitleForNote = ({ item }) => {
   return titleForNoteSlice(item.excerpt);
 };
 
-const ItemTitle = ({ item, ...props }) => {
+const ItemTitle = ({ item, linksBeforeTitle = '', ...props }) => {
   const style = {
     fontSize: [1, 1],
     fontWeight: 'normal',
     mb: '0px',
     lineHeight: null
   };
+  const linkStyle = {
+    color: 'link'
+    // textDecoration: 'underline'
+  };
+  //
   if (
     item.frontmatter.title &&
     item.frontmatter.link &&
     item.fields.type === 'links'
   ) {
     return (
-      <Styled.h3 sx={style} {...props}>
-        {`🔗 ${item.frontmatter.title}`}
+      <Styled.h3 sx={{ ...style, ...linkStyle }} {...props}>
+        {`${linksBeforeTitle}${item.frontmatter.title}`}
       </Styled.h3>
     );
   }

@@ -7,7 +7,7 @@ import CompactComponents from './compact-components';
 
 const Compact = CompactComponents;
 
-export default ({ item, isHovering }) => {
+export default ({ item, isHovering, linksBeforeTitle = '' }) => {
   return (
     <article sx={{ mb: '18px', mt: '6px', color: 'text' }}>
       <Compact.HoveringStyle
@@ -15,7 +15,7 @@ export default ({ item, isHovering }) => {
         isHovering={isHovering}
       >
         <Compact.Link item={item}>
-          <Compact.Title item={item} />
+          <Compact.Title item={item} linksBeforeTitle={linksBeforeTitle} />
         </Compact.Link>
         <div
           sx={{

@@ -155,16 +155,16 @@ const YearSeparator = ({
   );
 };
 
-const Item = ({ itemsFormat, item }) => {
+const Item = ({ itemsFormat, item, linksBeforeTitle = '' }) => {
   if (itemsFormat === 'compact')
     return (
       <li key={item.id}>
-        <Compact item={item} />
+        <Compact item={item} linksBeforeTitle={linksBeforeTitle} />
       </li>
     );
   return (
     <li key={item.id}>
-      <Card item={item} />
+      <Card item={item} linksBeforeTitle={linksBeforeTitle} />
     </li>
   );
 };
@@ -211,6 +211,11 @@ export default ({
   const siteMeta = useSiteMetadata();
   const { uiText } = siteMeta;
   const feedItemsFromMeta = siteMeta.feedItems;
+  const linksBeforeTitle = _.get(
+    siteMeta,
+    'feedItems.contentTypes.links.beforeTitle',
+    ''
+  );
   //
   let yearSeparatorType = siteMeta.feedItems.yearSeparator;
   if (yearSeparator !== undefined) yearSeparatorType = yearSeparator;
@@ -291,7 +296,13 @@ export default ({
                     <ul sx={listStyleObject}>
                       {feedItemsToShow.map((item) => {
                         if (getItemYear(item) === year) {
-                          return <Item itemsFormat={itemsFormat} item={item} />;
+                          return (
+                            <Item
+                              itemsFormat={itemsFormat}
+                              item={item}
+                              linksBeforeTitle={linksBeforeTitle}
+                            />
+                          );
                         }
                         return undefined;
                       })}

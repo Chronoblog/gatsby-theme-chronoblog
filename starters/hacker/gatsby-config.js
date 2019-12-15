@@ -42,8 +42,16 @@ module.exports = {
         feedItems: {
           // global settings for feed items
           limit: 50,
-          yearSeparator: false,
-          yearSeparatorSkipFirst: true
+          yearSeparator: true,
+          yearSeparatorSkipFirst: true,
+          contentTypes: {
+            links: {
+              beforeTitle: '⬈ '
+            }
+          }
+        },
+        feedSearch: {
+          symbol: ''
         }
       }
     },

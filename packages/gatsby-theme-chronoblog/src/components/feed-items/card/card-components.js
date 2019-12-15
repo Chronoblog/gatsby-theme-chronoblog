@@ -62,14 +62,18 @@ const ItemLinkText = ({ item }) => {
   return <div />;
 };
 
-const ItemTitle = ({ item }) => {
+const ItemTitle = ({ item, linksBeforeTitle = '' }) => {
   const style = { mb: '6px', mt: '0px' };
   if (
     item.frontmatter.title &&
     item.frontmatter.link &&
     item.fields.type === 'links'
   ) {
-    return <Styled.h2 sx={style}>{`🔗 ${item.frontmatter.title}`}</Styled.h2>;
+    return (
+      <Styled.h2 sx={style}>
+        {`${linksBeforeTitle}${item.frontmatter.title}`}
+      </Styled.h2>
+    );
   }
   return <Styled.h2 sx={style}>{`${item.frontmatter.title}`}</Styled.h2>;
 };
