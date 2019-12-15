@@ -1,6 +1,7 @@
 import base from '@theme-ui/preset-base';
 import prism from '@theme-ui/prism/presets/theme-ui';
 
+import buttons from './buttons';
 import colors from './colors';
 import styles from './styles';
 
@@ -42,10 +43,13 @@ const theme = {
       bg: 'primary'
     },
     tags: {
-      color: 'text',
+      color: 'inherit',
       bg: 'transparent',
-      opacity: 0.5
+      opacity: 0.7
     }
+  },
+  buttons: {
+    ...buttons
   },
   images: {
     avatar: {

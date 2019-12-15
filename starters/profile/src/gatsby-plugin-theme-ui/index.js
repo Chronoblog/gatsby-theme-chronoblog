@@ -36,6 +36,13 @@ export default {
     card: 2,
     search: 2
   },
+  buttons: {
+    ...chronoblogTheme.buttons,
+    active: {
+      ...chronoblogTheme.buttons.buttonStyle,
+      color: 'text'
+    }
+  },
   fonts: {
     ...chronoblogTheme.fonts,
     body: '-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif',

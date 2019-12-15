@@ -31,7 +31,7 @@ const Tag = ({ tagWithStat, style, pageContextTag, showStatsNumber }) => {
   if (showStatsNumber)
     return (
       <Link to={link}>
-        <Button sx={style} active={active}>
+        <Button sx={style} variant={active ? 'active' : 'primary'}>
           #{tagWithStat.tagName}{' '}
           <Badge variant="tags" ml={1}>
             {tagWithStat.tagStat}
@@ -42,7 +42,7 @@ const Tag = ({ tagWithStat, style, pageContextTag, showStatsNumber }) => {
   //
   return (
     <Link to={link}>
-      <Button sx={style} active={active}>
+      <Button sx={style} varian={active ? 'active' : 'primary'}>
         #{tagWithStat.tagName}
       </Button>
     </Link>
@@ -53,14 +53,12 @@ const AllTagsButton = ({ style }) => {
   const {
     uiText: { allTagsButton }
   } = useSiteMetadata();
-  style = {
-    ...style,
-    boxShadow: (theme) => `inset 0 0 0 2px ${theme.colors.muted}`,
-    bg: `rgba(0,0,0,0)`
-  };
+  //
   return (
     <Link to="/tags">
-      <Button sx={style}>{allTagsButton}</Button>
+      <Button sx={style} variant="special">
+        {allTagsButton}
+      </Button>
     </Link>
   );
 };
