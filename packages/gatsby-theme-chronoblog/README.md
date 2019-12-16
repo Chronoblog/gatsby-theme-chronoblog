@@ -145,6 +145,8 @@ Also, all starters have a different main page, **`src/pages/index.mdx`** and con
   - [GitHub Workflows](#github-workflows)
 - [Feedback](#feedback)
 - [Contribute](#contribute)
+- [About used Technologies and Methods](#about-used-technologies-and-methods)
+  - [TypeScript and JSDoc for type annotation](#typescript-and-jsdoc-for-type-annotation)
 - [Credits](#credits)
   - [Art](#art)
 
@@ -1046,16 +1048,28 @@ One of the easiest, and at the same time, useful ways to help the project is to 
 
 Any other type of contribution to the project is also welcome!
 
+# About used Technologies and Methods
+
+Here to list the technologies and methods that are used in the project. **None of this needs to be known to use Chronoblog** (Read [Guide](#guide---how-to-start-working-with-chronoblog-gatsby-theme) and [Documentation](#documentation) for this), but it will help to understand how everything is organized here.
+
+## TypeScript and JSDoc for type annotation
+
+If you looked at the `package.json` file in the root of the project, then you saw TypeScript and types for various libraries in the dependencies (`@types/node`, `@types/react`, etc.). But the project is written in `js`?
+
+The fact is that JSDoc comments are used to declare types. Read more about this method in these articles:
+
+- [Type Safe JavaScript with JSDoc](https://medium.com/@trukrs/type-safe-javascript-with-jsdoc-7a2a63209b76)
+- [Type annotations in JavaScript files](https://ricostacruz.com/til/typescript-jsdoc)
+- [TypeScript without TypeScript -- JSDoc superpowers](https://fettblog.eu/typescript-jsdoc-superpowers/)
+
 # Credits
 
 ## Art
 
 Illustrations and Images that are used in the project (usually in [Starters](#demo-and-starters)).
 
-Illlustrations, open source illustrations kit: [illlustrations.co](https://illlustrations.co/)
-
-Lukasz Adam free illustrations: [lukaszadam.com/illustrations](https://lukaszadam.com/illustrations)
-
-Deszone: [deszone.net](https://deszone.net/), free vector graphics ratterns, illustrations, icons.
-
-Unsplash: [unsplash.com](https://unsplash.com/), the internet’s source of freely usable images. Powered by creators everywhere.
+- Illlustrations, open source illustrations kit: [illlustrations.co](https://illlustrations.co/)
+- Lukasz Adam free illustrations: [lukaszadam.com/illustrations](https://lukaszadam.com/illustrations)
+- Deszone: [deszone.net](https://deszone.net/), free vector graphics ratterns, illustrations, icons.
+- Unsplash: [unsplash.com](https://unsplash.com/), the internet’s source of freely usable images. Powered by creators everywhere.
+- Undraw: [undraw.co](https://undraw.co/), open-source illustrations for every project you can imagine and create.
