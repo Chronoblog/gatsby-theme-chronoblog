@@ -90,9 +90,7 @@ Repo: [github.com/ganevru/gatsby-starter-chronoblog-hacker](https://github.com/G
 <br />
 <br />
 
-#### Use the starter as a base for your unique site
-
-> I recommend using the starter of your choice as a base for creating your unique site.
+#### Use one of the starters as the basis for your unique site
 
 To make your site unique in style, you first need to work with the file **`src/gatsby-plugin-theme-ui/index.js`** with which you can control the style of the entire site. More about it here: [Style settings](#style-settings).
 
