@@ -18,21 +18,6 @@ Read more about Chronoblog Gatsby Theme here: [github.com/ganevru/gatsby-theme-c
 
 **Live demo of this starter: [https://chronoblog-hacker.netlify.com](https://chronoblog-hacker.netlify.com/)**
 
-## Features
-
-- Specially designed to create a personal website
-- Universal text feed divided into categories
-- Search and Tags for organizing content
-- A simple change of primary and secondary colors of the site, fonts, radius of curvature of elements, etc (thanks to Theme UI theming)
-- Clean and Universal UI
-- Mobile friendly, all elements and custom images are adapted to any screen
-- Light/Dark mode
-- Easy customization of icons and links to your social networks
-- MDX for the main menu of the site, footer and other elements of the site
-- MDX for pages and content
-- Code syntax highlighting
-- SEO (OpenGraph and Twitter) out of the box with default settings that make sense (thanks to React Helmet)
-
 ## How to start using Chronoblog Hacker Starter
 
 If you have `gatsby-cli`:
