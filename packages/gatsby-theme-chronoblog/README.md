@@ -786,7 +786,8 @@ This component displays all tags available on the site.
 The search string to search feed items. It makes no sense to put this component if there is no `<FeedItems />` component nearby.
 
 ```html
-<FeedSearch /> <FeedItems />
+<FeedSearch />
+<FeedItems />
 ```
 
 ## SocialLinks component
