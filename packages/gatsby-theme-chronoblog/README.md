@@ -32,20 +32,9 @@ Demo and Starters
 
 <br />
 
-<a target="_blank" href="https://chronoblog.netlify.com">
-  <img align="left" src="https://github.com/Ganevru/gatsby-theme-chronoblog/raw/master/assets/st-img-chronoblog.png" alt="Chronoblog - Gatsby Theme" style="max-width:100%;margin-top:20px;">
-</a>
+| <a target="_blank" href="https://chronoblog.netlify.com"> <img src="https://github.com/Ganevru/gatsby-theme-chronoblog/raw/master/assets/st-img-chronoblog.png" alt="Chronoblog - Gatsby Theme" style="max-width:100%;"></a> | <h3>Gatsby Starter Chronoblog</h3><p>[![Netlify Status](https://api.netlify.com/api/v1/badges/f36aa133-5611-484c-97fe-8d65fac4391b/deploy-status)](https://app.netlify.com/sites/chronoblog/deploys)</p><p>This starter is the standard way to start a Chronoblog Gatsby Theme website.</p><p><b>Demo: [chronoblog.netlify.com](https://chronoblog.netlify.com)</b></p> <p>Repo: [github.com/ganevru/gatsby-starter-chronoblog](https://github.com/Ganevru/gatsby-starter-chronoblog)</p><br /><p>[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Ganevru/gatsby-starter-chronoblog)</p> |
+| --- | --- |
 
-### Gatsby Starter Chronoblog
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/f36aa133-5611-484c-97fe-8d65fac4391b/deploy-status)](https://app.netlify.com/sites/chronoblog/deploys)
-
-This starter is the standard way to start a Chronoblog Gatsby Theme website.
-
-**Demo: [chronoblog.netlify.com](https://chronoblog.netlify.com)**  
-Repo: [github.com/ganevru/gatsby-starter-chronoblog](https://github.com/Ganevru/gatsby-starter-chronoblog)
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Ganevru/gatsby-starter-chronoblog)
 
 <br />
 <br />
@@ -53,7 +42,7 @@ Repo: [github.com/ganevru/gatsby-starter-chronoblog](https://github.com/Ganevru/
 <br />
 
 <a target="_blank" href="https://chronoblog-profile.netlify.com">
-  <img align="left" src="https://github.com/Ganevru/gatsby-theme-chronoblog/raw/master/assets/st-img-profile.png" alt="Chronoblog - Gatsby Theme" style="max-width:100%;margin-top:20px;">
+  <img align="left" src="https://github.com/Ganevru/gatsby-theme-chronoblog/raw/master/assets/st-img-profile.png" alt="Chronoblog - Gatsby Theme" style="max-width:100%;">
 </a>
 
 ### Gatsby Starter Chronoblog Profile
