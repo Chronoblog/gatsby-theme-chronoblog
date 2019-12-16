@@ -26,10 +26,14 @@ Chronoblog is a theme that allows you to do just that - create a more universal 
 
 > Despite the fact that versions start with "0.", I want to make the Chronoblog API as stable as possible.
 
-## Demo and Starters
+<h2 align="center">
+Demo and Starters
+</h12>
+
+<br />
 
 <a target="_blank" href="https://chronoblog.netlify.com">
-  <img align="left" src="https://github.com/Ganevru/gatsby-theme-chronoblog/raw/master/assets/st-img-chronoblog.png" alt="Chronoblog - Gatsby Theme" style="max-width:100%;">
+  <img align="left" src="https://github.com/Ganevru/gatsby-theme-chronoblog/raw/master/assets/st-img-chronoblog.png" alt="Chronoblog - Gatsby Theme" style="max-width:100%;margin-top:20px;">
 </a>
 
 ### Gatsby Starter Chronoblog
@@ -49,7 +53,7 @@ Repo: [github.com/ganevru/gatsby-starter-chronoblog](https://github.com/Ganevru/
 <br />
 
 <a target="_blank" href="https://chronoblog-profile.netlify.com">
-  <img align="left" src="https://github.com/Ganevru/gatsby-theme-chronoblog/raw/master/assets/st-img-profile.png" alt="Chronoblog - Gatsby Theme" style="max-width:100%;">
+  <img align="left" src="https://github.com/Ganevru/gatsby-theme-chronoblog/raw/master/assets/st-img-profile.png" alt="Chronoblog - Gatsby Theme" style="max-width:100%;margin-top:20px;">
 </a>
 
 ### Gatsby Starter Chronoblog Profile
@@ -69,14 +73,14 @@ Repo: [github.com/ganevru/gatsby-starter-chronoblog-profile](https://github.com/
 <br />
 
 <a target="_blank" href="https://chronoblog-hacker.netlify.com">
-  <img align="left" src="https://github.com/Ganevru/gatsby-theme-chronoblog/raw/master/assets/st-img-hacker.png" alt="Chronoblog - Gatsby Theme" style="max-width:100%;">
+  <img align="left" src="https://github.com/Ganevru/gatsby-theme-chronoblog/raw/master/assets/st-img-hacker.png" alt="Chronoblog - Gatsby Theme" style="max-width:100%;margin-top:20px;">
 </a>
 
 ### Gatsby Starter Chronoblog Hacker
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/d50e7f05-b930-4ca1-9fba-2304213cff1a/deploy-status)](https://app.netlify.com/sites/chronoblog-hacker/deploys)
 
-A dark (but with the ability to switch to light) starter that uses the [Source Code Pro](https://github.com/adobe-fonts/source-code-pro) font and minimalistic interface elements (without emoji, as by default in the Chronoblog).
+A dark (but with ability to switch to light) starter that uses the [Source Code Pro](https://github.com/adobe-fonts/source-code-pro) font and minimalistic UI (without emoji, as by default in Chronoblog Theme).
 
 **Demo: [chronoblog-hacker.netlify.com](https://chronoblog-hacker.netlify.com)**  
 Repo: [github.com/ganevru/gatsby-starter-chronoblog-hacker](https://github.com/Ganevru/gatsby-starter-chronoblog-hacker)
