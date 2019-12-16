@@ -88,9 +88,7 @@ Repo: [github.com/ganevru/gatsby-starter-chronoblog-hacker](https://github.com/G
 
 #### Use one of the starters as the basis for your unique site
 
-To make your site unique in style, you first need to work with the file **`src/gatsby-plugin-theme-ui/index.js`** with which you can control the style of the entire site. More about it here: [Style settings](#style-settings).
-
-Thanks to the different settings of this file, starters look different.
+To make your website look unique, you first need to work with the file **`src/gatsby-plugin-theme-ui/index.js`** with which you can control the style of the entire site. Basically, starters look different because of the different settings of this file. More about it here: [Style settings](#style-settings).
 
 Also, all starters have a different main page, **`src/pages/index.mdx`** and content. Read about all this below in the guide.
 
@@ -224,6 +222,7 @@ Below will be more explanation about various aspects of the site.
 **`gatsby-config.js`** located in the root of your site and looks like this:
 
 ```js
+/* eslint-disable @typescript-eslint/camelcase */
 module.exports = {
   siteMetadata: {
     siteTitle: 'Chronoblog Starter',
@@ -268,7 +267,15 @@ module.exports = {
           // global settings for feed items
           limit: 50,
           yearSeparator: true,
-          yearSeparatorSkipFirst: true
+          yearSeparatorSkipFirst: true,
+          contentTypes: {
+            links: {
+              beforeTitle: '🔗 '
+            }
+          }
+        },
+        feedSearch: {
+          symbol: '🔍'
         }
       }
     },
@@ -335,6 +342,8 @@ In `options` for `gatsby-theme-chronoblog` you can find various global settings.
 **`uiText`** - Here you can replace the default values of the UI of the elements of the Chronoblog. This is done to simplify the localization of the site in various languages. If your site is in English, you can leave it as it is. If the site will use any other language - translate the default values right here.
 
 **`feedItems`** - global options for `feedItems` component. Inside any `feedItems` component on the site, you can specify other settings. Settings that are set through props are always in priority.
+
+**`feedSearch`** - global options for `feedSearch` component.
 
 ### Plugins
 
