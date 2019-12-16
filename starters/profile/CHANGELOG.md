@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.3](https://github.com/Ganevru/gatsby-theme-chronoblog/compare/profile@1.5.2...profile@1.5.3) (2019-12-16)
+
+**Note:** Version bump only for package profile
+
+
+
+
+
 ## [1.5.2](https://github.com/Ganevru/gatsby-theme-chronoblog/compare/profile@1.5.1...profile@1.5.2) (2019-12-16)
 
 **Note:** Version bump only for package profile
