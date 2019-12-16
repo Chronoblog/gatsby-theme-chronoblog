@@ -416,7 +416,7 @@ In general, this file explains itself. The easiest way to understand what and ho
 `borderWidth` - the width of the border of some elements of the site. It is recommended to use the value `2`, it is still possible `1` or `3`. The rest usually look very strange.
 
 `fonts` - the choice of fonts for sites. Just enter the name of the font.  
-Value "inherit" in the `heading` means that in this case the headers will use the same font as for the `body`.
+Value *inherit* in the `heading` means that in this case the headers will use the same font as for the `body`.
 
 `chronoblogTheme` - you may have noticed this object throughout the file. This is done in order to add default values from the Chronoblog theme.
 
