@@ -69,7 +69,7 @@ Repo: [github.com/ganevru/gatsby-starter-chronoblog-profile](https://github.com/
 <br />
 
 <a target="_blank" href="https://chronoblog-hacker.netlify.com">
-  <img align="left" src="https://github.com/Ganevru/gatsby-theme-chronoblog/raw/master/assets/st-img-hacker.jpg" alt="Chronoblog - Gatsby Theme" style="max-width:100%;">
+  <img align="left" src="https://github.com/Ganevru/gatsby-theme-chronoblog/raw/master/assets/st-img-hacker.jpg" alt="Chronoblog - Gatsby Theme" style="max-width:100%;border-radius:10px;">
 </a>
 
 ### Gatsby Starter Chronoblog Hacker
