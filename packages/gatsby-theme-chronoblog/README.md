@@ -32,7 +32,8 @@ Demo and Starters
 
 <br />
 
-####  
+####
+
 <a target="_blank" href="https://chronoblog.netlify.com"> <img align="left" src="https://github.com/Ganevru/gatsby-theme-chronoblog/raw/master/assets/st-img-chronoblog.png" alt="Chronoblog - Gatsby Theme" style="max-width:100%;"> </a>
 
 ### Gatsby Starter Chronoblog
@@ -51,7 +52,8 @@ Repo: [github.com/ganevru/gatsby-starter-chronoblog](https://github.com/Ganevru/
 <br />
 <br />
 
-####  
+####
+
 <a target="_blank" href="https://chronoblog-profile.netlify.com"> <img align="left" src="https://github.com/Ganevru/gatsby-theme-chronoblog/raw/master/assets/st-img-profile.png" alt="Chronoblog - Gatsby Theme" style="max-width:100%;"> </a>
 
 ### Gatsby Starter Chronoblog Profile
@@ -70,7 +72,8 @@ Repo: [github.com/ganevru/gatsby-starter-chronoblog-profile](https://github.com/
 <br />
 <br />
 
-####  
+####
+
 <a target="_blank" href="https://chronoblog-hacker.netlify.com"> <img align="left" src="https://github.com/Ganevru/gatsby-theme-chronoblog/raw/master/assets/st-img-hacker.png" alt="Chronoblog - Gatsby Theme" style="max-width:100%"> </a>
 
 ### Gatsby Starter Chronoblog Hacker
@@ -142,6 +145,8 @@ Also, all starters have a different main page, **`src/pages/index.mdx`** and con
   - [GitHub Workflows](#github-workflows)
 - [Feedback](#feedback)
 - [Contribute](#contribute)
+- [Credits](#credits)
+  - [Art](#art)
 
 <br />
 
@@ -795,8 +800,7 @@ This component displays all tags available on the site.
 The search string to search feed items. It makes no sense to put this component if there is no `<FeedItems />` component nearby.
 
 ```html
-<FeedSearch />
-<FeedItems />
+<FeedSearch /> <FeedItems />
 ```
 
 ## SocialLinks component
@@ -1041,3 +1045,17 @@ But I definitely want to expand this list.
 One of the easiest, and at the same time, useful ways to help the project is to help in writing this readme. English is not native to me, and I can’t say that I am very good at it. So if you see something strange in the text, or if you think you can write better, correct and make a pull request.
 
 Any other type of contribution to the project is also welcome!
+
+# Credits
+
+## Art
+
+Illustrations and Images that are used in the project (usually in [Starters](#demo-and-starters)).
+
+Illlustrations, open source illustrations kit: [illlustrations.co](https://illlustrations.co/)
+
+Lukasz Adam free illustrations: [lukaszadam.com/illustrations](https://lukaszadam.com/illustrations)
+
+Deszone: [deszone.net](https://deszone.net/), free vector graphics ratterns, illustrations, icons.
+
+Unsplash: [unsplash.com](https://unsplash.com/), the internet’s source of freely usable images. Powered by creators everywhere.
