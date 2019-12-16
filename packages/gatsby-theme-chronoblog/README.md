@@ -32,9 +32,8 @@ Demo and Starters
 
 <br />
 
-<a target="_blank" href="https://chronoblog.netlify.com">
-  <img align="left" src="https://github.com/Ganevru/gatsby-theme-chronoblog/raw/master/assets/st-img-chronoblog.png" alt="Chronoblog - Gatsby Theme" style="max-width:100%;">
-</a>
+&nbsp;  
+<a target="_blank" href="https://chronoblog.netlify.com"> <img align="left" src="https://github.com/Ganevru/gatsby-theme-chronoblog/raw/master/assets/st-img-chronoblog.png" alt="Chronoblog - Gatsby Theme" style="max-width:100%;"> </a>
 
 ### Gatsby Starter Chronoblog
 
@@ -52,9 +51,8 @@ Repo: [github.com/ganevru/gatsby-starter-chronoblog](https://github.com/Ganevru/
 <br />
 <br />
 
-<a target="_blank" href="https://chronoblog-profile.netlify.com">
-  <img align="left" src="https://github.com/Ganevru/gatsby-theme-chronoblog/raw/master/assets/st-img-profile.png" alt="Chronoblog - Gatsby Theme" style="max-width:100%;">
-</a>
+&nbsp;  
+<a target="_blank" href="https://chronoblog-profile.netlify.com"> <img align="left" src="https://github.com/Ganevru/gatsby-theme-chronoblog/raw/master/assets/st-img-profile.png" alt="Chronoblog - Gatsby Theme" style="max-width:100%;"> </a>
 
 ### Gatsby Starter Chronoblog Profile
 
@@ -72,9 +70,8 @@ Repo: [github.com/ganevru/gatsby-starter-chronoblog-profile](https://github.com/
 <br />
 <br />
 
-<a target="_blank" href="https://chronoblog-hacker.netlify.com">
-  <img align="left" src="https://github.com/Ganevru/gatsby-theme-chronoblog/raw/master/assets/st-img-hacker.png" alt="Chronoblog - Gatsby Theme" style="max-width:100%">
-</a>
+&nbsp;  
+<a target="_blank" href="https://chronoblog-hacker.netlify.com"> <img align="left" src="https://github.com/Ganevru/gatsby-theme-chronoblog/raw/master/assets/st-img-hacker.png" alt="Chronoblog - Gatsby Theme" style="max-width:100%"> </a>
 
 ### Gatsby Starter Chronoblog Hacker
 
