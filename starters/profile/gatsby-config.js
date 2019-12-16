@@ -3,7 +3,7 @@ module.exports = {
   siteMetadata: {
     siteTitle: 'Chronoblog Profile Starter',
     siteDescription: 'Starter for Gatsby Theme Chronoblog',
-    siteImage: '/banner.jpg', // main image of the site for metadata
+    siteImage: '/banner.png', // main image of the site for metadata
     siteUrl: 'https://chronoblog-profile.netlify.com/',
     pathPrefix: '/',
     siteLanguage: 'en',
