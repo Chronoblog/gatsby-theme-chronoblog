@@ -28,7 +28,7 @@ Chronoblog is a theme that allows you to do just that - create a more universal 
 
 <h2 align="center">
 Demo and Starters
-</h12>
+</h2>
 
 <br />
 
@@ -89,6 +89,17 @@ Repo: [github.com/ganevru/gatsby-starter-chronoblog-hacker](https://github.com/G
 
 <br />
 <br />
+
+#### Use the starter as a base for your unique site
+
+> I recommend using the starter of your choice as a base for creating your unique site.
+
+To make your site unique in style, you first need to work with the file **`src/gatsby-plugin-theme-ui/index.js`** with which you can control the style of the entire site. More about it here: [Style settings](#style-settings).
+
+Thanks to the different settings of this file, starters look different.
+
+Also, all starters have a different main page, **`src/pages/index.mdx`** and content. Read about all this below in the guide.
+
 <br />
 <br />
 
@@ -361,6 +372,7 @@ export default {
     secondary: '#5a809e',
     muted: '#dae1e3',
     modes: {
+      ...chronoblogTheme.colors.modes,
       dark: {
         ...chronoblogTheme.colors.modes.dark,
         text: '#eaeaea',
@@ -379,6 +391,11 @@ export default {
     img: 6,
     authorBanner: 6
   },
+  borderWidth: {
+    ...chronoblogTheme.borderWidth,
+    card: 2,
+    search: 2
+  },
   fonts: {
     ...chronoblogTheme.fonts,
     body: '-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif',
@@ -391,6 +408,17 @@ export default {
 In general, this file explains itself. The easiest way to understand what and how it works is simply to “play” with it. Try changing the primary and secondary colors, double the rounding of all elements, and so on.
 
 `initialColorMode` - here you can select the starting color mode of the site. My be `light` or `dark`.
+
+`colors` - site color management.
+
+`borderRadius` - controlling rounding of various elements of a site, as a rule, it is better to use the same value. Usually, you want to have a lower value (for example `4`) for a more formal and serious appearance of the site, and a larger value (`12` for example) for a more informal and playful.
+
+`borderWidth` - the width of the border of some elements of the site. It is recommended to use the value `2`, it is still possible `1` or `3`. The rest usually look very strange.
+
+`fonts` - the choice of fonts for sites. Just enter the name of the font.  
+Value "inherit" in the `heading` means that in this case the headers will use the same font as for the `body`.
+
+`chronoblogTheme` - you may have noticed this object throughout the file. This is done in order to add default values from the Chronoblog theme.
 
 ## Content
 
