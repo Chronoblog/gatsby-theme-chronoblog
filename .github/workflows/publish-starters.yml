@@ -1,7 +1,8 @@
 name: Test and Publish Starters
 on:
-  release:
-    types: [created, published]
+  push:
+    tags:
+      - "*@*"
 jobs:
   tests:
     timeout-minutes: 220

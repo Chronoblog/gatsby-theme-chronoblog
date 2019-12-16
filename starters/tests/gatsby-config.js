@@ -17,6 +17,10 @@ module.exports = {
       {
         icon: `npm`,
         url: `https://www.npmjs.com/package/gatsby-theme-chronoblog`
+      },
+      {
+        icon: `node-js`,
+        url: `https://www.npmjs.com/package/gatsby-theme-chronoblog`
       }
     ]
   },
