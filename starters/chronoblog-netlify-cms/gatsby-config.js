@@ -1,5 +1,5 @@
 const path = require('path');
-/* eslint-disable @typescript-eslint/camelcase */
+
 module.exports = {
   siteMetadata: {
     siteTitle: 'Chronoblog Starter with Netlify CMS',

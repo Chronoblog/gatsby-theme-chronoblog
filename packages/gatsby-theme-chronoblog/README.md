@@ -223,7 +223,6 @@ Below will be more explanation about various aspects of the site.
 **`gatsby-config.js`** located in the root of your site and looks like this:
 
 ```js
-/* eslint-disable @typescript-eslint/camelcase */
 module.exports = {
   siteMetadata: {
     siteTitle: 'Chronoblog Starter',
