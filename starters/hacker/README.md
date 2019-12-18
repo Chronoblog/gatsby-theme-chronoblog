@@ -1,12 +1,12 @@
-<a href="https://chronoblog-hacker.netlify.com" target="_blank">
-<img src="https://github.com/Ganevru/gatsby-theme-chronoblog/raw/master/assets/st-banner-hacker.png" alt="Chronoblog - Gatsby Theme" />
+<a href="https://chronoblog-hacker.now.sh" target="_blank">
+<img src="https://github.com/Chronoblog/gatsby-theme-chronoblog/raw/master/assets/st-banner-hacker.png" alt="Chronoblog - Gatsby Theme" />
 </a>
 
 <h1 align="center">
 Gatsby Starter Chronoblog Hacker - starter for Chronoblog Gatsby Theme
 </h1>
 
-[![npm](https://img.shields.io/npm/v/gatsby-theme-chronoblog?color=brightgreen)](https://www.npmjs.com/package/gatsby-theme-chronoblog) [![node](https://img.shields.io/node/v/gatsby-theme-chronoblog)](https://www.npmjs.com/package/gatsby-theme-chronoblog) [![Netlify Status](https://api.netlify.com/api/v1/badges/d50e7f05-b930-4ca1-9fba-2304213cff1a/deploy-status)](https://app.netlify.com/sites/chronoblog-hacker/deploys)
+[![npm](https://img.shields.io/npm/v/gatsby-theme-chronoblog?color=brightgreen)](https://www.npmjs.com/package/gatsby-theme-chronoblog) [![node](https://img.shields.io/node/v/gatsby-theme-chronoblog)](https://www.npmjs.com/package/gatsby-theme-chronoblog)
 
 A dark (but with ability to switch to light) starter that uses the [Source Code Pro](https://github.com/adobe-fonts/source-code-pro) font and minimalistic UI (without emoji, as by default in Chronoblog Theme).
 
@@ -16,9 +16,9 @@ What is a Chronoblog?
 
 > Chronoblog is a Gatsby js theme specifically designed to create a personal website. The main idea of ​​Chronoblog is to allow you not only to write a personal blog but also to keep a record of everything important that you have done.
 
-Read more about Chronoblog Gatsby Theme here: [github.com/ganevru/gatsby-theme-chronoblog](https://github.com/Ganevru/gatsby-theme-chronoblog)
+Read more about Chronoblog Gatsby Theme here: [github.com/Chronoblog/gatsby-theme-chronoblog](https://github.com/Chronoblog/gatsby-theme-chronoblog)
 
-**Live demo of this starter: [https://chronoblog-hacker.netlify.com](https://chronoblog-hacker.netlify.com/)**
+**Live demo of this starter: [https://chronoblog-hacker.now.sh](https://chronoblog-hacker.now.sh/)**
 
 ## Features
 
@@ -39,7 +39,7 @@ Read more about Chronoblog Gatsby Theme here: [github.com/ganevru/gatsby-theme-c
 If you have `gatsby-cli`:
 
 ```sh
-gatsby new chronoblog-site https://github.com/Ganevru/gatsby-starter-chronoblog-hacker
+gatsby new chronoblog-site https://github.com/Chronoblog/gatsby-starter-chronoblog-hacker
 
 cd chronoblog-site
 
@@ -62,13 +62,17 @@ Your site is now running at http://localhost:8000
 
 ## Deploying
 
+### Deploying to ZEIT Now
+
+Gatsby Docs: [www.gatsbyjs.org/docs/deploying-to-zeit-now](https://www.gatsbyjs.org/docs/deploying-to-zeit-now/)
+
 ### Deploying to Netlify
 
 Gatsby Docs: [www.gatsbyjs.org/docs/deploying-to-netlify](https://www.gatsbyjs.org/docs/deploying-to-netlify/)
 
 Quick Deployment:  
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Ganevru/gatsby-starter-chronoblog-hacker)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Chronoblog/gatsby-starter-chronoblog-hacker)
 
 ## More information
 
-For complete information, go to the main repository: [github.com/ganevru/gatsby-theme-chronoblog)](https://github.com/Ganevru/gatsby-theme-chronoblog)
+For complete information, go to the main repository: [github.com/Chronoblog/gatsby-theme-chronoblog)](https://github.com/Chronoblog/gatsby-theme-chronoblog)

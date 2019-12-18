@@ -1,12 +1,12 @@
-<a href="https://chronoblog-profile.netlify.com" target="_blank">
-<img src="https://github.com/Ganevru/gatsby-theme-chronoblog/raw/master/assets/st-banner-profile.png" alt="Chronoblog - Gatsby Theme" />
+<a href="https://chronoblog-profile.now.sh" target="_blank">
+<img src="https://github.com/Chronoblog/gatsby-theme-chronoblog/raw/master/assets/st-banner-profile.png" alt="Chronoblog - Gatsby Theme" />
 </a>
 
 <h1 align="center">
 Gatsby Starter Chronoblog Profile - starter for Chronoblog Gatsby Theme
 </h1>
 
-[![npm](https://img.shields.io/npm/v/gatsby-theme-chronoblog?color=brightgreen)](https://www.npmjs.com/package/gatsby-theme-chronoblog) [![node](https://img.shields.io/node/v/gatsby-theme-chronoblog)](https://www.npmjs.com/package/gatsby-theme-chronoblog) [![Netlify Status](https://api.netlify.com/api/v1/badges/b66fd3f1-2f68-40f8-9572-3317b5fe71a9/deploy-status)](https://app.netlify.com/sites/chronoblog-profile/deploys)
+[![npm](https://img.shields.io/npm/v/gatsby-theme-chronoblog?color=brightgreen)](https://www.npmjs.com/package/gatsby-theme-chronoblog) [![node](https://img.shields.io/node/v/gatsby-theme-chronoblog)](https://www.npmjs.com/package/gatsby-theme-chronoblog)
 
 This starter will help you launch a personal website with a simple text feed on the main page. This starter looks simple and neat, but at the same time, it has great potential for organizing your content using tags, dates, and search.
 
@@ -18,9 +18,9 @@ What is a Chronoblog?
 
 > Chronoblog is a Gatsby js theme specifically designed to create a personal website. The main idea of ​​Chronoblog is to allow you not only to write a personal blog but also to keep a record of everything important that you have done.
 
-Read more about Chronoblog Gatsby Theme here: [github.com/ganevru/gatsby-theme-chronoblog](https://github.com/Ganevru/gatsby-theme-chronoblog)
+Read more about Chronoblog Gatsby Theme here: [github.com/Chronoblog/gatsby-theme-chronoblog](https://github.com/Chronoblog/gatsby-theme-chronoblog)
 
-**Live demo of this starter: [https://chronoblog-profile.netlify.com](https://chronoblog-profile.netlify.com/)**
+**Live demo of this starter: [https://chronoblog-profile.now.sh](https://chronoblog-profile.now.sh/)**
 
 ## Features
 
@@ -42,7 +42,7 @@ Read more about Chronoblog Gatsby Theme here: [github.com/ganevru/gatsby-theme-c
 If you have `gatsby-cli`:
 
 ```sh
-gatsby new chronoblog-site https://github.com/Ganevru/gatsby-starter-chronoblog-profile
+gatsby new chronoblog-site https://github.com/Chronoblog/gatsby-starter-chronoblog-profile
 
 cd chronoblog-site
 
@@ -65,13 +65,17 @@ Your site is now running at http://localhost:8000
 
 ## Deploying
 
+### Deploying to ZEIT Now
+
+Gatsby Docs: [www.gatsbyjs.org/docs/deploying-to-zeit-now](https://www.gatsbyjs.org/docs/deploying-to-zeit-now/)
+
 ### Deploying to Netlify
 
 Gatsby Docs: [www.gatsbyjs.org/docs/deploying-to-netlify](https://www.gatsbyjs.org/docs/deploying-to-netlify/)
 
 Quick Deployment:  
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Ganevru/gatsby-starter-chronoblog-profile)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Chronoblog/gatsby-starter-chronoblog-profile)
 
 ## More information
 
-For complete information, go to the main repository: [github.com/ganevru/gatsby-theme-chronoblog)](https://github.com/Ganevru/gatsby-theme-chronoblog)
+For complete information, go to the main repository: [github.com/Chronoblog/gatsby-theme-chronoblog)](https://github.com/Ganevru/gatsby-theme-chronoblog)

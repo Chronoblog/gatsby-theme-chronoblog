@@ -1,12 +1,12 @@
-<a href="https://chronoblog.netlify.com" target="_blank">
-<img src="https://github.com/Ganevru/gatsby-theme-chronoblog/raw/master/assets/st-banner-chronoblog.png" alt="Chronoblog - Gatsby Theme" />
+<a href="https://chronoblog.now.sh" target="_blank">
+<img src="https://github.com/Chronoblog/gatsby-theme-chronoblog/raw/master/assets/st-banner-chronoblog.png" alt="Chronoblog - Gatsby Theme" />
 </a>
 
 <h1 align="center">
 Chronoblog Gatsby Theme Starter with Netlify CMS
 </h1>
 
-[![npm](https://img.shields.io/npm/v/gatsby-theme-chronoblog?color=brightgreen)](https://www.npmjs.com/package/gatsby-theme-chronoblog) [![node](https://img.shields.io/node/v/gatsby-theme-chronoblog)](https://www.npmjs.com/package/gatsby-theme-chronoblog) [![Netlify Status](https://api.netlify.com/api/v1/badges/ed253426-cae8-40fc-9647-28a8cd1f5a28/deploy-status)](https://app.netlify.com/sites/chronoblog-netlify-cms/deploys)
+[![npm](https://img.shields.io/npm/v/gatsby-theme-chronoblog?color=brightgreen)](https://www.npmjs.com/package/gatsby-theme-chronoblog) [![node](https://img.shields.io/node/v/gatsby-theme-chronoblog)](https://www.npmjs.com/package/gatsby-theme-chronoblog)
 
 The standard way to start using Chronoblog Gatsby Theme. Includes Netlify CMS.
 
@@ -14,9 +14,9 @@ What is a Chronoblog?
 
 > Chronoblog is a Gatsby js theme specifically designed to create a personal website. The main idea of ​​Chronoblog is to allow you not only to write a personal blog but also to keep a record of everything important that you have done.
 
-Read more about Chronoblog Gatsby Theme here: [github.com/ganevru/gatsby-theme-chronoblog](https://github.com/Ganevru/gatsby-theme-chronoblog)
+Read more about Chronoblog Gatsby Theme here: [github.com/Chronoblog/gatsby-theme-chronoblog](https://github.com/Chronoblog/gatsby-theme-chronoblog)
 
-Demo: [chronoblog-netlify-cms.netlify.com](https://chronoblog-netlify-cms.netlify.com)
+Demo: [chronoblog-netlify-cms.now.sh](https://chronoblog-netlify-cms.now.sh)
 
 Netlify CMS Documentation: [www.netlifycms.org](https://www.netlifycms.org/)
 
@@ -25,7 +25,7 @@ Netlify CMS Documentation: [www.netlifycms.org](https://www.netlifycms.org/)
 If you have `gatsby-cli`:
 
 ```sh
-gatsby new chronoblog-site https://github.com/Ganevru/gatsby-starter-chronoblog-netlify-cms
+gatsby new chronoblog-site https://github.com/Chronoblog/gatsby-starter-chronoblog-netlify-cms
 
 cd chronoblog-site
 
@@ -35,7 +35,7 @@ gatsby develop
 Or using git clone:
 
 ```sh
-git clone git@github.com:Ganevru/gatsby-starter-chronoblog-netlify-cms.git chronoblog-site
+git clone git@github.com:Chronoblog/gatsby-starter-chronoblog-netlify-cms.git chronoblog-site
 
 cd chronoblog-site
 
@@ -48,13 +48,17 @@ Your site is now running at http://localhost:8000
 
 ## Deploying
 
+### Deploying to ZEIT Now
+
+Gatsby Docs: [www.gatsbyjs.org/docs/deploying-to-zeit-now](https://www.gatsbyjs.org/docs/deploying-to-zeit-now/)
+
 ### Deploying to Netlify
 
 Gatsby Docs: [www.gatsbyjs.org/docs/deploying-to-netlify](https://www.gatsbyjs.org/docs/deploying-to-netlify/)
 
 Quick Deployment:  
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Ganevru/gatsby-starter-chronoblog-netlify-cms)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Chronoblog/gatsby-starter-chronoblog-netlify-cms)
 
 ## More information
 
-For complete information, go to the main repository: [github.com/ganevru/gatsby-theme-chronoblog)](https://github.com/Ganevru/gatsby-theme-chronoblog)
+For complete information, go to the main repository: [github.com/Chronoblog/gatsby-theme-chronoblog)](https://github.com/Chronoblog/gatsby-theme-chronoblog)
