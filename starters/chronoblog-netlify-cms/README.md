@@ -1,4 +1,4 @@
-<a href="https://chronoblog.now.sh" target="_blank">
+<a href="https://chronoblog-netlify-cms.now.sh" target="_blank">
 <img src="https://github.com/Chronoblog/gatsby-theme-chronoblog/raw/master/assets/st-banner-chronoblog.png" alt="Chronoblog - Gatsby Theme" />
 </a>
 
@@ -51,6 +51,9 @@ Your site is now running at http://localhost:8000
 ### Deploying to ZEIT Now
 
 Gatsby Docs: [www.gatsbyjs.org/docs/deploying-to-zeit-now](https://www.gatsbyjs.org/docs/deploying-to-zeit-now/)
+
+Quick Deployment:  
+[![Deploy with ZEIT Now](https://zeit.co/button)](https://zeit.co/new/project?template=https://github.com/Chronoblog/gatsby-starter-chronoblog-netlify-cms)
 
 ### Deploying to Netlify
 

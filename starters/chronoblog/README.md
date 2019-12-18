@@ -65,6 +65,9 @@ Your site is now running at http://localhost:8000
 
 Gatsby Docs: [www.gatsbyjs.org/docs/deploying-to-zeit-now](https://www.gatsbyjs.org/docs/deploying-to-zeit-now/)
 
+Quick Deployment:  
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Chronoblog/gatsby-starter-chronoblog)
+
 ### Deploying to Netlify
 
 Gatsby Docs: [www.gatsbyjs.org/docs/deploying-to-netlify](https://www.gatsbyjs.org/docs/deploying-to-netlify/)
