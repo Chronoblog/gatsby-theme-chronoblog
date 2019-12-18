@@ -777,8 +777,8 @@ In this form, it is used, for example, on the main page of the site (`src/pages/
 | Prop | Required | Type | Description |
 | --- | --- | --- | --- |
 | `filterByTags` | optional | string[] | takes an array of tags and displays all content that have at least one of these tags |
-| `filterByTypes` | optional | string[] | takes an array of content types (`links`, `posts`, `notes`) and displays only this content type |
-| `itemsFormat` | optional | string | show `compact` or `card` items format |
+| `filterByTypes` | optional | string[] | takes an array of content types (**`links`**, **`posts`**, **`notes`**) and displays only this content type |
+| `itemsFormat` | optional | string | show **`compact`** or **`card`** items format |
 | `limit` | optional | number | number of content items to be displayed |
 | `showMoreButton` | optional | boolean | show or not to show the button "show more". |
 | `yearSeparator` | optional | "year" / "space" / boolean | show or not the separator by year, and if the separator is displayed, then show the year or the gap of empty space |
