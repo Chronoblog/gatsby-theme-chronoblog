@@ -30,7 +30,7 @@ tags: ['post']
 ---
 ```
 
-Read more about this setting here: [github.com/Ganevru/gatsby-theme-chronoblog#posts](https://github.com/Ganevru/gatsby-theme-chronoblog#posts)
+Read more about this setting here: [github.com/Chronoblog/gatsby-theme-chronoblog#posts](https://github.com/Chronoblog/gatsby-theme-chronoblog#posts)
 
 ## Markdown
 
@@ -87,10 +87,10 @@ _This text will be italic_
 ### Links
 
 ```md
-[github.com/Ganevru/gatsby-theme-chronoblog](https://github.com/Ganevru/gatsby-theme-chronoblog)
+[github.com/Chronoblog/gatsby-theme-chronoblog](https://github.com/Chronoblog/gatsby-theme-chronoblog)
 ```
 
-[github.com/Ganevru/gatsby-theme-chronoblog](https://github.com/Ganevru/gatsby-theme-chronoblog)
+[github.com/Chronoblog/gatsby-theme-chronoblog](https://github.com/Chronoblog/gatsby-theme-chronoblog)
 
 ### Blockquotes
 

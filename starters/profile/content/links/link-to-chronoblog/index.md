@@ -2,7 +2,7 @@
 title: 'Link to Chronoblog Theme'
 cover: ./image.jpg
 date: 2019-11-12
-link: https://github.com/Ganevru/gatsby-theme-chronoblog
+link: https://github.com/Chronoblog/gatsby-theme-chronoblog
 tags: ['link', 'project']
 ---
 

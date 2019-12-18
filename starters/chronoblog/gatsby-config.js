@@ -4,7 +4,7 @@ module.exports = {
     siteTitle: 'Chronoblog Starter',
     siteDescription: 'Starter for Gatsby Theme Chronoblog',
     siteImage: '/banner.png', // main image of the site for metadata
-    siteUrl: 'https://chronoblog.netlify.com/',
+    siteUrl: 'https://chronoblog.now.sh/',
     pathPrefix: '/',
     siteLanguage: 'en',
     ogLanguage: `en_US`,
@@ -20,7 +20,7 @@ module.exports = {
       },
       {
         icon: `github`,
-        url: `https://github.com/Ganevru/gatsby-theme-chronoblog`
+        url: `https://github.com/Chronoblog/gatsby-theme-chronoblog`
       },
       {
         icon: `node-js`,

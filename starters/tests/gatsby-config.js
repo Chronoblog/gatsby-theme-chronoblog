@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     siteTitle: 'Chronoblog Tests',
-    siteUrl: 'https://chronoblog-tests.netlify.com/',
+    siteUrl: 'https://chronoblog-tests.now.sh/',
     author: 'Site Author', // for example - 'Ivan Ganev'
     authorDescription: 'short text about the', // short text about the author
     avatar: '/avatar.jpg',
@@ -12,7 +12,7 @@ module.exports = {
       },
       {
         icon: `github`,
-        url: `https://github.com/Ganevru/gatsby-theme-chronoblog`
+        url: `https://github.com/Chronoblog/gatsby-theme-chronoblog`
       },
       {
         icon: `npm`,

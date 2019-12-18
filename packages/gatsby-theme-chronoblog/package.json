@@ -16,10 +16,10 @@
     "theme-ui",
     "timeline"
   ],
-  "homepage": "https://github.com/Ganevru/gatsby-theme-chronoblog",
+  "homepage": "https://github.com/Chronoblog/gatsby-theme-chronoblog",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ganevru/gatsby-theme-chronoblog.git"
+    "url": "git+https://github.com/Chronoblog/gatsby-theme-chronoblog.git"
   },
   "license": "MIT",
   "author": "Ivan Ganev <ganevio92@gmail.com>",
