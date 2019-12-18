@@ -90,7 +90,6 @@ Repo: [github.com/Chronoblog/gatsby-starter-chronoblog-hacker](https://github.co
 <br />
 <br />
 <br />
-<br />
 
 #### Use one of the starters as the basis for your unique site
 
