@@ -45,6 +45,8 @@ Repo: [github.com/Chronoblog/gatsby-starter-chronoblog](https://github.com/Chron
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Chronoblog/gatsby-starter-chronoblog)
 
+[![Deploy with ZEIT Now](https://zeit.co/button)](https://zeit.co/new/project?template=https://github.com/Chronoblog/gatsby-starter-chronoblog)
+
 <br />
 <br />
 <br />
@@ -62,6 +64,8 @@ This starter will help you launch a personal website with a simple text feed on 
 Repo: [github.com/Chronoblog/gatsby-starter-chronoblog-profile](https://github.com/Chronoblog/gatsby-starter-chronoblog-profile)
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Chronoblog/gatsby-starter-chronoblog-profile)
+
+[![Deploy with ZEIT Now](https://zeit.co/button)](https://zeit.co/new/project?template=https://github.com/Chronoblog/gatsby-starter-chronoblog-profile)
 
 <br />
 <br />
@@ -81,6 +85,11 @@ Repo: [github.com/Chronoblog/gatsby-starter-chronoblog-hacker](https://github.co
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Chronoblog/gatsby-starter-chronoblog-hacker)
 
+[![Deploy with ZEIT Now](https://zeit.co/button)](https://zeit.co/new/project?template=https://github.com/Chronoblog/gatsby-starter-chronoblog-hacker)
+
+<br />
+<br />
+<br />
 <br />
 
 #### Use one of the starters as the basis for your unique site
@@ -134,8 +143,6 @@ Also, all starters have a different main page, **`src/pages/index.mdx`** and con
     - [Components that can and should be shadowed](#components-that-can-and-should-be-shadowed)
     - [Components that can be shadowed](#components-that-can-be-shadowed)
 - [Status](#status)
-  - [Starters status](#starters-status)
-  - [Status of development and test versions](#status-of-development-and-test-versions)
   - [GitHub Workflows](#github-workflows)
 - [Feedback](#feedback)
 - [Contribute](#contribute)
