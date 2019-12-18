@@ -43,9 +43,7 @@ This starter is the standard way to start a Chronoblog Gatsby Theme website.
 **Demo: [chronoblog.now.sh](https://chronoblog.now.sh)**  
 Repo: [github.com/Chronoblog/gatsby-starter-chronoblog](https://github.com/Chronoblog/gatsby-starter-chronoblog)
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Chronoblog/gatsby-starter-chronoblog)
-
-[![Deploy with ZEIT Now](https://zeit.co/button)](https://zeit.co/new/project?template=https://github.com/Chronoblog/gatsby-starter-chronoblog)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Chronoblog/gatsby-starter-chronoblog) [![Deploy with ZEIT Now](https://zeit.co/button)](https://zeit.co/new/project?template=https://github.com/Chronoblog/gatsby-starter-chronoblog)
 
 <br />
 <br />
@@ -63,9 +61,7 @@ This starter will help you launch a personal website with a simple text feed on 
 **Demo: [chronoblog-profile.now.sh](https://chronoblog-profile.now.sh)**  
 Repo: [github.com/Chronoblog/gatsby-starter-chronoblog-profile](https://github.com/Chronoblog/gatsby-starter-chronoblog-profile)
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Chronoblog/gatsby-starter-chronoblog-profile)
-
-[![Deploy with ZEIT Now](https://zeit.co/button)](https://zeit.co/new/project?template=https://github.com/Chronoblog/gatsby-starter-chronoblog-profile)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Chronoblog/gatsby-starter-chronoblog-profile) [![Deploy with ZEIT Now](https://zeit.co/button)](https://zeit.co/new/project?template=https://github.com/Chronoblog/gatsby-starter-chronoblog-profile)
 
 <br />
 <br />
@@ -83,9 +79,7 @@ A dark (but with ability to switch to light) starter that uses the [Source Code 
 **Demo: [chronoblog-hacker.now.sh](https://chronoblog-hacker.now.sh)**  
 Repo: [github.com/Chronoblog/gatsby-starter-chronoblog-hacker](https://github.com/Chronoblog/gatsby-starter-chronoblog-hacker)
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Chronoblog/gatsby-starter-chronoblog-hacker)
-
-[![Deploy with ZEIT Now](https://zeit.co/button)](https://zeit.co/new/project?template=https://github.com/Chronoblog/gatsby-starter-chronoblog-hacker)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Chronoblog/gatsby-starter-chronoblog-hacker) [![Deploy with ZEIT Now](https://zeit.co/button)](https://zeit.co/new/project?template=https://github.com/Chronoblog/gatsby-starter-chronoblog-hacker)
 
 <br />
 <br />
