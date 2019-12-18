@@ -781,7 +781,7 @@ In this form, it is used, for example, on the main page of the site (`src/pages/
 | `itemsFormat` | optional | string | show `compact` or `card` items format |
 | `limit` | optional | number | number of content items to be displayed |
 | `showMoreButton` | optional | boolean | show or not to show the button "show more". |
-| `yearSeparator` | optional | `year` / `space` / boolean | show or not the separator by year, and if the separator is displayed, then show the year or the gap of empty space |
+| `yearSeparator` | optional | "year" / "space" / boolean | show or not the separator by year, and if the separator is displayed, then show the year or the gap of empty space |
 
 `filterByTags` example. This component will display all site content that have the `project` tag:
 
