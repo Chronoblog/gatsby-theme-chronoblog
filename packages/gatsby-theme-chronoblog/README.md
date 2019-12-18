@@ -1,7 +1,7 @@
 <br />
 <p align="center">
-<a href="https://chronoblog.netlify.com" target="_blank">
-<img src="https://github.com/Ganevru/gatsby-theme-chronoblog/raw/master/assets/banner-small-2.png" alt="Chronoblog - Gatsby Theme" />
+<a href="https://chronoblog.now.sh" target="_blank">
+<img src="https://github.com/Chronoblog/gatsby-theme-chronoblog/raw/master/assets/banner-small-2.png" alt="Chronoblog - Gatsby Theme" />
 </a>
 </p>
 
@@ -10,7 +10,7 @@ Chronoblog - Gatsby Theme
 </h1>
 
 [![npm](https://img.shields.io/npm/v/gatsby-theme-chronoblog?color=brightgreen)](https://www.npmjs.com/package/gatsby-theme-chronoblog) [![node](https://img.shields.io/node/v/gatsby-theme-chronoblog)](https://www.npmjs.com/package/gatsby-theme-chronoblog) [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](code_of_conduct.md)  
-[![Netlify Status](https://api.netlify.com/api/v1/badges/f36aa133-5611-484c-97fe-8d65fac4391b/deploy-status)](https://app.netlify.com/sites/chronoblog/deploys) [![Netlify Status](https://api.netlify.com/api/v1/badges/ed253426-cae8-40fc-9647-28a8cd1f5a28/deploy-status)](https://app.netlify.com/sites/chronoblog-netlify-cms/deploys) [![Netlify Status](https://api.netlify.com/api/v1/badges/89481a31-c0c3-46ac-bf12-1fa638f0cd82/deploy-status)](https://app.netlify.com/sites/chronoblog-minimal/deploys) [![Netlify Status](https://api.netlify.com/api/v1/badges/b66fd3f1-2f68-40f8-9572-3317b5fe71a9/deploy-status)](https://app.netlify.com/sites/chronoblog-profile/deploys)
+![](https://github.com/Chronoblog/gatsby-theme-chronoblog/workflows/Tests/badge.svg) ![](https://github.com/Chronoblog/gatsby-theme-chronoblog/workflows/Test%20and%20Publish%20Starters/badge.svg)
 
 Chronoblog is a [Gatsby js](https://github.com/gatsbyjs/gatsby) theme specifically designed to create a personal website.
 
@@ -34,18 +34,16 @@ Demo and Starters
 
 ####
 
-<a target="_blank" href="https://chronoblog.netlify.com"> <img align="left" src="https://github.com/Ganevru/gatsby-theme-chronoblog/raw/master/assets/st-img-chronoblog.png" alt="Chronoblog - Gatsby Theme" style="max-width:100%;"> </a>
+<a target="_blank" href="https://chronoblog.now.sh"> <img align="left" src="https://github.com/Chronoblog/gatsby-theme-chronoblog/raw/master/assets/st-img-chronoblog.png" alt="Chronoblog - Gatsby Theme" style="max-width:100%;"> </a>
 
 ### Gatsby Starter Chronoblog
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/f36aa133-5611-484c-97fe-8d65fac4391b/deploy-status)](https://app.netlify.com/sites/chronoblog/deploys)
-
 This starter is the standard way to start a Chronoblog Gatsby Theme website.
 
-**Demo: [chronoblog.netlify.com](https://chronoblog.netlify.com)**  
-Repo: [github.com/ganevru/gatsby-starter-chronoblog](https://github.com/Ganevru/gatsby-starter-chronoblog)
+**Demo: [chronoblog.now.sh](https://chronoblog.now.sh)**  
+Repo: [github.com/Chronoblog/gatsby-starter-chronoblog](https://github.com/Chronoblog/gatsby-starter-chronoblog)
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Ganevru/gatsby-starter-chronoblog)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Chronoblog/gatsby-starter-chronoblog)
 
 <br />
 <br />
@@ -54,18 +52,16 @@ Repo: [github.com/ganevru/gatsby-starter-chronoblog](https://github.com/Ganevru/
 
 ####
 
-<a target="_blank" href="https://chronoblog-profile.netlify.com"> <img align="left" src="https://github.com/Ganevru/gatsby-theme-chronoblog/raw/master/assets/st-img-profile.png" alt="Chronoblog - Gatsby Theme" style="max-width:100%;"> </a>
+<a target="_blank" href="https://chronoblog-profile.now.sh"> <img align="left" src="https://github.com/Chronoblog/gatsby-theme-chronoblog/raw/master/assets/st-img-profile.png" alt="Chronoblog - Gatsby Theme" style="max-width:100%;"> </a>
 
 ### Gatsby Starter Chronoblog Profile
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/b66fd3f1-2f68-40f8-9572-3317b5fe71a9/deploy-status)](https://app.netlify.com/sites/chronoblog-profile/deploys)
-
 This starter will help you launch a personal website with a simple text feed on the main page.
 
-**Demo: [chronoblog-profile.netlify.com](https://chronoblog-profile.netlify.com)**  
-Repo: [github.com/ganevru/gatsby-starter-chronoblog-profile](https://github.com/Ganevru/gatsby-starter-chronoblog-profile)
+**Demo: [chronoblog-profile.now.sh](https://chronoblog-profile.now.sh)**  
+Repo: [github.com/Chronoblog/gatsby-starter-chronoblog-profile](https://github.com/Chronoblog/gatsby-starter-chronoblog-profile)
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Ganevru/gatsby-starter-chronoblog-profile)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Chronoblog/gatsby-starter-chronoblog-profile)
 
 <br />
 <br />
@@ -74,18 +70,16 @@ Repo: [github.com/ganevru/gatsby-starter-chronoblog-profile](https://github.com/
 
 ####
 
-<a target="_blank" href="https://chronoblog-hacker.netlify.com"> <img align="left" src="https://github.com/Ganevru/gatsby-theme-chronoblog/raw/master/assets/st-img-hacker.png" alt="Chronoblog - Gatsby Theme" style="max-width:100%"> </a>
+<a target="_blank" href="https://chronoblog-hacker.now.sh"> <img align="left" src="https://github.com/Chronoblog/gatsby-theme-chronoblog/raw/master/assets/st-img-hacker.png" alt="Chronoblog - Gatsby Theme" style="max-width:100%"> </a>
 
 ### Gatsby Starter Chronoblog Hacker
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/d50e7f05-b930-4ca1-9fba-2304213cff1a/deploy-status)](https://app.netlify.com/sites/chronoblog-hacker/deploys)
-
 A dark (but with ability to switch to light) starter that uses the [Source Code Pro](https://github.com/adobe-fonts/source-code-pro) font and minimalistic UI (without emoji, as by default in Chronoblog Theme).
 
-**Demo: [chronoblog-hacker.netlify.com](https://chronoblog-hacker.netlify.com)**  
-Repo: [github.com/ganevru/gatsby-starter-chronoblog-hacker](https://github.com/Ganevru/gatsby-starter-chronoblog-hacker)
+**Demo: [chronoblog-hacker.now.sh](https://chronoblog-hacker.now.sh)**  
+Repo: [github.com/Chronoblog/gatsby-starter-chronoblog-hacker](https://github.com/Chronoblog/gatsby-starter-chronoblog-hacker)
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Ganevru/gatsby-starter-chronoblog-hacker)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Chronoblog/gatsby-starter-chronoblog-hacker)
 
 <br />
 
@@ -160,12 +154,12 @@ To create a website using the Chronoblog theme, you do not need to be an expert 
 
 ## Installation and Development
 
-In this guide, we will set up our new site using this starter: [gatsby-starter-chronoblog](https://github.com/Ganevru/gatsby-starter-chronoblog)
+In this guide, we will set up our new site using this starter: [gatsby-starter-chronoblog](https://github.com/Chronoblog/gatsby-starter-chronoblog)
 
 If you have `gatsby-cli`:
 
 ```sh
-gatsby new chronoblog-site https://github.com/Ganevru/gatsby-starter-chronoblog
+gatsby new chronoblog-site https://github.com/Chronoblog/gatsby-starter-chronoblog
 
 cd chronoblog-site
 
@@ -188,9 +182,9 @@ Your site is now running at http://localhost:8000
 
 You can start developing your site.
 
-> If you want to use some other starter for Chronoblog, for example, a [Profile Starter](https://github.com/Ganevru/gatsby-starter-chronoblog-profile), just install it according to the instructions from its [readme](https://github.com/Ganevru/gatsby-starter-chronoblog-profile), or just change the name during installation to:
+> If you want to use some other starter for Chronoblog, for example, a [Profile Starter](https://github.com/Chronoblog/gatsby-starter-chronoblog-profile), just install it according to the instructions from its [readme](https://github.com/Chronoblog/gatsby-starter-chronoblog-profile), or just change the name during installation to:
 >
-> `gatsby new chronoblog-site https://github.com/Ganevru/gatsby-starter-chronoblog-profile`
+> `gatsby new chronoblog-site https://github.com/Chronoblog/gatsby-starter-chronoblog-profile`
 >
 > or, if using git clone:  
 > `git clone git@github.com:Ganevru/gatsby-starter-chronoblog-profile.git chronoblog-site`.
@@ -235,7 +229,7 @@ module.exports = {
     siteTitle: 'Chronoblog Starter',
     siteDescription: 'Starter for Gatsby Theme Chronoblog',
     siteImage: '/banner.png', // main image of the site for metadata
-    siteUrl: 'https://chronoblog.netlify.com/',
+    siteUrl: 'https://chronoblog.now.sh/',
     pathPrefix: '/',
     siteLanguage: 'en',
     ogLanguage: `en_US`,
@@ -251,7 +245,7 @@ module.exports = {
       },
       {
         icon: `github`,
-        url: `https://github.com/Ganevru/gatsby-theme-chronoblog`
+        url: `https://github.com/Chronoblog/gatsby-theme-chronoblog`
       },
       {
         icon: `node-js`,
@@ -324,7 +318,7 @@ In **`siteMetadata`**, replace information about:
 
 **`siteImage`** - image for metadata. Default: `static/banner.png` - you can simply replace this image with your own.
 
-**`siteUrl`** - a domain where the site will be located. Example: https://chronoblog.netlify.com.
+**`siteUrl`** - a domain where the site will be located. Example: https://chronoblog.now.sh.
 
 **`author`** - the author of the site. For information at the end of each blog post, as well as for site metadata. Just write your name.
 
@@ -520,7 +514,7 @@ A typical link looks like this:
 title: 'Link to Chronoblog Theme repo'
 cover: ./image.jpg
 date: 2019-11-12
-link: https://github.com/Ganevru/gatsby-theme-chronoblog
+link: https://github.com/Chronoblog/gatsby-theme-chronoblog
 tags: ['link', 'project']
 ---
 
@@ -535,7 +529,7 @@ All other elements are the same as the post. Only in contrast to the post, the b
 
 Notes are a type of content that is fully located in the feed. Cards of notes do not refer anywhere and do not lead anywhere.
 
-At the same time, notes allow you to place almost anything in the feed. The starter (demo: [chronoblog.netlify.com](https://chronoblog.netlify.com)) shows different options for how you can use notes - post podcasts, YouTube videos, presentations, post links or, in fact, text notes.
+At the same time, notes allow you to place almost anything in the feed. The starter (demo: [chronoblog.now.sh](https://chronoblog.now.sh)) shows different options for how you can use notes - post podcasts, YouTube videos, presentations, post links or, in fact, text notes.
 
 Place your notes inside `content/notes`:
 
@@ -951,7 +945,7 @@ The same logic generates metadata for [Open Graph](https://www.ogp.me/) and for 
 See how Chronoblog works with metadata using these tools. For example, copy this link and paste it into the validation tool:
 
 ```
-https://chronoblog.netlify.com/full-blog-post/
+https://chronoblog.now.sh/full-blog-post/
 ```
 
 Twitter card validator: [cards-dev.twitter.com/validator](https://cards-dev.twitter.com/validator)  
@@ -971,7 +965,7 @@ Shadowing is a feature of any Gatsby Theme. You can read more about this in Gats
 
 This all works in the case of Chronoblog Theme. However, there are components that are still better not to touch so as not to break anything when updating Chronoblog.
 
-For example, if you want to change the site menu, you need to create file `site-header.mdx` here: `src/gatsby-theme-chronoblog/site-header.mdx`. This will automatically replace default file of Chronoblog itself (which you can see here: [github.com/Ganevru/gatsby-theme-chronoblog/blob/master/packages/gatsby-theme-chronoblog/src/site-header.mdx](https://github.com/Ganevru/gatsby-theme-chronoblog/blob/master/packages/gatsby-theme-chronoblog/src/site-header.mdx))
+For example, if you want to change the site menu, you need to create file `site-header.mdx` here: `src/gatsby-theme-chronoblog/site-header.mdx`. This will automatically replace default file of Chronoblog itself (which you can see here: [github.com/Chronoblog/gatsby-theme-chronoblog/blob/master/packages/gatsby-theme-chronoblog/src/site-header.mdx](https://github.com/Chronoblog/gatsby-theme-chronoblog/blob/master/packages/gatsby-theme-chronoblog/src/site-header.mdx))
 
 ### Components that can and should be shadowed
 
@@ -996,40 +990,15 @@ These components can be shadowed if you think that you really need it:
 
 # Status
 
-## Starters status
-
-If at least one starter is not working - something went wrong.
-
-| Status | Repo | Link |
-| --- | --- | --- |
-| [![Netlify Status](https://api.netlify.com/api/v1/badges/f36aa133-5611-484c-97fe-8d65fac4391b/deploy-status)](https://app.netlify.com/sites/chronoblog/deploys) | https://github.com/Ganevru/gatsby-starter-chronoblog | https://chronoblog.netlify.com |
-| [![Netlify Status](https://api.netlify.com/api/v1/badges/ed253426-cae8-40fc-9647-28a8cd1f5a28/deploy-status)](https://app.netlify.com/sites/chronoblog-netlify-cms/deploys) | https://github.com/Ganevru/gatsby-starter-chronoblog-netlify-cms | https://chronoblog-netlify-cms.netlify.com |
-| [![Netlify Status](https://api.netlify.com/api/v1/badges/b66fd3f1-2f68-40f8-9572-3317b5fe71a9/deploy-status)](https://app.netlify.com/sites/chronoblog-profile/deploys) | https://github.com/Ganevru/gatsby-starter-chronoblog-profile | https://chronoblog-profile.netlify.com |
-| [![Netlify Status](https://api.netlify.com/api/v1/badges/d50e7f05-b930-4ca1-9fba-2304213cff1a/deploy-status)](https://app.netlify.com/sites/chronoblog-hacker/deploys) | https://github.com/Ganevru/gatsby-starter-chronoblog-hacker | https://chronoblog-hacker.netlify.com |
-| [![Netlify Status](https://api.netlify.com/api/v1/badges/89481a31-c0c3-46ac-bf12-1fa638f0cd82/deploy-status)](https://app.netlify.com/sites/chronoblog-minimal/deploys) | https://github.com/Ganevru/gatsby-starter-chronoblog-minimal | https://chronoblog-minimal.netlify.com |
-
-## Status of development and test versions
-
-All these versions work from master branch of this repository. It’s ok if they do not work.
-
-| Status | Link |
-| --- | --- |
-| [![Netlify Status](https://api.netlify.com/api/v1/badges/e26ac6b2-92f3-4744-8384-c64b144a1f74/deploy-status)](https://app.netlify.com/sites/chronoblog-master/deploys) | https://chronoblog-master.netlify.com |
-| [![Netlify Status](https://api.netlify.com/api/v1/badges/d6c88fb7-14d5-495a-8bc4-f0994e728881/deploy-status)](https://app.netlify.com/sites/chronoblog-tests/deploys) | https://chronoblog-tests.netlify.com |
-| [![Netlify Status](https://api.netlify.com/api/v1/badges/b8dc064f-6625-4380-88ed-55345a548489/deploy-status)](https://app.netlify.com/sites/chronoblog-master-profile/deploys) | https://chronoblog-master-profile.netlify.com |
-| [![Netlify Status](https://api.netlify.com/api/v1/badges/a3436984-202d-4ec0-915d-60639ceb2e13/deploy-status)](https://app.netlify.com/sites/chronoblog-master-hacker/deploys) | https://chronoblog-master-hacker.netlify.com |
-| [![Netlify Status](https://api.netlify.com/api/v1/badges/856e7fea-a790-4b10-b982-76cab60ce4df/deploy-status)](https://app.netlify.com/sites/chronoblog-master-minimal/deploys) | https://chronoblog-master-minimal.netlify.com |
-| [![Netlify Status](https://api.netlify.com/api/v1/badges/3bddc25b-758e-4215-a6ee-4f0bc5997b87/deploy-status)](https://app.netlify.com/sites/chronoblog-master-netlify-cms/deploys) | https://chronoblog-master-netlify-cms.netlify.com |
-
 ## GitHub Workflows
 
-![](https://github.com/Ganevru/gatsby-theme-chronoblog/workflows/Tests/badge.svg)
+![](https://github.com/Chronoblog/gatsby-theme-chronoblog/workflows/Tests/badge.svg)
 
-![](https://github.com/Ganevru/gatsby-theme-chronoblog/workflows/Test%20and%20Publish%20Starters/badge.svg)
+![](https://github.com/Chronoblog/gatsby-theme-chronoblog/workflows/Test%20and%20Publish%20Starters/badge.svg)
 
 # Feedback
 
-🤝 If you have any problems with the Chronoblog, or you have interesting ideas, write to the github issue: [github.com/Ganevru/gatsby-theme-chronoblog/issues](https://github.com/Ganevru/gatsby-theme-chronoblog/issues)
+🤝 If you have any problems with the Chronoblog, or you have interesting ideas, write to the github issue: [github.com/Chronoblog/gatsby-theme-chronoblog/issues](https://github.com/Chronoblog/gatsby-theme-chronoblog/issues)
 
 🐦 You can also contact me on Twitter: [twitter.com/Ganevru](https://twitter.com/Ganevru), I will be glad to know your opinion about Chronoblog.
 
