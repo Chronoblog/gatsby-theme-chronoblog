@@ -77,4 +77,4 @@ Quick Deployment:
 
 ## More information
 
-For complete information, go to the main repository: [github.com/ganevru/gatsby-theme-chronoblog)](https://github.com/Chronoblog/gatsby-theme-chronoblog)
+For complete information, go to the main repository: [github.com/ganevru/gatsby-theme-chronoblog](https://github.com/Chronoblog/gatsby-theme-chronoblog)
