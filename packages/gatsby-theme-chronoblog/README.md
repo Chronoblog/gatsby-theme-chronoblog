@@ -135,12 +135,12 @@ Also, all starters have a different main page, **`src/pages/index.mdx`** and con
   - [Shadowing in Chronoblog Gatsby Theme](#shadowing-in-chronoblog-gatsby-theme)
     - [Components that can and should be shadowed](#components-that-can-and-should-be-shadowed)
     - [Components that can be shadowed](#components-that-can-be-shadowed)
+  - [About used Technologies and Methods](#about-used-technologies-and-methods)
+    - [TypeScript and JSDoc for type annotation](#typescript-and-jsdoc-for-type-annotation)
 - [Status](#status)
   - [GitHub Workflows](#github-workflows)
 - [Feedback](#feedback)
 - [Contribute](#contribute)
-- [About used Technologies and Methods](#about-used-technologies-and-methods)
-  - [TypeScript and JSDoc for type annotation](#typescript-and-jsdoc-for-type-annotation)
 - [Credits](#credits)
   - [Art](#art)
 
@@ -987,6 +987,20 @@ These components can be shadowed if you think that you really need it:
 | 👍 | `src/gatsby-theme-chronoblog/components/header.js` |  |
 | 👍 | `src/gatsby-theme-chronoblog/components/footer.js` |  |
 
+## About used Technologies and Methods
+
+Here to list the technologies and methods that are used in the project. **None of this needs to be known to use Chronoblog** (Read [Guide](#guide---how-to-start-working-with-chronoblog-gatsby-theme) and [Documentation](#documentation) for this), but it will help to understand how everything is organized here.
+
+### TypeScript and JSDoc for type annotation
+
+If you looked at the `package.json` file in the root of the project, then you saw TypeScript and types for various libraries in the dependencies (`@types/node`, `@types/react`, etc.). But the project is written in `js`?
+
+The fact is that JSDoc comments are used to declare types. Read more about this method in these articles:
+
+- [Type Safe JavaScript with JSDoc](https://medium.com/@trukrs/type-safe-javascript-with-jsdoc-7a2a63209b76)
+- [Type annotations in JavaScript files](https://ricostacruz.com/til/typescript-jsdoc)
+- [TypeScript without TypeScript -- JSDoc superpowers](https://fettblog.eu/typescript-jsdoc-superpowers/)
+
 # Status
 
 ## GitHub Workflows
@@ -1003,32 +1017,13 @@ These components can be shadowed if you think that you really need it:
 
 ✍️ If you made a site using Chronoblog - write to me about it!
 
-At the moment, as far as I know, the only real site using Chronoblog is my site:
-
-Site: [www.ganevdev.com](https://www.ganevdev.com/)  
-Repo: [github.com/Ganevru/ganev-personal-site](https://github.com/Ganevru/ganev-personal-site)
-
-But I definitely want to expand this list.
-
 # Contribute
 
 One of the easiest, and at the same time, useful ways to help the project is to help in writing this readme. English is not native to me, and I can’t say that I am very good at it. So if you see something strange in the text, or if you think you can write better, correct and make a pull request.
 
-Any other type of contribution to the project is also welcome!
+Any other type of contribution to the project is also welcome! I use the GitHub issues as a todo list, so if you want to help, you can just write about it in the comments of one of the issues.
 
-# About used Technologies and Methods
-
-Here to list the technologies and methods that are used in the project. **None of this needs to be known to use Chronoblog** (Read [Guide](#guide---how-to-start-working-with-chronoblog-gatsby-theme) and [Documentation](#documentation) for this), but it will help to understand how everything is organized here.
-
-## TypeScript and JSDoc for type annotation
-
-If you looked at the `package.json` file in the root of the project, then you saw TypeScript and types for various libraries in the dependencies (`@types/node`, `@types/react`, etc.). But the project is written in `js`?
-
-The fact is that JSDoc comments are used to declare types. Read more about this method in these articles:
-
-- [Type Safe JavaScript with JSDoc](https://medium.com/@trukrs/type-safe-javascript-with-jsdoc-7a2a63209b76)
-- [Type annotations in JavaScript files](https://ricostacruz.com/til/typescript-jsdoc)
-- [TypeScript without TypeScript -- JSDoc superpowers](https://fettblog.eu/typescript-jsdoc-superpowers/)
+Or, if you want to add something new, write new issues with your ideas, and we will discuss it.
 
 # Credits
 
