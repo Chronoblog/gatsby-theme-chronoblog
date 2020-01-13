@@ -28,8 +28,8 @@ const makeSlug = (node, slugValueDefault) => {
   let slug = getSlug(node, slugValueDefault);
   slug = slug.toLowerCase();
   slug = slug.replace(/\s/g, '-');
+  slug = `/${slug}`;
   slug = slug.replace(/\/\//g, '/');
-  slug = path.join('/', slug);
   return slug;
 };
 
