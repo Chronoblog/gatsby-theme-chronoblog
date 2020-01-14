@@ -993,13 +993,13 @@ Here to list the technologies and methods that are used in the project. **None o
 
 ### Organization of this monorepository
 
-This monorepo uses Lerna (https://github.com/lerna/lerna) and yarn workspaces (https://yarnpkg.com/en/docs/workspaces). Because of this, we do not use npm here.
+This monorepo uses Lerna (https://github.com/lerna/lerna) and yarn workspaces (https://yarnpkg.com/en/docs/workspaces). Because of this, we **do not use npm** here.
 
-The most important project folder is the [packages](https://github.com/Chronoblog/gatsby-theme-chronoblog/tree/master/packages) folder. At the moment there is only [gatsby-theme-chronoblog](https://github.com/Chronoblog/gatsby-theme-chronoblog/tree/master/packages/gatsby-theme-chronoblog) there, and all the main work on the project takes place in it. Perhaps in the future, additional packages will appear.
+The most important project folder is the [gatsby-theme-chronoblog/tree/master/packages](https://github.com/Chronoblog/gatsby-theme-chronoblog/tree/master/packages) folder. At the moment there is only [gatsby-theme-chronoblog/tree/master/packages/gatsby-theme-chronoblog](https://github.com/Chronoblog/gatsby-theme-chronoblog/tree/master/packages/gatsby-theme-chronoblog) there, and all the main work on the project takes place in it. Perhaps in the future, additional packages will appear.
 
 The [starters](https://github.com/Chronoblog/gatsby-theme-chronoblog/tree/master/starters) folder contains all the project starters (including test ones).
 
-Such an organization allows you to check the work of any starter right during the work on the project. For example, by running the `start:chronoblog` command, you can make changes to `gatsby-theme-chronoblog` and immediately look at how the "chronoblog starter" works with these changes (at http://localhost:8000).
+Such an organization allows you to check the work of any starter right during the work on the project. For example, by running the `yarn start:chronoblog` command, you can make changes to `gatsby-theme-chronoblog` and immediately look at how the "chronoblog starter" works with these changes (at http://localhost:8000).
 
 ### Tests and Publication
 
