@@ -61,6 +61,7 @@ export default ({ placeholder = '', symbol = '' }) => {
         <Box sx={{ flexGrow: 1 }}>
           <input
             type="search"
+            aria-label="search"
             sx={{
               '-webkit-appearance': 'textfield',
               width: ['100%'],

@@ -18,6 +18,7 @@ import { graphql, useStaticQuery } from 'gatsby';
  * @property {string} author
  * @property {string} authorDescription
  * @property {string} avatar
+ * @property {string} avatarAltText
  * @property {string} twitterSite
  * @property {string} twitterCreator
  * @property {object} uiText
@@ -61,6 +62,7 @@ const useSiteMetadata = () => {
           author
           authorDescription
           avatar
+          avatarAltText
           twitterSite
           twitterCreator
           uiText {
@@ -85,6 +87,7 @@ const useSiteMetadata = () => {
           social {
             icon
             url
+            alt
           }
         }
       }
