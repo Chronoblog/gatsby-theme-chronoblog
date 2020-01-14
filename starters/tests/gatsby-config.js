@@ -8,7 +8,8 @@ module.exports = {
     social: [
       {
         icon: `twitter`,
-        url: `https://twitter.com/ganevru`
+        url: `https://twitter.com/ganevru`,
+        altText: 'alt text for Twitter'
       },
       {
         icon: `github`,

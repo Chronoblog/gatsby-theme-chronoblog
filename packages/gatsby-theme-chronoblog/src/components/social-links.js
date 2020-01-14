@@ -9,8 +9,9 @@ import useSiteMetadata from '../hooks/use-site-metadata';
 config.autoAddCss = false;
 library.add(fab);
 
-const SocialUrl = ({ icon, url, alt, ...props }) => {
+const SocialUrl = ({ icon, url, altText, ...props }) => {
   if (!icon || !url) return <div />;
+  const altTextToUse = altText || icon;
   //
   return (
     <div {...props}>
@@ -18,8 +19,8 @@ const SocialUrl = ({ icon, url, alt, ...props }) => {
         target="_blank"
         rel="noopener"
         href={url}
-        alt={alt}
-        aria-label={alt}
+        alt={altTextToUse}
+        aria-label={altTextToUse}
         sx={{
           color: 'currentcolor',
           textDecoration: 'none'
@@ -52,7 +53,13 @@ const SocialLinksMain = ({ justifyContent, fontSizeObj, social, ...props }) => {
         }}
       >
         {social.map((s) => (
-          <SocialUrl key={s.url} icon={s.icon} url={s.url} alt={s.alt} aria-label={s.alt}/>
+          <SocialUrl
+            key={s.url}
+            icon={s.icon}
+            url={s.url}
+            altText={s.altText}
+            aria-label={s.alt}
+          />
         ))}
       </div>
     </div>

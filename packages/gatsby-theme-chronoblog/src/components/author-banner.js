@@ -38,9 +38,12 @@ export const AuthorBannerAvatar = ({ src = '', ...props }) => {
     my: '10px',
     boxShadow: '0 2px 4px 0 hsla(0, 0%, 0%, .2)'
   };
+  const altToUse = siteMeta.avatarAltText || siteMeta.author || '';
   if (src) return <Avatar sx={style} src={src} {...props} />;
   if (siteMeta.avatar)
-    return <Avatar sx={style} src={siteMeta.avatar} alt={siteMeta.avatarAltText} {...props} />;
+    return (
+      <Avatar sx={style} src={siteMeta.avatar} alt={altToUse} {...props} />
+    );
   return <div sx={{ marginX: '10px' }} />;
 };
 

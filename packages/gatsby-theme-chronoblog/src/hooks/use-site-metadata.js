@@ -4,7 +4,7 @@ import { graphql, useStaticQuery } from 'gatsby';
  * @typedef {object} SocialObject
  * @property {string} icon
  * @property {string} url
- * @property {string} altText
+ * @property {string=} altText
  */
 
 /**
