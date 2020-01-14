@@ -74,7 +74,7 @@ module.exports = (options) => {
         {
           icon: ``,
           url: ``,
-          altText: ``,
+          altText: ``
         }
       ]
     },

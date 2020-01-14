@@ -4,6 +4,7 @@ import { graphql, useStaticQuery } from 'gatsby';
  * @typedef {object} SocialObject
  * @property {string} icon
  * @property {string} url
+ * @property {string} altText
  */
 
 /**
@@ -87,7 +88,7 @@ const useSiteMetadata = () => {
           social {
             icon
             url
-            alt
+            altText
           }
         }
       }
