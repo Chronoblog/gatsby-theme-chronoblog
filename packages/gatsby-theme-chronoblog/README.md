@@ -999,7 +999,7 @@ The most important project folder is the [gatsby-theme-chronoblog/tree/master/pa
 
 The [starters](https://github.com/Chronoblog/gatsby-theme-chronoblog/tree/master/starters) folder contains all the project starters (including test ones).
 
-Such an organization allows you to check the work of any starter right during the work on the project. For example, by running the `yarn start:chronoblog` command, you can make changes to `gatsby-theme-chronoblog` and immediately look at how the "chronoblog starter" works with these changes (at http://localhost:8000).
+Such an organization allows you to check the work of any starter right during the work on the project. For example, by running `yarn start:chronoblog` command, you can make changes to [gatsby-theme-chronoblog/tree/master/packages/gatsby-theme-chronoblog](https://github.com/Chronoblog/gatsby-theme-chronoblog/tree/master/packages/gatsby-theme-chronoblog) and immediately look at how the "chronoblog starter" works with these changes (at http://localhost:8000).
 
 ### Tests and Publication
 
