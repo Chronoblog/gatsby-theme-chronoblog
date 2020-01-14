@@ -52,6 +52,7 @@ module.exports = (options) => {
       author: '',
       authorDescription: '',
       avatar: '',
+      avatarAltText: '',
       twitterSite: '',
       twitterCreator: '',
       uiText: {
@@ -72,7 +73,8 @@ module.exports = (options) => {
       social: [
         {
           icon: ``,
-          url: ``
+          url: ``,
+          altText: ``,
         }
       ]
     },

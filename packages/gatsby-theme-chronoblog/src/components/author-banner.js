@@ -40,7 +40,7 @@ export const AuthorBannerAvatar = ({ src = '', ...props }) => {
   };
   if (src) return <Avatar sx={style} src={src} {...props} />;
   if (siteMeta.avatar)
-    return <Avatar sx={style} src={siteMeta.avatar} {...props} />;
+    return <Avatar sx={style} src={siteMeta.avatar} alt={siteMeta.avatarAltText} {...props} />;
   return <div sx={{ marginX: '10px' }} />;
 };
 
