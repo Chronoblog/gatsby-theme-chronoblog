@@ -999,11 +999,11 @@ The most important project folder is the [packages](https://github.com/Chronoblo
 
 The [starters](https://github.com/Chronoblog/gatsby-theme-chronoblog/tree/master/starters) folder contains all the project starters (including test ones).
 
-Such an organization allows you to check the work of any starter right during the work on the project. For example, by running the `start: chronoblog` command, you can make changes to `gatsby-theme-chronoblog` and immediately look at how the "chronoblog starter" works with these changes (at http://localhost:8000).
+Such an organization allows you to check the work of any starter right during the work on the project. For example, by running the `start:chronoblog` command, you can make changes to `gatsby-theme-chronoblog` and immediately look at how the "chronoblog starter" works with these changes (at http://localhost:8000).
 
 ### Tests and Publication
 
-The github action scripts can be viewed here: [workflows](https://github.com/Chronoblog/gatsby-theme-chronoblog/tree/master/.github/workflows). Each time changes are added to the repo, tests and the generation of all starters (on various platforms) are launched. This allows you to check if everything is working correctly.
+The github action scripts can be viewed here: [workflows](https://github.com/Chronoblog/gatsby-theme-chronoblog/tree/master/.github/workflows). Each time changes are added to the repo, tests and the generation of all starters (on various platforms) are launched. This allows to check if everything is working correctly.
 
 We can say that the master branch is a development branch since changes in the branch alone do not lead to the publication of the project.
 
