@@ -42,7 +42,7 @@ const Tag = ({ tagWithStat, style, pageContextTag, showStatsNumber }) => {
   //
   return (
     <Link to={link}>
-      <Button sx={style} varian={active ? 'active' : 'primary'}>
+      <Button sx={style} variant={active ? 'active' : 'primary'}>
         #{tagWithStat.tagName}
       </Button>
     </Link>
