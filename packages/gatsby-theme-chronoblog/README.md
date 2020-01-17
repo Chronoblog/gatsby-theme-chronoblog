@@ -1005,9 +1005,11 @@ Such an organization allows you to check the work of any starter right during th
 
 The github action scripts can be viewed here: [workflows](https://github.com/Chronoblog/gatsby-theme-chronoblog/tree/master/.github/workflows). Each time changes are added to the repo, tests and the generation of all starters (on various platforms) are launched. This allows to check if everything is working correctly.
 
-We can say that the master branch is a development branch since changes in the branch alone do not lead to the publication of the project.
+We can say that the master branch is a development branch since changes in the branch alone do not lead to the publication of the project. Therefore, there may be bugs and problems in the master branch.
 
 When updating the project version, packages are sent to npm, and starters, using [publish-starters.yml](https://github.com/Chronoblog/gatsby-theme-chronoblog/blob/master/.github/workflows/publish-starters.yml), update their individual repositories. Because of this, chronoblog starters have such strange commits (for example, https://github.com/Chronoblog/gatsby-starter-chronoblog).
+
+For manual/visual testing, we have a special "secret" starter for tests - https://github.com/Chronoblog/gatsby-theme-chronoblog/tree/master/starters/tests. You can run it with the command `yarn start:tests` or `yarn serve:tests` (to run a full build).
 
 ### TypeScript and JSDoc for type annotation
 
