@@ -158,14 +158,14 @@ const YearSeparator = ({
 const Item = ({ itemsFormat, item, linksBeforeTitle = '' }) => {
   if (itemsFormat === 'compact')
     return (
-      <li key={item.id}>
+      <div key={item.id}>
         <Compact item={item} linksBeforeTitle={linksBeforeTitle} />
-      </li>
+      </div>
     );
   return (
-    <li key={item.id}>
+    <div key={item.id}>
       <Card item={item} linksBeforeTitle={linksBeforeTitle} />
-    </li>
+    </div>
   );
 };
 
@@ -282,7 +282,7 @@ export default ({
           const firstYear = yearsArray[0];
           //
           return (
-            <ul sx={listStyleObject}>
+            <div sx={listStyleObject}>
               {yearsArray.map((year) => {
                 return (
                   <YearSeparator
@@ -293,7 +293,7 @@ export default ({
                     yearSeparatorSkipFirst={yearSeparatorSkipFirstUse}
                     yearSeparatorType={yearSeparatorType}
                   >
-                    <ul sx={listStyleObject}>
+                    <div sx={listStyleObject}>
                       {feedItemsToShow.map((item) => {
                         if (getItemYear(item) === year) {
                           return (
@@ -306,11 +306,11 @@ export default ({
                         }
                         return undefined;
                       })}
-                    </ul>
+                    </div>
                   </YearSeparator>
                 );
               })}
-            </ul>
+            </div>
           );
         }}
       </Location>
