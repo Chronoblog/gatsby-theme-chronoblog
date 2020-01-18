@@ -7,6 +7,10 @@ module.exports = {
     avatar: '/avatar.jpg',
     social: [
       {
+        icon: `envelope`,
+        url: `mailto:hello@mail.com`
+      },
+      {
         icon: `twitter`,
         url: `https://twitter.com/ganevru`,
         altText: 'alt text for Twitter'
