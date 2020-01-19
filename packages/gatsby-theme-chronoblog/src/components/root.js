@@ -2,9 +2,6 @@
 import '@fortawesome/fontawesome-svg-core/styles.css';
 
 import { Global } from '@emotion/core';
-import { config, library } from '@fortawesome/fontawesome-svg-core';
-import { fab } from '@fortawesome/free-brands-svg-icons';
-import { faAt, faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { MDXProvider } from '@mdx-js/react';
 import {
@@ -32,8 +29,6 @@ import SEO from './seo';
 import SocialLinks from './social-links';
 import Tags from './tags';
 
-config.autoAddCss = false;
-library.add(fab, faEnvelope, faPhone, faAt);
 
 const Link = ({ to, children, ...props }) => (
   <LinkGatsby to={to} {...props}>

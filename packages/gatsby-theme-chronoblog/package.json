@@ -35,7 +35,6 @@
     "@emotion/core": "^10.0.22",
     "@fortawesome/fontawesome-svg-core": "^1.2.25",
     "@fortawesome/free-brands-svg-icons": "^5.11.2",
-    "@fortawesome/free-solid-svg-icons": "^5.11.2",
     "@fortawesome/react-fontawesome": "^0.1.7",
     "@mdx-js/mdx": "^1.5.1",
     "@mdx-js/react": "^1.5.1",
@@ -68,6 +67,7 @@
     "url-join": "^4.0.1"
   },
   "devDependencies": {
+    "@fortawesome/free-solid-svg-icons": "^5.12.0",
     "gatsby": "^2.18.7",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"

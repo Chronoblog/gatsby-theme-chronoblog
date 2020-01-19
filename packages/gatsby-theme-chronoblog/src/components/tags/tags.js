@@ -33,7 +33,7 @@ const Tag = ({ tagWithStat, style, pageContextTag, showStatsNumber }) => {
       <Link to={link}>
         <Button sx={style} variant={active ? 'active' : 'primary'}>
           #{tagWithStat.tagName}{' '}
-          <Badge variant="tags" ml={1}>
+          <Badge variant="outline" ml={1}>
             {tagWithStat.tagStat}
           </Badge>
         </Button>

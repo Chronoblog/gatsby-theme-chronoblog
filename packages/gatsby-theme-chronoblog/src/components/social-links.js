@@ -1,13 +1,14 @@
 /** @jsx jsx */
 import { config, library } from '@fortawesome/fontawesome-svg-core';
-import { fab } from '@fortawesome/free-brands-svg-icons';
+// Attempted to import FontAwesome's solid icons
+import { fas } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { jsx, Styled } from 'theme-ui';
 
 import useSiteMetadata from '../hooks/use-site-metadata';
 
 config.autoAddCss = false;
-library.add(fab);
+library.add(fas);
 
 const SocialUrl = ({ icon, url, altText, ...props }) => {
   if (!icon || !url) return <div />;
@@ -25,9 +26,9 @@ const SocialUrl = ({ icon, url, altText, ...props }) => {
           color: 'currentcolor',
           textDecoration: 'none'
         }}
-      >
+      >       
         &nbsp;
-        <FontAwesomeIcon icon={['fab', icon]} />
+        <FontAwesomeIcon icon={['fas', icon]} />
         &nbsp;
       </Styled.a>
     </div>
