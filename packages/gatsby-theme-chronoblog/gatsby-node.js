@@ -53,6 +53,42 @@ exports.onPreBootstrap = ({ store }) => {
   });
 };
 
+// These types need to match the gatsby-mdx-plugin's inferred result exactly
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions;
+  createTypes(`
+    type MdxFrontmatter {
+      cover: File
+      title: String
+      date: Date
+      link: String
+      hide: Boolean
+      draft: Boolean
+      description: String
+      tags: [String]
+    }
+
+    type Fields {
+      slug: String
+      type: String
+    }
+
+    type Headings {
+      value: String
+      depth: Int
+    }
+
+    type Mdx implements Node {
+      id: String
+      excerpt: String
+      frontmatter: MdxFrontmatter
+      fields: Fields
+      headings: Headings
+      body: String
+    }
+  `);
+};
+
 exports.onCreateNode = ({ node, actions, getNode }) => {
   //
   if (node.internal.type !== 'Mdx') return;
