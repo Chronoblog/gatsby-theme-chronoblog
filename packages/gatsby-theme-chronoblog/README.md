@@ -9,8 +9,7 @@
 Chronoblog - Gatsby Theme
 </h1>
 
-[![npm](https://img.shields.io/npm/v/gatsby-theme-chronoblog?color=brightgreen)](https://www.npmjs.com/package/gatsby-theme-chronoblog) [![node](https://img.shields.io/node/v/gatsby-theme-chronoblog)](https://www.npmjs.com/package/gatsby-theme-chronoblog) [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](code_of_conduct.md)  
-![](https://github.com/Chronoblog/gatsby-theme-chronoblog/workflows/Tests/badge.svg) ![](https://github.com/Chronoblog/gatsby-theme-chronoblog/workflows/Test%20and%20Publish%20Starters/badge.svg)
+[![npm](https://img.shields.io/npm/v/gatsby-theme-chronoblog?color=brightgreen)](https://www.npmjs.com/package/gatsby-theme-chronoblog) [![node](https://img.shields.io/node/v/gatsby-theme-chronoblog)](https://www.npmjs.com/package/gatsby-theme-chronoblog) [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](code_of_conduct.md)
 
 Chronoblog is a [Gatsby js](https://github.com/gatsbyjs/gatsby) theme specifically designed to create a personal website.
 
@@ -131,11 +130,13 @@ Also, all starters have a different main page, **`src/pages/index.mdx`** and con
   - [SEO and metadata](#seo-and-metadata)
     - [Metadata generation](#metadata-generation)
     - [Metadata Verification Tools](#metadata-verification-tools)
-    - [SEO component in .mdx](#seo-component-in-mdx)
+    - [SEO component in `.mdx`](#seo-component-in-mdx)
   - [Shadowing in Chronoblog Gatsby Theme](#shadowing-in-chronoblog-gatsby-theme)
     - [Components that can and should be shadowed](#components-that-can-and-should-be-shadowed)
     - [Components that can be shadowed](#components-that-can-be-shadowed)
   - [About used Technologies and Methods](#about-used-technologies-and-methods)
+    - [Organization of this monorepository](#organization-of-this-monorepository)
+    - [Tests and Publication](#tests-and-publication)
     - [TypeScript and JSDoc for type annotation](#typescript-and-jsdoc-for-type-annotation)
 - [Status](#status)
   - [GitHub Workflows](#github-workflows)
@@ -1025,6 +1026,8 @@ The fact is that JSDoc comments are used to declare types. Read more about this 
 
 ## GitHub Workflows
 
+Github status shows the state of the Master branch. There may be problems and fail tests in the Master branch, this is normal - it only means that we can’t publish a new public release.
+
 ![](https://github.com/Chronoblog/gatsby-theme-chronoblog/workflows/Tests/badge.svg)
 
 ![](https://github.com/Chronoblog/gatsby-theme-chronoblog/workflows/Test%20and%20Publish%20Starters/badge.svg)
@@ -1039,11 +1042,9 @@ The fact is that JSDoc comments are used to declare types. Read more about this 
 
 # Contribute
 
-One of the easiest, and at the same time, useful ways to help the project is to help in writing this readme. English is not native to me, and I can’t say that I am very good at it. So if you see something strange in the text, or if you think you can write better, correct and make a pull request.
+Any type of contribution to the project is also welcome! I use the GitHub issues as a todo list, so if you want to help, read existing issues. Or, if you want to add something new, write new issues with your ideas, and we will discuss it.
 
-Any other type of contribution to the project is also welcome! I use the GitHub issues as a todo list, so if you want to help, you can just write about it in the comments of one of the issues.
-
-Or, if you want to add something new, write new issues with your ideas, and we will discuss it.
+If you want to contribute to the project, it will be useful for you to read this: [About used Technologies and Methods](https://github.com/Chronoblog/gatsby-theme-chronoblog#about-used-technologies-and-methods)
 
 # Credits
 
