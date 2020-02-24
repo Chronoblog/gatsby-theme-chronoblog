@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.15.0](https://github.com/Chronoblog/gatsby-theme-chronoblog/compare/minimal@1.14.0...minimal@1.15.0) (2020-02-24)
+
+**Note:** Version bump only for package minimal
+
+
+
+
+
 # [1.14.0](https://github.com/Chronoblog/gatsby-theme-chronoblog/compare/minimal@1.13.0...minimal@1.14.0) (2020-01-17)
 
 **Note:** Version bump only for package minimal
