@@ -12,7 +12,15 @@ jobs:
       matrix:
         node_version: [10, 12]
         os: [ubuntu-latest, macos-latest, windows-latest]
-        starter: [chronoblog, chronoblog-netlify-cms, minimal, profile, hacker]
+        starter:
+          [
+            chronoblog,
+            chronoblog-netlify-cms,
+            chronoblog-disqus,
+            minimal,
+            profile,
+            hacker,
+          ]
     steps:
       - uses: actions/checkout@v1
 
