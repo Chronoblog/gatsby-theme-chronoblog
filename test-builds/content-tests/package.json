@@ -1,8 +1,8 @@
 {
-  "name": "tests",
+  "name": "content-tests",
   "version": "1.15.1",
   "private": true,
-  "description": "gatsby-starter-chronoblog-tests",
+  "description": "",
   "keywords": [],
   "license": "MIT",
   "author": "Ivan Ganev <ganevio92@gmail.com>",
@@ -21,6 +21,5 @@
   },
   "engines": {
     "node": ">=10.15.0"
-  },
-  "starter-name": "gatsby-starter-chronoblog-tests"
+  }
 }

@@ -1,4 +1,4 @@
-# Tests
+# test-builds
 
 In order to keep the starter folder clean, all test starters will be here.
 
