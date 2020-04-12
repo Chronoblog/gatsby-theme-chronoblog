@@ -1,11 +1,11 @@
-import { Disqus, CommentCount } from 'gatsby-plugin-disqus';
-let disqusConfig = {
-  url: document.location.href,
-  identifier: document.location.pathname,
-  title: document.location.pathname
-};
+import { Disqus } from 'gatsby-plugin-disqus';
 
 <AuthorBanner></AuthorBanner>
 <p>&nbsp;</p>
-<CommentCount config={disqusConfig} placeholder={'...'} />
-<Disqus config={disqusConfig} />
+<Disqus
+config={{
+url: props.siteMetadata.siteUrl + props.postData.fields.slug,
+title: props.postData.frontmatter.title,
+id: props.postData.id
+}}
+/>

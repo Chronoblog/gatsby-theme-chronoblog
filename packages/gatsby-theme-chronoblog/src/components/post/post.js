@@ -40,12 +40,12 @@ const getDescriptionForSeo = (fromFrontmatter, fromExcerpt) => {
   return '';
 };
 
-const PostFooter = () => {
+const PostFooter = ({ postData }) => {
   const siteMetadata = useSiteMetadata();
   return (
     <div sx={{ mt: '30px', mb: '30px' }}>
       {PostFooterMdx && PostFooterMdx !== '' ? (
-        <PostFooterMdx siteMetadata={siteMetadata} />
+        <PostFooterMdx siteMetadata={siteMetadata} postData={postData} />
       ) : (
         ''
       )}
@@ -85,7 +85,7 @@ export const Post = ({ data }) => {
           <PostContent data={data} />
           <footer sx={{ marginTop: '20px' }}>
             <Tags type="item" tags={data.mdx.frontmatter.tags} />
-            <PostFooter />
+            <PostFooter postData={data.mdx} />
           </footer>
         </article>
       </main>
