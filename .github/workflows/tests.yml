@@ -29,6 +29,9 @@ jobs:
       - name: yarn build:chronoblog-netlify-cms
         run: yarn build:chronoblog-netlify-cms
 
+      - name: yarn build:chronoblog-disqus
+        run: yarn build:chronoblog-disqus
+
       - name: yarn build:minimal
         run: yarn build:minimal
 
