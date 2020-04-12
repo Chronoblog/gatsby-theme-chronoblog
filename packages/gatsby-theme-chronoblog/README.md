@@ -996,9 +996,13 @@ Here to list the technologies and methods that are used in the project. **None o
 
 This monorepo uses Lerna (https://github.com/lerna/lerna) and yarn workspaces (https://yarnpkg.com/en/docs/workspaces). Because of this, we do not use npm for project development (this applies only to the development of Chronoblog. It is normal to use **npm** to develop a site based on Chronoblog Theme).
 
-The most important project folder is the [gatsby-theme-chronoblog/tree/master/packages](https://github.com/Chronoblog/gatsby-theme-chronoblog/tree/master/packages) folder. At the moment there is only [gatsby-theme-chronoblog/tree/master/packages/gatsby-theme-chronoblog](https://github.com/Chronoblog/gatsby-theme-chronoblog/tree/master/packages/gatsby-theme-chronoblog) there, and all the main work on the project takes place in it. Perhaps in the future, additional packages will appear.
+- [packages](https://github.com/Chronoblog/gatsby-theme-chronoblog/tree/master/packages) folder. At the moment there is only [gatsby-theme-chronoblog/tree/master/packages/gatsby-theme-chronoblog](https://github.com/Chronoblog/gatsby-theme-chronoblog/tree/master/packages/gatsby-theme-chronoblog) there, and all the main work on the project takes place in it. Perhaps in the future, additional packages will appear.
 
-The [starters](https://github.com/Chronoblog/gatsby-theme-chronoblog/tree/master/starters) folder contains all the project starters (including test ones).
+- [starters](https://github.com/Chronoblog/gatsby-theme-chronoblog/tree/master/starters) folder contains all the project starters.
+
+- [examples](https://github.com/Chronoblog/gatsby-theme-chronoblog/tree/master/starters) folder contains examples of how Chronoblog can be used.
+
+- [test-builds](https://github.com/Chronoblog/gatsby-theme-chronoblog/tree/master/test-builds) folder for test builds.
 
 Such an organization allows you to check the work of any starter right during the work on the project. For example, by running `yarn start:chronoblog` command, you can make changes to [gatsby-theme-chronoblog/tree/master/packages/gatsby-theme-chronoblog](https://github.com/Chronoblog/gatsby-theme-chronoblog/tree/master/packages/gatsby-theme-chronoblog) and immediately look at how the "chronoblog starter" works with these changes (at http://localhost:8000).
 
