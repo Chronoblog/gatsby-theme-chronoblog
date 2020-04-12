@@ -131,6 +131,8 @@ Also, all starters have a different main page, **`src/pages/index.mdx`** and con
     - [Metadata generation](#metadata-generation)
     - [Metadata Verification Tools](#metadata-verification-tools)
     - [SEO component in `.mdx`](#seo-component-in-mdx)
+  - [Prism Code Highlight](#prism-code-highlight)
+    - [Adding support for additional programming languages](#adding-support-for-additional-programming-languages)
   - [Shadowing in Chronoblog Gatsby Theme](#shadowing-in-chronoblog-gatsby-theme)
     - [Components that can and should be shadowed](#components-that-can-and-should-be-shadowed)
     - [Components that can be shadowed](#components-that-can-be-shadowed)
@@ -957,6 +959,12 @@ Facebook debug OG: [developers.facebook.com/tools/debug/og/object](https://devel
 You can use `SEO` component in any `.mdx` file (it does not need to be imported). This component accepts child elements and you can set any metatags inside it as if you used the [react-helmet](https://www.npmjs.com/package/react-helmet) plugin on its own.
 
 This can be useful if you need to set, for example, a special title for some page on the site.
+
+## Prism Code Highlight
+
+Chronoblog already has built-in code highlighting for posts and other content. This is done thanks to [Prism](https://prismjs.com/) and [@theme-ui/prism](https://theme-ui.com/packages/prism). There is already built in support for many programming languages.
+
+### Adding support for additional programming languages
 
 ## Shadowing in Chronoblog Gatsby Theme
 
