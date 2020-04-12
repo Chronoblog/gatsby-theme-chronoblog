@@ -142,6 +142,7 @@ Also, all starters have a different main page, **`src/pages/index.mdx`** and con
   - [GitHub Workflows](#github-workflows)
 - [Feedback](#feedback)
 - [Contribute](#contribute)
+  - [Contribution to the README.md](#contribution-to-the-readmemd)
 - [Credits](#credits)
   - [Art](#art)
 
@@ -1049,6 +1050,12 @@ Github status shows the state of the Master branch. There may be problems and fa
 Any type of contribution to the project is also welcome! I use the GitHub issues as a todo list, so if you want to help, read existing issues. Or, if you want to add something new, write new issues with your ideas, and we will discuss it.
 
 If you want to contribute to the project, it will be useful for you to read this: [About used Technologies and Methods](https://github.com/Chronoblog/gatsby-theme-chronoblog#about-used-technologies-and-methods)
+
+## Contribution to the README.md
+
+Contributions to the README are welcome, especially considering that English is not my native language.
+
+However, remember that you need to edit this README: https://github.com/Chronoblog/gatsby-theme-chronoblog/blob/master/packages/gatsby-theme-chronoblog/README.md - this one located in `packages/gatsby-theme-chronoblog/README.md` is "real".
 
 # Credits
 
