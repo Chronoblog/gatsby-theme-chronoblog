@@ -1,1 +1,11 @@
+import { Disqus, CommentCount } from 'gatsby-plugin-disqus';
+let disqusConfig = {
+  url: location.href,
+  identifier: location.pathname,
+  title: location.pathname
+};
+
 <AuthorBanner></AuthorBanner>
+<p>&nbsp;</p>
+<CommentCount config={disqusConfig} placeholder={'...'} />
+<Disqus config={disqusConfig} />

@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   siteMetadata: {
-    siteTitle: 'Chronoblog Starter with Netlify CMS',
+    siteTitle: 'Chronoblog Netlify CMS Example',
     siteDescription: 'Starter for Gatsby Theme Chronoblog',
     siteImage: '/banner.png', // main image of the site for metadata
     siteUrl: 'https://chronoblog-netlify-cms.now.sh/',

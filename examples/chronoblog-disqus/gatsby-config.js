@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
-    siteTitle: 'Chronoblog Starter',
+    siteTitle: 'Chronoblog Disqus Example',
     siteDescription: 'Starter for Gatsby Theme Chronoblog',
     siteImage: '/banner.png', // main image of the site for metadata
-    siteUrl: 'https://chronoblog.now.sh/',
+    siteUrl: 'https://chronoblog-disqus.now.sh/',
     pathPrefix: '/',
     siteLanguage: 'en',
     ogLanguage: `en_US`,
@@ -74,6 +74,12 @@ module.exports = {
       options: {
         // replace "UA-XXXXXXXXX-X" with your own Tracking ID
         trackingId: 'UA-XXXXXXXXX-X'
+      }
+    },
+    {
+      resolve: `gatsby-plugin-disqus`,
+      options: {
+        shortname: `chronoblog-1`
       }
     }
   ]
