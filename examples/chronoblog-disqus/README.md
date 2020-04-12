@@ -1,10 +1,12 @@
 # Example - how to use Chronoblog with Disqus comments
 
-This is an example of how you can use [Chronoblog](https://github.com/Chronoblog/gatsby-theme-chronoblog) and [Disqus](disqus.com). At the same time, it is a starter for starting work with the Chronoblog, based on [Gatsby Starter Chronoblog](https://github.com/Chronoblog/gatsby-starter-chronoblog) (a standard way to start working with the Chronoblog).
+This is an example of how you can use [Chronoblog](https://github.com/Chronoblog/gatsby-theme-chronoblog) and [Disqus](disqus.com) (with [Gatsby Plugin Disqus](https://github.com/tterb/gatsby-plugin-disqus)). At the same time, it is a starter for starting work with the Chronoblog, based on [Gatsby Starter Chronoblog](https://github.com/Chronoblog/gatsby-starter-chronoblog) (a standard way to start working with the Chronoblog).
 
 Demo: [chronoblog-disqus.now.sh](https://chronoblog-disqus.now.sh)
 
 Disqus Documentation: [help.disqus.com](https://help.disqus.com/en/articles/1717258-web-integration)
+
+Gatsby Plugin Disqus: [github.com/tterb/gatsby-plugin-disqus](https://github.com/tterb/gatsby-plugin-disqus)
 
 Read more about Chronoblog Gatsby Theme here: [github.com/Chronoblog/gatsby-theme-chronoblog](https://github.com/Chronoblog/gatsby-theme-chronoblog)
 
