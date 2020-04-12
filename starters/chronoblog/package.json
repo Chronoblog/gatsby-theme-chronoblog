@@ -1,6 +1,6 @@
 {
   "name": "chronoblog",
-  "version": "1.15.0",
+  "version": "1.16.0",
   "private": true,
   "description": "gatsby-starter-chronoblog",
   "keywords": [],
@@ -16,7 +16,7 @@
     "gatsby-plugin-google-analytics": "^2.1.23",
     "gatsby-plugin-manifest": "^2.2.27",
     "gatsby-plugin-sitemap": "^2.2.21",
-    "gatsby-theme-chronoblog": "^0.17.0",
+    "gatsby-theme-chronoblog": "^0.18.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
   },
