@@ -1,4 +1,4 @@
-name: Publish Starters
+name: Publish Examples
 on:
   push:
     tags:
@@ -12,10 +12,10 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: "12.x"
-      - name: publish:starters
+      - name: publish:examples
         uses: johno/actions-push-subdirectories@master
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          args: starters Chronoblog starter-name
+          args: examples Chronoblog starter-name
