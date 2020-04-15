@@ -115,6 +115,7 @@ Also, all starters have a different main page, **`src/pages/index.mdx`** and con
     - [site-header](#site-header)
     - [site-footer](#site-footer)
     - [post-footer](#post-footer)
+      - [Get post data in post footer](#get-post-data-in-post-footer)
   - [Pages](#pages)
     - [index.mdx - homepage of your site](#indexmdx---homepage-of-your-site)
 - [Documentation](#documentation)
@@ -685,6 +686,33 @@ The whole point of this file is to show how you can use it! Feel free to modify 
 By default, there is the author’s banner component that displays the author of the site.
 
 More about `AuthorBanner` component: [AuthorBanner Component](#authorbanner-component).
+
+#### Get post data in post footer
+
+You can get data about the post under which the footer is located:
+
+```jsx
+Post Slug: {{props.postData.fields.slug}}  // /full-blog-post/
+Post Title: {{props.postData.frontmatter.title}} // Full Blog Post Example
+Post Date: {{props.postData.frontmatter.date}} // 2019-12-01T00:00:00.000Z
+Post id: {{props.postData.id}} // 0ff66c75-f55f-5a87-9652-e2998c7148e0
+```
+
+This can be useful, for example, to connect a comment system to the site. Example of how you can use Chronoblog and [Gatsby Plugin Disqus](https://github.com/tterb/gatsby-plugin-disqus):
+
+```jsx
+import { Disqus } from 'gatsby-plugin-disqus';
+
+<AuthorBanner></AuthorBanner>
+<p>&nbsp;</p>
+<Disqus
+	config={{
+		url: props.siteMetadata.siteUrl + props.postData.fields.slug,
+		title: props.postData.frontmatter.title,
+		id: props.postData.id
+	}}
+/>
+```
 
 ## Pages
 
