@@ -43,6 +43,12 @@ const CoverImageBase = ({
         }}
       >
         <Image
+          css={`
+            @supports (backdrop-filter: blur(5px)) {
+              background-color: rgba(255, 255, 255, 0);
+            }
+            background-color: rgba(40, 40, 40, 0.7);
+          `}
           sx={{
             backdropFilter: 'blur(5px) contrast(50%)',
             WebkitBackdropFilter: 'blur(5px) contrast(50%)',
