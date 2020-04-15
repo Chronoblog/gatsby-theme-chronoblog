@@ -9,27 +9,50 @@ import useSiteMetadata from '../hooks/use-site-metadata';
 config.autoAddCss = false;
 library.add(fab);
 
+const SocialUrlLink = ({ url, altTextToUse, children }) => {
+  return (
+    <Styled.a
+      target="_blank"
+      rel="noopener"
+      href={url}
+      alt={altTextToUse}
+      aria-label={altTextToUse}
+      sx={{
+        color: 'currentcolor',
+        textDecoration: 'none'
+      }}
+    >
+      {children}
+    </Styled.a>
+  );
+};
+
+/** @typedef { import('@fortawesome/fontawesome-svg-core').IconProp } IconProp */
+/** @typedef { import('@fortawesome/fontawesome-common-types').IconName } IconName */
+
+/**
+ *
+ * @param {IconName} icon
+ * @returns {IconProp}
+ */
+const iconToUseFun = (icon) => {
+  if (icon === 'envelope') return 'envelope';
+  if (icon === 'at') return 'at';
+  if (icon === 'phone') return 'phone';
+  return ['fab', icon];
+};
+
 const SocialUrl = ({ icon, url, altText, ...props }) => {
   if (!icon || !url) return <div />;
   const altTextToUse = altText || icon;
   //
   return (
     <div {...props}>
-      <Styled.a
-        target="_blank"
-        rel="noopener"
-        href={url}
-        alt={altTextToUse}
-        aria-label={altTextToUse}
-        sx={{
-          color: 'currentcolor',
-          textDecoration: 'none'
-        }}
-      >
+      <SocialUrlLink url={url} altTextToUse={altTextToUse}>
         &nbsp;
-        <FontAwesomeIcon icon={['fab', icon]} />
+        <FontAwesomeIcon icon={iconToUseFun(icon)} />
         &nbsp;
-      </Styled.a>
+      </SocialUrlLink>
     </div>
   );
 };
