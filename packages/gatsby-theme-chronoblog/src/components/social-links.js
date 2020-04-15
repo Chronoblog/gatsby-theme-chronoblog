@@ -42,14 +42,14 @@ const iconToUseFun = (icon) => {
   return ['fab', icon];
 };
 
-const SocialUrl = ({ icon, url, altText, ...props }) => {
+const SocialUrl = ({ icon, url, altText, index, ...props }) => {
   if (!icon || !url) return <div />;
   const altTextToUse = altText || icon;
   //
   return (
     <div {...props}>
       <SocialUrlLink url={url} altTextToUse={altTextToUse}>
-        &nbsp;
+        {index === 0 ? '' : '\u00A0'}
         <FontAwesomeIcon icon={iconToUseFun(icon)} />
         &nbsp;
       </SocialUrlLink>
@@ -75,13 +75,14 @@ const SocialLinksMain = ({ justifyContent, fontSizeObj, social, ...props }) => {
           flexWrap: 'wrap'
         }}
       >
-        {social.map((s) => (
+        {social.map((s, index) => (
           <SocialUrl
             key={s.url}
             icon={s.icon}
             url={s.url}
             altText={s.altText}
             aria-label={s.alt}
+            index={index}
           />
         ))}
       </div>
