@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.4.0](https://github.com/Chronoblog/gatsby-theme-chronoblog/compare/profile-minimal@1.3.1...profile-minimal@1.4.0) (2020-04-16)
+
+**Note:** Version bump only for package profile-minimal
+
+
+
+
+
 ## [1.3.1](https://github.com/Chronoblog/gatsby-theme-chronoblog/compare/profile-minimal@1.3.0...profile-minimal@1.3.1) (2020-04-16)
 
 **Note:** Version bump only for package profile-minimal
