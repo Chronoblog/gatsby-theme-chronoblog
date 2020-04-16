@@ -244,6 +244,10 @@ module.exports = {
     twitterCreator: '', // creator account on twitter
     social: [
       {
+        icon: `envelope`,
+        url: `mailto:mymail@mail.com`
+      },
+      {
         icon: `twitter`,
         url: `https://twitter.com/ganevru`
       },
@@ -334,7 +338,10 @@ In **`siteMetadata`**, replace information about:
 
 **`twitterCreator`** - same as `twitterSite`, but for the author.
 
-**`social`** - your social networks. List the links to your social networks in the format presented. All of them will be automatically used in the [SocialLinks component](#sociallinks-component) (in this starter this is the main menu, footer and the author banner). **`url`** - link to your social network profile, **`icon`** - name of the icon of this social network. Icons use brand icons from [fontawesome.com/icons?d=gallery&s=brands](https://fontawesome.com/icons?d=gallery&s=brands). Most likely, there are icons for any site on which you have a profile.
+**`social`** - your social networks. List the links to your social networks in the format presented. All of them will be automatically used in the [SocialLinks component](#sociallinks-component) (in this starter this is the main menu, footer and the author banner).
+
+- **`url`** - link to your social network profile. In general, it can be a link anywhere.
+- **`icon`** - name of the icon of this social network. Icons use brand icons from [fontawesome.com/icons?d=gallery&s=brands](https://fontawesome.com/icons?d=gallery&s=brands) - most likely, there are icons for any site on which you have a profile. Additionally you can use icons `at` and `envelop` (a good option if you want to place a link to your email) and `phone`.
 
 #### favicon
 
