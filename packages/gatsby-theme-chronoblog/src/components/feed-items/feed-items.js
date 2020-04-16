@@ -107,7 +107,6 @@ const getYears = (items, lang = 'en-US') => {
 };
 
 const YearSeparator = ({
-  key,
   year,
   firstYear,
   itemsFormat,
@@ -127,28 +126,28 @@ const YearSeparator = ({
   //
   if (yearSeparatorSkipFirst && firstYear === year)
     return (
-      <div key={key}>
+      <div>
         <div>{children}</div>
       </div>
     );
   //
   if (!yearSeparatorType)
     return (
-      <div key={key}>
+      <div>
         <div>{children}</div>
       </div>
     );
   //
   if (yearSeparatorType === 'space')
     return (
-      <div key={key}>
+      <div>
         <div sx={style} />
         <div>{children}</div>
       </div>
     );
   //
   return (
-    <div key={key}>
+    <div>
       <div sx={style}>{year}</div>
       <div>{children}</div>
     </div>
@@ -158,12 +157,12 @@ const YearSeparator = ({
 const Item = ({ itemsFormat, item, linksBeforeTitle = '' }) => {
   if (itemsFormat === 'compact')
     return (
-      <div key={item.id}>
+      <div>
         <Compact item={item} linksBeforeTitle={linksBeforeTitle} />
       </div>
     );
   return (
-    <div key={item.id}>
+    <div>
       <Card item={item} linksBeforeTitle={linksBeforeTitle} />
     </div>
   );
@@ -298,6 +297,7 @@ export default ({
                         if (getItemYear(item) === year) {
                           return (
                             <Item
+                              key={item.id}
                               itemsFormat={itemsFormat}
                               item={item}
                               linksBeforeTitle={linksBeforeTitle}
