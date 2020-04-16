@@ -8,7 +8,7 @@ module.exports = {
     social: [
       {
         icon: `envelope`,
-        url: `mailto:hello@mail.com`
+        url: `mailto:mymail@mail.com`
       },
       {
         icon: `twitter`,
