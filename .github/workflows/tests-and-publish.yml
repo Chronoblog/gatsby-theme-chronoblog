@@ -49,6 +49,7 @@ jobs:
   publish-examples:
     needs: tests
     if: github.event.ref_type == 'tag'
+    name: publish-examples {{ github.event.ref_type }}
     timeout-minutes: 220
     runs-on: ubuntu-latest
     steps:
@@ -66,6 +67,7 @@ jobs:
   publish-startest:
     needs: tests
     if: github.event.ref_type == 'tag'
+    name: publish-startest {{ github.event.ref_type }}
     timeout-minutes: 220
     runs-on: ubuntu-latest
     steps:
