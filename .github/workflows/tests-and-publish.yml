@@ -1,4 +1,4 @@
-name: Tests
+name: Tests and Publish
 on: [push]
 jobs:
   tests:
@@ -46,3 +46,37 @@ jobs:
 
       - name: yarn build:hacker
         run: yarn build:hacker
+  publish-examples:
+    needs: tests
+    if: github.event.ref_type == 'tag'
+    timeout-minutes: 220
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "12.x"
+      - name: publish:examples
+        uses: johno/actions-push-subdirectories@master
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          args: examples Chronoblog starter-name
+  publish-startest:
+    needs: tests
+    if: github.event.ref_type == 'tag'
+    timeout-minutes: 220
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "12.x"
+      - name: publish:starters
+        uses: johno/actions-push-subdirectories@master
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          args: starters Chronoblog starter-name
