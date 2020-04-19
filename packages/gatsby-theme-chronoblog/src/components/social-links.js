@@ -64,6 +64,7 @@ const SocialLinksMain = ({ justifyContent, fontSizeObj, social, ...props }) => {
         display: 'flex',
         flexWrap: 'wrap',
         fontFamily: 'sans-serif',
+        paddingX: '1px',
         justifyContent,
         ...fontSizeObj
       }}
