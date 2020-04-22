@@ -1,7 +1,5 @@
 name: Publish Examples
-on:
-  release:
-    types: [published, created]
+on: [release, registry_package]
 jobs:
   publish:
     timeout-minutes: 220
