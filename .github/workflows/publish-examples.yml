@@ -1,8 +1,7 @@
 name: Publish Examples
 on:
-  push:
-    tags:
-      - "*@*"
+  release:
+    types: [published]
 jobs:
   publish:
     timeout-minutes: 220

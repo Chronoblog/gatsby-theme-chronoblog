@@ -1,8 +1,7 @@
 name: Publish Starters
 on:
-  push:
-    tags:
-      - "*@*"
+  release:
+    types: [published]
 jobs:
   publish:
     timeout-minutes: 220
