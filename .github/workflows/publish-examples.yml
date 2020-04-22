@@ -1,7 +1,7 @@
 name: Publish Examples
 on:
   release:
-    types: [published]
+    types: [published, created]
 jobs:
   publish:
     timeout-minutes: 220
