@@ -1,5 +1,5 @@
 name: Publish Starters
-on: [release, registry_package]
+on: [release, registry_package, project]
 jobs:
   publish:
     timeout-minutes: 220
