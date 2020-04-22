@@ -1,5 +1,10 @@
 name: Publish Examples
-on: [release, registry_package, project]
+on:
+  project_card:
+    types: [edited]
+  push:
+    tags:
+      - "*@*"
 jobs:
   publish:
     timeout-minutes: 220
