@@ -21,5 +21,6 @@
   },
   "engines": {
     "node": ">=10.15.0"
-  }
+  },
+  "starter-name": "gatsby-starter-chronoblog-content-tests"
 }

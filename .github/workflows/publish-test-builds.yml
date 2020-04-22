@@ -1,0 +1,20 @@
+name: Publish test-builds
+on:
+  release:
+    types: [published]
+jobs:
+  publish:
+    timeout-minutes: 220
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "12.x"
+      - name: publish:test-builds
+        uses: johno/actions-push-subdirectories@master
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          args: test-builds Chronoblog starter-name
