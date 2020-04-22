@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.19.0](https://github.com/Chronoblog/gatsby-theme-chronoblog/compare/content-tests@1.18.3...content-tests@1.19.0) (2020-04-22)
+
+**Note:** Version bump only for package content-tests
+
+
+
+
+
 ## [1.18.3](https://github.com/Chronoblog/gatsby-theme-chronoblog/compare/content-tests@1.18.2...content-tests@1.18.3) (2020-04-17)
 
 **Note:** Version bump only for package content-tests

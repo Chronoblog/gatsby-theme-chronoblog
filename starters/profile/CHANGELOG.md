@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.12.0](https://github.com/Chronoblog/gatsby-theme-chronoblog/compare/profile@1.11.0...profile@1.12.0) (2020-04-22)
+
+**Note:** Version bump only for package profile
+
+
+
+
+
 # [1.11.0](https://github.com/Chronoblog/gatsby-theme-chronoblog/compare/profile@1.10.1...profile@1.11.0) (2020-04-16)
 
 **Note:** Version bump only for package profile
