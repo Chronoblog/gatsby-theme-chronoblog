@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.5.0](https://github.com/Chronoblog/gatsby-theme-chronoblog/compare/chronoblog-disqus@1.4.0...chronoblog-disqus@1.5.0) (2020-04-27)
+
+**Note:** Version bump only for package chronoblog-disqus
+
+
+
+
+
 # [1.4.0](https://github.com/Chronoblog/gatsby-theme-chronoblog/compare/chronoblog-disqus@1.3.0...chronoblog-disqus@1.4.0) (2020-04-22)
 
 **Note:** Version bump only for package chronoblog-disqus
