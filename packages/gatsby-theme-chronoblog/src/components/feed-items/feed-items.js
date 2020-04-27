@@ -95,7 +95,7 @@ const listStyleObject = {
   margin: 0
 };
 
-const getItemYear = (item, lang) => {
+const getItemYear = (item, lang = 'en-US') => {
   const date = new Date(item.frontmatter.date);
   const year = date.toLocaleString(lang, { year: 'numeric' });
   return year;
