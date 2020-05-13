@@ -80,12 +80,10 @@ const components = {
  */
 export default ({ children, ...props }) => {
   //
-  const [value, setValue] = useState({
-    searchInput: ''
-  });
+  const [searchInput, setSearchInput] = useState('');
 
   const onChangeSearchInput = useCallback((event) => {
-    setValue({ searchInput: event.currentTarget.value });
+    setSearchInput(event.currentTarget.value);
   }, []);
   //
   return (
@@ -104,7 +102,7 @@ export default ({ children, ...props }) => {
       />
       <SEO />
       <MDXProvider components={components}>
-        <FeedContext.Provider value={{ value, onChangeSearchInput }}>
+        <FeedContext.Provider value={{ searchInput, onChangeSearchInput }}>
           {children}
         </FeedContext.Provider>
       </MDXProvider>

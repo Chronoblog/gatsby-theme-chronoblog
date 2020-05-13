@@ -40,10 +40,7 @@ export default ({ placeholder = '', symbol = '' }) => {
     placeholder || uiText.feedSearchPlaceholder || 'search';
   const symbolToUse = symbol || feedSearch.symbol || '';
   //
-  const {
-    value: { searchInput },
-    onChangeSearchInput
-  } = useContext(FeedContext);
+  const { searchInput, onChangeSearchInput } = useContext(FeedContext);
   return (
     <div sx={{ marginY: [20] }}>
       <Flex

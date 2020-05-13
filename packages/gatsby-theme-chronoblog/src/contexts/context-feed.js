@@ -1,7 +1,7 @@
 import React from 'react';
 
 const FeedContext = React.createContext({
-  value: { searchInput: '' },
+  searchInput: '',
   onChangeSearchInput: () => {}
 });
 

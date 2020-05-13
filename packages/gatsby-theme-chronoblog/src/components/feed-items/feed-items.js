@@ -251,9 +251,9 @@ export default ({
     feedItems = feedItems.filter((i) => filterSearchSymbols(i, filterBySearch));
   }
   // context
-  const { value } = useContext(FeedContext);
+  const { searchInput } = useContext(FeedContext);
   // search from input
-  const searchFromInput = value.searchInput;
+  const searchFromInput = searchInput;
   if (searchFromInput && searchFromInput !== '') {
     feedItems = feedItems.filter((i) =>
       filterSearchSymbols(i, searchFromInput)
