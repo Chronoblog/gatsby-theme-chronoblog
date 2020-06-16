@@ -12,7 +12,7 @@
     "start": "gatsby develop"
   },
   "dependencies": {
-    "gatsby": "^2.18.7",
+    "gatsby": "^2.23.3",
     "gatsby-plugin-disqus": "^1.1.4",
     "gatsby-plugin-google-analytics": "^2.1.23",
     "gatsby-plugin-manifest": "^2.2.27",
