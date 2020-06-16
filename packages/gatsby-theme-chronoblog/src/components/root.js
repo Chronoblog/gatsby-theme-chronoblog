@@ -1,8 +1,7 @@
 /** @jsx jsx */
-import '@fortawesome/fontawesome-svg-core/styles.css';
-
 import { Global } from '@emotion/core';
 import { config, library } from '@fortawesome/fontawesome-svg-core';
+import '@fortawesome/fontawesome-svg-core/styles.css';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { faAt, faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
