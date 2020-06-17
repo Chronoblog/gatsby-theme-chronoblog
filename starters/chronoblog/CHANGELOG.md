@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.21.0](https://github.com/Chronoblog/gatsby-theme-chronoblog/compare/chronoblog@1.20.0...chronoblog@1.21.0) (2020-06-17)
+
+**Note:** Version bump only for package chronoblog
+
+
+
+
+
 # [1.20.0](https://github.com/Chronoblog/gatsby-theme-chronoblog/compare/chronoblog@1.19.0...chronoblog@1.20.0) (2020-04-27)
 
 **Note:** Version bump only for package chronoblog
