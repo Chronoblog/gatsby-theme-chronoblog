@@ -1,0 +1,27 @@
+name: Separate Tests
+on: [push]
+jobs:
+  tests:
+    timeout-minutes: 220
+    name: Test on node ${{ matrix.node_version }} and ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        node_version: [10, 12]
+        os: [ubuntu-latest, macos-latest]
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Use Node.js ${{ matrix.node_version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node_version }}
+
+      - name: cd starters/chronoblog/
+        run: cd starters/chronoblog/
+
+      - name: npm i
+        run: npm i
+
+      - name: npm build
+        run: npm build
