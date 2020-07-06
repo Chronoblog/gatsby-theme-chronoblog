@@ -1,6 +1,6 @@
 {
   "name": "gatsby-theme-chronoblog",
-  "version": "0.23.0",
+  "version": "0.23.1",
   "description": "Chronoblog is a Gatsby js theme specifically designed to create a personal website.  The main idea of ​​Chronoblog is to allow you not only to write a personal blog but also to keep a record of everything important that you have done.",
   "keywords": [
     "blog",
@@ -55,6 +55,7 @@
     "gatsby-plugin-theme-ui": "0.2.53",
     "gatsby-remark-images": "^3.3.10",
     "gatsby-remark-responsive-iframe": "^2.4.5",
+    "gatsby-remark-smartypants": "^2.3.9",
     "gatsby-source-filesystem": "^2.3.11",
     "gatsby-transformer-sharp": "^2.5.5",
     "lodash": "^4.17.15",

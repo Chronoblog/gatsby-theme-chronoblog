@@ -5,6 +5,7 @@ const remarkSlug = require('remark-slug');
 module.exports = (options) => {
   //
   const {
+    mdxOtherwiseConfigured = false,
     feedItems = {
       limit: 50,
       yearSeparator: true,
@@ -123,7 +124,7 @@ module.exports = (options) => {
           path: path.join(__dirname, `src`, `pages`)
         }
       },
-      {
+      !mdxOtherwiseConfigured && {
         resolve: 'gatsby-plugin-mdx',
         options: {
           extensions: ['.mdx', '.md'],
@@ -141,22 +142,16 @@ module.exports = (options) => {
                 backgroundColor: 'transparent'
               }
             },
-            'gatsby-remark-responsive-iframe'
-          ],
-          plugins: [
             {
-              resolve: `gatsby-remark-images`,
+              resolve: `gatsby-remark-smartypants`,
               options: {
-                maxWidth: 820,
-                quality: 90,
-                linkImagesToOriginal: false,
-                backgroundColor: 'transparent'
+                dashes: 'oldschool'
               }
             },
             'gatsby-remark-responsive-iframe'
           ]
         }
       }
-    ]
+    ].filter(Boolean)
   };
 };

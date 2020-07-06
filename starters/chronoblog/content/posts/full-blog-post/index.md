@@ -140,3 +140,7 @@ someFun('text');
 ```
 
 What distinguishes Markdown from many other lightweight markup syntaxes, which are often easier to write, is its readability.
+
+### Smart quotes
+
+If you are using US keyboard in Windows, you may not have a simple way to type "curly" quotation marks. The SmartyPants plugin for Gatsby automatically converts 'straight quotes' and apostrophes to the curly variants. Note that it doesn't work in card titles or descriptions.
