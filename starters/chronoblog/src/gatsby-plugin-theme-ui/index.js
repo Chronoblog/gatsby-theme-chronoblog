@@ -17,9 +17,9 @@ export default {
         ...chronoblogTheme.colors.modes.dark,
         text: '#eaeaea',
         background: '#0e0f17',
-        muted: '#161b1d'
-      }
-    }
+        muted: '#161b1d',
+      },
+    },
   },
   fontSizes: [14, 16, 18, 20, 22, 24, 28, 36],
   borderRadius: {
@@ -29,17 +29,30 @@ export default {
     search: 6,
     code: 6,
     img: 6,
-    authorBanner: 6
+    authorBanner: 6,
   },
   borderWidth: {
     ...chronoblogTheme.borderWidth,
     card: 2,
-    search: 2
+    search: 2,
   },
   fonts: {
     ...chronoblogTheme.fonts,
-    body: '-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif',
-    heading: 'inherit',
-    monospace: 'Menlo, monospace'
-  }
+    body:
+      'Cambria, "Hoefler Text", Utopia, "PT Serif", "Liberation Serif", "Nimbus Roman No9 L Regular", Times, "Times New Roman", serif',
+    heading:
+      'system, -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+    monospace:
+      'SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
+  },
+  text: {
+    authorDescription: {
+      fontFamily: 'heading',
+    },
+  },
+  links: {
+    nav: {
+      fontFamily: 'heading',
+    },
+  },
 };
