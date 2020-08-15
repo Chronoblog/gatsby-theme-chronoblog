@@ -18,7 +18,7 @@ const makeDate = (date, language, options) => {
 
 export default ({
   date,
-  options = { year: 'numeric', month: 'long', day: 'numeric' },
+  options = { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' },
   fontSize = [1],
   ...props
 }) => {
