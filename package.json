@@ -10,9 +10,7 @@
     "test-builds/*"
   ],
   "scripts": {
-    "lerna": "lerna",
-    "test": "jest",
-    "watch": "jest --watch"
+    "lerna": "lerna"
   },
   "husky": {
     "hooks": {
@@ -20,33 +18,29 @@
     }
   },
   "devDependencies": {
-    "@types/jest": "24.0.18",
-    "@types/lodash": "4.14.144",
-    "@types/node": "12.12.14",
-    "@types/react": "16.9.13",
-    "@types/react-dom": "16.9.4",
-    "@types/react-helmet": "5.0.10",
-    "@typescript-eslint/eslint-plugin": "2.6.1",
-    "@typescript-eslint/parser": "2.6.1",
-    "babel-jest": "24.9.0",
-    "babel-preset-gatsby": "0.2.20",
-    "eslint": "6.6.0",
-    "eslint-config-prettier": "6.3.0",
-    "eslint-plugin-html": "6.0.0",
-    "eslint-plugin-import": "2.18.2",
-    "eslint-plugin-jsx-a11y": "6.2.3",
-    "eslint-plugin-prettier": "3.1.0",
-    "eslint-plugin-react": "7.16.0",
-    "eslint-plugin-react-hooks": "2.2.0",
-    "eslint-plugin-simple-import-sort": "4.0.0",
-    "husky": "3.0.9",
+    "@types/lodash": "4.14.168",
+    "@types/node": "14.14.31",
+    "@types/react": "16.14.4",
+    "@types/react-dom": "16.9.11",
+    "@types/react-helmet": "6.1.0",
+    "@typescript-eslint/eslint-plugin": "4.15.2",
+    "@typescript-eslint/parser": "4.15.2",
+    "babel-preset-gatsby": "0.12.1",
+    "eslint": "7.20.0",
+    "eslint-config-prettier": "8.0.0",
+    "eslint-plugin-html": "6.1.1",
+    "eslint-plugin-import": "2.22.1",
+    "eslint-plugin-jsx-a11y": "6.4.1",
+    "eslint-plugin-prettier": "3.3.1",
+    "eslint-plugin-react": "7.22.0",
+    "eslint-plugin-react-hooks": "4.2.0",
+    "eslint-plugin-simple-import-sort": "7.0.0",
+    "husky": "5.1.1",
     "identity-obj-proxy": "3.0.0",
-    "jest": "24.9.0",
-    "lerna": "3.18.3",
-    "lint-staged": "9.4.2",
-    "prettier": "1.18.2",
-    "react-test-renderer": "16.11.0",
-    "typescript": "3.7.2"
+    "lerna": "3.22.1",
+    "lint-staged": "10.5.4",
+    "prettier": "2.2.1",
+    "typescript": "4.1.5"
   },
   "engines": {
     "node": ">=15.0.0",

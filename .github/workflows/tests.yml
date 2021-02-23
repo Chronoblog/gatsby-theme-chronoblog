@@ -20,8 +20,5 @@ jobs:
       - name: npm i
         run: npm i
 
-      - name: npm run test
-        run: npm run test
-
       - name: cd starters/chronoblog && npm run build
         run: cd starters/chronoblog && npm run build

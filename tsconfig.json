@@ -7,13 +7,12 @@
     "esModuleInterop": true,
     "jsx": "react",
     "lib": ["dom", "es2017", "es2019", "dom.iterable", "es2018"],
-    "module": "esnext",
+    "module": "ESNext",
     "moduleResolution": "node",
     "noEmit": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
-    "target": "esnext",
-    "types": ["@emotion/core", "jest"]
+    "target": "ESNext",
     // "noImplicitAny": true
   },
   "include": ["./packages/**/src/**/*", "./starters/**/src/**/*"],
