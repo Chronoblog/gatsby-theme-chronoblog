@@ -65,5 +65,5 @@ README-DEV.md
 .env*
 !.env.example
 
-# we use only yarn
-package-lock.json
+# we use only npm
+yarn.lock
