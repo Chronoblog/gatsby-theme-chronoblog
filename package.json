@@ -17,6 +17,9 @@
       "pre-commit": "lint-staged"
     }
   },
+  "dependencies": {
+    "fsevents": "2.3.2"
+  },
   "devDependencies": {
     "@types/lodash": "4.14.168",
     "@types/node": "14.14.31",
@@ -39,9 +42,6 @@
     "lint-staged": "10.5.4",
     "prettier": "2.2.1",
     "typescript": "4.1.5"
-  },
-  "optionalDependencies": {
-    "fsevents": "2.3.2"
   },
   "engines": {
     "node": ">=15.0.0",
