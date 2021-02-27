@@ -10,12 +10,9 @@
     "test-builds/*"
   ],
   "scripts": {
+    "fix": "eslint --ext .js,.jsx .",
     "lerna": "lerna",
-    "lint": "eslint --fix --ext .js,.jsx .",
-    "fix": "eslint --ext .js,.jsx ."
-  },
-  "dependencies": {
-    "fsevents": "2.3.2"
+    "lint": "eslint --fix --ext .js,.jsx ."
   },
   "devDependencies": {
     "@types/lodash": "4.14.168",
@@ -37,6 +34,9 @@
     "lerna": "3.22.1",
     "prettier": "2.2.1",
     "typescript": "4.1.5"
+  },
+  "optionalDependencies": {
+    "fsevents": "2.3.2"
   },
   "engines": {
     "node": ">=15.0.0",
