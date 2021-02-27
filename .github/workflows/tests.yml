@@ -20,5 +20,25 @@ jobs:
       - name: npm i
         run: npm i
 
+        # test starters
       - name: cd starters/chronoblog && npm run build
         run: cd starters/chronoblog && npm run build
+
+      - name: cd starters/hacker && npm run build
+        run: cd starters/hacker && npm run build
+
+      - name: cd starters/minimal && npm run build
+        run: cd starters/minimal && npm run build
+
+      - name: cd starters/profile && npm run build
+        run: cd starters/profile && npm run build
+
+        # test tests builds
+      - name: cd test-builds/content-tests && npm run build
+        run: cd test-builds/content-tests && npm run build
+
+      - name: cd test-builds/chinese-language-test && npm run build
+        run: cd test-builds/chinese-language-test && npm run build
+
+      - name: cd test-builds/profile-minimal && npm run build
+        run: cd test-builds/profile-minimal && npm run build
