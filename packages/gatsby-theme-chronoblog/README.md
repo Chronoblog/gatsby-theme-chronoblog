@@ -255,21 +255,21 @@ module.exports = {
     social: [
       {
         icon: `envelope`,
-        url: `mailto:mymail@mail.com`
+        url: `mailto:mymail@mail.com`,
       },
       {
         icon: `twitter`,
-        url: `https://twitter.com/ganevru`
+        url: `https://twitter.com/ganevru`,
       },
       {
         icon: `github`,
-        url: `https://github.com/Chronoblog/gatsby-theme-chronoblog`
+        url: `https://github.com/Chronoblog/gatsby-theme-chronoblog`,
       },
       {
         icon: `node-js`,
-        url: `https://www.npmjs.com/package/gatsby-theme-chronoblog`
-      }
-    ]
+        url: `https://www.npmjs.com/package/gatsby-theme-chronoblog`,
+      },
+    ],
   },
   plugins: [
     {
@@ -280,7 +280,7 @@ module.exports = {
           feedShowMoreButton: 'show more',
           feedSearchPlaceholder: 'search',
           cardReadMoreButton: 'read more →',
-          allTagsButton: 'all tags'
+          allTagsButton: 'all tags',
         },
         feedItems: {
           // global settings for feed items
@@ -289,14 +289,14 @@ module.exports = {
           yearSeparatorSkipFirst: true,
           contentTypes: {
             links: {
-              beforeTitle: '🔗 '
-            }
-          }
+              beforeTitle: '🔗 ',
+            },
+          },
         },
         feedSearch: {
-          symbol: '🔍'
-        }
-      }
+          symbol: '🔍',
+        },
+      },
     },
     {
       resolve: `gatsby-plugin-manifest`,
@@ -307,20 +307,20 @@ module.exports = {
         background_color: `#fff`,
         theme_color: `#3a5f7d`,
         display: `standalone`,
-        icon: `src/assets/favicon.png`
-      }
+        icon: `src/assets/favicon.png`,
+      },
     },
     {
-      resolve: `gatsby-plugin-sitemap`
+      resolve: `gatsby-plugin-sitemap`,
     },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         // replace "UA-XXXXXXXXX-X" with your own Tracking ID
-        trackingId: 'UA-XXXXXXXXX-X'
-      }
-    }
-  ]
+        trackingId: 'UA-XXXXXXXXX-X',
+      },
+    },
+  ],
 };
 ```
 
@@ -401,9 +401,9 @@ export default {
         ...chronoblogTheme.colors.modes.dark,
         text: '#eaeaea',
         background: '#0e0f17',
-        muted: '#161b1d'
-      }
-    }
+        muted: '#161b1d',
+      },
+    },
   },
   fontSizes: [14, 16, 18, 20, 22, 24, 28, 36],
   borderRadius: {
@@ -413,19 +413,19 @@ export default {
     search: 6,
     code: 6,
     img: 6,
-    authorBanner: 6
+    authorBanner: 6,
   },
   borderWidth: {
     ...chronoblogTheme.borderWidth,
     card: 2,
-    search: 2
+    search: 2,
   },
   fonts: {
     ...chronoblogTheme.fonts,
     body: '-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif',
     heading: 'inherit',
-    monospace: 'Menlo, monospace'
-  }
+    monospace: 'Menlo, monospace',
+  },
 };
 ```
 
@@ -1048,7 +1048,7 @@ Here to list the technologies and methods that are used in the project. **None o
 
 ### Organization of this monorepository
 
-This monorepo uses Lerna (https://github.com/lerna/lerna) and yarn workspaces (https://yarnpkg.com/en/docs/workspaces). Because of this, we do not use npm for project development (this applies only to the development of Chronoblog. It is normal to use **npm** to develop a site based on Chronoblog Theme).
+This monorepo uses [npm workspaces](https://docs.npmjs.com/cli/v7/using-npm/workspaces).
 
 - [packages](https://github.com/Chronoblog/gatsby-theme-chronoblog/tree/master/packages) folder. At the moment there is only [gatsby-theme-chronoblog/tree/master/packages/gatsby-theme-chronoblog](https://github.com/Chronoblog/gatsby-theme-chronoblog/tree/master/packages/gatsby-theme-chronoblog) there, and all the main work on the project takes place in it. Perhaps in the future, additional packages will appear.
 
@@ -1058,7 +1058,7 @@ This monorepo uses Lerna (https://github.com/lerna/lerna) and yarn workspaces (h
 
 - [test-builds](https://github.com/Chronoblog/gatsby-theme-chronoblog/tree/master/test-builds) folder for test builds.
 
-Such an organization allows you to check the work of any starter right during the work on the project. For example, by running `yarn start:chronoblog` command, you can make changes to [gatsby-theme-chronoblog/tree/master/packages/gatsby-theme-chronoblog](https://github.com/Chronoblog/gatsby-theme-chronoblog/tree/master/packages/gatsby-theme-chronoblog) and immediately look at how the "chronoblog starter" works with these changes (at http://localhost:8000).
+Such an organization allows you to check the work of any starter right during the work on the project. For example, by running `cd starters/chronoblog && npm run start` command, you can make changes to [gatsby-theme-chronoblog/tree/master/packages/gatsby-theme-chronoblog](https://github.com/Chronoblog/gatsby-theme-chronoblog/tree/master/packages/gatsby-theme-chronoblog) and immediately look at how the "chronoblog starter" works with these changes (at http://localhost:8000).
 
 ### Tests and Publication
 
@@ -1067,8 +1067,6 @@ The github action scripts can be viewed here: [workflows](https://github.com/Chr
 We can say that the master branch is a development branch since changes in the branch alone do not lead to the publication of the project. Therefore, there may be bugs and problems in the master branch.
 
 When updating the project version, packages are sent to npm, and starters, using [publish-starters.yml](https://github.com/Chronoblog/gatsby-theme-chronoblog/blob/master/.github/workflows/publish-starters.yml), update their individual repositories. Because of this, chronoblog starters have such strange commits (for example, https://github.com/Chronoblog/gatsby-starter-chronoblog).
-
-For manual/visual testing, we have a special "secret" starter for tests - https://github.com/Chronoblog/gatsby-theme-chronoblog/tree/master/starters/tests. You can run it with the command `yarn start:tests` or `yarn serve:tests` (to run a full build).
 
 ### TypeScript and JSDoc for type annotation
 
