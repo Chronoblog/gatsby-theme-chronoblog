@@ -5,11 +5,9 @@
     "node": true
   },
   "extends": [
-    "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
     "plugin:jsx-a11y/recommended",
-    "plugin:prettier/recommended",
-    "prettier/@typescript-eslint"
+    "plugin:prettier/recommended"
   ],
   "overrides": [
     {
@@ -19,18 +17,7 @@
       }
     }
   ],
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "ecmaFeatures": {
-      "impliedStrict": true,
-      "jsx": true
-    },
-    "ecmaVersion": 2019,
-    "sourceType": "module",
-    "useJSXTextNode": true
-  },
   "plugins": [
-    "@typescript-eslint",
     "prettier",
     "simple-import-sort",
     "import",
@@ -38,11 +25,6 @@
     "jsx-a11y"
   ],
   "rules": {
-    "@typescript-eslint/ban-ts-ignore": "off",
-    "@typescript-eslint/camelcase": "off",
-    "@typescript-eslint/explicit-function-return-type": "off",
-    "@typescript-eslint/no-empty-function": "off",
-    "@typescript-eslint/no-var-requires": "off",
     "import/first": "warn",
     "import/newline-after-import": "warn",
     "import/no-duplicates": "warn",
