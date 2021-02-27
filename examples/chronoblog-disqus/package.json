@@ -28,7 +28,7 @@
     "prettier": "^1.18.2"
   },
   "engines": {
-    "node": ">=10.15.0"
+    "node": ">=15.0.0"
   },
   "starter-name": "gatsby-starter-chronoblog-disqus"
 }
