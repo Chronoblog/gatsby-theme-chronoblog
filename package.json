@@ -10,7 +10,9 @@
     "test-builds/*"
   ],
   "scripts": {
-    "lerna": "lerna"
+    "lerna": "lerna",
+    "lint": "eslint --fix --ext .js,.jsx .",
+    "fix": "eslint --ext .js,.jsx ."
   },
   "dependencies": {
     "fsevents": "2.3.2"

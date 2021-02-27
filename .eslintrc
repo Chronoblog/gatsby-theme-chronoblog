@@ -9,6 +9,10 @@
     "plugin:jsx-a11y/recommended",
     "plugin:prettier/recommended"
   ],
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 12
+  },
   "overrides": [
     {
       "files": ["*.test.js"],
@@ -55,7 +59,8 @@
     "react/jsx-props-no-spreading": "off",
     "react/no-children-prop": "warn",
     "react/prop-types": "off",
-    "simple-import-sort/sort": "warn",
+    "simple-import-sort/imports": "warn",
+    "simple-import-sort/exports": "warn",
     "sort-imports": "off"
   },
   "settings": {
