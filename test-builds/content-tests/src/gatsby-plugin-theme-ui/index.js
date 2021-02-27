@@ -17,9 +17,9 @@ export default {
         ...chronoblogTheme.colors.modes.dark,
         text: '#eaeaea',
         background: '#0e0f17',
-        muted: '#2c3e50'
-      }
-    }
+        muted: '#2c3e50',
+      },
+    },
   },
   fontSizes: [14, 16, 18, 20, 22, 24, 28, 36],
   borderRadius: {
@@ -28,12 +28,12 @@ export default {
     button: 6,
     search: 6,
     code: 6,
-    img: 6
+    img: 6,
   },
   fonts: {
     ...chronoblogTheme.fonts,
     body: 'Helvetica,Arial,sans-serif',
     heading: 'inherit',
-    monospace: 'Menlo, monospace'
-  }
+    monospace: 'Menlo, monospace',
+  },
 };

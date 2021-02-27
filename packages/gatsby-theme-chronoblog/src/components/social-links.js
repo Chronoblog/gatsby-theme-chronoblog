@@ -19,7 +19,7 @@ const SocialUrlLink = ({ url, altTextToUse, children }) => {
       aria-label={altTextToUse}
       sx={{
         color: 'currentcolor',
-        textDecoration: 'none'
+        textDecoration: 'none',
       }}
     >
       {children}
@@ -66,14 +66,14 @@ const SocialLinksMain = ({ justifyContent, fontSizeObj, social, ...props }) => {
         fontFamily: 'sans-serif',
         paddingX: '1px',
         justifyContent,
-        ...fontSizeObj
+        ...fontSizeObj,
       }}
       {...props}
     >
       <div
         sx={{
           display: 'flex',
-          flexWrap: 'wrap'
+          flexWrap: 'wrap',
         }}
       >
         {social.map((s, index) => (

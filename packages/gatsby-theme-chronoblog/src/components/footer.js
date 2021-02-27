@@ -10,7 +10,7 @@ export default () => {
     <Footer
       sx={{
         pt: 30,
-        pb: 30
+        pb: 30,
       }}
     >
       <Container>

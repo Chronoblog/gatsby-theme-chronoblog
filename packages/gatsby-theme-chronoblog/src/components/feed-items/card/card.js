@@ -62,7 +62,7 @@ export default ({ item, linksBeforeTitle = '' }) => {
         onFocus: ({ e, setIsHovering, unsetIsHovering }) =>
           eClassCheck(e.target, 'hover-on')
             ? setIsHovering()
-            : unsetIsHovering()
+            : unsetIsHovering(),
       }}
     >
       {({ isHovering }) => (

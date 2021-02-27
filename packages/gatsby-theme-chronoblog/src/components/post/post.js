@@ -16,8 +16,8 @@ import Tags from '../tags';
 
 const PostTitle = ({
   data: {
-    mdx: { frontmatter }
-  }
+    mdx: { frontmatter },
+  },
 }) => {
   return (
     <div>
@@ -28,8 +28,8 @@ const PostTitle = ({
 
 const PostContent = ({
   data: {
-    mdx: { body }
-  }
+    mdx: { body },
+  },
 }) => {
   return <MDXRenderer>{body}</MDXRenderer>;
 };

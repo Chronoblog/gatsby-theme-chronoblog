@@ -1,7 +1,7 @@
 const path = require('path');
+const fs = require('fs');
 const { createFilePath } = require('gatsby-source-filesystem');
 const Debug = require('debug');
-const fs = require('fs');
 const _ = require('lodash');
 const pkg = require('./package.json');
 
@@ -42,7 +42,7 @@ exports.onPreBootstrap = ({ store }) => {
     path.join(program.directory, `content/links`),
     path.join(program.directory, `content/notes`),
     path.join(program.directory, `src/pages`),
-    path.join(program.directory, `static`)
+    path.join(program.directory, `static`),
   ];
 
   dirs.forEach((dir) => {
@@ -67,7 +67,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   actions.createNodeField({
     name: 'type',
     node,
-    value: type
+    value: type,
   });
   //
   // create slug field (for links)
@@ -81,7 +81,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   actions.createNodeField({
     name: 'slug',
     node,
-    value: slug
+    value: slug,
   });
 };
 
@@ -131,8 +131,8 @@ exports.createPages = async ({ graphql, actions }) => {
         path: `/tags/${_.kebabCase(tag)}/`,
         component: require.resolve('./src/templates/tag-template.js'),
         context: {
-          tag
-        }
+          tag,
+        },
       });
     });
   }
@@ -148,8 +148,8 @@ exports.createPages = async ({ graphql, actions }) => {
         path: link.fields.slug,
         component: require.resolve('./src/templates/link.js'),
         context: {
-          id: link.id
-        }
+          id: link.id,
+        },
       });
     });
   }
@@ -164,8 +164,8 @@ exports.createPages = async ({ graphql, actions }) => {
         path: note.fields.slug,
         component: require.resolve('./src/templates/note.js'),
         context: {
-          id: note.id
-        }
+          id: note.id,
+        },
       });
     });
   }
@@ -181,8 +181,8 @@ exports.createPages = async ({ graphql, actions }) => {
         path: post.fields.slug,
         component: require.resolve('./src/templates/post.js'),
         context: {
-          id: post.id
-        }
+          id: post.id,
+        },
       });
     });
   }

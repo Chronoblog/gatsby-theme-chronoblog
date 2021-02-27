@@ -107,7 +107,7 @@ const SEO = ({
   image = '',
   canonical = '',
   twitterCardType = 'summary_large_image',
-  children
+  children,
 }) => {
   const siteMeta = useSiteMetadata();
 

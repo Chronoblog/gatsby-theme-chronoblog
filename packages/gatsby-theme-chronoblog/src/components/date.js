@@ -33,7 +33,7 @@ export default ({
           fontSize,
           opacity: 0.8,
           // fontStyle: 'italic',
-          fontWeight: 'normal'
+          fontWeight: 'normal',
         }}
         {...props}
       >

@@ -15,8 +15,8 @@ const Link = ({ to, ...props }) => (
       color: 'text',
       textDecoration: 'none',
       ':hover': {
-        opacity: 0.7
-      }
+        opacity: 0.7,
+      },
     }}
     to={to}
     {...props}
@@ -29,8 +29,8 @@ const A = ({ children, ...props }) => (
       color: 'text',
       textDecoration: 'none',
       ':hover': {
-        opacity: 0.7
-      }
+        opacity: 0.7,
+      },
     }}
     {...props}
   >
@@ -49,7 +49,7 @@ const MenuMain = ({ children, ...props }) => (
         justifyContent: ['space-between'],
         alignItems: 'center',
         fontWeight: 'bold',
-        fontSize: [1, 2]
+        fontSize: [1, 2],
       }}
     >
       {children}
@@ -63,7 +63,7 @@ const MenuBlock = ({ children, ...props }) => (
     sx={{
       display: 'flex',
       flexWrap: 'wrap',
-      alignItems: 'center'
+      alignItems: 'center',
     }}
   >
     {children}
@@ -76,8 +76,8 @@ export default ({ ...props }) => {
       {...props}
       sx={{
         '.headroom--unpinned': {
-          transform: [null, 'translateY(0%)!important']
-        }
+          transform: [null, 'translateY(0%)!important'],
+        },
       }}
     >
       <Header>
@@ -90,9 +90,9 @@ export default ({ ...props }) => {
               marginTop: ['0px', '0px'],
               boxShadow: [
                 '0 4px 6px -4px #00000038',
-                '0 0px 0px 0px #00000000'
+                '0 0px 0px 0px #00000000',
               ],
-              backgroundColor: 'background'
+              backgroundColor: 'background',
             }}
           >
             <SiteHeader />

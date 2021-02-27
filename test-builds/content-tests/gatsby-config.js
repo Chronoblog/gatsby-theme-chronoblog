@@ -8,34 +8,34 @@ module.exports = {
     social: [
       {
         icon: `envelope`,
-        url: `mailto:mymail@mail.com`
+        url: `mailto:mymail@mail.com`,
       },
       {
         icon: `twitter`,
         url: `https://twitter.com/ganevru`,
-        altText: 'alt text for Twitter'
+        altText: 'alt text for Twitter',
       },
       {
         icon: `github`,
-        url: `https://github.com/Chronoblog/gatsby-theme-chronoblog`
+        url: `https://github.com/Chronoblog/gatsby-theme-chronoblog`,
       },
       {
         icon: `npm`,
-        url: `https://www.npmjs.com/package/gatsby-theme-chronoblog`
+        url: `https://www.npmjs.com/package/gatsby-theme-chronoblog`,
       },
       {
         icon: `node-js`,
-        url: `https://www.npmjs.com/package/gatsby-theme-chronoblog`
-      }
-    ]
+        url: `https://www.npmjs.com/package/gatsby-theme-chronoblog`,
+      },
+    ],
   },
   plugins: [
     {
       resolve: 'gatsby-theme-chronoblog',
-      options: {}
+      options: {},
     },
     {
-      resolve: `gatsby-plugin-sitemap`
-    }
-  ]
+      resolve: `gatsby-plugin-sitemap`,
+    },
+  ],
 };

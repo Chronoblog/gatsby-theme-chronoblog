@@ -6,7 +6,7 @@ import { jsx, Styled } from 'theme-ui';
 const noStyleLink = {
   display: 'block',
   textDecoration: 'none',
-  color: 'inherit'
+  color: 'inherit',
 };
 
 const ItemLink = ({ item, children, ...props }) => {
@@ -75,10 +75,10 @@ const ItemTitle = ({ item, linksBeforeTitle = '', ...props }) => {
     fontSize: [1, 1],
     fontWeight: 'normal',
     mb: '0px',
-    lineHeight: null
+    lineHeight: null,
   };
   const linkStyle = {
-    color: 'link'
+    color: 'link',
     // textDecoration: 'underline'
   };
   //
@@ -120,7 +120,7 @@ const ItemHoveringStyle = ({
   isHovering = false,
   sxHovering = { opacity: 0.7 },
   sxNotHovering = {},
-  children
+  children,
 }) => {
   return isHovering ? (
     <div sx={{ ...sxHovering }}>{children}</div>
@@ -132,6 +132,6 @@ const ItemHoveringStyle = ({
 const CompactComponents = {
   Link: ItemLink,
   Title: ItemTitle,
-  HoveringStyle: ItemHoveringStyle
+  HoveringStyle: ItemHoveringStyle,
 };
 export default CompactComponents;

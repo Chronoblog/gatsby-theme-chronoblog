@@ -17,29 +17,29 @@ module.exports = {
     social: [
       {
         icon: `at`,
-        url: `mailto:mymail@mail.com`
+        url: `mailto:mymail@mail.com`,
       },
       {
         icon: `twitter`,
-        url: `https://twitter.com/ganevru`
+        url: `https://twitter.com/ganevru`,
       },
       {
         icon: `github`,
-        url: `https://github.com/Chronoblog/gatsby-theme-chronoblog`
+        url: `https://github.com/Chronoblog/gatsby-theme-chronoblog`,
       },
       {
         icon: `node-js`,
-        url: `https://www.npmjs.com/package/gatsby-theme-chronoblog`
-      }
-    ]
+        url: `https://www.npmjs.com/package/gatsby-theme-chronoblog`,
+      },
+    ],
   },
   plugins: [
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         path: path.join(__dirname, `static`, `media`),
-        name: 'media'
-      }
+        name: 'media',
+      },
     },
     {
       resolve: 'gatsby-theme-chronoblog',
@@ -49,7 +49,7 @@ module.exports = {
           feedShowMoreButton: 'show more',
           feedSearchPlaceholder: 'search',
           cardReadMoreButton: 'read more →',
-          allTagsButton: 'all tags'
+          allTagsButton: 'all tags',
         },
         feedItems: {
           // global settings for feed items
@@ -58,14 +58,14 @@ module.exports = {
           yearSeparatorSkipFirst: true,
           contentTypes: {
             links: {
-              beforeTitle: '🔗 '
-            }
-          }
+              beforeTitle: '🔗 ',
+            },
+          },
         },
         feedSearch: {
-          symbol: '🔍'
-        }
-      }
+          symbol: '🔍',
+        },
+      },
     },
     {
       resolve: `gatsby-plugin-manifest`,
@@ -76,26 +76,26 @@ module.exports = {
         background_color: `#fff`,
         theme_color: `#3a5f7d`,
         display: `standalone`,
-        icon: `src/assets/favicon.png`
-      }
+        icon: `src/assets/favicon.png`,
+      },
     },
     {
-      resolve: `gatsby-plugin-sitemap`
+      resolve: `gatsby-plugin-sitemap`,
     },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         // replace "UA-XXXXXXXXX-X" with your own Tracking ID
-        trackingId: 'UA-XXXXXXXXX-X'
-      }
+        trackingId: 'UA-XXXXXXXXX-X',
+      },
     },
     {
       resolve: 'gatsby-plugin-netlify-cms',
       options: {
         publicPath: `admin`,
-        modulePath: path.join(__dirname, `src`, `netlifycms`, 'cms.js')
-      }
+        modulePath: path.join(__dirname, `src`, `netlifycms`, 'cms.js'),
+      },
     },
-    'gatsby-plugin-netlify' // make sure to keep it last in the array
-  ]
+    'gatsby-plugin-netlify', // make sure to keep it last in the array
+  ],
 };

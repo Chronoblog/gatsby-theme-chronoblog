@@ -38,7 +38,7 @@ const ButtonShowMore = ({
   showMoreNumber = 10,
   setCount,
   itemsFormat = 'card',
-  children
+  children,
 }) => {
   //
   if (
@@ -55,8 +55,8 @@ const ButtonShowMore = ({
             bg: 'background',
             p: 0,
             ':hover': {
-              boxShadow: `inset 0 0 0 0px`
-            }
+              boxShadow: `inset 0 0 0 0px`,
+            },
           }}
           onClick={() => setCount(showLimit + showMoreNumber)}
         >
@@ -92,7 +92,7 @@ const filterBySlug = (feedItems, pathname) => {
 const listStyleObject = {
   listStyle: 'none',
   padding: 0,
-  margin: 0
+  margin: 0,
 };
 
 const getItemYear = (item, lang = 'en-US') => {
@@ -112,7 +112,7 @@ const YearSeparator = ({
   itemsFormat,
   yearSeparatorType,
   yearSeparatorSkipFirst = false,
-  children
+  children,
 }) => {
   const mtStylePx = itemsFormat === 'card' ? '48px' : '20px';
   const mtStyle = yearSeparatorType === 'space' ? '38px' : mtStylePx;
@@ -121,7 +121,7 @@ const YearSeparator = ({
     opacity: 0.8,
     fontWeight: 'normal',
     mt: mtStyle,
-    textAlign: itemsFormat === 'card' ? 'center' : null
+    textAlign: itemsFormat === 'card' ? 'center' : null,
   };
   //
   if (yearSeparatorSkipFirst && firstYear === year)
@@ -203,7 +203,7 @@ export default ({
   skipThisPageItem = true,
   yearSeparator,
   yearSeparatorSkipFirst,
-  itemsFormat = 'card'
+  itemsFormat = 'card',
 }) => {
   let feedItems = useFeed();
   //

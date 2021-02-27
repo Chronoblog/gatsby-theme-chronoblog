@@ -51,7 +51,7 @@ const Tag = ({ tagWithStat, style, pageContextTag, showStatsNumber }) => {
 
 const AllTagsButton = ({ style }) => {
   const {
-    uiText: { allTagsButton }
+    uiText: { allTagsButton },
   } = useSiteMetadata();
   //
   return (
@@ -82,7 +82,7 @@ const Tags = ({
   showStatsNumber,
   tagsWithStat,
   pageContextTag,
-  tagStyle
+  tagStyle,
 }) => {
   const style = {
     mr: type === 'feed' ? '6px' : '5px',
@@ -91,7 +91,7 @@ const Tags = ({
     py: type === 'feed' ? '10px' : '6px',
     fontSize: [2],
     opacity: 0.75,
-    ...tagStyle
+    ...tagStyle,
   };
   //
   return (
@@ -156,7 +156,7 @@ export default ({
   showStatsNumber = true,
   tags,
   pageContextTag,
-  tagStyle
+  tagStyle,
 }) => {
   // get tags statistics
   const feedItems = useFeed();

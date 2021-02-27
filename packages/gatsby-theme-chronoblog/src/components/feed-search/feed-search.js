@@ -14,14 +14,14 @@ const Symbol = ({ symbol }) => {
         alignItems: 'center',
         justifyContent: 'center',
         maxWidth: ['40px'],
-        minWidth: ['40px']
+        minWidth: ['40px'],
       }}
     >
       <div
         sx={{
           fontSize: ['26px'],
           opacity: ['0.7'],
-          userSelect: 'none'
+          userSelect: 'none',
         }}
       >
         <span role="img" aria-label="search">
@@ -51,7 +51,7 @@ export default ({ placeholder = '', symbol = '' }) => {
           borderRadius: 'search',
           borderColor: 'muted',
           borderStyle: 'solid',
-          borderWidth: `1px`
+          borderWidth: `1px`,
         }}
       >
         <Symbol symbol={symbolToUse} />
@@ -73,7 +73,7 @@ export default ({ placeholder = '', symbol = '' }) => {
               borderWidth: `search`,
               borderRadius: 'search',
               outline: '0px solid',
-              opacity: '0.9'
+              opacity: '0.9',
             }}
             placeholder={searchPlaceholder}
             value={searchInput}

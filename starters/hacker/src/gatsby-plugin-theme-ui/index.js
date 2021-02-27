@@ -4,8 +4,8 @@ const buttonHover = {
   '&:hover': {
     opacity: 0.8,
     cursor: 'pointer',
-    boxShadow: (theme) => `inset 0 0 0 1px ${theme.colors.secondary}`
-  }
+    boxShadow: (theme) => `inset 0 0 0 1px ${theme.colors.secondary}`,
+  },
 };
 
 export default {
@@ -26,9 +26,9 @@ export default {
         text: '#eaeaea',
         background: '#080c0a',
         link: '#2e8877',
-        muted: '#161d1c'
-      }
-    }
+        muted: '#161d1c',
+      },
+    },
   },
   fontSizes: [13, 15, 16, 17, 22, 24, 28, 32],
   borderRadius: {
@@ -38,33 +38,33 @@ export default {
     search: 3,
     code: 3,
     img: 3,
-    authorBanner: 3
+    authorBanner: 3,
   },
   borderWidth: {
     ...chronoblogTheme.borderWidth,
     card: 1,
-    search: 1
+    search: 1,
   },
   buttons: {
     ...chronoblogTheme.buttons,
     primary: {
       ...chronoblogTheme.buttons.primary,
-      ...buttonHover
+      ...buttonHover,
     },
     active: {
       ...chronoblogTheme.buttons.active,
-      ...buttonHover
+      ...buttonHover,
     },
     special: {
       ...chronoblogTheme.buttons.special,
-      ...buttonHover
-    }
+      ...buttonHover,
+    },
   },
   fonts: {
     ...chronoblogTheme.fonts,
     body:
       'Source Code Pro, -apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif',
     heading: 'inherit',
-    monospace: 'Menlo, monospace'
-  }
+    monospace: 'Menlo, monospace',
+  },
 };

@@ -17,9 +17,9 @@ export default {
         ...chronoblogTheme.colors.modes.dark,
         text: '#eaeaea',
         background: '#0e0f17',
-        muted: '#161b1d'
-      }
-    }
+        muted: '#161b1d',
+      },
+    },
   },
   fontSizes: [14, 16, 18, 20, 22, 24, 28, 36],
   borderRadius: {
@@ -29,24 +29,24 @@ export default {
     search: 8,
     code: 8,
     img: 8,
-    authorBanner: 8
+    authorBanner: 8,
   },
   borderWidth: {
     ...chronoblogTheme.borderWidth,
     card: 2,
-    search: 2
+    search: 2,
   },
   buttons: {
     ...chronoblogTheme.buttons,
     active: {
       ...chronoblogTheme.buttons.buttonStyle,
-      color: 'text'
-    }
+      color: 'text',
+    },
   },
   fonts: {
     ...chronoblogTheme.fonts,
     body: '-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif',
     heading: 'inherit',
-    monospace: 'Menlo, monospace'
-  }
+    monospace: 'Menlo, monospace',
+  },
 };

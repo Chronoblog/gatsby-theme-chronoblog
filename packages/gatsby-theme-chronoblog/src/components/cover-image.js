@@ -10,13 +10,13 @@ const CoverImageBase = ({
   type,
   height,
   coverFluidImage,
-  objectFit = 'scale-down'
+  objectFit = 'scale-down',
 }) => {
   const borderRadiusForCard =
     type === 'card'
       ? {
           borderBottomLeftRadius: 0,
-          borderBottomRightRadius: 0
+          borderBottomRightRadius: 0,
         }
       : {};
   //
@@ -26,7 +26,7 @@ const CoverImageBase = ({
   return (
     <div
       sx={{
-        maxHeight: height
+        maxHeight: height,
       }}
     >
       <div
@@ -39,7 +39,7 @@ const CoverImageBase = ({
           maxHeight: height,
           backgroundPosition: 'center',
           borderRadius: 'card',
-          ...borderRadiusForCard
+          ...borderRadiusForCard,
         }}
       >
         <Image
@@ -55,11 +55,11 @@ const CoverImageBase = ({
             maxHeight: height,
             minHeight: height,
             borderRadius: 'card',
-            ...borderRadiusForCard
+            ...borderRadiusForCard,
           }}
           imgStyle={{
             objectFit,
-            objectPosition: '50% 50%'
+            objectPosition: '50% 50%',
           }}
           alt={imageTitle}
           title={imageTitle}

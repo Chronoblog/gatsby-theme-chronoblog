@@ -38,10 +38,10 @@ export default ({
         bg: '#ffffff00',
         border: 0,
         '&:focus': {
-          outline: '0px'
+          outline: '0px',
         },
         userSelect: 'none',
-        cursor: 'pointer'
+        cursor: 'pointer',
       }}
       onClick={cycle}
       {...props}

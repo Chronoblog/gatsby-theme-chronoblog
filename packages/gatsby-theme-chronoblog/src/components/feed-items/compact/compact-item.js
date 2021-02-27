@@ -22,7 +22,7 @@ export default ({ item, isHovering, linksBeforeTitle = '' }) => {
             display: 'flex',
             flexWrap: 'wrap',
             alignItems: 'baseline',
-            mt: '0px'
+            mt: '0px',
           }}
         >
           <Compact.Link item={item}>

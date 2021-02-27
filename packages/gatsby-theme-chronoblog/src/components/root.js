@@ -1,7 +1,8 @@
 /** @jsx jsx */
+import '@fortawesome/fontawesome-svg-core/styles.css';
+
 import { Global } from '@emotion/core';
 import { config, library } from '@fortawesome/fontawesome-svg-core';
-import '@fortawesome/fontawesome-svg-core/styles.css';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { faAt, faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -11,7 +12,7 @@ import {
   Box,
   Embed,
   Flex,
-  Link as LinkThemeUi
+  Link as LinkThemeUi,
 } from '@theme-ui/components';
 import { Link as LinkGatsby } from 'gatsby';
 import { useCallback, useState } from 'react';
@@ -21,7 +22,7 @@ import FeedContext from '../contexts/context-feed';
 import AuthorBanner, {
   AuthorBannerAvatar,
   AuthorBannerDescription,
-  AuthorBannerHeading
+  AuthorBannerHeading,
 } from './author-banner';
 import Button from './button';
 import FeedItems from './feed-items';
@@ -46,14 +47,14 @@ const authorBannerComponents = {
   AuthorBanner,
   AuthorBannerHeading,
   AuthorBannerDescription,
-  AuthorBannerAvatar
+  AuthorBannerAvatar,
 };
 
 const themeUiComponents = {
   Avatar,
   Box,
   Embed,
-  Flex
+  Flex,
 };
 
 const components = {
@@ -69,7 +70,7 @@ const components = {
   Div,
   FontAwesomeIcon,
   ...themeUiComponents,
-  ...authorBannerComponents
+  ...authorBannerComponents,
 };
 
 /**
@@ -90,13 +91,13 @@ export default ({ children, ...props }) => {
       <Global
         styles={{
           '*': {
-            boxSizing: 'border-box'
+            boxSizing: 'border-box',
           },
           body: {
             margin: 0,
             overflowWrap: 'break-word',
-            wordWrap: 'break-word'
-          }
+            wordWrap: 'break-word',
+          },
         }}
       />
       <SEO />

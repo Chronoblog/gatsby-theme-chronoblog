@@ -10,7 +10,7 @@ import useSiteMetadata from '../../../hooks/use-site-metadata';
 const noStyleLink = {
   display: 'block',
   textDecoration: 'none',
-  color: 'inherit'
+  color: 'inherit',
 };
 
 const ItemLink = ({ item, children }) => {
@@ -49,7 +49,7 @@ const ItemLinkText = ({ item }) => {
           mb: 2,
           fontSize: [1],
           color: 'link',
-          fontWeight: 'bold'
+          fontWeight: 'bold',
         }}
       >
         {`${link}`}
@@ -79,7 +79,7 @@ const LinkExternalIconBg = ({
   item,
   color = 'gray',
   fillOpacity = '0.2',
-  children
+  children,
 }) => {
   //
   const exLinkIcon = `'data:image/svg+xml;utf8,<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="external-link-alt" class="svg-inline--fa fa-external-link-alt fa-w-18" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="${color}" fill-opacity="${fillOpacity}" d="M576 24v127.984c0 21.461-25.96 31.98-40.971 16.971l-35.707-35.709-243.523 243.523c-9.373 9.373-24.568 9.373-33.941 0l-22.627-22.627c-9.373-9.373-9.373-24.569 0-33.941L442.756 76.676l-35.703-35.705C391.982 25.9 402.656 0 424.024 0H552c13.255 0 24 10.745 24 24zM407.029 270.794l-16 16A23.999 23.999 0 0 0 384 303.765V448H64V128h264a24.003 24.003 0 0 0 16.97-7.029l16-16C376.089 89.851 365.381 64 344 64H48C21.49 64 0 85.49 0 112v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V287.764c0-21.382-25.852-32.09-40.971-16.97z"></path></svg>'`;
@@ -96,7 +96,7 @@ const LinkExternalIconBg = ({
           backgroundImage: `url(${exLinkIcon})`,
           backgroundSize: '90px',
           backgroundPosition: '97% 20px',
-          backgroundRepeat: 'no-repeat'
+          backgroundRepeat: 'no-repeat',
         }}
       >
         {children}
@@ -132,7 +132,7 @@ const ReadMoreButton = ({ children }) => (
     sx={{
       fontSize: [1],
       opacity: 0.8,
-      fontWeight: 'bold'
+      fontWeight: 'bold',
     }}
   >
     {children}
@@ -163,7 +163,7 @@ const ItemBody = ({ item, children }) => {
         pb: ['10px', '20px'],
         px: ['10px', '20px'],
         borderTopLeftRadius: coverFluidImage ? 0 : null,
-        borderTopRightRadius: coverFluidImage ? 0 : null
+        borderTopRightRadius: coverFluidImage ? 0 : null,
       }}
     >
       <LinkExternalIconBg item={item}>{children}</LinkExternalIconBg>
@@ -189,7 +189,7 @@ const ItemHoveringStyle = ({ children, isHovering = false }) => (
       borderStyle: 'solid',
       borderRadius: 'card',
       borderColor: isHovering ? 'secondary' : 'muted',
-      backgroundColor: isHovering ? 'secondary' : 'muted'
+      backgroundColor: isHovering ? 'secondary' : 'muted',
     }}
   >
     {children}
@@ -203,6 +203,6 @@ const CardComponents = {
   ReadMoreButton: ItemReadMoreButton,
   Body: ItemBody,
   Content: ItemContent,
-  HoveringStyle: ItemHoveringStyle
+  HoveringStyle: ItemHoveringStyle,
 };
 export default CardComponents;

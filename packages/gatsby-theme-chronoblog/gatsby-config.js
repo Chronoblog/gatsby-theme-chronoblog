@@ -11,32 +11,32 @@ module.exports = (options) => {
       yearSeparatorSkipFirst: true,
       contentTypes: {
         links: {
-          beforeTitle: '🔗 '
-        }
-      }
+          beforeTitle: '🔗 ',
+        },
+      },
     },
     feedSearch = {
-      symbol: '🔍'
+      symbol: '🔍',
     },
     uiText = {
       feedShowMoreButton: 'show more',
       feedSearchPlaceholder: 'search',
       cardReadMoreButton: 'read more →',
-      allTagsButton: 'all tags'
-    }
+      allTagsButton: 'all tags',
+    },
   } = options;
   //
   const {
     feedShowMoreButton = 'show more',
     feedSearchPlaceholder = 'search',
     cardReadMoreButton = 'read more →',
-    allTagsButton = 'all tags'
+    allTagsButton = 'all tags',
   } = uiText;
   const {
     limit = 50,
     yearSeparator = true,
     yearSeparatorSkipFirst = true,
-    contentTypes = { links: { beforeTitle: '🔗 ' } }
+    contentTypes = { links: { beforeTitle: '🔗 ' } },
   } = feedItems;
   const { symbol = '🔍' } = feedSearch;
   //
@@ -59,32 +59,32 @@ module.exports = (options) => {
         feedShowMoreButton,
         feedSearchPlaceholder,
         cardReadMoreButton,
-        allTagsButton
+        allTagsButton,
       },
       feedItems: {
         limit,
         yearSeparator,
         yearSeparatorSkipFirst,
-        contentTypes
+        contentTypes,
       },
       feedSearch: {
-        symbol
+        symbol,
       },
       social: [
         {
           icon: ``,
           url: ``,
-          altText: ``
-        }
-      ]
+          altText: ``,
+        },
+      ],
     },
     plugins: [
       `gatsby-transformer-sharp`,
       {
         resolve: `gatsby-plugin-sharp`,
         options: {
-          defaultQuality: 90
-        }
+          defaultQuality: 90,
+        },
       },
       'gatsby-plugin-theme-ui',
       'gatsby-plugin-react-helmet',
@@ -93,35 +93,35 @@ module.exports = (options) => {
         resolve: 'gatsby-source-filesystem',
         options: {
           name: 'pages',
-          path: path.resolve('src/pages')
-        }
+          path: path.resolve('src/pages'),
+        },
       },
       {
         resolve: 'gatsby-source-filesystem',
         options: {
           name: 'posts',
-          path: path.resolve('content/posts')
-        }
+          path: path.resolve('content/posts'),
+        },
       },
       {
         resolve: 'gatsby-source-filesystem',
         options: {
           name: 'links',
-          path: path.resolve('content/links')
-        }
+          path: path.resolve('content/links'),
+        },
       },
       {
         resolve: 'gatsby-source-filesystem',
         options: {
           name: 'notes',
-          path: path.resolve('content/notes')
-        }
+          path: path.resolve('content/notes'),
+        },
       },
       {
         resolve: `gatsby-plugin-page-creator`,
         options: {
-          path: path.join(__dirname, `src`, `pages`)
-        }
+          path: path.join(__dirname, `src`, `pages`),
+        },
       },
       {
         resolve: 'gatsby-plugin-mdx',
@@ -129,7 +129,7 @@ module.exports = (options) => {
           extensions: ['.mdx', '.md'],
           remarkPlugins: [remarkSlug, remarkUnwrapImages],
           defaultLayouts: {
-            pages: require.resolve('./src/components/page')
+            pages: require.resolve('./src/components/page'),
           },
           gatsbyRemarkPlugins: [
             {
@@ -138,10 +138,10 @@ module.exports = (options) => {
                 maxWidth: 820,
                 quality: 90,
                 linkImagesToOriginal: false,
-                backgroundColor: 'transparent'
-              }
+                backgroundColor: 'transparent',
+              },
             },
-            'gatsby-remark-responsive-iframe'
+            'gatsby-remark-responsive-iframe',
           ],
           plugins: [
             {
@@ -150,13 +150,13 @@ module.exports = (options) => {
                 maxWidth: 820,
                 quality: 90,
                 linkImagesToOriginal: false,
-                backgroundColor: 'transparent'
-              }
+                backgroundColor: 'transparent',
+              },
             },
-            'gatsby-remark-responsive-iframe'
-          ]
-        }
-      }
-    ]
+            'gatsby-remark-responsive-iframe',
+          ],
+        },
+      },
+    ],
   };
 };
