@@ -5,30 +5,38 @@
     "node": true
   },
   "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
     "plugin:jsx-a11y/recommended",
     "plugin:prettier/recommended"
   ],
+  "parser": "@typescript-eslint/parser",
   "parserOptions": {
+    "ecmaFeatures": {
+      "impliedStrict": true,
+      "jsx": true
+    },
+    "ecmaVersion": 12,
     "sourceType": "module",
-    "ecmaVersion": 12
+    "useJSXTextNode": true
   },
-  "overrides": [
-    {
-      "files": ["*.test.js"],
-      "rules": {
-        "@typescript-eslint/explicit-function-return-type": "off"
-      }
-    }
-  ],
   "plugins": [
     "prettier",
     "simple-import-sort",
     "import",
     "react-hooks",
-    "jsx-a11y"
+    "jsx-a11y",
+    "@typescript-eslint"
   ],
   "rules": {
+    "@typescript-eslint/ban-ts-ignore": "off",
+    "@typescript-eslint/camelcase": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-empty-function": "off",
+    "@typescript-eslint/no-var-requires": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/ban-ts-comment": "warn",
     "import/first": "warn",
     "import/newline-after-import": "warn",
     "import/no-duplicates": "warn",
@@ -72,5 +80,11 @@
     "react": {
       "version": "detect"
     }
-  }
+  },
+  "ignorePatterns": [
+    "node_modules/**",
+    "*/**/public/**/*",
+    "*/**/dist/**/*",
+    "*/**/*.test.js"
+  ]
 }

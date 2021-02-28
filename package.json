@@ -5,14 +5,15 @@
   "author": "Ivan Ganev <ganevio92@gmail.com>",
   "workspaces": [
     "packages/*",
+    "packages/@chronoblog/*",
     "starters/*",
     "examples/*",
     "test-builds/*"
   ],
   "scripts": {
-    "fix": "eslint --ext .js,.jsx .",
+    "fix": "eslint --fix --ext .js,.jsx,.ts,.tsx .",
     "lerna": "lerna",
-    "lint": "eslint --fix --ext .js,.jsx ."
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx ."
   },
   "devDependencies": {
     "@types/lodash": "4.14.168",
@@ -20,6 +21,8 @@
     "@types/react": "16.14.4",
     "@types/react-dom": "16.9.11",
     "@types/react-helmet": "6.1.0",
+    "@typescript-eslint/eslint-plugin": "4.15.2",
+    "@typescript-eslint/parser": "4.15.2",
     "babel-preset-gatsby": "0.12.1",
     "eslint": "7.20.0",
     "eslint-config-prettier": "8.0.0",
@@ -42,5 +45,8 @@
     "node": ">=15.0.0",
     "npm": ">=7.0.0",
     "yarn": "! use npm !"
+  },
+  "dependencies": {
+    "fsevents": "2.3.2"
   }
 }
