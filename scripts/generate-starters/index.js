@@ -26,7 +26,7 @@ const generateStarters = async () => {
       `./starters/${folderName}`
     );
     await copyFolder(
-      './scripts/generate-starters/starters/chronoblog',
+      `./scripts/generate-starters/starters/${folderName}`,
       `./starters/${folderName}`
     );
   });
