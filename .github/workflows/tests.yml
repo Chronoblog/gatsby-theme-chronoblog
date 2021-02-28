@@ -27,9 +27,6 @@ jobs:
       - name: cd starters/hacker && npm run build
         run: cd starters/hacker && npm run build
 
-      - name: cd starters/minimal && npm run build
-        run: cd starters/minimal && npm run build
-
       - name: cd starters/profile && npm run build
         run: cd starters/profile && npm run build
 
