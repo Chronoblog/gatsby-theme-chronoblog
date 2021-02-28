@@ -17,8 +17,8 @@ jobs:
         with:
           node-version: ${{ matrix.node_version }}
 
-      - name: npm i
-        run: npm i
+      - name: npm i -f
+        run: npm i -f
 
         # test starters
       - name: cd starters/chronoblog && npm run build
