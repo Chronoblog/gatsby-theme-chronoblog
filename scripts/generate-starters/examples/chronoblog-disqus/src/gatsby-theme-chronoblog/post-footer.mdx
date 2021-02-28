@@ -1,0 +1,11 @@
+import { Disqus } from 'gatsby-plugin-disqus';
+
+<AuthorBanner></AuthorBanner>
+<p>&nbsp;</p>
+<Disqus
+config={{
+url: props.siteMetadata.siteUrl + props.postData.fields.slug,
+title: props.postData.frontmatter.title,
+id: props.postData.id
+}}
+/>
