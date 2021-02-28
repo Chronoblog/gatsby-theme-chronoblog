@@ -45,8 +45,5 @@
     "node": ">=15.0.0",
     "npm": ">=7.0.0",
     "yarn": "! use npm !"
-  },
-  "dependencies": {
-    "fsevents": "2.3.2"
   }
 }
