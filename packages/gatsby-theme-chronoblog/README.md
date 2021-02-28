@@ -452,9 +452,9 @@ All of them are in the `content` folder. They are located in the appropriate fol
 
 Chronoblog has [pages](#pages), but they are not in the content folder, why? The fact is that everything in the content folder is not just website content, it is [Feed](#feed) content. Everything in the content folder is displayed in the feed (sorted by date, filtered by tags, etc.). But pages are not a `feed` content.
 
-All types of content use markdown syntax, you can read more about this in the Gatsby documentation ([markdown-syntax](https://www.gatsbyjs.org/docs/mdx/markdown-syntax)). Especially useful to know about [frontmatter](https://www.gatsbyjs.org/docs/mdx/markdown-syntax/#frontmatter)
+All types of content use markdown syntax, you can read more about this in the Gatsby documentation ([markdown-syntax](https://www.gatsbyjs.org/docs/mdx/markdown-syntax)). Especially useful to know about [frontmatter](https://www.gatsbyjs.org/docs/mdx/markdown-syntax/#frontmatter).
 
-Markdown is a great format for content like articles - the reason is not an only confirmation but also because if you write your posts on the site in Markdown format, you will not depend on the theme (Chronoblog in this case) or even on the chosen engine (i.e. from Gatsby). At any time, you can easily change the platform on which your site is running, to any other platform that supports Markdown (now many support it).
+> Markdown is a great format for content like articles - the reason is not an only confirmation but also because if you write your posts on the site in Markdown format, you will not depend on the theme (Chronoblog in this case) or even on the chosen engine (i.e. from Gatsby). At any time, you can easily change the platform on which your site is running, to any other platform that supports Markdown (now many support it).
 
 ### Content Types
 
