@@ -80,5 +80,12 @@ module.exports = {
         trackingId: 'UA-XXXXXXXXX-X',
       },
     },
+    {
+      resolve: `gatsby-plugin-disqus`,
+      options: {
+        // replace "chronoblog-1" with your own disqus shortname
+        shortname: `chronoblog-1`,
+      },
+    },
   ],
 };
