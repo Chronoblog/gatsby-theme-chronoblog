@@ -89,7 +89,6 @@ Repo: [github.com/Chronoblog/gatsby-starter-chronoblog-hacker](https://github.co
 
 Examples are the same [standard starter](https://github.com/Chronoblog/gatsby-starter-chronoblog), but with some additional features. You can use the example to start your site or see how this feature was added.
 
-- Chronoblog with Disqus comments | [Repo](https://github.com/Chronoblog/gatsby-starter-chronoblog-disqus) | [Demo](https://chronoblog-disqus.now.sh/)
 - Chronoblog with Netlify CMS | [Repo](https://github.com/Chronoblog/gatsby-starter-chronoblog-netlify-cms) | [Demo](https://chronoblog-netlify-cms.now.sh/)
 
 <br />
