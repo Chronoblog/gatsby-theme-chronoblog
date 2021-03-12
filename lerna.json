@@ -8,9 +8,9 @@
     "CHANGELOG.md",
     "**/__tests__/**",
     "**/__mocks__/**",
-    "./examples/**",
-    "./starters/**",
-    "./test-builds/**"
+    "./examples/*",
+    "./starters/*",
+    "./test-builds/*"
   ],
   "command": {
     "publish": {
