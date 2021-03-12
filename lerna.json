@@ -21,5 +21,6 @@
     "bootstrap": {
       "npmClientArgs": ["--no-package-lock"]
     }
-  }
+  },
+  "packages": ["packages/*"]
 }
