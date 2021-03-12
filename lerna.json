@@ -1,7 +1,7 @@
 {
   "version": "independent",
   "npmClient": "npm",
-  "useWorkspaces": true,
+  "useWorkspaces": false,
   "loglevel": "success",
   "registry": "https://registry.npmjs.org/",
   "ignoreChanges": [
