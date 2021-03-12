@@ -1,6 +1,7 @@
 {
   "version": "independent",
   "npmClient": "npm",
+  "useWorkspaces": true,
   "registry": "https://registry.npmjs.org/",
   "ignoreChanges": ["CHANGELOG.md", "**/__tests__/**", "**/__mocks__/**"],
   "command": {
@@ -12,6 +13,5 @@
     "bootstrap": {
       "npmClientArgs": ["--no-package-lock"]
     }
-  },
-  "packages": ["packages/*"]
+  }
 }
