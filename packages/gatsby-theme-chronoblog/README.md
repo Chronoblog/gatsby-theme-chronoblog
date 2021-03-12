@@ -146,7 +146,6 @@ Also, all starters have a different main page, **`src/pages/index.mdx`** and con
     - [Adding support for additional programming languages](#adding-support-for-additional-programming-languages)
   - [Shadowing in Chronoblog Gatsby Theme](#shadowing-in-chronoblog-gatsby-theme)
     - [Components that can and should be shadowed](#components-that-can-and-should-be-shadowed)
-    - [Components that can be shadowed](#components-that-can-be-shadowed)
   - [About used Technologies and Methods](#about-used-technologies-and-methods)
     - [Organization of this monorepository](#organization-of-this-monorepository)
     - [Tests and Publication](#tests-and-publication)
@@ -1033,16 +1032,6 @@ Components that were specially created for you to change them:
 | ✅ | `src/gatsby-theme-chronoblog/site-header.mdx` | read: [site-header](#site-header) |
 | ✅ | `src/gatsby-theme-chronoblog/site-footer.mdx` | read: [post-footer](#post-footer) |
 | ✅ | `src/gatsby-theme-chronoblog/content-bottom.mdx` |  |
-
-### Components that can be shadowed
-
-These components can be shadowed if you think that you really need it:
-
-| shadow | name | description |
-| --- | --- | --- |
-| 👍 | `src/gatsby-theme-chronoblog/components/layout.js` | the whole site is wrapped in this component |
-| 👍 | `src/gatsby-theme-chronoblog/components/header.js` |  |
-| 👍 | `src/gatsby-theme-chronoblog/components/footer.js` |  |
 
 ## About used Technologies and Methods
 
