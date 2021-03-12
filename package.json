@@ -14,8 +14,10 @@
     "fix": "eslint --fix --ext .js,.jsx,.ts,.tsx .",
     "generate-starters": "node ./scripts/generate-starters",
     "lerna": "lerna",
-    "publish": "node ./scripts/generate-starters && lerna publish",
-    "lint": "eslint --ext .js,.jsx,.ts,.tsx ."
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx .",
+    "publish:major": "node ./scripts/generate-starters && lerna publish major",
+    "publish:minor": "node ./scripts/generate-starters && lerna publish minor",
+    "publish:patch": "node ./scripts/generate-starters && lerna publish patch"
   },
   "devDependencies": {
     "@types/lodash": "4.14.168",
