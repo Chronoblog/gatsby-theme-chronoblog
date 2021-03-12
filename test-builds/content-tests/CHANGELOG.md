@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.23.0](https://github.com/Chronoblog/gatsby-theme-chronoblog/compare/content-tests@1.22.0...content-tests@1.23.0) (2021-03-12)
+
+**Note:** Version bump only for package content-tests
+
+
+
+
+
 # [1.22.0](https://github.com/Chronoblog/gatsby-theme-chronoblog/compare/content-tests@1.21.0...content-tests@1.22.0) (2020-08-18)
 
 **Note:** Version bump only for package content-tests

@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.4.0](https://github.com/Chronoblog/gatsby-theme-chronoblog/compare/chinese-language-test@1.3.0...chinese-language-test@1.4.0) (2021-03-12)
+
+**Note:** Version bump only for package chinese-language-test
+
+
+
+
+
 # [1.3.0](https://github.com/Chronoblog/gatsby-theme-chronoblog/compare/chinese-language-test@1.2.0...chinese-language-test@1.3.0) (2020-08-18)
 
 **Note:** Version bump only for package chinese-language-test
