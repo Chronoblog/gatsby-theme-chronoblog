@@ -4,7 +4,14 @@
   "useWorkspaces": true,
   "loglevel": "success",
   "registry": "https://registry.npmjs.org/",
-  "ignoreChanges": ["CHANGELOG.md", "**/__tests__/**", "**/__mocks__/**"],
+  "ignoreChanges": [
+    "CHANGELOG.md",
+    "**/__tests__/**",
+    "**/__mocks__/**",
+    "./examples/**",
+    "./starters/**",
+    "./test-builds/**"
+  ],
   "command": {
     "publish": {
       "allowBranch": "master",
