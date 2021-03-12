@@ -15,7 +15,10 @@
     "generate-starters": "node ./scripts/generate-starters",
     "lerna": "lerna",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx .",
-    "publish": "node ./scripts/generate-starters && lerna publish --no-changelog"
+    "version": "node ./scripts/generate-starters && lerna version --no-changelog",
+    "publish:major": "node ./scripts/generate-starters && lerna publish major --no-changelog",
+    "publish:minor": "node ./scripts/generate-starters && lerna publish minor --no-changelog",
+    "publish:patch": "node ./scripts/generate-starters && lerna publish patch --no-changelog"
   },
   "devDependencies": {
     "@types/lodash": "4.14.168",
