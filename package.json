@@ -15,9 +15,7 @@
     "generate-starters": "node ./scripts/generate-starters",
     "lerna": "lerna",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx .",
-    "publish:major": "node ./scripts/generate-starters && lerna publish major",
-    "publish:minor": "node ./scripts/generate-starters && lerna publish minor",
-    "publish:patch": "node ./scripts/generate-starters && lerna publish patch"
+    "publish": "node ./scripts/generate-starters && lerna publish"
   },
   "devDependencies": {
     "@types/lodash": "4.14.168",
