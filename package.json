@@ -16,13 +16,13 @@
     "generate-starters": "node ./scripts/generate-starters",
     "lerna": "lerna",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx .",
-    "publish:major": "node ./scripts/generate-starters && lerna publish major --no-changelog",
-    "publish:minor": "node ./scripts/generate-starters && lerna publish minor --no-changelog",
-    "publish:patch": "node ./scripts/generate-starters && lerna publish patch --no-changelog",
-    "publish:premajor": "node ./scripts/generate-starters && lerna publish premajor --no-changelog",
-    "publish:preminor": "node ./scripts/generate-starters && lerna publish preminor --no-changelog",
-    "publish:prepatch": "node ./scripts/generate-starters && lerna publish prepatch --no-changelog",
-    "start:chronoblog": "cd starters/chronoblog && npm run start"
+    "version:major": "node ./scripts/generate-starters && lerna version major --no-changelog",
+    "version:minor": "node ./scripts/generate-starters && lerna version minor --no-changelog",
+    "version:patch": "node ./scripts/generate-starters && lerna version patch --no-changelog",
+    "version:premajor": "node ./scripts/generate-starters && lerna version premajor --no-changelog",
+    "version:preminor": "node ./scripts/generate-starters && lerna version preminor --no-changelog",
+    "version:prepatch": "node ./scripts/generate-starters && lerna version prepatch --no-changelog",
+    "start:chronoblog": "cd starters/chronoblog && npm run clean && npm run start"
   },
   "devDependencies": {
     "@types/lodash": "4.14.168",

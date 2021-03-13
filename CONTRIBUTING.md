@@ -12,10 +12,6 @@ However, remember that you need to edit this README: https://github.com/Chronobl
 
 At the moment I am working to ensure that the development process here is consistent with [GitHub flow](https://guides.github.com/introduction/flow/)
 
-## About used Technologies and Methods
-
-Here to list the technologies and methods that are used in the project. **None of this needs to be known to use Chronoblog** (Read [Guide](#guide---how-to-start-working-with-chronoblog-gatsby-theme) and [Documentation](#documentation) for this), but it will help to understand how everything is organized here.
-
 ### Organization of this monorepository
 
 This monorepo uses [npm workspaces](https://docs.npmjs.com/cli/v7/using-npm/workspaces).
@@ -28,7 +24,7 @@ This monorepo uses [npm workspaces](https://docs.npmjs.com/cli/v7/using-npm/work
 
 - [test-builds](https://github.com/Chronoblog/gatsby-theme-chronoblog/tree/master/test-builds) folder for test builds.
 
-Such an organization allows you to check the work of any starter right during the work on the project. For example, by running `cd starters/chronoblog && npm run start` command, you can make changes to [gatsby-theme-chronoblog/tree/master/packages/gatsby-theme-chronoblog](https://github.com/Chronoblog/gatsby-theme-chronoblog/tree/master/packages/gatsby-theme-chronoblog) and immediately look at how the "chronoblog starter" works with these changes (at http://localhost:8000).
+Such an organization allows you to check the work of any starter right during the work on the project. For example, by running `npm run start:chronoblog` command, you can make changes to [gatsby-theme-chronoblog/tree/master/packages/gatsby-theme-chronoblog](https://github.com/Chronoblog/gatsby-theme-chronoblog/tree/master/packages/gatsby-theme-chronoblog) and immediately look at how the "chronoblog starter" works with these changes (at http://localhost:8000).
 
 ### Tests and Publication
 

@@ -1,0 +1,70 @@
+name: New Version
+
+on:
+  release:
+    types: [published, created, edited]
+
+jobs:
+  tests:
+    timeout-minutes: 220
+    name: Test ${{ matrix.starter_folder }} on node ${{ matrix.node_version }} and ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        node_version: [15]
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        starter_folder:
+          [
+            examples/chronoblog-netlify-cms,
+            starters/chronoblog,
+            starters/hacker,
+            starters/profile,
+            test-builds/content-tests,
+            test-builds/chinese-language-test,
+            test-builds/profile-minimal,
+          ]
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Use Node.js ${{ matrix.node_version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node_version }}
+
+      - name: npm i -f
+        run: npm i -f
+
+      - name: cd ${{ matrix.starter_folder }} && npm run build
+        run: cd ${{ matrix.starter_folder }} && npm run build
+
+  publication-of-starters:
+    needs: [tests]
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        starter:
+          [
+            {
+              folder: examples/chronoblog-netlify-cms/.,
+              repo: gatsby-starter-chronoblog-netlify-cms,
+            },
+            { folder: starters/chronoblog/., repo: gatsby-starter-chronoblog },
+            {
+              folder: starters/hacker/.,
+              repo: gatsby-starter-chronoblog-hacker,
+            },
+            {
+              folder: starters/profile/.,
+              repo: gatsby-starter-chronoblog-profile,
+            },
+          ]
+    steps:
+      - name: Copy directory ${{ matrix.starter.folder }} to ${{ matrix.starter.repo }} repository
+        uses: andstor/copycat-action@v3
+        with:
+          personal_token: ${{ secrets.API_TOKEN_GITHUB }}
+          src_path: ${{ matrix.starter.folder }}
+          dst_path: /.
+          clean: true
+          dst_owner: Chronoblog
+          dst_repo_name: ${{ matrix.starter.repo }}
