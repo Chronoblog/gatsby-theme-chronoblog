@@ -12,7 +12,7 @@ jobs:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
           source-directory: "examples/chronoblog-netlify-cms"
-          destination-github-username: "Chronoblog"
+          destination-github-username: "Ganevru"
           destination-repository-name: "gatsby-starter-chronoblog-netlify-cms"
           user-email: 8168280+Ganevru@users.noreply.github.com
       - name: Test get variable exported by push-to-another-repository
