@@ -20,7 +20,9 @@
     "publish:patch": "node ./scripts/generate-starters && lerna publish patch --no-changelog",
     "publish:premajor": "node ./scripts/generate-starters && lerna publish premajor --no-changelog",
     "publish:preminor": "node ./scripts/generate-starters && lerna publish preminor --no-changelog",
-    "publish:prepatch": "node ./scripts/generate-starters && lerna publish prepatch --no-changelog"
+    "publish:prepatch": "node ./scripts/generate-starters && lerna publish prepatch --no-changelog",
+    "start:chronoblog": "cd starters/chronoblog && npm run start",
+    "clean:chronoblog": "cd starters/chronoblog && npm run clean"
   },
   "devDependencies": {
     "@types/lodash": "4.14.168",
