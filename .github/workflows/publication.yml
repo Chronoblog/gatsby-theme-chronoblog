@@ -1,0 +1,21 @@
+name: Publication of Starters
+
+on: push
+
+jobs:
+  copy-file:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Pushes test folder
+        uses: crykn/copy_folder_to_another_repo_action@v1.0.6
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+        with:
+          source_folder: "examples/chronoblog-netlify-cms"
+          destination_repo: "Chronoblog/gatsby-starter-chronoblog-netlify-cms"
+          user_email: "8168280+Ganevru@users.noreply.github.com"
+          user_name: "Ivan Ganev"
+          commit_msg: "Auto update chronoblog-netlify-cms example"
