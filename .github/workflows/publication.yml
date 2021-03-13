@@ -11,7 +11,7 @@ jobs:
         with:
           personal_token: ${{ secrets.API_TOKEN_GITHUB }}
           src_path: examples/chronoblog-netlify-cms
-          dst_path: /.
+          dst_path: /
           clean: true
           dst_owner: Chronoblog
           dst_repo_name: gatsby-starter-chronoblog-netlify-cms
