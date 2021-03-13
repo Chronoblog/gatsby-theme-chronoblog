@@ -3,7 +3,7 @@ on: [push]
 jobs:
   tests:
     timeout-minutes: 220
-    name: Test on node ${{ matrix.node_version }} and ${{ matrix.os }}
+    name: Test ${{ matrix.starter }} on node ${{ matrix.node_version }} and ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
