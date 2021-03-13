@@ -9,7 +9,7 @@
 Chronoblog - Gatsby Theme
 </h1>
 
-[![npm](https://img.shields.io/npm/v/gatsby-theme-chronoblog?color=brightgreen)](https://www.npmjs.com/package/gatsby-theme-chronoblog) [![node](https://img.shields.io/node/v/gatsby-theme-chronoblog)](https://www.npmjs.com/package/gatsby-theme-chronoblog) [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](code_of_conduct.md)
+[![npm](https://img.shields.io/npm/v/gatsby-theme-chronoblog?color=brightgreen)](https://www.npmjs.com/package/gatsby-theme-chronoblog) [![node](https://img.shields.io/node/v/gatsby-theme-chronoblog)](https://www.npmjs.com/package/gatsby-theme-chronoblog) [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](code_of_conduct.md) ![](https://github.com/Chronoblog/gatsby-theme-chronoblog/workflows/tests/badge.svg)
 
 Chronoblog is a [Gatsby js](https://github.com/gatsbyjs/gatsby) theme specifically designed to create a personal website.
 
@@ -145,12 +145,6 @@ Also, all starters have a different main page, **`src/pages/index.mdx`** and con
     - [Adding support for additional programming languages](#adding-support-for-additional-programming-languages)
   - [Shadowing in Chronoblog Gatsby Theme](#shadowing-in-chronoblog-gatsby-theme)
     - [Components that can and should be shadowed](#components-that-can-and-should-be-shadowed)
-  - [About used Technologies and Methods](#about-used-technologies-and-methods)
-    - [Organization of this monorepository](#organization-of-this-monorepository)
-    - [Tests and Publication](#tests-and-publication)
-    - [TypeScript and JSDoc for type annotation](#typescript-and-jsdoc-for-type-annotation)
-- [Status](#status)
-  - [GitHub Workflows](#github-workflows)
 - [Feedback](#feedback)
 - [Contribute](#contribute)
   - [Contribution to the README.md](#contribution-to-the-readmemd)
@@ -1031,52 +1025,6 @@ Components that were specially created for you to change them:
 | ✅ | `src/gatsby-theme-chronoblog/site-header.mdx` | read: [site-header](#site-header) |
 | ✅ | `src/gatsby-theme-chronoblog/site-footer.mdx` | read: [post-footer](#post-footer) |
 | ✅ | `src/gatsby-theme-chronoblog/content-bottom.mdx` |  |
-
-## About used Technologies and Methods
-
-Here to list the technologies and methods that are used in the project. **None of this needs to be known to use Chronoblog** (Read [Guide](#guide---how-to-start-working-with-chronoblog-gatsby-theme) and [Documentation](#documentation) for this), but it will help to understand how everything is organized here.
-
-### Organization of this monorepository
-
-This monorepo uses [npm workspaces](https://docs.npmjs.com/cli/v7/using-npm/workspaces).
-
-- [packages](https://github.com/Chronoblog/gatsby-theme-chronoblog/tree/master/packages) folder. At the moment there is only [gatsby-theme-chronoblog/tree/master/packages/gatsby-theme-chronoblog](https://github.com/Chronoblog/gatsby-theme-chronoblog/tree/master/packages/gatsby-theme-chronoblog) there, and all the main work on the project takes place in it. Perhaps in the future, additional packages will appear.
-
-- [starters](https://github.com/Chronoblog/gatsby-theme-chronoblog/tree/master/starters) folder contains all the project starters.
-
-- [examples](https://github.com/Chronoblog/gatsby-theme-chronoblog/tree/master/starters) folder contains examples of how Chronoblog can be used.
-
-- [test-builds](https://github.com/Chronoblog/gatsby-theme-chronoblog/tree/master/test-builds) folder for test builds.
-
-Such an organization allows you to check the work of any starter right during the work on the project. For example, by running `cd starters/chronoblog && npm run start` command, you can make changes to [gatsby-theme-chronoblog/tree/master/packages/gatsby-theme-chronoblog](https://github.com/Chronoblog/gatsby-theme-chronoblog/tree/master/packages/gatsby-theme-chronoblog) and immediately look at how the "chronoblog starter" works with these changes (at http://localhost:8000).
-
-### Tests and Publication
-
-The github action scripts can be viewed here: [workflows](https://github.com/Chronoblog/gatsby-theme-chronoblog/tree/master/.github/workflows). Each time changes are added to the repo, tests and the generation of all starters (on various platforms) are launched. This allows to check if everything is working correctly.
-
-We can say that the master branch is a development branch since changes in the branch alone do not lead to the publication of the project. Therefore, there may be bugs and problems in the master branch.
-
-When updating the project version, packages are sent to npm, and starters, using [publish-starters.yml](https://github.com/Chronoblog/gatsby-theme-chronoblog/blob/master/.github/workflows/publish-starters.yml), update their individual repositories. Because of this, chronoblog starters have such strange commits (for example, https://github.com/Chronoblog/gatsby-starter-chronoblog).
-
-### TypeScript and JSDoc for type annotation
-
-If you looked at the `package.json` file in the root of the project, then you saw TypeScript and types for various libraries in the dependencies (`@types/node`, `@types/react`, etc.). But the project is written in `js`?
-
-The fact is that JSDoc comments are used to declare types. Read more about this method in these articles:
-
-- [Type Safe JavaScript with JSDoc](https://medium.com/@trukrs/type-safe-javascript-with-jsdoc-7a2a63209b76)
-- [Type annotations in JavaScript files](https://ricostacruz.com/til/typescript-jsdoc)
-- [TypeScript without TypeScript -- JSDoc superpowers](https://fettblog.eu/typescript-jsdoc-superpowers/)
-
-# Status
-
-## GitHub Workflows
-
-Github status shows the state of the Master branch. There may be problems and fail tests in the Master branch, this is normal - it only means that we can’t publish a new public release.
-
-![](https://github.com/Chronoblog/gatsby-theme-chronoblog/workflows/Tests/badge.svg)
-
-![](https://github.com/Chronoblog/gatsby-theme-chronoblog/workflows/Test%20and%20Publish%20Starters/badge.svg)
 
 # Feedback
 
