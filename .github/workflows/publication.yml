@@ -11,7 +11,7 @@ jobs:
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          source-directory: "chronoblog-netlify-cms"
+          source-directory: "examples/chronoblog-netlify-cms"
           destination-github-username: "Chronoblog"
           destination-repository-name: "gatsby-starter-chronoblog-netlify-cms"
           user-email: 8168280+Ganevru@users.noreply.github.com
