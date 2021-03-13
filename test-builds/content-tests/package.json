@@ -20,7 +20,7 @@
     "react-dom": "^16.12.0"
   },
   "engines": {
-    "node": ">=15.0.0"
+    "node": ">=12.21.0"
   },
   "starter-name": "gatsby-starter-chronoblog-content-tests"
 }
