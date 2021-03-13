@@ -1,5 +1,13 @@
 # How to Contribute
 
+Any type of contribution to the project is also welcome! I use the GitHub issues as a todo list, so if you want to help, read existing issues. Or, if you want to add something new, write new issues with your ideas, and we will discuss it.
+
+## Contribution to the README.md
+
+Contributions to the README are welcome, especially considering that English is not my native language.
+
+However, remember that you need to edit this README: https://github.com/Chronoblog/gatsby-theme-chronoblog/blob/master/packages/gatsby-theme-chronoblog/README.md - this one located in `packages/gatsby-theme-chronoblog/README.md` is "real".
+
 ## Process
 
 At the moment I am working to ensure that the development process here is consistent with [GitHub flow](https://guides.github.com/introduction/flow/)

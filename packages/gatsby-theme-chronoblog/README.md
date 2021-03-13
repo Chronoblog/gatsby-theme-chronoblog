@@ -146,8 +146,6 @@ Also, all starters have a different main page, **`src/pages/index.mdx`** and con
   - [Shadowing in Chronoblog Gatsby Theme](#shadowing-in-chronoblog-gatsby-theme)
     - [Components that can and should be shadowed](#components-that-can-and-should-be-shadowed)
 - [Feedback](#feedback)
-- [Contribute](#contribute)
-  - [Contribution to the README.md](#contribution-to-the-readmemd)
 - [Credits](#credits)
   - [Art](#art)
 
@@ -1033,18 +1031,6 @@ Components that were specially created for you to change them:
 🐦 You can also contact me on Twitter: [twitter.com/Ganevru](https://twitter.com/Ganevru), I will be glad to know your opinion about Chronoblog.
 
 ✍️ If you made a site using Chronoblog - write to me about it!
-
-# Contribute
-
-Any type of contribution to the project is also welcome! I use the GitHub issues as a todo list, so if you want to help, read existing issues. Or, if you want to add something new, write new issues with your ideas, and we will discuss it.
-
-If you want to contribute to the project, it will be useful for you to read this: [About used Technologies and Methods](https://github.com/Chronoblog/gatsby-theme-chronoblog#about-used-technologies-and-methods)
-
-## Contribution to the README.md
-
-Contributions to the README are welcome, especially considering that English is not my native language.
-
-However, remember that you need to edit this README: https://github.com/Chronoblog/gatsby-theme-chronoblog/blob/master/packages/gatsby-theme-chronoblog/README.md - this one located in `packages/gatsby-theme-chronoblog/README.md` is "real".
 
 # Credits
 
