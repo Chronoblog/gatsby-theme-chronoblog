@@ -6,14 +6,12 @@ jobs:
   copy-file:
     runs-on: ubuntu-latest
     steps:
-      - name: Push directory to another repository
-        uses: cpina/github-action-push-to-another-repository@master
-        env:
-          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+      - name: Copy directory to another repository
+        uses: andstor/copycat-action@v3
         with:
-          source-directory: "examples/chronoblog-netlify-cms"
-          destination-github-username: "Chronoblog"
-          destination-repository-name: "gatsby-starter-chronoblog-netlify-cms"
-          user-email: 8168280+Ganevru@users.noreply.github.com
-      - name: Test get variable exported by push-to-another-repository
-        run: echo $DESTINATION_CLONED_DIRECTORY
+          personal_token: ${{ secrets.API_TOKEN_GITHUB }}
+          src_path: examples/chronoblog-netlify-cms
+          dst_path: /.
+          clean: true
+          dst_owner: Chronoblog
+          dst_repo_name: gatsby-starter-chronoblog-netlify-cms
