@@ -29,6 +29,5 @@
   },
   "engines": {
     "node": ">=12.21.0"
-  },
-  "starter-name": "gatsby-starter-chronoblog-hacker"
+  }
 }
