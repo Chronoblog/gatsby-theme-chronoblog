@@ -32,7 +32,7 @@
     "prettier": "^1.18.2"
   },
   "engines": {
-    "node": ">=15.0.0"
+    "node": ">=12.21.0"
   },
   "starter-name": "gatsby-starter-chronoblog-netlify-cms"
 }
