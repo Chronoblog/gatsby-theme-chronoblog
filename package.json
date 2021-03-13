@@ -11,6 +11,7 @@
     "test-builds/*"
   ],
   "scripts": {
+    "clean:chronoblog": "cd starters/chronoblog && npm run clean",
     "fix": "eslint --fix --ext .js,.jsx,.ts,.tsx .",
     "generate-starters": "node ./scripts/generate-starters",
     "lerna": "lerna",
@@ -21,8 +22,7 @@
     "publish:premajor": "node ./scripts/generate-starters && lerna publish premajor --no-changelog",
     "publish:preminor": "node ./scripts/generate-starters && lerna publish preminor --no-changelog",
     "publish:prepatch": "node ./scripts/generate-starters && lerna publish prepatch --no-changelog",
-    "start:chronoblog": "cd starters/chronoblog && npm run start",
-    "clean:chronoblog": "cd starters/chronoblog && npm run clean"
+    "start:chronoblog": "cd starters/chronoblog && npm run start"
   },
   "devDependencies": {
     "@types/lodash": "4.14.168",
