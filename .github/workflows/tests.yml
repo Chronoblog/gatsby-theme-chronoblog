@@ -11,13 +11,13 @@ jobs:
         os: [ubuntu-latest, macos-latest, windows-latest]
         starter_folder:
           [
-            examples/chronoblog-netlify-cms,
-            starters/chronoblog,
-            starters/hacker,
-            starters/profile,
-            test-builds/content-tests,
-            test-builds/chinese-language-test,
-            test-builds/profile-minimal,
+            builds/examples/chronoblog-netlify-cms,
+            builds/starters/chronoblog,
+            builds/starters/hacker,
+            builds/starters/profile,
+            builds/test-builds/content-tests,
+            builds/test-builds/chinese-language-test,
+            builds/test-builds/profile-minimal,
           ]
     steps:
       - uses: actions/checkout@v1

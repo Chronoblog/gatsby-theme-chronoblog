@@ -15,13 +15,13 @@ jobs:
         os: [ubuntu-latest, macos-latest, windows-latest]
         starter_folder:
           [
-            examples/chronoblog-netlify-cms,
-            starters/chronoblog,
-            starters/hacker,
-            starters/profile,
-            test-builds/content-tests,
-            test-builds/chinese-language-test,
-            test-builds/profile-minimal,
+            builds/examples/chronoblog-netlify-cms,
+            builds/starters/chronoblog,
+            builds/starters/hacker,
+            builds/starters/profile,
+            builds/test-builds/content-tests,
+            builds/test-builds/chinese-language-test,
+            builds/test-builds/profile-minimal,
           ]
     steps:
       - uses: actions/checkout@v1
@@ -47,16 +47,19 @@ jobs:
         starter:
           [
             {
-              folder: examples/chronoblog-netlify-cms/.,
+              folder: builds/examples/chronoblog-netlify-cms/.,
               repo: gatsby-starter-chronoblog-netlify-cms,
             },
-            { folder: starters/chronoblog/., repo: gatsby-starter-chronoblog },
             {
-              folder: starters/hacker/.,
+              folder: builds/starters/chronoblog/.,
+              repo: gatsby-starter-chronoblog,
+            },
+            {
+              folder: builds/starters/hacker/.,
               repo: gatsby-starter-chronoblog-hacker,
             },
             {
-              folder: starters/profile/.,
+              folder: builds/starters/profile/.,
               repo: gatsby-starter-chronoblog-profile,
             },
           ]
