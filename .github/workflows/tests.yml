@@ -31,8 +31,8 @@ jobs:
         run: npm i -f
       - name: npm run generate-starters
         run: npm run generate-starters
-      - name: npm i
-        run: npm i
+      - name: npm i -f
+        run: npm i -f
 
       - name: cd ${{ matrix.starter_folder }} && npm run build
         run: cd ${{ matrix.starter_folder }} && npm run build
