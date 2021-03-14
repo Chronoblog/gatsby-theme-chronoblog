@@ -53,10 +53,6 @@ yarn-error.log
 .pnp.js
 .yarn-integrity
 
-# personal
-README-RU.md
-README-DEV.md
-
 # dotenv environment variables file
 .env
 
@@ -68,3 +64,7 @@ README-DEV.md
 # no lock
 yarn.lock
 package-lock.json
+
+# starters folder
+starters
+examples
