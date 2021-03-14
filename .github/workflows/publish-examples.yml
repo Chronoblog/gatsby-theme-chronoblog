@@ -10,10 +10,13 @@ jobs:
       matrix:
         example: [chronoblog-netlify-cms]
     steps:
-      - name: npm i -f
-        run: npm i -f
-      - name: npm run generate-starters
-        run: npm run generate-starters
+      - uses: actions/checkout@v2.3.4
+      - uses: actions/setup-node@v2.1.5
+        with:
+          node-version: 15
+
+      - run: npm i -f
+      - run: npm run generate-starters
 
       - name: Copy directory examples/${{ matrix.example }}/. to gatsby-starter-${{ matrix.example }} repository
         uses: andstor/copycat-action@v3
