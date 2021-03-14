@@ -36,6 +36,8 @@ jobs:
         run: npm i -f
       - name: npm run generate-starters
         run: npm run generate-starters
+      - name: npm i
+        run: npm i
 
       - name: cd ${{ matrix.starter_folder }} && npm run build
         run: cd ${{ matrix.starter_folder }} && npm run build
@@ -65,6 +67,9 @@ jobs:
         run: npm i -f
       - name: npm run generate-starters
         run: npm run generate-starters
+      - name: npm i
+        run: npm i
+
       - name: Copy directory starters/${{ matrix.starter }}/. to gatsby-starter-${{ matrix.starter }} repository
         uses: andstor/copycat-action@v3
         with:
@@ -86,6 +91,9 @@ jobs:
         run: npm i -f
       - name: npm run generate-starters
         run: npm run generate-starters
+      - name: npm i
+        run: npm i
+
       - name: Copy directory examples/${{ matrix.example }}/. to gatsby-starter-${{ matrix.example }} repository
         uses: andstor/copycat-action@v3
         with:
