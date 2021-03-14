@@ -68,12 +68,3 @@ README-DEV.md
 # no lock
 yarn.lock
 package-lock.json
-
-#
-examples/*
-!examples/README.md
-!examples/*/package.json
-#
-starters/*
-!starters/README.md
-!starters/*/package.json
