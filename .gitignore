@@ -70,10 +70,10 @@ yarn.lock
 package-lock.json
 
 #
-examples/
+examples/*
 !examples/README.md
 !examples/*/package.json
 #
-starters/
+starters/*
 !starters/README.md
 !starters/*/package.json

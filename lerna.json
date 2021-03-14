@@ -5,6 +5,9 @@
   "registry": "https://registry.npmjs.org/",
   "ignoreChanges": ["CHANGELOG.md", "**/__tests__/**", "**/__mocks__/**"],
   "command": {
+    "version": {
+      "allowBranch": "master"
+    },
     "publish": {
       "allowBranch": "master",
       "conventionalCommits": true,
