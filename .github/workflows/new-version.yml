@@ -57,7 +57,7 @@ jobs:
           token: ${{ secrets.NPM_TOKEN }}
 
   publish-starters:
-    needs: [tests, publish-npm]
+    needs: [tests]
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -81,7 +81,7 @@ jobs:
           dst_repo_name: gatsby-starter-${{ matrix.starter }}
 
   publish-examples:
-    needs: [tests, publish-npm]
+    needs: [tests]
     runs-on: ubuntu-latest
     strategy:
       matrix:
