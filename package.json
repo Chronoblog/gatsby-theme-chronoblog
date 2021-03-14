@@ -20,6 +20,7 @@
     "version": "lerna version",
     "version:major": "lerna version major",
     "version:minor": "lerna version minor",
+    "version:patch": "lerna version patch",
     "version:premajor": "lerna version premajor",
     "version:preminor": "lerna version preminor",
     "version:prepatch": "lerna version prepatch"

@@ -12,27 +12,31 @@ However, remember that you need to edit this README: https://github.com/Chronobl
 
 At the moment I am working to ensure that the development process here is consistent with [GitHub flow](https://guides.github.com/introduction/flow/)
 
+### Tests
+
+Every time there is a new push to any branch, a `.github/workflows/tests.yml` will be launched. It will run tests and run builds in various environments to check if they build correctly.
+
+### Publish
+
+Publishing a new version is publishing a new version in npm and publishing new versions of starters (with a new version) in their repositories.
+
+To do this, run the command:
+
+```
+npm run version:minor
+```
+
+(`minor` can be replaced with `patch` or `major`)
+
+Lerna will update all packages by itself, add tags of new versions to the branch and push to the repo. More details on how it works here: [@lerna/version](https://github.com/lerna/lerna/tree/main/commands/version#readme)
+
+If a tag appears in the `master` branch, this will run `.github/workflows/new-version.yml`. This workflow has already automated running tests, publishing to npm, and publishing starters to their repository.
+
 ### Organization of this monorepository
 
 This monorepo uses [npm workspaces](https://docs.npmjs.com/cli/v7/using-npm/workspaces).
 
 - [packages](https://github.com/Chronoblog/gatsby-theme-chronoblog/tree/master/packages) folder. At the moment there is only [gatsby-theme-chronoblog/tree/master/packages/gatsby-theme-chronoblog](https://github.com/Chronoblog/gatsby-theme-chronoblog/tree/master/packages/gatsby-theme-chronoblog) there, and all the main work on the project takes place in it. Perhaps in the future, additional packages will appear.
-
-- [starters](https://github.com/Chronoblog/gatsby-theme-chronoblog/tree/master/starters) folder contains all the project starters.
-
-- [examples](https://github.com/Chronoblog/gatsby-theme-chronoblog/tree/master/starters) folder contains examples of how Chronoblog can be used.
-
-- [test-builds](https://github.com/Chronoblog/gatsby-theme-chronoblog/tree/master/test-builds) folder for test builds.
-
-Such an organization allows you to check the work of any starter right during the work on the project. For example, by running `npm run start:chronoblog` command, you can make changes to [gatsby-theme-chronoblog/tree/master/packages/gatsby-theme-chronoblog](https://github.com/Chronoblog/gatsby-theme-chronoblog/tree/master/packages/gatsby-theme-chronoblog) and immediately look at how the "chronoblog starter" works with these changes (at http://localhost:8000).
-
-### Tests and Publication
-
-The github action scripts can be viewed here: [workflows](https://github.com/Chronoblog/gatsby-theme-chronoblog/tree/master/.github/workflows). Each time changes are added to the repo, tests are launched. This allows to check if everything is working correctly.
-
-We can say that the master branch is a development branch since changes in the branch alone do not lead to the publication of the project. Therefore, there may be bugs and problems in the master branch.
-
-When updating the project version, packages are sent to npm, and starters, using [publish-starters.yml](https://github.com/Chronoblog/gatsby-theme-chronoblog/blob/master/.github/workflows/publish-starters.yml), update their individual repositories. Because of this, chronoblog starters have such strange commits (for example, https://github.com/Chronoblog/gatsby-starter-chronoblog).
 
 ### TypeScript and JSDoc for type annotation
 
