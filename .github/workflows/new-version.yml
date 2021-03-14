@@ -68,8 +68,6 @@ jobs:
         run: npm i -f
       - name: npm run generate-starters
         run: npm run generate-starters
-      - name: npm i -f
-        run: npm i -f
 
       - name: Copy directory starters/${{ matrix.starter }}/. to gatsby-starter-${{ matrix.starter }} repository
         uses: andstor/copycat-action@v3
@@ -92,8 +90,6 @@ jobs:
         run: npm i -f
       - name: npm run generate-starters
         run: npm run generate-starters
-      - name: npm i -f
-        run: npm i -f
 
       - name: Copy directory examples/${{ matrix.example }}/. to gatsby-starter-${{ matrix.example }} repository
         uses: andstor/copycat-action@v3

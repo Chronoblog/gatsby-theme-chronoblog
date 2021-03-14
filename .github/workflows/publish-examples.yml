@@ -1,0 +1,26 @@
+name: Publish Examples
+
+on:
+  workflow_dispatch:
+
+jobs:
+  publish-examples:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        example: [chronoblog-netlify-cms]
+    steps:
+      - name: npm i -f
+        run: npm i -f
+      - name: npm run generate-starters
+        run: npm run generate-starters
+
+      - name: Copy directory examples/${{ matrix.example }}/. to gatsby-starter-${{ matrix.example }} repository
+        uses: andstor/copycat-action@v3
+        with:
+          personal_token: ${{ secrets.API_TOKEN_GITHUB }}
+          src_path: examples/${{ matrix.example }}/.
+          dst_path: /.
+          clean: true
+          dst_owner: Chronoblog
+          dst_repo_name: gatsby-starter-${{ matrix.example }}
