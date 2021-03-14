@@ -16,12 +16,12 @@
     "generate-starters": "node ./scripts/generate-starters",
     "lerna": "lerna",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx .",
-    "version:major": "node ./scripts/generate-starters && lerna version major --no-changelog",
-    "version:minor": "node ./scripts/generate-starters && lerna version minor --no-changelog",
-    "version:patch": "node ./scripts/generate-starters && lerna version patch --no-changelog",
-    "version:premajor": "node ./scripts/generate-starters && lerna version premajor --no-changelog",
-    "version:preminor": "node ./scripts/generate-starters && lerna version preminor --no-changelog",
-    "version:prepatch": "node ./scripts/generate-starters && lerna version prepatch --no-changelog",
+    "version:major": "lerna version major --no-changelog",
+    "version:minor": "lerna version minor --no-changelog",
+    "version": "lerna version --no-changelog",
+    "version:premajor": "lerna version premajor --no-changelog",
+    "version:preminor": "lerna version preminor --no-changelog",
+    "version:prepatch": "lerna version prepatch --no-changelog",
     "start:chronoblog": "npm run generate-starters && cd starters/chronoblog && npm run start"
   },
   "devDependencies": {
