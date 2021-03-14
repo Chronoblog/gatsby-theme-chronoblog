@@ -1,0 +1,32 @@
+name: Test New Version
+
+on:
+  project_card:
+    types: [edited]
+
+jobs:
+  publication-of-starters:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        starter:
+          [
+            {
+              folder: examples/chronoblog-netlify-cms/.,
+              repo: gatsby-starter-chronoblog-netlify-cms,
+            },
+          ]
+    steps:
+      - name: npm i -f
+        run: npm i -f
+      - name: npm run generate-starters
+        run: npm run generate-starters
+      - name: Copy directory ${{ matrix.starter.folder }} to ${{ matrix.starter.repo }} repository
+        uses: andstor/copycat-action@v3
+        with:
+          personal_token: ${{ secrets.API_TOKEN_GITHUB }}
+          src_path: ${{ matrix.starter.folder }}
+          dst_path: /.
+          clean: true
+          dst_owner: Chronoblog
+          dst_repo_name: ${{ matrix.starter.repo }}

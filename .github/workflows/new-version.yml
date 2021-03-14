@@ -1,8 +1,6 @@
 name: New Version
 
 on:
-  project_card:
-    types: [edited]
   push:
     tags:
       - "*@*"
