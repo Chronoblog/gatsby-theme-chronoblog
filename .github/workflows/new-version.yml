@@ -1,8 +1,11 @@
 name: New Version
 
 on:
-  release:
-    types: [published, created, edited]
+  project_card:
+    types: [edited]
+  push:
+    tags:
+      - "*@*"
 
 jobs:
   tests:
