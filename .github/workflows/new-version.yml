@@ -1,6 +1,7 @@
 name: New Version
 
 on:
+  workflow_dispatch:
   push:
     tags:
       - "*@*"
