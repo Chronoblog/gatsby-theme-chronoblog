@@ -22,7 +22,7 @@
     "version:premajor": "node ./scripts/generate-starters && lerna version premajor --no-changelog",
     "version:preminor": "node ./scripts/generate-starters && lerna version preminor --no-changelog",
     "version:prepatch": "node ./scripts/generate-starters && lerna version prepatch --no-changelog",
-    "start:chronoblog": "cd starters/chronoblog && npm run clean && npm run start"
+    "start:chronoblog": "npm run generate-starters && cd starters/chronoblog && npm run start"
   },
   "devDependencies": {
     "@types/lodash": "4.14.168",
