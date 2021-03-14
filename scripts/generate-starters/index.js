@@ -2,7 +2,7 @@ const fs = require('fs-extra');
 
 const getStartersList = async (folder) => {
   return fs
-    .readdirSync(`./scripts/generate-starters/builds/${folder}`)
+    .readdirSync(`./scripts/generate-starters/${folder}`)
     .map((folderName) => folderName);
 };
 
@@ -20,38 +20,38 @@ const generateStarters = async () => {
   const startersList = await getStartersList('starters');
   startersList.map(async (folderName) => {
     fs.copySync(
-      `./builds/starters/${folderName}/package.json`,
-      `./scripts/generate-starters/builds/starters/${folderName}/package.json`
+      `./starters/${folderName}/package.json`,
+      `./scripts/generate-starters/starters/${folderName}/package.json`
     );
     //
-    fs.rmdirSync(`./builds/starters/${folderName}`, { recursive: true });
+    fs.rmdirSync(`./starters/${folderName}`, { recursive: true });
     //
     await copyFolder(
       './scripts/generate-starters/base-starter',
-      `./builds/starters/${folderName}`
+      `./starters/${folderName}`
     );
     await copyFolder(
-      `./scripts/generate-starters/builds/starters/${folderName}`,
-      `./builds/starters/${folderName}`
+      `./scripts/generate-starters/starters/${folderName}`,
+      `./starters/${folderName}`
     );
   });
 
   const examplesList = await getStartersList('examples');
   examplesList.map(async (folderName) => {
     fs.copySync(
-      `./builds/examples/${folderName}/package.json`,
-      `./scripts/generate-starters/builds/examples/${folderName}/package.json`
+      `./examples/${folderName}/package.json`,
+      `./scripts/generate-starters/examples/${folderName}/package.json`
     );
     //
-    fs.rmdirSync(`./builds/examples/${folderName}`, { recursive: true });
+    fs.rmdirSync(`./examples/${folderName}`, { recursive: true });
     //
     await copyFolder(
       './scripts/generate-starters/base-starter',
-      `./builds/examples/${folderName}`
+      `./examples/${folderName}`
     );
     await copyFolder(
-      `./scripts/generate-starters/builds/examples/${folderName}`,
-      `./builds/examples/${folderName}`
+      `./scripts/generate-starters/examples/${folderName}`,
+      `./examples/${folderName}`
     );
   });
 
