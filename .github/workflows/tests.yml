@@ -27,6 +27,9 @@ jobs:
         with:
           node-version: ${{ matrix.node_version }}
 
+      - name: npm run generate-starters
+        run: npm run generate-starters
+
       - name: npm i -f
         run: npm i -f
 
