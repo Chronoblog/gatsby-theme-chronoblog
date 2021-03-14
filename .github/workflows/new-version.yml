@@ -25,10 +25,10 @@ jobs:
             test-builds/profile-minimal,
           ]
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2.3.4
 
       - name: Use Node.js ${{ matrix.node_version }}
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2.1.5
         with:
           node-version: ${{ matrix.node_version }}
 
@@ -40,38 +40,58 @@ jobs:
       - name: cd ${{ matrix.starter_folder }} && npm run build
         run: cd ${{ matrix.starter_folder }} && npm run build
 
-  publication-of-starters:
+  publish-npm:
     needs: [tests]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2.3.4
+      - uses: actions/setup-node@v2.1.5
+        with:
+          node-version: 15
+      - run: npm i -f
+      - uses: JS-DevTools/npm-publish@v1
+        with:
+          package: ./packages/gatsby-theme-chronoblog/package.json
+          token: ${{ secrets.NPM_TOKEN }}
+
+  publish-starters:
+    needs: [tests, publish-npm]
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        starter:
-          [
-            {
-              folder: examples/chronoblog-netlify-cms/.,
-              repo: gatsby-starter-chronoblog-netlify-cms,
-            },
-            { folder: starters/chronoblog/., repo: gatsby-starter-chronoblog },
-            {
-              folder: starters/hacker/.,
-              repo: gatsby-starter-chronoblog-hacker,
-            },
-            {
-              folder: starters/profile/.,
-              repo: gatsby-starter-chronoblog-profile,
-            },
-          ]
+        starter: [chronoblog, chronoblog-hacker, chronoblog-profile]
     steps:
       - name: npm i -f
         run: npm i -f
       - name: npm run generate-starters
         run: npm run generate-starters
-      - name: Copy directory ${{ matrix.starter.folder }} to ${{ matrix.starter.repo }} repository
+      - name: Copy directory starters/${{ matrix.starter }}/. to gatsby-starter-${{ matrix.starter }} repository
         uses: andstor/copycat-action@v3
         with:
           personal_token: ${{ secrets.API_TOKEN_GITHUB }}
-          src_path: ${{ matrix.starter.folder }}
+          src_path: starters/${{ matrix.starter }}/.
           dst_path: /.
           clean: true
           dst_owner: Chronoblog
-          dst_repo_name: ${{ matrix.starter.repo }}
+          dst_repo_name: gatsby-starter-${{ matrix.starter }}
+
+  publish-examples:
+    needs: [tests, publish-npm]
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        example: [chronoblog-netlify-cms]
+    steps:
+      - name: npm i -f
+        run: npm i -f
+      - name: npm run generate-starters
+        run: npm run generate-starters
+      - name: Copy directory examples/${{ matrix.example }}/. to gatsby-starter-${{ matrix.example }} repository
+        uses: andstor/copycat-action@v3
+        with:
+          personal_token: ${{ secrets.API_TOKEN_GITHUB }}
+          src_path: examples/${{ matrix.example }}/.
+          dst_path: /.
+          clean: true
+          dst_owner: Chronoblog
+          dst_repo_name: gatsby-starter-${{ matrix.example }}

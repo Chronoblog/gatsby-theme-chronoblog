@@ -17,12 +17,12 @@
     "lerna": "lerna",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx .",
     "start:chronoblog": "npm run generate-starters && cd starters/chronoblog && npm run start",
-    "version": "lerna version --no-changelog",
-    "version:major": "lerna version major --no-changelog",
-    "version:minor": "lerna version minor --no-changelog",
-    "version:premajor": "lerna version premajor --no-changelog",
-    "version:preminor": "lerna version preminor --no-changelog",
-    "version:prepatch": "lerna version prepatch --no-changelog"
+    "version": "lerna version",
+    "version:major": "lerna version major",
+    "version:minor": "lerna version minor",
+    "version:premajor": "lerna version premajor",
+    "version:preminor": "lerna version preminor",
+    "version:prepatch": "lerna version prepatch"
   },
   "devDependencies": {
     "@types/lodash": "4.14.168",
