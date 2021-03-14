@@ -6,31 +6,19 @@ const getStartersList = async (folder) => {
     .map((folderName) => folderName);
 };
 
-const copyFolder = async (folderThatCopied = '/', folderWhereCopy = '/') => {
-  try {
-    await fs.copy(folderThatCopied, folderWhereCopy);
-  } catch (err) {
-    console.error(err);
-  }
-};
-
 const generateStarters = async () => {
   console.log('Start Starters Generator');
 
   const startersList = await getStartersList('starters');
   startersList.map(async (folderName) => {
-    // fs.copySync(
-    //   `./starters/${folderName}/package.json`,
-    //   `./scripts/generate-starters/starters/${folderName}/package.json`
-    // );
     //
     fs.rmdirSync(`./starters/${folderName}`, { recursive: true });
     //
-    await copyFolder(
+    fs.copySync(
       './scripts/generate-starters/base-starter',
       `./starters/${folderName}`
     );
-    await copyFolder(
+    fs.copySync(
       `./scripts/generate-starters/starters/${folderName}`,
       `./starters/${folderName}`
     );
@@ -38,18 +26,14 @@ const generateStarters = async () => {
 
   const examplesList = await getStartersList('examples');
   examplesList.map(async (folderName) => {
-    // fs.copySync(
-    //   `./examples/${folderName}/package.json`,
-    //   `./scripts/generate-starters/examples/${folderName}/package.json`
-    // );
     //
     fs.rmdirSync(`./examples/${folderName}`, { recursive: true });
     //
-    await copyFolder(
+    fs.copySync(
       './scripts/generate-starters/base-starter',
       `./examples/${folderName}`
     );
-    await copyFolder(
+    fs.copySync(
       `./scripts/generate-starters/examples/${folderName}`,
       `./examples/${folderName}`
     );
