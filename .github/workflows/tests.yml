@@ -31,12 +31,7 @@ jobs:
         with:
           node-version: ${{ matrix.node_version }}
 
-      - name: npm i -f
-        run: npm i -f
-      - name: npm run generate-starters
-        run: npm run generate-starters
-      - name: npm i -f
-        run: npm i -f
-
-      - name: cd ${{ matrix.starter_folder }} && npm run build
-        run: cd ${{ matrix.starter_folder }} && npm run build
+      - run: npm i -f
+      - run: npm run generate-starters
+      - run: npm i -f
+      - run: cd ${{ matrix.starter_folder }} && npm run build
