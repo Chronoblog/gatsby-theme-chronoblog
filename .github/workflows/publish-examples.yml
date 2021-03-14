@@ -10,7 +10,6 @@ jobs:
       matrix:
         example: [chronoblog-netlify-cms]
     steps:
-      - uses: actions/checkout@v2.3.4
       - uses: actions/setup-node@v2.1.5
         with:
           node-version: 15
