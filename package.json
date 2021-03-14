@@ -16,13 +16,13 @@
     "generate-starters": "node ./scripts/generate-starters",
     "lerna": "lerna",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx .",
+    "start:chronoblog": "npm run generate-starters && cd starters/chronoblog && npm run start",
+    "version": "lerna version --no-changelog",
     "version:major": "lerna version major --no-changelog",
     "version:minor": "lerna version minor --no-changelog",
-    "version": "lerna version --no-changelog",
     "version:premajor": "lerna version premajor --no-changelog",
     "version:preminor": "lerna version preminor --no-changelog",
-    "version:prepatch": "lerna version prepatch --no-changelog",
-    "start:chronoblog": "npm run generate-starters && cd starters/chronoblog && npm run start"
+    "version:prepatch": "lerna version prepatch --no-changelog"
   },
   "devDependencies": {
     "@types/lodash": "4.14.168",
