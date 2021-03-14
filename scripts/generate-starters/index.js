@@ -12,7 +12,8 @@ const generateStarters = async () => {
   const startersList = await getStartersList('starters');
   startersList.map(async (folderName) => {
     //
-    fs.rmdirSync(`./starters/${folderName}`, { recursive: true });
+    fs.ensureDirSync(`./starters/${folderName}`);
+    fs.rmSync(`./starters/${folderName}`, { recursive: true });
     //
     fs.copySync(
       './scripts/generate-starters/base-starter',
@@ -27,7 +28,8 @@ const generateStarters = async () => {
   const examplesList = await getStartersList('examples');
   examplesList.map(async (folderName) => {
     //
-    fs.rmdirSync(`./examples/${folderName}`, { recursive: true });
+    fs.ensureDirSync(`./examples/${folderName}`);
+    fs.rmSync(`./examples/${folderName}`, { recursive: true });
     //
     fs.copySync(
       './scripts/generate-starters/base-starter',
