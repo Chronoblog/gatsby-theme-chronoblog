@@ -20,18 +20,6 @@ Every time there is a new push to any branch, a `.github/workflows/tests.yml` wi
 
 Publishing a new version is publishing a new version in npm and publishing new versions of starters (with a new version) in their repositories.
 
-To do this, run the command:
-
-```
-npm run version:minor
-```
-
-(`minor` can be replaced with `patch` or `major`)
-
-Lerna will update all packages by itself, add tags of new versions to the branch and push to the repo. More details on how it works here: [@lerna/version](https://github.com/lerna/lerna/tree/main/commands/version#readme)
-
-If a tag appears in the `master` branch, this will run `.github/workflows/new-version.yml`. This workflow has already automated running tests, publishing to npm, and publishing starters to their repository.
-
 ### Organization of this monorepository
 
 This monorepo uses [npm workspaces](https://docs.npmjs.com/cli/v7/using-npm/workspaces).
