@@ -16,7 +16,7 @@ jobs:
           node-version: 15
       - run: npm i
       - run: npm run generate-starters
-      - run: sleep 5
+      - run: mkdir -p examples/chronoblog-netlify-cms
 
       - name: Copy directory examples/${{ matrix.example }}/. to gatsby-starter-${{ matrix.example }} repository
         uses: andstor/copycat-action@v3.2.3
