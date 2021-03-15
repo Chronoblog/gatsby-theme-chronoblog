@@ -66,5 +66,7 @@ yarn.lock
 package-lock.json
 
 # starters folder
-starters
-examples
+starters/*
+!starters/.gitkeep
+examples/*
+!examples/.gitkeep
