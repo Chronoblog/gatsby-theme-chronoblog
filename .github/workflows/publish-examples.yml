@@ -14,8 +14,8 @@ jobs:
         with:
           node-version: 15
 
-      - run: npm i -f
-      - run: node ./scripts/generate-starters
+      - run: npm i
+      - run: npm run generate-starters
 
       - name: Copy directory examples/${{ matrix.example }}/. to gatsby-starter-${{ matrix.example }} repository
         uses: andstor/copycat-action@v3
