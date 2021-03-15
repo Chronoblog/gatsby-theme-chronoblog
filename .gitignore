@@ -69,8 +69,8 @@ package-lock.json
 starters
 # starters/*
 # !starters/.gitkeep
-# examples
-examples/*
-!examples/.gitkeep
-!examples/chronoblog-netlify-cms
-!examples/chronoblog-netlify-cms/.gitkeep
+examples
+# examples/*
+# !examples/.gitkeep
+# !examples/chronoblog-netlify-cms
+# !examples/chronoblog-netlify-cms/.gitkeep
