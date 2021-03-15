@@ -65,14 +65,8 @@ yarn-error.log
 yarn.lock
 package-lock.json
 
-# starters folder
-# starters
-# starters/*
-# !starters/.gitkeep
-# examples
-# examples/*
-# !examples/.gitkeep
-# !examples/chronoblog-netlify-cms
+# starters and examples folder
 examples/*/*
-!examples/*/.gitignore
-# !examples/chronoblog-netlify-cms/.gitkeep
+!examples/*/.gitkeep
+starters/*/*
+!starters/*/.gitkeep
