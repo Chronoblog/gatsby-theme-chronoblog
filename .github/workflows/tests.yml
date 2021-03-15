@@ -31,7 +31,7 @@ jobs:
         with:
           node-version: ${{ matrix.node_version }}
 
-      - run: npm i --unsafe-perm=true
+      - run: npm i
       - run: npm run generate-starters
-      - run: npm i --unsafe-perm=true
+      - run: npm i
       - run: cd ${{ matrix.starter_folder }} && npm run build
