@@ -67,7 +67,7 @@ jobs:
       - run: npm run generate-starters
 
       - name: Copy directory starters/${{ matrix.starter }}/. to gatsby-starter-${{ matrix.starter }} repository
-        uses: andstor/copycat-action@v3
+        uses: andstor/copycat-action@v3.2.3
         with:
           personal_token: ${{ secrets.API_TOKEN_GITHUB }}
           src_path: starters/${{ matrix.starter }}/.
@@ -91,7 +91,7 @@ jobs:
       - run: npm run generate-starters
 
       - name: Copy directory examples/${{ matrix.example }}/. to gatsby-starter-${{ matrix.example }} repository
-        uses: andstor/copycat-action@v3
+        uses: andstor/copycat-action@v3.2.3
         with:
           personal_token: ${{ secrets.API_TOKEN_GITHUB }}
           src_path: examples/${{ matrix.example }}/.
