@@ -53,6 +53,10 @@ yarn-error.log
 .pnp.js
 .yarn-integrity
 
+# lock
+yarn.lock
+package-lock.json
+
 # dotenv environment variables file
 .env
 
@@ -60,13 +64,3 @@ yarn-error.log
 .contentful.json
 .env*
 !.env.example
-
-# no lock
-yarn.lock
-package-lock.json
-
-# starters folder
-starters/*
-!starters/.gitkeep
-# examples/*
-# !examples/.gitkeep
