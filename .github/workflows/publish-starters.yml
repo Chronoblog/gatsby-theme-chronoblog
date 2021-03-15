@@ -25,6 +25,8 @@ jobs:
       - run: npm run generate-starters
 
       - name: Copy directory examples/${{ matrix.example }}/. to gatsby-starter-${{ matrix.example }} repository
+      - run: npm i
+      - run: npm run generate-starters
         uses: andstor/copycat-action@v3.2.3
         with:
           personal_token: ${{ secrets.API_TOKEN_GITHUB }}
