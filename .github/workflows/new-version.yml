@@ -2,9 +2,6 @@ name: New Version
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - master
 
 jobs:
   tests:
