@@ -15,6 +15,7 @@
     "fix": "eslint --fix --ext .js,.jsx,.ts,.tsx .",
     "generate-starters": "node ./scripts/generate-starters",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx .",
+    "start": "npm run start:chronoblog",
     "start:chronoblog": "npm run generate-starters && cd starters/chronoblog && npm run start"
   },
   "devDependencies": {
