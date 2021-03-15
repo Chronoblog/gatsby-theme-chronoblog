@@ -68,5 +68,6 @@ package-lock.json
 # starters and examples folder
 examples/*/*
 !examples/*/.gitkeep
+starters/*
 starters/*/*
 !starters/*/.gitkeep
