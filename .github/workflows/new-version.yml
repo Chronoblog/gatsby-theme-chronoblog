@@ -1,9 +1,24 @@
 name: New Version
 
 on:
+  push:
+    branches:
+      - master
   workflow_dispatch:
 
+env:
+  new-version-on-npm: false
+
 jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Tests workflow
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: Tests
+          token: ${{ secrets.API_TOKEN_GITHUB }}
+
   publish-npm:
     needs: [tests]
     runs-on: ubuntu-latest
@@ -12,8 +27,19 @@ jobs:
       - uses: actions/setup-node@v2.1.5
         with:
           node-version: 15
-      - run: npm i -f
-      - uses: JS-DevTools/npm-publish@v1
+      - run: npm i
+      - id: publish
+        uses: JS-DevTools/npm-publish@v1
         with:
           package: ./packages/gatsby-theme-chronoblog/package.json
           token: ${{ secrets.NPM_TOKEN }}
+      - if: steps.publish.outputs.type != 'none'
+        run: |
+          echo "Version changed: ${{ steps.publish.outputs.old-version }} => ${{ steps.publish.outputs.version }}"
+      - name: Publish Starters Workflow
+        if: steps.publish.outputs.type != 'none'
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: Publish Starters
+          token: ${{ secrets.API_TOKEN_GITHUB }}
+          inputs: '{ "type": "examples" }'
