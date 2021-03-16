@@ -1,4 +1,4 @@
-name: New Version
+name: New Push
 
 on:
   push:
@@ -35,7 +35,7 @@ jobs:
       - run: npm i
       - run: cd ${{ matrix.starter_folder }} && npm run build
 
-  publish-npm:
+  publish-npm-and-starters:
     needs: [tests]
     if: github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
