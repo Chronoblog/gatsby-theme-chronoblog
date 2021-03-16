@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       type:
-        description: "Type"
+        description: "Type can be: all | examples | starters"
         required: true
         # all | examples | starters
         default: "examples"
@@ -24,7 +24,7 @@ jobs:
       - run: npm i
       - run: npm run generate-starters
       - name: Check for folder
-        run: ./scripts/test.sh
+        run: sh ./scripts/test.sh
 
       - name: Copy directory examples/${{ matrix.example }}/. to gatsby-starter-${{ matrix.example }} repository
         uses: andstor/copycat-action@v3.2.3
