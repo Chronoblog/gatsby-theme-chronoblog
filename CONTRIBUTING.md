@@ -14,11 +14,17 @@ At the moment I am working to ensure that the development process here is consis
 
 ### Tests
 
-Every time there is a new push to any branch, a `.github/workflows/tests.yml` will be launched. It will run tests and run builds in various environments to check if they build correctly.
+Every time there is a new push to any branch, a `.github/workflows/new-push.yml` will be launched. It will run tests and run builds in various environments to check if they build correctly.
 
 ### Publish
 
-Publishing a new version is publishing a new version in npm and publishing new versions of starters (with a new version) in their repositories.
+Publishing a new version is publishing a new version in npm and publishing new versions of starters in their repositories. This process is due to `.github/workflows/new-push.yml`.
+
+Every time a push comes to the `master`, the following happens:
+
+- tests
+- check if the version of the package for npm has been updated, and if so, the new version is sent to npm.
+- copying content for starters to separate repositories of these starters
 
 ### Organization of this monorepository
 
