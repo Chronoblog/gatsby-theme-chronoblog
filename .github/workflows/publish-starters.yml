@@ -26,15 +26,27 @@ jobs:
       - name: Check for folder
         run: sh ./scripts/test.sh
 
-      - name: Copy directory examples/${{ matrix.example }}/. to gatsby-starter-${{ matrix.example }} repository
-        uses: andstor/copycat-action@v3.2.3
+      # - name: Copy directory examples/${{ matrix.example }}/. to gatsby-starter-${{ matrix.example }} repository
+      #   uses: andstor/copycat-action@v3.2.3
+      #   with:
+      #     personal_token: ${{ secrets.API_TOKEN_GITHUB }}
+      #     src_path: examples/${{ matrix.example }}/.
+      #     dst_path: /.
+      #     clean: true
+      #     dst_owner: Chronoblog
+      #     dst_repo_name: gatsby-starter-${{ matrix.example }}
+
+      - name: Push directory to another repository
+        uses: cpina/github-action-push-to-another-repository@v1.2
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          personal_token: ${{ secrets.API_TOKEN_GITHUB }}
-          src_path: examples/${{ matrix.example }}/.
-          dst_path: /.
-          clean: true
-          dst_owner: Chronoblog
-          dst_repo_name: gatsby-starter-${{ matrix.example }}
+          source-directory: "examples/chronoblog-netlify-cms"
+          destination-github-username: "Chronoblog"
+          destination-repository-name: "gatsby-starter-chronoblog-netlify-cms"
+          user-email: 8168280+Ganevru@users.noreply.github.com
+      - name: Test get variable exported by push-to-another-repository
+        run: echo $DESTINATION_CLONED_DIRECTORY
 
   publish-starters:
     if: ${{ github.event.inputs.type == 'starters' || github.event.inputs.type == 'all' }}
@@ -50,24 +62,12 @@ jobs:
       - run: npm i
       - run: npm run generate-starters
 
-      # - name: Copy directory starters/${{ matrix.starter }}/. to gatsby-starter-${{ matrix.starter }} repository
-      #   uses: andstor/copycat-action@v3.2.3
-      #   with:
-      #     personal_token: ${{ secrets.API_TOKEN_GITHUB }}
-      #     src_path: starters/${{ matrix.starter }}/.
-      #     dst_path: /.
-      #     clean: true
-      #     dst_owner: Chronoblog
-      #     dst_repo_name: gatsby-starter-${{ matrix.starter }}
-
-      - name: Push directory to another repository
-        uses: cpina/github-action-push-to-another-repository@v1.2
-        env:
-          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+      - name: Copy directory starters/${{ matrix.starter }}/. to gatsby-starter-${{ matrix.starter }} repository
+        uses: andstor/copycat-action@v3.2.3
         with:
-          source-directory: "examples/chronoblog-netlify-cms"
-          destination-github-username: "Chronoblog"
-          destination-repository-name: "gatsby-starter-chronoblog-netlify-cms"
-          user-email: 8168280+Ganevru@users.noreply.github.com
-      - name: Test get variable exported by push-to-another-repository
-        run: echo $DESTINATION_CLONED_DIRECTORY
+          personal_token: ${{ secrets.API_TOKEN_GITHUB }}
+          src_path: starters/${{ matrix.starter }}/.
+          dst_path: /.
+          clean: true
+          dst_owner: Chronoblog
+          dst_repo_name: gatsby-starter-${{ matrix.starter }}
