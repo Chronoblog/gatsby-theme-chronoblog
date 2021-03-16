@@ -1,11 +1,7 @@
 const path = require('path');
 const fs = require('fs');
 const { createFilePath } = require('gatsby-source-filesystem');
-const Debug = require('debug');
 const _ = require('lodash');
-const pkg = require('./package.json');
-
-const debug = Debug(pkg.name);
 
 /**
  *
@@ -46,7 +42,6 @@ exports.onPreBootstrap = ({ store }) => {
   ];
 
   dirs.forEach((dir) => {
-    debug(`Initializing ${dir} directory`);
     if (!fs.existsSync(dir)) {
       fs.mkdirSync(dir, { recursive: true });
     }
