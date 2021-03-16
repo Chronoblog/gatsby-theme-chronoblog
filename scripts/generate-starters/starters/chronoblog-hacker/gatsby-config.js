@@ -83,8 +83,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-disqus`,
       options: {
-        // replace "chronoblog-1" with your own disqus shortname
-        shortname: `chronoblog-1`,
+        // replace "chronoblog-hacker" with your own disqus shortname
+        shortname: `chronoblog-hacker`,
       },
     },
   ],
