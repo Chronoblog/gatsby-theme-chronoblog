@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "test script"
-if [ -d /examples/chronoblog-netlify-cms ]
+if [ -d "./examples/chronoblog-netlify-cms" ]
 then
     echo "dir present"
 else
