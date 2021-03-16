@@ -21,7 +21,7 @@ jobs:
       - uses: actions/setup-node@v2.1.5
         with:
           node-version: 15
-      - run: npm i
+      - run: npm ci
       - run: npm run generate-starters
       - name: Push "examples/${{ matrix.example }}" to "gatsby-starter-${{ matrix.example }}" repo
         uses: cpina/github-action-push-to-another-repository@v1.2
@@ -44,7 +44,7 @@ jobs:
       - uses: actions/setup-node@v2.1.5
         with:
           node-version: 15
-      - run: npm i
+      - run: npm ci
       - run: npm run generate-starters
       - name: Push "starters/${{ matrix.starter }}" to "gatsby-starter-${{ matrix.starter }}" repo
         uses: cpina/github-action-push-to-another-repository@v1.2

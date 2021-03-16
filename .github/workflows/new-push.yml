@@ -30,9 +30,9 @@ jobs:
         with:
           node-version: ${{ matrix.node_version }}
 
-      - run: npm i
+      - run: npm ci
       - run: npm run generate-starters
-      - run: npm i
+      - run: npm ci
       - run: cd ${{ matrix.starter_folder }} && npm run build
 
   publish-npm:
@@ -44,7 +44,7 @@ jobs:
       - uses: actions/setup-node@v2.1.5
         with:
           node-version: 15
-      - run: npm i
+      - run: npm ci
       - id: publish
         uses: JS-DevTools/npm-publish@v1
         with:
