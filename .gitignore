@@ -66,5 +66,5 @@ yarn.lock
 package-lock.json
 
 # starters and examples folder
-./examples/*
-./starters/*
+./examples
+./starters
