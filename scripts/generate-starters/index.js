@@ -41,6 +41,22 @@ const generateStarters = async () => {
     );
   });
 
+  const testsList = await getStartersList('test-builds');
+  testsList.map(async (folderName) => {
+    //
+    fs.ensureDirSync(`./test-builds/${folderName}`);
+    fs.rmSync(`./test-builds/${folderName}`, { recursive: true });
+    //
+    fs.copySync(
+      './scripts/generate-starters/base-starter',
+      `./test-builds/${folderName}`
+    );
+    fs.copySync(
+      `./scripts/generate-starters/test-builds/${folderName}`,
+      `./test-builds/${folderName}`
+    );
+  });
+
   console.log('End Starters Generator');
 };
 

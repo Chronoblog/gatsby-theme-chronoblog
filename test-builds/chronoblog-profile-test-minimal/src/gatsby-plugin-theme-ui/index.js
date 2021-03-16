@@ -7,10 +7,10 @@ export default {
     ...chronoblogTheme.color,
     text: '#222',
     background: '#fff',
-    link: '#25617b',
-    primary: '#f5cd79',
-    secondary: '#f7d794',
-    muted: '#f7f7f7',
+    link: '#3d7e9a',
+    primary: '#3a5f7d',
+    secondary: '#5a809e',
+    muted: '#dae1e3',
     modes: {
       ...chronoblogTheme.colors.modes,
       dark: {
@@ -24,24 +24,17 @@ export default {
   fontSizes: [14, 16, 18, 20, 22, 24, 28, 36],
   borderRadius: {
     ...chronoblogTheme.borderRadius,
-    card: 8,
-    button: 8,
-    search: 8,
-    code: 8,
-    img: 8,
-    authorBanner: 8,
+    card: 6,
+    button: 6,
+    search: 6,
+    code: 6,
+    img: 6,
+    authorBanner: 6,
   },
   borderWidth: {
     ...chronoblogTheme.borderWidth,
     card: 2,
     search: 2,
-  },
-  buttons: {
-    ...chronoblogTheme.buttons,
-    active: {
-      ...chronoblogTheme.buttons.buttonStyle,
-      color: 'text',
-    },
   },
   fonts: {
     ...chronoblogTheme.fonts,

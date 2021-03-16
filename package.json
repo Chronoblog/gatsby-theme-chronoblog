@@ -5,7 +5,6 @@
   "author": "Ivan Ganev <ganevio92@gmail.com>",
   "workspaces": [
     "packages/*",
-    "packages/@chronoblog/*",
     "starters/*",
     "examples/*",
     "test-builds/*"

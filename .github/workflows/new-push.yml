@@ -17,11 +17,11 @@ jobs:
           [
             examples/chronoblog-netlify-cms,
             starters/chronoblog,
-            starters/hacker,
-            starters/profile,
-            test-builds/content-tests,
-            test-builds/chinese-language-test,
-            test-builds/profile-minimal,
+            starters/chronoblog-hacker,
+            starters/chronoblog-profile,
+            test-builds/chronoblog-test-content,
+            test-builds/chronoblog-test-chinese-language,
+            test-builds/chronoblog-profile-test-minimal,
           ]
     steps:
       - uses: actions/checkout@v2.3.4

@@ -2,14 +2,14 @@ import chronoblogTheme from 'gatsby-theme-chronoblog/src/gatsby-plugin-theme-ui'
 
 export default {
   ...chronoblogTheme,
-  initialColorMode: 'dark',
+  initialColorMode: 'light',
   colors: {
     ...chronoblogTheme.color,
     text: '#222',
-    background: '#f1f2f6',
-    link: '#3498db',
-    primary: '#8e44ad',
-    secondary: '#9b59b6',
+    background: '#fff',
+    link: '#3d7e9a',
+    primary: '#3a5f7d',
+    secondary: '#5a809e',
     muted: '#dae1e3',
     modes: {
       ...chronoblogTheme.colors.modes,
@@ -17,7 +17,7 @@ export default {
         ...chronoblogTheme.colors.modes.dark,
         text: '#eaeaea',
         background: '#0e0f17',
-        muted: '#2c3e50',
+        muted: '#161b1d',
       },
     },
   },
@@ -29,10 +29,16 @@ export default {
     search: 6,
     code: 6,
     img: 6,
+    authorBanner: 6,
+  },
+  borderWidth: {
+    ...chronoblogTheme.borderWidth,
+    card: 2,
+    search: 2,
   },
   fonts: {
     ...chronoblogTheme.fonts,
-    body: 'Helvetica,Arial,sans-serif',
+    body: '-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif',
     heading: 'inherit',
     monospace: 'Menlo, monospace',
   },

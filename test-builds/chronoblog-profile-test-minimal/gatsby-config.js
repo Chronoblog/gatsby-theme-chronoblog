@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
-    siteTitle: 'Chronoblog Profile Starter',
+    siteTitle: 'Chronoblog Starter',
     siteDescription: 'Starter for Gatsby Theme Chronoblog',
     siteImage: '/banner.png', // main image of the site for metadata
-    siteUrl: 'https://chronoblog-profile.now.sh/',
+    siteUrl: 'https://chronoblog.now.sh/',
     pathPrefix: '/',
     siteLanguage: 'en',
     ogLanguage: `en_US`,
@@ -13,6 +13,10 @@ module.exports = {
     twitterSite: '', // website account on twitter
     twitterCreator: '', // creator account on twitter
     social: [
+      {
+        icon: `at`,
+        url: `mailto:mymail@mail.com`,
+      },
       {
         icon: `twitter`,
         url: `https://twitter.com/ganevru`,
@@ -41,7 +45,7 @@ module.exports = {
         feedItems: {
           // global settings for feed items
           limit: 50,
-          yearSeparator: false,
+          yearSeparator: true,
           yearSeparatorSkipFirst: true,
           contentTypes: {
             links: {
@@ -74,6 +78,13 @@ module.exports = {
       options: {
         // replace "UA-XXXXXXXXX-X" with your own Tracking ID
         trackingId: 'UA-XXXXXXXXX-X',
+      },
+    },
+    {
+      resolve: `gatsby-plugin-disqus`,
+      options: {
+        // replace "chronoblog-1" with your own disqus shortname
+        shortname: `chronoblog-1`,
       },
     },
   ],
