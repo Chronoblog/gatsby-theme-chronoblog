@@ -35,7 +35,7 @@ jobs:
       - run: npm i
       - run: cd ${{ matrix.starter_folder }} && npm run build
 
-  publish-npm-and-starters:
+  publish-npm:
     needs: [tests]
     if: github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
@@ -53,10 +53,15 @@ jobs:
       - if: steps.publish.outputs.type != 'none'
         run: |
           echo "Version changed: ${{ steps.publish.outputs.old-version }} => ${{ steps.publish.outputs.version }}"
+
+  publish-starters:
+    needs: [tests]
+    if: github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    steps:
       - name: Publish Starters Workflow
-        if: steps.publish.outputs.type != 'none'
         uses: benc-uk/workflow-dispatch@v1
         with:
           workflow: Publish Starters
           token: ${{ secrets.API_TOKEN_GITHUB }}
-          inputs: '{ "type": "examples" }'
+          inputs: '{ "type": "all" }'
