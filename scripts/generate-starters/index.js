@@ -26,37 +26,47 @@ const rmAllFilesPatchWithForMerge = async (folder) => {
   );
 };
 
+const genObjectsForFiles = async ({ folderTypeName, folderName }) => {
+  //
+  const allForMerge = await getAllFilesPatchWithForMerge(
+    `./scripts/generate-starters/${folderTypeName}/${folderName}`
+  );
+  //
+  const objectsForFiles = await Promise.all(
+    allForMerge.map(async (file) => {
+      const fileObj = await fs.readJson(file);
+      //
+      const thisFileDelForMerge = file.replace(/\.for-merge/, '');
+      const thisFileInBase = thisFileDelForMerge.replace(
+        `/scripts/generate-starters/${folderTypeName}/${folderName}/`,
+        '/scripts/generate-starters/base-starter/'
+      );
+      const thisFileInBaseAsObj = await fs.readJson(thisFileInBase);
+      //
+      const mergedObj = { ...thisFileInBaseAsObj, ...fileObj };
+      const baseNameOfThisFile = thisFileDelForMerge.replace(
+        `./scripts/generate-starters/${folderTypeName}/${folderName}/`,
+        ''
+      );
+      return {
+        fileName: `${baseNameOfThisFile}`,
+        mergedObj,
+      };
+    })
+  );
+  return objectsForFiles;
+};
+
 const generateStarter = async (folderTypeName) => {
   const startersList = await getStartersList(folderTypeName);
   startersList.map(async (folderName) => {
     //
     await fs.ensureDir(`./${folderTypeName}/${folderName}`);
     //
-    const allForMerge = await getAllFilesPatchWithForMerge(
-      `./scripts/generate-starters/${folderTypeName}/${folderName}`
-    );
-    const objectsForFiles = await Promise.all(
-      allForMerge.map(async (file) => {
-        const fileObj = await fs.readJson(file);
-        //
-        const thisFileDelForMerge = file.replace(/\.for-merge/, '');
-        const thisFileInBase = thisFileDelForMerge.replace(
-          `/scripts/generate-starters/${folderTypeName}/${folderName}/`,
-          '/scripts/generate-starters/base-starter/'
-        );
-        const thisFileInBaseAsObj = await fs.readJson(thisFileInBase);
-        //
-        const mergedObj = { ...thisFileInBaseAsObj, ...fileObj };
-        const baseNameOfThisFile = thisFileDelForMerge.replace(
-          `./scripts/generate-starters/${folderTypeName}/${folderName}/`,
-          ''
-        );
-        return {
-          fileName: `${baseNameOfThisFile}`,
-          mergedObj,
-        };
-      })
-    );
+    const objectsForFiles = await genObjectsForFiles({
+      folderTypeName,
+      folderName,
+    });
     //
     await fs.remove(`./${folderTypeName}/${folderName}`);
     //
