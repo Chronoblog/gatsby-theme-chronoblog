@@ -5,20 +5,10 @@ const getStartersList = async (folder) => {
   return await fs.readdir(`./scripts/generate-starters/${folder}`);
 };
 
-const getAllFiles = (dirPath, arrayOfFiles) => {
-  const files = fs.readdirSync(dirPath);
-
-  arrayOfFiles = arrayOfFiles || [];
-
-  files.forEach((file) => {
-    if (fs.statSync(dirPath + '/' + file).isDirectory()) {
-      arrayOfFiles = getAllFiles(dirPath + '/' + file, arrayOfFiles);
-    } else {
-      arrayOfFiles.push(path.join(dirPath, '/', file));
-    }
-  });
-
-  return arrayOfFiles;
+const getAllFiles = async (dirPath) => {
+  const files = await fs.readdir(dirPath);
+  const filesWithPatch = files.map((file) => `${dirPath}/${file}`);
+  return filesWithPatch;
 };
 
 const getAllFilesPatchWithForMerge = async (folder) => {
