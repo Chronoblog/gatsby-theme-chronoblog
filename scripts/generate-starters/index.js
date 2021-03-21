@@ -2,9 +2,7 @@ const path = require('path');
 const fs = require('fs-extra');
 
 const getStartersList = async (folder) => {
-  return fs
-    .readdirSync(`./scripts/generate-starters/${folder}`)
-    .map((folderName) => folderName);
+  return await fs.readdir(`./scripts/generate-starters/${folder}`);
 };
 
 const getAllFiles = (dirPath, arrayOfFiles) => {
@@ -23,55 +21,60 @@ const getAllFiles = (dirPath, arrayOfFiles) => {
   return arrayOfFiles;
 };
 
-const getAllFilesPatchWithForMerge = (folder) => {
-  const allFiles = getAllFiles(folder);
+const getAllFilesPatchWithForMerge = async (folder) => {
+  const allFiles = await getAllFiles(folder);
   const onlyForMerge = allFiles.filter((file) =>
     path.basename(file).includes('.for-merge.json')
   );
   return onlyForMerge;
 };
 
-const rmAllFilesPatchWithForMerge = (folder) => {
-  const allForMerge = getAllFilesPatchWithForMerge(folder);
-  allForMerge.map((file) => fs.unlinkSync(`./${file}`));
+const rmAllFilesPatchWithForMerge = async (folder) => {
+  const allForMerge = await getAllFilesPatchWithForMerge(folder);
+  await Promise.all(
+    allForMerge.map(async (file) => await fs.unlink(`./${file}`))
+  );
 };
 
 const generateStarter = async (folderTypeName) => {
   const startersList = await getStartersList(folderTypeName);
   startersList.map(async (folderName) => {
     //
-    fs.ensureDirSync(`./${folderTypeName}/${folderName}`);
+    await fs.ensureDir(`./${folderTypeName}/${folderName}`);
     //
-    const allForMerge = getAllFilesPatchWithForMerge(
+    const allForMerge = await getAllFilesPatchWithForMerge(
       `./${folderTypeName}/${folderName}`
     );
-    const objectsForFiles = allForMerge.map((file) => {
-      const fileObj = JSON.parse(fs.readFileSync(file));
-      //
-      const thisFileInBase = file.replace(/\.for-merge/, '');
-      const thisFileInBaseAsObj = JSON.parse(fs.readFileSync(thisFileInBase));
-      //
-      const mergedObj = { ...thisFileInBaseAsObj, ...fileObj };
-      return { fileName: thisFileInBase, mergedObj };
-    });
+    const objectsForFiles = await Promise.all(
+      allForMerge.map(async (file) => {
+        const fileObj = await fs.readJson(file);
+        //
+        const thisFileInBase = file.replace(/\.for-merge/, '');
+        const thisFileInBaseAsObj = await fs.readJson(thisFileInBase);
+        //
+        const mergedObj = { ...thisFileInBaseAsObj, ...fileObj };
+        return { fileName: thisFileInBase, mergedObj };
+      })
+    );
     //
-    fs.rmSync(`./${folderTypeName}/${folderName}`, { recursive: true });
+    await fs.remove(`./${folderTypeName}/${folderName}`);
     //
-    fs.copySync(
+    await fs.copy(
       './scripts/generate-starters/base-starter',
       `./${folderTypeName}/${folderName}`
     );
-    fs.copySync(
+    await fs.copy(
       `./scripts/generate-starters/${folderTypeName}/${folderName}`,
       `./${folderTypeName}/${folderName}`
     );
     //
-    objectsForFiles.map((obj) => {
-      const data = JSON.stringify(obj.mergedObj, null, '\t');
-      fs.writeFileSync(`./${obj.fileName}`, data);
-    });
+    await Promise.all(
+      objectsForFiles.map(async (obj) => {
+        await fs.writeJson(`./${obj.fileName}`, obj.mergedObj, { spaces: 2 });
+      })
+    );
     //
-    rmAllFilesPatchWithForMerge(`./${folderTypeName}/${folderName}`);
+    await rmAllFilesPatchWithForMerge(`./${folderTypeName}/${folderName}`);
   });
 };
 
