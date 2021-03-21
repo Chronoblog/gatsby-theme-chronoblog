@@ -8,7 +8,7 @@ const getStartersList = async (folder) => {
 const getAllFiles = (dirPath, arrayOfFiles) => {
   const files = fs.readdirSync(dirPath);
 
-  arrayOfFiles = arrayOfFiles ? arrayOfFiles : [];
+  arrayOfFiles = arrayOfFiles || [];
 
   files.forEach((file) => {
     if (fs.statSync(dirPath + '/' + file).isDirectory()) {
@@ -79,15 +79,9 @@ const generateStarter = async (folderTypeName) => {
 };
 
 const generateStarters = async () => {
-  console.log('Start Starters Generator');
-
-  await Promise.all(
-    ['starters', 'test-builds', 'examples'].map(
-      async (type) => await generateStarter(type)
-    )
-  );
-
-  console.log('End Starters Generator');
+  await generateStarter('test-builds');
+  await generateStarter('examples');
+  await generateStarter('starters');
 };
 
-generateStarters();
+(async () => await generateStarters())();
