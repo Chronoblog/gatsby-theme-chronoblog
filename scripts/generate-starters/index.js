@@ -26,9 +26,14 @@ const getAllFiles = (dirPath, arrayOfFiles) => {
 const getAllFilesPatchWithForMerge = (folder) => {
   const allFiles = getAllFiles(folder);
   const onlyForMerge = allFiles.filter((file) =>
-    path.basename(file).includes('.for-merge.')
+    path.basename(file).includes('.for-merge.json')
   );
   return onlyForMerge;
+};
+
+const rmAllFilesPatchWithForMerge = (folder) => {
+  const allForMerge = getAllFilesPatchWithForMerge(folder);
+  allForMerge.map((file) => fs.unlinkSync(`./${file}`));
 };
 
 const generateStarter = async (folderTypeName) => {
@@ -40,8 +45,14 @@ const generateStarter = async (folderTypeName) => {
     const allForMerge = getAllFilesPatchWithForMerge(
       `./${folderTypeName}/${folderName}`
     );
-    allForMerge.map((file) => {
-      const fileObject = JSON.parse(fs.readFileSync(file));
+    const objectsForFiles = allForMerge.map((file) => {
+      const fileObj = JSON.parse(fs.readFileSync(file));
+      //
+      const thisFileInBase = file.replace(/\.for-merge/, '');
+      const thisFileInBaseAsObj = JSON.parse(fs.readFileSync(thisFileInBase));
+      //
+      const mergedObj = { ...thisFileInBaseAsObj, ...fileObj };
+      return { fileName: thisFileInBase, mergedObj };
     });
     //
     fs.rmSync(`./${folderTypeName}/${folderName}`, { recursive: true });
@@ -54,6 +65,13 @@ const generateStarter = async (folderTypeName) => {
       `./scripts/generate-starters/${folderTypeName}/${folderName}`,
       `./${folderTypeName}/${folderName}`
     );
+    //
+    objectsForFiles.map((obj) => {
+      const data = JSON.stringify(obj.mergedObj, null, '\t');
+      fs.writeFileSync(`./${obj.fileName}`, data);
+    });
+    //
+    rmAllFilesPatchWithForMerge(`./${folderTypeName}/${folderName}`);
   });
 };
 
