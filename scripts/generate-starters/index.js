@@ -47,7 +47,10 @@ const generateStarter = async (folderTypeName) => {
         const thisFileInBaseAsObj = await fs.readJson(thisFileInBase);
         //
         const mergedObj = { ...thisFileInBaseAsObj, ...fileObj };
-        const baseNameOfThisFile = path.basename(thisFileDelForMerge);
+        const baseNameOfThisFile = thisFileDelForMerge.replace(
+          `./scripts/generate-starters/${folderTypeName}/${folderName}/`,
+          ''
+        );
         return {
           fileName: `${baseNameOfThisFile}`,
           mergedObj,
