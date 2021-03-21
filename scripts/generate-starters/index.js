@@ -33,17 +33,25 @@ const generateStarter = async (folderTypeName) => {
     await fs.ensureDir(`./${folderTypeName}/${folderName}`);
     //
     const allForMerge = await getAllFilesPatchWithForMerge(
-      `./${folderTypeName}/${folderName}`
+      `./scripts/generate-starters/${folderTypeName}/${folderName}`
     );
     const objectsForFiles = await Promise.all(
       allForMerge.map(async (file) => {
         const fileObj = await fs.readJson(file);
         //
-        const thisFileInBase = file.replace(/\.for-merge/, '');
+        const thisFileDelForMerge = file.replace(/\.for-merge/, '');
+        const thisFileInBase = thisFileDelForMerge.replace(
+          `/scripts/generate-starters/${folderTypeName}/${folderName}/`,
+          '/scripts/generate-starters/base-starter/'
+        );
         const thisFileInBaseAsObj = await fs.readJson(thisFileInBase);
         //
         const mergedObj = { ...thisFileInBaseAsObj, ...fileObj };
-        return { fileName: thisFileInBase, mergedObj };
+        const baseNameOfThisFile = path.basename(thisFileDelForMerge);
+        return {
+          fileName: `${baseNameOfThisFile}`,
+          mergedObj,
+        };
       })
     );
     //
@@ -60,7 +68,11 @@ const generateStarter = async (folderTypeName) => {
     //
     await Promise.all(
       objectsForFiles.map(async (obj) => {
-        await fs.writeJson(`./${obj.fileName}`, obj.mergedObj, { spaces: 2 });
+        await fs.writeJson(
+          `./${folderTypeName}/${folderName}/${obj.fileName}`,
+          obj.mergedObj,
+          { spaces: 2 }
+        );
       })
     );
     //
