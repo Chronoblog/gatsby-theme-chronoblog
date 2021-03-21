@@ -1,3 +1,4 @@
+const path = require('path');
 const fs = require('fs-extra');
 
 const getStartersList = async (folder) => {
@@ -6,56 +7,64 @@ const getStartersList = async (folder) => {
     .map((folderName) => folderName);
 };
 
+const getAllFiles = (dirPath, arrayOfFiles) => {
+  const files = fs.readdirSync(dirPath);
+
+  arrayOfFiles = arrayOfFiles ? arrayOfFiles : [];
+
+  files.forEach((file) => {
+    if (fs.statSync(dirPath + '/' + file).isDirectory()) {
+      arrayOfFiles = getAllFiles(dirPath + '/' + file, arrayOfFiles);
+    } else {
+      arrayOfFiles.push(path.join(dirPath, '/', file));
+    }
+  });
+
+  return arrayOfFiles;
+};
+
+const getAllFilesPatchWithForMerge = (folder) => {
+  const allFiles = getAllFiles(folder);
+  const onlyForMerge = allFiles.filter((file) =>
+    path.basename(file).includes('.for-merge.')
+  );
+  return onlyForMerge;
+};
+
+const generateStarter = async (folderTypeName) => {
+  const startersList = await getStartersList(folderTypeName);
+  startersList.map(async (folderName) => {
+    //
+    fs.ensureDirSync(`./${folderTypeName}/${folderName}`);
+    //
+    const allForMerge = getAllFilesPatchWithForMerge(
+      `./${folderTypeName}/${folderName}`
+    );
+    allForMerge.map((file) => {
+      const fileObject = JSON.parse(fs.readFileSync(file));
+    });
+    //
+    fs.rmSync(`./${folderTypeName}/${folderName}`, { recursive: true });
+    //
+    fs.copySync(
+      './scripts/generate-starters/base-starter',
+      `./${folderTypeName}/${folderName}`
+    );
+    fs.copySync(
+      `./scripts/generate-starters/${folderTypeName}/${folderName}`,
+      `./${folderTypeName}/${folderName}`
+    );
+  });
+};
+
 const generateStarters = async () => {
   console.log('Start Starters Generator');
 
-  const startersList = await getStartersList('starters');
-  startersList.map(async (folderName) => {
-    //
-    fs.ensureDirSync(`./starters/${folderName}`);
-    fs.rmSync(`./starters/${folderName}`, { recursive: true });
-    //
-    fs.copySync(
-      './scripts/generate-starters/base-starter',
-      `./starters/${folderName}`
-    );
-    fs.copySync(
-      `./scripts/generate-starters/starters/${folderName}`,
-      `./starters/${folderName}`
-    );
-  });
-
-  const examplesList = await getStartersList('examples');
-  examplesList.map(async (folderName) => {
-    //
-    fs.ensureDirSync(`./examples/${folderName}`);
-    fs.rmSync(`./examples/${folderName}`, { recursive: true });
-    //
-    fs.copySync(
-      './scripts/generate-starters/base-starter',
-      `./examples/${folderName}`
-    );
-    fs.copySync(
-      `./scripts/generate-starters/examples/${folderName}`,
-      `./examples/${folderName}`
-    );
-  });
-
-  const testsList = await getStartersList('test-builds');
-  testsList.map(async (folderName) => {
-    //
-    fs.ensureDirSync(`./test-builds/${folderName}`);
-    fs.rmSync(`./test-builds/${folderName}`, { recursive: true });
-    //
-    fs.copySync(
-      './scripts/generate-starters/base-starter',
-      `./test-builds/${folderName}`
-    );
-    fs.copySync(
-      `./scripts/generate-starters/test-builds/${folderName}`,
-      `./test-builds/${folderName}`
-    );
-  });
+  await Promise.all(
+    ['starters', 'test-builds', 'examples'].map(
+      async (type) => await generateStarter(type)
+    )
+  );
 
   console.log('End Starters Generator');
 };
