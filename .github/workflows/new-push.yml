@@ -37,9 +37,6 @@ jobs:
           npm i
           npm run build
 
-      # - run: npm i
-      # - run: cd ${{ matrix.starter_folder }} && npm run build
-
   publish-npm:
     needs: [tests]
     if: github.ref == 'refs/heads/master'
