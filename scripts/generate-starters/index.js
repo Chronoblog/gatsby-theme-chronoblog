@@ -1,5 +1,6 @@
 const path = require('path');
 const fs = require('fs-extra');
+const _ = require('lodash');
 
 const getStartersList = async (folder) => {
   return await fs.readdir(`./scripts/generate-starters/${folder}`);
@@ -43,7 +44,8 @@ const genObjectsForFiles = async ({ folderTypeName, folderName }) => {
       );
       const thisFileInBaseAsObj = await fs.readJson(thisFileInBase);
       //
-      const mergedObj = { ...thisFileInBaseAsObj, ...fileObj };
+      const mergedObj = _.merge(thisFileInBaseAsObj, fileObj);
+      //
       const baseNameOfThisFile = thisFileDelForMerge.replace(
         `./scripts/generate-starters/${folderTypeName}/${folderName}/`,
         ''
