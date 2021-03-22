@@ -11,7 +11,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        node_version: [15]
+        node_version: [12, 14, 15]
         os: [ubuntu-latest, macos-latest, windows-latest]
         starter_folder:
           [
@@ -32,8 +32,13 @@ jobs:
 
       - run: npm i
       - run: npm run generate-starters
-      - run: npm i
-      - run: cd ${{ matrix.starter_folder }} && npm run build
+      - run: |
+          cd ${{ matrix.starter_folder }}
+          npm i
+          npm run build
+
+      # - run: npm i
+      # - run: cd ${{ matrix.starter_folder }} && npm run build
 
   publish-npm:
     needs: [tests]
