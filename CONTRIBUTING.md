@@ -2,6 +2,10 @@
 
 Any type of contribution to the project is also welcome! I use the GitHub issues as a todo list, so if you want to help, read existing issues. Or, if you want to add something new, write new issues with your ideas, and we will discuss it.
 
+## Dependencies
+
+To develop Chronoblog, you need to have **Nodejs version 15 or higher**, and **npm version 7 or higher**. To use Chronoblog, it is enough to have version 12 of Nodejs, but this repository is a monorepository - and it is made on the basis of [npm workspaces](https://docs.npmjs.com/cli/v7/using-npm/workspaces).
+
 ## Contribution to the README.md
 
 Contributions to the README are welcome, especially considering that English is not my native language.
