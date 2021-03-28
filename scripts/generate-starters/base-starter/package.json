@@ -54,20 +54,20 @@
     }
   },
   "dependencies": {
-    "gatsby": "^2.23.3",
-    "gatsby-plugin-disqus": "^1.1.4",
-    "gatsby-plugin-google-analytics": "^2.1.23",
-    "gatsby-plugin-manifest": "^2.4.11",
-    "gatsby-plugin-sitemap": "^2.2.21",
-    "gatsby-theme-chronoblog": "^0.26.1",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "gatsby": "^3.1.2",
+    "gatsby-plugin-disqus": "^1.2.2",
+    "gatsby-plugin-google-analytics": "^3.1.0",
+    "gatsby-plugin-manifest": "^3.1.0",
+    "gatsby-plugin-sitemap": "^3.1.0",
+    "gatsby-theme-chronoblog": "^0.26.4",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "eslint": "^6.6.0",
-    "eslint-config-prettier": "^6.3.0",
-    "eslint-plugin-prettier": "^3.1.0",
-    "prettier": "^1.18.2"
+    "eslint": "^7.23.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "prettier": "^2.2.1"
   },
   "engines": {
     "node": ">=12.21.0"
