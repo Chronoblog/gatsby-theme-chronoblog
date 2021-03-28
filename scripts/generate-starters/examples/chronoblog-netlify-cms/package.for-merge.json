@@ -2,9 +2,9 @@
   "name": "chronoblog-netlify-cms",
   "description": "gatsby-starter-chronoblog-netlify-cms",
   "dependencies": {
-    "gatsby-plugin-netlify": "^2.1.17",
-    "gatsby-plugin-netlify-cms": "^4.1.22",
-    "gatsby-remark-relative-images": "^0.2.3",
-    "netlify-cms-app": "^2.9.7"
+    "gatsby-plugin-netlify": "^3.1.0",
+    "gatsby-plugin-netlify-cms": "^5.1.0",
+    "gatsby-remark-relative-images": "^2.0.2",
+    "netlify-cms-app": "^2.14.32"
   }
 }
