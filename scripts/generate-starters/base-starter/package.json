@@ -14,7 +14,6 @@
   "dependencies": {
     "gatsby": "^2.23.3",
     "gatsby-plugin-disqus": "^1.1.4",
-    "gatsby-plugin-feed": "^3.1.0",
     "gatsby-plugin-google-analytics": "^2.1.23",
     "gatsby-plugin-manifest": "^2.4.11",
     "gatsby-plugin-sitemap": "^2.2.21",
