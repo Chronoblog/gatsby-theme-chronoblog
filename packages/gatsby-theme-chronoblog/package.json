@@ -32,7 +32,7 @@
   },
   "dependencies": {
     "@babel/core": "7.13.13",
-    "@emotion/core": "11.0.0",
+    "@emotion/react": "11.1.5",
     "@fortawesome/fontawesome-svg-core": "1.2.35",
     "@fortawesome/free-brands-svg-icons": "5.15.3",
     "@fortawesome/free-solid-svg-icons": "5.15.3",
@@ -62,18 +62,18 @@
     "react-hover-observer": "2.1.1",
     "remark-slug": "6.0.0",
     "remark-unwrap-images": "2.0.0",
-    "theme-ui": "0.6.0",
+    "theme-ui": "0.5.0-alpha.2",
     "url-join": "4.0.1"
   },
   "devDependencies": {
     "gatsby": "^3.1.2",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0"
   },
   "peerDependencies": {
     "gatsby": "^3.1.2",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0"
   },
   "engines": {
     "node": ">=12.21.0"
