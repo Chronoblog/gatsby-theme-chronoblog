@@ -12,6 +12,30 @@ Contributions to the README are welcome, especially considering that English is 
 
 However, remember that you need to edit this README: https://github.com/Chronoblog/gatsby-theme-chronoblog/blob/master/packages/gatsby-theme-chronoblog/README.md - this one located in `packages/gatsby-theme-chronoblog/README.md` is "real".
 
+## How to start development
+
+In the root folder (`gatsby-theme-chronoblog`):
+
+```
+npm i
+npm start
+```
+
+or:
+
+```
+npm i
+npm run generate-starters
+npm i
+npm run start:chronoblog
+```
+
+This is the same. But the second option shows what happens if you run `npm start`.
+
+`npm run generate-starters` - runs the script located here: `scripts/generate-starters/index.js`. This script generates all starters, test builds and examples.
+The second `npm i` is needed to install the dependencies of these generated starters.
+`npm run start:chronoblog` - starts the `starters/chronoblog` starter - the standard Chronoblog starter. Then you can make changes to `packages/gatsby-theme-chronoblog` and immediately watch how they affect the starter.
+
 ## Process
 
 At the moment I am working to ensure that the development process here is consistent with [GitHub flow](https://guides.github.com/introduction/flow/)
