@@ -24,7 +24,7 @@ jobs:
       - run: npm i
       - run: npm run generate-starters
       - name: Push "examples/${{ matrix.example }}" to "gatsby-starter-${{ matrix.example }}" repo
-        uses: cpina/github-action-push-to-another-repository@v1.2
+        uses: cpina/github-action-push-to-another-repository@master
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
@@ -47,7 +47,7 @@ jobs:
       - run: npm i
       - run: npm run generate-starters
       - name: Push "starters/${{ matrix.starter }}" to "gatsby-starter-${{ matrix.starter }}" repo
-        uses: cpina/github-action-push-to-another-repository@v1.2
+        uses: cpina/github-action-push-to-another-repository@master
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
