@@ -1,13 +1,18 @@
 {
   "name": "chronoblog",
-  "description": "Chronoblog mono-repository management package",
   "private": true,
+  "description": "Chronoblog mono-repository management package",
   "license": "MIT",
   "author": "Ivan Ganev <ganevio92@gmail.com>",
   "workspaces": [
     "packages/*",
-    "starters/*"
+    "starters/*",
+    "test-builds/*"
   ],
+  "scripts": {
+    "dev": "npm run dev:chronoblog",
+    "dev:chronoblog": "cd test-builds/next-test-build-chronoblog && npm run dev"
+  },
   "devDependencies": {
     "@types/node": "16.6.1",
     "@types/react": "17.0.17",
