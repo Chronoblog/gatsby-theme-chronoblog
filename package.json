@@ -10,7 +10,8 @@
     "test-builds/*"
   ],
   "scripts": {
-    "dev": "npm run dev:chronoblog",
+    "build": "cd packages/feed && npm run build",
+    "dev": "npm run build && npm run dev:chronoblog",
     "dev:chronoblog": "cd test-builds/next-test-build-chronoblog && npm run dev"
   },
   "devDependencies": {
