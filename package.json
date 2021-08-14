@@ -1,5 +1,6 @@
 {
   "name": "chronoblog",
+  "description": "Chronoblog mono-repository management package",
   "private": true,
   "license": "MIT",
   "author": "Ivan Ganev <ganevio92@gmail.com>",
