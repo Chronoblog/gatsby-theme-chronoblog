@@ -5,7 +5,7 @@
   "author": "Ivan Ganev <ganevio92@gmail.com>",
   "workspaces": [
     "packages/*",
-    "starters/*",
+    "starters/*"
   ],
   "devDependencies": {
     "@types/node": "16.6.1",
