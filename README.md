@@ -1,1 +1,0 @@
-packages/gatsby-theme-chronoblog/README.md
