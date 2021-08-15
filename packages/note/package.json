@@ -1,8 +1,8 @@
 {
-  "name": "@chronoblog/feed",
+  "name": "@chronoblog/note",
   "version": "0.1.0",
   "private": true,
-  "description": "Chronoblog Feed",
+  "description": "Chronoblog Note",
   "license": "MIT",
   "author": "Ivan Ganev <ganevio92@gmail.com>",
   "main": "./src/index.js",

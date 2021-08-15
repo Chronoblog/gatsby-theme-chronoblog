@@ -10,7 +10,8 @@
     "test-builds/*"
   ],
   "scripts": {
-    "build": "tsc",
+    "build": "make build",
+    "dev": "make dev",
     "start": "make start"
   },
   "devDependencies": {
