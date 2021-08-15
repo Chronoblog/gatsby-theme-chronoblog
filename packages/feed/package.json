@@ -5,17 +5,6 @@
   "description": "Chronoblog Feed",
   "license": "MIT",
   "author": "Ivan Ganev <ganevio92@gmail.com>",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
-  "scripts": {
-    "build": "tsx"
-  },
-  "devDependencies": {
-    "typescript": "4.3.5"
-  },
   "peerDependencies": {
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
