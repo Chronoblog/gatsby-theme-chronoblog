@@ -10,6 +10,7 @@
     "test-builds/*"
   ],
   "scripts" : {
+    "build": "tsx",
     "start" : "make start"
   },
   "devDependencies": {

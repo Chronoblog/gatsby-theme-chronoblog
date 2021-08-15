@@ -16,8 +16,13 @@
     "strictNullChecks": true,
     "suppressImplicitAnyIndexErrors": true,
     "allowSyntheticDefaultImports": true,
-    "strict": false
+    "strict": true
   },
-  "include": ["src"],
-  "exclude": ["node_modules", "lib"]
+  "include": ["./packages/**/src/**/*"],
+  "exclude": [
+    "node_modules",
+    "node_modules/**/*",
+    "*/node_modules/**/*",
+    "*/**/node_modules/**/*"
+  ]
 }
