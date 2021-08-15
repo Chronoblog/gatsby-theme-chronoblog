@@ -9,9 +9,9 @@
     "starters/*",
     "test-builds/*"
   ],
-  "scripts" : {
-    "build": "tsx",
-    "start" : "make start"
+  "scripts": {
+    "build": "tsc",
+    "start": "make start"
   },
   "devDependencies": {
     "@types/node": "16.6.1",
