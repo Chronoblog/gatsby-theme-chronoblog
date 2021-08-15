@@ -4,6 +4,14 @@ An experimental branch to explore what the second version of the Chronoblog migh
 
 ## Development
 
-In one terminal - start `tsc -watch`
+Start `tsc -watch` in all `packages`:
 
-In anaser terminal - start `next dev` (if wont to work with Nextjs)
+```
+npm run dev
+```
+
+In second terminal, start one of starters or test-builds:
+
+```
+npm start
+```

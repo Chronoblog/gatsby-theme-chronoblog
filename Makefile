@@ -5,4 +5,4 @@ dev:
 	tsc -watch
 
 start:
-	cd test-builds/next-ts && npm run dev
+	cd test-builds/next-app && npm run dev
