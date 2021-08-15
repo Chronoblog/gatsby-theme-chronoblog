@@ -104,4 +104,6 @@ dist
 .tern-port
 
 # remove all .js and .d.ts files from packages
-packages/*/src/*.js
+# packages/*/src/*.js
+packages/*/src/**/*.js
+packages/*/src/**/*.d.ts
