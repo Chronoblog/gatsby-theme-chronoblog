@@ -6,10 +6,13 @@
   "license": "MIT",
   "author": "Ivan Ganev <ganevio92@gmail.com>",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "files": [
-    "/dist",
-    "package.json"
+    "dist"
   ],
+  "scripts": {
+    "build": "tsx"
+  },
   "peerDependencies": {
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
