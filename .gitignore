@@ -102,3 +102,6 @@ dist
 
 # TernJS port file
 .tern-port
+
+# remove all .js and .d.ts files from packages
+packages/*/src/*.js
