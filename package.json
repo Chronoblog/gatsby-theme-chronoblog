@@ -10,6 +10,7 @@
     "test-builds/*"
   ],
   "scripts": {
+    "clean": "make clean",
     "build": "make build",
     "dev": "make dev",
     "start": "make start"
