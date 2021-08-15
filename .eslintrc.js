@@ -10,12 +10,6 @@ module.exports = {
   rules: {
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
-    'jsx-a11y/anchor-is-valid': [
-      'warn',
-      {
-        aspects: ['invalidHref'],
-      },
-    ],
     'no-console': 'warn',
     'prettier/prettier': 'warn',
     quotes: ['error', 'single'],
@@ -30,4 +24,10 @@ module.exports = {
       version: 'detect',
     },
   },
+  ignorePatterns: [
+    'node_modules',
+    '*/**/public/**/*',
+    'test-builds',
+    'starters',
+  ],
 };
