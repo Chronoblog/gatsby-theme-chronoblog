@@ -21,8 +21,9 @@ const Feed = () => {
         <div>3</div>
         <div>4</div>
         <div>5</div>
-        <div>6</div>
+        <div className="text-green-500">6 some some some</div>
       </div>
+      <input className="placeholder-green-500" placeholder="jane@example.com" />
     </div>
   );
 };
