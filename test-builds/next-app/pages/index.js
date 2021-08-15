@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Feed from '@chronoblog/feed'
 
 export default function Home() {
   return (
@@ -15,6 +16,8 @@ export default function Home() {
             Next.js!
           </a>
         </h1>
+
+        <Feed />
 
         <p className="mt-3 text-2xl">
           Get started by editing{' '}
