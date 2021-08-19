@@ -10,7 +10,7 @@ Start `tsc -watch` in all `packages`:
 npm run dev
 ```
 
-In second terminal, start one of starters or test-builds:
+In second terminal, start one of the starters or test-builds:
 
 ```
 npm start

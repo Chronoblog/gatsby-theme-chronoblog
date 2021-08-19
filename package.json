@@ -10,10 +10,11 @@
     "test-builds/*"
   ],
   "scripts": {
-    "clean": "make clean",
-    "build": "make build",
-    "dev": "make dev",
-    "start": "make start"
+    "clean": "rm -rf node_modules && rm -rf package-lock.json && rm -rf test-builds/next-app/.next && rm -rf test-builds/next-app-tw/.next",
+    "build": "tsc",
+    "dev": "tsc -watch",
+    "dev:next-app-tw": "cd test-builds/next-app-tw && npm run dev",
+    "start": "npm run dev:next-app-tw"
   },
   "devDependencies": {
     "@types/node": "16.6.1",
