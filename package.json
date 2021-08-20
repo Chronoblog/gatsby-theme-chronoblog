@@ -13,6 +13,7 @@
     "clean": "rm -rf node_modules && rm -rf package-lock.json && rm -rf test-builds/next-app/.next && rm -rf test-builds/next-app-tw/.next",
     "build": "tsc",
     "dev": "tsc -watch",
+    "dev:next-app": "cd test-builds/next-app && npm run dev",
     "dev:next-app-tw": "cd test-builds/next-app-tw && npm run dev",
     "start": "npm run dev:next-app-tw"
   },

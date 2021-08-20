@@ -8,11 +8,6 @@ const Feed = () => {
         <div>1</div>
         <div>1</div>
         <div>1</div>
-        <div>1</div>
-        <div>1</div>
-        <div>1</div>
-        <div>1</div>
-        <div>9</div>
       </div>
       <div className="box-content h-32 w-32 p-4 border-4">test</div>
       <div className="grid grid-cols-3 gap-2 place-content-center h-48">
