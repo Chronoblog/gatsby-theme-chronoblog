@@ -33,6 +33,5 @@ node_modules/
 .env
 .env.test
 
-# remove all .js and .d.ts files from packages
-packages/*/src/**/*.js
-packages/*/src/**/*.d.ts
+# ignore dist folders
+packages/**/dist

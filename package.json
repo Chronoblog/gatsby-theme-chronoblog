@@ -10,7 +10,7 @@
     "test-builds/*"
   ],
   "scripts": {
-    "build": "tsc",
+    "build": "cd packages/feed && tsc",
     "clean": "rm -rf node_modules && rm -rf package-lock.json && rm -rf test-builds/next-app/.next && rm -rf test-builds/next-app-tw/.next",
     "dev": "npm run dev:next-app-tw",
     "dev:next-app": "cd test-builds/next-app && npm run dev",
