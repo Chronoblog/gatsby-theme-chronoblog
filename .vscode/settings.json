@@ -1,7 +1,2 @@
 // Workspace settings
-{
-  "files.exclude": {
-    "packages/**/src/**/*.js": true,
-    "packages/**/src/**/*.d.ts": true
-  }
-}
+{}
