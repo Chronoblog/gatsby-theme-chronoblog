@@ -1,7 +1,5 @@
 import React from 'react';
-
 const Note = () => {
-  return <div>Note - test</div>;
+    return React.createElement("div", null, "Note - test");
 };
-
 export { Note };

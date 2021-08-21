@@ -5,8 +5,15 @@
   "description": "test-headlessui",
   "license": "MIT",
   "author": "Ivan Ganev <ganevio92@gmail.com>",
-  "main": "./src/index.js",
-  "types": "./src/index.d.ts",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "README.md",
+    "dist"
+  ],
+  "scripts": {
+    "dev": "tsx -watch"
+  },
   "devDependencies": {},
   "peerDependencies": {
     "react": "^17.0.2",

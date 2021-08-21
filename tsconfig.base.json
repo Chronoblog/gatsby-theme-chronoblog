@@ -16,12 +16,5 @@
     "suppressImplicitAnyIndexErrors": true,
     "allowSyntheticDefaultImports": true,
     "strict": true
-  },
-  "include": ["./packages/**/src/**/*"],
-  "exclude": [
-    "node_modules",
-    "node_modules/**/*",
-    "*/node_modules/**/*",
-    "*/**/node_modules/**/*"
-  ]
+  }
 }

@@ -18,8 +18,8 @@
       "type": "node-terminal"
     },
     {
-      "command": "npm start",
-      "name": "npm start",
+      "command": "cd packages/test-headlessui && npm run dev",
+      "name": "npm run dev in test-headlessui",
       "request": "launch",
       "type": "node-terminal"
     }
@@ -27,7 +27,11 @@
   "compounds": [
     {
       "name": "Dev and Start",
-      "configurations": ["npm run dev", "npm start", "Launch Chrome"]
+      "configurations": [
+        "npm run dev",
+        "npm run dev in test-headlessui",
+        "Launch Chrome"
+      ]
     }
   ]
 }
