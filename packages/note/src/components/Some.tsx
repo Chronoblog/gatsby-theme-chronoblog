@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Some = () => {
-  return <div>Feed - test</div>
-}
+  return <div>Feed - test</div>;
+};
 
-export { Some }
+export { Some };
