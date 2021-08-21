@@ -15,3 +15,7 @@ In second terminal, start one of the starters or test-builds:
 ```
 npm start
 ```
+
+OR
+
+In vscode, just start a debug secion.
