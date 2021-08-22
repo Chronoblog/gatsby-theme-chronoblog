@@ -36,7 +36,7 @@ type ClassNameOverride<TTag, TSlot = any> = PropsOf<TTag> extends {
   className?: any;
 }
   ? { className?: string | ((bag: TSlot) => string) }
-  : {};
+  : any;
 
 // Provide clean TypeScript props, which exposes some of our custom API's.
 export type Props<
@@ -54,6 +54,6 @@ export type XOR<T, U> = T | U extends __
   ? U
   : U extends __
   ? T
-  : T | U extends object
+  : T | U extends any
   ? (Without<T, U> & U) | (Without<U, T> & T)
   : T | U;

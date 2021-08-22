@@ -17,9 +17,9 @@ import { render } from '../../utils/render';
 // ---
 
 interface SharedData {
-  slot?: {};
+  slot?: any;
   name?: string;
-  props?: {};
+  props?: any;
 }
 
 const DescriptionContext = createContext<
@@ -91,12 +91,11 @@ export function useDescriptions(): [
 // ---
 
 const DEFAULT_DESCRIPTION_TAG = 'p' as const;
-interface DescriptionRenderPropArg {}
 type DescriptionPropsWeControl = 'id';
 
-export function Description<
-  TTag extends ElementType = typeof DEFAULT_DESCRIPTION_TAG
->(props: Props<TTag, DescriptionRenderPropArg, DescriptionPropsWeControl>) {
+function Description<TTag extends ElementType = typeof DEFAULT_DESCRIPTION_TAG>(
+  props: Props<TTag, any, DescriptionPropsWeControl>
+) {
   const context = useDescriptionContext();
   const id = `headlessui-description-${useId()}`;
 
@@ -112,3 +111,5 @@ export function Description<
     name: context.name || 'Description',
   });
 }
+
+export { Description };
