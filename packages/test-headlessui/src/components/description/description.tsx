@@ -93,9 +93,9 @@ export function useDescriptions(): [
 const DEFAULT_DESCRIPTION_TAG = 'p' as const;
 type DescriptionPropsWeControl = 'id';
 
-function Description<TTag extends ElementType = typeof DEFAULT_DESCRIPTION_TAG>(
-  props: Props<TTag, any, DescriptionPropsWeControl>
-) {
+export function Description<
+  TTag extends ElementType = typeof DEFAULT_DESCRIPTION_TAG
+>(props: Props<TTag, any, DescriptionPropsWeControl>) {
   const context = useDescriptionContext();
   const id = `headlessui-description-${useId()}`;
 
@@ -111,5 +111,3 @@ function Description<TTag extends ElementType = typeof DEFAULT_DESCRIPTION_TAG>(
     name: context.name || 'Description',
   });
 }
-
-export { Description };

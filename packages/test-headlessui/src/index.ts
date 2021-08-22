@@ -1,3 +1,3 @@
-import { Description } from './components/description/description';
+import { Tab } from './components/tabs/tabs';
 
-export default Description;
+export { Tab };
