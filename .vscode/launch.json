@@ -5,33 +5,29 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Launch Chrome",
-      "request": "launch",
-      "type": "pwa-chrome",
-      "url": "http://localhost:3000",
-      "webRoot": "${workspaceFolder}"
-    },
-    {
       "command": "npm run dev",
       "name": "npm run dev",
       "request": "launch",
       "type": "node-terminal"
     },
     {
-      "command": "cd packages/test-headlessui && npm run dev",
-      "name": "npm run dev in test-headlessui",
+      "command": "npm run watch",
+      "name": "npm run watch",
       "request": "launch",
       "type": "node-terminal"
+    },
+    {
+      "name": "Launch Chrome",
+      "request": "launch",
+      "type": "pwa-chrome",
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}"
     }
   ],
   "compounds": [
     {
-      "name": "Dev and Start",
-      "configurations": [
-        "npm run dev",
-        "npm run dev in test-headlessui",
-        "Launch Chrome"
-      ]
+      "name": "Development",
+      "configurations": ["npm run dev", "npm run watch", "Launch Chrome"]
     }
   ]
 }
