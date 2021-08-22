@@ -1,0 +1,25 @@
+{
+  "name": "@chronoblog/test-headlessui",
+  "version": "0.1.0",
+  "private": true,
+  "description": "test-headlessui",
+  "license": "MIT",
+  "author": "Ivan Ganev <ganevio92@gmail.com>",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "README.md",
+    "dist"
+  ],
+  "scripts": {
+    "dev": "tsx -watch"
+  },
+  "devDependencies": {},
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
