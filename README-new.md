@@ -4,16 +4,16 @@ An experimental branch to explore what the second version of the Chronoblog migh
 
 ## Development
 
-Start `tsc -watch` in all `packages`:
+Start `tsc -watch` in `packages/feed`:
 
 ```
-npm run dev
+npm run watch
 ```
 
 In second terminal, start one of the starters or test-builds:
 
 ```
-npm start
+npm run dev
 ```
 
 OR
