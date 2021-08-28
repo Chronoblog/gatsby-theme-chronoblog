@@ -57,7 +57,7 @@ const TabTest = () => {
   }
 
   return (
-    <div className="w-full max-w-md px-2 py-16 sm:px-0">
+    <div className="">
       <Tab.Group>
         <Tab.List className="flex p-1 space-x-1 bg-blue-900/20 rounded-xl">
           {Object.keys(categories).map((category) => (

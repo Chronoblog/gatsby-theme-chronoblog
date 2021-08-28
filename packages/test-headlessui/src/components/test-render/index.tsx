@@ -1,7 +1,7 @@
 import React from 'react';
 
 const TestRender = () => {
-  return <div>test</div>;
+  return <div>TestRender</div>;
 };
 
 export { TestRender };
