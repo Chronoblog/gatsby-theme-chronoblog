@@ -1,3 +1,3 @@
-import { Feed } from './components/Feed';
+import { Card, Feed } from './components/Feed';
 
-export default Feed;
+export { Card, Feed };
