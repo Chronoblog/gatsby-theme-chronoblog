@@ -15,7 +15,6 @@
     "watch:test-headlessui": "cd packages/test-headlessui && tsc --watch",
     "clean": "rm -rf node_modules && rm -rf package-lock.json && rm -rf test-builds/next-app/.next && rm -rf test-builds/next-app-tw/.next",
     "dev": "npm run dev:next-app-tw",
-    "dev:next-app": "cd test-builds/next-app && rm -rf .next && npm run dev",
     "dev:next-app-tw": "cd test-builds/next-app-tw && rm -rf .next && npm run dev"
   },
   "devDependencies": {
