@@ -5,7 +5,7 @@ module.exports = {
     'react-app',
     'plugin:prettier/recommended',
   ],
-  ignorePatterns: ['node_modules', 'public', 'dist', 'test-builds', 'starters'],
+  ignorePatterns: ['node_modules', 'public', 'dist', 'starters'],
   parser: '@typescript-eslint/parser',
   plugins: ['simple-import-sort', '@typescript-eslint', 'react'],
   rules: {

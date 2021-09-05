@@ -5,5 +5,5 @@ export default function Page() {
         <h2>test</h2>
       </div>
     </div>
-  )
+  );
 }
