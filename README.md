@@ -1,4 +1,4 @@
-The Personal website forked from [github.com/Chronoblog/gatsby-theme-chronoblog](https://github.com/Chronoblog/gatsby-theme-chronoblog) --> [gokhana.dev](https://gokhana.dev/)
+## The Personal website: [gokhana.dev](https://gokhana.dev/)
 
 
 
