@@ -1,50 +1,83 @@
 {
-  "name": "gatsby-theme-chronoblog-workspace",
+  "name": "chronoblog",
+  "version": "1.0.0",
   "private": true,
+  "description": "gatsby-starter-chronoblog",
+  "keywords": [],
   "license": "MIT",
   "author": "Ivan Ganev <ganevio92@gmail.com>",
-  "workspaces": [
-    "packages/*",
-    "starters/*",
-    "examples/*",
-    "test-builds/*"
-  ],
   "scripts": {
-    "clean:chronoblog": "cd starters/chronoblog && npm run clean",
-    "fix": "eslint --fix --ext .js,.jsx,.ts,.tsx .",
-    "generate-starters": "node ./scripts/generate-starters",
-    "lint": "eslint --ext .js,.jsx,.ts,.tsx .",
-    "start": "npm run start:chronoblog",
-    "start:chronoblog": "npm run generate-starters && cd starters/chronoblog && npm run start"
+    "build": "gatsby build",
+    "clean": "gatsby clean",
+    "start": "gatsby develop"
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "es6": true,
+      "node": true
+    },
+    "parserOptions": {
+      "ecmaFeatures": {
+        "impliedStrict": true,
+        "jsx": true
+      },
+      "ecmaVersion": 2019,
+      "sourceType": "module",
+      "useJSXTextNode": true
+    },
+    "settings": {
+      "import/resolver": {
+        "node": {
+          "extensions": [
+            ".js",
+            ".jsx",
+            ".ts",
+            ".tsx",
+            "md",
+            "mdx"
+          ]
+        }
+      },
+      "react": {
+        "version": "detect"
+      }
+    },
+    "plugins": [
+      "prettier"
+    ],
+    "extends": [
+      "plugin:prettier/recommended"
+    ],
+    "rules": {
+      "prettier/prettier": "warn"
+    }
+  },
+  "dependencies": {
+    "@fontsource/comfortaa": "^4.5.1",
+    "@fontsource/montserrat": "^4.5.1",
+    "@fontsource/open-sans": "^4.5.2",
+    "@fontsource/raleway": "^4.5.0",
+    "@fontsource/roboto": "^4.5.1",
+    "@fontsource/ubuntu": "^4.5.0",
+    "event-storage": "^0.8.0",
+    "gatsby": "^2.23.3",
+    "gatsby-plugin-disqus": "^1.1.4",
+    "gatsby-plugin-google-analytics": "^2.1.23",
+    "gatsby-plugin-manifest": "^2.4.11",
+    "gatsby-plugin-sitemap": "^2.2.21",
+    "gatsby-plugin-web-font-loader": "^1.0.4",
+    "gatsby-theme-chronoblog": "^0.26.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
   },
   "devDependencies": {
-    "@types/jest": "26.0.20",
-    "@types/lodash": "4.14.168",
-    "@types/node": "14.14.31",
-    "@types/react": "16.14.4",
-    "@types/react-dom": "16.9.11",
-    "@types/react-helmet": "6.1.0",
-    "@typescript-eslint/eslint-plugin": "4.15.2",
-    "@typescript-eslint/parser": "4.15.2",
-    "babel-preset-gatsby": "0.12.1",
-    "eslint": "7.20.0",
-    "eslint-config-prettier": "8.0.0",
-    "eslint-plugin-html": "6.1.1",
-    "eslint-plugin-import": "2.22.1",
-    "eslint-plugin-jsx-a11y": "6.4.1",
-    "eslint-plugin-prettier": "3.3.1",
-    "eslint-plugin-react": "7.22.0",
-    "eslint-plugin-react-hooks": "4.2.0",
-    "eslint-plugin-simple-import-sort": "7.0.0",
-    "fs-extra": "8.1.0",
-    "identity-obj-proxy": "3.0.0",
-    "lodash": "^4.17.21",
-    "prettier": "2.2.1",
-    "typescript": "4.1.5"
+    "eslint": "^6.6.0",
+    "eslint-config-prettier": "^6.3.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "prettier": "^1.18.2"
   },
   "engines": {
-    "node": ">=15.0.0",
-    "npm": ">=7.0.0",
-    "yarn": "! use npm !"
+    "node": ">=12.21.0"
   }
 }
