@@ -1,3 +1,7 @@
+The Personal website forked from [github.com/Chronoblog/gatsby-theme-chronoblog](https://github.com/Chronoblog/gatsby-theme-chronoblog) --> [gokhana.dev](https://gokhana.dev/)
+
+
+
 <a href="https://chronoblog.now.sh" target="_blank">
 <img src="https://github.com/Chronoblog/gatsby-theme-chronoblog/raw/master/assets/st-banner-chronoblog.png" alt="Chronoblog - Gatsby Theme" />
 </a>
