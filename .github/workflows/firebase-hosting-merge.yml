@@ -1,39 +1,27 @@
-name: Build and Deploy
+name: Production Build and Deploy
 on:
   push:
     branches:
       - master
 
 jobs:
-  build:
-    name: Build
+  build-and-deploy:
+    name: Build & Deploy
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
         uses: actions/checkout@master
-      - name: Install Dependencies
-        run: yarn
-      - name: Build
-        run: yarn build
-      - name: Archive Production Artifact
-        uses: actions/upload-artifact@master
+      - name: Set up Node
+        uses: actions/setup-node@v1
         with:
-          name: public
-          path: public
-  deploy:
-    name: Deploy
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Repo
-        uses: actions/checkout@master
-      - name: Download Artifact
-        uses: actions/download-artifact@master
-        with:
-          name: public
+          node-version: "12.x"
+      - name: Build Site
+        run: |
+          npm install
+          npm run build
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@master
         with:
-          args: deploy --only hosting
+          args: deploy
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
