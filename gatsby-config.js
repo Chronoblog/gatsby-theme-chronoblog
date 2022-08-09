@@ -48,11 +48,11 @@ module.exports = {
           feedShowMoreButton: 'show more',
           feedSearchPlaceholder: 'search',
           cardReadMoreButton: 'read more →',
-          allTagsButton: 'all tags',
+          allTagsButton: 'all posts',
         },
         feedItems: {
           // global settings for feed items
-          limit: 50,
+          limit: 10,
           yearSeparator: true,
           yearSeparatorSkipFirst: true,
           contentTypes: {

@@ -3,7 +3,7 @@ import "@fontsource/raleway"
 
 export default {
   ...chronoblogTheme,
-  initialColorMode: 'dark',
+  initialColorMode: 'light',
   colors: {
     ...chronoblogTheme.color,
     text: '#222',
