@@ -48,7 +48,7 @@ module.exports = {
           feedShowMoreButton: 'show more',
           feedSearchPlaceholder: 'search',
           cardReadMoreButton: 'read more →',
-          allTagsButton: 'all posts',
+          allTagsButton: 'all tags',
         },
         feedItems: {
           // global settings for feed items
