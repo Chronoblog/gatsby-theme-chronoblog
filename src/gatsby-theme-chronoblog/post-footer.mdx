@@ -1,11 +1,13 @@
-import { Disqus } from 'gatsby-plugin-disqus';
+import Gitalk from 'gatsby-plugin-gitalk'
+import '@suziwen/gitalk/dist/gitalk.css'
 
 <AuthorBanner></AuthorBanner>
 <p>&nbsp;</p>
-<Disqus
-  config={{
-    url: props.siteMetadata.siteUrl + props.postData.fields.slug,
+<Gitalk 
+  options={{
     title: props.postData.frontmatter.title,
-    id: props.postData.id,
+    id: props.postData.fields.slug,
+    createIssueManually: true,
+    number:3,
   }}
 />

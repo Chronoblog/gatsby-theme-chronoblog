@@ -1,7 +1,7 @@
 ---
 title: Co-founder at Turkey Java Community
 date: 2021-11-02
-tags: ['note', 'community']
+tags: ['community']
 ---
 
 Türkiye'nin yazılım ve Java Ekosistemine fayda sağlamak amacıyla Evran Tan ve Furkan Şahin Kulaksız ile başlayan **Turkey Java Community**'nin bir parçası oldum. Çok güzel etkinlikler ve bilgi paylaşımları için takip edebilebilirsiniz:

@@ -3,7 +3,7 @@ title: "The software Engineer's Repository"
 cover: ./the-software-engineers-library.png
 date: 2021-11-01
 link: https://github.com/G-khan/the-software-engineer-library
-tags: ['link', 'project']
+tags: ['project']
 ---
 
 ### The Software Engineer/Developer's Library

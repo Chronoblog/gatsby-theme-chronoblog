@@ -95,5 +95,6 @@ export default {
     bg: 'muted',
     marginX: 0,
     marginY: 1,
+    textDecoration: 'none',
   },
 };

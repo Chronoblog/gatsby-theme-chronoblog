@@ -1,7 +1,7 @@
 ---
 title: Server-side Reactive Programlama üzerine bir sunum gerçekleştirdim.
 date: 2022-06-23
-tags: ['note', 'community',"speaker"]
+tags: ['community',"speaker"]
 cover: ./reactive-programlama-konusma.png
 ---
 

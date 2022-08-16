@@ -1,7 +1,7 @@
 ---
 title: Doğuş Üniversitesi'nde Java Ekosistemi üzerine konuştuk.
 date: 2021-12-21
-tags: ['note', 'community',"speaker"]
+tags: ['community',"speaker"]
 cover: ./dogus-konusma.png
 ---
 
